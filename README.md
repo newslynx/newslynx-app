@@ -9,9 +9,13 @@ Code and Issue Tracking for Newslynx App
 If not already installed:
 `npm install nodemon -g`
 
-
-
 ````bash
 npm install
 nodemon --debug ./bin/www
 ````
+
+The sample article page is here <http://localhost:3000/article>
+
+## Some code styles
+
+camelCase for function names, object keys and varibles passed to functions. everything else gets underscores.
