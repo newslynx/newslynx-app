@@ -1,132 +1,195 @@
 @import 'nib'
 
 *
-  box-sizing border-box
+	box-sizing border-box
 html
-  font-size 16px
+	font-size 16px
 ul
-  list-style none
-  margin 0
-  padding 0
+	list-style none
+	margin 0
+	padding 0
 body
-  font 62.5% "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
-  // margin 0
+	font 62.5% "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
+	margin 0
 a
-  color #00B7FF
+	color #00B7FF
 
-/* M A I N  E L E M E N T S */
+header_height = 35px
+the_beige = #f3f0df
+the_green = #0eb521
+
+/* H E A D E R	*/
+#header
+	position absolute
+	top 0
+	right 0
+	left 0
+	height header_height
+	border-bottom 2px solid the_green
+	box-shadow 0px 1px 12px #e2e2e2
+	background-color #fffdf1
+
+#header img
+	vertical-align middle
+	height 100%
+
+#header .page-title
+	font-size 2em
+	font-weight bold
+	vertical-align middle
+
+/* M A I N	E L E M E N T S */
 #main-wrapper
-  max-width 960px
+	max-width 960px
+	margin header_height*1.25 10px 10px 10px
 
 .right-rail
-  width 33.33%
-  height auto
-  min-height 100px
-  float right
+	width 33.33%
+	height auto
+	min-height 100px
+	float right
 
 .main-content
-  width 66.66%
-  height auto
-  display inline-block
-  border-right 1px solid #e5e5e5
-  background-color #fff
-  padding-right 30px
+	width 66.66%
+	height auto
+	display inline-block
+	border-right 1px solid #e5e5e5
+	background-color #fff
+	padding-right 30px
 
 h1.headline
-  font-size 2.4em
-  margin-bottom 10px
+	font-size 2.4em
+	margin-bottom 10px
 
 h2.deck
-  font-weight normal
-  font-size 1.3em
+	font-weight normal
+	font-size 1.3em
 
 .section-hed
-  font-size 2.3em
-  margin-bottom 5px
+	font-size 2.3em
+	margin-bottom 5px
 
-/* R I G H T  R A I L */
+/* R I G H T	R A I L */
 .admin-container
-  font-size 1.4em
-  text-align center
-  margin 10px 0 20px 0
+	font-size 1.4em
+	text-align center
+	margin 10px 0 20px 0
 .admin-item
-  display inline-block
-  margin 5px
+	display inline-block
+	margin 5px
 .admin-item:hover
-  text-decoration underline
-  cursor pointer
+	text-decoration underline
+	cursor pointer
 
 .rail-section
-  margin-bottom 25px
-  position relative
-  left -1px
+	margin-bottom 25px
+	position relative
+	left -1px
 .rail-section-title
-  font-size 1.4em
-  display inline-block
-  padding 7px 26px 7px 7px
-  margin-bottom 3px
+	font-size 1.4em
+	display inline-block
+	padding 7px 26px 7px 7px
+	margin-bottom 3px
 .rail-section-title:hover
-  text-decoration underline
-  cursor pointer
+	text-decoration underline
+	cursor pointer
 .rail-section-title.active
-  background-color #fff
-  box-shadow 4px 0px 5px #d6d6d6;
+	background-color #fff
+	box-shadow 4px 0px 5px #d6d6d6
+	color the_green
 .rail-preview-items
-  padding-left 8px
+	padding-left 8px
 
 
-/* C O N T E N T  S E C T I O N S */
+/* C O N T E N T	S E C T I O N S */
 .content-switcher
-  width 100%
+	width 100%
 
 .content-section
-  display none
-  width 100%
+	display none
+	width 100%
 
 /* dashboard */
 .timeline-wrapper
-  width 100%
+	width 100%
 
 .timeline-graph
-  width 100%
-  height 100px
+	width 100%
+	height 200px
+	margin-bottom 25px
 
-/* E V E N T  R I V E R */
+.ST-canvas
+	font 10px sans-serif
+
+.ST-line
+	fill none
+	stroke steelblue
+	stroke-width 1.5px
+
+.ST-axis, text
+	cursor default
+	-webkit-touch-callout none
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select -moz-none
+	-ms-user-select none
+	user-select none
+
+.ST-axis path,
+.ST-axis line 
+	fill none
+	stroke #000
+	shape-rendering crispEdges
+
+.ST-brush .extent 
+	stroke #fff
+	fill-opacity .125
+	shape-rendering crispEdges
+
+.ST-point circle
+	fill none
+	stroke #444
+
+.ST-point
+	pointer-events: none
+
+
+/* E V E N T	R I V E R */
 .tag-filters
-  margin-bottom 20px
+	margin-bottom 20px
 .tag-filters .pointer
-  font-size 1.1em
-  margin-bottom 2px
+	font-size 1.1em
+	margin-bottom 2px
 .tag
-  display inline-block
-  font-size: 1.1em
-  padding 2px 4px
-  color #ccc
-  margin-right 5px
-  border-radius 3px
-  background-color #666
-  border 1px solid #616161
+	display inline-block
+	font-size: 1.1em
+	padding 2px 4px
+	color #ccc
+	margin-right 5px
+	border-radius 3px
+	background-color #666
+	border 1px solid #616161
 
 .tag-filter:hover
-  cursor pointer
-  text-decoration underline
+	cursor pointer
+	text-decoration underline
 
 .event-item-wrapper
-  border-left 3px solid #c3412c
-  padding-left 5px
+	border-left 3px solid #c3412c
+	padding-left 5px
 
 .event-item-title
-  font-size 1.5em
-  margin-bottom 10px
+	font-size 1.5em
+	margin-bottom 10px
 
 .event-item-desc
-  font-size 1.2em
-  margin-bottom 10px
+	font-size 1.2em
+	margin-bottom 10px
 
 .event-item-tag.tag
-  font-size 1em
-  padding: 1px 3px
+	font-size 1em
+	padding: 1px 3px
 
-/* F L A G S  */
+/* F L A G S	*/
 .shown
-  display block
+	display block

@@ -13,13 +13,36 @@ ul {
 }
 body {
   font: 62.5% "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
 }
 a {
   color: #00b7ff;
 }
-/* M A I N  E L E M E N T S */
+/* H E A D E R	*/
+#header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 35px;
+  border-bottom: 2px solid #0eb521;
+  -webkit-box-shadow: 0px 1px 12px #e2e2e2;
+  box-shadow: 0px 1px 12px #e2e2e2;
+  background-color: #fffdf1;
+}
+#header img {
+  vertical-align: middle;
+  height: 100%;
+}
+#header .page-title {
+  font-size: 2em;
+  font-weight: bold;
+  vertical-align: middle;
+}
+/* M A I N	E L E M E N T S */
 #main-wrapper {
   max-width: 960px;
+  margin: 43.75px 10px 10px 10px;
 }
 .right-rail {
   width: 33.33%;
@@ -47,7 +70,7 @@ h2.deck {
   font-size: 2.3em;
   margin-bottom: 5px;
 }
-/* R I G H T  R A I L */
+/* R I G H T	R A I L */
 .admin-container {
   font-size: 1.4em;
   text-align: center;
@@ -80,11 +103,12 @@ h2.deck {
   background-color: #fff;
   -webkit-box-shadow: 4px 0px 5px #d6d6d6;
   box-shadow: 4px 0px 5px #d6d6d6;
+  color: #0eb521;
 }
 .rail-preview-items {
   padding-left: 8px;
 }
-/* C O N T E N T  S E C T I O N S */
+/* C O N T E N T	S E C T I O N S */
 .content-switcher {
   width: 100%;
 }
@@ -98,9 +122,49 @@ h2.deck {
 }
 .timeline-graph {
   width: 100%;
-  height: 100px;
+  height: 200px;
+  margin-bottom: 25px;
 }
-/* E V E N T  R I V E R */
+.ST-canvas {
+  font: 10px sans-serif;
+}
+.ST-line {
+  fill: none;
+  stroke: #4682b4;
+  stroke-width: 1.5px;
+}
+.ST-axis,
+text {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.ST-axis path,
+.ST-axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.ST-brush .extent {
+  stroke: #fff;
+  fill-opacity: 0.125;
+  shape-rendering: crispEdges;
+}
+.ST-point circle {
+  fill: none;
+  stroke: #444;
+}
+.ST-point {
+  pointer-events: none;
+}
+/* E V E N T	R I V E R */
 .tag-filters {
   margin-bottom: 20px;
 }
@@ -139,7 +203,7 @@ h2.deck {
   font-size: 1em;
   padding: 1px 3px;
 }
-/* F L A G S  */
+/* F L A G S	*/
 .shown {
   display: block;
 }
