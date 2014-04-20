@@ -1,9 +1,10 @@
 doctype html
 html
-  head
-    title NewsLynx | 
-      = title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
-    block scripts
+	head
+		title NewsLynx | 
+			= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		include furniture/header
+		block content
+		block scripts
