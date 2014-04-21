@@ -44,6 +44,7 @@
 			.call(spottedTail()
 				.x(function(d) { return formatDate.parse(d.date); })
 				.y(function(d) { return +d.count; })
+				.margin({right: 20})
 				.legend(legend))
 	}
 
