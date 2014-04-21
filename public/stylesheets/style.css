@@ -134,7 +134,7 @@ h2.deck {
   stroke-width: 1.5px;
 }
 .ST-axis,
-text {
+.ST-canvas text {
   cursor: default;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -161,7 +161,9 @@ text {
   fill: none;
   stroke: #444;
 }
-.ST-point {
+.ST-point,
+.ST-canvas path,
+.ST-canvas line {
   pointer-events: none;
 }
 /* E V E N T	R I V E R */
