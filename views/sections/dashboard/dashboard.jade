@@ -7,8 +7,9 @@
 	.section-hed Events
 	ul.tag-filters
 		li.pointer Filter by tag
-		li.tag-filter.tag Major event
-		li.tag-filter.tag Social media
-		li.tag-filter.tag Discussion
+		each tag in tags
+			li.tag-filter.tag.selected(data-tag="#{tag}")
+				= tag
 	ul.event-river-container
-		include event-item
+		each item in events
+			include event-item

@@ -26,7 +26,6 @@ the_green = #0eb521
 	left 0
 	height header_height
 	border-bottom 2px solid the_green
-	box-shadow 0px 1px 12px #e2e2e2
 	background-color #fffdf1
 
 #header img
@@ -41,7 +40,7 @@ the_green = #0eb521
 /* M A I N	E L E M E N T S */
 #main-wrapper
 	max-width 960px
-	margin header_height*1.25 10px 10px 10px
+	margin header_height 10px 10px 10px
 
 .right-rail
 	width 33.33%
@@ -56,10 +55,12 @@ the_green = #0eb521
 	border-right 1px solid #e5e5e5
 	background-color #fff
 	padding-right 30px
+	box-shadow 13px 0px 14px -16px #CCC
 
 h1.headline
 	font-size 2.4em
 	margin-bottom 10px
+	// border-bottom 3px solid #000
 
 h2.deck
 	font-weight normal
@@ -90,13 +91,18 @@ h2.deck
 	display inline-block
 	padding 7px 26px 7px 7px
 	margin-bottom 3px
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 .rail-section-title:hover
 	text-decoration underline
 	cursor pointer
 .rail-section-title.active
 	background-color #fff
-	box-shadow 4px 0px 5px #d6d6d6
+	box-shadow 4px 0px 5px -1px #D6D6D6
 	color the_green
+.rail-section-title.active:hover
+	cursor default
+	text-decoration none
 .rail-preview-items
 	padding-left 8px
 
@@ -118,48 +124,14 @@ h2.deck
 	height 200px
 	margin-bottom 25px
 
-.ST-canvas
-	font 10px sans-serif
-
-.ST-line
-	fill none
-	stroke steelblue
-	stroke-width 1.5px
-
-.ST-axis, .ST-canvas text
-	cursor default
-	-webkit-touch-callout none
-	-webkit-user-select none
-	-khtml-user-select none
-	-moz-user-select -moz-none
-	-ms-user-select none
-	user-select none
-
-.ST-axis path,
-.ST-axis line 
-	fill none
-	stroke #000
-	shape-rendering crispEdges
-
-.ST-brush .extent 
-	stroke #fff
-	fill-opacity .125
-	shape-rendering crispEdges
-
-.ST-point circle
-	fill none
-	stroke #444
-
-.ST-point, .ST-canvas path, .ST-canvas line
-	pointer-events: none
-
 
 /* E V E N T	R I V E R */
 .tag-filters
 	margin-bottom 20px
 .tag-filters .pointer
-	font-size 1.1em
+	font-size 1em
 	margin-bottom 2px
+	text-transform uppercase
 .tag
 	display inline-block
 	font-size: 1.1em
@@ -169,14 +141,23 @@ h2.deck
 	border-radius 3px
 	background-color #666
 	border 1px solid #616161
-
+.tag-filter
+	user-select none
+	opacity .4
+.tag-filter.selected
+	opacity 1
 .tag-filter:hover
 	cursor pointer
 	text-decoration underline
 
 .event-item-wrapper
 	border-left 3px solid #c3412c
-	padding-left 5px
+	padding 5px
+	margin-bottom 10px
+	box-shadow 0 0 4px #ccc
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+
 
 .event-item-title
 	font-size 1.5em
@@ -193,3 +174,32 @@ h2.deck
 /* F L A G S	*/
 .shown
 	display block
+
+/* user styles */
+social_color = #66c2a5
+major_impact_color = #fc8d62
+citation_color = #8da0cb
+darken_border = 30%
+darken_color = 80%
+
+.tag[data-tag*="social"]
+	background-color social_color
+	border-color darken(social_color, darken_border)
+	color darken(social_color, darken_color)
+.ST-note[data-note-type*="social"] line
+	stroke social_color
+
+.tag[data-tag*="major-event"]
+	background-color major_impact_color
+	border-color darken(major_impact_color, darken_border)
+	color darken(social_color, darken_color)
+.ST-note[data-note-type*="major-event"] line
+	stroke major_impact_color
+
+.tag[data-tag*="citation"]
+	background-color citation_color
+	border-color darken(citation_color, darken_border)
+	color darken(social_color, darken_color)
+.ST-note[data-note-type*="citation"] line
+	stroke citation_color
+

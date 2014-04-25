@@ -1,0 +1,93 @@
+@import 'nib'
+
+#ST-chart
+	position relative
+	width 100%
+	max-width 500px
+	height 200px
+
+.ST-canvas 
+	font 10px sans-serif
+
+.ST-canvas .ST-line 
+	fill none
+	stroke steelblue
+	stroke-width 1.5px
+
+.ST-canvas .ST-axis, text
+	cursor default
+	-webkit-touch-callout none
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select -moz-none
+	-ms-user-select none
+	user-select none
+
+.ST-canvas .ST-axis path,
+.ST-canvas .ST-axis line 
+	fill none
+	stroke #000
+	shape-rendering crispEdges
+
+.ST-canvas .ST-brush .extent 
+	stroke #fff
+	fill-opacity .125
+	shape-rendering crispEdges
+
+.ST-canvas .ST-point, .ST-canvas path, .ST-canvas line
+	pointer-events: none
+
+.ST-canvas .ST-point circle 
+	fill: none
+	stroke: #444
+
+.ST-note line
+	stroke: #ccc
+	stroke-width: 1px
+
+.ST-note rect
+	fill: none
+	pointer-events: all
+
+.ST-note.ST-active line
+	stroke: #000
+
+.ST-note.ST-active text
+	display: block !important
+
+.ST-note-btns
+	position: absolute
+	right: 10px
+	bottom: 0
+
+
+/* User styles */
+// .ST-note[data-note-type*="impact-event"] line
+// 	stroke #0f0
+
+// .ST-note[data-note-type*="social-media-event"] line
+// 	stroke #ee3224
+
+btn_width = 50
+.ST-note-btns
+	width (btn_width)px
+	
+#ST-chart button
+	background transparent
+	border none
+	float right
+	cursor pointer
+	width (btn_width)px
+	padding 0
+	margin 5px 0 0 0
+	border 1px solid #ccc
+	text-shadow: 0 2px 1px rgba(0,0,0,.3)
+	border-radius: .5em;
+	box-shadow: 0 2px 2px rgba(0,0,0,.15)
+	background-color #f8f8f8
+
+#ST-chart button:hover
+	box-shadow: 0 2px 2px rgba(0,0,0,.25)
+
+#ST-chart button:active
+	background-color #ededed

@@ -1,6 +1,8 @@
-li.event-item-wrapper
-	.event-item-title event 1
-	.event-item-desc The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf.
+- var tag_strings = item.tags.join('|')
+li.event-item-wrapper(data-tag="#{tag_strings}")
+	.event-item-title= item.title
+	.event-item-desc= item.description
 	ul.event-item-tags
-		li.event-item-tag.tag Social tag
-		li.event-item-tag.tag Discussion
+		each tag in item.tags
+			li.event-item-tag.tag(data-tag="#{tag}")
+				= tag
