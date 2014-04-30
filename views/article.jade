@@ -1,11 +1,10 @@
 extends layout
 
+
 block content
 	#main-wrapper
+		include nav/breadcrumbs
 		nav.right-rail
-			ul.admin-container
-				li.admin-item(data-icon="user") twilkinson
-				li.admin-item(data-icon="logout") logout
 			ul.rail-sections
 				li.rail-section(data-section="dashboard")
 					.rail-section-title.active Article dashboard
