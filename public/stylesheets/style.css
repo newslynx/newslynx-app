@@ -40,7 +40,11 @@ a {
 /* M A I N	E L E M E N T S */
 #main-wrapper {
   max-width: 960px;
+<<<<<<< HEAD
   margin: 35px auto;
+=======
+  margin: 35px 10px 10px 10px;
+>>>>>>> 7b9c9638bc6bab36facb33833b691d417e06b69a
 }
 .right-rail {
   width: 33.33%;
