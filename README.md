@@ -19,3 +19,10 @@ The sample article page is here <http://localhost:3000/article>
 ## Some code styles
 
 camelCase for function names, object keys and varibles passed to functions. everything else gets underscores.
+
+## New wireframe
+
+Organization page
+	* list of articles
+	* recipe builder
+	* 
