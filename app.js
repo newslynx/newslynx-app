@@ -8,6 +8,7 @@ var stylus = require('stylus');
 var nib = require('nib');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var models = require('./models');
 
 var app = express();
 
