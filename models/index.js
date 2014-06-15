@@ -1,6 +1,5 @@
-var url = require('url');
-var sequelize = require('sequelize');
-var scrypt = require('scrypt');
+var Sequelize = require('sequelize');
+var utils = require('../utils');
 
 /*
 Because all of our analyses are centered around domains and URLs, it
@@ -11,13 +10,17 @@ disallow this, and if it ever becomes necessary, allow the creation of
 predecessor and successor organizations that are logically linked.
 */
 
-var exports.Organization = sequelize.define('Article', {
+sequelize = new Sequelize('passport', null, null, {
+    dialect: "sqlite", 
+});
+
+var Organization = sequelize.define('Organization', {
   domain: {
     type: Sequelize.TEXT, 
     primaryKey: true, 
     set: function(value) {
-      return url.parse(value).hostname;
-    }, 
+      this.setDataValue('domain', utils.url.parseDomain(value));
+    }
   }, 
   shortURL: {
     type: Sequelize.TEXT, 
@@ -28,7 +31,8 @@ var exports.Organization = sequelize.define('Article', {
   password: {
     type: Sequelize.TEXT, 
     set: function(value) {
-      return scrypt.hash(value, {});
+      hash = utils.security.hash(value);
+      this.setDataValue('password', hash);
     }
   }, 
   apiKey: {
@@ -37,7 +41,7 @@ var exports.Organization = sequelize.define('Article', {
 }, {
   instanceMethods: {
     verifyPassword: function(attempt) {
-      if (scrypt.verify(this.password, attempt)) {
+      if (utils.security.verify(this.password, attempt)) {
         return this;
       } else {
         return false;
@@ -46,17 +50,26 @@ var exports.Organization = sequelize.define('Article', {
   },
   classMethods: {
     verify: function(domain, password, callback) {
-      domain = url.parse(domain).hostname;
-      Organization.findOne({where: {domain: domain}})
-        .error(function(err){
-          callback(false);
-        })
+      domain = Organization.parseDomain(domain);
+      Organization.find({where: {domain: domain}})
         .success(function(organization){
-          callback(this.verifyPassword());
-        })
-      
+          if (organization) {
+            callback(null, organization.verifyPassword(password));
+          } else {
+            callback(null, false);
+          }
+        }) 
+    }, 
+    /* passport.js helper functions */
+    serializeUser: function(organization, done) {
+      done(null, organization.domain);
+    },
+    deserializeUser: function(domain, done) {
+      Organization.find({where: {domain: domain}}).success(function(organization) {
+        done(null, organization);
+      });
     }
-  }, 
+  }
 });
 
 
