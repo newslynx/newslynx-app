@@ -2,6 +2,25 @@ var express = require('express');
 var router = express.Router();
 var app = require('../app');
 var fs = require('fs');
+var passport = require('passport');
+
+router.get('/login', function(req, res){
+    res.render('login', {});
+})
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/', 
+    failureRedirect: '/login', 
+}));
+
+/* 
+Eventually, we will want to allow users to browse NewsLynx both 
+as a logged-in user, or anonymously. Both groups would simply see
+different information. However, for the time being, any route 
+can be protected using `passport.authenticate('basic')` as a 
+middleware.
+*/
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
