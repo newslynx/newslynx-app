@@ -73,7 +73,7 @@ var Organization = sequelize.define('Organization', {
 });
 
 
-var exports.Article = sequelize.define('Article', {
+var Article = sequelize.define('Article', {
   url: {
     type: Sequelize.TEXT, 
     primaryKey: true, 
@@ -82,3 +82,7 @@ var exports.Article = sequelize.define('Article', {
     type: Sequelize.TEXT, 
   }
 });
+
+
+exports.Organization = Organization;
+exports.Article = Article;

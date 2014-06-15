@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var app = require('../app');
 var fs = require('fs');
-var passport = require('./authentication');
+var passport = require('passport');
 
 router.get('/login', function(req, res){
     res.render('login', {});

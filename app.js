@@ -1,9 +1,12 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var stylus = require('stylus');
 var nib = require('nib');
 var routes = require('./routes/index');
@@ -16,11 +19,20 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// auth setup
+passport.use(new LocalStrategy(models.Organization.verify));
+passport.serializeUser(models.Organization.serializeUser);
+passport.deserializeUser(models.Organization.deserializeUser);
+
+// middleware
 app.use(favicon());
 app.use(logger('dev'));
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
-app.use(cookieParser());
+app.use(session({secret: 'Belgian waffles'}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(stylus.middleware({
   src: path.join(__dirname, 'public'),
   compile: function(str, path){
@@ -31,6 +43,11 @@ app.use(stylus.middleware({
   }
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+var authenticate = passport.authenticate('local', {
+    successRedirect: '/', 
+    failureRedirect: '/login', 
+});
 
 app.use('/', routes);
 app.use('/users', users);
