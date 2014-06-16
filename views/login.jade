@@ -1,11 +1,18 @@
 extends layout
 
-form(action='/login', method='POST')
-    div
-        label Username:
-        input(type='text', name='username')
-    div
-        label Password: 
-        input(type='password', name='password')
-    div
-        input(type='submit', value='Log In')
+block drawer
+	.division-title Log-in
+	p Sign in here with your NewsLynx newsroom credentials.
+	p If you'd like an account, email us at 
+		a(href="mailto:signup@newslynx.org") signup@newslynx.org.
+
+block content 
+	form(action='/login', method='POST')
+			div
+				label Username:
+				input(type='text', name='username')
+			div
+				label Password: 
+				input(type='password', name='password')
+			div
+				input(type='submit', value='Log In')

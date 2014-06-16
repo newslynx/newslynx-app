@@ -11,7 +11,7 @@ If not already installed:
 
 ````bash
 npm install
-nodemon --debug ./bin/www
+nodemon --debug ./bin/www -e jade,js,styl
 ````
 
 The sample article page is here <http://localhost:3000/article>

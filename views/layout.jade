@@ -3,9 +3,13 @@ html
 	head
 		title NewsLynx | 
 			= title
+		link(rel='stylesheet', href='/stylesheets/font-awesome/css/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-		link(rel='stylesheet', href='/stylesheets/spotted-tail.css')
-	body
-		include furniture/header
-		block content
+		block css
+	body(data-section="#{page}")
+		include page-divisions/left-rail/index.jade
+		#drawer
+			block drawer
+		#content
+			block content
 		block scripts

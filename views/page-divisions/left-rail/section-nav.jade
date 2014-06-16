@@ -1,0 +1,49 @@
+mixin about
+	li.section.active(data-section="about")
+		a(href="/about") About
+			
+mixin approval-river
+	li.section.active(data-section="approval-river")
+		a(href="/approval-river") Approval river
+			
+mixin articles
+	li.section.active(data-section="articles")
+		a(href="/articles") Articles
+		.section-options
+
+mixin series
+	li.section.active(data-section="series")
+		a(href="/series") Series
+			
+mixin events
+	li.section.active(data-section="events")
+		a(href="/events") Events
+		
+nav
+	ul.main-sections
+		if (page == 'about')
+			mixin about
+		else	
+			li.section(data-section="about")
+				a(href="/about") About
+		if (page == 'approval-river')
+			mixin approval-river
+		else	
+			li.section(data-section="approval-river")
+				a(href="/approval-river") Approval river
+		if (page == 'articles')
+			mixin articles
+		else	
+			li.section(data-section="articles")
+				a(href="/articles") Articles
+		if (page == 'series')
+			mixin series
+		else	
+			li.section(data-section="series")
+				a(href="/series") Series
+		if (page == 'events')
+			mixin events
+		else	
+			li.section(data-section="events")
+				a(href="/events") Events
+

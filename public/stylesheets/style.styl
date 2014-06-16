@@ -4,71 +4,180 @@
 	box-sizing border-box
 html
 	font-size 16px
+body
+	font 62.5% "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
+	margin 0
+html,body
+	height 100%
+a
+	color #0092ce
+	text-decoration none
+a:hover
+	color #0082b6
+	text-decoration underline
 ul
 	list-style none
 	margin 0
 	padding 0
-body
-	font 62.5% "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
-	margin 0
-a
-	color #00B7FF
 
+// Widths
 page_width = 960
-header_height = 35
+leftrail_width = 250
+drawer_width = 275
+content_width = 100
+
+// Colors
+dummy = #fc0
 the_beige = #f3f0df
 the_green = #0eb521
+leftrail_gray = #393939
+// Page colors
+login = #d6ccdf
+about = #e3943b
+approval_river = #12b7dd
+articles = #3ec173
+series = #b980c2
+events = #c13d3d
+
+/* M A I N  P A G E  E L E M E N T S  */
+#left-rail,#drawer, #content
+	display inline-block
+	position relative
+	vertical-align top
+	height 100%
+
+#drawer,#content
+	padding 15px
+#left-rail
+	width (leftrail_width)px
+	background-color leftrail_gray
+	// box-shadow 0px 0px 6px #000
+	z-index 9
+#drawer
+	width (drawer_width)px
+	background-color dummy
+	border-right 1px solid darken(dummy, 10%)
+	// box-shadow 0px 0px 8px darken(dummy, 10%)
+	z-index 8
+#content
+	width (content_width)px
+/* end main page elements */
 
 /* H E A D E R	*/
-#header-container
-	position absolute
-	top 0
-	right 0
-	left 0
-	height (header_height)px
-	border-bottom 1px solid #bbb
-	background-color #fffdf1
-	background-image linear-gradient(#FFFDF1, #f2eac7)
-
-#header-container img
-	vertical-align middle
+#left-rail
 	height 100%
+	color #fff
+	overflow-x hidden
+	#header-container
+		height 50px
+		width 100%
+		background-color black
+		// box-shadow 0 6px 12px #000
+		padding 3px 0 0 5px
+		a
+			text-decoration none
+			color #f2f2f2
+		a:hover h1
+			text-decoration underline
+		img, h1.page-title
+			position relative
+		img
+			height 45px
+			width (@height)px
+		h1.page-title
+			top 20%
+			font-size 2.5em
+			margin 0
+			padding 0
+			font-weight 200
+			display inline-block
+			vertical-align top
+		.settings
+			display inline-block
+			position relative
+			vertical-align top
+			top 20px
+			left 40px
+			a
+				font-size 1.4em
+			a:hover
+				text-decoration underline
 
-#header-container .page-title
-	font-size 2em
-	font-weight bold
-	vertical-align middle
+/* L E F T  R A I L */
+.main-sections
+	margin-top 10px
+	.section a
+		font-size 2em
+		font-weight 100
+		padding 10px 0px 10px 25px
+		color #f2f2f2
+		display block
+		text-decoration none
+	.section a:hover
+		cursor pointer
+		background-color #666
+	.section.active
+		text-shadow 0 0px 12px #000
+	.section.active:hover
+		cursor default
+/* end left rails */
+/* S E C T I O N  S P E C I F I C  S T Y L E S  */
+body[data-section="about"]
+	.section.active a
+		background-color about
+	#drawer
+		background-color tint(about, 90%)
+		border-right-color tint(about, 25%)
+body[data-section="approval-river"] 
+	.section.active a
+		background-color approval_river
+	#drawer
+		background-color tint(approval_river, 90%)
+		border-right-color tint(approval_river, 25%)
+body[data-section="articles"]
+	#left-rail
+		// box-shadow 0px 0px 6px darken(articles, 35%)
+	.section.active a
+		background-color articles
+	#drawer
+		background-color tint(articles, 90%)
+		border-right-color tint(articles, 25%)
+		// box-shadow 0px 0px 11px articles
 
-#header-items
-	position relative
-	max-width (page_width)px
-	width 100%
-	height 100%
-	margin 0 auto
+body[data-section="series"] 
+	.section.active a
+		background-color series
+	#drawer
+		background-color tint(series, 85%)
+		border-right-color tint(series, 25%)
+body[data-section="events"] 
+	.section.active a
+		background-color events
+	#drawer
+		background-color tint(events, 85%)
+		border-right-color tint(events, 60%)
+body[data-section="login"] 
+	#drawer
+		background-color login
+		border-right-color darken(login, 25%)
+		// box-shadow 0px 0px 11px login
+/* end section specific styles */
+/* D R A W E R */
+#drawer
+	p
+		font-size 1.3em
+		line-height 1.3em
+
+/* T E X T  S T Y L E S  */
+.division-title
+	font-size 2.75em
+	border-bottom 1px solid #a0a0a0
+label
+	font-size 1.2em
+input
+	margin-bottom 5px
 
 /* M A I N	E L E M E N T S */
-#main-wrapper
-	margin-top (header_height)px
-	margin-left auto
-	margin-right auto
-	max-width (page_width)px
-
-#breadcrumbs
-	padding-top (header_height/1.5)px
-	font-size 1.8em
-#breadcrumbs li
-	display inline
-#breadcrumbs li span
-	margin 0 5px
-#breadcrumbs li.current
-	font-weight bold
-
-.right-rail
-	width 33.33%
-	height auto
-	min-height 100px
-	float right
-
 .main-content
 	width 66.66%
 	height auto
@@ -76,12 +185,11 @@ the_green = #0eb521
 	border-right 1px solid #e5e5e5
 	background-color #fff
 	padding-right 30px
-	box-shadow 13px 0px 14px -16px #CCC
+	// box-shadow 0 0 13px #1e1e1e
 
 h1.headline
 	font-size 2.4em
 	margin 0 0 10px 0
-	margin-top (header_height/1.5)px // weird hack for stylus, which is putting a space before `px` if margin-top decared in shorthand with a variable
 
 h2.deck
 	font-weight normal
@@ -92,19 +200,19 @@ h2.deck
 	margin-bottom 5px
 
 /* R I G H T	R A I L */
-.admin-container
-	font-size 1.4em
-	text-align center
-	height 100%
-	top 12%
-	position absolute
-	right 15px
-.admin-item
-	display inline-block
-	margin 5px
-.admin-item:hover
-	text-decoration underline
-	cursor pointer
+// .admin-container
+// 	font-size 1.4em
+// 	text-align right
+// 	height 100%
+// 	top 12%
+// 	position absolute
+// 	right 15px
+// .admin-item
+// 	display inline-block
+// 	margin 5px
+// .admin-item:hover
+// 	text-decoration underline
+// 	cursor pointer
 
 .rail-sections
 	margin-top 25px
@@ -124,7 +232,7 @@ h2.deck
 	cursor pointer
 .rail-section-title.active
 	background-color #fff
-	box-shadow 4px 0px 5px -1px #D6D6D6
+	// box-shadow 4px 0px 5px -1px #D6D6D6
 	color the_green
 .rail-section-title.active:hover
 	cursor default
@@ -180,7 +288,7 @@ h2.deck
 	border-left 3px solid #c3412c
 	padding 5px
 	margin-bottom 10px
-	box-shadow 0 0 4px #ccc
+	// box-shadow 0 0 4px #ccc
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 

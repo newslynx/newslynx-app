@@ -34,8 +34,9 @@ app.use(session({secret: 'Belgian waffles'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(stylus.middleware({
-  src: path.join(__dirname, 'public'),
+  src: path.join(__dirname, '/public'),
   compile: function(str, path){
+  	console.log('Compiling styl...');
     return stylus(str)
       .set('filename', path)
       .set('compress', false)
