@@ -20,6 +20,9 @@ ul
 	margin 0
 	padding 0
 
+input[type="search"]
+	appearance searchfield
+
 // Widths
 page_width = 960
 leftrail_width = 250
@@ -40,6 +43,10 @@ series = #b980c2
 events = #c13d3d
 
 /* M A I N  P A G E  E L E M E N T S  */
+#main-wrapper
+	width 100%
+	height 100%
+	min-width 960px //TK
 #left-rail,#drawer, #content
 	display inline-block
 	position relative
@@ -106,21 +113,70 @@ events = #c13d3d
 /* L E F T  R A I L */
 .main-sections
 	margin-top 10px
-	.section a
-		font-size 2em
-		font-weight 100
-		padding 10px 0px 10px 25px
-		color #f2f2f2
-		display block
-		text-decoration none
-	.section a:hover
-		cursor pointer
-		background-color #666
-	.section.active
+	.section.active a
 		text-shadow 0 0px 12px #000
 	.section.active:hover
 		cursor default
+	.section
+		.option-container
+			margin 5px 0 12px
+		input, select
+			width 100%
+		select
+			height 26px
+			padding-top 3px
+		.section-options, a
+			padding 10px 25px
+		a
+			font-size 2em
+			font-weight 100
+			color #f2f2f2
+			display block
+			text-decoration none
+		a:hover
+			cursor pointer
+			background-color #666
+
+.section-options
+	background-color #7c7c7c
+	color #fff
+	input[type="search"]
+		height 23px
+	.option-title
+		font-size 1.1em
+		text-transform uppercase
+		letter-spacing 1px
+		margin-bottom 4px
+		padding-bottom 4px
+		border-bottom 1px solid #A1A1A1
+
+
+#tag-list
+	.tag-wrapper
+		padding-bottom 4px
+	.tag-wrapper:hover
+		cursor pointer
+	.tag-wrapper:hover .tag-container
+		background-color #A1A1A1
+	.tag-container
+		position relative
+		top 2px
+		padding 4px 8px
+		border-left 4px solid #0cf
+		border-right-top-radius 3px
+		border-right-bottom-radius 3px
+		user-select none
+	.tag-wrapper.active .tag-container
+		background-color #0cf
+		border-left-width 0
+	.tag-name,.tag-count
+		display inline-block
+		font-size 1.1em
+	.tag-count
+		float right
+
 /* end left rails */
+
 /* S E C T I O N  S P E C I F I C  S T Y L E S  */
 body[data-section="about"]
 	.section.active a
@@ -162,11 +218,13 @@ body[data-section="login"]
 		border-right-color darken(login, 25%)
 		// box-shadow 0px 0px 11px login
 /* end section specific styles */
+
 /* D R A W E R */
 #drawer
 	p
 		font-size 1.3em
 		line-height 1.3em
+/* end drawer */
 
 /* T E X T  S T Y L E S  */
 .division-title
@@ -176,28 +234,28 @@ label
 	font-size 1.2em
 input
 	margin-bottom 5px
+/* end text styles */
+// /* M A I N	E L E M E N T S */
+// .main-content
+// 	width 66.66%
+// 	height auto
+// 	display inline-block
+// 	border-right 1px solid #e5e5e5
+// 	background-color #fff
+// 	padding-right 30px
+// 	// box-shadow 0 0 13px #1e1e1e
 
-/* M A I N	E L E M E N T S */
-.main-content
-	width 66.66%
-	height auto
-	display inline-block
-	border-right 1px solid #e5e5e5
-	background-color #fff
-	padding-right 30px
-	// box-shadow 0 0 13px #1e1e1e
+// h1.headline
+// 	font-size 2.4em
+// 	margin 0 0 10px 0
 
-h1.headline
-	font-size 2.4em
-	margin 0 0 10px 0
+// h2.deck
+// 	font-weight normal
+// 	font-size 1.3em
 
-h2.deck
-	font-weight normal
-	font-size 1.3em
-
-.section-hed
-	font-size 2.3em
-	margin-bottom 5px
+// .section-hed
+// 	font-size 2.3em
+// 	margin-bottom 5px
 
 /* R I G H T	R A I L */
 // .admin-container
@@ -214,100 +272,100 @@ h2.deck
 // 	text-decoration underline
 // 	cursor pointer
 
-.rail-sections
-	margin-top 25px
-.rail-section
-	margin-bottom 25px
-	position relative
-	left -1px
-.rail-section-title
-	font-size 1.4em
-	display inline-block
-	padding 7px 26px 7px 7px
-	margin-bottom 3px
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-.rail-section-title:hover
-	text-decoration underline
-	cursor pointer
-.rail-section-title.active
-	background-color #fff
-	// box-shadow 4px 0px 5px -1px #D6D6D6
-	color the_green
-.rail-section-title.active:hover
-	cursor default
-	text-decoration none
-.rail-preview-items
-	padding-left 8px
+// .rail-sections
+// 	margin-top 25px
+// .rail-section
+// 	margin-bottom 25px
+// 	position relative
+// 	left -1px
+// .rail-section-title
+// 	font-size 1.4em
+// 	display inline-block
+// 	padding 7px 26px 7px 7px
+// 	margin-bottom 3px
+// 	border-top-right-radius: 5px;
+// 	border-bottom-right-radius: 5px;
+// .rail-section-title:hover
+// 	text-decoration underline
+// 	cursor pointer
+// .rail-section-title.active
+// 	background-color #fff
+// 	// box-shadow 4px 0px 5px -1px #D6D6D6
+// 	color the_green
+// .rail-section-title.active:hover
+// 	cursor default
+// 	text-decoration none
+// .rail-preview-items
+// 	padding-left 8px
 
 
 /* C O N T E N T	S E C T I O N S */
-.content-switcher
-	width 100%
+// .content-switcher
+// 	width 100%
 
-.content-section
-	display none
-	width 100%
+// .content-section
+// 	display none
+// 	width 100%
 
-/* dashboard */
-.timeline-wrapper
-	width 100%
+// /* dashboard */
+// .timeline-wrapper
+// 	width 100%
 
-.timeline-graph
-	width 100%
-	height 200px
-	margin-bottom 25px
+// .timeline-graph
+// 	width 100%
+// 	height 200px
+// 	margin-bottom 25px
 
 
 /* E V E N T	R I V E R */
-.tag-filters
-	margin-bottom 20px
-.tag-filters .pointer
-	font-size 1em
-	margin-bottom 2px
-	text-transform uppercase
-.tag
-	display inline-block
-	font-size: 1.1em
-	padding 2px 4px
-	color #ccc
-	margin-right 5px
-	border-radius 3px
-	background-color #666
-	border 1px solid #616161
-.tag-filter
-	user-select none
-	opacity .4
-.tag-filter.selected
-	opacity 1
-.tag-filter:hover
-	cursor pointer
-	text-decoration underline
+// .tag-filters
+// 	margin-bottom 20px
+// .tag-filters .pointer
+// 	font-size 1em
+// 	margin-bottom 2px
+// 	text-transform uppercase
+// .tag
+// 	display inline-block
+// 	font-size: 1.1em
+// 	padding 2px 4px
+// 	color #ccc
+// 	margin-right 5px
+// 	border-radius 3px
+// 	background-color #666
+// 	border 1px solid #616161
+// .tag-filter
+// 	user-select none
+// 	opacity .4
+// .tag-filter.selected
+// 	opacity 1
+// .tag-filter:hover
+// 	cursor pointer
+// 	text-decoration underline
 
-.event-item-wrapper
-	border-left 3px solid #c3412c
-	padding 5px
-	margin-bottom 10px
-	// box-shadow 0 0 4px #ccc
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
+// .event-item-wrapper
+// 	border-left 3px solid #c3412c
+// 	padding 5px
+// 	margin-bottom 10px
+// 	// box-shadow 0 0 4px #ccc
+// 	border-top-right-radius: 5px;
+// 	border-bottom-right-radius: 5px;
 
 
-.event-item-title
-	font-size 1.5em
-	margin-bottom 10px
+// .event-item-title
+// 	font-size 1.5em
+// 	margin-bottom 10px
 
-.event-item-desc
-	font-size 1.2em
-	margin-bottom 10px
+// .event-item-desc
+// 	font-size 1.2em
+// 	margin-bottom 10px
 
-.event-item-tag.tag
-	font-size 1em
-	padding: 1px 3px
+// .event-item-tag.tag
+// 	font-size 1em
+// 	padding: 1px 3px
 
 /* F L A G S	*/
-.shown
-	display block
+// .shown
+// 	display block
 
 /* user styles */
 social_color = #66c2a5
@@ -316,24 +374,24 @@ citation_color = #8da0cb
 darken_border = 30%
 darken_color = 80%
 
-.tag[data-tag*="social"]
-	background-color social_color
-	border-color darken(social_color, darken_border)
-	color darken(social_color, darken_color)
-.ST-note[data-note-type*="social"] line
-	stroke social_color
+// .tag[data-tag*="social"]
+// 	background-color social_color
+// 	border-color darken(social_color, darken_border)
+// 	color darken(social_color, darken_color)
+// .ST-note[data-note-type*="social"] line
+// 	stroke social_color
 
-.tag[data-tag*="major-event"]
-	background-color major_impact_color
-	border-color darken(major_impact_color, darken_border)
-	color darken(social_color, darken_color)
-.ST-note[data-note-type*="major-event"] line
-	stroke major_impact_color
+// .tag[data-tag*="major-event"]
+// 	background-color major_impact_color
+// 	border-color darken(major_impact_color, darken_border)
+// 	color darken(social_color, darken_color)
+// .ST-note[data-note-type*="major-event"] line
+// 	stroke major_impact_color
 
-.tag[data-tag*="citation"]
-	background-color citation_color
-	border-color darken(citation_color, darken_border)
-	color darken(social_color, darken_color)
-.ST-note[data-note-type*="citation"] line
-	stroke citation_color
+// .tag[data-tag*="citation"]
+// 	background-color citation_color
+// 	border-color darken(citation_color, darken_border)
+// 	color darken(social_color, darken_color)
+// .ST-note[data-note-type*="citation"] line
+// 	stroke citation_color
 

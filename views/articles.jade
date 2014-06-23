@@ -1,2 +1,16 @@
 extends layout
 
+block drawer
+	.division-title Articles
+
+block templates
+	script(type="text/jst")#tag-templ
+		.tag-container
+			.tag-name <%= name %>
+			.tag-count <%= count %>
+
+block scripts
+	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	script(src="javascripts/thirdparty/underscore-min.js")
+	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/main.js")

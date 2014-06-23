@@ -10,6 +10,20 @@ mixin articles
 	li.section.active(data-section="articles")
 		a(href="/articles") Articles
 		.section-options
+			.option-container(data-type="search")
+				input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
+			.option-container(data-type="sort")
+				.option-title Sort by
+				select
+					option Publish date
+					option # impact events
+					option TKTK
+			.option-container(data-type="tags")
+				.option-title Tags
+				ul#tag-list
+				button.manage-tags Manage tags
+				button.new-tag New tag
+
 
 mixin series
 	li.section.active(data-section="series")

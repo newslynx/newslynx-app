@@ -7,9 +7,11 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		block css
 	body(data-section="#{page}")
-		include page-divisions/left-rail/index.jade
-		#drawer
-			block drawer
-		#content
-			block content
-		block scripts
+		#main-wrapper
+			include page-divisions/left-rail/index.jade
+			#drawer
+				block drawer
+			#content
+				block content
+			block templates
+			block scripts

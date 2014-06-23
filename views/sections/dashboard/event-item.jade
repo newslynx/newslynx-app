@@ -1,8 +1,0 @@
-- var tag_strings = item.tags.join('|')
-li.event-item-wrapper(data-tag="#{tag_strings}")
-	.event-item-title= item.title
-	.event-item-desc= item.description
-	ul.event-item-tags
-		each tag in item.tags
-			li.event-item-tag.tag(data-tag="#{tag}")
-				= tag

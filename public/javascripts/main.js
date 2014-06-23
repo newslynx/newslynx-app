@@ -1,98 +1,182 @@
 (function(){
 
-	var router;
+	var dummy_data =	 {
+		"user_name": "ProPalpatine",
+		"password": "",
+		"api_key":"",
+		"org_id": "propalpatine",
+		"homepage": "http://www.propalpatine.org/",
+		"short_urls": [
+			 "propalp.tn"
+		 ],
+		"rss_feeds": [
+			"http://feeds.propalpatine.org/propublica/main?format=xml"
+			],
+		"twitter_accounts": [
+			"ProPalpatine"
+			],
+		"twitter_staff_list": [
+			{"owner": "ProPalpatine", "slug": "propalpatine-staff"},
+			],
+		"facebook_accounts": [
+			"propalpatine"
+			],
+		"youtube_accounts": [
+			],
+		"tumblr_accounts": [
+			"propalpatine",
+			"jedissay"
+			],
+			"google_alerts": [	 
+			 "http://www.google.com/alerts/feeds/14752688329844321840/4874425503898649357",
+			],
+		"twitter_auth": "",
+		"facebook_auth": "",
+		"google_auth": "",
+		"tags": [
+			{ "name": "tag 1", "count": 5 },
+			{ "name": "tag 2", "count": 3 },
+			{ "name": "tag 3", "count": 1 },
+			{ "name": "tag 4", "count": 1 },
+			{ "name": "tag 5", "count": 0 }
+		]
+	}
 
-	function bindHandlers(){
-		// Rail section switching
-		$('.rail-section').on('click', function(){
-			var data_section = $(this).attr('data-section');
-			router.navigate(data_section, {trigger: true});
-		});
+	var templates = {
+		tagFactory: _.template( $('#tag-templ').html() )
+	}
 
-		// Tag event filtering
-		$('.tag-filter').on('click', function(){
-			$(this).toggleClass('selected');
-			checkEventFilters();
+	var selection = {
+		sorting: {
+
+		},
+		searching: {
+
+		},
+		filtering: {
+
+		}
+	}
+
+	var models = {
+		init: function(){
+			dummy_data.tags.forEach(function(tag){
+				var tag_model = new models.tags.Model({name: tag.name, count: tag.count});
+				models.tags.instances.push(tag_model);
+			})
+		},
+		tags: {
+			instances: [],
+			Model: Backbone.Model.extend({
+
+				defaults: {
+					enabled: false
+				},
+
+				toggle: function(){
+					this.set('enabled', !this.get('enabled'));
+				}
+
+			})
+		}
+	}
+
+	var collections = {
+		init: function(){
+			this.tags.instance = new this.tags.Collection(models.tags.instances);
+
+		},
+		tags: {
+			Collection: Backbone.Collection.extend({
+
+				model: models.tags.Tag,
+
+				getEnabled: function(){
+					return this.where({enabled: true});
+				}
+
+			})
+		}
+	}
+
+	var views = {
+		init: function(){
+			this.app = new this.App();
+		},
+		App: Backbone.View.extend({
+			el: '#main-wrapper',
+
+			initialize: function(){
+				this.$ = {} // Stashed jQuery selectors
+
+				// Cache these selectors
+				this.$.tagList = $('#tag-list');
+
+				// Listen for the change event on the collection.
+				// This is equivalent to listening on every one of the 
+				// model objects in the collection.
+				this.listenTo(collections.tags.instance, 'change:enabled', this.filterByTag);
+
+				// Create views for every one of the models in the
+				// collection and add them to the page
+				collections.tags.instance.each(function(tag){
+					var tag_view = new views.Tag({ model: tag });
+					this.$.tagList.append(tag_view.render().el);
+				}, this);	// "this" is the context in the callback
+			},
+
+			filterByTag: function(clickedModel){
+
+				// Calculate the total order amount by agregating
+				// the prices of only the checked elements
+				// this.$el.toggle('active');
+				var active_tags = collections.tags.instance.getEnabled();
+				console.log(active_tags);
+
+				// return this;
+			}
+		}),
+		Tag: Backbone.View.extend({
+
+			template: templates.tagFactory,
+
+			tagName: 'li',
+
+			className: 'tag-wrapper',
+
+			events: {
+				click: 'toggle'
+			},
+
+			initialize: function(){
+				this.listenTo(this.model, 'change', this.render);
+			},
+
+			render: function(){
+				var tag_markup = this.template( this.model.toJSON() );
+				this.$el.html(tag_markup);
+				return this;
+			},
+
+			toggle: function(){
+				this.model.toggle();
+				this.$el.toggleClass('active');
+			},
+
+
 		})
 	}
 
-	function checkEventFilters(){
-		var selected_list = [];
-		$('.tag-filter').each(function(index, el){
-			var $el = $(el);
-			if ($el.hasClass('selected')) selected_list.push($el.attr('data-tag'))
-		});
+	var init = {
+		go: function(){
+			models.init();
+			collections.init();
+			views.init();
 
-		console.log(selected_list)
-		$('.event-item-wrapper').hide();
-		for (var i = 0; i < selected_list.length; i++){
-
-			$('.event-item-wrapper[data-tag*="'+selected_list[i]+'"]').show()
+			// layout.tags.bake();
 		}
 	}
 
-	function switchSection(activeSection){
-		$('.rail-section-title').removeClass('active');
-		$('.content-section').removeClass('shown');
-		$('.rail-section[data-section="'+activeSection+'"]').find('.rail-section-title').addClass('active');
-		$('.content-section[data-section="'+activeSection+'"]').addClass('shown');
-	}
-
-	function handleRoute(){
-		var Router = Backbone.Router.extend({
-			routes: {
-				":section": 'section' // Change the section visibility
-			}
-		});
-		router = new Router;
-		router.on('route:section', function(section) {
-			switchSection(section);
-		});
-			
-		// For bookmarkable Urls
-		Backbone.history.start();
-	}
-
-	function drawChart(data){
-		var formatDate = d3.time.format("%b %Y");
-		var legend =	{
-			facebook: {metric: 'likes', color: "#3B5998"},
-			twitter: {metric: 'mentions', color: "#55ACEE"}
-		}
-		var notes = [
-			{
-				date: 'Sep 2007',
-				text: 'A sample note',
-				type: ['note']
-			},
-			{
-				date: 'Jul 2005',
-				text: 'Major event',
-				type: ['major-event']
-			},
-			{
-				date: 'Aug 2006',
-				text: 'Citation event',
-				type: ['citation']
-			}
-		]
-
-		d3.select('#ST-chart')
-			.datum(data)
-			.call(spottedTail()
-				.x(function(d) { return formatDate.parse(d.date); })
-				.y(function(d) { return +d.count; })
-				.margin({right: 20})
-				.notes(notes)
-				.legend(legend))
-	}
-
-	function loadTimelineChart(){
-		d3.csv('data/dummy-timeline-counts.csv', drawChart)
-	}
-
-	loadTimelineChart();
-	handleRoute();
-	bindHandlers();
+	init.go();
 
 }).call(this);
