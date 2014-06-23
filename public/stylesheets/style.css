@@ -53,6 +53,7 @@ input[type="search"] {
 #left-rail {
   width: 250px;
   background-color: #393939;
+  overflow: hidden;
   z-index: 9;
 }
 #drawer {
@@ -114,9 +115,15 @@ input[type="search"] {
 #left-rail #header-container .settings a:hover {
   text-decoration: underline;
 }
+#left-rail nav {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(98vh - 50px);
+}
 /* L E F T  R A I L */
 .main-sections {
   margin-top: 10px;
+  height: 100%;
 }
 .main-sections .section.active a {
   text-shadow: 0 0px 12px #000;
