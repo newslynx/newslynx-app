@@ -34,12 +34,18 @@
 		"facebook_auth": "",
 		"google_auth": "",
 		"tags": [
-			{ "name": "tag 1", "count": 5 },
-			{ "name": "tag 2", "count": 3 },
-			{ "name": "tag 3", "count": 1 },
-			{ "name": "tag 4", "count": 1 },
-			{ "name": "tag 5", "count": 0 }
+			{ "name": "tag 1", "count": 5, "color": "#0cf" },
+			{ "name": "tag 2", "count": 3, "color": "#fc0" },
+			{ "name": "tag 3", "count": 1, "color": "#c0f" },
+			{ "name": "tag 4", "count": 1, "color": "#f0c" },
+			{ "name": "tag 5", "count": 0, "color": "#0fc" }
 		]
+	}
+
+	var helpers = {
+		// sanitizeForCss: function(tagName){
+		// 	return tagName.replace(/ /g, '-');
+		// }
 	}
 
 	var templates = {
@@ -61,7 +67,7 @@
 	var models = {
 		init: function(){
 			dummy_data.tags.forEach(function(tag){
-				var tag_model = new models.tags.Model({name: tag.name, count: tag.count});
+				var tag_model = new models.tags.Model(tag);
 				models.tags.instances.push(tag_model);
 			})
 		},
@@ -119,21 +125,28 @@
 
 				// Create views for every one of the models in the
 				// collection and add them to the page
+				this.bake();
+			},
+
+			bake: function(){
 				collections.tags.instance.each(function(tag){
 					var tag_view = new views.Tag({ model: tag });
 					this.$.tagList.append(tag_view.render().el);
 				}, this);	// "this" is the context in the callback
+
+				return this;
 			},
 
 			filterByTag: function(clickedModel){
 
 				// Calculate the total order amount by agregating
 				// the prices of only the checked elements
-				// this.$el.toggle('active');
 				var active_tags = collections.tags.instance.getEnabled();
+
+				// TODO, do filtering articles based on active tags
 				console.log(active_tags);
 
-				// return this;
+				return this;
 			}
 		}),
 		Tag: Backbone.View.extend({
@@ -154,13 +167,20 @@
 
 			render: function(){
 				var tag_markup = this.template( this.model.toJSON() );
-				this.$el.html(tag_markup);
+				// Set its border left color to the appropriate color value in its data
+				this.$el.html(tag_markup).find('.tag-container').css('border-left-color', this.model.get('color'))
 				return this;
 			},
 
 			toggle: function(){
 				this.model.toggle();
 				this.$el.toggleClass('active');
+
+				// If this is enabled, set the background color to the correct color in its model
+				if (this.model.get('enabled')){
+					this.$el.find('.tag-container').css('background-color', this.model.get('color'));
+				}
+				return this;
 			},
 
 
