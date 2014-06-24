@@ -1,0 +1,6 @@
+fixtures:
+  - model: Organization
+    data:
+      name: Chalkbeat NY
+      domain: ny.chalkbeat.org
+      password: guacamole
