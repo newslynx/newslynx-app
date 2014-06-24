@@ -34,6 +34,8 @@ dummy = #fc0
 the_beige = #f3f0df
 the_green = #0eb521
 leftrail_gray = #393939
+bg_gray = #7C7C7C
+highlight_gray = #666
 // Page colors
 login = #d6ccdf
 about = #e3943b
@@ -121,7 +123,7 @@ events = #c13d3d
 	margin-top 10px
 	height 98%
 	.section.active a
-		text-shadow 0 0px 12px #000
+		text-shadow 0 0px 12px #535353
 	.section.active:hover
 		cursor default
 	.section
@@ -131,7 +133,7 @@ events = #c13d3d
 			width 100%
 		select
 			height 26px
-			padding-top 3px
+			padding-top 2px
 		.section-options, a
 			padding 10px 25px
 		a
@@ -142,10 +144,12 @@ events = #c13d3d
 			text-decoration none
 		a:hover
 			cursor pointer
-			background-color #666
+			background-color highlight_gray
+	.section.active a:hover
+		cursor default
 
 .section-options
-	background-color #7c7c7c
+	background-color bg_gray
 	color #fff
 	input[type="search"]
 		height 23px
@@ -168,7 +172,7 @@ events = #c13d3d
 	.tag-container
 		position relative
 		top 2px
-		padding 4px 8px
+		padding 5px 8px
 		border-left 4px solid #0cf
 		border-right-top-radius 3px
 		border-right-bottom-radius 3px
@@ -205,6 +209,9 @@ body[data-section="articles"]
 	#drawer
 		background-color tint(articles, 90%)
 		border-right-color tint(articles, 25%)
+	.division-switcher li.active
+		background-color articles
+		text-shadow 0 0px 12px #535353
 		// box-shadow 0px 0px 11px articles
 
 body[data-section="series"] 
@@ -231,6 +238,33 @@ body[data-section="login"]
 	p
 		font-size 1.3em
 		line-height 1.3em
+.division-switcher
+	position absolute
+	top 0
+	left 0
+	width (drawer_width)px
+	font-size 1.8em
+	font-weight 100
+	display table
+	background-color bg_gray
+	li
+		display table-cell
+		width 50%
+		text-align center
+		vertical-align middle
+		padding 5px
+		height 50px
+	li:not(.active):hover
+		cursor pointer
+		background-color tint(highlight_gray, 30%)
+	.active
+		color #fff
+	.active:hover
+		cursor default
+		color #fff
+#article-list
+	margin-top 50px
+
 /* end drawer */
 
 /* T E X T  S T Y L E S  */

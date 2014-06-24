@@ -293,11 +293,20 @@
 		})
 	}
 
+	var listeners = {
+		general: function(){
+			$('.active a').on('click', function(e){
+				e.preventDefault();
+			})
+		}
+	}
+
 	var init = {
 		go: function(){
 			models.init();
 			collections.init();
 			views.init();
+			listeners.general();
 
 			// layout.tags.bake();
 		}
