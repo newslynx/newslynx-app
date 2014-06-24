@@ -27,6 +27,17 @@ ul {
   margin: 0;
   padding: 0;
 }
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
 input[type="search"] {
   -webkit-appearance: searchfield;
   -moz-appearance: searchfield;
@@ -36,7 +47,7 @@ input[type="search"] {
 #main-wrapper {
   width: 100%;
   height: 100%;
-  min-width: 960px;
+  min-width: 1385px;
 }
 #left-rail,
 #drawer,
@@ -46,8 +57,13 @@ input[type="search"] {
   vertical-align: top;
   height: 100%;
 }
+#drawer,
 #content {
-  padding: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#content {
+  padding: 25px 50px;
 }
 #left-rail {
   width: 250px;
@@ -62,7 +78,7 @@ input[type="search"] {
   z-index: 8;
 }
 #content {
-  width: 100px;
+  width: 850px;
 }
 /* end main page elements */
 /* H E A D E R	*/
@@ -321,6 +337,53 @@ label {
 }
 input {
   margin-bottom: 5px;
+}
+.pub-date {
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+#content .pub-date {
+  font-size: 1.2em;
+}
+#content .headline,
+#content .title {
+  position: relative;
+}
+#content .headline {
+  font-size: 2.8em;
+}
+#content .title {
+  font-size: 2.2em;
+}
+#content .headline:before,
+#content .title:before {
+  position: absolute;
+  color: #ddd;
+  font-weight: 400;
+  top: 1px;
+}
+#content .headline:before {
+  left: -24px;
+  content: '# ';
+}
+#content .title:before {
+  left: -32px;
+  content: '## ';
+}
+#content .description {
+  font-size: 1.3em;
+}
+/* end text styles */
+/*  M A I N   A R T I C L E  */
+.toolbar {
+  overflow: auto;
+  margin: 20px 0 40px 0;
+}
+.comparison-container {
+  display: inline-block;
+}
+.create-event {
+  float: right;
 }
 /* end text styles */
 /* R I G H T	R A I L */

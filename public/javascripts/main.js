@@ -44,7 +44,7 @@
 
 	var articles = [
 		{
-			"uid": "a1",
+			"article_uid": "a1",
 			"pub_date": "2014-06-13",
 			"headline": "Senate's vote overwhelmingly favors Empire",
 			"author": "Darth Sidious",
@@ -55,7 +55,7 @@
 			"twitter_mentions": 750
 		},
 		{
-			"uid": "a2",
+			"article_uid": "a2",
 			"pub_date": "2014-06-10",
 			"headline": "Naboo deal folds",
 			"author": "Darth Sidious",
@@ -66,7 +66,7 @@
 			"twitter_mentions": 5000
 		},
 		{
-			"uid": "a3",
+			"article_uid": "a3",
 			"pub_date": "2014-05-10",
 			"headline": "Much promise for new Senate",
 			"author": "Tarsus Valorum",
@@ -79,44 +79,261 @@
 	]
 
 	var articles_detailed = [
-		{
-				"uid": "a1",
-				"pub_date": "2014-06-13",
-				"headline": "Senators vote overwhelmingly in favor of Empire",
-				"author": "Darth Sidious",
-				"tags": ["tag 1", "tag 2"],
-				"pageviews": 1000,
-				"fb_shares": 500,
-				"fb_likes": 2000,
-				"twitter_mentions": 750
-			},
 			{
-				"uid": "a2",
-				"pub_date": "2014-06-10",
-				"headline": "Naboo deal folds",
-				"author": "Darth Sidious",
-				"tags": ["tag 2", "tag 3"],
-				"pageviews": 300,
-				"fb_shares": 100,
-				"fb_likes": 1000,
-				"twitter_mentions": 5000
-			},
-			{
-				"uid": "a3",
-				"pub_date": "2014-05-10",
-				"headline": "Much promise for new Senate",
-				"author": "Tarsus Valorum",
-				"tags": ["tag 1", "tag 4"],
-				"pageviews": 8000,
-				"fb_shares": 200,
-				"fb_likes": 500,
-				"twitter_mentions": 4000
-			}
+		    "org_id": "propalpatine",
+		    "article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		    "article_uid": "a1",
+		    "article_img": "Eec4oRk2Ey3wEc4Am7eecK3riA8Wri",
+		    "title": "Senators vote overwhelmingly in favor of Empire",
+		    "authors": [
+		        "Darth Sidious"
+		    ],
+		    "nl_desc": "Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance.",
+		    "pub_datetime": "2014-06-13",
+		    "series_ids": [
+		        "fracking"
+		    ],
+		    "aggregate_stats": {
+		        "internal_twitter_shares": 2,
+		        "internal_twitter_ids": [
+		            "123456678910",
+		            "123456678911"
+		        ],
+		        "internal_facebook_likes": 1,
+		        "internal_facebook_post_ids": [
+		            "123456678910"
+		        ],
+		        "internal_tumblr_posts": 0,
+		        "internal_tumblr_post_ids": [],
+		        "time_on_homepage": 1000,
+		        "twitter_shares": 123,
+		        "facebook_likes": 123,
+		        "tumblr_likes": 123,
+		        "tumblr_reposts": 123,
+		        "pageviews": 123,
+		        "avg_time": 100,
+		        "bounce_rate": 0.95,
+		        "days_since_publication": 6,
+		        "num_refers": 1,
+		        "refer_urls": [
+		            "http://example.com/"
+		        ],
+		        "n_events": 1
+		    },
+		    "timeseries_stats": [
+		        {
+		            "datetime": "2014-01-04 13:00:00",
+		            "internal_twitter_shares": 2,
+		            "internal_twitter_ids": [
+		                "123456678910",
+		                "123456678911"
+		            ],
+		            "internal_facebook_likes": 1,
+		            "internal_facebook_post_ids": [
+		                "123456678910"
+		            ],
+		            "internal_tumblr_posts": 0,
+		            "internal_tumblr_post_ids": [],
+		            "on_home_page": 1,
+		            "twitter_shares": 123,
+		            "facebook_likes": 123,
+		            "tumblr_likes": 123,
+		            "tumblr_reposts": 123,
+		            "pageviews": 123,
+		            "avg_time": 100,
+		            "bounce_rate": 0.95,
+		            "days_since_publication": 6,
+		            "num_refers": 1,
+		            "refer_urls": [
+		                "http://example.com/"
+		            ],
+		            "events": [
+		                {
+		                    "type": "mention",
+		                    "metadata": "TK"
+		                }
+		            ]
+		        }
+		    ],
+		    "events": [
+		        {
+		            "type": "mention",
+		            "datetime": "2014-01-04 13:00:00",
+		            "metadata": "TK"
+		        }
+		    ]
+		},{
+		    "org_id": "propalpatine",
+		    "article_url": "http://www.propalpatine.org/article/Naboo-deal-folds",
+		    "article_uid": "a2",
+		    "article_img": "Eec4oRk2Ey3wEc4Am7eecK3riA8Wri",
+		    "title": "Naboo deal folds",
+		    "authors": [
+		        "Darth Sidious"
+		    ],
+		    "nl_desc": "Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance.",
+		    "pub_datetime": "2014-06-10",
+		    "series_ids": [
+		        "fracking"
+		    ],
+		    "aggregate_stats": {
+		        "internal_twitter_shares": 2,
+		        "internal_twitter_ids": [
+		            "123456678910",
+		            "123456678911"
+		        ],
+		        "internal_facebook_likes": 1,
+		        "internal_facebook_post_ids": [
+		            "123456678910"
+		        ],
+		        "internal_tumblr_posts": 0,
+		        "internal_tumblr_post_ids": [],
+		        "time_on_homepage": 1000,
+		        "twitter_shares": 123,
+		        "facebook_likes": 123,
+		        "tumblr_likes": 123,
+		        "tumblr_reposts": 123,
+		        "pageviews": 123,
+		        "avg_time": 100,
+		        "bounce_rate": 0.95,
+		        "days_since_publication": 6,
+		        "num_refers": 1,
+		        "refer_urls": [
+		            "http://example.com/"
+		        ],
+		        "n_events": 1
+		    },
+		    "timeseries_stats": [
+		        {
+		            "datetime": "2014-01-04 13:00:00",
+		            "internal_twitter_shares": 2,
+		            "internal_twitter_ids": [
+		                "123456678910",
+		                "123456678911"
+		            ],
+		            "internal_facebook_likes": 1,
+		            "internal_facebook_post_ids": [
+		                "123456678910"
+		            ],
+		            "internal_tumblr_posts": 0,
+		            "internal_tumblr_post_ids": [],
+		            "on_home_page": 1,
+		            "twitter_shares": 123,
+		            "facebook_likes": 123,
+		            "tumblr_likes": 123,
+		            "tumblr_reposts": 123,
+		            "pageviews": 123,
+		            "avg_time": 100,
+		            "bounce_rate": 0.95,
+		            "days_since_publication": 6,
+		            "num_refers": 1,
+		            "refer_urls": [
+		                "http://example.com/"
+		            ],
+		            "events": [
+		                {
+		                    "type": "mention",
+		                    "metadata": "TK"
+		                }
+		            ]
+		        }
+		    ],
+		    "events": [
+		        {
+		            "type": "mention",
+		            "datetime": "2014-01-04 13:00:00",
+		            "metadata": "TK"
+		        }
+		    ]
+		},{
+		    "org_id": "propalpatine",
+		    "article_url": "http://www.propalpatine.org/article/Much-promise-for-new-Senate",
+		    "article_uid": "a3",
+		    "article_img": "Eec4oRk2Ey3wEc4Am7eecK3riA8Wri",
+		    "title": "Much promise for new Senate",
+		    "authors": [
+		        "Tarsus Valourm"
+		    ],
+		    "nl_desc": "Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance. Natural language description of article performance.",
+		    "pub_datetime": "2014-05-10",
+		    "series_ids": [
+		        "fracking"
+		    ],
+		    "aggregate_stats": {
+		        "internal_twitter_shares": 2,
+		        "internal_twitter_ids": [
+		            "123456678910",
+		            "123456678911"
+		        ],
+		        "internal_facebook_likes": 1,
+		        "internal_facebook_post_ids": [
+		            "123456678910"
+		        ],
+		        "internal_tumblr_posts": 0,
+		        "internal_tumblr_post_ids": [],
+		        "time_on_homepage": 1000,
+		        "twitter_shares": 123,
+		        "facebook_likes": 123,
+		        "tumblr_likes": 123,
+		        "tumblr_reposts": 123,
+		        "pageviews": 123,
+		        "avg_time": 100,
+		        "bounce_rate": 0.95,
+		        "days_since_publication": 6,
+		        "num_refers": 1,
+		        "refer_urls": [
+		            "http://example.com/"
+		        ],
+		        "n_events": 1
+		    },
+		    "timeseries_stats": [
+		        {
+		            "datetime": "2014-01-04 13:00:00",
+		            "internal_twitter_shares": 2,
+		            "internal_twitter_ids": [
+		                "123456678910",
+		                "123456678911"
+		            ],
+		            "internal_facebook_likes": 1,
+		            "internal_facebook_post_ids": [
+		                "123456678910"
+		            ],
+		            "internal_tumblr_posts": 0,
+		            "internal_tumblr_post_ids": [],
+		            "on_home_page": 1,
+		            "twitter_shares": 123,
+		            "facebook_likes": 123,
+		            "tumblr_likes": 123,
+		            "tumblr_reposts": 123,
+		            "pageviews": 123,
+		            "avg_time": 100,
+		            "bounce_rate": 0.95,
+		            "days_since_publication": 6,
+		            "num_refers": 1,
+		            "refer_urls": [
+		                "http://example.com/"
+		            ],
+		            "events": [
+		                {
+		                    "type": "mention",
+		                    "metadata": "TK"
+		                }
+		            ]
+		        }
+		    ],
+		    "events": [
+		        {
+		            "type": "mention",
+		            "datetime": "2014-01-04 13:00:00",
+		            "metadata": "TK"
+		        }
+		    ]
+		}
 	]
 
 	var templateHelpers = {
 		date: function(isoDate){
-			// TODO, AP Style the montha abbreviations with `.` where appropriate
+			// TODO, Figure out proper timezone stuff
 			var full_date_string = new Date(isoDate).toDateString(), // "2014-06-24" -> "Mon Jun 23 2014"
 					month_day_year_arr = full_date_string.split(' ').slice(1,4), // Remove day of the week
 					commafy = month_day_year_arr[0] + ' ' + month_day_year_arr[1] + ', ' + month_day_year_arr[2];
@@ -323,8 +540,8 @@
 				},
 				fetch: function(articleModel, cb){
 					// For now, just have the fetch do the bake
-					var uid = articleModel.get('uid');
-					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.uid === uid });
+					var uid = articleModel.get('article_uid');
+					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.article_uid === uid });
 					if (loaded_matches.length) {
 						cb(loaded_matches[0])
 					} else {
