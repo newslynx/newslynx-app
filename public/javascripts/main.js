@@ -82,7 +82,7 @@
 		{
 				"uid": "a1",
 				"pub_date": "2014-06-13",
-				"headline": "Senate's vote overwhelmingly favors Empire",
+				"headline": "Senators vote overwhelmingly in favor of Empire",
 				"author": "Darth Sidious",
 				"tags": ["tag 1", "tag 2"],
 				"pageviews": 1000,
