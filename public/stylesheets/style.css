@@ -46,7 +46,6 @@ input[type="search"] {
   vertical-align: top;
   height: 100%;
 }
-#drawer,
 #content {
   padding: 15px;
 }
@@ -260,10 +259,7 @@ body[data-section="login"] #drawer {
   line-height: 1.3em;
 }
 .division-switcher {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 285px;
+  width: 100%;
   font-size: 1.8em;
   font-weight: 100;
   display: table;
@@ -288,8 +284,24 @@ body[data-section="login"] #drawer {
   cursor: default;
   color: #fff;
 }
-#article-list {
-  margin-top: 50px;
+.article-summary-wrapper {
+  padding: 10px 15px;
+}
+.article-summary-wrapper .pub-date {
+  font-size: 1.1em;
+}
+.article-summary-wrapper .headline {
+  font-size: 1.2em;
+}
+.article-summary-wrapper:first-child {
+  margin-top: 10px;
+}
+.article-summary-wrapper:not(.active):hover {
+  cursor: pointer;
+  background-color: #c3e7ff;
+}
+.article-summary-wrapper.active {
+  background-color: #88cfff;
 }
 /* end drawer */
 /* T E X T  S T Y L E S  */

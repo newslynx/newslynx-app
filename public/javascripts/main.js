@@ -45,7 +45,7 @@
 	var articles = [
 		{
 			"pub_date": "2014-06-13",
-			"headline": "Senates vote overwhelmingly favors Empire",
+			"headline": "Senate's vote overwhelmingly favors Empire",
 			"author": "Darth Sidious",
 			"tags": ["tag 1", "tag 2"],
 			"pageviews": 1000,
@@ -75,15 +75,33 @@
 		}
 	]
 
-	var helpers = {
+	var templateHelpers = {
+		date: function(isoDate){
+			// TODO, AP Style the montha abbreviations with `.` where appropriate
+			var full_date_string = new Date(isoDate).toDateString(), // "2014-06-24" -> "Mon Jun 23 2014"
+					month_day_year_arr = full_date_string.split(' ').slice(1,4), // Remove day of the week
+					commafy = month_day_year_arr[0] + ' ' + month_day_year_arr[1] + ', ' + month_day_year_arr[2];
+			return commafy.replace(' 0', ' '); // Trip leading zeros
+		}
+	}
+
+	var collectionHelpers = {
 		toggle: function(key){
-			console.log(!this.get(key))
 			this.set(key, !this.get(key))
 		},
 		getTrue: function(key){
 			var obj = {};
 			obj[key] = true;
 			return this.where(obj);
+		},
+		zeroOut: function(){
+			this.getTrue('viewing_single').forEach(function(model){
+				model.set('viewing_single', false);
+			});
+			// this.where({'viewing_single': true}).each(function(model){
+			// 	console.log(model)
+			// 	model.set('viewing_single', false);
+			// })
 		}
 	}
 
@@ -104,6 +122,8 @@
 				var article_model = new models.article_summary.Model(article);
 				models.article_summary.instances.push(article_model);
 			});
+
+			models.article_state.instance = new models.article_state.Model();
 		},
 		tags: {
 			"instances": [],
@@ -111,7 +131,7 @@
 				defaults: {
 					active: false
 				},
-				toggle: helpers.toggle
+				toggle: collectionHelpers.toggle
 			})
 		},
 		article_summary: {
@@ -119,9 +139,18 @@
 			"Model": Backbone.Model.extend({
 				defaults: {
 					detailLoaded: false,
-					active: false
+					viewing_single: false,
+					viewing_comparison: false,
 				},
-				toggle: helpers.toggle
+				toggle: collectionHelpers.toggle
+			})
+		},
+		article_state: {
+			"instance": null,
+			"Model": Backbone.Model.extend({
+				defaults: {
+					mode: 'single'
+				}
 			})
 		}
 	}
@@ -129,23 +158,23 @@
 	var collections = {
 		init: function(){
 			this.tags.instance = new this.tags.Collection(models.tags.instances);
-			this.article_summaries.instance = new this.tags.Collection(models.article_summary.instances);
+			this.article_summaries.instance = new this.article_summaries.Collection(models.article_summary.instances);
+			// Add a mode attribute, which will determine whether the drawer is being used in single view or compare mode
+			// this.article_summaries.instance.mode = 'single';
 		},
 		tags: {
 			"instance": null,
 			"Collection": Backbone.Collection.extend({
-
 				model: models.tags.Tag,
-
-				getTrue: helpers.getTrue
-
+				getTrue: collectionHelpers.getTrue
 			})
 		},
 		article_summaries: {
 			"instance": null,
 			"Collection": Backbone.Collection.extend({
 				model: models.ArticleSummary,
-				getTrue: helpers.getTrue
+				getTrue: collectionHelpers.getTrue,
+				zeroOut: collectionHelpers.zeroOut
 			})
 		}
 	}
@@ -167,7 +196,8 @@
 				// This is equivalent to listening on every one of the 
 				// model objects in the collection.
 				this.listenTo(collections.tags.instance, 'change:active', this.filterByTag);
-				this.listenTo(collections.article_summaries.instance, 'change:active', this.viewArticle);
+				this.listenTo(collections.article_summaries.instance, 'change:viewing_single', this.loadArticle);
+				this.listenTo(collections.article_summaries.instance, 'change:viewing_comparison', this.makeComparison);
 
 				// Create views for every one of the models in the
 				// collection and add them to the page
@@ -202,9 +232,16 @@
 				return this;
 			},
 
-			viewArticle: function(clickedArticle){
-				console.log('viewing',this,clickedArticle)
+			loadArticle: function(articleModel){
+				var is_new = articleModel.get('viewing_single');
+				if (is_new){
+					// Load the second view of the article in the main content area
+					console.log('viewing',articleModel.get('headline'), articleModel.get('viewing_single'))
+				}
 				return this;
+			},
+			makeComparison: function(newArticle){
+
 			}
 		}),
 		Tag: Backbone.View.extend({
@@ -224,10 +261,10 @@
 			},
 
 			render: function(){
-				var tag_markup = this.template( this.model.toJSON() );
+				var tag_markup = this.template( _.extend(this.model.toJSON(), templateHelpers) );
 
 				this.$el.html(tag_markup);
-				// Set its border left color to the appropriate color value in its data
+				// Set its border left and bg color to the appropriate color value in its data
 				this.styleLayout();
 				return this;
 			},
@@ -266,28 +303,45 @@
 			className: 'article-summary-wrapper',
 
 			events: {
-				click: 'toggle'
+				click: 'setActive'
 			},
 			initialize: function(){
-				this.listenTo(this.model, 'change', this.styleLayout);
+				this.listenTo(this.model, 'change:viewing_single', this.style.single);
 			},
 
 			render: function(){
-				var article_summary_markup = this.template( this.model.toJSON() );
+				var article_summary_markup = this.template( _.extend(this.model.toJSON(), templateHelpers) );
 				this.$el.html(article_summary_markup);
 
-				this.styleLayout();
 				return this;
 			},
 
-			styleLayout: function(){
-				this.$el.toggleClass('active');
+			style: {
+				single: function(articleModel){
+					if ( articleModel.get('viewing_single') ){
+						this.$el.addClass('active');
+					} else {
+						this.$el.removeClass('active');
+					}
+					return this;
+				},
+				comparison: function(){
 
-				return this;
+				}
 			},
 
-			toggle: function(){
-				this.model.toggle('active');
+			setActive: function(){
+				var mode = models.article_state.instance.get('mode');
+				// If we're in article single view mode
+				// And this article is not already selected
+				if (mode == 'single' && !this.model.get('viewing_single')){
+					// Clear the last active article
+					collections.article_summaries.instance.zeroOut();
+					// And set this model to the one being viewed
+					this.model.set('viewing_single', true);
+				} else if (mode == 'comparison') {
+					this.set('viewing_comparison', true);
+				}
 				return this;
 			}
 		})
@@ -308,8 +362,6 @@
 			collections.init();
 			views.init();
 			listeners.general();
-
-			// layout.tags.bake();
 		}
 	}
 

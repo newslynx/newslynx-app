@@ -36,6 +36,7 @@ the_green = #0eb521
 leftrail_gray = #393939
 bg_gray = #7C7C7C
 highlight_gray = #666
+select_blue = #88cfff
 // Page colors
 login = #d6ccdf
 about = #e3943b
@@ -55,7 +56,7 @@ events = #c13d3d
 	vertical-align top
 	height 100%
 
-#drawer,#content
+#content
 	padding 15px
 #left-rail
 	width (leftrail_width)px
@@ -239,10 +240,7 @@ body[data-section="login"]
 		font-size 1.3em
 		line-height 1.3em
 .division-switcher
-	position absolute
-	top 0
-	left 0
-	width (drawer_width)px
+	width 100%
 	font-size 1.8em
 	font-weight 100
 	display table
@@ -262,8 +260,19 @@ body[data-section="login"]
 	.active:hover
 		cursor default
 		color #fff
-#article-list
-	margin-top 50px
+.article-summary-wrapper
+	padding 10px 15px
+	.pub-date
+		font-size 1.1em
+	.headline
+		font-size 1.2em
+.article-summary-wrapper:first-child
+	margin-top 10px
+.article-summary-wrapper:not(.active):hover
+	cursor pointer
+	background-color tint(select_blue, 50%)
+.article-summary-wrapper.active
+	background-color select_blue
 
 /* end drawer */
 
