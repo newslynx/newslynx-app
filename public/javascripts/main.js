@@ -295,6 +295,7 @@
 
 	var listeners = {
 		general: function(){
+			// Kill all links on active elements
 			$('.active a').on('click', function(e){
 				e.preventDefault();
 			})

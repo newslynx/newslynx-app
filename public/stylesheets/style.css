@@ -57,7 +57,7 @@ input[type="search"] {
   z-index: 9;
 }
 #drawer {
-  width: 275px;
+  width: 285px;
   background-color: #fc0;
   border-right: 1px solid #e6b800;
   z-index: 8;
@@ -263,7 +263,7 @@ body[data-section="login"] #drawer {
   position: absolute;
   top: 0;
   left: 0;
-  width: 275px;
+  width: 285px;
   font-size: 1.8em;
   font-weight: 100;
   display: table;
