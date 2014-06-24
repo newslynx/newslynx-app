@@ -142,7 +142,8 @@
 
 	var templates = {
 		tagFactory: _.template( $('#tag-templ').html() ),
-		articleSummaryFactory: _.template( $('#article-summary-templ').html() )
+		articleSummaryFactory: _.template( $('#article-summary-templ').html() ),
+		articleDetailFactory: _.template( $('#article-detail-templ').html() )
 	}
 
 	var models = {
@@ -158,7 +159,10 @@
 				models.article_summary.instances.push(article_model);
 			});
 
+			// Keep track of whether we're in single view or comparison view
 			models.article_state.instance = new models.article_state.Model();
+			// A model for the full article view
+			models.article_detail.instance = new models.article_detail.Model();
 		},
 		tags: {
 			"instances": [],
@@ -186,6 +190,10 @@
 					mode: 'single'
 				}
 			})
+		},
+		article_detail: {
+			"instances": null,
+			"Model": Backbone.Model.extend({})
 		}
 	}
 
@@ -248,12 +256,21 @@
 				// Cache these selectors
 				this.$tagList = $('#tag-list');
 				this.$articleList = $('#article-list');
+				this.$articleDetail = $('#content');
 
 				// Listen for the change event on the collection.
 				// This is equivalent to listening on every one of the 
 				// model objects in the collection.
 				this.listenTo(collections.tags.instance, 'change:active', this.summaryList.update);
+
+				// When a summary item has `viewing_single` set to true
+				// Fetch or find the detailed data for that article and set the `models.article_detail.instance` values to that data
 				this.listenTo(collections.article_summaries.instance, 'change:viewing_single', this.mainArticle.update);
+
+				// When you change the main article's information
+				// Bake it out to the main content area
+				this.listenTo(models.article_detail.instance, 'change', this.mainArticle.bake);
+
 				// this.listenTo(collections.article_summaries.instance, 'change:viewing_comparison', this.makeComparison);
 
 				// Create views for every one of the models in the
@@ -290,7 +307,7 @@
 			mainArticle: {
 				update: function(articleModel){
 					var is_new = this.mainArticle.check(articleModel);
-					if (is_new) this.mainArticle.fetch(articleModel, this.mainArticle.bake);
+					if (is_new) this.mainArticle.fetch(articleModel, this.mainArticle.set);
 
 					return this;
 				},
@@ -299,8 +316,10 @@
 					// False if it was the previously viewed model which triggered a change because we switched it its `viewing_single` prop to false
 					return articleModel.get('viewing_single');
 				},
-				bake: function(articleData){
-					console.log('baking', articleData)
+				set: function(articleData){
+					// Update the full article model with new data
+					models.article_detail.instance.set(articleData);
+
 				},
 				fetch: function(articleModel, cb){
 					// For now, just have the fetch do the bake
@@ -310,7 +329,14 @@
 						cb(loaded_matches[0])
 					} else {
 						// TODO, handle fetching to the server
+						// Give the article data to `cb`
+
 					}
+				},
+				bake: function(detailModel){
+					var article_detail_view = new views.ArticleDetail({model: detailModel});
+					this.$articleDetail.html(article_detail_view.render().el);
+					return this;
 				}
 			}
 		}),
@@ -414,6 +440,29 @@
 				}
 				return this;
 			}
+		}),
+		ArticleDetail: Backbone.View.extend({
+
+			template: templates.articleDetailFactory,
+
+			tagName: 'div',
+
+			className: 'article-detail-wrapper',
+
+			events: {
+				// click: 'setActive'
+			},
+			initialize: function(){
+				this.listenTo(this.model, 'change', this.render);
+			},
+
+			render: function(){
+				var article_detail_markup = this.template( _.extend(this.model.toJSON(), templateHelpers) );
+				this.$el.html(article_detail_markup);
+
+				return this;
+			}
+
 		})
 	}
 
