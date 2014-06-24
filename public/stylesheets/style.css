@@ -286,6 +286,10 @@ body[data-section="login"] #drawer {
 }
 .article-summary-wrapper {
   padding: 10px 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .article-summary-wrapper .pub-date {
   font-size: 1.1em;
@@ -302,6 +306,9 @@ body[data-section="login"] #drawer {
 }
 .article-summary-wrapper.active {
   background-color: #88cfff;
+}
+.article-summary-wrapper.active:hover {
+  cursor: default;
 }
 /* end drawer */
 /* T E X T  S T Y L E S  */

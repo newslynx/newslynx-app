@@ -44,6 +44,7 @@
 
 	var articles = [
 		{
+			"uid": "a1",
 			"pub_date": "2014-06-13",
 			"headline": "Senate's vote overwhelmingly favors Empire",
 			"author": "Darth Sidious",
@@ -54,6 +55,7 @@
 			"twitter_mentions": 750
 		},
 		{
+			"uid": "a2",
 			"pub_date": "2014-06-10",
 			"headline": "Naboo deal folds",
 			"author": "Darth Sidious",
@@ -64,6 +66,7 @@
 			"twitter_mentions": 5000
 		},
 		{
+			"uid": "a3",
 			"pub_date": "2014-05-10",
 			"headline": "Much promise for new Senate",
 			"author": "Tarsus Valorum",
@@ -73,6 +76,42 @@
 			"fb_likes": 500,
 			"twitter_mentions": 4000
 		}
+	]
+
+	var articles_detailed = [
+		{
+				"uid": "a1",
+				"pub_date": "2014-06-13",
+				"headline": "Senate's vote overwhelmingly favors Empire",
+				"author": "Darth Sidious",
+				"tags": ["tag 1", "tag 2"],
+				"pageviews": 1000,
+				"fb_shares": 500,
+				"fb_likes": 2000,
+				"twitter_mentions": 750
+			},
+			{
+				"uid": "a2",
+				"pub_date": "2014-06-10",
+				"headline": "Naboo deal folds",
+				"author": "Darth Sidious",
+				"tags": ["tag 2", "tag 3"],
+				"pageviews": 300,
+				"fb_shares": 100,
+				"fb_likes": 1000,
+				"twitter_mentions": 5000
+			},
+			{
+				"uid": "a3",
+				"pub_date": "2014-05-10",
+				"headline": "Much promise for new Senate",
+				"author": "Tarsus Valorum",
+				"tags": ["tag 1", "tag 4"],
+				"pageviews": 8000,
+				"fb_shares": 200,
+				"fb_likes": 500,
+				"twitter_mentions": 4000
+			}
 	]
 
 	var templateHelpers = {
@@ -98,10 +137,6 @@
 			this.getTrue('viewing_single').forEach(function(model){
 				model.set('viewing_single', false);
 			});
-			// this.where({'viewing_single': true}).each(function(model){
-			// 	console.log(model)
-			// 	model.set('viewing_single', false);
-			// })
 		}
 	}
 
@@ -138,7 +173,6 @@
 			"instances": [],
 			"Model": Backbone.Model.extend({
 				defaults: {
-					detailLoaded: false,
 					viewing_single: false,
 					viewing_comparison: false,
 				},
@@ -179,6 +213,29 @@
 		}
 	}
 
+	var load = {
+		summaries: {
+			next: function(amount){
+				amount = amount || 20; // TK default amount to lazy load next article by
+			},
+			by: {
+				tag: function(){
+					// Calculate the total order amount by agregating
+					// the prices of only the checked elements
+					var active_tags = collections.tags.instance.getTrue('active');
+
+					// TODO, do filtering articles based on active tags
+					return active_tags;
+				},
+				text: function(){
+					// TODO
+				}
+			}
+		},
+		article: function(articleModel){
+		}
+	}
+
 	var views = {
 		init: function(){
 			this.app = new this.App();
@@ -195,9 +252,9 @@
 				// Listen for the change event on the collection.
 				// This is equivalent to listening on every one of the 
 				// model objects in the collection.
-				this.listenTo(collections.tags.instance, 'change:active', this.filterByTag);
-				this.listenTo(collections.article_summaries.instance, 'change:viewing_single', this.loadArticle);
-				this.listenTo(collections.article_summaries.instance, 'change:viewing_comparison', this.makeComparison);
+				this.listenTo(collections.tags.instance, 'change:active', this.summaryList.update);
+				this.listenTo(collections.article_summaries.instance, 'change:viewing_single', this.mainArticle.update);
+				// this.listenTo(collections.article_summaries.instance, 'change:viewing_comparison', this.makeComparison);
 
 				// Create views for every one of the models in the
 				// collection and add them to the page
@@ -220,28 +277,41 @@
 				return this;
 			},
 
-			filterByTag: function(clickedModel){
+			summaryList: {
+				update: function(){
+					var active_tags = load.summaries.by.tag()
+					return this;
 
-				// Calculate the total order amount by agregating
-				// the prices of only the checked elements
-				var active_tags = collections.tags.instance.getTrue('active');
-
-				// TODO, do filtering articles based on active tags
-				console.log(active_tags);
-
-				return this;
-			},
-
-			loadArticle: function(articleModel){
-				var is_new = articleModel.get('viewing_single');
-				if (is_new){
-					// Load the second view of the article in the main content area
-					console.log('viewing',articleModel.get('headline'), articleModel.get('viewing_single'))
+				},
+				bake: function(){
+					
 				}
-				return this;
 			},
-			makeComparison: function(newArticle){
+			mainArticle: {
+				update: function(articleModel){
+					var is_new = this.mainArticle.check(articleModel);
+					if (is_new) this.mainArticle.fetch(articleModel, this.mainArticle.bake);
 
+					return this;
+				},
+				check: function(articleModel){
+					// Returns true if this model is being viewed
+					// False if it was the previously viewed model which triggered a change because we switched it its `viewing_single` prop to false
+					return articleModel.get('viewing_single');
+				},
+				bake: function(articleData){
+					console.log('baking', articleData)
+				},
+				fetch: function(articleModel, cb){
+					// For now, just have the fetch do the bake
+					var uid = articleModel.get('uid');
+					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.uid === uid });
+					if (loaded_matches.length) {
+						cb(loaded_matches[0])
+					} else {
+						// TODO, handle fetching to the server
+					}
+				}
 			}
 		}),
 		Tag: Backbone.View.extend({

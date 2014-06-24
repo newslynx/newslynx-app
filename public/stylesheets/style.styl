@@ -262,6 +262,7 @@ body[data-section="login"]
 		color #fff
 .article-summary-wrapper
 	padding 10px 15px
+	user-select none
 	.pub-date
 		font-size 1.1em
 	.headline
@@ -273,6 +274,8 @@ body[data-section="login"]
 	background-color tint(select_blue, 50%)
 .article-summary-wrapper.active
 	background-color select_blue
+.article-summary-wrapper.active:hover
+	cursor default
 
 /* end drawer */
 
