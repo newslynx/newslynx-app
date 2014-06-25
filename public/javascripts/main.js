@@ -600,7 +600,8 @@
 					this.$divisionSwitcher.find('li').removeClass('active');
 					this.$divisionSwitcher.find('li[data-mode="'+mode+'"]').addClass('active');
 
-					routing.router.navigate('//'+mode+'/'+new_uids.join('&'), {trigger: true})
+					routing.router.navigate('//'+mode+'/'+new_uids.join('&'), {trigger: true});
+					// TODO, test the previous state save better once the comparison selection is working better
 					model.set('previous-uids', current_uids);
 					return this;
 				}
