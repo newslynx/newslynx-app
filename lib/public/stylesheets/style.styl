@@ -20,20 +20,32 @@ ul
 	margin 0
 	padding 0
 
+h1,h2,h3,h4
+	margin 0
+	padding 0
+	-webkit-margin-before 0px
+	-webkit-margin-after 0px
+	-webkit-margin-start 0px
+	-webkit-margin-end 0px
+
 input[type="search"]
 	appearance searchfield
 
 // Widths
-page_width = 960
 leftrail_width = 250
-drawer_width = 275
-content_width = 100
+drawer_width = 285
+content_width = 850
+furniture_width = (leftrail_width + drawer_width)px
+page_width = (leftrail_width + drawer_width + content_width)
 
 // Colors
 dummy = #fc0
 the_beige = #f3f0df
 the_green = #0eb521
 leftrail_gray = #393939
+bg_gray = #7C7C7C
+highlight_gray = #666
+select_blue = #88cfff
 // Page colors
 login = #d6ccdf
 about = #e3943b
@@ -53,11 +65,13 @@ events = #c13d3d
 	vertical-align top
 	height 100%
 
-#drawer,#content
-	padding 15px
+#drawer, #content
+	overflow-y scroll
+	overflow-x hidden
 #left-rail
 	width (leftrail_width)px
 	background-color leftrail_gray
+	overflow hidden
 	// box-shadow 0px 0px 6px #000
 	z-index 9
 #drawer
@@ -67,7 +81,7 @@ events = #c13d3d
 	// box-shadow 0px 0px 8px darken(dummy, 10%)
 	z-index 8
 #content
-	width (content_width)px
+	width calc(100% - 285px - 250px ) // These aren't tied to variables due to a stylus error, so if you change the leftrail or drawer widths, these values need to be updated
 /* end main page elements */
 
 /* H E A D E R	*/
@@ -109,12 +123,18 @@ events = #c13d3d
 				font-size 1.4em
 			a:hover
 				text-decoration underline
+	nav
+		overflow-y scroll
+		overflow-x hidden
+		height calc(98vh - 50px)
+
 
 /* L E F T  R A I L */
 .main-sections
 	margin-top 10px
+	height 98%
 	.section.active a
-		text-shadow 0 0px 12px #000
+		text-shadow 0 0px 12px #535353
 	.section.active:hover
 		cursor default
 	.section
@@ -124,7 +144,7 @@ events = #c13d3d
 			width 100%
 		select
 			height 26px
-			padding-top 3px
+			padding-top 2px
 		.section-options, a
 			padding 10px 25px
 		a
@@ -135,10 +155,12 @@ events = #c13d3d
 			text-decoration none
 		a:hover
 			cursor pointer
-			background-color #666
+			background-color highlight_gray
+	.section.active a:hover
+		cursor default
 
 .section-options
-	background-color #7c7c7c
+	background-color bg_gray
 	color #fff
 	input[type="search"]
 		height 23px
@@ -161,7 +183,7 @@ events = #c13d3d
 	.tag-container
 		position relative
 		top 2px
-		padding 4px 8px
+		padding 5px 8px
 		border-left 4px solid #0cf
 		border-right-top-radius 3px
 		border-right-bottom-radius 3px
@@ -198,6 +220,9 @@ body[data-section="articles"]
 	#drawer
 		background-color tint(articles, 90%)
 		border-right-color tint(articles, 25%)
+	.division-switcher li.active
+		background-color articles
+		text-shadow 0 0px 12px #535353
 		// box-shadow 0px 0px 11px articles
 
 body[data-section="series"] 
@@ -224,6 +249,42 @@ body[data-section="login"]
 	p
 		font-size 1.3em
 		line-height 1.3em
+.division-switcher
+	width 100%
+	font-size 1.8em
+	font-weight 100
+	display table
+	background-color bg_gray
+	li
+		display table-cell
+		width 50%
+		text-align center
+		vertical-align middle
+		padding 5px
+		height 50px
+		color #fff
+	li:not(.active):hover
+		cursor pointer
+		background-color tint(highlight_gray, 30%)
+	.active:hover
+		cursor default
+.article-summary-wrapper
+	padding 10px 15px
+	user-select none
+	.pub-date
+		font-size 1.1em
+	.headline
+		font-size 1.2em
+.article-summary-wrapper:first-child
+	margin-top 10px
+.article-summary-wrapper:not(.active):hover
+	cursor pointer
+	background-color tint(select_blue, 50%)
+.article-summary-wrapper.active
+	background-color select_blue
+.article-summary-wrapper.active:hover
+	cursor default
+
 /* end drawer */
 
 /* T E X T  S T Y L E S  */
@@ -234,6 +295,45 @@ label
 	font-size 1.2em
 input
 	margin-bottom 5px
+.pub-date
+	text-transform uppercase
+	margin-bottom 3px
+
+#content 
+	.pub-date
+		font-size 1.2em
+	.headline,.title
+		position relative
+	.headline
+		font-size 2.8em
+	.title
+		font-size 2.2em
+	.headline:before,.title:before
+		position absolute
+		color #DDD
+		font-weight 400
+		top 1px
+	.headline:before
+		left -24px
+		content '# '
+	.title:before
+		left -32px
+		content '## '
+	.description
+		font-size 1.3em
+/* end text styles */
+
+/*  M A I N   A R T I C L E  */
+.article-detail-wrapper
+	padding 25px 50px
+
+.toolbar
+	overflow auto
+	margin 20px 0 40px 0
+.comparison-container
+	display inline-block
+.create-event
+	float right
 /* end text styles */
 // /* M A I N	E L E M E N T S */
 // .main-content

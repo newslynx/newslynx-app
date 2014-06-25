@@ -1,13 +1,55 @@
 extends layout
 
 block drawer
-	.division-title Articles
+	ul.division-switcher
+		li.active(data-mode="single") Single view
+		li(data-mode="compare") Compare
+	ul#article-list
 
 block templates
 	script(type="text/jst")#tag-templ
 		.tag-container
 			.tag-name <%= name %>
 			.tag-count <%= count %>
+
+	script(type="text/jst")#article-summary-templ
+		.article-summary-container
+			.pub-date <%= date(pub_date) %>
+			.headline <%= headline %>
+
+	script(type="text/jst")#article-detail-templ
+		.article-detail-container
+			.pub-date <%= date(pub_datetime) %>
+			h2.headline <%= title %>
+			.nl-desc.description
+				p <%= nl_desc %>
+			.toolbar
+				.comparison-container
+					span.icon-comparison vs
+					select#article-comparer
+						option an average article
+						option another thing
+				button.create-event + Create event
+			section(data-name="timeline")
+				h3.title When was this story posted to social media and how many times?
+				.description
+					p More people are posting this story on Facebook than on Twitter, which is unusual. Spikes occurred on Twitter on Jan 2 at 3pm and again at 8pm.
+				#timeline-container
+					img(src="images/dummy/timeline.png")
+			section(data-name="social-posts")
+				h3.title Who is posting this story to social media?
+				img(src="images/dummy/social-posts.png")
+			section(data-name="traffic-sources")
+				h3.title Where is traffic coming from?
+				.description
+					p This article generally has above-average traffic both from internal and external referalls. As a percentage, external traffic is larger by 10%, which is pretty normal.
+				img(src="images/dummy/traffic-sources.png")
+			section(data-name="citations")
+				h3.title Who is citing this story
+				img(src="images/dummy/citations.png")
+			section(data-name="events")
+				h3.title What events have happened around this story?
+				img(src="images/dummy/events.png")
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
