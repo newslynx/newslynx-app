@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var _ = require 'underscore'
+var _ = require('underscore');
 var debug = require('debug')('newslynx-app');
 var app = require('../lib/app');
 
@@ -8,5 +8,5 @@ app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
   message = _.template('Express server listening on port <%= port %> (<%= env %>)')
-  debug(message({port: server.address().port, env: app.get('env')});
+  debug(message({port: server.address().port, env: app.get('env')}));
 });

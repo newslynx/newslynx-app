@@ -19,7 +19,10 @@
     "nib": "~1.0.2",
     "scrypt": "3.x", 
     "passport": "0.2.x", 
-    "passport-local": "1.x"
+    "passport-local": "1.x",
+    "passport-oauth": "1.x",
+    "validator": "3.x",
+    "forms": "0.7.x"
   }, 
   "devDependencies": {
     "sqlite3": "2.x", 
