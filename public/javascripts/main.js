@@ -438,6 +438,28 @@
 		}
 	}
 
+	var routing = {
+		Router: Backbone.Router.extend({
+			routes: {
+				'single/:uid': 'single',
+				'compare/:uids': 'compare'
+			},
+			single: function(uid){
+				// Zero out existing active articles
+				collections.article_summaries.instance.zeroOut();
+				// Set the model whose uid is in the hash to a `viewing_single` property of true
+				collections.article_summaries.instance.where({'article_uid': uid})[0].set({'viewing_single': true})
+			},
+			compare: function(uids){
+
+			}
+		}),
+		init: function(){
+			routing.router = new this.Router;
+			Backbone.history.start();
+		}
+	}
+
 	var load = {
 		summaries: {
 			next: function(amount){
@@ -524,8 +546,7 @@
 			mainArticle: {
 				update: function(articleModel){
 					var is_new = this.mainArticle.check(articleModel);
-					if (is_new) this.mainArticle.fetch(articleModel, this.mainArticle.set);
-
+					if (is_new) this.mainArticle.fetch( articleModel.get('article_uid') );
 					return this;
 				},
 				check: function(articleModel){
@@ -538,15 +559,16 @@
 					models.article_detail.instance.set(articleData);
 
 				},
-				fetch: function(articleModel, cb){
+				fetch: function(articleUid){
+					console.log(this)
 					// For now, just have the fetch do the bake
-					var uid = articleModel.get('article_uid');
-					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.article_uid === uid });
+					routing.router.navigate('//single/' + articleUid);
+					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.article_uid === articleUid });
 					if (loaded_matches.length) {
-						cb(loaded_matches[0])
+						this.set(loaded_matches[0])
 					} else {
 						// TODO, handle fetching to the server
-						// Give the article data to `cb`
+						// Give the article data to `this.mainArticle.set`
 
 					}
 				},
@@ -599,7 +621,7 @@
 									.css('background-color', 'auto');
 				}
 
-				return this
+				return this;
 			},
 
 			toggle: function(){
@@ -652,7 +674,7 @@
 					collections.article_summaries.instance.zeroOut();
 					// And set this model to the one being viewed
 					this.model.set('viewing_single', true);
-				} else if (mode == 'comparison') {
+				} else if (mode == 'compare') {
 					this.set('viewing_comparison', true);
 				}
 				return this;
@@ -697,6 +719,7 @@
 			models.init();
 			collections.init();
 			views.init();
+			routing.init();
 			listeners.general();
 		}
 	}
