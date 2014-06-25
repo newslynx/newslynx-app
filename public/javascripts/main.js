@@ -588,7 +588,6 @@
 					var mode = model.get('mode');
 					// Before you switch
 					// Grab the current page numbers listed
-					console.log(window.location.hash)
 					var hash_arr = current_uids = new_uids = [];
 
 					// Only save a previous state if you have a previous article state
