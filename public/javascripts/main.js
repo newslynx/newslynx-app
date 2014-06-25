@@ -445,7 +445,6 @@
 				'compare/:uids': 'compare'
 			},
 			single: function(uid){
-				console.log('routing')
 				// Zero out existing active articles
 				collections.article_summaries.instance.zeroOut();
 				// Set the model whose uid is in the hash to a `viewing_single` property of true
@@ -675,8 +674,7 @@
 				click: 'setActive'
 			},
 			initialize: function(){
-				this.listenTo(this.model, 'change:viewing_single', this.style.single);
-				// this.listenTo(this.model, 'change:viewing_compare', this.style.compare);
+				this.listenTo(this.model, 'change', this.style.toggleActive);
 			},
 
 			render: function(){
@@ -687,17 +685,9 @@
 			},
 
 			style: {
-				single: function(articleModel){
-					console.log('here')
-					if ( articleModel.get('viewing_single') ){
-						this.$el.addClass('active');
-					} else {
-						this.$el.removeClass('active');
-					}
-					return this;
-				},
-				compare: function(articleModel){
-					if ( articleModel.get('viewing_compare') ){
+				toggleActive: function(articleModel){
+					var changed_attribute = _.keys(articleModel.changed)[0]; // {viewing_single: false} -> "viewing_single"
+					if ( articleModel.get(changed_attribute) ){
 						this.$el.addClass('active');
 					} else {
 						this.$el.removeClass('active');
