@@ -560,7 +560,6 @@
 
 				},
 				fetch: function(articleUid){
-					console.log(this)
 					// For now, just have the fetch do the bake
 					routing.router.navigate('//single/' + articleUid);
 					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.article_uid === articleUid });

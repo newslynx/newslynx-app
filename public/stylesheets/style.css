@@ -285,17 +285,14 @@ body[data-section="login"] #drawer {
   vertical-align: middle;
   padding: 5px;
   height: 50px;
+  color: #fff;
 }
 .division-switcher li:not(.active):hover {
   cursor: pointer;
   background-color: #939393;
 }
-.division-switcher .active {
-  color: #fff;
-}
 .division-switcher .active:hover {
   cursor: default;
-  color: #fff;
 }
 .article-summary-wrapper {
   padding: 10px 15px;
