@@ -585,8 +585,23 @@
 			},
 			divisionSwitcher: {
 				update: function(model){
+					var mode = model.get('mode');
+					// Before you switch
+					// Grab the current page numbers listed
+					var hash_arr = window.location.hash.split('/'), // ['#', 'single', 'a1']
+							current_uids = hash_arr.slice(2, hash_arr.length)[0].split("&"); // In single mode, ['a1'], in compare, ['a1', 'a2', 'a3']
+					// If we have something previously saved, used that
+					// If not, our hash will just stay the same
+					var new_uids = model.get('previous-uids') || current_uids;
+
+					// // If we're going into single mode and the hash hasmore than one uid, then we'll go to the first one
+					if (mode == 'single' && current_uids.length > 1) new_uids = [current_uids[0]];
+
 					this.$divisionSwitcher.find('li').removeClass('active');
-					this.$divisionSwitcher.find('li[data-mode="'+model.get('mode')+'"]').addClass('active');
+					this.$divisionSwitcher.find('li[data-mode="'+mode+'"]').addClass('active');
+
+					routing.router.navigate('//'+mode+'/'+new_uids.join('&'), {trigger: true})
+					model.set('previous-uids', current_uids);
 					return this;
 				}
 			}
