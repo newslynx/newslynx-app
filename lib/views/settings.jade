@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    p Connected with Google Analytics?
+    p= user.hasToken('google-analytics');
+    //form(action='/organizations/settings', method='POST')
+    //    != form
+    a(href='/auth/google') Connect with Google Analytics
