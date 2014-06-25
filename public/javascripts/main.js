@@ -377,7 +377,7 @@
 			});
 
 			// Keep track of whether we're in single view or comparison view
-			models.article_state.instance = new models.article_state.Model();
+			models.article_mode.instance = new models.article_mode.Model();
 			// A model for the full article view
 			models.article_detail.instance = new models.article_detail.Model();
 		},
@@ -400,7 +400,7 @@
 				toggle: collectionHelpers.toggle
 			})
 		},
-		article_state: {
+		article_mode: {
 			"instance": null,
 			"Model": Backbone.Model.extend({
 				defaults: {
@@ -496,11 +496,14 @@
 				this.$tagList = $('#tag-list');
 				this.$articleList = $('#article-list');
 				this.$articleDetail = $('#content');
-
+				this.$divisionSwitcher = $('.division-switcher');
 				// Listen for the change event on the collection.
 				// This is equivalent to listening on every one of the 
 				// model objects in the collection.
 				this.listenTo(collections.tags.instance, 'change:active', this.summaryList.update);
+
+				// The article mode is either `single` or `compare`.
+				this.listenTo(models.article_mode.instance, 'change:mode', this.divisionSwitcher.update);
 
 				// When a summary item has `viewing_single` set to true
 				// Fetch or find the detailed data for that article and set the `models.article_detail.instance` values to that data
@@ -529,6 +532,9 @@
 					var article_view = new views.ArticleSummary({model: article});
 					this.$articleList.append(article_view.render().el);
 				}, this);
+
+				new views.DivisionSwitcher({model: models.article_mode.instance, el: this.$divisionSwitcher.find('li[data-mode="single"]')})
+				new views.DivisionSwitcher({model: models.article_mode.instance, el: this.$divisionSwitcher.find('li[data-mode="compare"]')})
 
 				return this;
 			},
@@ -574,6 +580,13 @@
 				bake: function(detailModel){
 					var article_detail_view = new views.ArticleDetail({model: detailModel});
 					this.$articleDetail.html(article_detail_view.render().el);
+					return this;
+				}
+			},
+			divisionSwitcher: {
+				update: function(model){
+					this.$divisionSwitcher.find('li').removeClass('active');
+					this.$divisionSwitcher.find('li[data-mode="'+model.get('mode')+'"]').addClass('active');
 					return this;
 				}
 			}
@@ -665,7 +678,7 @@
 			},
 
 			setActive: function(){
-				var mode = models.article_state.instance.get('mode');
+				var mode = models.article_mode.instance.get('mode');
 				// If we're in article single view mode
 				// And this article is not already selected
 				if (mode == 'single' && !this.model.get('viewing_single')){
@@ -699,6 +712,24 @@
 				this.$el.html(article_detail_markup);
 
 				return this;
+			}
+
+		}),
+		DivisionSwitcher: Backbone.View.extend({
+
+			tagName: 'li',
+
+			events: {
+				click: 'setActive'
+			},
+			initialize: function(){
+				this.listenTo(this.model, 'change', this.toggle);
+			},
+
+			setActive: function(){
+				var mode = this.$el.attr('data-mode');
+				// And set this model to the one being viewed
+				this.model.set('mode', mode);
 			}
 
 		})

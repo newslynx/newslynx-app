@@ -2,8 +2,8 @@ extends layout
 
 block drawer
 	ul.division-switcher
-		li.active Single view
-		li Compare
+		li.active(data-mode="single") Single view
+		li(data-mode="compare") Compare
 	ul#article-list
 
 block templates
