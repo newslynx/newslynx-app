@@ -395,7 +395,7 @@
 			"Model": Backbone.Model.extend({
 				defaults: {
 					viewing_single: false,
-					viewing_comparison: false,
+					viewing_compare: false,
 				},
 				toggle: collectionHelpers.toggle
 			})
@@ -445,6 +445,7 @@
 				'compare/:uids': 'compare'
 			},
 			single: function(uid){
+				console.log('routing')
 				// Zero out existing active articles
 				collections.article_summaries.instance.zeroOut();
 				// Set the model whose uid is in the hash to a `viewing_single` property of true
@@ -560,17 +561,17 @@
 					// False if it was the previously viewed model which triggered a change because we switched it its `viewing_single` prop to false
 					return articleModel.get('viewing_single');
 				},
-				set: function(articleData){
+				setMain: function(articleData){
 					// Update the full article model with new data
 					models.article_detail.instance.set(articleData);
 
 				},
 				fetch: function(articleUid){
 					// For now, just have the fetch do the bake
-					routing.router.navigate('//single/' + articleUid);
+					routing.router.navigate('single/' + articleUid);
 					var loaded_matches = _.filter(articles_detailed, function(obj) { return obj.article_uid === articleUid });
 					if (loaded_matches.length) {
-						this.set(loaded_matches[0])
+						this.setMain(loaded_matches[0]);
 					} else {
 						// TODO, handle fetching to the server
 						// Give the article data to `this.mainArticle.set`
@@ -602,11 +603,10 @@
 						if (mode == 'single' && current_uids.length > 1) new_uids = [current_uids[0]];
 					}
 
-
 					this.$divisionSwitcher.find('li').removeClass('active');
 					this.$divisionSwitcher.find('li[data-mode="'+mode+'"]').addClass('active');
 
-					routing.router.navigate('//'+mode+new_uids.join('&'), {trigger: true});
+					routing.router.navigate(mode+new_uids.join('&'), {trigger: true});
 					// TODO, test the previous state save better once the comparison selection is working better
 					model.set('previous-uids', current_uids);
 					return this;
@@ -676,6 +676,7 @@
 			},
 			initialize: function(){
 				this.listenTo(this.model, 'change:viewing_single', this.style.single);
+				// this.listenTo(this.model, 'change:viewing_compare', this.style.compare);
 			},
 
 			render: function(){
@@ -687,6 +688,7 @@
 
 			style: {
 				single: function(articleModel){
+					console.log('here')
 					if ( articleModel.get('viewing_single') ){
 						this.$el.addClass('active');
 					} else {
@@ -694,8 +696,13 @@
 					}
 					return this;
 				},
-				comparison: function(){
-
+				compare: function(articleModel){
+					if ( articleModel.get('viewing_compare') ){
+						this.$el.addClass('active');
+					} else {
+						this.$el.removeClass('active');
+					}
+					return this;
 				}
 			},
 
@@ -709,8 +716,7 @@
 					// And set this model to the one being viewed
 					this.model.set('viewing_single', true);
 				} else if (mode == 'compare') {
-					console.log('here')
-					this.set('viewing_comparison', true);
+					this.model.set('viewing_compare', !this.model.get('viewing_compare'));
 				}
 				return this;
 			}
