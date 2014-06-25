@@ -1,0 +1,6 @@
+extends layout
+
+block content 
+    form(action='/organizations/join', method='POST')
+        != form
+        input(type='submit', value='request account')
