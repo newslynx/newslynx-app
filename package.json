@@ -23,7 +23,8 @@
     "passport-oauth": "1.x",
     "validator": "3.x",
     "forms": "0.7.x", 
-    "underscore": "1.6.x"
+    "underscore": "1.6.x", 
+    "request": "2.x"
   }, 
   "devDependencies": {
     "sqlite3": "2.x", 
