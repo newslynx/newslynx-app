@@ -1,6 +1,10 @@
 extends layout
 
-block content 
-    form(action='/organizations/join', method='POST')
-        != form
-        input(type='submit', value='request account')
+block content
+    if status
+        //p Thanks for requesting an invitation. We'll get back to you shortly.
+        p Thanks for requesting an account.
+    else
+        form(action='/organizations/join', method='POST')
+            != form
+            input(type='submit', value='request account')
