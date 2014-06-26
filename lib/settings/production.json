@@ -1,1 +1,8 @@
-{}
+{
+    "database": {
+        "name": "newslynx", 
+        "options": {
+            "dialect": "postgres"
+        }
+    }
+}
