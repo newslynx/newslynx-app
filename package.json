@@ -9,7 +9,7 @@
     "express": "~4.0.0",
     "express-session": "1.2.x", 
     "sequelize": "1.7.x", 
-    "static-favicon": "~1.0.0",
+    "serve-favicon": "~2.0.1",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
