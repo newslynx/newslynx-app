@@ -51,6 +51,18 @@ block templates
 				h3.title What events have happened around this story?
 				img(src="images/dummy/events.png")
 
+	script(type="text/jst")#article-detail-card-templ
+		.article-detail-card-container
+			.pub-date <%= date(pub_datetime) %>
+			h2.headline <%= title %>
+			.nl-desc.description
+				p <%= nl_desc %>
+			section(data-name="timeline") Timeline
+			section(data-name="social-posts") social
+			section(data-name="traffic-sources") sources
+			section(data-name="citations") citations
+			section(data-name="events") events
+
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
