@@ -286,6 +286,10 @@ body[data-section="login"] #drawer {
   padding: 5px;
   height: 50px;
   color: #fff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .division-switcher li:not(.active):hover {
   cursor: pointer;
