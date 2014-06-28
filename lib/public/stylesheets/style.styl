@@ -142,6 +142,7 @@ events = #c13d3d
 			margin 5px 0 12px
 		input, select
 			width 100%
+			display inline-block
 		select
 			height 26px
 			padding-top 2px
@@ -158,6 +159,10 @@ events = #c13d3d
 			background-color highlight_gray
 	.section.active a:hover
 		cursor default
+	.option-container[data-type="date-range"] input
+		width 45%
+	.option-container[data-type="date-range"] input[data-dir="to"]
+		float right
 
 .section-options
 	background-color bg_gray

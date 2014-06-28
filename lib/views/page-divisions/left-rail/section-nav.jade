@@ -12,6 +12,10 @@ mixin articles
 		.section-options
 			.option-container(data-type="search")
 				input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
+			.option-container(data-type="date-range")
+				.option-title Date range
+				input(type="text" placeholder="From..." data-dir="from")
+				input(type="text" placeholder="To..." data-dir="to")
 			.option-container(data-type="sort")
 				.option-title Sort by
 				select

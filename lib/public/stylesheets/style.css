@@ -149,6 +149,7 @@ input[type="search"] {
 .main-sections .section input,
 .main-sections .section select {
   width: 100%;
+  display: inline-block;
 }
 .main-sections .section select {
   height: 26px;
@@ -171,6 +172,12 @@ input[type="search"] {
 }
 .main-sections .section.active a:hover {
   cursor: default;
+}
+.main-sections .option-container[data-type="date-range"] input {
+  width: 45%;
+}
+.main-sections .option-container[data-type="date-range"] input[data-dir="to"] {
+  float: right;
 }
 .section-options {
   background-color: #7c7c7c;
