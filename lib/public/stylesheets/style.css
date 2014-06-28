@@ -316,13 +316,17 @@ body[data-section="login"] #drawer {
 }
 .article-summary-wrapper:not(.active):hover {
   cursor: pointer;
-  background-color: #c3e7ff;
+  background-color: #bde4ff;
 }
 .article-summary-wrapper.active {
   background-color: #88cfff;
 }
 .article-summary-wrapper.active:hover {
   cursor: default;
+}
+#drawer[data-mode="compare"] .article-summary-wrapper.active:hover {
+  background-color: #6dc4ff;
+  cursor: pointer;
 }
 /* end drawer */
 /* T E X T  S T Y L E S  */

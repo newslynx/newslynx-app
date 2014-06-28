@@ -280,11 +280,19 @@ body[data-section="login"]
 	margin-top 10px
 .article-summary-wrapper:not(.active):hover
 	cursor pointer
-	background-color tint(select_blue, 50%)
+	background-color tint(select_blue, 45%)
 .article-summary-wrapper.active
 	background-color select_blue
 .article-summary-wrapper.active:hover
 	cursor default
+#drawer[data-mode="compare"] .article-summary-wrapper.active:hover
+	background-color darken(select_blue, 7%)
+	cursor pointer
+// #drawer[data-mode="compare"] .article-summary-wrapper:hover .headline
+// 	text-decoration underline
+
+
+
 
 /* end drawer */
 
