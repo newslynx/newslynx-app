@@ -1,2 +1,22 @@
 extends layout
 
+block drawer
+	span drawer
+block templates
+	script(type="text/jst")#tagd-templ
+		.tag-container
+
+
+	script(type="text/jst")#artdicle-summary-templ
+		.article-summary-container
+
+
+	script(type="text/jst")#artdicle-detail-card-templ
+		.article-detail-card-container
+
+
+block scripts
+	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	script(src="javascripts/thirdparty/underscore-min.js")
+	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/main.js")
