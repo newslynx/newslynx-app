@@ -1,6 +1,9 @@
 extends layout
 
-//- block drawer
+block drawer
+	ul.division-switcher
+		li.active(data-mode="my-alerts") My alerts
+		li(data-mode="create-alert") + Create
 
 block templates
 	script(type="text/jst")#my-alerts-templ
@@ -14,14 +17,6 @@ block templates
 				input(type="checkbox" name="<%= name %>-alerts" checked)
 				span.service-icon(data-service-icon="<%= name %>")
 				span.service-name <%= name %>
-
-
-	script(type="text/jst")#artdicle-summary-templ
-		.article-summary-container
-
-
-	script(type="text/jst")#artdicle-detail-card-templ
-		.article-detail-card-container
 
 
 block scripts

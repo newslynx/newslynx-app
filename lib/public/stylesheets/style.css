@@ -195,10 +195,6 @@ input[type="search"] {
   background-color: #7c7c7c;
   color: #fff;
 }
-.subnav-option:hover {
-  cursor: pointer;
-  background-color: #9a9a9a;
-}
 .section-options input[type="search"] {
   height: 23px;
 }
@@ -258,6 +254,10 @@ body[data-section="approval-river"] .section.active > .nav-link {
 body[data-section="approval-river"] #drawer {
   background-color: #e7f7fb;
   border-right-color: #4dc9e5;
+}
+body[data-section="approval-river"] .division-switcher li.active {
+  background-color: #12b7dd;
+  text-shadow: 0 0px 12px #535353;
 }
 body[data-section="articles"] .section.active > .nav-link {
   background-color: #3ec173;
