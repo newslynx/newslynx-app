@@ -1,46 +1,52 @@
 mixin about
 	li.section.active(data-section="about")
-		a(href="/about") About
+		span.nav-link About
 			
 mixin approval-river
 	li.section.active(data-section="approval-river")
-		a(href="/approval-river") Approval river
+		span.nav-link Approval river
+	li.section-subnav
+		.subnav-option
+			span.nav-link My alerts
+		.subnav-option
+			span.nav-link Create new alert
+
 			
 mixin articles
 	li.section.active(data-section="articles")
-		a(href="/articles") Articles
-		.section-options
-			.option-container(data-type="search")
-				input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
-			.option-container(data-type="date-range")
-				.option-title Date range
-				input(type="text" placeholder="From..." data-dir="from")
-				input(type="text" placeholder="To..." data-dir="to")
-			.option-container(data-type="sort")
-				.option-title Sort by
-				select
-					option Publish date
-					option # impact events
-					option Pageviews
-					option Twitter mentions
-					option Faceook Likes & Shares
-					option Social media shares
-			.option-container(data-type="tags")
-				.option-title Tags
-				ul#tag-list
-			.option-container(data-type="edit-tags")
-				.option-title 
-				button.manage-tags Manage tags
-				button.new-tag New tag
+		span.nav-link Articles
+	li.section-options
+		.option-container(data-type="search")
+			input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
+		.option-container(data-type="date-range")
+			.option-title Date range
+			input(type="text" placeholder="From..." data-dir="from")
+			input(type="text" placeholder="To..." data-dir="to")
+		.option-container(data-type="sort")
+			.option-title Sort by
+			select
+				option Publish date
+				option # impact events
+				option Pageviews
+				option Twitter mentions
+				option Faceook Likes & Shares
+				option Social media shares
+		.option-container(data-type="tags")
+			.option-title Tags
+			ul#tag-list
+		.option-container(data-type="edit-tags")
+			.option-title 
+			button.manage-tags Manage tags
+			button.new-tag New tag
 
 
 mixin series
 	li.section.active(data-section="series")
-		a(href="/series") Series
+		span.nav-link Series
 			
 mixin events
 	li.section.active(data-section="events")
-		a(href="/events") Events
+		span.nav-link Events
 		
 nav
 	ul.main-sections

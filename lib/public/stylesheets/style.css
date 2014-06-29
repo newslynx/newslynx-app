@@ -137,40 +137,51 @@ input[type="search"] {
   margin-top: 10px;
   height: 98%;
 }
-.main-sections .section.active a {
+.main-sections li {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.main-sections .section.active .nav-link {
   text-shadow: 0 0px 12px #535353;
 }
 .main-sections .section.active:hover {
   cursor: default;
 }
-.main-sections .section .option-container {
+.main-sections .option-container {
   margin: 5px 0 12px;
 }
-.main-sections .section input,
-.main-sections .section select {
+.main-sections input,
+.main-sections select {
   width: 100%;
   display: inline-block;
 }
-.main-sections .section select {
+.main-sections select {
   height: 26px;
   padding-top: 2px;
 }
-.main-sections .section .section-options,
-.main-sections .section a {
+.main-sections .section-options,
+.main-sections .nav-link,
+.main-sections a {
   padding: 10px 25px;
 }
-.main-sections .section a {
+.main-sections .nav-link,
+.main-sections a {
+  color: #f2f2f2;
+}
+.main-sections .nav-link,
+.main-sections a {
   font-size: 2em;
   font-weight: 100;
-  color: #f2f2f2;
   display: block;
   text-decoration: none;
 }
-.main-sections .section a:hover {
+.main-sections a:hover {
   cursor: pointer;
   background-color: #666;
 }
-.main-sections .section.active a:hover {
+.main-sections .section.active .nav-link:hover {
   cursor: default;
 }
 .main-sections .option-container[data-type="date-range"] input {
@@ -179,9 +190,14 @@ input[type="search"] {
 .main-sections .option-container[data-type="date-range"] input[data-dir="to"] {
   float: right;
 }
-.section-options {
+.section-options,
+.section-subnav {
   background-color: #7c7c7c;
   color: #fff;
+}
+.subnav-option:hover {
+  cursor: pointer;
+  background-color: #9a9a9a;
 }
 .section-options input[type="search"] {
   height: 23px;
@@ -229,21 +245,21 @@ input[type="search"] {
 }
 /* end left rails */
 /* S E C T I O N  S P E C I F I C  S T Y L E S  */
-body[data-section="about"] .section.active a {
+body[data-section="about"] .section.active > .nav-link {
   background-color: #e3943b;
 }
 body[data-section="about"] #drawer {
   background-color: #fcf4eb;
   border-right-color: #eaae6c;
 }
-body[data-section="approval-river"] .section.active a {
+body[data-section="approval-river"] .section.active > .nav-link {
   background-color: #12b7dd;
 }
 body[data-section="approval-river"] #drawer {
   background-color: #e7f7fb;
   border-right-color: #4dc9e5;
 }
-body[data-section="articles"] .section.active a {
+body[data-section="articles"] .section.active > .nav-link {
   background-color: #3ec173;
 }
 body[data-section="articles"] #drawer {
@@ -254,14 +270,14 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #3ec173;
   text-shadow: 0 0px 12px #535353;
 }
-body[data-section="series"] .section.active a {
+body[data-section="series"] .section.active > .nav-link {
   background-color: #b980c2;
 }
 body[data-section="series"] #drawer {
   background-color: #f4ebf5;
   border-right-color: #ca9fd1;
 }
-body[data-section="events"] .section.active a {
+body[data-section="events"] .section.active > .nav-link {
   background-color: #c13d3d;
 }
 body[data-section="events"] #drawer {
@@ -278,10 +294,26 @@ body[data-section="login"] #drawer {
   font-size: 1.3em;
   line-height: 1.3em;
 }
+.drawer-title,
 .division-switcher {
   width: 100%;
-  font-size: 1.8em;
+  font-size: 2.4em;
   font-weight: 100;
+}
+.drawer-title,
+.drawer-item {
+  padding: 10px 15px;
+}
+.drawer-section-title {
+  padding: 0 15px;
+}
+.drawer-section-title {
+  font-size: 1.3em;
+  font-weight: 200;
+}
+/*   A R T I C L E  S T Y L E S   */
+.division-switcher {
+  font-size: 1.8em;
   display: table;
   background-color: #7c7c7c;
 }
@@ -306,7 +338,6 @@ body[data-section="login"] #drawer {
   cursor: default;
 }
 .article-summary-wrapper {
-  padding: 10px 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -334,6 +365,10 @@ body[data-section="login"] #drawer {
 #drawer[data-mode="compare"] .article-summary-wrapper.active:hover {
   background-color: #6dc4ff;
   cursor: pointer;
+}
+/*  A P P R O V A L  R I V E R   */
+#alert-sources {
+  padding: 0;
 }
 /* end drawer */
 /* T E X T  S T Y L E S  */

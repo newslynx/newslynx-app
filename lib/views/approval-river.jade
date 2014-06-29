@@ -1,10 +1,19 @@
 extends layout
 
-block drawer
-	span drawer
+//- block drawer
+
 block templates
-	script(type="text/jst")#tagd-templ
-		.tag-container
+	script(type="text/jst")#my-alerts-templ
+		.drawer-title My alerts
+		.drawer-section-title  Show approval items from:
+		ul#alert-sources.drawer-item
+	
+	script(type="text/jst")#alert-source-templ
+		li
+			label(for="<%= name %>-alerts")
+				input(type="checkbox" name="<%= name %>-alerts" checked)
+				span.service-icon(data-service-icon="<%= name %>")
+				span.service-name <%= name %>
 
 
 	script(type="text/jst")#artdicle-summary-templ

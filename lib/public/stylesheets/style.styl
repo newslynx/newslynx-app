@@ -133,40 +133,47 @@ events = #c13d3d
 .main-sections
 	margin-top 10px
 	height 98%
-	.section.active a
+	li
+		user-select none
+	.section.active .nav-link
 		text-shadow 0 0px 12px #535353
 	.section.active:hover
 		cursor default
-	.section
-		.option-container
-			margin 5px 0 12px
-		input, select
-			width 100%
-			display inline-block
-		select
-			height 26px
-			padding-top 2px
-		.section-options, a
-			padding 10px 25px
-		a
-			font-size 2em
-			font-weight 100
-			color #f2f2f2
-			display block
-			text-decoration none
-		a:hover
-			cursor pointer
-			background-color highlight_gray
-	.section.active a:hover
+	.option-container
+		margin 5px 0 12px
+	input, select
+		width 100%
+		display inline-block
+	select
+		height 26px
+		padding-top 2px
+	.section-options, .nav-link, a
+		padding 10px 25px
+	.nav-link,a
+		color #f2f2f2
+	.nav-link, a
+		font-size 2em
+		font-weight 100
+		display block
+		text-decoration none
+	a:hover
+		cursor pointer
+		background-color highlight_gray
+	.section.active .nav-link:hover
 		cursor default
 	.option-container[data-type="date-range"] input
 		width 45%
 	.option-container[data-type="date-range"] input[data-dir="to"]
 		float right
 
-.section-options
+.section-options,.section-subnav
 	background-color bg_gray
 	color #fff
+.subnav-option:hover
+	cursor pointer
+	background-color tint(bg_gray, 23%)
+	
+.section-options
 	input[type="search"]
 		height 23px
 	.option-title
@@ -206,13 +213,13 @@ events = #c13d3d
 
 /* S E C T I O N  S P E C I F I C  S T Y L E S  */
 body[data-section="about"]
-	.section.active a
+	.section.active > .nav-link
 		background-color about
 	#drawer
 		background-color tint(about, 90%)
 		border-right-color tint(about, 25%)
 body[data-section="approval-river"] 
-	.section.active a
+	.section.active > .nav-link
 		background-color approval_river
 	#drawer
 		background-color tint(approval_river, 90%)
@@ -220,7 +227,7 @@ body[data-section="approval-river"]
 body[data-section="articles"]
 	#left-rail
 		// box-shadow 0px 0px 6px darken(articles, 35%)
-	.section.active a
+	.section.active > .nav-link
 		background-color articles
 	#drawer
 		background-color tint(articles, 90%)
@@ -231,13 +238,13 @@ body[data-section="articles"]
 		// box-shadow 0px 0px 11px articles
 
 body[data-section="series"] 
-	.section.active a
+	.section.active > .nav-link
 		background-color series
 	#drawer
 		background-color tint(series, 85%)
 		border-right-color tint(series, 25%)
 body[data-section="events"] 
-	.section.active a
+	.section.active > .nav-link
 		background-color events
 	#drawer
 		background-color tint(events, 85%)
@@ -254,10 +261,20 @@ body[data-section="login"]
 	p
 		font-size 1.3em
 		line-height 1.3em
-.division-switcher
+.drawer-title,.division-switcher
 	width 100%
-	font-size 1.8em
+	font-size 2.4em
 	font-weight 100
+.drawer-title,.drawer-item
+	padding 10px 15px
+.drawer-section-title
+	padding 0  15px
+.drawer-section-title
+	font-size 1.3em
+	font-weight 200
+/*   A R T I C L E  S T Y L E S   */
+.division-switcher
+	font-size 1.8em
 	display table
 	background-color bg_gray
 	li
@@ -275,7 +292,6 @@ body[data-section="login"]
 	.active:hover
 		cursor default
 .article-summary-wrapper
-	padding 10px 15px
 	user-select none
 	.pub-date
 		font-size 1.1em
@@ -295,8 +311,9 @@ body[data-section="login"]
 	cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
-
-
+/*  A P P R O V A L  R I V E R   */
+#alert-sources
+	padding 0
 
 /* end drawer */
 
