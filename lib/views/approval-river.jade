@@ -18,8 +18,8 @@ block drawer
 // Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
 	script(type="text/jst")#alert-templ
-		| <div class="alert-container">
-		| 	<div class="shortname"><%= shortname %></div>
+		| <div class="drawer-list-inner">
+		| 	<div class="headline"><%= shortname %></div>
 		| 	<div class="toolbar">
 		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
 		| 		<div class="edit">Edit</div>

@@ -303,13 +303,15 @@ body[data-section="login"] #drawer {
   font-weight: 100;
 }
 .drawer-title,
-.drawer-item,
-.drawer-list-item {
+.drawer-item {
   padding: 10px 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.drawer-list-item {
+  padding: 3px 15px;
 }
 .drawer-short-item {
   padding: 0 15px;
@@ -317,6 +319,22 @@ body[data-section="login"] #drawer {
 .drawer-section-title {
   font-size: 1.4em;
   font-weight: 200;
+}
+.drawer-list-inner {
+  border-left: 3px solid #88cfff;
+  padding: 6px 0 6px 5px;
+}
+.drawer-list-item.active .drawer-list-inner {
+  border-left-width: 0;
+  padding-left: 0;
+}
+.drawer-list-inner,
+.tag-container {
+  -webkit-transition: border-left-width 0.1s linear, padding-left 0.1s linear;
+  -moz-transition: border-left-width 0.1s linear, padding-left 0.1s linear;
+  -o-transition: border-left-width 0.1s linear, padding-left 0.1s linear;
+  -ms-transition: border-left-width 0.1s linear, padding-left 0.1s linear;
+  transition: border-left-width 0.1s linear, padding-left 0.1s linear;
 }
 /*   A R T I C L E  S T Y L E S   */
 .division-switcher {
@@ -354,7 +372,18 @@ body[data-section="login"] #drawer {
   font-size: 1.1em;
 }
 .drawer-list-item .headline {
+  font-size: 1.4em;
+}
+.drawer-list-item .toolbar {
   font-size: 1.2em;
+  margin-top: 11px;
+}
+.drawer-list-item .edit,
+.drawer-list-item .master-switch {
+  display: inline-block;
+}
+.drawer-list-item .master-switch {
+  float: right;
 }
 .drawer-list-item:not(.active):hover {
   cursor: pointer;
@@ -377,14 +406,17 @@ body[data-section="login"] #drawer {
 }
 .view-all {
   text-align: right;
-  font-size: 1.3em;
-  color: #ccc;
+  font-size: 1em;
+  color: #a9cdd5;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .view-all:hover {
   cursor: default;
 }
 .view-all.active {
-  color: #000;
+  color: #1b1b1b;
 }
 .view-all.active:hover {
   text-decoration: underline;
