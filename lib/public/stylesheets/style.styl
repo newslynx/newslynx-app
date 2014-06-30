@@ -322,6 +322,10 @@ body[data-section="login"]
 		display inline-block
 	.master-switch
 		float right
+	.master-switch[data-enabled="true"]
+		color green
+	.master-switch[data-enabled="false"]
+		color bg_gray
 .drawer-list-item:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)

@@ -385,6 +385,12 @@ body[data-section="login"] #drawer {
 .drawer-list-item .master-switch {
   float: right;
 }
+.drawer-list-item .master-switch[data-enabled="true"] {
+  color: #008000;
+}
+.drawer-list-item .master-switch[data-enabled="false"] {
+  color: #7c7c7c;
+}
 .drawer-list-item:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
