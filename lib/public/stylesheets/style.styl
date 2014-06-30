@@ -268,7 +268,8 @@ body[data-section="login"]
 	width 100%
 	font-size 2.4em
 	font-weight 100
-.drawer-title,.drawer-item,.drawer-container
+// TODO, possibly remove .drawer-item
+.drawer-title,.drawer-item,.drawer-container,.drawer-list-item
 	padding 10px 15px
 .drawer-section-title
 	font-size 1.4em
@@ -292,22 +293,23 @@ body[data-section="login"]
 		background-color tint(highlight_gray, 30%)
 	.active:hover
 		cursor default
-.article-summary-wrapper
+
+.drawer-list-item
 	user-select none
 	.pub-date
 		font-size 1.1em
 	.headline
 		font-size 1.2em
-.article-summary-wrapper:first-child
+.drawer-list-item:first-child
 	margin-top 10px
-.article-summary-wrapper:not(.active):hover
+.drawer-list-item:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)
-.article-summary-wrapper.active
+.drawer-list-item.active
 	background-color select_blue
-.article-summary-wrapper.active:hover
+.drawer-list-item.active:hover
 	cursor default
-#drawer[data-mode="compare"] .article-summary-wrapper.active:hover
+#drawer[data-mode="compare"] .drawer-list-item.active:hover
 	background-color darken(select_blue, 7%)
 	cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover

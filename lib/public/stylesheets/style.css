@@ -302,7 +302,8 @@ body[data-section="login"] #drawer {
 }
 .drawer-title,
 .drawer-item,
-.drawer-container {
+.drawer-container,
+.drawer-list-item {
   padding: 10px 15px;
 }
 .drawer-section-title {
@@ -335,32 +336,32 @@ body[data-section="login"] #drawer {
 .division-switcher .active:hover {
   cursor: default;
 }
-.article-summary-wrapper {
+.drawer-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.article-summary-wrapper .pub-date {
+.drawer-list-item .pub-date {
   font-size: 1.1em;
 }
-.article-summary-wrapper .headline {
+.drawer-list-item .headline {
   font-size: 1.2em;
 }
-.article-summary-wrapper:first-child {
+.drawer-list-item:first-child {
   margin-top: 10px;
 }
-.article-summary-wrapper:not(.active):hover {
+.drawer-list-item:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
 }
-.article-summary-wrapper.active {
+.drawer-list-item.active {
   background-color: #88cfff;
 }
-.article-summary-wrapper.active:hover {
+.drawer-list-item.active:hover {
   cursor: default;
 }
-#drawer[data-mode="compare"] .article-summary-wrapper.active:hover {
+#drawer[data-mode="compare"] .drawer-list-item.active:hover {
   background-color: #6dc4ff;
   cursor: pointer;
 }
