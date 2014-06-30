@@ -5,17 +5,27 @@ block drawer
 		li(data-mode="my-alerts") My alerts
 		li(data-mode="create-new") + Create
 	.drawer-container(data-mode="my-alerts")
-		.drawer-section-title  Show approval candidates from:
-	.drawer-container(data-mode="create-new")
-		.drawer-section-title  Add any one of these alerts with the form on the right.
-
-
-block templates
-	script(type="text/jst")#my-alerts-templ
+		.drawer-section-title.drawer-item  Show approval candidates from:
 		ul#alert-sources.drawer-item
-	
+		ul#alerts
+	.drawer-container(data-mode="create-new")
+		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
+
+
+// This template has to be rendered in standard html because jade
+// In all its glory
+// Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
+block templates
+	script(type="text/jst")#alert-templ
+		| <div class="alert-container">
+		| 	<div class="shortname"> <%= shortname %> </div>
+		| 	<div class="toolbar">
+		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
+		| 		<div class="edit">Edit</div>
+		| 		<div class="master-switch" data-enabled="<%= enabled %>"> <%= formatEnabled(enabled) %> </div>
+		|		</div>
+
 	script(type="text/jst")#alert-source-templ
-		li
 			label(for="<%= name %>-alerts")
 				input(type="checkbox" name="<%= name %>-alerts" checked)
 				span.service-icon(data-service-icon="<%= name %>")

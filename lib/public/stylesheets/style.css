@@ -302,7 +302,6 @@ body[data-section="login"] #drawer {
 }
 .drawer-title,
 .drawer-item,
-.drawer-container,
 .drawer-list-item {
   padding: 10px 15px;
 }
@@ -421,14 +420,14 @@ input {
 .article-detail-wrapper {
   padding: 25px 50px;
 }
-.toolbar {
+#content .toolbar {
   overflow: auto;
   margin: 20px 0 40px 0;
 }
-.comparison-container {
+#content .comparison-container {
   display: inline-block;
 }
-.create-event {
+#content .create-event {
   float: right;
 }
 /* end text styles */
