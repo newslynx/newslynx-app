@@ -7,6 +7,7 @@ block drawer
 	.drawer-container(data-mode="my-alerts")
 		.drawer-section-title.drawer-item  Show approval candidates from:
 		ul#alert-sources.drawer-item
+		.view-all.drawer-item Clear filters
 		ul#alerts
 	.drawer-container(data-mode="create-new")
 		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
@@ -18,11 +19,11 @@ block drawer
 block templates
 	script(type="text/jst")#alert-templ
 		| <div class="alert-container">
-		| 	<div class="shortname"> <%= shortname %> </div>
+		| 	<div class="shortname"><%= shortname %></div>
 		| 	<div class="toolbar">
 		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
 		| 		<div class="edit">Edit</div>
-		| 		<div class="master-switch" data-enabled="<%= enabled %>"> <%= formatEnabled(enabled) %> </div>
+		| 		<div class="master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 		|		</div>
 
 	script(type="text/jst")#alert-source-templ
@@ -31,6 +32,12 @@ block templates
 				span.service-icon(data-service-icon="<%= name %>")
 				span.service-name <%= name %>
 
+	script(type="text/jst")#river-item-templ
+		| <div class="river-item-container">
+		| 	<div class="title"><%= title %></div>
+		| 	<div class="toolbar">
+		| 		<div class="origin-alert"><%= uid %></div>
+		|		</div>
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")

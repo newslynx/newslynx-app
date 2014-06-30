@@ -20,13 +20,15 @@ ul
 	margin 0
 	padding 0
 
-h1,h2,h3,h4
+h1,h2,h3,h4,ul
 	margin 0
 	padding 0
 	-webkit-margin-before 0px
 	-webkit-margin-after 0px
 	-webkit-margin-start 0px
 	-webkit-margin-end 0px
+	-webkit-padding-start 0
+
 
 input[type="search"]
 	appearance searchfield
@@ -271,6 +273,9 @@ body[data-section="login"]
 // TODO, possibly remove .drawer-item
 .drawer-title,.drawer-item,.drawer-list-item
 	padding 10px 15px
+	user-select none
+.drawer-short-item
+	padding 0 15px
 .drawer-section-title
 	font-size 1.4em
 	font-weight 200
@@ -301,7 +306,7 @@ body[data-section="login"]
 	.headline
 		font-size 1.2em
 .drawer-list-item:first-child
-	margin-top 10px
+	// margin-top 10px
 .drawer-list-item:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)
@@ -309,7 +314,8 @@ body[data-section="login"]
 	background-color select_blue
 .drawer-list-item.active:hover
 	cursor default
-#drawer[data-mode="compare"] .drawer-list-item.active:hover
+#drawer[data-mode="compare"] .drawer-list-item.active:hover,
+#drawer[data-mode="my-alerts"] .drawer-list-item.active:hover
 	background-color darken(select_blue, 7%)
 	cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
@@ -317,7 +323,17 @@ body[data-section="login"]
 /*  A P P R O V A L  R I V E R   */
 #alert-sources
 	padding 0
-
+.view-all
+	text-align right
+	font-size 1.3em
+	color #ccc
+.view-all:hover
+	cursor default
+.view-all.active
+	color #000
+.view-all.active:hover
+	text-decoration underline
+	cursor pointer
 /* end drawer */
 
 /* T E X T  S T Y L E S  */
