@@ -6,11 +6,20 @@ Code and Issue Tracking for Newslynx App
 
 ## Developing
 
-If not already installed:
+#### First time
+
+If not already installed
+
 `npm install nodemon -g`
 
 ````bash
 npm install
+nodemon --debug ./bin/www -e jade,js,styl
+````
+
+#### Normal
+
+````
 nodemon --debug ./bin/www -e jade,js,styl
 ````
 
