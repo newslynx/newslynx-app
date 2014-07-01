@@ -56,6 +56,21 @@ articles = #3ec173
 series = #b980c2
 events = #c13d3d
 
+/* F U R N I T U R E */
+.destroy
+	position absolute
+	top 0
+	right 0
+	font-weight bold
+	color #ccc
+	width 100%
+	text-align right
+	padding-right 10px
+	height 20px
+.destroy:hover
+	cursor: pointer
+	color #000
+
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper
 	width 100%
@@ -368,7 +383,7 @@ input
 	text-transform uppercase
 	margin-bottom 3px
 
-#content 
+.article-detail-wrapper
 	.pub-date
 		font-size 1.2em
 	.headline,.title
@@ -390,12 +405,12 @@ input
 		content '## '
 	.description
 		font-size 1.3em
+
 /* end text styles */
 
 /*  M A I N   A R T I C L E  */
-.article-detail-wrapper
-	padding 25px 50px
 #content
+	padding 25px 50px
 	.toolbar
 		overflow auto
 		margin 20px 0 40px 0
@@ -403,7 +418,35 @@ input
 		display inline-block
 	.create-event
 		float right
-/* end text styles */
+
+#content[data-mode="compare"]
+	padding 0
+.article-detail-card-wrapper
+	position relative
+	width 300px 
+	height 400px
+	display inline-block
+	vertical-align top
+	margin 7.5px
+	border 1px solid #ccc
+	.destroy
+		font-size 1.5em
+		user-select none
+
+.article-detail-card-container
+	padding 7.5px
+	section
+		display inline-block
+		vertical-align top
+	section.right
+		text-align right
+		float right
+	h3.title
+		font-weight normal
+		color bg_gray
+
+
+/* end main article styles */
 // /* M A I N	E L E M E N T S */
 // .main-content
 // 	width 66.66%

@@ -53,15 +53,23 @@ block templates
 
 	script(type="text/jst")#article-detail-card-templ
 		.article-detail-card-container
+			.destroy &times;
 			.pub-date <%= date(pub_datetime) %>
 			h2.headline <%= title %>
-			.nl-desc.description
-				p <%= nl_desc %>
-			section(data-name="timeline") Timeline
-			section(data-name="social-posts") social
-			section(data-name="traffic-sources") sources
-			section(data-name="citations") citations
-			section(data-name="events") events
+			section(data-name="timeline")
+				img(src="images/dummy/card/timeline.png")
+			section(data-name="social-posts") 
+				h3.title Social posts
+				img(src="images/dummy/card/social-posts.png")
+			section(data-name="traffic-sources").right
+				h3.title Traffic sources
+				img(src="images/dummy/card/traffic-sources.png")
+			section(data-name="citations") 
+				h3.title Citations
+				img(src="images/dummy/card/citations.png")
+			section(data-name="events").right
+				h3.title Events
+				img(src="images/dummy/card/events.png")
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")

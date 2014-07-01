@@ -45,6 +45,22 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
+/* F U R N I T U R E */
+.destroy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  color: #ccc;
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+  height: 20px;
+}
+.destroy:hover {
+  cursor: pointer;
+  color: #000;
+}
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper {
   width: 100%;
@@ -426,40 +442,40 @@ input {
   text-transform: uppercase;
   margin-bottom: 3px;
 }
-#content .pub-date {
+.article-detail-wrapper .pub-date {
   font-size: 1.2em;
 }
-#content .headline,
-#content .title {
+.article-detail-wrapper .headline,
+.article-detail-wrapper .title {
   position: relative;
 }
-#content .headline {
+.article-detail-wrapper .headline {
   font-size: 2.8em;
 }
-#content .title {
+.article-detail-wrapper .title {
   font-size: 2.2em;
 }
-#content .headline:before,
-#content .title:before {
+.article-detail-wrapper .headline:before,
+.article-detail-wrapper .title:before {
   position: absolute;
   color: #ddd;
   font-weight: 400;
   top: 1px;
 }
-#content .headline:before {
+.article-detail-wrapper .headline:before {
   left: -24px;
   content: '# ';
 }
-#content .title:before {
+.article-detail-wrapper .title:before {
   left: -32px;
   content: '## ';
 }
-#content .description {
+.article-detail-wrapper .description {
   font-size: 1.3em;
 }
 /* end text styles */
 /*  M A I N   A R T I C L E  */
-.article-detail-wrapper {
+#content {
   padding: 25px 50px;
 }
 #content .toolbar {
@@ -472,7 +488,41 @@ input {
 #content .create-event {
   float: right;
 }
-/* end text styles */
+#content[data-mode="compare"] {
+  padding: 0;
+}
+.article-detail-card-wrapper {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 7.5px;
+  border: 1px solid #ccc;
+}
+.article-detail-card-wrapper .destroy {
+  font-size: 1.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.article-detail-card-container {
+  padding: 7.5px;
+}
+.article-detail-card-container section {
+  display: inline-block;
+  vertical-align: top;
+}
+.article-detail-card-container section.right {
+  text-align: right;
+  float: right;
+}
+.article-detail-card-container h3.title {
+  font-weight: normal;
+  color: #7c7c7c;
+}
+/* end main article styles */
 /* R I G H T	R A I L */
 /* C O N T E N T	S E C T I O N S */
 /* E V E N T	R I V E R */
