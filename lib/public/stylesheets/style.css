@@ -384,10 +384,15 @@ body[data-section="login"] #drawer {
   float: right;
 }
 .drawer-list-item .master-switch[data-enabled="true"] {
-  color: #008000;
+  color: #529624;
 }
 .drawer-list-item .master-switch[data-enabled="false"] {
-  color: #7c7c7c;
+  color: #9e0000;
+}
+.drawer-list-item .edit:hover .text,
+.drawer-list-item .master-switch:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .drawer-list-item:not(.active):hover {
   cursor: pointer;
@@ -409,7 +414,6 @@ body[data-section="login"] #drawer {
   padding: 0;
 }
 .view-all {
-  text-align: right;
   font-size: 1em;
   color: #a9cdd5;
   font-weight: 300;

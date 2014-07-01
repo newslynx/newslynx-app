@@ -48,6 +48,8 @@ leftrail_gray = #393939
 bg_gray = #7C7C7C
 highlight_gray = #666
 select_blue = #88cfff
+enable_green = #529624
+disabled_red = #9E0000
 // Page colors
 login = #d6ccdf
 about = #e3943b
@@ -336,9 +338,12 @@ body[data-section="login"]
 	.master-switch
 		float right
 	.master-switch[data-enabled="true"]
-		color green
+		color enable_green
 	.master-switch[data-enabled="false"]
-		color bg_gray
+		color disabled_red
+	.edit:hover .text,.master-switch:hover
+		text-decoration underline
+		cursor pointer
 .drawer-list-item:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)
@@ -356,7 +361,7 @@ body[data-section="login"]
 #alert-sources
 	padding 0
 .view-all
-	text-align right
+	// text-align right
 	font-size 1em
 	color #A9CDD5
 	font-weight 300
