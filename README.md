@@ -14,13 +14,13 @@ If not already installed
 
 ````bash
 npm install
-nodemon --debug ./bin/www -e jade,js,styl
+nodemon ./bin/www -e jade,js,styl
 ````
 
 #### Normal
 
 ````
-nodemon --debug ./bin/www -e jade,js,styl
+nodemon ./bin/www -e jade,js,styl
 ````
 
 The sample article page is here <http://localhost:3000/article>

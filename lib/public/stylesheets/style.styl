@@ -388,7 +388,22 @@ input
 	text-transform uppercase
 	margin-bottom 3px
 
-.article-detail-wrapper
+/* end text styles */
+
+/*  M A I N   A R T I C L E  */
+#content
+	padding 25px 50px
+	.toolbar
+		overflow auto
+		margin 20px 0 40px 0
+	.comparison-container
+		display inline-block
+	.create-event
+		float right
+
+#content[data-mode="compare"]
+	padding 0
+.article-detail-container
 	.pub-date
 		font-size 1.2em
 	.headline,.title
@@ -411,21 +426,6 @@ input
 	.description
 		font-size 1.3em
 
-/* end text styles */
-
-/*  M A I N   A R T I C L E  */
-#content
-	padding 25px 50px
-	.toolbar
-		overflow auto
-		margin 20px 0 40px 0
-	.comparison-container
-		display inline-block
-	.create-event
-		float right
-
-#content[data-mode="compare"]
-	padding 0
 .article-detail-card-wrapper
 	position relative
 	width 300px 
