@@ -360,11 +360,18 @@ body[data-section="login"] #drawer {
 .division-switcher .active:hover {
   cursor: default;
 }
+.drawer-options {
+  border-bottom: 1px solid #ccc;
+}
 .drawer-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-bottom: 1px solid #ccc;
+}
+.drawer-list-item .btn {
+  padding: 5px 0;
 }
 .drawer-list-item .pub-date {
   font-size: 1.1em;

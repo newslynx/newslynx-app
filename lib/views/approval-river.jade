@@ -7,7 +7,8 @@ block drawer
 	.drawer-container(data-mode="my-alerts")
 		//- .drawer-section-title.drawer-item  Show approval candidates from:
 		//- ul#alert-sources.drawer-item
-		.view-all.drawer-item Clear filters
+		.drawer-options
+			.view-all.drawer-item Clear filters
 		ul#alerts
 	.drawer-container(data-mode="create-new")
 		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
@@ -22,8 +23,8 @@ block templates
 		| 	<div class="headline"><%= shortname %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
 		| 	<div class="toolbar">
 		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
-		| 		<div class="edit"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
-		| 		<div class="master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
+		| 		<div class="btn edit"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
+		| 		<div class="btn master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 		|		</div>
 
 	script(type="text/jst")#alert-source-templ
@@ -34,10 +35,17 @@ block templates
 
 	script(type="text/jst")#river-item-templ
 		| <div class="river-item-container">
-		| 	<div class="title"><%= title %></div>
-		| 	<div class="toolbar">
+		|		<div class="approval-box">
+		|			<span class="approval-btn" data-which="yes">&#x2713;</span>
+		|			<span class="approval-btn" data-which="no">&times;</span>
+		|		</div>
+		| 	
+		|		<div class="approval-item-info">
+		|			<div class="title"><%= title %></div>
+		| 		<div class="toolbar">
 		| 		<div class="origin-alert"><%= alert_uid %></div>
 		|		</div>
+		|	</div>
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
