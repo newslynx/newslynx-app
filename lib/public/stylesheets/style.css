@@ -482,7 +482,7 @@ input {
   position: absolute;
   color: #ddd;
   font-weight: 400;
-  top: 10px;
+  top: 1px;
 }
 .article-detail-container .headline:before {
   left: -24px;

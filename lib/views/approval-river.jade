@@ -19,7 +19,7 @@ block drawer
 block templates
 	script(type="text/jst")#alert-templ
 		| <div class="drawer-list-inner">
-		| 	<div class="headline"><%= shortname %></div>
+		| 	<div class="headline"><%= shortname %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
 		| 	<div class="toolbar">
 		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
 		| 		<div class="edit"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
