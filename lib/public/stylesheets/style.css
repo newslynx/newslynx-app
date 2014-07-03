@@ -361,14 +361,14 @@ body[data-section="login"] #drawer {
   cursor: default;
 }
 .drawer-options {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #777676;
 }
 .drawer-list-item {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #777676;
 }
 .drawer-list-item .btn {
   padding: 5px 0;
