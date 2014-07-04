@@ -35,16 +35,17 @@ block templates
 
 	script(type="text/jst")#river-item-templ
 		| <div class="river-item-container">
-		|		<div class="approval-box">
-		|			<span class="approval-btn" data-which="yes">&#x2713;</span>
-		|			<span class="approval-btn" data-which="no">&times;</span>
+		|		<div class="approval-child" data-which="btns">
+		|			<div class="approval-btn-container" data-which="yes"><div class="approval-btn">&#x2713;</div class="approval-btn"></div>
+		|			<div class="approval-btn-container" data-which="no"><div class="approval-btn">&times;</div class="approval-btn"></div>
 		|		</div>
 		| 	
-		|		<div class="approval-item-info">
+		|		<div class="approval-child" data-which="info">
 		|			<div class="title"><%= title %></div>
+		|			<div class="description">The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.</div>
 		| 		<div class="toolbar">
-		| 		<div class="origin-alert"><%= alert_uid %></div>
-		|		</div>
+		|	 			<div class="origin-alert"><%= alert_uid %></div>
+		|			</div>
 		|	</div>
 
 block scripts

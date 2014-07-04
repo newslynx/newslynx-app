@@ -246,6 +246,8 @@ body[data-section="approval-river"]
 	.division-switcher li.active
 		background-color approval_river
 		text-shadow 0 0px 12px #535353
+	// .drawer-list-item,.drawer-options
+	// 	border-bottom-color tint(approval_river, 25%)
 body[data-section="articles"]
 	#left-rail
 		// box-shadow 0px 0px 6px darken(articles, 35%)
@@ -258,7 +260,8 @@ body[data-section="articles"]
 		background-color articles
 		text-shadow 0 0px 12px #535353
 		// box-shadow 0px 0px 11px articles
-
+	// .drawer-list-item,.drawer-options
+	// 	border-bottom-color tint(articles, 25%)
 body[data-section="series"] 
 	.section.active > .nav-link
 		background-color series
@@ -324,9 +327,7 @@ body[data-section="login"]
 	.active:hover
 		cursor default
 
-.drawer-options
-	border-bottom 1px solid #777676
-.drawer-list-item
+.drawer-list-item,.drawer-options
 	user-select none
 	border-bottom 1px solid #777676
 	.btn
@@ -363,6 +364,12 @@ body[data-section="login"]
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
 /*  A P P R O V A L  R I V E R   */
+#content[data-mode="my-alerts"]
+	padding 25px
+
+#content[data-mode="my-alerts"]
+	.article-detail-wrapper
+		margin-bottom 10px
 #alert-sources
 	padding 0
 .view-all
@@ -379,6 +386,34 @@ body[data-section="login"]
 .view-all.active:hover
 	text-decoration underline
 	cursor pointer
+.approval-child
+	display inline-block
+	height 100%
+	vertical-align middle
+.approval-child[data-which="btns"]
+	width 10%
+.approval-child[data-which="info"]
+	width 85%
+.approval-btn-container
+	text-align center
+	display table
+	width 100%
+	// background-color #666
+.approval-btn-container[data-which="yes"]
+	color enable_green
+.approval-btn-container[data-which="no"]
+	color disabled_red
+.approval-btn
+	display table-cell
+	font-size 2.3em
+	vertical-align middle
+	width 100%
+	height 35px
+.approval-btn:hover
+	background-color select_blue
+	cursor pointer
+	border 1px solid shade(select_blue, 10%)
+	// color #fff
 /* end drawer */
 
 /* T E X T  S T Y L E S  */
@@ -397,18 +432,19 @@ input
 
 /*  M A I N   A R T I C L E  */
 #content
-	padding 25px 50px
-	.toolbar
-		overflow auto
-		margin 20px 0 40px 0
+	padding 0
 	.comparison-container
 		display inline-block
 	.create-event
 		float right
 
-#content[data-mode="compare"]
-	padding 0
+#content[data-mode="single"]
+	padding 25px 50px
+
 .article-detail-container
+	.toolbar
+		overflow auto
+		margin 20px 0 40px 0
 	.pub-date
 		font-size 1.2em
 	.headline,.title
