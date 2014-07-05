@@ -34,11 +34,13 @@ block templates
 		|	</div>
 		|</div>
 		|<div class="settings-outer">
+		|<div class="settings-overlay"></div>
 		|	<div class="settings-inner">
+		|		<div class="title">Alert settings</div>
 		|		<form>
-		|			<%= bakeForm(settings) %>
+		|			<%= bakeForm(uid, settings) %>
 		|			<div class="buttons-container">
-		|				<button>Cancel</button> <input type="submit" value="Save">
+		|				<button class="cancel">Cancel</button> <input class="save" type="submit" value="Save">
 		|			</div>
 		|		</form>
 		|	</div>

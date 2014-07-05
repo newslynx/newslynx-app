@@ -428,18 +428,39 @@ body[data-section="login"] #drawer {
 }
 .drawer-list-item .settings-outer {
   display: none;
-  background-color: #f3f0df;
-  -webkit-box-shadow: 1px 1px 10px #ada786 inset;
-  box-shadow: 1px 1px 10px #ada786 inset;
-  position: relative;
-  top: -5px;
-  margin-bottom: -5px;
+}
+.drawer-list-item .settings-outer,
+.drawer-list-item .settings-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.drawer-list-item .settings-overlay {
+  background-color: rgba(0,0,0,0.7);
+}
+.drawer-list-item .settings-inner {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 420px;
+}
+.drawer-list-item .settings-inner .title {
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 1px solid #777676;
+  margin-bottom: 5px;
 }
 .drawer-list-item .settings-outer.active {
   display: block;
+  position: absolute;
+}
+.drawer-list-item .settings-outer.active .settings-overlay,
+.drawer-list-item .settings-outer.active .settings-inner {
+  position: absolute;
 }
 .drawer-list-item form .entry {
-  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 .drawer-list-item form label {
   font-size: 1.3em;

@@ -375,16 +375,31 @@ body[data-section="login"]
 .drawer-list-item
 	.settings-outer
 		display none
-		background-color the_beige
-		box-shadow 1px 1px 10px #ADA786 inset
-		position relative
-		top -5px
-		margin-bottom -5px
+	.settings-outer,.settings-overlay
+		top 0
+		left 0
+		right 0
+		bottom 0
+	.settings-overlay
+		background-color rgba(0,0,0,.7)
+	.settings-inner
+		background-color #fff
+		padding 20px
+		border 1px solid #000
+		width 420px
+		.title
+			font-size 1.4em
+			font-weight bold
+			border-bottom 1px solid border_gray
+			margin-bottom 5px
 	.settings-outer.active
 		display block
+		position absolute
+		.settings-overlay,.settings-inner
+			position absolute
 	form
 		.entry
-			margin-bottom 5px
+			padding-bottom 5px
 		label
 			font-size 1.3em
 			display inline-block
