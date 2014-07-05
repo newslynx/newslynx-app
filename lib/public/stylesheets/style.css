@@ -45,6 +45,10 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
+/* M O D E S */
+body[data-modal=true] {
+  overflow: hidden;
+}
 /* F U R N I T U R E */
 .destroy {
   position: absolute;
@@ -370,42 +374,48 @@ body[data-section="login"] #drawer {
 .drawer-options .pub-date {
   font-size: 1.1em;
 }
-.drawer-list-item .headline,
-.drawer-options .headline {
+.drawer-list-item .title,
+.drawer-options .title {
   font-size: 1.4em;
+  margin-bottom: 2px;
+}
+.drawer-list-item .description,
+.drawer-options .description {
+  font-size: 1.2em;
+  color: #7c7c7c;
 }
 .drawer-list-item .toolbar,
 .drawer-options .toolbar {
   font-size: 1.2em;
   margin-top: 11px;
 }
-.drawer-list-item .edit,
-.drawer-options .edit,
-.drawer-list-item .master-switch,
-.drawer-options .master-switch {
+.drawer-list-item .settings-switch,
+.drawer-options .settings-switch,
+.drawer-list-item .enable-switch,
+.drawer-options .enable-switch {
   display: inline-block;
 }
-.drawer-list-item .master-switch,
-.drawer-options .master-switch {
+.drawer-list-item .enable-switch,
+.drawer-options .enable-switch {
   float: right;
 }
-.drawer-list-item .master-switch[data-enabled="true"],
-.drawer-options .master-switch[data-enabled="true"] {
+.drawer-list-item .enable-switch[data-enabled="true"],
+.drawer-options .enable-switch[data-enabled="true"] {
   color: #529624;
 }
-.drawer-list-item .master-switch[data-enabled="false"],
-.drawer-options .master-switch[data-enabled="false"] {
+.drawer-list-item .enable-switch[data-enabled="false"],
+.drawer-options .enable-switch[data-enabled="false"] {
   color: #9e0000;
 }
-.drawer-list-item .edit:not(.active):hover .text,
-.drawer-options .edit:not(.active):hover .text,
-.drawer-list-item .master-switch:hover,
-.drawer-options .master-switch:hover {
+.drawer-list-item .settings-switch:not(.active):hover .text,
+.drawer-options .settings-switch:not(.active):hover .text,
+.drawer-list-item .enable-switch:hover,
+.drawer-options .enable-switch:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.drawer-list-item .edit:active,
-.drawer-options .edit:active {
+.drawer-list-item .settings-switch:active,
+.drawer-options .settings-switch:active {
   color: #666;
 }
 .drawer-list-item .modal-switch.active:hover,
@@ -457,7 +467,7 @@ body[data-section="login"] #drawer {
 }
 .drawer-list-item .settings-outer.active .settings-overlay,
 .drawer-list-item .settings-outer.active .settings-inner {
-  position: absolute;
+  position: fixed;
 }
 .drawer-list-item form .entry {
   padding-bottom: 5px;

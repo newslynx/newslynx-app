@@ -33,6 +33,10 @@ h1,h2,h3,h4,ul
 input[type="search"]
 	appearance searchfield
 
+/* M O D E S */
+body[data-modal=true]
+	overflow hidden
+
 // Widths
 leftrail_width = 250
 drawer_width = 285
@@ -335,29 +339,33 @@ body[data-section="login"]
 		padding 5px 0
 	.pub-date
 		font-size 1.1em
-	.headline
+	.title
 		font-size 1.4em
+		margin-bottom 2px
+	.description
+		font-size 1.2em
+		color bg_gray
 	.toolbar
 		font-size 1.2em
 		margin-top 11px
-	.edit,.master-switch
+	.settings-switch,.enable-switch
 		display inline-block
-	.master-switch
+	.enable-switch
 		float right
-	.master-switch[data-enabled="true"]
+	.enable-switch[data-enabled="true"]
 		color enable_green
-	.master-switch[data-enabled="false"]
+	.enable-switch[data-enabled="false"]
 		color disabled_red
-	.edit:not(.active):hover .text,.master-switch:hover
+	.settings-switch:not(.active):hover .text,.enable-switch:hover
 		text-decoration underline
 		cursor pointer
-	.edit:active
+	.settings-switch:active
 		color #666
 	.modal-switch.active:hover
 		cursor default
-	// .master-switch[data-enabled="true"]:active
+	// .enable-switch[data-enabled="true"]:active
 	// 	color shade(enable_green, 80%)
-	// .master-switch[data-enabled="false"]:active
+	// .enable-switch[data-enabled="false"]:active
 	// 	color shade(disabled_red, 80%)
 .drawer-list-outer:not(.active):hover
 	cursor pointer
@@ -396,7 +404,7 @@ body[data-section="login"]
 		display block
 		position absolute
 		.settings-overlay,.settings-inner
-			position absolute
+			position fixed
 	form
 		.entry
 			padding-bottom 5px

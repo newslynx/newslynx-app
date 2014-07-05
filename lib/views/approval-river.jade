@@ -22,35 +22,26 @@ block drawer
 // Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
 	script(type="text/jst")#alert-templ
-		|<div class="drawer-list-outer">
-		|	<div class="drawer-list-inner">
-		|		<div class="headline"><%= settings.name %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
-		|		<div class="description"><%= settings.search_query %></div>
-		|		<div class="toolbar">
-		// |			<div class="service-icon"><span data-icon="<%= settings.service %>"></span></div>
-		|			<div class="btn edit settings-switch"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
-		|			<div class="btn master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
-		|		</div>
-		|	</div>
-		|</div>
-		|<div class="settings-outer">
-		|<div class="settings-overlay"></div>
-		|	<div class="settings-inner">
-		|		<div class="title">Alert settings</div>
-		|		<form>
-		|			<%= bakeForm(uid, settings) %>
-		|			<div class="buttons-container">
-		|				<button class="cancel">Cancel</button> <input class="save" type="submit" value="Save">
-		|			</div>
-		|		</form>
-		|	</div>
-		|</div>		
+		.drawer-list-outer
+			.drawer-list-inner
+				.title <%= settings.name %>
+					span.count  &mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %>
+				.description <%= settings.search_query %>
+				.toolbar
+					.btn.settings-switch
+						span.fa.fa-cog
+						span.text  Edit
+					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
+		.settings-outer
+			.settings-overlay
+			.settings-inner
+				.title Alert settings
+				form
+					<%= bakeForm(uid, settings) %>
+					.buttons-container
+						button.cancel Cancel
+						input.save(type="submit", value="Save")
 
-	// script(type="text/jst")#alert-source-templ
-	// 		label(for="<%= settings.name %>-alerts")
-	// 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
-	// 			span.service-icon(data-service-icon="<%= settings.name %>")
-	// 			span.service-name <%= settings.name %>
 
 	script(type="text/jst")#river-item-templ
 		| <div class="river-item-container">
@@ -67,6 +58,13 @@ block templates
 		|			</div>
 		|	</div>
 
+
+
+// script(type="text/jst")#alert-source-templ
+// 		label(for="<%= settings.name %>-alerts")
+// 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
+// 			span.service-icon(data-service-icon="<%= settings.name %>")
+// 			span.service-name <%= settings.name %>
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
