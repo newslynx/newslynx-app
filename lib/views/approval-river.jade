@@ -24,20 +24,22 @@ block templates
 	script(type="text/jst")#alert-templ
 		|<div class="drawer-list-outer">
 		|	<div class="drawer-list-inner">
-		|		<div class="headline"><%= settings.shortname %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
+		|		<div class="headline"><%= settings.name %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
+		|		<div class="description"><%= settings.search_query %></div>
 		|		<div class="toolbar">
 		// |			<div class="service-icon"><span data-icon="<%= settings.service %>"></span></div>
-		|			<div class="btn edit modal-switch"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
+		|			<div class="btn edit settings-switch"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
 		|			<div class="btn master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 		|		</div>
 		|	</div>
 		|</div>
-		|<div class="modal">
-		|	<div class="modal-overlay"></div>
-		|	<div class="modal-content">
-		|		<div class="modal-title">Alert Settings</div>
+		|<div class="settings-outer">
+		|	<div class="settings-inner">
 		|		<form>
-		|			<div><%= settings.shortname %></div>
+		|			<%= bakeForm(settings) %>
+		|			<div class="buttons-container">
+		|				<button>Cancel</button> <input type="submit" value="Save">
+		|			</div>
 		|		</form>
 		|	</div>
 		|</div>		

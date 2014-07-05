@@ -47,6 +47,7 @@ the_green = #0eb521
 leftrail_gray = #393939
 bg_gray = #7C7C7C
 highlight_gray = #666
+border_gray = #777676
 select_blue = #88cfff
 enable_green = #529624
 disabled_red = #9E0000
@@ -96,7 +97,7 @@ events = #c13d3d
 #drawer
 	width (drawer_width)px
 	background-color dummy
-	border-right 1px solid darken(dummy, 10%)
+	border-right 1px solid border_gray
 	// box-shadow 0px 0px 8px darken(dummy, 10%)
 	z-index 8
 #content
@@ -236,13 +237,13 @@ body[data-section="about"]
 		background-color about
 	#drawer
 		background-color tint(about, 90%)
-		border-right-color tint(about, 25%)
+		// border-right-color tint(about, 25%)
 body[data-section="approval-river"] 
 	.section.active > .nav-link
 		background-color approval_river
 	#drawer
 		background-color tint(approval_river, 90%)
-		border-right-color tint(approval_river, 25%)
+		// border-right-color tint(approval_river, 25%)
 	.division-switcher li.active
 		background-color approval_river
 		text-shadow 0 0px 12px #535353
@@ -255,7 +256,7 @@ body[data-section="articles"]
 		background-color articles
 	#drawer
 		background-color tint(articles, 90%)
-		border-right-color tint(articles, 25%)
+		// border-right-color tint(articles, 25%)
 	.division-switcher li.active
 		background-color articles
 		text-shadow 0 0px 12px #535353
@@ -267,17 +268,17 @@ body[data-section="series"]
 		background-color series
 	#drawer
 		background-color tint(series, 85%)
-		border-right-color tint(series, 25%)
+		// border-right-color tint(series, 25%)
 body[data-section="events"] 
 	.section.active > .nav-link
 		background-color events
 	#drawer
 		background-color tint(events, 85%)
-		border-right-color tint(events, 60%)
+		// border-right-color tint(events, 60%)
 body[data-section="login"] 
 	#drawer
 		background-color login
-		border-right-color darken(login, 25%)
+		// border-right-color darken(login, 25%)
 		// box-shadow 0px 0px 11px login
 /* end section specific styles */
 
@@ -291,7 +292,7 @@ body[data-section="login"]
 	font-size 2.4em
 	font-weight 100
 // TODO, possibly remove .drawer-item
-.drawer-title,.drawer-item,.drawer-list-outer
+.drawer-title,.drawer-item,.drawer-list-outer,.settings-outer
 	padding 10px 15px
 	user-select none
 .drawer-short-item
@@ -329,7 +330,7 @@ body[data-section="login"]
 
 .drawer-list-item,.drawer-options
 	user-select none
-	border-bottom 1px solid #777676
+	border-bottom 1px solid border_gray
 	.btn
 		padding 5px 0
 	.pub-date
@@ -371,23 +372,27 @@ body[data-section="login"]
 	// cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
-.modal
-	display none
-.modal.active,.modal-overlay
-	display block
-	position absolute
-	top 0
-	right 0
-	bottom 0
-	left 0
-.modal-overlay
-	background-color rgba(0,0,0, .5)
-.modal-content
-	position absolute
-	background-color #fff
-	padding 10px
-	width 200px
-	border 1px solid #000
+.drawer-list-item
+	.settings-outer
+		display none
+		background-color the_beige
+		box-shadow 1px 1px 10px #ADA786 inset
+		position relative
+		top -5px
+		margin-bottom -5px
+	.settings-outer.active
+		display block
+	form
+		.entry
+			margin-bottom 5px
+		label
+			font-size 1.3em
+			display inline-block
+			width 40%
+			margin-bottom 3px
+		input[type="text"]
+			width 60%
+			margin 0
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"]
 	padding 25px
