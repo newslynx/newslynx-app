@@ -71,7 +71,6 @@ input[type="search"] {
 #drawer,
 #content {
   display: inline-block;
-  position: relative;
   vertical-align: top;
   height: 100%;
 }
@@ -320,7 +319,7 @@ body[data-section="login"] #drawer {
 }
 .drawer-title,
 .drawer-item,
-.drawer-list-item {
+.drawer-list-outer {
   padding: 10px 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -403,27 +402,56 @@ body[data-section="login"] #drawer {
 .drawer-options .master-switch[data-enabled="false"] {
   color: #9e0000;
 }
-.drawer-list-item .edit:hover .text,
-.drawer-options .edit:hover .text,
+.drawer-list-item .edit:not(.active):hover .text,
+.drawer-options .edit:not(.active):hover .text,
 .drawer-list-item .master-switch:hover,
 .drawer-options .master-switch:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-.drawer-list-item:not(.active):hover {
+.drawer-list-item .edit:active,
+.drawer-options .edit:active {
+  color: #666;
+}
+.drawer-list-item .modal-switch.active:hover,
+.drawer-options .modal-switch.active:hover {
+  cursor: default;
+}
+.drawer-list-outer:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
 }
-.drawer-list-item.active {
+.drawer-list-outer.active {
   background-color: #88cfff;
 }
-.drawer-list-item.active:hover {
+.drawer-list-outer.active:hover {
   cursor: default;
 }
-#drawer[data-mode="compare"] .drawer-list-item.active:hover,
-#drawer[data-mode="my-alerts"] .drawer-list-item.active:hover {
+#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover {
   background-color: #6dc4ff;
-  cursor: pointer;
+}
+.modal {
+  display: none;
+}
+.modal.active,
+.modal-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.modal-overlay {
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #000;
 }
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"] {

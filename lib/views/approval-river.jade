@@ -1,5 +1,8 @@
 extends layout
 
+//- block css
+//- 	link(rel='stylesheet', href='/stylesheets/fancybox/jquery.fancybox.css')
+
 block drawer
 	ul.division-switcher
 		li(data-mode="my-alerts") My alerts
@@ -19,19 +22,31 @@ block drawer
 // Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
 	script(type="text/jst")#alert-templ
-		| <div class="drawer-list-inner">
-		| 	<div class="headline"><%= shortname %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
-		| 	<div class="toolbar">
-		| 		<div class="service-icon"><span data-icon="<%= service %>"></span></div>
-		| 		<div class="btn edit"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
-		| 		<div class="btn master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
+		|<div class="drawer-list-outer">
+		|	<div class="drawer-list-inner">
+		|		<div class="headline"><%= settings.shortname %> <span class="count">&mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %></span></div>
+		|		<div class="toolbar">
+		// |			<div class="service-icon"><span data-icon="<%= settings.service %>"></span></div>
+		|			<div class="btn edit modal-switch"><span class="fa fa-cog"></span> <span class="text">Edit</span></div>
+		|			<div class="btn master-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 		|		</div>
+		|	</div>
+		|</div>
+		|<div class="modal">
+		|	<div class="modal-overlay"></div>
+		|	<div class="modal-content">
+		|		<div class="modal-title">Alert Settings</div>
+		|		<form>
+		|			<div><%= settings.shortname %></div>
+		|		</form>
+		|	</div>
+		|</div>		
 
-	script(type="text/jst")#alert-source-templ
-			label(for="<%= name %>-alerts")
-				input(type="checkbox" name="<%= name %>-alerts" checked)
-				span.service-icon(data-service-icon="<%= name %>")
-				span.service-name <%= name %>
+	// script(type="text/jst")#alert-source-templ
+	// 		label(for="<%= settings.name %>-alerts")
+	// 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
+	// 			span.service-icon(data-service-icon="<%= settings.name %>")
+	// 			span.service-name <%= settings.name %>
 
 	script(type="text/jst")#river-item-templ
 		| <div class="river-item-container">
@@ -52,4 +67,5 @@ block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
+	// script(src="javascripts/thirdparty/jquery.fancybox.pack.js")
 	script(src="javascripts/main.js")

@@ -80,7 +80,7 @@ events = #c13d3d
 	min-width 960px //TK
 #left-rail,#drawer, #content
 	display inline-block
-	position relative
+	// position relative
 	vertical-align top
 	height 100%
 
@@ -291,7 +291,7 @@ body[data-section="login"]
 	font-size 2.4em
 	font-weight 100
 // TODO, possibly remove .drawer-item
-.drawer-title,.drawer-item,.drawer-list-item
+.drawer-title,.drawer-item,.drawer-list-outer
 	padding 10px 15px
 	user-select none
 .drawer-short-item
@@ -347,22 +347,47 @@ body[data-section="login"]
 		color enable_green
 	.master-switch[data-enabled="false"]
 		color disabled_red
-	.edit:hover .text,.master-switch:hover
+	.edit:not(.active):hover .text,.master-switch:hover
 		text-decoration underline
 		cursor pointer
-.drawer-list-item:not(.active):hover
+	.edit:active
+		color #666
+	.modal-switch.active:hover
+		cursor default
+	// .master-switch[data-enabled="true"]:active
+	// 	color shade(enable_green, 80%)
+	// .master-switch[data-enabled="false"]:active
+	// 	color shade(disabled_red, 80%)
+.drawer-list-outer:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)
-.drawer-list-item.active
+.drawer-list-outer.active
 	background-color select_blue
-.drawer-list-item.active:hover
+.drawer-list-outer.active:hover
 	cursor default
-#drawer[data-mode="compare"] .drawer-list-item.active:hover,
-#drawer[data-mode="my-alerts"] .drawer-list-item.active:hover
+#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover
 	background-color darken(select_blue, 7%)
-	cursor pointer
+	// cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
+.modal
+	display none
+.modal.active,.modal-overlay
+	display block
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+.modal-overlay
+	background-color rgba(0,0,0, .5)
+.modal-content
+	position absolute
+	background-color #fff
+	padding 10px
+	width 200px
+	border 1px solid #000
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"]
 	padding 25px
