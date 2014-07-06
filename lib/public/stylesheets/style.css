@@ -379,6 +379,11 @@ body[data-section="login"] #drawer {
   font-size: 1.4em;
   margin-bottom: 2px;
 }
+.drawer-list-item .count,
+.drawer-options .count {
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
 .drawer-list-item .description,
 .drawer-options .description {
   font-size: 1.2em;
@@ -449,7 +454,6 @@ body[data-section="login"] #drawer {
 .view-all {
   font-size: 1em;
   color: #a9cdd5;
-  font-weight: 300;
   letter-spacing: 1px;
   text-transform: uppercase;
 }

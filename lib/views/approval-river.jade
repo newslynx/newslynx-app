@@ -16,7 +16,7 @@ block drawer
 	.drawer-container(data-mode="create-new")
 		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
 		ul#alert-sources
-			
+
 
 
 // This template has to be rendered in standard html because jade
@@ -26,8 +26,8 @@ block templates
 	script(type="text/jst")#alert-templ
 		.drawer-list-outer.modal-parent
 			.drawer-list-inner
+				.count <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %> pending
 				.title <%= settings.name %>
-					span.count  &mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %>
 				.description <%= settings.search_query %>
 				.toolbar
 					.btn.settings-switch
