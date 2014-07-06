@@ -22,7 +22,7 @@ block drawer
 // Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
 	script(type="text/jst")#alert-templ
-		.drawer-list-outer
+		.drawer-list-outer.modal-parent
 			.drawer-list-inner
 				.title <%= settings.name %>
 					span.count  &mdash; <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %>
@@ -32,32 +32,38 @@ block templates
 						span.fa.fa-cog
 						span.text  Edit
 					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
-		.settings-outer
-			.settings-overlay
-			.settings-inner
-				.title Alert settings
-				form
-					<%= bakeForm(uid, settings) %>
-					.buttons-container
-						button.cancel Cancel
-						input.save(type="submit", value="Save")
+			.modal-outer
+				.modal-overlay
+				.modal-inner
+					.title Alert settings
+					form
+						<%= bakeForm(uid, settings) %>
+						.buttons-container
+							button.cancel Cancel
+							input.save(type="submit", value="Save")
 
 
 	script(type="text/jst")#river-item-templ
-		| <div class="river-item-container">
-		|		<div class="approval-child" data-which="btns">
-		|			<div class="approval-btn-container" data-which="yes"><div class="approval-btn">✓</div class="approval-btn"></div>
-		|			<div class="approval-btn-container" data-which="no"><div class="approval-btn">×</div class="approval-btn"></div>
-		|		</div>
-		| 	
-		|		<div class="approval-child" data-which="info">
-		|			<div class="title"><%= title %></div>
-		|			<div class="description">The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.</div>
-		| 		<div class="toolbar">
-		|	 			<div class="origin-alert"><%= alert_uid %></div>
-		|			</div>
-		|	</div>
-
+		.river-item-container.modal-parent
+			.approval-child(data-which="btns")
+				.approval-btn-container(data-which="yes")
+					.approval-btn ✓
+				.approval-btn-container(data-which="no")
+					.approval-btn ×
+			.approval-child(data-which="info")
+				.title <%= title %>
+				.description The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.
+				.toolbar
+					.origin-alert From alert: <%= alert_uid %>
+			.modal-outer
+				.modal-overlay
+				.modal-inner
+					.title Create new event
+					.description Add options here and a form for adding a tag, associating with an article etc.
+					form
+						.buttons-container
+							button.cancel Cancel
+							input.save(type="submit", value="Create")
 
 
 // script(type="text/jst")#alert-source-templ
@@ -65,6 +71,7 @@ block templates
 // 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
 // 			span.service-icon(data-service-icon="<%= settings.name %>")
 // 			span.service-name <%= settings.name %>
+
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")

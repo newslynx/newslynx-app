@@ -296,7 +296,7 @@ body[data-section="login"]
 	font-size 2.4em
 	font-weight 100
 // TODO, possibly remove .drawer-item
-.drawer-title,.drawer-item,.drawer-list-outer,.settings-outer
+.drawer-title,.drawer-item,.drawer-list-outer,.modal-outer
 	padding 10px 15px
 	user-select none
 .drawer-short-item
@@ -380,42 +380,7 @@ body[data-section="login"]
 	// cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
-.drawer-list-item
-	.settings-outer
-		display none
-	.settings-outer,.settings-overlay
-		top 0
-		left 0
-		right 0
-		bottom 0
-	.settings-overlay
-		background-color rgba(0,0,0,.7)
-	.settings-inner
-		background-color #fff
-		padding 20px
-		border 1px solid #000
-		width 420px
-		.title
-			font-size 1.4em
-			font-weight bold
-			border-bottom 1px solid border_gray
-			margin-bottom 5px
-	.settings-outer.active
-		display block
-		position absolute
-		.settings-overlay,.settings-inner
-			position fixed
-	form
-		.entry
-			padding-bottom 5px
-		label
-			font-size 1.3em
-			display inline-block
-			width 40%
-			margin-bottom 3px
-		input[type="text"]
-			width 60%
-			margin 0
+
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"]
 	padding 25px
@@ -464,7 +429,7 @@ body[data-section="login"]
 	vertical-align middle
 .approval-btn-container .approval-btn:hover
 	cursor pointer
-.approval-btn-container[data-which="yes"] .approval-btn:active
+.approval-btn-container .approval-btn:active
 	color #fff
 .approval-btn-container[data-which="yes"] .approval-btn:hover
 	border-color enable_green
@@ -560,137 +525,43 @@ input
 
 
 /* end main article styles */
-// /* M A I N	E L E M E N T S */
-// .main-content
-// 	width 66.66%
-// 	height auto
-// 	display inline-block
-// 	border-right 1px solid #e5e5e5
-// 	background-color #fff
-// 	padding-right 30px
-// 	// box-shadow 0 0 13px #1e1e1e
-
-// h1.headline
-// 	font-size 2.4em
-// 	margin 0 0 10px 0
-
-// h2.deck
-// 	font-weight normal
-// 	font-size 1.3em
-
-// .section-hed
-// 	font-size 2.3em
-// 	margin-bottom 5px
-
-/* R I G H T	R A I L */
-// .admin-container
-// 	font-size 1.4em
-// 	text-align right
-// 	height 100%
-// 	top 12%
-// 	position absolute
-// 	right 15px
-// .admin-item
-// 	display inline-block
-// 	margin 5px
-// .admin-item:hover
-// 	text-decoration underline
-// 	cursor pointer
-
-// .rail-sections
-// 	margin-top 25px
-// .rail-section
-// 	margin-bottom 25px
-// 	position relative
-// 	left -1px
-// .rail-section-title
-// 	font-size 1.4em
-// 	display inline-block
-// 	padding 7px 26px 7px 7px
-// 	margin-bottom 3px
-// 	border-top-right-radius: 5px;
-// 	border-bottom-right-radius: 5px;
-// .rail-section-title:hover
-// 	text-decoration underline
-// 	cursor pointer
-// .rail-section-title.active
-// 	background-color #fff
-// 	// box-shadow 4px 0px 5px -1px #D6D6D6
-// 	color the_green
-// .rail-section-title.active:hover
-// 	cursor default
-// 	text-decoration none
-// .rail-preview-items
-// 	padding-left 8px
-
-
-/* C O N T E N T	S E C T I O N S */
-// .content-switcher
-// 	width 100%
-
-// .content-section
-// 	display none
-// 	width 100%
-
-// /* dashboard */
-// .timeline-wrapper
-// 	width 100%
-
-// .timeline-graph
-// 	width 100%
-// 	height 200px
-// 	margin-bottom 25px
-
-
-/* E V E N T	R I V E R */
-// .tag-filters
-// 	margin-bottom 20px
-// .tag-filters .pointer
-// 	font-size 1em
-// 	margin-bottom 2px
-// 	text-transform uppercase
-// .tag
-// 	display inline-block
-// 	font-size: 1.1em
-// 	padding 2px 4px
-// 	color #ccc
-// 	margin-right 5px
-// 	border-radius 3px
-// 	background-color #666
-// 	border 1px solid #616161
-// .tag-filter
-// 	user-select none
-// 	opacity .4
-// .tag-filter.selected
-// 	opacity 1
-// .tag-filter:hover
-// 	cursor pointer
-// 	text-decoration underline
-
-// .event-item-wrapper
-// 	border-left 3px solid #c3412c
-// 	padding 5px
-// 	margin-bottom 10px
-// 	// box-shadow 0 0 4px #ccc
-// 	border-top-right-radius: 5px;
-// 	border-bottom-right-radius: 5px;
-
-
-// .event-item-title
-// 	font-size 1.5em
-// 	margin-bottom 10px
-
-// .event-item-desc
-// 	font-size 1.2em
-// 	margin-bottom 10px
-
-// .event-item-tag.tag
-// 	font-size 1em
-// 	padding: 1px 3px
-
-/* F L A G S	*/
-// .shown
-// 	display block
+/* M O D A L  W I N D O W S */
+.modal-outer
+	display none
+.modal-outer,.modal-overlay
+	top 0
+	left 0
+	right 0
+	bottom 0
+.modal-overlay
+	background-color rgba(0,0,0,.7)
+.modal-inner
+	background-color #fff
+	padding 20px
+	border 1px solid #000
+	width 420px
+	.title
+		font-size 1.4em
+		font-weight bold
+		border-bottom 1px solid border_gray
+		margin-bottom 5px
+.modal-outer.active
+	display block
+	position absolute
+	.modal-overlay,.modal-inner
+		position fixed
+form
+	.entry
+		padding-bottom 5px
+	label
+		font-size 1.3em
+		display inline-block
+		width 40%
+		margin-bottom 3px
+	input[type="text"]
+		width 60%
+		margin 0
+/* end modal windows */
 
 /* user styles */
 social_color = #66c2a5
