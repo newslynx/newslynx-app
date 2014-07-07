@@ -359,7 +359,8 @@ body[data-section="login"] #drawer {
   cursor: default;
 }
 .drawer-list-item,
-.drawer-options {
+.drawer-options,
+.drawer-section-title {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -367,64 +368,79 @@ body[data-section="login"] #drawer {
   border-bottom: 1px solid #777676;
 }
 .drawer-list-item .btn,
-.drawer-options .btn {
+.drawer-options .btn,
+.drawer-section-title .btn {
   padding: 5px 0;
 }
 .drawer-list-item .pub-date,
-.drawer-options .pub-date {
+.drawer-options .pub-date,
+.drawer-section-title .pub-date {
   font-size: 1.1em;
 }
 .drawer-list-item .title,
-.drawer-options .title {
+.drawer-options .title,
+.drawer-section-title .title {
   font-size: 1.4em;
   margin-bottom: 2px;
 }
 .drawer-list-item .count,
-.drawer-options .count {
+.drawer-options .count,
+.drawer-section-title .count {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 .drawer-list-item .description,
-.drawer-options .description {
+.drawer-options .description,
+.drawer-section-title .description {
   font-size: 1.2em;
   color: #7c7c7c;
 }
 .drawer-list-item .toolbar,
-.drawer-options .toolbar {
+.drawer-options .toolbar,
+.drawer-section-title .toolbar {
   font-size: 1.2em;
   margin-top: 11px;
 }
 .drawer-list-item .settings-switch,
 .drawer-options .settings-switch,
+.drawer-section-title .settings-switch,
 .drawer-list-item .enable-switch,
-.drawer-options .enable-switch {
+.drawer-options .enable-switch,
+.drawer-section-title .enable-switch {
   display: inline-block;
 }
 .drawer-list-item .enable-switch,
-.drawer-options .enable-switch {
+.drawer-options .enable-switch,
+.drawer-section-title .enable-switch {
   float: right;
 }
 .drawer-list-item .enable-switch[data-enabled="true"],
-.drawer-options .enable-switch[data-enabled="true"] {
+.drawer-options .enable-switch[data-enabled="true"],
+.drawer-section-title .enable-switch[data-enabled="true"] {
   color: #529624;
 }
 .drawer-list-item .enable-switch[data-enabled="false"],
-.drawer-options .enable-switch[data-enabled="false"] {
+.drawer-options .enable-switch[data-enabled="false"],
+.drawer-section-title .enable-switch[data-enabled="false"] {
   color: #9e0000;
 }
 .drawer-list-item .settings-switch:not(.active):hover .text,
 .drawer-options .settings-switch:not(.active):hover .text,
+.drawer-section-title .settings-switch:not(.active):hover .text,
 .drawer-list-item .enable-switch:hover,
-.drawer-options .enable-switch:hover {
+.drawer-options .enable-switch:hover,
+.drawer-section-title .enable-switch:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 .drawer-list-item .settings-switch:active,
-.drawer-options .settings-switch:active {
+.drawer-options .settings-switch:active,
+.drawer-section-title .settings-switch:active {
   color: #666;
 }
 .drawer-list-item .modal-switch.active:hover,
-.drawer-options .modal-switch.active:hover {
+.drawer-options .modal-switch.active:hover,
+.drawer-section-title .modal-switch.active:hover {
   cursor: default;
 }
 .drawer-list-outer:not(.active):hover {
@@ -442,10 +458,12 @@ body[data-section="login"] #drawer {
   background-color: #6dc4ff;
 }
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-alerts"] {
+#content[data-mode="my-alerts"],
+#content[data-mode="create-new"] {
   padding: 25px;
 }
-#content[data-mode="my-alerts"] .article-detail-wrapper {
+#content[data-mode="my-alerts"] .article-detail-wrapper,
+#content[data-mode="create-new"] .article-detail-wrapper {
   margin-bottom: 25px;
 }
 #alert-sources {
