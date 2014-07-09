@@ -681,7 +681,7 @@ input {
 }
 .buttons-container button,
 .buttons-container input[type="submit"] {
-  margin: 0;
+  margin: 0 3px 0 0;
 }
 .alert-form-container .title {
   font-size: 3em;
