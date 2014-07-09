@@ -458,6 +458,32 @@ body[data-section="login"] #drawer {
   background-color: #6dc4ff;
   cursor: pointer;
 }
+.inputs-container,
+.inputs-container input {
+  display: none;
+}
+#drawer[data-mode="compare"] .inputs-container,
+#drawer[data-mode="single"] .inputs-container,
+#drawer[data-mode="compare"] .drawer-list-inner,
+#drawer[data-mode="single"] .drawer-list-inner {
+  display: inline-block;
+  vertical-align: top;
+}
+#drawer[data-mode="compare"] .inputs-container,
+#drawer[data-mode="single"] .inputs-container {
+  margin-right: 10px;
+}
+#drawer[data-mode="compare"] .drawer-list-inner,
+#drawer[data-mode="single"] .drawer-list-inner {
+  width: 85%;
+}
+#drawer[data-mode="compare"] .inputs-container input[type="checkbox"] {
+  display: block;
+}
+#drawer[data-mode="single"] .inputs-container input[type="radio"] {
+  display: block;
+}
+/* end drawer item */
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"],
 #content[data-mode="create-new"] {
