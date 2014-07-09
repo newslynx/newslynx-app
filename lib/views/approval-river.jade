@@ -51,11 +51,10 @@ block templates
 
 	script(type="text/jst")#alert-form-templ
 		.alert-form-container
-			.title <%= service %>
+			.title New <%= service %> alert
 			form
-				<%= bakeForm(service, schema, help) %>
+				<%= bakeForm(service, schema) %>
 				.buttons-container
-					button.cancel Cancel
 					input.save(type="submit", value="Save")
 
 	script(type="text/jst")#river-item-templ

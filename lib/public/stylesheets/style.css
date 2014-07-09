@@ -465,7 +465,7 @@ body[data-section="login"] #drawer {
 }
 #content[data-mode="my-alerts"] .article-detail-wrapper,
 #content[data-mode="create-new"] .article-detail-wrapper {
-  margin-bottom: 25px;
+  margin-bottom: 35px;
 }
 #alert-sources {
   padding: 0;
@@ -676,8 +676,17 @@ input {
 .modal-outer.active .modal-inner {
   position: fixed;
 }
-form .entry {
+.form-row {
   padding-bottom: 5px;
+}
+.buttons-container button,
+.buttons-container input[type="submit"] {
+  margin: 0;
+}
+.alert-form-container .title {
+  font-size: 3em;
+  color: #7c7c7c;
+  margin-bottom: 10px;
 }
 form label {
   font-size: 1.3em;
@@ -685,8 +694,23 @@ form label {
   width: 40%;
   margin-bottom: 3px;
 }
+form .input-text-container {
+  width: 55%;
+  display: inline-block;
+}
+form .help-row {
+  text-align: right;
+  margin-bottom: 2px;
+}
+form .hint-row {
+  color: #7c7c7c;
+  position: absolute;
+}
 form input[type="text"] {
-  width: 60%;
+  width: 100%;
+  margin: 0;
+}
+form select {
   margin: 0;
 }
 /* end modal windows */
