@@ -456,6 +456,7 @@ body[data-section="login"] #drawer {
 #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
 #drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover {
   background-color: #6dc4ff;
+  cursor: pointer;
 }
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"],

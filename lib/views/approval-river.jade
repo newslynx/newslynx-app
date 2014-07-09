@@ -39,7 +39,7 @@ block templates
 				.modal-inner
 					.title Alert settings
 					form
-						<%= bakeForm(uid, settings) %>
+						<%= bakeAlertUpdateForm(uid, service, settings) %>
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Save")
@@ -50,10 +50,13 @@ block templates
 				.title <%= service %>
 
 	script(type="text/jst")#alert-form-templ
-		.alert-form-container.mode-content(data-mode="create-new")
+		.alert-form-container
 			.title <%= service %>
 			form
-				<%= bakeFormCreator(service, schema, help) %>
+				<%= bakeForm(service, schema, help) %>
+				.buttons-container
+					button.cancel Cancel
+					input.save(type="submit", value="Save")
 
 	script(type="text/jst")#river-item-templ
 		.river-item-container.modal-parent
