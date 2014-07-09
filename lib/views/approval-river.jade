@@ -25,6 +25,9 @@ block drawer
 block templates
 	script(type="text/jst")#alert-templ
 		.drawer-list-outer.modal-parent
+			.inputs-container
+				input(type="checkbox")
+				input(type="radio")
 			.drawer-list-inner
 				.count <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %> pending
 				.title <%= settings.name %>
