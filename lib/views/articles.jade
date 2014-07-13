@@ -75,6 +75,13 @@ block templates
 				h3.title Events
 				img(src="images/dummy/card/events.png")
 
+block bootstrap-data
+	script(id="page-data").
+		var pageData = {};
+		pageData.org =!{org};   
+		pageData.articleSummaries =!{articleSummaries};   
+		pageData.articleDetails =!{articleDetails};   
+
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
