@@ -1,0 +1,63 @@
+{
+  "user_name": "ProPalpatine",
+  "password": "",
+  "api_key": "",
+  "org_id": "propalpatine",
+  "homepage": "http://www.propalpatine.org/",
+  "short_urls": [
+    "propalp.tn"
+  ],
+  "rss_feeds": [
+    "http://feeds.propalpatine.org/propublica/main?format=xml"
+  ],
+  "twitter_accounts": [
+    "ProPalpatine"
+  ],
+  "twitter_staff_list": [
+    {
+      "owner": "ProPalpatine",
+      "slug": "propalpatine-staff"
+    }
+  ],
+  "facebook_accounts": [
+    "propalpatine"
+  ],
+  "youtube_accounts": [],
+  "tumblr_accounts": [
+    "propalpatine",
+    "jedissay"
+  ],
+  "google_alerts": [
+    "http://www.google.com/alerts/feeds/14752688329844321840/4874425503898649357"
+  ],
+  "twitter_auth": "",
+  "facebook_auth": "",
+  "google_auth": "",
+  "tags": [
+    {
+      "name": "tag 1",
+      "count": 5,
+      "color": "#0cf"
+    },
+    {
+      "name": "tag 2",
+      "count": 3,
+      "color": "#fc0"
+    },
+    {
+      "name": "tag 3",
+      "count": 1,
+      "color": "#c0f"
+    },
+    {
+      "name": "tag 4",
+      "count": 1,
+      "color": "#0fc"
+    },
+    {
+      "name": "tag 5",
+      "count": 0,
+      "color": "#f0c"
+    }
+  ]
+}
