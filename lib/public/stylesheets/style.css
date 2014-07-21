@@ -138,9 +138,9 @@ body[data-modal=true] {
 #left-rail #header-container .settings {
   display: inline-block;
   position: relative;
-  vertical-align: top;
   top: 20px;
-  left: 40px;
+  float: right;
+  padding-right: 5px;
 }
 #left-rail #header-container .settings a {
   font-size: 1.4em;
@@ -319,7 +319,7 @@ body[data-section="login"] #drawer {
 .drawer-item,
 .drawer-list-outer,
 .modal-outer {
-  padding: 10px 15px;
+  padding: 10px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
