@@ -360,87 +360,102 @@ body[data-section="login"] #drawer {
 }
 .drawer-list-item,
 .drawer-options,
-.drawer-section-title {
+.drawer-section-title,
+.drawer-pointer {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-bottom: 1px solid #777676;
 }
 .drawer-list-item .btn,
 .drawer-options .btn,
-.drawer-section-title .btn {
+.drawer-section-title .btn,
+.drawer-pointer .btn {
   padding: 5px 0;
 }
 .drawer-list-item .pub-date,
 .drawer-options .pub-date,
-.drawer-section-title .pub-date {
+.drawer-section-title .pub-date,
+.drawer-pointer .pub-date {
   font-size: 1.1em;
 }
 .drawer-list-item .title,
 .drawer-options .title,
-.drawer-section-title .title {
+.drawer-section-title .title,
+.drawer-pointer .title {
   font-size: 1.4em;
   margin-bottom: 2px;
 }
 .drawer-list-item .count,
 .drawer-options .count,
-.drawer-section-title .count {
+.drawer-section-title .count,
+.drawer-pointer .count {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
 .drawer-list-item .description,
 .drawer-options .description,
-.drawer-section-title .description {
+.drawer-section-title .description,
+.drawer-pointer .description {
   font-size: 1.2em;
   color: #7c7c7c;
 }
 .drawer-list-item .toolbar,
 .drawer-options .toolbar,
-.drawer-section-title .toolbar {
+.drawer-section-title .toolbar,
+.drawer-pointer .toolbar {
   font-size: 1.2em;
   margin-top: 11px;
 }
 .drawer-list-item .settings-switch,
 .drawer-options .settings-switch,
 .drawer-section-title .settings-switch,
+.drawer-pointer .settings-switch,
 .drawer-list-item .enable-switch,
 .drawer-options .enable-switch,
-.drawer-section-title .enable-switch {
+.drawer-section-title .enable-switch,
+.drawer-pointer .enable-switch {
   display: inline-block;
 }
 .drawer-list-item .enable-switch,
 .drawer-options .enable-switch,
-.drawer-section-title .enable-switch {
+.drawer-section-title .enable-switch,
+.drawer-pointer .enable-switch {
   float: right;
 }
 .drawer-list-item .enable-switch[data-enabled="true"],
 .drawer-options .enable-switch[data-enabled="true"],
-.drawer-section-title .enable-switch[data-enabled="true"] {
+.drawer-section-title .enable-switch[data-enabled="true"],
+.drawer-pointer .enable-switch[data-enabled="true"] {
   color: #529624;
 }
 .drawer-list-item .enable-switch[data-enabled="false"],
 .drawer-options .enable-switch[data-enabled="false"],
-.drawer-section-title .enable-switch[data-enabled="false"] {
+.drawer-section-title .enable-switch[data-enabled="false"],
+.drawer-pointer .enable-switch[data-enabled="false"] {
   color: #9e0000;
 }
 .drawer-list-item .settings-switch:not(.active):hover .text,
 .drawer-options .settings-switch:not(.active):hover .text,
 .drawer-section-title .settings-switch:not(.active):hover .text,
+.drawer-pointer .settings-switch:not(.active):hover .text,
 .drawer-list-item .enable-switch:hover,
 .drawer-options .enable-switch:hover,
-.drawer-section-title .enable-switch:hover {
+.drawer-section-title .enable-switch:hover,
+.drawer-pointer .enable-switch:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 .drawer-list-item .settings-switch:active,
 .drawer-options .settings-switch:active,
-.drawer-section-title .settings-switch:active {
+.drawer-section-title .settings-switch:active,
+.drawer-pointer .settings-switch:active {
   color: #666;
 }
 .drawer-list-item .modal-switch.active:hover,
 .drawer-options .modal-switch.active:hover,
-.drawer-section-title .modal-switch.active:hover {
+.drawer-section-title .modal-switch.active:hover,
+.drawer-pointer .modal-switch.active:hover {
   cursor: default;
 }
 .drawer-list-outer:not(.active):hover {
@@ -498,24 +513,20 @@ body[data-section="login"] #drawer {
 #content[data-mode="create-new"] .article-detail-wrapper {
   margin-bottom: 35px;
 }
+.drawer-pointer {
+  padding: 15px 10px 5px 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
 #alert-sources {
   padding: 0;
-}
-.view-all {
-  font-size: 1em;
-  color: #a9cdd5;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 .view-all:hover {
   cursor: default;
 }
-.view-all.active {
-  color: #1b1b1b;
-}
-.view-all.active:hover {
-  text-decoration: underline;
-  cursor: pointer;
+#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover {
+  background-color: #88cfff;
+  cursor: default;
 }
 .approval-child {
   display: inline-block;

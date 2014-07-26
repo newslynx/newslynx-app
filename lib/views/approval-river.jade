@@ -10,8 +10,15 @@ block drawer
 	.drawer-container.mode-content(data-mode="my-alerts")
 		//- .drawer-section-title.drawer-item  Show approval candidates from:
 		//- ul#alert-sources.drawer-item
-		.drawer-options
-			.view-all.drawer-item View all pending items
+		.drawer-pointer Show me...
+		.drawer-list-item
+			.view-all.drawer-list-outer
+				.inputs-container
+					input(type="checkbox")
+					input(type="radio")
+				.drawer-list-inner
+					.title Pending items for all alerts
+		.drawer-pointer Or, pending items for just...
 		ul#alerts
 	.drawer-container.mode-content(data-mode="create-new")
 		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
@@ -29,7 +36,7 @@ block templates
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= countAssociatedItems(uid, 'alert_uid', 'river_items') %> pending
+				.count <%= countAssociatedItems(uid, 'alert_uid', 'riverItems') %> pending
 				.title <%= settings.name %>
 				.description <%= settings.search_query %>
 				.toolbar

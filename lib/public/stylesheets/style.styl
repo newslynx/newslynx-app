@@ -52,6 +52,7 @@ leftrail_gray = #393939
 bg_gray = #7C7C7C
 highlight_gray = #666
 border_gray = #777676
+bg_blue = #b4d5ec
 select_blue = #88cfff
 enable_green = #529624
 disabled_red = #9E0000
@@ -332,9 +333,9 @@ body[data-section="login"]
 	.active:hover
 		cursor default
 
-.drawer-list-item,.drawer-options,.drawer-section-title
+.drawer-list-item,.drawer-options,.drawer-section-title,.drawer-pointer
 	user-select none
-	border-bottom 1px solid border_gray
+	// border-bottom 1px solid border_gray
 	.btn
 		padding 5px 0
 	.pub-date
@@ -343,6 +344,7 @@ body[data-section="login"]
 		font-size 1.4em
 		margin-bottom 2px
 	.count
+		// font-size .9em
 		text-transform uppercase
 		margin-bottom 2px
 	.description
@@ -408,21 +410,17 @@ body[data-section="login"]
 	.article-detail-wrapper
 		margin-bottom 35px
 
+.drawer-pointer
+	padding 15px 10px 5px 10px
+	font-size 1.3em
+	font-weight bold
 #alert-sources
 	padding 0
-.view-all
-	// text-align right
-	font-size 1em
-	color #A9CDD5
-	letter-spacing 1px
-	text-transform uppercase
 .view-all:hover
 	cursor default
-.view-all.active
-	color #1B1B1B
-.view-all.active:hover
-	text-decoration underline
-	cursor pointer
+#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover
+	background-color select_blue
+	cursor default
 .approval-child
 	display inline-block
 	height 100%
