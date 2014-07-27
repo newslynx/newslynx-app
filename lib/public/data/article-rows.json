@@ -7,95 +7,73 @@
 		],
 		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
 		"pub_datetime": "2014-06-13",
-		"stats": [
+		"bullets": [
 			{
-				"social": [
+				"dimension": "Twitter",
+				"count": 2,
+				"median": 6,
+				"max": 10
+			},{
+				"dimension": "Facebook",
+				"count": 344,
+				"median": 50,
+				"max": 500
+			},{
+				"dimension": "uniques",
+				"count": 88,
+				"median": 90,
+				"max": 130
+			},{
+				"dimension": "pageviews",
+				"count": 12,
+				"median": 630,
+				"max": 1100
+			},{
+				"dimension": "internal",
+				"count": 232,
+				"median": 140,
+				"max": 520
+			},{
+				"dimension": "external",
+				"count": 32,
+				"median": 10,
+				"max": 100
+			}
+		],
+		"bars": [
+			{
+				"dimension": "citations",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "Twitter",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 5,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "Facebook",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 2,
+						"color": "#cf0"
+					},
+					{
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
-			},{
-				"traffic": [
+			},
+			{
+				"dimension": "events",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "uniques",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 10,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "pageviews",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"referrals": [
-					{
-						"dimension": "internal",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 4,
+						"color": "#cf0"
 					},
 					{
-						"dimension": "external",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"qualitative": [
-					{
-						"dimension": "citations",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 5,
-								"color": "#fc0"
-							},
-							{
-								"count": 2,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
-					},
-					{
-						"dimension": "events",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 10,
-								"color": "#fc0"
-							},
-							{
-								"count": 4,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
 			}
@@ -108,196 +86,152 @@
 		],
 		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
 		"pub_datetime": "2014-06-09",
-		"stats": [
+		"bullets": [
 			{
-				"social": [
+				"dimension": "Twitter",
+				"count": 332,
+				"median": 100,
+				"max": 1200
+			},{
+				"dimension": "Facebook",
+				"count": 912,
+				"median": 100,
+				"max": 2100
+			},{
+				"dimension": "uniques",
+				"count": 43,
+				"median": 10,
+				"max": 100
+			},{
+				"dimension": "pageviews",
+				"count": 32,
+				"median": 80,
+				"max": 90
+			},{
+				"dimension": "internal",
+				"count": 10,
+				"median": 50,
+				"max": 90
+			},{
+				"dimension": "external",
+				"count": 99,
+				"median": 20,
+				"max": 120
+			}
+		],
+		"bars": [
+			{
+				"dimension": "citations",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "Twitter",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 5,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "Facebook",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 2,
+						"color": "#cf0"
+					},
+					{
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
-			},{
-				"traffic": [
+			},
+			{
+				"dimension": "events",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "uniques",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 10,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "pageviews",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"referrals": [
-					{
-						"dimension": "internal",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 4,
+						"color": "#cf0"
 					},
 					{
-						"dimension": "external",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"qualitative": [
-					{
-						"dimension": "citations",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 5,
-								"color": "#fc0"
-							},
-							{
-								"count": 2,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
-					},
-					{
-						"dimension": "events",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 10,
-								"color": "#fc0"
-							},
-							{
-								"count": 4,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
 			}
 		]
 	},{
 		"article_uid": "a3",
-		"title": "Senators vote overwhelmingly in favor of Empire",
+		"title": "Much promise for new senate",
 		"authors": [
 			"Darth Sidious"
 		],
 		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
 		"pub_datetime": "2014-05-09",
-		"stats": [
+		"bullets": [
 			{
-				"social": [
+				"dimension": "Twitter",
+				"count": 54,
+				"median": 100,
+				"max": 130
+			},{
+				"dimension": "Facebook",
+				"count": 22,
+				"median": 150,
+				"max": 200
+			},{
+				"dimension": "uniques",
+				"count": 932,
+				"median": 700,
+				"max": 1400
+			},{
+				"dimension": "pageviews",
+				"count": 302,
+				"median": 20,
+				"max": 500
+			},{
+				"dimension": "internal",
+				"count": 15,
+				"median": 50,
+				"max": 185
+			},{
+				"dimension": "external",
+				"count": 42,
+				"median": 70,
+				"max": 230
+			}
+		],
+		"bars": [
+			{
+				"dimension": "citations",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "Twitter",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 5,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "Facebook",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 2,
+						"color": "#cf0"
+					},
+					{
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
-			},{
-				"traffic": [
+			},
+			{
+				"dimension": "events",
+				"type": "bar",
+				"counts": [
 					{
-						"dimension": "uniques",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 10,
+						"color": "#fc0"
 					},
 					{
-						"dimension": "pageviews",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"referrals": [
-					{
-						"dimension": "internal",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
+						"count": 4,
+						"color": "#cf0"
 					},
 					{
-						"dimension": "external",
-						"type": "bullet",
-						"count": 32,
-						"median": 10,
-						"max": 100
-					}
-				]
-			},{
-				"qualitative": [
-					{
-						"dimension": "citations",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 5,
-								"color": "#fc0"
-							},
-							{
-								"count": 2,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
-					},
-					{
-						"dimension": "events",
-						"type": "bar",
-						"counts": [
-							{
-								"count": 10,
-								"color": "#fc0"
-							},
-							{
-								"count": 4,
-								"color": "#cf0"
-							},
-							{
-								"count": 3,
-								"color": "#c0c"
-							}
-						]
+						"count": 3,
+						"color": "#c0c"
 					}
 				]
 			}
