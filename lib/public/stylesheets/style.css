@@ -50,7 +50,7 @@ body[data-modal=true] {
   overflow: hidden;
 }
 /* F U R N I T U R E */
-.destroy {
+.article-detail-row-container .destroy {
   position: absolute;
   top: 0;
   right: 0;
@@ -61,7 +61,7 @@ body[data-modal=true] {
   padding-right: 10px;
   height: 20px;
 }
-.destroy:hover {
+.article-detail-row-container .destroy:hover {
   cursor: pointer;
   color: #000;
 }
@@ -156,7 +156,7 @@ body[data-modal=true] {
 /* L E F T  R A I L */
 .main-sections {
   margin-top: 10px;
-  height: 98%;
+  height: calc(98% - header_height);
 }
 .main-sections li {
   -webkit-user-select: none;
@@ -268,6 +268,12 @@ body[data-section="about"] .section.active > .nav-link {
 body[data-section="about"] #drawer {
   background-color: #fcf4eb;
 }
+body[data-section="home"] .section.active > .nav-link {
+  background-color: #008def;
+}
+body[data-section="home"] #drawer {
+  background-color: #e5f3fd;
+}
 body[data-section="approval-river"] .section.active > .nav-link {
   background-color: #12b7dd;
 }
@@ -288,17 +294,11 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #3ec173;
   text-shadow: 0 0px 12px #535353;
 }
-body[data-section="series"] .section.active > .nav-link {
+body[data-section="settings"] .section.active > .nav-link {
   background-color: #b980c2;
 }
-body[data-section="series"] #drawer {
+body[data-section="settings"] #drawer {
   background-color: #f4ebf5;
-}
-body[data-section="events"] .section.active > .nav-link {
-  background-color: #c13d3d;
-}
-body[data-section="events"] #drawer {
-  background-color: #f5e1e1;
 }
 body[data-section="login"] #drawer {
   background-color: #d6ccdf;
@@ -473,8 +473,8 @@ body[data-section="login"] #drawer {
   background-color: #6dc4ff;
   cursor: pointer;
 }
-.inputs-container,
-.inputs-container input {
+#drawer .inputs-container,
+#drawer .inputs-container input {
   display: none;
 }
 #drawer[data-mode="compare"] .inputs-container,
@@ -589,9 +589,15 @@ body[data-section="login"] #drawer {
 }
 /* end drawer */
 /* T E X T  S T Y L E S  */
+.division-title,
+.division-description {
+  padding: 10px;
+}
 .division-title {
   font-size: 2.75em;
-  border-bottom: 1px solid #a0a0a0;
+}
+.division-description {
+  font-size: 1.2em;
 }
 label {
   font-size: 1.2em;
@@ -795,4 +801,74 @@ form select {
   margin: 0;
 }
 /* end modal windows */
-/* user styles */
+/* S E T T I N G S */
+body[data-section="settings"] #content {
+  padding: 25px;
+}
+.settings-group {
+  width: 600px;
+}
+.settings-title {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+.setting-group {
+  margin-bottom: 25px;
+}
+.setting-title {
+  font-size: 1.2em;
+  display: inline-block;
+  width: 100px;
+}
+.setting-description {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: #7c7c7c;
+}
+.setting-title,
+.inputs-container,
+.multi-child {
+  display: inline-block;
+  vertical-align: top;
+}
+.inputs-container {
+  width: 450px;
+}
+.input {
+  height: 25px;
+  margin-left: 20px;
+}
+.input input[type='text'] {
+  margin: 0 5px 0 0;
+  width: 200px;
+}
+.input input[type='radio'],
+.input input[type='checkbox'] {
+  margin: 0;
+}
+.input.multi {
+  margin-left: 0;
+}
+.setting-flag {
+  font-size: 1.2em;
+  margin-bottom: 3px;
+  margin-left: 325px;
+}
+.destroy.multi-child {
+  width: 20px;
+  height: 100%;
+  text-align: center;
+  font-size: 1.4em;
+}
+.destroy.multi-child:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+button.add {
+  display: block;
+  margin-left: 120px;
+}
+/* end settings */
+/* user styles, to be got from server */
+/* end user styles*/

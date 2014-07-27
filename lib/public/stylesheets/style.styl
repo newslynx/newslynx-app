@@ -41,6 +41,7 @@ body[data-modal=true]
 leftrail_width = 250
 drawer_width = 285
 content_width = 850
+header_height = 50px
 furniture_width = (leftrail_width + drawer_width)px
 page_width = (leftrail_width + drawer_width + content_width)
 
@@ -59,25 +60,27 @@ disabled_red = #9E0000
 // Page colors
 login = #d6ccdf
 about = #e3943b
+home = #008def
 approval_river = #12b7dd
 articles = #3ec173
-series = #b980c2
+settings = #b980c2
 events = #c13d3d
 
 /* F U R N I T U R E */
-.destroy
-	position absolute
-	top 0
-	right 0
-	font-weight bold
-	color #ccc
-	width 100%
-	text-align right
-	padding-right 10px
-	height 20px
-.destroy:hover
-	cursor: pointer
-	color #000
+.article-detail-row-container
+	.destroy
+		position absolute
+		top 0
+		right 0
+		font-weight bold
+		color #ccc
+		width 100%
+		text-align right
+		padding-right 10px
+		height 20px
+	.destroy:hover
+		cursor pointer
+		color #000
 
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper
@@ -115,7 +118,7 @@ events = #c13d3d
 	color #fff
 	overflow-x hidden
 	#header-container
-		height 50px
+		height header_height
 		width 100%
 		background-color black
 		// box-shadow 0 6px 12px #000
@@ -157,7 +160,7 @@ events = #c13d3d
 /* L E F T  R A I L */
 .main-sections
 	margin-top 10px
-	height 98%
+	height calc(98% - header_height) 
 	li
 		user-select none
 	.section.active .nav-link
@@ -242,49 +245,36 @@ body[data-section="about"]
 		background-color about
 	#drawer
 		background-color tint(about, 90%)
-		// border-right-color tint(about, 25%)
+body[data-section="home"]
+	.section.active > .nav-link
+		background-color home
+	#drawer
+		background-color tint(home, 90%)
 body[data-section="approval-river"] 
 	.section.active > .nav-link
 		background-color approval_river
 	#drawer
 		background-color tint(approval_river, 90%)
-		// border-right-color tint(approval_river, 25%)
 	.division-switcher li.active
 		background-color approval_river
 		text-shadow 0 0px 12px #535353
-	// .drawer-list-item,.drawer-options
-	// 	border-bottom-color tint(approval_river, 25%)
 body[data-section="articles"]
-	#left-rail
-		// box-shadow 0px 0px 6px darken(articles, 35%)
 	.section.active > .nav-link
 		background-color articles
 	#drawer
 		background-color tint(articles, 90%)
-		// border-right-color tint(articles, 25%)
 	.division-switcher li.active
 		background-color articles
 		text-shadow 0 0px 12px #535353
-		// box-shadow 0px 0px 11px articles
-	// .drawer-list-item,.drawer-options
-	// 	border-bottom-color tint(articles, 25%)
-body[data-section="series"] 
+body[data-section="settings"] 
 	.section.active > .nav-link
-		background-color series
+		background-color settings
 	#drawer
-		background-color tint(series, 85%)
-		// border-right-color tint(series, 25%)
-body[data-section="events"] 
-	.section.active > .nav-link
-		background-color events
-	#drawer
-		background-color tint(events, 85%)
-		// border-right-color tint(events, 60%)
+		background-color tint(settings, 85%)
 body[data-section="login"] 
 	#drawer
 		background-color login
-		// border-right-color darken(login, 25%)
-		// box-shadow 0px 0px 11px login
+
 /* end section specific styles */
 
 /* D R A W E R */
@@ -386,7 +376,7 @@ body[data-section="login"]
 	// cursor pointer
 // TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
-.inputs-container,.inputs-container input
+#drawer .inputs-container,#drawer .inputs-container input
 	display none
 #drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-alerts"]
 	.inputs-container,.drawer-list-inner
@@ -468,9 +458,12 @@ body[data-section="login"]
 /* end drawer */
 
 /* T E X T  S T Y L E S  */
+.division-title,.division-description
+	padding 10px
 .division-title
 	font-size 2.75em
-	border-bottom 1px solid #a0a0a0
+.division-description
+	font-size 1.2em
 label
 	font-size 1.2em
 input
@@ -642,13 +635,73 @@ form
 		margin 0
 /* end modal windows */
 
-/* user styles */
+/* S E T T I N G S */
+body[data-section="settings"] #content
+	padding 25px
+
+input_width = 200px
+destroy_width = 20px
+input_margin = 5px
+setting_title_width = 100px
+.settings-group
+	width 600px
+	// background-color #0cf
+.settings-title
+	font-weight bold
+	font-size 1.4em
+	margin-bottom 15px
+.setting-group
+	margin-bottom 25px
+.setting-title
+	font-size 1.2em
+	display inline-block
+	width setting_title_width
+	// background-color #fc0
+.setting-description
+	font-size 1.2em
+	margin-bottom 5px
+	color bg_gray
+.setting-title,.inputs-container,.multi-child
+	display inline-block
+	vertical-align top
+.inputs-container
+	width 450px
+	// background-color #f0c
+.input
+	height 25px
+	margin-left destroy_width
+	input[type='text']
+		margin 0 input_margin 0 0
+		width input_width
+	input[type='radio'],input[type='checkbox']
+		margin 0
+.input.multi
+	margin-left 0
+.setting-flag
+	font-size 1.2em
+	margin-bottom 3px
+	margin-left (setting_title_width + destroy_width + input_width + input_margin )
+.destroy.multi-child
+	width destroy_width
+	height 100%
+	text-align center
+	// background-color #0cf
+	font-size 1.4em
+.destroy.multi-child:hover
+	cursor pointer
+	text-decoration underline
+button.add
+	display block
+	margin-left (setting_title_width + destroy_width)
+/* end settings */
+
+/* user styles, to be got from server */
 social_color = #66c2a5
 major_impact_color = #fc8d62
 citation_color = #8da0cb
 darken_border = 30%
 darken_color = 80%
-
+/* end user styles*/
 // .tag[data-tag*="social"]
 // 	background-color social_color
 // 	border-color darken(social_color, darken_border)

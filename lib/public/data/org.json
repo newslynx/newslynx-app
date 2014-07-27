@@ -8,7 +8,14 @@
     "propalp.tn"
   ],
   "rss_feeds": [
-    "http://feeds.propalpatine.org/propublica/main?format=xml"
+    {
+    	"url":" http://feeds.propalpatine.org/propalpatine/main?format=xml",
+    	"full_text": false
+  	},
+    {
+    	"url":" http://feeds.propalpatine.org/propalpatine/bonus?format=xml",
+    	"full_text": true
+  	}
   ],
   "twitter_accounts": [
     "ProPalpatine"

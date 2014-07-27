@@ -34,22 +34,25 @@ mixin articles
 			button.manage-tags Manage tags
 			button.new-tag New tag
 
-
-mixin series
-	li.section.active(data-section="series")
-		span.nav-link Series
+//- mixin series
+//- 	li.section.active(data-section="series")
+//- 		span.nav-link Series
 			
-mixin events
-	li.section.active(data-section="events")
-		span.nav-link Events
+//- mixin events
+//- 	li.section.active(data-section="events")
+//- 		span.nav-link Events
+		
+mixin home
+	li.section.active(data-section="home")
+		span.nav-link Home
 		
 nav
 	ul.main-sections
-		if (page == 'about')
-			mixin about
+		if (page == 'home')
+			mixin home
 		else	
-			li.section(data-section="about")
-				a(href="/about") About
+			li.section(data-section="home")
+				a(href="/") Home
 		if (page == 'approval-river')
 			mixin approval-river
 		else	
@@ -60,14 +63,19 @@ nav
 		else	
 			li.section(data-section="articles")
 				a(href="/articles") Articles
-		if (page == 'series')
-			mixin series
+		if (page == 'about')
+			mixin about
 		else	
-			li.section(data-section="series")
-				a(href="/series") Series
-		if (page == 'events')
-			mixin events
-		else	
-			li.section(data-section="events")
-				a(href="/events") Events
+			li.section(data-section="about")
+				a(href="/about") About
+		//- if (page == 'series')
+		//- 	mixin series
+		//- else	
+		//- 	li.section(data-section="series")
+		//- 		a(href="/series") Series
+		//- if (page == 'events')
+		//- 	mixin events
+		//- else	
+		//- 	li.section(data-section="events")
+		//- 		a(href="/events") Events
 

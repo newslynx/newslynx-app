@@ -1,10 +1,45 @@
 extends layout
 
-block content
-    p Connected with Google Analytics?
-    if hasToken
-        p Token for Google Analytics successfully saved.
-    else
-        a(href='/auth/google') Connect with Google Analytics
-    //form(action='/organizations/settings', method='POST')
-    //    != form
+block drawer
+	.division-title Settings
+	.division-description Here you can change your account settings to track new Twitter or Facebook accounts or alert your Google Authentication
+
+block templates
+	script(type="text/jst")#settings-templ
+		#settings
+			.settings-group
+				.settings-title Site
+				.setting-group
+					.setting-title Home page
+					ul.inputs-container
+						li.input
+							|<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
+				.setting-group
+					.setting-description Does your site publish an RSS feed of all its articles?
+					.setting-flag Includes full article text?
+					.setting-title URLs
+					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-multi="true")
+						<%  for (var i = 0; i < rss_feeds.length; i++) { %>
+						li.input.multi
+							.multi-child.destroy &times;
+							|<input type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" />
+							|<input type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> />
+						<% } %>
+					button.add Add
+
+	script(type="text/jst")#multi-input-templ
+		li.input.multi
+			.multi-child.destroy &times;
+			|<input type="text" placeholder="<%= placeholder %>" class="multi-child" />
+			<% (flag) ? print('<input type="'+flag+'"/>') : '' %>
+
+block bootstrap-data
+	script(id="page-data").
+		var pageData = {};
+		pageData.org =!{org};
+
+block scripts
+	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	script(src="javascripts/thirdparty/underscore-min.js")
+	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/main.js")
