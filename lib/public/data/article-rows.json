@@ -47,15 +47,18 @@
 				"counts": [
 					{
 						"count": 5,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 2,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			},
@@ -65,15 +68,18 @@
 				"counts": [
 					{
 						"count": 10,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 4,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			}
@@ -126,15 +132,18 @@
 				"counts": [
 					{
 						"count": 5,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 2,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			},
@@ -144,15 +153,18 @@
 				"counts": [
 					{
 						"count": 10,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 4,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			}
@@ -205,15 +217,18 @@
 				"counts": [
 					{
 						"count": 5,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 2,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			},
@@ -223,15 +238,18 @@
 				"counts": [
 					{
 						"count": 10,
-						"color": "#fc0"
+						"color": "#fc0",
+						"name": "Gawker"
 					},
 					{
 						"count": 4,
-						"color": "#cf0"
+						"color": "#0cf",
+						"name": "NYT"
 					},
 					{
 						"count": 3,
-						"color": "#c0c"
+						"color": "#f0c",
+						"name": "NYT"
 					}
 				]
 			}
