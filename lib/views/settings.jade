@@ -49,6 +49,51 @@ block templates
 							|<input type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" />
 						<% } %>
 					button.add Add
+				.setting-group
+					.setting-description What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
+					.setting-flag Is main account?
+					.setting-title Twitter accounts
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter")
+						<%  for (var i = 0; i < twitter_accounts.length; i++) { %>
+						li.input.multi
+							.multi-child.destroy &times;
+							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" />
+							|<input type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> />
+						<% } %>
+					button.add Add				
+				.setting-group
+					.setting-flag Is main account?
+					.setting-title Facebook accounts
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook")
+						<%  for (var i = 0; i < facebook_accounts.length; i++) { %>
+						li.input.multi
+							.multi-child.destroy &times;
+							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" />
+							|<input type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> />
+						<% } %>
+					button.add Add
+			.settings-group
+				.settings-title Tags
+				.setting-group
+					.setting-title Article tags
+					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles")
+						<%  for (var i = 0; i < article_tags.length; i++) { %>
+						li.input.multi
+							.multi-child.destroy &times;
+							|<input type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" />
+							|<input type="text" class="color-picker" data-color="<%= article_tags[i].color %>" data-group="articles"/>
+						<% } %>
+					button.add Add				
+				.setting-group
+					.setting-title Impact tags
+					ul.inputs-container(data-placeholder="Legislative impact" data-flag="color" data-group="impact")
+						<%  for (var i = 0; i < impact_tags.length; i++) { %>
+						li.input.multi
+							.multi-child.destroy &times;
+							|<input type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" />
+							|<input type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" data-group="impact"/>
+						<% } %>
+					button.add Add
 
 	//- script(type="text/jst")#settings-group-templ
 	//- 	.settings-group
@@ -70,7 +115,13 @@ block templates
 		li.input.multi
 			.multi-child.destroy &times;
 			|<input type="text" placeholder="<%= placeholder %>" class="multi-child" />
-			<% (flag) ? print('<input type="'+flag+'"/>') : '' %>
+			<% if (flag == 'radio') { %>
+			<% print('<input type="'+flag+'" name="'+group+'"/>') %>
+			<% } else if (flag == 'checkbox') { %>
+			<% print('<input type="'+flag+'" />') %>
+			<% } else if (flag == 'color') { %>
+			<% print('<input type="text" class="color-picker" data-color="#ccc" data-group="'+group+'"/>') %>
+			<% } %>
 
 	script(type="text/jst")#multi-input-double-templ
 		li.input.multi
@@ -85,8 +136,12 @@ block bootstrap-data
 		pageData.org =!{org};
 		//- pageData.settingsSchema =!{settingsSchema};
 
+block css
+	link(rel='stylesheet', href='/stylesheets/thirdparty/spectrum.css')
+
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/thirdparty/spectrum.js")
 	script(src="javascripts/main.js")

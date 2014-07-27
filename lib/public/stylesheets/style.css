@@ -803,23 +803,32 @@ form select {
 /* end modal windows */
 /* S E T T I N G S */
 body[data-section="settings"] #content {
-  padding: 25px;
+  padding: 25px 35px 25px 35px;
 }
 .settings-group {
   width: 600px;
+  position: relative;
 }
 .settings-title {
-  font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.8em;
   margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.settings-title:before {
+  content: '# ';
+  color: #ccc;
+  position: absolute;
+  left: -15px;
 }
 .setting-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .setting-title {
   font-size: 1.2em;
   display: inline-block;
   width: 100px;
+  font-weight: bold;
 }
 .setting-description {
   font-size: 1.2em;
@@ -828,7 +837,8 @@ body[data-section="settings"] #content {
 }
 .setting-title,
 .inputs-container,
-.multi-child {
+.multi-child,
+.color-picker {
   display: inline-block;
   vertical-align: top;
 }
@@ -846,6 +856,10 @@ body[data-section="settings"] #content {
 .input input[type='radio'],
 .input input[type='checkbox'] {
   margin: 0;
+}
+.input input[type='text'],
+.color-picker {
+  height: 20px;
 }
 .input.multi {
   margin-left: 0;
@@ -868,6 +882,41 @@ body[data-section="settings"] #content {
 button.add {
   display: block;
   margin-left: 120px;
+}
+.color-picker {
+  width: 25px;
+}
+.sp-replacer:hover .sp-dd {
+  color: #999;
+}
+.sp-dd {
+  font-size: 18px;
+  line-height: 0px;
+  color: #ccc;
+  padding: 0;
+}
+.sp-preview {
+  margin-right: 0;
+  border: none;
+}
+.sp-replacer {
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+.sp-container {
+  border-color: #ccc;
+}
+.sp-picker-container {
+  border: none;
+}
+.sp-input {
+  background: auto;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+.sp-cancel {
+  color: #000 !important;
 }
 /* end settings */
 /* user styles, to be got from server */

@@ -18,7 +18,10 @@
   	}
   ],
   "twitter_accounts": [
-    "ProPalpatine"
+  	{
+  		"handle": "ProPalpatine",
+  		"is_main": true
+  	}
   ],
   "twitter_staff_list": [
     {
@@ -27,7 +30,10 @@
     }
   ],
   "facebook_accounts": [
-    "propalpatine"
+  	{
+  		"handle": "propalpatine",
+  		"is_main": true
+  	}
   ],
   "youtube_accounts": [],
   "tumblr_accounts": [
@@ -40,7 +46,7 @@
   "twitter_auth": "",
   "facebook_auth": "",
   "google_auth": "",
-  "tags": [
+  "article_tags": [
     {
       "name": "tag 1",
       "count": 5,
@@ -50,19 +56,21 @@
       "name": "tag 2",
       "count": 3,
       "color": "#fc0"
-    },
+    }
+  ],
+  "impact_tags": [
     {
-      "name": "tag 3",
+      "name": "tag 1",
       "count": 1,
       "color": "#c0f"
     },
     {
-      "name": "tag 4",
+      "name": "tag 2",
       "count": 1,
       "color": "#0fc"
     },
     {
-      "name": "tag 5",
+      "name": "tag 3",
       "count": 0,
       "color": "#f0c"
     }

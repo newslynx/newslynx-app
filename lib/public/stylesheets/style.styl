@@ -637,7 +637,7 @@ form
 
 /* S E T T I N G S */
 body[data-section="settings"] #content
-	padding 25px
+	padding 25px 35px 25px 35px
 
 input_width = 200px
 destroy_width = 20px
@@ -645,23 +645,33 @@ input_margin = 5px
 setting_title_width = 100px
 .settings-group
 	width 600px
+	position relative
 	// background-color #0cf
 .settings-title
-	font-weight bold
-	font-size 1.4em
+	// font-weight bold
+	font-size 1.8em
 	margin-bottom 15px
+	border-bottom 1px solid #ccc
+	position relative
+.settings-title:before
+	content '# '
+	color #ccc
+	position absolute
+	left -15px
 .setting-group
-	margin-bottom 25px
+	margin-bottom 20px
 .setting-title
 	font-size 1.2em
 	display inline-block
 	width setting_title_width
+	font-weight bold
+	// color darken(settings, 35%)
 	// background-color #fc0
 .setting-description
 	font-size 1.2em
 	margin-bottom 5px
 	color bg_gray
-.setting-title,.inputs-container,.multi-child
+.setting-title,.inputs-container,.multi-child,.color-picker
 	display inline-block
 	vertical-align top
 .inputs-container
@@ -675,6 +685,9 @@ setting_title_width = 100px
 		width input_width
 	input[type='radio'],input[type='checkbox']
 		margin 0
+.input input[type='text'],.color-picker
+	height 20px
+
 .input.multi
 	margin-left 0
 .setting-flag
@@ -693,6 +706,33 @@ setting_title_width = 100px
 button.add
 	display block
 	margin-left (setting_title_width + destroy_width)
+.color-picker
+	width 25px
+// Color picker style overrides
+// The arrow
+.sp-replacer:hover .sp-dd
+	color #999
+.sp-dd
+	font-size 18px
+	line-height 0px
+	color #ccc
+	padding 0
+.sp-preview
+	margin-right 0
+	border none
+.sp-replacer
+	padding 0
+	border none
+	background transparent
+.sp-container
+	border-color #ccc
+.sp-picker-container
+	border none
+.sp-input
+	background auto
+	border-radius 0
+.sp-cancel
+	color #000 !important
 /* end settings */
 
 /* user styles, to be got from server */

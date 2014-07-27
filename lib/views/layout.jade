@@ -3,9 +3,9 @@ html
 	head
 		title NewsLynx | 
 			= title
+		block css
 		link(rel='stylesheet', href='/stylesheets/font-awesome/css/font-awesome.min.css')
 		link(rel='stylesheet', href='/stylesheets/style.css')
-		block css
 	body(data-section="#{page}")
 		#main-wrapper
 			include page-divisions/left-rail/index.jade
