@@ -491,6 +491,9 @@ input
 #content[data-mode="single"]
 	padding 25px 50px
 
+#content[data-mode="compare"]
+	padding 15px
+
 .article-detail-container
 	.toolbar
 		overflow auto
@@ -516,33 +519,43 @@ input
 		content '## '
 	.description
 		font-size 1.3em
-
-.article-detail-card-wrapper
+/* end main article styles */
+/* A R T I C L E  R O W */
+.article-detail-row-wrapper
 	position relative
-	width 300px 
-	height 400px
+	width 100% 
+	height 40px
+.article-detail-row-wrapper:nth-child(even)
+	background-color #eaeaea	
+	// .destroy
+	// 	font-size 1.5em
+	// 	user-select none
+
+.article-detail-row-container
+	padding 3px
+
+#compare-grid
+	width 100%
+.header-group
 	display inline-block
-	vertical-align top
-	margin 7.5px
-	border 1px solid #ccc
-	.destroy
-		font-size 1.5em
-		user-select none
-
-.article-detail-card-container
-	padding 7.5px
-	section
+	text-align center
+	.name
+		height 10px
+		width 100%
+	.dimension
+		font-weight bold
 		display inline-block
-		vertical-align top
-	section.right
-		text-align right
-		float right
-	h3.title
-		font-weight normal
-		color bg_gray
-
+.header-group[data-layout="single"]
+	width 8%
+	background-color #fc0
+.header-group[data-layout="multi"]
+	width 21%
+	.dimension
+		width 50%
 
 /* end main article styles */
+
+
 /* M O D A L  W I N D O W S */
 .modal-outer
 	display none

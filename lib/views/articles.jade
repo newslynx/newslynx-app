@@ -55,35 +55,49 @@ block templates
 				h3.title What events have happened around this story?
 				img(src="images/dummy/events.png")
 
-	script(type="text/jst")#article-detail-card-templ
-		.article-detail-card-container
+	script(type="text/jst")#article-grid-containter-templ
+		#compare-grid
+		.header
+			.header-group(data-layout="single")
+				.name
+				.dimension Headline
+			.header-group(data-layout="single")
+				.name
+				.dimension Date
+			.header-group(data-layout="multi")
+				.name Social
+				.dimension Mentions
+				.dimension Shares
+			.header-group(data-layout="multi")
+				.name Visitors
+				.dimension Uniques
+				.dimension Pageviews
+			.header-group(data-layout="multi")
+				.name Sources
+				.dimension Internal
+				.dimension External
+			.header-group(data-layout="multi")
+				.name Qualitative
+				.dimension Citations
+				.dimension Events
+		.rows
+
+
+	script(type="text/jst")#article-detail-row-templ
+		.article-detail-row-container
 			.destroy &times;
-			.pub-date <%= date(pub_datetime) %>
-			h2.headline <%= title %>
-			section(data-name="timeline")
-				img(src="images/dummy/card/timeline.png")
-			section(data-name="social-posts") 
-				h3.title Social posts
-				img(src="images/dummy/card/social-posts.png")
-			section(data-name="traffic-sources").right
-				h3.title Traffic sources
-				img(src="images/dummy/card/traffic-sources.png")
-			section(data-name="citations") 
-				h3.title Citations
-				img(src="images/dummy/card/citations.png")
-			section(data-name="events").right
-				h3.title Events
-				img(src="images/dummy/card/events.png")
 
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
 		pageData.org =!{org};   
 		pageData.articleSummaries =!{articleSummaries};   
+		pageData.articleRowDetails =!{articleRowDetails};   
 		pageData.articleDetails =!{articleDetails};   
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/main.js")

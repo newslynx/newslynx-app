@@ -1,0 +1,306 @@
+[
+	{
+		"article_uid": "a1",
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"pub_datetime": "2014-06-13",
+		"stats": [
+			{
+				"social": [
+					{
+						"dimension": "Twitter",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "Facebook",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"traffic": [
+					{
+						"dimension": "uniques",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "pageviews",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"referrals": [
+					{
+						"dimension": "internal",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "external",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"qualitative": [
+					{
+						"dimension": "citations",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 5,
+								"color": "#fc0"
+							},
+							{
+								"count": 2,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					},
+					{
+						"dimension": "events",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 10,
+								"color": "#fc0"
+							},
+							{
+								"count": 4,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					}
+				]
+			}
+		]
+	},{
+		"article_uid": "a2",
+		"title": "Naboo deal fols",
+		"authors": [
+			"Darth Sidious"
+		],
+		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"pub_datetime": "2014-06-09",
+		"stats": [
+			{
+				"social": [
+					{
+						"dimension": "Twitter",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "Facebook",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"traffic": [
+					{
+						"dimension": "uniques",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "pageviews",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"referrals": [
+					{
+						"dimension": "internal",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "external",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"qualitative": [
+					{
+						"dimension": "citations",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 5,
+								"color": "#fc0"
+							},
+							{
+								"count": 2,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					},
+					{
+						"dimension": "events",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 10,
+								"color": "#fc0"
+							},
+							{
+								"count": 4,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					}
+				]
+			}
+		]
+	},{
+		"article_uid": "a3",
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"article_url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"pub_datetime": "2014-05-09",
+		"stats": [
+			{
+				"social": [
+					{
+						"dimension": "Twitter",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "Facebook",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"traffic": [
+					{
+						"dimension": "uniques",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "pageviews",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"referrals": [
+					{
+						"dimension": "internal",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					},
+					{
+						"dimension": "external",
+						"type": "bullet",
+						"count": 32,
+						"median": 10,
+						"max": 100
+					}
+				]
+			},{
+				"qualitative": [
+					{
+						"dimension": "citations",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 5,
+								"color": "#fc0"
+							},
+							{
+								"count": 2,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					},
+					{
+						"dimension": "events",
+						"type": "bar",
+						"counts": [
+							{
+								"count": 10,
+								"color": "#fc0"
+							},
+							{
+								"count": 4,
+								"color": "#cf0"
+							},
+							{
+								"count": 3,
+								"color": "#c0c"
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]

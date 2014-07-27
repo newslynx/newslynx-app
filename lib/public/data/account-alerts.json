@@ -1,6 +1,6 @@
 [
   {
-    "uid": "a2",
+    "uid": "a1",
     "enabled": true,
     "service": "Reddit",
     "settings": {
@@ -9,7 +9,7 @@
     }
   },
   {
-    "uid": "a3",
+    "uid": "a2",
     "enabled": true,
     "service": "Google",
     "settings": {
@@ -22,7 +22,7 @@
     }
   },
   {
-    "uid": "a4",
+    "uid": "a3",
     "enabled": true,
     "service": "Google",
     "settings": {
