@@ -13,8 +13,20 @@ block templates
 					#home-page.setting-title Home page
 					ul.inputs-container(data-key="homepage")
 						li.input
-							|<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
+							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 				.setting-group
+					#home-page.setting-title Time zone
+					ul.inputs-container(data-key="timezone")
+						li.input
+							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
+							select(name="timezone").input-item
+								|<option value="-5.0"  <% ((timezone == '-5.0') ? print('selected') : '')  %> > (GMT -5:00) Eastern Time</option>
+								|<option value="-6.0"  <% ((timezone == '-6.0') ? print('selected') : '')  %> > (GMT -6:00) Central Time</option>
+								|<option value="-7.0"  <% ((timezone == '-7.0') ? print('selected') : '')  %> > (GMT -7:00) Mountain Time</option>
+								|<option value="-8.0"  <% ((timezone == '-8.0') ? print('selected') : '')  %> > (GMT -8:00) Pacific Time</option>
+								|<option value="-9.0"  <% ((timezone == '-9.0') ? print('selected') : '')  %> > (GMT -9:00) Alaska</option>
+								|<option value="-10.0" <% ((timezone == '-10.0') ? print('selected') : '') %> > (GMT -10:00) Hawaii</option>
+				.setting-grou
 					.setting-description Does your site publish an RSS feed of all its articles?
 					.setting-flag Includes full article text?
 					.setting-title URLs
@@ -22,8 +34,8 @@ block templates
 						<%  for (var i = 0; i < rss_feeds.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
-							|<input type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> data-key="full_text"/>
+							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
+							|<input class="input-item" type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> data-key="full_text"/>
 						<% } %>
 					button.add Add
 			.settings-group
@@ -35,7 +47,7 @@ block templates
 						<%  for (var i = 0; i < short_urls.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" class="multi-child" />
+							|<input class="input-item" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" class="multi-child" />
 						<% } %>
 					button.add Add
 				.setting-group
@@ -45,8 +57,8 @@ block templates
 						<%  for (var i = 0; i < twitter_staff_list.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner %>" class="multi-child double" data-key="owner"/>
-							|<input type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" data-key="slug"/>
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner %>" class="multi-child double" data-key="owner"/>
+							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" data-key="slug"/>
 						<% } %>
 					button.add Add
 				.setting-group
@@ -57,8 +69,8 @@ block templates
 						<%  for (var i = 0; i < twitter_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
-							|<input type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input class="input-item" type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add				
 				.setting-group
@@ -68,8 +80,8 @@ block templates
 						<%  for (var i = 0; i < facebook_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
-							|<input type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input class="input-item" type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add
 			.settings-group
@@ -80,8 +92,8 @@ block templates
 						<%  for (var i = 0; i < article_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" data-key="name" />
-							|<input type="text" class="color-picker" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
+							|<input class="input-item" type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" data-key="name" />
+							|<input class="input-item" type="text" class="color-picker" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
 				.setting-group
@@ -90,8 +102,8 @@ block templates
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
-							|<input type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
+							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
+							|<input class="input-item" type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
 					button.add Add	
 			.settings-group
