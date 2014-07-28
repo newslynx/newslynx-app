@@ -230,7 +230,7 @@ body[data-modal=true] {
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #2c2c2c;
+  color: #c0c0c0;
 }
 .section-options .option-title {
   font-size: 1em;
@@ -541,7 +541,7 @@ body[data-section="login"] #drawer {
   padding: 20px 10px 8px 10px;
   font-size: 1.3em;
   font-weight: bold;
-  color: #2c2c2c;
+  color: #303030;
 }
 #alert-sources {
   padding: 0;
