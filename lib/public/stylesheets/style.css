@@ -45,6 +45,9 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
+button:hover {
+  cursor: pointer;
+}
 /* M O D E S */
 body[data-modal=true] {
   overflow: hidden;
@@ -917,6 +920,24 @@ button.add {
 }
 .sp-cancel {
   color: #000 !important;
+}
+.auth-result {
+  font-size: 1.4em;
+  display: inline;
+}
+.success {
+  color: #529624;
+}
+.fail {
+  color: #9e0000;
+}
+.authenticate {
+  display: block;
+  color: #000 !important;
+  margin-top: 3px;
+}
+.authenticate button {
+  margin: 0;
 }
 /* end settings */
 /* user styles, to be got from server */

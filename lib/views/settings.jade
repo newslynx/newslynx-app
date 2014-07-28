@@ -93,7 +93,19 @@ block templates
 							|<input type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" />
 							|<input type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" data-group="impact"/>
 						<% } %>
-					button.add Add
+					button.add Add	
+			.settings-group
+				.settings-title Goole analytics
+				.setting-group
+					.setting-title Authenicated
+					if hasToken
+						p.auth-result.success Yes!
+					else
+						p.auth-result.fail No
+						a(href='/auth/google').authenticate
+							button Grant access
+							//- form(action='/organizations/settings', method='POST')
+							//- 	!= form
 
 	//- script(type="text/jst")#settings-group-templ
 	//- 	.settings-group
