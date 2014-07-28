@@ -11,19 +11,19 @@ block templates
 				.settings-title Site
 				.setting-group
 					.setting-title Home page
-					ul.inputs-container
+					ul.inputs-container(data-key="homepage")
 						li.input
 							|<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 				.setting-group
 					.setting-description Does your site publish an RSS feed of all its articles?
 					.setting-flag Includes full article text?
 					.setting-title URLs
-					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox")
+					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds")
 						<%  for (var i = 0; i < rss_feeds.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" />
-							|<input type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> />
+							|<input type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
+							|<input type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> data-key="full_text"/>
 						<% } %>
 					button.add Add
 			.settings-group
@@ -31,67 +31,67 @@ block templates
 				.setting-group
 					.setting-description If you use a custom URL shortener, what do your links look like on twitter. Please omit a trailing slash.
 					.setting-title Short URL
-					ul.inputs-container(data-placeholder="propalp.tn" )
+					ul.inputs-container(data-placeholder="propalp.tn" data-key="short_urls")
 						<%  for (var i = 0; i < short_urls.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="propalp.tn" value="<%= short_urls[i].url %>" class="multi-child" />
+							|<input type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" class="multi-child" />
 						<% } %>
 					button.add Add
 				.setting-group
 					.setting-description If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
 					.setting-title Staff lists
-					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]')
+					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_list")
 						<%  for (var i = 0; i < twitter_staff_list.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner %>" class="multi-child double" />
-							|<input type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" />
+							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner %>" class="multi-child double" data-key="owner"/>
+							|<input type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" data-key="slug"/>
 						<% } %>
 					button.add Add
 				.setting-group
 					.setting-description What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
 					.setting-flag Is main account?
 					.setting-title Twitter accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter")
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_accounts")
 						<%  for (var i = 0; i < twitter_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" />
-							|<input type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> />
+							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add				
 				.setting-group
 					.setting-flag Is main account?
 					.setting-title Facebook accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook")
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_accounts")
 						<%  for (var i = 0; i < facebook_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" />
-							|<input type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> />
+							|<input type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add
 			.settings-group
 				.settings-title Tags
 				.setting-group
 					.setting-title Article tags
-					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles")
+					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="article_tags")
 						<%  for (var i = 0; i < article_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" />
-							|<input type="text" class="color-picker" data-color="<%= article_tags[i].color %>" data-group="articles"/>
+							|<input type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" data-key="name" />
+							|<input type="text" class="color-picker" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
 				.setting-group
 					.setting-title Impact tags
-					ul.inputs-container(data-placeholder="Legislative impact" data-flag="color" data-group="impact")
+					ul.inputs-container(data-placeholder="Legislative impact" data-flag="color" data-group="impact" data-key="impact_tags")
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" />
-							|<input type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" data-group="impact"/>
+							|<input type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
+							|<input type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
 					button.add Add	
 			.settings-group
@@ -108,6 +108,9 @@ block templates
 							button Grant access
 							//- form(action='/organizations/settings', method='POST')
 							//- 	!= form
+			.save-container
+				input(type="submit" value="Save changes")#save
+
 
 	//- script(type="text/jst")#settings-group-templ
 	//- 	.settings-group

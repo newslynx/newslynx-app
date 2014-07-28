@@ -45,7 +45,8 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   cursor: pointer;
 }
 /* M O D E S */
@@ -877,10 +878,11 @@ body[data-section="settings"] #content {
   height: 100%;
   text-align: center;
   font-size: 1.4em;
+  color: #aaa;
 }
 .destroy.multi-child:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: #000;
 }
 button.add {
   display: block;
@@ -938,6 +940,12 @@ button.add {
 }
 .authenticate button {
   margin: 0;
+}
+.save-container {
+  margin-top: 35px;
+}
+.save-container input {
+  font-size: 2.4em;
 }
 /* end settings */
 /* user styles, to be got from server */

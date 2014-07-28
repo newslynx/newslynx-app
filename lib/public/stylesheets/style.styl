@@ -32,7 +32,7 @@ h1,h2,h3,h4,ul
 
 input[type="search"]
 	appearance searchfield
-button:hover
+button:hover,input[type="submit"]:hover
 	cursor pointer
 
 /* M O D E S */
@@ -702,9 +702,10 @@ setting_title_width = 100px
 	text-align center
 	// background-color #0cf
 	font-size 1.4em
+	color #aaa
 .destroy.multi-child:hover
 	cursor pointer
-	text-decoration underline
+	color #000
 button.add
 	display block
 	margin-left (setting_title_width + destroy_width)
@@ -749,6 +750,11 @@ button.add
 	margin-top 3px
 	button
 		margin 0
+
+.save-container
+	margin-top 35px
+	input
+		font-size 2.4em
 /* end settings */
 
 /* user styles, to be got from server */
