@@ -943,6 +943,21 @@ button.add {
 .sp-cancel {
   color: #000 !important;
 }
+.sp-palette .sp-thumb-el {
+  border-color: #ececec;
+}
+.sp-palette .sp-thumb-el:hover,
+.sp-palette .sp-thumb-el.sp-thumb-active {
+  border-color: #303030;
+}
+.sp-palette.sp-thumb.sp-cf {
+  width: 80px;
+}
+.sp-palette-row-selection {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
 .auth-result {
   font-size: 1.4em;
   display: inline;
