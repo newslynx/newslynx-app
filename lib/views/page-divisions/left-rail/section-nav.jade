@@ -11,8 +11,10 @@ mixin articles
 	li.section.active(data-section="articles")
 		span.nav-link Articles
 	li.section-options
+		.section-title Use these filters to add articles to the drawer on the right
 		.option-container(data-type="search")
-			input(type="search" name="article-search" results="5" placeholder="Search by article name..." incremental)
+			.option-title Keywords
+			input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
 		.option-container(data-type="date-range")
 			.option-title Date range
 			input(type="text" placeholder="From..." data-dir="from")
@@ -24,7 +26,7 @@ mixin articles
 				option # impact events
 				option Pageviews
 				option Twitter mentions
-				option Faceook Likes & Shares
+				option Faceook Likes &amp; Shares
 				option Social media shares
 		.option-container(data-type="article-tags")
 			.option-title Article tags
