@@ -178,7 +178,7 @@ body[data-modal=true] {
   cursor: default;
 }
 .main-sections .option-container {
-  margin: 5px 0 12px;
+  margin: 12px 0 12px;
 }
 .main-sections input,
 .main-sections select {
@@ -228,17 +228,18 @@ body[data-modal=true] {
 }
 .section-options .section-title {
   font-size: 1.3em;
-  font-weight: 100;
+  font-weight: bold;
   margin-bottom: 10px;
-  letter-spacing: 1px;
+  color: #2c2c2c;
 }
 .section-options .option-title {
-  font-size: 1.1em;
+  font-size: 1em;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 4px;
   padding-bottom: 4px;
   border-bottom: 1px solid #a1a1a1;
+  font-weight: 200;
 }
 .tag-list .tag-wrapper {
   padding-bottom: 4px;
@@ -540,6 +541,7 @@ body[data-section="login"] #drawer {
   padding: 20px 10px 8px 10px;
   font-size: 1.3em;
   font-weight: bold;
+  color: #2c2c2c;
 }
 #alert-sources {
   padding: 0;
