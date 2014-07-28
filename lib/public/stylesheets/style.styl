@@ -20,21 +20,32 @@ ul
 	margin 0
 	padding 0
 
-h1,h2,h3,h4
+h1,h2,h3,h4,ul
 	margin 0
 	padding 0
 	-webkit-margin-before 0px
 	-webkit-margin-after 0px
 	-webkit-margin-start 0px
 	-webkit-margin-end 0px
+	-webkit-padding-start 0
+
 
 input[type="search"]
 	appearance searchfield
+button
+	margin 0
+button:hover,input[type="submit"]:hover
+	cursor pointer
+
+/* M O D E S */
+body[data-modal=true]
+	overflow hidden
 
 // Widths
 leftrail_width = 250
 drawer_width = 285
 content_width = 850
+header_height = 50px
 furniture_width = (leftrail_width + drawer_width)px
 page_width = (leftrail_width + drawer_width + content_width)
 
@@ -45,14 +56,35 @@ the_green = #0eb521
 leftrail_gray = #393939
 bg_gray = #7C7C7C
 highlight_gray = #666
+border_gray = #777676
+bg_blue = #b4d5ec
 select_blue = #88cfff
+enable_green = #529624
+disabled_red = #9E0000
 // Page colors
 login = #d6ccdf
 about = #e3943b
+home = #008def
 approval_river = #12b7dd
 articles = #3ec173
-series = #b980c2
+settings = #b980c2
 events = #c13d3d
+
+/* F U R N I T U R E */
+.article-detail-row-container
+	.destroy
+		position absolute
+		top 0
+		right 0
+		font-weight bold
+		color #ccc
+		width 100%
+		text-align right
+		padding-right 10px
+		height 20px
+	.destroy:hover
+		cursor pointer
+		color #000
 
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper
@@ -61,7 +93,7 @@ events = #c13d3d
 	min-width 960px //TK
 #left-rail,#drawer, #content
 	display inline-block
-	position relative
+	// position relative
 	vertical-align top
 	height 100%
 
@@ -77,11 +109,11 @@ events = #c13d3d
 #drawer
 	width (drawer_width)px
 	background-color dummy
-	border-right 1px solid darken(dummy, 10%)
+	border-right 1px solid border_gray
 	// box-shadow 0px 0px 8px darken(dummy, 10%)
 	z-index 8
 #content
-	width calc(100% - 285px - 250px ) // These aren't tied to variables due to a stylus error, so if you change the leftrail or drawer widths, these values need to be updated
+	width calc(100% - 285px - 250px ) // These should be tied to the variables above but they are not due to a stylus error that puts a space between the value and the `px`, so if you change the leftrail or drawer widths, these values need to be updated
 /* end main page elements */
 
 /* H E A D E R	*/
@@ -90,7 +122,7 @@ events = #c13d3d
 	color #fff
 	overflow-x hidden
 	#header-container
-		height 50px
+		height header_height
 		width 100%
 		background-color black
 		// box-shadow 0 6px 12px #000
@@ -116,9 +148,9 @@ events = #c13d3d
 		.settings
 			display inline-block
 			position relative
-			vertical-align top
 			top 20px
-			left 40px
+			float right
+			padding-right 5px
 			a
 				font-size 1.4em
 			a:hover
@@ -126,42 +158,54 @@ events = #c13d3d
 	nav
 		overflow-y scroll
 		overflow-x hidden
-		height calc(98vh - 50px)
+		height calc(100vh - 50px)
 
 
 /* L E F T  R A I L */
 .main-sections
 	margin-top 10px
-	height 98%
-	.section.active a
+	height calc(98% - header_height) 
+	li
+		user-select none
+	.section.active .nav-link
 		text-shadow 0 0px 12px #535353
 	.section.active:hover
 		cursor default
-	.section
-		.option-container
-			margin 5px 0 12px
-		input, select
-			width 100%
-		select
-			height 26px
-			padding-top 2px
-		.section-options, a
-			padding 10px 25px
-		a
-			font-size 2em
-			font-weight 100
-			color #f2f2f2
-			display block
-			text-decoration none
-		a:hover
-			cursor pointer
-			background-color highlight_gray
-	.section.active a:hover
+	.option-container
+		margin 5px 0 12px
+	input, select
+		width 100%
+		display inline-block
+	select
+		height 26px
+		padding-top 2px
+	.section-options, .nav-link, a:not(.out-link)
+		padding 10px 25px
+	.nav-link,a
+		color #f2f2f2
+	.nav-link, a:not(.out-link)
+		font-size 2em
+		font-weight 100
+		display block
+		text-decoration none
+	a:hover:not(.out-link)
+		cursor pointer
+		background-color highlight_gray
+	.section.active .nav-link:hover
 		cursor default
+	.option-container[data-type="date-range"] input
+		width 45%
+	.option-container[data-type="date-range"] input[data-dir="to"]
+		float right
 
-.section-options
+.section-options,.section-subnav
 	background-color bg_gray
 	color #fff
+// .subnav-option:hover
+// 	cursor pointer
+// 	background-color tint(bg_gray, 23%)
+	
+.section-options
 	input[type="search"]
 		height 23px
 	.option-title
@@ -172,8 +216,7 @@ events = #c13d3d
 		padding-bottom 4px
 		border-bottom 1px solid #A1A1A1
 
-
-#tag-list
+.tag-list
 	.tag-wrapper
 		padding-bottom 4px
 	.tag-wrapper:hover
@@ -197,51 +240,57 @@ events = #c13d3d
 	.tag-count
 		float right
 
+.option-container
+	.edit
+		a
+			font-size 1.3em
+			display inline-block
+			width 100%
+			font-weight 100
+			text-align right
+
+.option-container[data-type="search"]
+	button
+		width 100%
+
 /* end left rails */
 
 /* S E C T I O N  S P E C I F I C  S T Y L E S  */
 body[data-section="about"]
-	.section.active a
+	.section.active > .nav-link
 		background-color about
 	#drawer
 		background-color tint(about, 90%)
-		border-right-color tint(about, 25%)
+body[data-section="home"]
+	.section.active > .nav-link
+		background-color home
+	#drawer
+		background-color tint(home, 90%)
 body[data-section="approval-river"] 
-	.section.active a
+	.section.active > .nav-link
 		background-color approval_river
 	#drawer
 		background-color tint(approval_river, 90%)
-		border-right-color tint(approval_river, 25%)
+	.division-switcher li.active
+		background-color approval_river
+		text-shadow 0 0px 12px #535353
 body[data-section="articles"]
-	#left-rail
-		// box-shadow 0px 0px 6px darken(articles, 35%)
-	.section.active a
+	.section.active > .nav-link
 		background-color articles
 	#drawer
 		background-color tint(articles, 90%)
-		border-right-color tint(articles, 25%)
 	.division-switcher li.active
 		background-color articles
 		text-shadow 0 0px 12px #535353
-		// box-shadow 0px 0px 11px articles
-
-body[data-section="series"] 
-	.section.active a
-		background-color series
+body[data-section="settings"] 
+	.section.active > .nav-link
+		background-color settings
 	#drawer
-		background-color tint(series, 85%)
-		border-right-color tint(series, 25%)
-body[data-section="events"] 
-	.section.active a
-		background-color events
-	#drawer
-		background-color tint(events, 85%)
-		border-right-color tint(events, 60%)
+		background-color tint(settings, 85%)
 body[data-section="login"] 
 	#drawer
 		background-color login
-		border-right-color darken(login, 25%)
-		// box-shadow 0px 0px 11px login
+
 /* end section specific styles */
 
 /* D R A W E R */
@@ -249,10 +298,30 @@ body[data-section="login"]
 	p
 		font-size 1.3em
 		line-height 1.3em
-.division-switcher
+.drawer-title,.division-switcher
 	width 100%
-	font-size 1.8em
+	font-size 2.4em
 	font-weight 100
+// TODO, possibly remove .drawer-item
+.drawer-title,.drawer-item,.drawer-list-outer,.modal-outer
+	padding 10px
+	user-select none
+.drawer-short-item
+	padding 0 15px
+.drawer-section-title
+	font-size 1.4em
+	font-weight 200
+// .drawer-list-inner
+// 	border-left 3px solid select_blue
+// 	padding 6px 0 6px 5px
+// .drawer-list-item.active .drawer-list-inner
+// 	border-left-width 0
+// 	padding-left 0
+// .drawer-list-inner,.tag-container
+// 	transition border-left-width .1s linear,padding-left .1s linear
+/*   A R T I C L E  S T Y L E S   */
+.division-switcher
+	font-size 1.8em
 	display table
 	background-color bg_gray
 	li
@@ -263,34 +332,154 @@ body[data-section="login"]
 		padding 5px
 		height 50px
 		color #fff
+		user-select none
 	li:not(.active):hover
 		cursor pointer
 		background-color tint(highlight_gray, 30%)
 	.active:hover
 		cursor default
-.article-summary-wrapper
-	padding 10px 15px
+
+.drawer-list-item,.drawer-options,.drawer-section-title,.drawer-pointer
 	user-select none
+	// border-bottom 1px solid border_gray
+	.btn
+		padding 5px 0
 	.pub-date
 		font-size 1.1em
-	.headline
+	.title
+		font-size 1.4em
+		margin-bottom 2px
+	.count
+		// font-size .9em
+		text-transform uppercase
+		margin-bottom 2px
+	.description
 		font-size 1.2em
-.article-summary-wrapper:first-child
-	margin-top 10px
-.article-summary-wrapper:not(.active):hover
+		color bg_gray
+	.toolbar
+		font-size 1.2em
+		margin-top 11px
+	.settings-switch,.enable-switch
+		display inline-block
+	.enable-switch
+		float right
+	.enable-switch[data-enabled="true"]
+		color enable_green
+	.enable-switch[data-enabled="false"]
+		color disabled_red
+	.settings-switch:not(.active):hover .text,.enable-switch:hover
+		text-decoration underline
+		cursor pointer
+	.settings-switch:active
+		color #666
+	.modal-switch.active:hover
+		cursor default
+	// .enable-switch[data-enabled="true"]:active
+	// 	color shade(enable_green, 80%)
+	// .enable-switch[data-enabled="false"]:active
+	// 	color shade(disabled_red, 80%)
+.drawer-list-outer:not(.active):hover
 	cursor pointer
-	background-color tint(select_blue, 50%)
-.article-summary-wrapper.active
+	background-color tint(select_blue, 45%)
+.drawer-list-outer.active
 	background-color select_blue
-.article-summary-wrapper.active:hover
+.drawer-list-outer.active:hover
 	cursor default
+#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover
+	background-color darken(select_blue, 7%)
+	cursor pointer
+	// cursor pointer
+// TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
+#drawer .inputs-container,#drawer .inputs-container input
+	display none
+#drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-alerts"]
+	.inputs-container,.drawer-list-inner
+		display inline-block
+		vertical-align top
+	.inputs-container
+		margin-right 10px
+	.drawer-list-inner
+		width 85%
+#drawer[data-mode="compare"]
+	.inputs-container input[type="checkbox"]
+		display block
+#drawer[data-mode="single"],#drawer[data-mode="my-alerts"]
+	.inputs-container input[type="radio"]
+		display block
+/* end drawer item */
+
+/*  A P P R O V A L  R I V E R   */
+#content[data-mode="my-alerts"],#content[data-mode="create-new"]
+	padding 25px
+	.article-detail-wrapper
+		margin-bottom 35px
+
+.drawer-pointer
+	padding 20px 10px 8px 10px
+	font-size 1.3em
+	font-weight bold
+#alert-sources
+	padding 0
+.view-all:hover
+	cursor default
+#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover
+	background-color select_blue
+	cursor default
+.approval-child
+	display inline-block
+	height 100%
+	vertical-align top
+.approval-child[data-which="btns"]
+	margin-right 1%
+.approval-child[data-which="info"]
+	width 85%
+.approval-btn-container
+	text-align center
+	width 38px
+	height (@width)px
+	display table
+.approval-btn-container[data-which="yes"]
+	color enable_green
+.approval-btn-container[data-which="no"]
+	color disabled_red
+.approval-btn
+	font-size 2.3em
+	width 100%
+	user-select none
+	border 2px solid transparent
+	display table-cell
+	vertical-align middle
+.approval-btn-container .approval-btn:hover
+	cursor pointer
+.approval-btn-container .approval-btn:active
+	color #fff
+.approval-btn-container[data-which="yes"] .approval-btn:hover
+	border-color enable_green
+.approval-btn-container[data-which="no"] .approval-btn:hover
+	border-color disabled_red
+.approval-btn-container[data-which="yes"] .approval-btn:active
+	background-color enable_green
+.approval-btn-container[data-which="no"] .approval-btn:active
+	background-color disabled_red
+
+.approval-child
+	.title
+		font-size 1.7em
+		margin-bottom 3px
+	.description
+		font-size 1.2em
+	
 /* end drawer */
 
 /* T E X T  S T Y L E S  */
+.division-title,.division-description
+	padding 10px
 .division-title
 	font-size 2.75em
-	border-bottom 1px solid #a0a0a0
+.division-description
+	font-size 1.2em
 label
 	font-size 1.2em
 input
@@ -298,8 +487,26 @@ input
 .pub-date
 	text-transform uppercase
 	margin-bottom 3px
+/* end text styles */
 
-#content 
+/*  M A I N   A R T I C L E  */
+#content
+	padding 0
+	.comparison-container
+		display inline-block
+	.create-event
+		float right
+
+#content[data-mode="single"]
+	padding 25px 50px
+
+#content[data-mode="compare"]
+	padding 15px
+
+.article-detail-container
+	.toolbar
+		overflow auto
+		margin 20px 0 40px 0
 	.pub-date
 		font-size 1.2em
 	.headline,.title
@@ -321,159 +528,257 @@ input
 		content '## '
 	.description
 		font-size 1.3em
-/* end text styles */
+/* end main article styles */
+/* A R T I C L E  R O W */
+.article-detail-row-wrapper
+	position relative
+	width 100% 
+	// height 40px
+.article-detail-row-wrapper:nth-child(even)
+	background-color #eaeaea	
+	// .destroy
+	// 	font-size 1.5em
+	// 	user-select none
 
-/*  M A I N   A R T I C L E  */
-.article-detail-wrapper
-	padding 25px 50px
+.article-detail-row-container
+	padding 3px
 
-.toolbar
-	overflow auto
-	margin 20px 0 40px 0
-.comparison-container
+single_width = 8%
+multi_width = 21%
+
+#compare-grid
+	width 100%
+.cell
 	display inline-block
-.create-event
-	float right
-/* end text styles */
-// /* M A I N	E L E M E N T S */
-// .main-content
-// 	width 66.66%
-// 	height auto
-// 	display inline-block
-// 	border-right 1px solid #e5e5e5
-// 	background-color #fff
-// 	padding-right 30px
-// 	// box-shadow 0 0 13px #1e1e1e
+.header-group
+	text-align center
+	.name
+		height 10px
+		width 100%
+	.dimension
+		font-weight bold
+		display inline-block
+.cell[data-layout="single"]
+	width single_width
+	// background-color #fc0
+.cell[data-layout="multi"]
+	width multi_width
+	.dimension
+		width 50%
+.article-detail-row-container
+	.cell[data-layout="multi"]
+		width (multi_width/2)
 
-// h1.headline
-// 	font-size 2.4em
-// 	margin 0 0 10px 0
+.bullet-container
+	position relative
+.bullet
+	background-color select_blue
+	height 10px
+.marker
+	position absolute
+	top 0
+	height 10px
+	background-color #6f6f6f // TODO, maybe make this a standard gry or make a standard gray this
+	width 2px
 
-// h2.deck
-// 	font-weight normal
-// 	font-size 1.3em
-
-// .section-hed
-// 	font-size 2.3em
-// 	margin-bottom 5px
-
-/* R I G H T	R A I L */
-// .admin-container
-// 	font-size 1.4em
-// 	text-align right
-// 	height 100%
-// 	top 12%
-// 	position absolute
-// 	right 15px
-// .admin-item
-// 	display inline-block
-// 	margin 5px
-// .admin-item:hover
-// 	text-decoration underline
-// 	cursor pointer
-
-// .rail-sections
-// 	margin-top 25px
-// .rail-section
-// 	margin-bottom 25px
-// 	position relative
-// 	left -1px
-// .rail-section-title
-// 	font-size 1.4em
-// 	display inline-block
-// 	padding 7px 26px 7px 7px
-// 	margin-bottom 3px
-// 	border-top-right-radius: 5px;
-// 	border-bottom-right-radius: 5px;
-// .rail-section-title:hover
-// 	text-decoration underline
-// 	cursor pointer
-// .rail-section-title.active
-// 	background-color #fff
-// 	// box-shadow 4px 0px 5px -1px #D6D6D6
-// 	color the_green
-// .rail-section-title.active:hover
-// 	cursor default
-// 	text-decoration none
-// .rail-preview-items
-// 	padding-left 8px
+.bar-column
+	display inline-block
+	width 13px
+	margin-right 1px
+	text-align center
+	vertical-align bottom
+.bar
+	width 100%
+	margin-top 1px
+	height 2px
+/* end main article styles */
 
 
-/* C O N T E N T	S E C T I O N S */
-// .content-switcher
-// 	width 100%
+/* M O D A L  W I N D O W S */
+.modal-outer
+	display none
+.modal-outer,.modal-overlay
+	top 0
+	left 0
+	right 0
+	bottom 0
+.modal-overlay
+	background-color rgba(0,0,0,.7)
+.modal-inner
+	background-color #fff
+	padding 20px
+	border 1px solid #000
+	width 420px
+	.title
+		font-size 1.4em
+		font-weight bold
+		border-bottom 1px solid border_gray
+		margin-bottom 5px
+.modal-outer.active
+	display block
+	position absolute
+	.modal-overlay,.modal-inner
+		position fixed
+.form-row
+	padding-bottom 5px
+.buttons-container
+	button,input[type="submit"]
+		margin 0 3px 0 0
+.alert-form-container
+	.title
+		font-size 3em
+		color bg_gray
+		margin-bottom 10px
+form
+	label
+		font-size 1.3em
+		display inline-block
+		width 40%
+		margin-bottom 3px
+	.input-text-container
+		width 55%
+		display inline-block
+	.help-row
+		text-align right
+		margin-bottom 2px
+	.hint-row
+		color bg_gray
+		position absolute
+	input[type="text"]
+		width 100%
+		margin 0
+	select
+		margin 0
+/* end modal windows */
 
-// .content-section
-// 	display none
-// 	width 100%
+/* S E T T I N G S */
+body[data-section="settings"] #content
+	padding 25px 35px 25px 35px
 
-// /* dashboard */
-// .timeline-wrapper
-// 	width 100%
+input_width = 200px
+destroy_width = 20px
+input_margin = 5px
+setting_title_width = 100px
+.settings-group
+	width 600px
+	position relative
+	// background-color #0cf
+.settings-title
+	// font-weight bold
+	font-size 1.8em
+	margin-bottom 15px
+	border-bottom 1px solid #ccc
+	position relative
+.settings-title:before
+	content '# '
+	color #ccc
+	position absolute
+	left -15px
+.setting-group
+	margin-bottom 20px
+.setting-title
+	font-size 1.2em
+	display inline-block
+	width setting_title_width
+	font-weight bold
+	// color darken(settings, 35%)
+	// background-color #fc0
+.setting-description
+	font-size 1.2em
+	margin-bottom 5px
+	color bg_gray
+.setting-title,.inputs-container,.multi-child,.color-picker
+	display inline-block
+	vertical-align top
+#settings
+	.inputs-container
+		width 450px
+		// background-color #f0c
+	.input
+		height 25px
+		margin-left destroy_width
+		input[type='text']
+			margin 0 input_margin 0 0
+			width input_width
+		input[type='radio'],input[type='checkbox']
+			margin 0
+	.input input[type='text'],.color-picker
+		height 20px
 
-// .timeline-graph
-// 	width 100%
-// 	height 200px
-// 	margin-bottom 25px
+.input.multi
+	margin-left 0
+.setting-flag
+	font-size 1.2em
+	margin-bottom 3px
+	margin-left (setting_title_width + destroy_width + input_width + input_margin )
+.destroy.multi-child
+	width destroy_width
+	height 100%
+	text-align center
+	// background-color #0cf
+	font-size 1.4em
+	color #aaa
+.destroy.multi-child:hover
+	cursor pointer
+	color #000
+button.add
+	display block
+	margin-left (setting_title_width + destroy_width)
+.color-picker
+	width 25px
+// Color picker style overrides
+// The arrow
+.sp-replacer:hover .sp-dd
+	color #999
+.sp-dd
+	font-size 18px
+	line-height 0px
+	color #ccc
+	padding 0
+.sp-preview
+	margin-right 0
+	border none
+.sp-replacer
+	padding 0
+	border none
+	background transparent
+.sp-container
+	border-color #ccc
+.sp-picker-container
+	border none
+.sp-input
+	background auto
+	border-radius 0
+.sp-cancel
+	color #000 !important
 
+.auth-result
+	font-size 1.4em
+	display inline
+.success
+	color enable_green
+.fail
+	color disabled_red
+.authenticate
+	display block
+	color #000 !important
+	margin-top 3px
+	button
+		margin 0
 
-/* E V E N T	R I V E R */
-// .tag-filters
-// 	margin-bottom 20px
-// .tag-filters .pointer
-// 	font-size 1em
-// 	margin-bottom 2px
-// 	text-transform uppercase
-// .tag
-// 	display inline-block
-// 	font-size: 1.1em
-// 	padding 2px 4px
-// 	color #ccc
-// 	margin-right 5px
-// 	border-radius 3px
-// 	background-color #666
-// 	border 1px solid #616161
-// .tag-filter
-// 	user-select none
-// 	opacity .4
-// .tag-filter.selected
-// 	opacity 1
-// .tag-filter:hover
-// 	cursor pointer
-// 	text-decoration underline
+.save-container
+	margin-top 35px
+	input
+		font-size 2.4em
+/* end settings */
 
-// .event-item-wrapper
-// 	border-left 3px solid #c3412c
-// 	padding 5px
-// 	margin-bottom 10px
-// 	// box-shadow 0 0 4px #ccc
-// 	border-top-right-radius: 5px;
-// 	border-bottom-right-radius: 5px;
-
-
-// .event-item-title
-// 	font-size 1.5em
-// 	margin-bottom 10px
-
-// .event-item-desc
-// 	font-size 1.2em
-// 	margin-bottom 10px
-
-// .event-item-tag.tag
-// 	font-size 1em
-// 	padding: 1px 3px
-
-/* F L A G S	*/
-// .shown
-// 	display block
-
-/* user styles */
+/* user styles, to be got from server */
 social_color = #66c2a5
 major_impact_color = #fc8d62
 citation_color = #8da0cb
 darken_border = 30%
 darken_color = 80%
-
+/* end user styles*/
 // .tag[data-tag*="social"]
 // 	background-color social_color
 // 	border-color darken(social_color, darken_border)

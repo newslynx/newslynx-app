@@ -1,50 +1,62 @@
 mixin about
 	li.section.active(data-section="about")
-		a(href="/about") About
+		span.nav-link About
 			
 mixin approval-river
 	li.section.active(data-section="approval-river")
-		a(href="/approval-river") Approval river
+		span.nav-link Approval river
+
 			
 mixin articles
 	li.section.active(data-section="articles")
-		a(href="/articles") Articles
-		.section-options
-			.option-container(data-type="search")
-				input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
-			.option-container(data-type="sort")
-				.option-title Sort by
-				select
-					option Publish date
-					option # impact events
-					option Pageviews
-					option Twitter mentions
-					option Faceook Likes & Shares
-					option Social media shares
-			.option-container(data-type="tags")
-				.option-title Tags
-				ul#tag-list
-			.option-container(data-type="edit-tags")
-				.option-title 
-				button.manage-tags Manage tags
-				button.new-tag New tag
+		span.nav-link Articles
+	li.section-options
+		.option-container(data-type="search")
+			input(type="search" name="article-search" results="5" placeholder="Search by article name..." incremental)
+		.option-container(data-type="date-range")
+			.option-title Date range
+			input(type="text" placeholder="From..." data-dir="from")
+			input(type="text" placeholder="To..." data-dir="to")
+		.option-container(data-type="sort")
+			.option-title Sort by
+			select
+				option Publish date
+				option # impact events
+				option Pageviews
+				option Twitter mentions
+				option Faceook Likes & Shares
+				option Social media shares
+		.option-container(data-type="article-tags")
+			.option-title Article tags
+			ul.tag-list
+		.option-container(data-type="impact-tags")
+			.option-title Impact tags
+			ul.tag-list
+			.edit
+				a(href="/settings#tags").out-link Edit tags
+		.option-container(data-type="search")
+			.option-title Add results to drawer
+			button Search
 
-
-mixin series
-	li.section.active(data-section="series")
-		a(href="/series") Series
+//- mixin series
+//- 	li.section.active(data-section="series")
+//- 		span.nav-link Series
 			
-mixin events
-	li.section.active(data-section="events")
-		a(href="/events") Events
+//- mixin events
+//- 	li.section.active(data-section="events")
+//- 		span.nav-link Events
+		
+mixin home
+	li.section.active(data-section="home")
+		span.nav-link Home
 		
 nav
 	ul.main-sections
-		if (page == 'about')
-			mixin about
+		if (page == 'home')
+			mixin home
 		else	
-			li.section(data-section="about")
-				a(href="/about") About
+			li.section(data-section="home")
+				a(href="/") Home
 		if (page == 'approval-river')
 			mixin approval-river
 		else	
@@ -55,14 +67,19 @@ nav
 		else	
 			li.section(data-section="articles")
 				a(href="/articles") Articles
-		if (page == 'series')
-			mixin series
+		if (page == 'about')
+			mixin about
 		else	
-			li.section(data-section="series")
-				a(href="/series") Series
-		if (page == 'events')
-			mixin events
-		else	
-			li.section(data-section="events")
-				a(href="/events") Events
+			li.section(data-section="about")
+				a(href="/about") About
+		//- if (page == 'series')
+		//- 	mixin series
+		//- else	
+		//- 	li.section(data-section="series")
+		//- 		a(href="/series") Series
+		//- if (page == 'events')
+		//- 	mixin events
+		//- else	
+		//- 	li.section(data-section="events")
+		//- 		a(href="/events") Events
 

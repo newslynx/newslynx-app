@@ -2,8 +2,8 @@ extends layout
 
 block drawer
 	ul.division-switcher
-		li.active(data-mode="single") Single view
 		li(data-mode="compare") Compare
+		li(data-mode="single") Detail view
 	ul#article-list
 
 block templates
@@ -13,9 +13,13 @@ block templates
 			.tag-count <%= count %>
 
 	script(type="text/jst")#article-summary-templ
-		.article-summary-container
-			.pub-date <%= date(pub_date) %>
-			.headline <%= headline %>
+		.drawer-list-outer
+			.inputs-container
+				input(type="checkbox")
+				input(type="radio")
+			.drawer-list-inner
+				.pub-date <%= date(pub_date) %>
+				.title <%= headline %>
 
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
@@ -51,8 +55,49 @@ block templates
 				h3.title What events have happened around this story?
 				img(src="images/dummy/events.png")
 
+	script(type="text/jst")#article-grid-containter-templ
+		#compare-grid
+			.header
+				.header-group.cell(data-layout="single")
+					.name
+					.dimension Headline
+				.header-group.cell(data-layout="single")
+					.name
+					.dimension Date
+				.header-group.cell(data-layout="multi")
+					.name Social
+					.dimension Mentions
+					.dimension Shares
+				.header-group.cell(data-layout="multi")
+					.name Visitors
+					.dimension Uniques
+					.dimension Pageviews
+				.header-group.cell(data-layout="multi")
+					.name Sources
+					.dimension Internal
+					.dimension External
+				.header-group.cell(data-layout="multi")
+					.name Qualitative
+					.dimension Citations
+					.dimension Events
+			.rows
+
+
+	script(type="text/jst")#article-detail-row-templ
+		.article-detail-row-container
+			.destroy &times;
+
+block bootstrap-data
+	script(id="page-data").
+		var pageData = {};
+		pageData.org =!{org};
+		pageData.articleSummaries =!{articleSummaries};
+		pageData.articleRowDetails =!{articleRowDetails};
+		pageData.articleDetails =!{articleDetails};
+
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/main.js")
