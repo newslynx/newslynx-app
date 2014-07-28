@@ -23,7 +23,6 @@
     "forms": "0.7.x",
     "underscore": "1.6.x",
     "request": "2.x",
-    "pg": "3.x",
     "async": "~0.9.0"
   },
   "devDependencies": {
