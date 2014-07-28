@@ -1,22 +1,23 @@
 extends layout
 
 block drawer
-  .division-title Log-in
-  p Sign in here with your NewsLynx newsroom credentials.
-  p If you'd like an account, email us at 
-    a(href="mailto:signup@newslynx.org") signup@newslynx.org.
+	.division-title Log-in
+	.division-description 
+		p Sign in here with your NewsLynx newsroom credentials.
+		p If you'd like an account, email us at 
+			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
 
 block content
-  if user
-    h3 Hello #{user.domain}
-    p You've successfully logged in!
-  else
-    form(action='/login', method='POST')
-      div
-        label Username:
-        input(type='text', name='username')
-      div
-        label Password: 
-        input(type='password', name='password')
-      div
-        input(type='submit', value='Log In')
+	if user
+		h3 Hello #{user.domain}
+		p You've successfully logged in!
+	else
+		form(action='/login', method='POST')
+			div
+				label Username: 
+				input(type='text', name='username')
+			div
+				label Password: 
+				input(type='password', name='password')
+			div
+				input(type='submit', value='Log In')

@@ -290,9 +290,13 @@ body[data-section="login"]
 division_switcher_height = 50px
 drawer_pointer_padding = 62px
 
+
+body[data-section="settings"] #content
+	padding 15px
+	
 #drawer
 	p
-		font-size 1.3em
+		// font-size 1.3em
 		line-height 1.3em
 .drawer-title,.division-switcher
 	width 100%
@@ -656,26 +660,27 @@ multi_width = 14%
 		font-size 3em
 		color bg_gray
 		margin-bottom 10px
-form
-	label
-		font-size 1.3em
-		display inline-block
-		width 40%
-		margin-bottom 3px
-	.input-text-container
-		width 55%
-		display inline-block
-	.help-row
-		text-align right
-		margin-bottom 2px
-	.hint-row
-		color bg_gray
-		position absolute
-	input[type="text"]
-		width 100%
-		margin 0
-	select
-		margin 0
+.modal-outer
+	form
+		label
+			font-size 1.3em
+			display inline-block
+			width 40%
+			margin-bottom 3px
+		.input-text-container
+			width 55%
+			display inline-block
+		.help-row
+			text-align right
+			margin-bottom 2px
+		.hint-row
+			color bg_gray
+			position absolute
+		input[type="text"]
+			width 100%
+			margin 0
+		select
+			margin 0
 /* end modal windows */
 
 /* S E T T I N G S */

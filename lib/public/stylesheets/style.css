@@ -310,8 +310,10 @@ body[data-section="login"] #drawer {
 }
 /* end section specific styles */
 /* D R A W E R */
+body[data-section="settings"] #content {
+  padding: 15px;
+}
 #drawer p {
-  font-size: 1.3em;
   line-height: 1.3em;
 }
 .drawer-title,
@@ -812,29 +814,29 @@ input {
   color: #7c7c7c;
   margin-bottom: 10px;
 }
-form label {
+.modal-outer form label {
   font-size: 1.3em;
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
 }
-form .input-text-container {
+.modal-outer form .input-text-container {
   width: 55%;
   display: inline-block;
 }
-form .help-row {
+.modal-outer form .help-row {
   text-align: right;
   margin-bottom: 2px;
 }
-form .hint-row {
+.modal-outer form .hint-row {
   color: #7c7c7c;
   position: absolute;
 }
-form input[type="text"] {
+.modal-outer form input[type="text"] {
   width: 100%;
   margin: 0;
 }
-form select {
+.modal-outer form select {
   margin: 0;
 }
 /* end modal windows */

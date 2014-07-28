@@ -4,4 +4,5 @@ header#header-container
 		h1.page-title NewsLynx
 	ul.settings
 		li.admin-item
-			a(href="/login") Login
+			if user
+				a(href="/settings") Settings
