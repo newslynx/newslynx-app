@@ -46,7 +46,7 @@
 				"type": "bar",
 				"counts": [
 					{
-						"count": 5,
+						"count": 4,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
@@ -67,12 +67,12 @@
 				"type": "bar",
 				"counts": [
 					{
-						"count": 10,
+						"count": 2,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 4,
+						"count": 5,
 						"color": "#0cf",
 						"name": "NYT"
 					},
@@ -131,7 +131,7 @@
 				"type": "bar",
 				"counts": [
 					{
-						"count": 5,
+						"count": 6,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
@@ -141,7 +141,7 @@
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 9,
 						"color": "#f0c",
 						"name": "NYT"
 					}
@@ -152,17 +152,17 @@
 				"type": "bar",
 				"counts": [
 					{
-						"count": 10,
+						"count": 8,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 4,
+						"count": 2,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 2,
 						"color": "#f0c",
 						"name": "NYT"
 					}
@@ -221,7 +221,7 @@
 						"name": "Gawker"
 					},
 					{
-						"count": 2,
+						"count": 3,
 						"color": "#0cf",
 						"name": "NYT"
 					},
@@ -237,7 +237,7 @@
 				"type": "bar",
 				"counts": [
 					{
-						"count": 10,
+						"count": 2,
 						"color": "#fc0",
 						"name": "Gawker"
 					},

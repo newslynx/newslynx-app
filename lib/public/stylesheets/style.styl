@@ -70,22 +70,6 @@ articles = #3ec173
 settings = #b980c2
 events = #c13d3d
 
-/* F U R N I T U R E */
-.article-detail-row-container
-	.destroy
-		position absolute
-		top 0
-		right 0
-		font-weight bold
-		color #ccc
-		width 100%
-		text-align right
-		padding-right 10px
-		height 20px
-	.destroy:hover
-		cursor pointer
-		color #000
-
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper
 	width 100%
@@ -98,7 +82,6 @@ events = #c13d3d
 	height 100%
 
 #drawer, #content
-	overflow-y scroll
 	overflow-x hidden
 #left-rail
 	width leftrail_width
@@ -158,13 +141,12 @@ events = #c13d3d
 	nav
 		overflow-y scroll
 		overflow-x hidden
-		height calc(100vh - 50px)
+		height 'calc(100vh - %s)' % (header_height)
 
 
 /* L E F T  R A I L */
 .main-sections
 	margin-top 10px
-	height calc(98% - header_height) 
 	li
 		user-select none
 	.section.active .nav-link
@@ -306,6 +288,9 @@ body[data-section="login"]
 /* end section specific styles */
 
 /* D R A W E R */
+division_switcher_height = 50px
+drawer_pointer_padding = 62px
+
 #drawer
 	p
 		font-size 1.3em
@@ -342,7 +327,7 @@ body[data-section="login"]
 		text-align center
 		vertical-align middle
 		padding 5px
-		height 50px
+		height division_switcher_height
 		color #fff
 		user-select none
 	li:not(.active):hover
@@ -420,6 +405,11 @@ body[data-section="login"]
 #drawer[data-mode="single"],#drawer[data-mode="my-alerts"]
 	.inputs-container input[type="radio"]
 		display block
+
+#article-list
+	height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding)
+	overflow-x hidden
+	overflow-y scroll
 /* end drawer item */
 
 /*  A P P R O V A L  R I V E R   */
@@ -514,7 +504,7 @@ input
 	padding 25px 50px
 
 #content[data-mode="compare"]
-	padding 15px
+	padding 25px
 
 .article-detail-container
 	.toolbar
@@ -554,20 +544,38 @@ input
 	// 	user-select none
 
 .article-detail-row-container
+	.destroy
+		width 25px
+		position absolute
+		top 0
+		left -(@width)px
+		height 100%
+		font-size 1.4em
+		color #ccc
+		text-align right
+		font-weight bold
+		padding-right 5px
+		// background-color #0cf
+	.destroy:hover
+		cursor pointer
+		color #000
+
+
+.article-detail-row-container
 	padding 3px
 
 single_width = 8%
-multi_width = 21%
+multi_width = 14%
 
 #compare-grid
 	width 100%
 .cell
 	display inline-block
 .header-group
-	text-align center
 	.name
+		text-align center
 		height 10px
-		width 100%
+		width 81% /* For some more visually pleasing centering */
 	.dimension
 		font-weight bold
 		display inline-block
@@ -581,6 +589,11 @@ multi_width = 21%
 .article-detail-row-container
 	.cell[data-layout="multi"]
 		width (multi_width/2)
+
+.cell[data-layout="single"]
+	margin-right 10px
+.header-group[data-layout="multi"],.cell[data-layout="multi"]:nth-child(odd)
+	margin-right 20px
 
 .bullet-container
 	position relative
@@ -727,7 +740,6 @@ setting_title_width = 100px
 	width destroy_width
 	height 100%
 	text-align center
-	// background-color #0cf
 	font-size 1.4em
 	color #aaa
 .destroy.multi-child:hover

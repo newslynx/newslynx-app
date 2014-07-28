@@ -56,22 +56,6 @@ input[type="submit"]:hover {
 body[data-modal=true] {
   overflow: hidden;
 }
-/* F U R N I T U R E */
-.article-detail-row-container .destroy {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-weight: bold;
-  color: #ccc;
-  width: 100%;
-  text-align: right;
-  padding-right: 10px;
-  height: 20px;
-}
-.article-detail-row-container .destroy:hover {
-  cursor: pointer;
-  color: #000;
-}
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper {
   width: 100%;
@@ -87,7 +71,6 @@ body[data-modal=true] {
 }
 #drawer,
 #content {
-  overflow-y: scroll;
   overflow-x: hidden;
 }
 #left-rail {
@@ -163,7 +146,6 @@ body[data-modal=true] {
 /* L E F T  R A I L */
 .main-sections {
   margin-top: 10px;
-  height: calc(98% - header_height);
 }
 .main-sections li {
   -webkit-user-select: none;
@@ -527,6 +509,11 @@ body[data-section="login"] #drawer {
 #drawer[data-mode="my-alerts"] .inputs-container input[type="radio"] {
   display: block;
 }
+#article-list {
+  height: calc(100vh - 112px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 /* end drawer item */
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"],
@@ -649,7 +636,7 @@ input {
   padding: 25px 50px;
 }
 #content[data-mode="compare"] {
-  padding: 15px;
+  padding: 25px;
 }
 .article-detail-container .toolbar {
   overflow: auto;
@@ -695,6 +682,22 @@ input {
 .article-detail-row-wrapper:nth-child(even) {
   background-color: #eaeaea;
 }
+.article-detail-row-container .destroy {
+  width: 25px;
+  position: absolute;
+  top: 0;
+  left: -25px;
+  height: 100%;
+  font-size: 1.4em;
+  color: #ccc;
+  text-align: right;
+  font-weight: bold;
+  padding-right: 5px;
+}
+.article-detail-row-container .destroy:hover {
+  cursor: pointer;
+  color: #000;
+}
 .article-detail-row-container {
   padding: 3px;
 }
@@ -704,12 +707,11 @@ input {
 .cell {
   display: inline-block;
 }
-.header-group {
-  text-align: center;
-}
 .header-group .name {
+  text-align: center;
   height: 10px;
-  width: 100%;
+  width: 81%;
+/* For some more visually pleasing centering */
 }
 .header-group .dimension {
   font-weight: bold;
@@ -719,13 +721,20 @@ input {
   width: 8%;
 }
 .cell[data-layout="multi"] {
-  width: 21%;
+  width: 14%;
 }
 .cell[data-layout="multi"] .dimension {
   width: 50%;
 }
 .article-detail-row-container .cell[data-layout="multi"] {
-  width: 10.5%;
+  width: 7%;
+}
+.cell[data-layout="single"] {
+  margin-right: 10px;
+}
+.header-group[data-layout="multi"],
+.cell[data-layout="multi"]:nth-child(odd) {
+  margin-right: 20px;
 }
 .bullet-container {
   position: relative;
