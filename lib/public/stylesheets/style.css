@@ -851,7 +851,6 @@ body[data-section="settings"] #content {
 }
 .setting-title {
   font-size: 1.2em;
-  display: inline-block;
   width: 100px;
   font-weight: bold;
 }
@@ -886,7 +885,7 @@ body[data-section="settings"] #content {
 #settings .color-picker {
   height: 20px;
 }
-.input.multi {
+#settings .input.multi {
   margin-left: 0;
 }
 .setting-flag {
