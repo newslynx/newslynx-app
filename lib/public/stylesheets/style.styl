@@ -119,7 +119,7 @@ events = #c13d3d
 			position relative
 		img
 			height 45px
-			width (@height)px
+			width @height
 		h1.page-title
 			top 20%
 			font-size 2.5em
@@ -415,11 +415,17 @@ body[data-section="settings"] #content
 	overflow-y scroll
 /* end drawer item */
 
+/* H O M E */
+body[data-section="home"] #content
+	padding 15px
+
+/* end home */
+
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"],#content[data-mode="create-new"]
-	padding 25px
+	padding 25px 60px
 	.article-detail-wrapper
-		margin-bottom 35px
+		margin 20px 0 75px 0
 
 .drawer-pointer
 	padding 20px 10px 8px 10px
@@ -444,7 +450,7 @@ body[data-section="settings"] #content
 .approval-btn-container
 	text-align center
 	width 38px
-	height (@width)px
+	height @width
 	display table
 .approval-btn-container[data-which="yes"]
 	color enable_green
@@ -477,7 +483,7 @@ body[data-section="settings"] #content
 	.description
 		font-size 1.2em
 	
-/* end drawer */
+/* end approval river */
 
 /* T E X T  S T Y L E S  */
 .division-title,.division-description
@@ -656,11 +662,31 @@ multi_width = 14%
 	button,input[type="submit"]
 		margin 0 3px 0 0
 .alert-form-container
+	width 450px
+	margin-left 50px
 	.title
+		position relative
 		font-size 3em
 		color bg_gray
-		margin-bottom 10px
-.modal-outer
+		margin-bottom 25px
+.service-icon
+	position absolute
+	background-size contain
+	background-repeat no-repeat
+	width 40px
+	height @width
+	left -(@width + 5)px
+	display inline-block
+	bottom 0
+	margin-bottom 5px
+.service-icon[data-service="google"]
+	background-image url(/images/google.png)
+.service-icon[data-service="twitter"]
+	background-image url(/images/twitter.png)
+.service-icon[data-service="reddit"]
+	background-image url(/images/reddit.png)
+
+.modal-outer,.alert-form-container
 	form
 		label
 			font-size 1.3em

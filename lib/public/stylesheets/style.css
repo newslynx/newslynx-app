@@ -516,14 +516,19 @@ body[data-section="settings"] #content {
   overflow-y: scroll;
 }
 /* end drawer item */
+/* H O M E */
+body[data-section="home"] #content {
+  padding: 15px;
+}
+/* end home */
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="my-alerts"],
 #content[data-mode="create-new"] {
-  padding: 25px;
+  padding: 25px 60px;
 }
 #content[data-mode="my-alerts"] .article-detail-wrapper,
 #content[data-mode="create-new"] .article-detail-wrapper {
-  margin-bottom: 35px;
+  margin: 20px 0 75px 0;
 }
 .drawer-pointer {
   padding: 20px 10px 8px 10px;
@@ -600,7 +605,7 @@ body[data-section="settings"] #content {
 .approval-child .description {
   font-size: 1.2em;
 }
-/* end drawer */
+/* end approval river */
 /* T E X T  S T Y L E S  */
 .division-title,
 .division-description {
@@ -809,34 +814,67 @@ input {
 .buttons-container input[type="submit"] {
   margin: 0 3px 0 0;
 }
+.alert-form-container {
+  width: 450px;
+  margin-left: 50px;
+}
 .alert-form-container .title {
+  position: relative;
   font-size: 3em;
   color: #7c7c7c;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
-.modal-outer form label {
+.service-icon {
+  position: absolute;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  display: inline-block;
+  bottom: 0;
+  margin-bottom: 5px;
+}
+.service-icon[data-service="google"] {
+  background-image: url("/images/google.png");
+}
+.service-icon[data-service="twitter"] {
+  background-image: url("/images/twitter.png");
+}
+.service-icon[data-service="reddit"] {
+  background-image: url("/images/reddit.png");
+}
+.modal-outer form label,
+.alert-form-container form label {
   font-size: 1.3em;
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
 }
-.modal-outer form .input-text-container {
+.modal-outer form .input-text-container,
+.alert-form-container form .input-text-container {
   width: 55%;
   display: inline-block;
 }
-.modal-outer form .help-row {
+.modal-outer form .help-row,
+.alert-form-container form .help-row {
   text-align: right;
   margin-bottom: 2px;
 }
-.modal-outer form .hint-row {
+.modal-outer form .hint-row,
+.alert-form-container form .hint-row {
   color: #7c7c7c;
   position: absolute;
 }
-.modal-outer form input[type="text"] {
+.modal-outer form input[type="text"],
+.alert-form-container form input[type="text"] {
   width: 100%;
   margin: 0;
 }
-.modal-outer form select {
+.modal-outer form select,
+.alert-form-container form select {
   margin: 0;
 }
 /* end modal windows */
@@ -1000,7 +1038,7 @@ button.add {
 /* L O G I N */
 #login label {
   display: inline-block;
-  width: 200px;
+  width: 70px;
 }
 /* end login */
 /* user styles, to be got from server */

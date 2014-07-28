@@ -55,14 +55,14 @@ block templates
 							input.save(type="submit", value="Save")
 
 	script(type="text/jst")#alert-creator-templ
-		|<div class="drawer-list-outer scroll-to" data-destination="<%= service %>">
+		|<div class="drawer-list-outer scroll-to" data-destination="<%= toLowerCase(service) %>">
 		.drawer-list-inner
 			.title <%= service %>
 		|</div>
 
 	script(type="text/jst")#alert-form-templ
 		.alert-form-container
-			|<div class="title" id="<%= service %>">New <%= service %> alert</div>
+			|<div class="title" id="<%= toLowerCase(service) %>-alert"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span class="text"><span>New <%= service %> alert</span></div>
 			form
 				<%= bakeForm(service, schema) %>
 				.buttons-container
