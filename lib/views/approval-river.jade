@@ -26,9 +26,9 @@ block drawer
 
 
 
-// This template has to be rendered partially in standard html because jade
-// In all its glory
-// Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
+//- This template has to be rendered partially in standard html because jade
+//- In all its glory
+//- Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
 	script(type="text/jst")#alert-templ
 		.drawer-list-outer.modal-parent
@@ -90,11 +90,11 @@ block templates
 							button.cancel Cancel
 							input.save(type="submit", value="Create")
 
-// script(type="text/jst")#alert-source-templ
-// 		label(for="<%= settings.name %>-alerts")
-// 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
-// 			span.service-icon(data-service-icon="<%= settings.name %>")
-// 			span.service-name <%= settings.name %>
+//- script(type="text/jst")#alert-source-templ
+//- 		label(for="<%= settings.name %>-alerts")
+//- 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
+//- 			span.service-icon(data-service-icon="<%= settings.name %>")
+//- 			span.service-name <%= settings.name %>
 
 block bootstrap-data
 	script(id="page-data").

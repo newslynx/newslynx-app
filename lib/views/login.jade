@@ -12,7 +12,7 @@ block content
 		h3 Hello #{user.domain}
 		p You've successfully logged in!
 	else
-		form(action='/login', method='POST')
+		form(action='/login', method='POST')#login
 			div
 				label Username: 
 				input(type='text', name='username')

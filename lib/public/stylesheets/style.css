@@ -997,5 +997,11 @@ button.add {
   font-size: 2.4em;
 }
 /* end settings */
+/* L O G I N */
+#login label {
+  display: inline-block;
+  width: 200px;
+}
+/* end login */
 /* user styles, to be got from server */
 /* end user styles*/
