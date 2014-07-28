@@ -226,6 +226,12 @@ body[data-modal=true] {
 .section-options input[type="search"] {
   height: 23px;
 }
+.section-options .section-title {
+  font-size: 1.3em;
+  font-weight: 100;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
 .section-options .option-title {
   font-size: 1.1em;
   text-transform: uppercase;
