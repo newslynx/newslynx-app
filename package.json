@@ -8,7 +8,6 @@
   "dependencies": {
     "express": "~4.0.0",
     "express-session": "1.2.x", 
-    "sequelize": "1.7.x", 
     "static-favicon": "~1.0.0",
     "morgan": "~1.0.0",
     "cookie-parser": "~1.0.1",
@@ -20,16 +19,12 @@
     "scrypt": "3.x", 
     "passport": "0.2.x", 
     "passport-local": "1.x",
-    "passport-oauth": "1.x",
     "validator": "3.x",
     "forms": "0.7.x", 
     "underscore": "1.6.x", 
-    "request": "2.x",
-    "pg": "3.x"
+    "request": "2.x"
   }, 
-  "devDependencies": {
-    "sqlite3": "2.x", 
-    "nodemon": "1.x",
-    "sequelize-fixtures": "0.3.x"
+  "devDependencies": { 
+    "nodemon": "1.x"
   }
 }
