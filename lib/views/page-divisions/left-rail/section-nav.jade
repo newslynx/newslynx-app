@@ -12,7 +12,7 @@ mixin articles
 		span.nav-link Articles
 	li.section-options
 		.option-container(data-type="search")
-			input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
+			input(type="search" name="article-search" results="5" placeholder="Search by article name..." incremental)
 		.option-container(data-type="date-range")
 			.option-title Date range
 			input(type="text" placeholder="From..." data-dir="from")
@@ -26,13 +26,17 @@ mixin articles
 				option Twitter mentions
 				option Faceook Likes & Shares
 				option Social media shares
-		.option-container(data-type="tags")
-			.option-title Tags
-			ul#tag-list
-		.option-container(data-type="edit-tags")
-			.option-title 
-			button.manage-tags Manage tags
-			button.new-tag New tag
+		.option-container(data-type="article-tags")
+			.option-title Article tags
+			ul.tag-list
+		.option-container(data-type="impact-tags")
+			.option-title Impact tags
+			ul.tag-list
+			.edit
+				a(href="/settings#tags").out-link Edit tags
+		.option-container(data-type="search")
+			.option-title Add results to drawer
+			button Search
 
 //- mixin series
 //- 	li.section.active(data-section="series")

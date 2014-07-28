@@ -45,6 +45,9 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
+button {
+  margin: 0;
+}
 button:hover,
 input[type="submit"]:hover {
   cursor: pointer;
@@ -155,7 +158,7 @@ body[data-modal=true] {
 #left-rail nav {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(98vh - 50px);
+  height: calc(100vh - 50px);
 }
 /* L E F T  R A I L */
 .main-sections {
@@ -188,7 +191,7 @@ body[data-modal=true] {
 }
 .main-sections .section-options,
 .main-sections .nav-link,
-.main-sections a {
+.main-sections a:not(.out-link) {
   padding: 10px 25px;
 }
 .main-sections .nav-link,
@@ -196,13 +199,13 @@ body[data-modal=true] {
   color: #f2f2f2;
 }
 .main-sections .nav-link,
-.main-sections a {
+.main-sections a:not(.out-link) {
   font-size: 2em;
   font-weight: 100;
   display: block;
   text-decoration: none;
 }
-.main-sections a:hover {
+.main-sections a:hover:not(.out-link) {
   cursor: pointer;
   background-color: #666;
 }
@@ -231,16 +234,16 @@ body[data-modal=true] {
   padding-bottom: 4px;
   border-bottom: 1px solid #a1a1a1;
 }
-#tag-list .tag-wrapper {
+.tag-list .tag-wrapper {
   padding-bottom: 4px;
 }
-#tag-list .tag-wrapper:hover {
+.tag-list .tag-wrapper:hover {
   cursor: pointer;
 }
-#tag-list .tag-wrapper:hover .tag-container {
+.tag-list .tag-wrapper:hover .tag-container {
   background-color: #a1a1a1;
 }
-#tag-list .tag-container {
+.tag-list .tag-container {
   position: relative;
   top: 2px;
   padding: 5px 8px;
@@ -252,17 +255,27 @@ body[data-modal=true] {
   -ms-user-select: none;
   user-select: none;
 }
-#tag-list .tag-wrapper.active .tag-container {
+.tag-list .tag-wrapper.active .tag-container {
   background-color: #0cf;
   border-left-width: 0;
 }
-#tag-list .tag-name,
-#tag-list .tag-count {
+.tag-list .tag-name,
+.tag-list .tag-count {
   display: inline-block;
   font-size: 1.1em;
 }
-#tag-list .tag-count {
+.tag-list .tag-count {
   float: right;
+}
+.option-container .edit a {
+  font-size: 1.3em;
+  display: inline-block;
+  width: 100%;
+  font-weight: 100;
+  text-align: right;
+}
+.option-container[data-type="search"] button {
+  width: 100%;
 }
 /* end left rails */
 /* S E C T I O N  S P E C I F I C  S T Y L E S  */
