@@ -679,6 +679,10 @@ input {
   position: relative;
   width: 100%;
 }
+.article-detail-row-wrapper .title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .article-detail-row-wrapper:nth-child(even) {
   background-color: #eaeaea;
 }
