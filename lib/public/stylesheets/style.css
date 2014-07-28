@@ -846,23 +846,23 @@ body[data-section="settings"] #content {
   display: inline-block;
   vertical-align: top;
 }
-.inputs-container {
+#settings .inputs-container {
   width: 450px;
 }
-.input {
+#settings .input {
   height: 25px;
   margin-left: 20px;
 }
-.input input[type='text'] {
+#settings .input input[type='text'] {
   margin: 0 5px 0 0;
   width: 200px;
 }
-.input input[type='radio'],
-.input input[type='checkbox'] {
+#settings .input input[type='radio'],
+#settings .input input[type='checkbox'] {
   margin: 0;
 }
-.input input[type='text'],
-.color-picker {
+#settings .input input[type='text'],
+#settings .color-picker {
   height: 20px;
 }
 .input.multi {
