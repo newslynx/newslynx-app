@@ -103,7 +103,7 @@ body[data-modal=true] {
   z-index: 8;
 }
 #content {
-  width: calc(100% - 285px - 250px);
+  width: calc(100% - 535px);
 }
 /* end main page elements */
 /* H E A D E R	*/
