@@ -357,6 +357,7 @@ body[data-section="settings"] #content
 		font-size 1.2em
 		color bg_gray
 	.toolbar
+		position relative
 		font-size 1.2em
 		margin-top 11px
 	.settings-switch,.enable-switch
@@ -669,16 +670,26 @@ multi_width = 14%
 		font-size 3em
 		color bg_gray
 		margin-bottom 25px
+	.service-icon
+		width 40px
+		height @width
+		left -(@width + 5)px
+		margin-bottom 5px
+
+.toolbar
+	.service-icon
+		width 15px
+		height @width
+		top -12px
+		right 0
+
 .service-icon
 	position absolute
 	background-size contain
 	background-repeat no-repeat
-	width 40px
-	height @width
-	left -(@width + 5)px
 	display inline-block
 	bottom 0
-	margin-bottom 5px
+	background-position right
 .service-icon[data-service="google"]
 	background-image url(/images/google.png)
 .service-icon[data-service="twitter"]

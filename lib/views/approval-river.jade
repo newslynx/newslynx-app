@@ -43,6 +43,7 @@ block templates
 					.btn.settings-switch
 						span.fa.fa-cog
 						span.text  Edit
+					|<span class="service-icon" data-service="<%= toLowerCase(service) %>"></span>
 					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 			.modal-outer
 				.modal-overlay
@@ -62,7 +63,7 @@ block templates
 
 	script(type="text/jst")#alert-form-templ
 		.alert-form-container
-			|<div class="title" id="<%= toLowerCase(service) %>-alert"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span class="text"><span>New <%= service %> alert</span></div>
+			|<div class="title" id="<%= toLowerCase(service) %>-alert"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span><span class="text">New <%= service %> alert</span></div>
 			form
 				<%= bakeForm(service, schema) %>
 				.buttons-container
@@ -89,12 +90,6 @@ block templates
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Create")
-
-//- script(type="text/jst")#alert-source-templ
-//- 		label(for="<%= settings.name %>-alerts")
-//- 			input(type="checkbox" name="<%= settings.name %>-alerts" checked)
-//- 			span.service-icon(data-service-icon="<%= settings.name %>")
-//- 			span.service-name <%= settings.name %>
 
 block bootstrap-data
 	script(id="page-data").

@@ -411,6 +411,7 @@ body[data-section="settings"] #content {
 .drawer-options .toolbar,
 .drawer-section-title .toolbar,
 .drawer-pointer .toolbar {
+  position: relative;
   font-size: 1.2em;
   margin-top: 11px;
 }
@@ -824,18 +825,27 @@ input {
   color: #7c7c7c;
   margin-bottom: 25px;
 }
+.alert-form-container .service-icon {
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  margin-bottom: 5px;
+}
+.toolbar .service-icon {
+  width: 15px;
+  height: 15px;
+  top: -12px;
+  right: 0;
+}
 .service-icon {
   position: absolute;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
   background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-  left: -45px;
   display: inline-block;
   bottom: 0;
-  margin-bottom: 5px;
+  background-position: right;
 }
 .service-icon[data-service="google"] {
   background-image: url("/images/google.png");
