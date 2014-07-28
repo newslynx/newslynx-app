@@ -21,7 +21,7 @@ block drawer
 		.drawer-pointer Or, pending items for just...
 		ul#alerts
 	.drawer-container.mode-content(data-mode="create-new")
-		.drawer-section-title.drawer-item  Add any one of these alerts with the form on the right.
+		.drawer-pointer  Add any one of these alerts with the form on the right.
 		ul#alert-creators
 
 
@@ -55,13 +55,14 @@ block templates
 							input.save(type="submit", value="Save")
 
 	script(type="text/jst")#alert-creator-templ
-		.drawer-list-outer
-			.drawer-list-inner
-				.title <%= service %>
+		|<div class="drawer-list-outer scroll-to" data-destination="<%= service %>">
+		.drawer-list-inner
+			.title <%= service %>
+		|</div>
 
 	script(type="text/jst")#alert-form-templ
 		.alert-form-container
-			.title New <%= service %> alert
+			|<div class="title" id="<%= service %>">New <%= service %> alert</div>
 			form
 				<%= bakeForm(service, schema) %>
 				.buttons-container
