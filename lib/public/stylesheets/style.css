@@ -928,6 +928,9 @@ body[data-section="settings"] #content {
   display: inline-block;
   vertical-align: top;
 }
+#settings {
+  margin-bottom: 50px;
+}
 #settings .inputs-container {
   width: 450px;
 }
@@ -1039,7 +1042,7 @@ button.add {
   margin: 0;
 }
 .save-container {
-  margin-top: 35px;
+  margin-top: 50px;
 }
 .save-container input {
   font-size: 2.4em;

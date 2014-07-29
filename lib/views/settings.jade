@@ -117,7 +117,7 @@ block templates
 						p.auth-result.success Yes!
 					else
 						p.auth-result.fail No
-						a(href='/tokens/google').authenticate
+						a(href='/auth/google').authenticate
 							button Grant access
 							//- form(action='/organizations/settings', method='POST')
 							//- 	!= form
