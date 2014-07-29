@@ -36,17 +36,13 @@
   		"is_main": true
   	}
   ],
-  "youtube_accounts": [],
-  "tumblr_accounts": [
-    "propalpatine",
-    "jedissay"
-  ],
   "google_alerts": [
     "http://www.google.com/alerts/feeds/14752688329844321840/4874425503898649357"
   ],
-  "twitter_auth": "",
-  "facebook_auth": "",
-  "google_auth": "",
+  "tokens": {
+  	"google": [],
+  	"twitter": []
+	},
   "article_tags": [
     {
       "name": "tag 1",
