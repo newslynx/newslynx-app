@@ -94,7 +94,7 @@ block templates
 						li.input.multi
 							.multi-child.destroy &times;
 							|<input class="input-item" type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" data-key="name" />
-							|<input class="input-item" type="text" class="color-picker" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
+							|<input class="input-item color-picker" type="text" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
 				.setting-group
@@ -104,7 +104,7 @@ block templates
 						li.input.multi
 							.multi-child.destroy &times;
 							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
-							|<input class="input-item" type="text" class="color-picker" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
+							|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
 					button.add Add	
 			.settings-group
@@ -117,7 +117,7 @@ block templates
 						p.auth-result.success Yes!
 					else
 						p.auth-result.fail No
-						a(href='/auth/google').authenticate
+						a(href='/tokens/google').authenticate
 							button Grant access
 							//- form(action='/organizations/settings', method='POST')
 							//- 	!= form
@@ -144,21 +144,21 @@ block templates
 	script(type="text/jst")#multi-input-templ
 		li.input.multi
 			.multi-child.destroy &times;
-			|<input type="text" placeholder="<%= placeholder %>" class="multi-child" />
+			|<input class="multi-child input-item" type="text" placeholder="<%= placeholder %>" data-key="<%= keys[0] %>"/>
 			<% if (flag == 'radio') { %>
-			<% print('<input type="'+flag+'" name="'+group+'"/>') %>
+			<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'checkbox') { %>
-			<% print('<input type="'+flag+'" />') %>
+			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'color') { %>
-			<% print('<input type="text" class="color-picker" data-color="#ccc" data-group="'+group+'"/>') %>
+			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" data-group="'+group+'" data-key="'+keys[1]+'"/>') %>
 			<% } %>
 
 	script(type="text/jst")#multi-input-double-templ
 		li.input.multi
 			.multi-child.destroy &times;
-			|<input type="text" placeholder="<%= placeholder0 %>" class="multi-child double" />
-			|<input type="text" placeholder="<%= placeholder1 %>" class="multi-child double" />
-			<% (flag) ? print('<input type="'+flag+'"/>') : '' %>
+			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder0 %>" data-key="<%= keys[0] %>" />
+			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder1 %>" data-key="<%= keys[1] %>" />
+			<% (flag) ? print('<input class="input-item" type="'+flag+'" data-key="'+keys[2]+'" />') : '' %>
 
 block bootstrap-data
 	script(id="page-data").
