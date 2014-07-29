@@ -91,10 +91,10 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
-		pageData.org =!{org};
-		pageData.articleSummaries =!{articleSummaries};
-		pageData.articleRowDetails =!{articleRowDetails};
-		pageData.articleDetails =!{articleDetails};
+		pageData.org =!{JSON.stringify(org)};
+		pageData.articleSummaries =!{JSON.stringify(articleSummaries)};
+		pageData.articleRowDetails =!{JSON.stringify(articleRowDetails)};
+		pageData.articleDetails =!{JSON.stringify(articleDetails)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")

@@ -94,9 +94,9 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
-		pageData.alertSchemas =!{alertSchemas};   
-		pageData.accountAlerts =!{accountAlerts};   
-		pageData.riverItems =!{riverItems};   
+		pageData.alertSchemas =!{JSON.stringify(alertSchemas)};   
+		pageData.accountAlerts =!{JSON.stringify(accountAlerts)};   
+		pageData.riverItems =!{JSON.stringify(riverItems)};   
 
 
 block scripts

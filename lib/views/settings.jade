@@ -9,6 +9,12 @@ block templates
 	script(type="text/jst")#settings-templ
 		#settings
 			.settings-group
+				#account.settings-title Account
+				.setting-group
+					#password.setting-title Password
+					ul.inputs-container(data-key="password")
+						li.input
+							input.input-item(type="password")
 				#site.settings-title Site
 				.setting-group
 					#home-page.setting-title Home page
@@ -163,7 +169,7 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
-		pageData.org =!{org};
+		pageData.org =!{JSON.stringify(org)};
 		//- pageData.settingsSchema =!{settingsSchema};
 
 block css
