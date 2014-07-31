@@ -1,0 +1,24 @@
+[global]
+ApplicationName=newslynx-app
+DevToolsEndpoint=git.elasticbeanstalk.us-east-1.amazonaws.com
+EnvironmentName=newslynx-app-beta
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+RdsEnabled=No
+Region=us-east-1
+ServiceEndpoint=https://elasticbeanstalk.us-east-1.amazonaws.com
+SolutionStack=64bit Amazon Linux 2014.03 v1.0.3 running Node.js
+
+[branches]
+develop=newslynx-app-beta
+
+[branch:develop]
+ApplicationVersionName=newslynx-app-beta
+EnvironmentName=newslynx-app-beta
+EnvironmentTier=WebServer::Standard::1.0
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=/Users/stdbrouw/Code/Apps/newslynx/newslynx-app/.elasticbeanstalk/optionsettings.beta
+RdsEnabled=No
+
