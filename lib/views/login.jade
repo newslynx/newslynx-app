@@ -8,9 +8,9 @@ block drawer
 			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
 
 block content
-	if user
-		h3 Hello #{user.domain}
-		p You've successfully logged in!
+	if req.user
+		h3 Hello #{req.user.name}
+		p You have successfully logged in!
 	else
 		form(action='/login', method='POST')#login
 			div
