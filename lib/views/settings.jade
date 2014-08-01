@@ -121,7 +121,7 @@ block templates
 					a(href="/about") Read our data retention policy for more information.
 				.setting-group
 					.setting-title Authenticated
-					if req.user
+					if req.user.oAuthTokens.length
 						p.auth-result.success Yes
 					else
 						p.auth-result.fail No
