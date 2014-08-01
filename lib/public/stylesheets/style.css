@@ -790,12 +790,14 @@ input {
 }
 .modal-overlay {
   background-color: rgba(0,0,0,0.7);
+  z-index: 9999;
 }
 .modal-inner {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #000;
   width: 420px;
+  z-index: 99999;
 }
 .modal-inner .title {
   font-size: 1.4em;
@@ -948,6 +950,10 @@ body[data-section="settings"] #content {
 #settings .input input[type='radio'],
 #settings .input input[type='checkbox'] {
   margin: 0;
+}
+#settings .input input[type='password'] {
+  margin: 0 0 5px 20px;
+  clear: right;
 }
 #settings .input input[type='text'],
 #settings .color-picker {

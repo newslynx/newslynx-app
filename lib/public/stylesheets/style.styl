@@ -644,11 +644,13 @@ multi_width = 14%
 	bottom 0
 .modal-overlay
 	background-color rgba(0,0,0,.7)
+	z-index 9999
 .modal-inner
 	background-color #fff
 	padding 20px
 	border 1px solid #000
 	width 420px
+	z-index 99999
 	.title
 		font-size 1.4em
 		font-weight bold
@@ -773,6 +775,9 @@ setting_title_width = 100px
 			width input_width
 		input[type='radio'],input[type='checkbox']
 			margin 0
+		input[type='password']
+			margin 0 0 5px destroy_width
+			clear right
 	.input input[type='text'],.color-picker
 		height 20px
 	.input.multi

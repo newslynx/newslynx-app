@@ -13,8 +13,10 @@ block templates
 				.setting-group
 					#password.setting-title Password
 					ul.inputs-container(data-key="password")
-						li.input
-							input.input-item(type="password")
+						li.input.multi
+							input.input-item(type="password" placeholder="New password...")
+						li.input.multi
+							input.input-item(type="password" placeholder="Confirm...")
 				#site.settings-title Site
 				.setting-group
 					#home-page.setting-title Home page
@@ -119,7 +121,7 @@ block templates
 					a(href="/about") Read our data retention policy for more information.
 				.setting-group
 					.setting-title Authenticated
-					if req.user.password
+					if req.user
 						p.auth-result.success Yes
 					else
 						p.auth-result.fail No
