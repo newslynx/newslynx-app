@@ -59,28 +59,36 @@ block templates
 	script(type="text/jst")#article-grid-containter-templ
 		#compare-grid
 			.header
-				.header-group.cell(data-layout="single")
-					.name
-					.dimension Headline
-				.header-group.cell(data-layout="single")
-					.name
-					.dimension Date
-				.header-group.cell(data-layout="multi")
-					.name Social
-					.dimension Mentions
-					.dimension Shares
-				.header-group.cell(data-layout="multi")
-					.name Visitors
-					.dimension Uniques
-					.dimension Pageviews
-				.header-group.cell(data-layout="multi")
-					.name Sources
-					.dimension Internal
-					.dimension External
-				.header-group.cell(data-layout="multi")
-					.name Qualitative
-					.dimension Citations
-					.dimension Events
+				.header-meta-container
+					.header-meta.cell
+						.name Social shares
+					.header-meta.cell
+						.name Visitors
+					.header-meta.cell
+						.name Sources
+					.header-meta.cell.bars
+						.name Tags
+				.header-dimensions-container
+					.header-el.cell.wide
+						.name Headline
+					.header-el.cell.date
+						.name Date
+					.header-el.cell.multi
+						.name Twitter
+					.header-el.cell.multi
+						.name Facebook
+					.header-el.cell.multi
+						.name Pageviews
+					.header-el.cell.multi
+						.name Time/page
+					.header-el.cell.multi
+						.name Internal
+					.header-el.cell.multi
+						.name External
+					.header-el.cell.bars
+						.name Subject
+					.header-el.cell.bars
+						.name Impact
 			.rows
 
 

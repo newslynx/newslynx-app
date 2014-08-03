@@ -4,5 +4,5 @@ header#header-container
 		h1.page-title NewsLynx
 	ul.settings
 		li.admin-item
-			if req.user
+			if req && req.user
 				a(href="/settings") Settings

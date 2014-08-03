@@ -42,28 +42,32 @@
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 4,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 2,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 1,
+						"color": "#f0c",
+						"name": "NYT"
+					},
+					{
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -74,6 +78,11 @@
 					{
 						"count": 5,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 3,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
@@ -127,28 +136,32 @@
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 6,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 2,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 9,
+						"count": 1,
+						"color": "#f0c",
+						"name": "NYT"
+					},
+					{
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -159,6 +172,11 @@
 					{
 						"count": 2,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 2,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
@@ -212,28 +230,32 @@
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 5,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 3,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 1,
+						"color": "#f0c",
+						"name": "NYT"
+					},
+					{
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -244,6 +266,11 @@
 					{
 						"count": 4,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 3,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
