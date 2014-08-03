@@ -5,9 +5,9 @@ extends layout
 
 block drawer
 	ul.division-switcher
-		li(data-mode="my-alerts") My alerts
+		li(data-mode="my-recipes") My recipes
 		li(data-mode="create-new") + Create
-	.drawer-container.mode-content(data-mode="my-alerts")
+	.drawer-container.mode-content(data-mode="my-recipes")
 		//- .drawer-section-title.drawer-item  Show approval candidates from:
 		//- ul#alert-sources.drawer-item
 		.drawer-pointer Show me...
@@ -17,26 +17,28 @@ block drawer
 					input(type="checkbox")
 					input(type="radio")
 				.drawer-list-inner
-					.title Pending items for all alerts
+					.title Pending items for all recipes
 		.drawer-pointer Or, pending items for just...
-		ul#alerts
+		ul#recipes
 	.drawer-container.mode-content(data-mode="create-new")
-		.drawer-pointer  Add any one of these alerts with the form on the right.
-		ul#alert-creators
+		.drawer-pointer  Add any one of these receipes with the form on the right.
+		ul#recipe-creators
 
+block content
+	#river-items-container(data-mode="my-recipes").mode-content
 
 
 //- This template has to be rendered partially in standard html because jade
 //- In all its glory
 //- Will not render underscore variables inside of attributes such as `.master-switch(data-enabled="<%= enabled %>")`
 block templates
-	script(type="text/jst")#alert-templ
+	script(type="text/jst")#recipe-templ
 		.drawer-list-outer.modal-parent
 			.inputs-container
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= countAssociatedItems(uid, 'alert_uid', 'riverItems') %> pending
+				.count <%= countAssociatedItems(uid, 'recipe_uid', 'riverItems') %> pending
 				.title <%= settings.name %>
 				.description <%= settings.search_query %>
 				.toolbar
@@ -48,22 +50,22 @@ block templates
 			.modal-outer
 				.modal-overlay
 				.modal-inner
-					.title Alert settings
+					.title Recipe settings
 					form
-						<%= bakeAlertUpdateForm(uid, service, settings) %>
+						<%= bakeRecipeUpdateForm(uid, service, settings) %>
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Save")
 
-	script(type="text/jst")#alert-creator-templ
+	script(type="text/jst")#recipe-creator-templ
 		|<div class="drawer-list-outer scroll-to" data-destination="<%= toLowerCase(service) %>">
 		.drawer-list-inner
 			.title <%= service %>
 		|</div>
 
-	script(type="text/jst")#alert-form-templ
-		.alert-form-container
-			|<div class="title" id="<%= toLowerCase(service) %>-alert"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span><span class="text">New <%= service %> alert</span></div>
+	script(type="text/jst")#recipe-form-templ
+		.recipe-form-container
+			|<div class="title" id="<%= toLowerCase(service) %>-recipe"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span><span class="text">New <%= service %> recipe</span></div>
 			form
 				<%= bakeForm(service, schema) %>
 				.buttons-container
@@ -80,7 +82,7 @@ block templates
 				.title <%= title %>
 				.description The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.
 				.toolbar
-					.origin-alert From alert: <%= alert_uid %>
+					.origin-recipe From recipe: <%= recipe_uid %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
@@ -94,8 +96,8 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
-		pageData.alertSchemas =!{JSON.stringify(alertSchemas)};   
-		pageData.accountAlerts =!{JSON.stringify(accountAlerts)};   
+		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
+		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.riverItems =!{JSON.stringify(riverItems)};   
 
 
@@ -103,4 +105,5 @@ block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/main.js")

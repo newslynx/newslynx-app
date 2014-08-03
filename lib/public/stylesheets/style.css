@@ -480,7 +480,7 @@ body[data-section="settings"] #content {
   cursor: default;
 }
 #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
-#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover {
+#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover {
   background-color: #6dc4ff;
   cursor: pointer;
 }
@@ -490,28 +490,28 @@ body[data-section="settings"] #content {
 }
 #drawer[data-mode="compare"] .inputs-container,
 #drawer[data-mode="single"] .inputs-container,
-#drawer[data-mode="my-alerts"] .inputs-container,
+#drawer[data-mode="my-recipes"] .inputs-container,
 #drawer[data-mode="compare"] .drawer-list-inner,
 #drawer[data-mode="single"] .drawer-list-inner,
-#drawer[data-mode="my-alerts"] .drawer-list-inner {
+#drawer[data-mode="my-recipes"] .drawer-list-inner {
   display: inline-block;
   vertical-align: top;
 }
 #drawer[data-mode="compare"] .inputs-container,
 #drawer[data-mode="single"] .inputs-container,
-#drawer[data-mode="my-alerts"] .inputs-container {
+#drawer[data-mode="my-recipes"] .inputs-container {
   margin-right: 10px;
 }
 #drawer[data-mode="compare"] .drawer-list-inner,
 #drawer[data-mode="single"] .drawer-list-inner,
-#drawer[data-mode="my-alerts"] .drawer-list-inner {
+#drawer[data-mode="my-recipes"] .drawer-list-inner {
   width: 85%;
 }
 #drawer[data-mode="compare"] .inputs-container input[type="checkbox"] {
   display: block;
 }
 #drawer[data-mode="single"] .inputs-container input[type="radio"],
-#drawer[data-mode="my-alerts"] .inputs-container input[type="radio"] {
+#drawer[data-mode="my-recipes"] .inputs-container input[type="radio"] {
   display: block;
 }
 #article-list {
@@ -526,11 +526,11 @@ body[data-section="home"] #content {
 }
 /* end home */
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-alerts"],
+#content[data-mode="my-recipes"],
 #content[data-mode="create-new"] {
   padding: 25px 60px;
 }
-#content[data-mode="my-alerts"] .article-detail-wrapper,
+#content[data-mode="my-recipes"] .article-detail-wrapper,
 #content[data-mode="create-new"] .article-detail-wrapper {
   margin: 20px 0 75px 0;
 }
@@ -540,13 +540,13 @@ body[data-section="home"] #content {
   font-weight: bold;
   color: #303030;
 }
-#alert-sources {
+#recipe-sources {
   padding: 0;
 }
 .view-all:hover {
   cursor: default;
 }
-#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover {
+#drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover {
   background-color: #88cfff;
   cursor: default;
 }
@@ -854,17 +854,17 @@ input {
 .buttons-container input[type="submit"] {
   margin: 0 3px 0 0;
 }
-.alert-form-container {
+.recipe-form-container {
   width: 450px;
   margin-left: 50px;
 }
-.alert-form-container .title {
+.recipe-form-container .title {
   position: relative;
   font-size: 3em;
   color: #7c7c7c;
   margin-bottom: 25px;
 }
-.alert-form-container .service-icon {
+.recipe-form-container .service-icon {
   width: 40px;
   height: 40px;
   left: -45px;
@@ -896,34 +896,34 @@ input {
   background-image: url("/images/reddit.png");
 }
 .modal-outer form label,
-.alert-form-container form label {
+.recipe-form-container form label {
   font-size: 1.3em;
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
 }
 .modal-outer form .input-text-container,
-.alert-form-container form .input-text-container {
+.recipe-form-container form .input-text-container {
   width: 55%;
   display: inline-block;
 }
 .modal-outer form .help-row,
-.alert-form-container form .help-row {
+.recipe-form-container form .help-row {
   text-align: right;
   margin-bottom: 2px;
 }
 .modal-outer form .hint-row,
-.alert-form-container form .hint-row {
+.recipe-form-container form .hint-row {
   color: #7c7c7c;
   position: absolute;
 }
 .modal-outer form input[type="text"],
-.alert-form-container form input[type="text"] {
+.recipe-form-container form input[type="text"] {
   width: 100%;
   margin: 0;
 }
 .modal-outer form select,
-.alert-form-container form select {
+.recipe-form-container form select {
   margin: 0;
 }
 /* end modal windows */

@@ -389,7 +389,7 @@ body[data-section="settings"] #content
 .drawer-list-outer.active:hover
 	cursor default
 #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
-#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover
+#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
 	background-color darken(select_blue, 7%)
 	cursor pointer
 	// cursor pointer
@@ -397,7 +397,7 @@ body[data-section="settings"] #content
 
 #drawer .inputs-container,#drawer .inputs-container input
 	display none
-#drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-alerts"]
+#drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-recipes"]
 	.inputs-container,.drawer-list-inner
 		display inline-block
 		vertical-align top
@@ -408,7 +408,7 @@ body[data-section="settings"] #content
 #drawer[data-mode="compare"]
 	.inputs-container input[type="checkbox"]
 		display block
-#drawer[data-mode="single"],#drawer[data-mode="my-alerts"]
+#drawer[data-mode="single"],#drawer[data-mode="my-recipes"]
 	.inputs-container input[type="radio"]
 		display block
 
@@ -425,7 +425,7 @@ body[data-section="home"] #content
 /* end home */
 
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-alerts"],#content[data-mode="create-new"]
+#content[data-mode="my-recipes"],#content[data-mode="create-new"]
 	padding 25px 60px
 	.article-detail-wrapper
 		margin 20px 0 75px 0
@@ -435,11 +435,11 @@ body[data-section="home"] #content
 	font-size 1.3em
 	font-weight bold
 	color #303030
-#alert-sources
+#recipe-sources
 	padding 0
 .view-all:hover
 	cursor default
-#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover
+#drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
 	background-color select_blue
 	cursor default
 .approval-child
@@ -704,7 +704,7 @@ group_margin = 30px
 .buttons-container
 	button,input[type="submit"]
 		margin 0 3px 0 0
-.alert-form-container
+.recipe-form-container
 	width 450px
 	margin-left 50px
 	.title
@@ -739,7 +739,7 @@ group_margin = 30px
 .service-icon[data-service="reddit"]
 	background-image url(/images/reddit.png)
 
-.modal-outer,.alert-form-container
+.modal-outer,.recipe-form-container
 	form
 		label
 			font-size 1.3em
