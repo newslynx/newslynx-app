@@ -91,7 +91,7 @@ block templates
 						.name Impact
 			.rows
 
-
+	//-  TODO, sort by % over comparison
 	script(type="text/jst")#article-detail-row-templ
 		|<div class="article-detail-row-container" data-title="<%= title %>" data-date="<%= pub_datetime %>" <% _.each(bullets, function(bullet){ %>
 		|<% print('data-'+bullet.dimension+'="'+bullet.count+'" ') %>
