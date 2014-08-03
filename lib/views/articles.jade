@@ -93,8 +93,18 @@ block templates
 
 
 	script(type="text/jst")#article-detail-row-templ
-		.article-detail-row-container
-			.destroy &times;
+		|<div class="article-detail-row-container" data-title="<%= title %>" data-date="<%= pub_datetime %>" <% _.each(bullets, function(bullet){ %>
+		|<% print('data-'+bullet.dimension+'="'+bullet.count+'" ') %>
+		|<% })%>
+		|<% _.each(bars, function(bar){ %>
+		|<% var agg_count = 0; %>
+		|<% _.each(bar.counts, function(eventOrTag){ %>
+		|<%    agg_count += eventOrTag.count; %>
+		|<% }) %>
+		|<% print('data-'+bar.dimension+'="'+agg_count+'" ') %>
+		|<% })%> >
+		.destroy &times;
+		|</div>
 
 block bootstrap-data
 	script(id="page-data").
