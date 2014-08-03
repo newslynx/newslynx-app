@@ -686,9 +686,9 @@ input {
 /* end main article styles */
 /* A R T I C L E  R O W */
 .article-detail-row-wrapper {
-  position: relative;
   width: 100%;
   border-top: 1px solid #eaeaea;
+  height: 28px;
 }
 .article-detail-row-wrapper .title:hover {
   text-decoration: underline;
