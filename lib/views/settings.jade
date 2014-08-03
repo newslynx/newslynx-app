@@ -102,12 +102,12 @@ block templates
 				#tags.settings-title Tags
 				.setting-group
 					#article-tags.setting-title Article tags
-					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="article_tags")
-						<%  for (var i = 0; i < article_tags.length; i++) { %>
+					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="subject_tags")
+						<%  for (var i = 0; i < subject_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Fracking" value="<%= article_tags[i].name %>" class="multi-child" data-key="name" />
-							|<input class="input-item color-picker" type="text" data-color="<%= article_tags[i].color %>" value="<%= article_tags[i].color %>" data-group="articles" data-key="color" />
+							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" />
+							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
 				.setting-group
