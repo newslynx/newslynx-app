@@ -56,34 +56,42 @@ block templates
 				h3.title What events have happened around this story?
 				img(src="images/dummy/events.png")
 
-	script(type="text/jst")#article-grid-containter-templ
+	script(type="text/jst")#article-grid-container-templ
 		#compare-grid
 			.header
-				.header-group.cell(data-layout="single")
-					.name
-					.dimension Headline
-				.header-group.cell(data-layout="single")
-					.name
-					.dimension Date
-				.header-group.cell(data-layout="multi")
-					.name Social
-					.dimension Mentions
-					.dimension Shares
-				.header-group.cell(data-layout="multi")
-					.name Visitors
-					.dimension Uniques
-					.dimension Pageviews
-				.header-group.cell(data-layout="multi")
-					.name Sources
-					.dimension Internal
-					.dimension External
-				.header-group.cell(data-layout="multi")
-					.name Qualitative
-					.dimension Citations
-					.dimension Events
+				.header-meta-container
+					.header-meta.cell
+						.name Social shares
+					.header-meta.cell
+						.name Visitors
+					.header-meta.cell
+						.name Sources
+					.header-meta.cell.bars
+						.name Tags
+				.header-dimensions-container
+					.header-el.cell.wide(data-dimension="title")
+						.name Headline
+					.header-el.cell.date(data-dimension="date")
+						.name Date
+					.header-el.cell.multi(data-dimension="twitter")
+						.name Twitter
+					.header-el.cell.multi(data-dimension="facebook")
+						.name Facebook
+					.header-el.cell.multi(data-dimension="pageviews")
+						.name Pageviews
+					.header-el.cell.multi(data-dimension="time-on-page")
+						.name Time/page
+					.header-el.cell.multi(data-dimension="internal")
+						.name Internal
+					.header-el.cell.multi(data-dimension="external")
+						.name External
+					.header-el.cell.bars(data-dimension="subject")
+						.name Subject
+					.header-el.cell.bars(data-dimension="impact")
+						.name Impact
 			.rows
 
-
+	//-  TODO, sort by % over comparison
 	script(type="text/jst")#article-detail-row-templ
 		.article-detail-row-container
 			.destroy &times;
@@ -101,4 +109,5 @@ block scripts
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
+	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/main.js")

@@ -389,7 +389,7 @@ body[data-section="settings"] #content
 .drawer-list-outer.active:hover
 	cursor default
 #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
-#drawer[data-mode="my-alerts"] .drawer-list-outer.active:hover
+#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
 	background-color darken(select_blue, 7%)
 	cursor pointer
 	// cursor pointer
@@ -397,7 +397,7 @@ body[data-section="settings"] #content
 
 #drawer .inputs-container,#drawer .inputs-container input
 	display none
-#drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-alerts"]
+#drawer[data-mode="compare"],#drawer[data-mode="single"],,#drawer[data-mode="my-recipes"]
 	.inputs-container,.drawer-list-inner
 		display inline-block
 		vertical-align top
@@ -408,7 +408,7 @@ body[data-section="settings"] #content
 #drawer[data-mode="compare"]
 	.inputs-container input[type="checkbox"]
 		display block
-#drawer[data-mode="single"],#drawer[data-mode="my-alerts"]
+#drawer[data-mode="single"],#drawer[data-mode="my-recipes"]
 	.inputs-container input[type="radio"]
 		display block
 
@@ -425,7 +425,7 @@ body[data-section="home"] #content
 /* end home */
 
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-alerts"],#content[data-mode="create-new"]
+#content[data-mode="my-recipes"],#content[data-mode="create-new"]
 	padding 25px 60px
 	.article-detail-wrapper
 		margin 20px 0 75px 0
@@ -435,11 +435,11 @@ body[data-section="home"] #content
 	font-size 1.3em
 	font-weight bold
 	color #303030
-#alert-sources
+#recipe-sources
 	padding 0
 .view-all:hover
 	cursor default
-#drawer[data-mode="my-alerts"] .view-all.active.drawer-list-outer:hover
+#drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
 	background-color select_blue
 	cursor default
 .approval-child
@@ -546,16 +546,19 @@ input
 /* end main article styles */
 /* A R T I C L E  R O W */
 .article-detail-row-wrapper
-	position relative
-	width 100% 
+	width 100%
+	border-top 1px solid #eaeaea
+	height 28px
+	background-color #fff
 	.title:hover
 		text-decoration underline
 		cursor pointer
-.article-detail-row-wrapper:nth-child(even)
-	background-color #eaeaea	
-	// .destroy
-	// 	font-size 1.5em
-	// 	user-select none
+// .article-detail-row-wrapper:nth-child(even)
+// 	border-color #eaeaea	
+// 	background-color #eaeaea	
+// .destroy
+// 	font-size 1.5em
+// 	user-select none
 
 .article-detail-row-container
 	.destroy
@@ -576,48 +579,86 @@ input
 
 
 .article-detail-row-container
-	padding 3px
+	padding 5px 0 
 
 single_width = 8%
-multi_width = 14%
+multi_width = 13%
+wide_width = 11%
+bars_width = 8%
+
+single_margin = 20px
+date_margin = single_margin/2
+bullet_margin = 10px
+group_margin = 30px
 
 #compare-grid
 	width 100%
 .cell
 	display inline-block
-.header-group
-	.name
-		text-align center
-		height 10px
-		width 81% /* For some more visually pleasing centering */
-	.dimension
-		font-weight bold
-		display inline-block
-.cell[data-layout="single"]
-	width single_width
-	// background-color #fc0
-.cell[data-layout="multi"]
-	width multi_width
-	.dimension
-		width 50%
-.article-detail-row-container
-	.cell[data-layout="multi"]
-		width (multi_width/2)
-
-.cell[data-layout="single"]
-	margin-right 10px
-.header-group[data-layout="multi"],.cell[data-layout="multi"]:nth-child(odd)
-	margin-right 20px
-
-.bullet-container
+	vertical-align top
+.cell.gfx
+	vertical-align bottom
 	position relative
+	top -3px
+		
+.cell
+	width single_width
+	margin-right single_margin
+.cell.multi
+	width (multi_width/2)
+	margin-right bullet_margin
+.cell.date
+	margin-right date_margin
+.cell.wide
+	width wide_width
+.cell.bar
+	width bars_width
+.header-meta
+	margin-right group_margin
+	// background-color #fc0
+.header-dimensions-container .cell.multi:nth-child(even),
+.article-detail-row-container .cell.multi:nth-child(odd)
+	margin-right group_margin
+/* Header styles */
+.header-meta-container,.header-dimensions-container
+	width 100%
+.header-dimensions-container
+	font-weight bold
+	margin-bottom 5px
+.header-meta
+	width unquote('calc('+multi_width+' + '+bullet_margin+')')
+	text-align center
+	font-size 1.1em
+.header-meta.bars
+	width unquote('calc('+bars_width*2+' + '+bullet_margin+')')
+.header-meta:first-child
+	margin-left unquote('calc('+(single_width + unit(wide_width,""))+' + '+(single_margin + date_margin)+')')
+.header-el
+	font-size 1.1em
+	user-select none
+.header-el:hover
+	cursor pointer
+	text-decoration underline
+.header-el.active
+	color the_green
+/* end header styles */
+
+
+.cell.title
+	white-space no-wrap
+	overflow-x hidden
+	font-size 1.2em
+.cell.date
+	font-size 1.2em
+.bullet-container
+	background-color #eee
 .bullet
 	background-color select_blue
 	height 10px
 .marker
 	position absolute
-	top 0
-	height 10px
+	top -2px
+	height 14px
 	background-color #6f6f6f // TODO, maybe make this a standard gry or make a standard gray this
 	width 2px
 
@@ -627,6 +668,10 @@ multi_width = 14%
 	margin-right 1px
 	text-align center
 	vertical-align bottom
+.bar-container[data-group="subject"]
+	.bar
+		height 10px
+	
 .bar
 	width 100%
 	margin-top 1px
@@ -644,11 +689,13 @@ multi_width = 14%
 	bottom 0
 .modal-overlay
 	background-color rgba(0,0,0,.7)
+	z-index 9999
 .modal-inner
 	background-color #fff
 	padding 20px
 	border 1px solid #000
 	width 420px
+	z-index 99999
 	.title
 		font-size 1.4em
 		font-weight bold
@@ -664,7 +711,7 @@ multi_width = 14%
 .buttons-container
 	button,input[type="submit"]
 		margin 0 3px 0 0
-.alert-form-container
+.recipe-form-container
 	width 450px
 	margin-left 50px
 	.title
@@ -699,7 +746,7 @@ multi_width = 14%
 .service-icon[data-service="reddit"]
 	background-image url(/images/reddit.png)
 
-.modal-outer,.alert-form-container
+.modal-outer,.recipe-form-container
 	form
 		label
 			font-size 1.3em
@@ -773,6 +820,9 @@ setting_title_width = 100px
 			width input_width
 		input[type='radio'],input[type='checkbox']
 			margin 0
+		input[type='password']
+			margin 0 0 5px destroy_width
+			clear right
 	.input input[type='text'],.color-picker
 		height 20px
 	.input.multi

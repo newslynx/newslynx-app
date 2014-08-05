@@ -12,27 +12,27 @@
 				"dimension": "Twitter",
 				"count": 2,
 				"median": 6,
-				"max": 10
+				"max": 100
 			},{
 				"dimension": "Facebook",
 				"count": 344,
 				"median": 50,
 				"max": 500
 			},{
-				"dimension": "uniques",
+				"dimension": "pageviews",
+				"count": 500,
+				"median": 630,
+				"max": 1000
+			},{
+				"dimension": "time-on-page",
 				"count": 88,
 				"median": 90,
 				"max": 130
 			},{
-				"dimension": "pageviews",
-				"count": 12,
-				"median": 630,
-				"max": 1100
-			},{
 				"dimension": "internal",
 				"count": 232,
 				"median": 140,
-				"max": 520
+				"max": 500
 			},{
 				"dimension": "external",
 				"count": 32,
@@ -42,28 +42,27 @@
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 4,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 2,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -74,6 +73,11 @@
 					{
 						"count": 5,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 3,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
@@ -95,60 +99,64 @@
 		"bullets": [
 			{
 				"dimension": "Twitter",
-				"count": 332,
+				"count": 98,
 				"median": 100,
-				"max": 1200
-			},{
-				"dimension": "Facebook",
-				"count": 912,
-				"median": 100,
-				"max": 2100
-			},{
-				"dimension": "uniques",
-				"count": 43,
-				"median": 10,
 				"max": 100
 			},{
+				"dimension": "Facebook",
+				"count": 412,
+				"median": 100,
+				"max": 500
+			},{
 				"dimension": "pageviews",
-				"count": 32,
+				"count": 2,
 				"median": 80,
-				"max": 90
+				"max": 1000
+			},{
+				"dimension": "time-on-page",
+				"count": 43,
+				"median": 10,
+				"max": 130
 			},{
 				"dimension": "internal",
 				"count": 10,
 				"median": 50,
-				"max": 90
+				"max": 500
 			},{
 				"dimension": "external",
 				"count": 99,
 				"median": 20,
-				"max": 120
+				"max": 100
 			}
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 6,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 2,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 9,
+						"count": 1,
+						"color": "#f0c",
+						"name": "NYT"
+					},
+					{
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -159,6 +167,11 @@
 					{
 						"count": 2,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 2,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
@@ -182,58 +195,62 @@
 				"dimension": "Twitter",
 				"count": 54,
 				"median": 100,
-				"max": 130
+				"max": 100
 			},{
 				"dimension": "Facebook",
 				"count": 22,
 				"median": 150,
-				"max": 200
-			},{
-				"dimension": "uniques",
-				"count": 932,
-				"median": 700,
-				"max": 1400
+				"max": 500
 			},{
 				"dimension": "pageviews",
-				"count": 302,
+				"count": 900,
 				"median": 20,
-				"max": 500
+				"max": 1000
+			},{
+				"dimension": "time-on-page",
+				"count": 120,
+				"median": 80,
+				"max": 130
 			},{
 				"dimension": "internal",
 				"count": 15,
 				"median": 50,
-				"max": 185
+				"max": 500
 			},{
 				"dimension": "external",
 				"count": 42,
 				"median": 70,
-				"max": 230
+				"max": 100
 			}
 		],
 		"bars": [
 			{
-				"dimension": "citations",
+				"dimension": "subject",
 				"type": "bar",
 				"counts": [
 					{
-						"count": 5,
+						"count": 1,
 						"color": "#fc0",
 						"name": "Gawker"
 					},
 					{
-						"count": 3,
+						"count": 1,
 						"color": "#0cf",
 						"name": "NYT"
 					},
 					{
-						"count": 3,
+						"count": 1,
+						"color": "#f0c",
+						"name": "NYT"
+					},
+					{
+						"count": 1,
 						"color": "#f0c",
 						"name": "NYT"
 					}
 				]
-			},
-			{
-				"dimension": "events",
+			},{
+				"dimension": "impact",
 				"type": "bar",
 				"counts": [
 					{
@@ -244,6 +261,11 @@
 					{
 						"count": 4,
 						"color": "#0cf",
+						"name": "NYT"
+					},
+					{
+						"count": 3,
+						"color": "#f0c",
 						"name": "NYT"
 					},
 					{
