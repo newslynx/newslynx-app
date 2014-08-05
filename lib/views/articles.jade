@@ -69,42 +69,32 @@ block templates
 					.header-meta.cell.bars
 						.name Tags
 				.header-dimensions-container
-					.header-el.cell.wide
+					.header-el.cell.wide(data-dimension="title")
 						.name Headline
-					.header-el.cell.date
+					.header-el.cell.date(data-dimension="date")
 						.name Date
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="twitter")
 						.name Twitter
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="facebook")
 						.name Facebook
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="pageviews")
 						.name Pageviews
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="time-on-page")
 						.name Time/page
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="internal")
 						.name Internal
-					.header-el.cell.multi
+					.header-el.cell.multi(data-dimension="external")
 						.name External
-					.header-el.cell.bars
+					.header-el.cell.bars(data-dimension="subject")
 						.name Subject
-					.header-el.cell.bars
+					.header-el.cell.bars(data-dimension="impact")
 						.name Impact
 			.rows
 
 	//-  TODO, sort by % over comparison
 	script(type="text/jst")#article-detail-row-templ
-		|<div class="article-detail-row-container" data-title="<%= title %>" data-date="<%= pub_datetime %>" <% _.each(bullets, function(bullet){ %>
-		|<% print('data-'+bullet.dimension+'="'+bullet.count+'" ') %>
-		|<% })%>
-		|<% _.each(bars, function(bar){ %>
-		|<% var agg_count = 0; %>
-		|<% _.each(bar.counts, function(eventOrTag){ %>
-		|<%    agg_count += eventOrTag.count; %>
-		|<% }) %>
-		|<% print('data-'+bar.dimension+'="'+agg_count+'" ') %>
-		|<% })%> >
-		.destroy &times;
-		|</div>
+		.article-detail-row-container
+			.destroy &times;
 
 block bootstrap-data
 	script(id="page-data").

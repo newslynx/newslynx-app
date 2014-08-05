@@ -689,6 +689,7 @@ input {
   width: 100%;
   border-top: 1px solid #eaeaea;
   height: 28px;
+  background-color: #fff;
 }
 .article-detail-row-wrapper .title:hover {
   text-decoration: underline;
@@ -771,6 +772,17 @@ input {
 }
 .header-el {
   font-size: 1.1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.header-el:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.header-el.active {
+  color: #0eb521;
 }
 /* end header styles */
 .cell.title {

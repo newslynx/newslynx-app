@@ -549,6 +549,7 @@ input
 	width 100%
 	border-top 1px solid #eaeaea
 	height 28px
+	background-color #fff
 	.title:hover
 		text-decoration underline
 		cursor pointer
@@ -634,6 +635,12 @@ group_margin = 30px
 	margin-left unquote('calc('+(single_width + unit(wide_width,""))+' + '+(single_margin + date_margin)+')')
 .header-el
 	font-size 1.1em
+	user-select none
+.header-el:hover
+	cursor pointer
+	text-decoration underline
+.header-el.active
+	color the_green
 /* end header styles */
 
 
