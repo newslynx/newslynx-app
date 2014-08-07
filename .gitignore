@@ -48,5 +48,8 @@ node_modules
 # Users Environment Variables
 .lock-wscript
 
+# Authentication
+.env
+
 # Development database
 *.sqlite
