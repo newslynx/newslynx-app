@@ -632,15 +632,9 @@ input {
   margin-bottom: 3px;
 }
 /* end text styles */
-/*  M A I N   A R T I C L E  */
+/*  M A I N  A R T I C L E  */
 #content {
   padding: 0;
-}
-#content .comparison-container {
-  display: inline-block;
-}
-#content .create-event {
-  float: right;
 }
 #content[data-mode="single"] {
   padding: 25px 50px;
@@ -651,6 +645,8 @@ input {
 .article-detail-container .toolbar {
   overflow: auto;
   margin: 20px 0 40px 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
 }
 .article-detail-container .pub-date {
   font-size: 1.2em;
@@ -682,6 +678,62 @@ input {
 }
 .article-detail-container .description {
   font-size: 1.3em;
+}
+.article-detail-container .group-container {
+  display: inline-block;
+  vertical-align: bottom;
+  height: 100%;
+  width: 50%;
+}
+.article-detail-container .group-container .group-title {
+  font-size: 1.3em;
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+.article-detail-container .group-container ul.tabs .tab {
+  font-size: 1.3em;
+  display: inline-block;
+  padding: 5px 8px;
+  margin-right: 5px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.article-detail-container .group-container ul.tabs .tab.active {
+  background: #3ec173;
+  color: #fff;
+}
+.article-detail-container .group-container ul.tabs .tab:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.article-detail-container .group-container ul.tabs .tab.active:hover {
+  cursor: default;
+  text-decoration: none;
+}
+.article-detail-container .group-container[data-side="right"] .group-item {
+  float: right;
+  display: block;
+  margin-left: 50%;
+}
+.article-detail-container .tag-title {
+  display: inline;
+}
+.article-detail-container ul.tags {
+  display: inline;
+}
+.article-detail-container ul.tags .tag {
+  display: inline;
+  padding: 5px;
+  background-color: #fc0;
+  margin-left: 5px;
+}
+.article-detail-container .edit-tags {
+  display: inline;
+  margin-left: 10px;
 }
 /* end main article styles */
 /* A R T I C L E  R O W */

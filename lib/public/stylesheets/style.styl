@@ -343,7 +343,6 @@ body[data-section="settings"] #content
 
 .drawer-list-item,.drawer-options,.drawer-section-title,.drawer-pointer
 	user-select none
-	// border-bottom 1px solid border_gray
 	.btn
 		padding 5px 0
 	.pub-date
@@ -352,7 +351,6 @@ body[data-section="settings"] #content
 		font-size 1.4em
 		margin-bottom 2px
 	.count
-		// font-size .9em
 		text-transform uppercase
 		margin-bottom 2px
 	.description
@@ -392,8 +390,6 @@ body[data-section="settings"] #content
 #drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
 	background-color darken(select_blue, 7%)
 	cursor pointer
-	// cursor pointer
-// TODO, instead of darkening the background color, have an x always present that gets underlines on hover
 
 #drawer .inputs-container,#drawer .inputs-container input
 	display none
@@ -504,13 +500,9 @@ input
 	margin-bottom 3px
 /* end text styles */
 
-/*  M A I N   A R T I C L E  */
+/*  M A I N  A R T I C L E  */
 #content
 	padding 0
-	.comparison-container
-		display inline-block
-	.create-event
-		float right
 
 #content[data-mode="single"]
 	padding 25px 50px
@@ -522,6 +514,8 @@ input
 	.toolbar
 		overflow auto
 		margin 20px 0 40px 0
+		padding-bottom 10px
+		border-bottom 1px solid #ccc
 	.pub-date
 		font-size 1.2em
 	.headline,.title
@@ -543,6 +537,51 @@ input
 		content '## '
 	.description
 		font-size 1.3em
+	.group-container
+		display inline-block
+		vertical-align bottom
+		height 100%
+		width 50%
+		.group-title
+			font-size 1.3em
+			font-weight 200
+			margin-bottom 5px
+		ul.tabs
+			.tab
+				font-size 1.3em
+				display inline-block
+				padding 5px 8px
+				margin-right 5px
+				font-weight 200
+				letter-spacing 1px
+				user-select none
+			.tab.active
+				background articles
+				color #fff
+			.tab:hover
+				cursor pointer
+				text-decoration underline
+			.tab.active:hover
+				cursor default
+				text-decoration none
+	.group-container[data-side="right"]
+		.group-item
+			float right
+			display block
+			margin-left 50%
+	.tag-title
+		display inline
+	ul.tags
+		display inline
+		.tag
+			display inline
+			padding 5px
+			background-color #fc0
+			margin-left 5px
+	.edit-tags
+		display inline
+		margin-left 10px
+
 /* end main article styles */
 /* A R T I C L E  R O W */
 .article-detail-row-wrapper

@@ -26,15 +26,27 @@ block templates
 		.article-detail-container
 			.pub-date <%= date(pub_datetime) %>
 			h2.headline <%= title %>
-			.nl-desc.description
-				p <%= nl_desc %>
+			.tag-container
+				.tag-title Tags:
+				ul.tags
+					li.tag Environmental reporting
+				.edit-tags
+					button Edit
 			.toolbar
-				.comparison-container
-					span.icon-comparison vs
-					select#article-comparer
-						option an average article
-						option another thing
-				button.create-event + Create event
+				.group-container(data-side="left")
+					.group-item
+						.group-title Tell me about:
+						ul.tabs
+							li.tab.active This story's life
+							li.tab Who's reading and sharing it
+				.group-container(data-side="right")
+					.group-item
+						button.create-event + Create event
+					.group-item
+						span.icon-comparison vs
+						select#article-comparer
+							option an average article
+							option another thing
 			section(data-name="timeline")
 				h3.title When was this story posted to social media and how many times?
 				.description
