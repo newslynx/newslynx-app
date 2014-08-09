@@ -61,24 +61,34 @@
         "num_refers": 1,
         "refer_urls": [
           "http://example.com/"
-        ],
-        "events": [
-          {
-            "type": "mention",
-            "metadata": "TK"
-          }
         ]
       }
     ],
-    "events": [
-      {
-        "type": "mention",
-        "datetime": "2014-01-04 13:00:00",
-        "metadata": "TK"
-      }
-    ]
-  },
-  {
+		"events": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "citation",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			},
+			{
+				"datetime": "2002-06-02 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "change",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			}
+		]
+  },{
     "org_id": "propalpatine",
     "article_url": "http://www.propalpatine.org/article/Naboo-deal-folds",
     "article_uid": "a2",
@@ -122,47 +132,66 @@
     "timeseries_stats": [
       {
         "datetime": "2014-01-04 13:00:00",
-        "internal_twitter_shares": 2,
-        "internal_twitter_ids": [
-          "123456678910",
-          "123456678911"
-        ],
-        "internal_facebook_likes": 1,
-        "internal_facebook_post_ids": [
-          "123456678910"
-        ],
-        "internal_tumblr_posts": 0,
-        "internal_tumblr_post_ids": [],
-        "on_home_page": 1,
-        "twitter_shares": 123,
-        "facebook_likes": 123,
-        "tumblr_likes": 123,
-        "tumblr_reposts": 123,
-        "pageviews": 123,
-        "avg_time": 100,
-        "bounce_rate": 0.95,
-        "days_since_publication": 6,
-        "num_refers": 1,
-        "refer_urls": [
-          "http://example.com/"
-        ],
-        "events": [
-          {
-            "type": "mention",
-            "metadata": "TK"
-          }
-        ]
+        "facebook": 20,
+        "twitter": 20,
+        "pageviews": 0
+      },
+      {
+        "datetime": "2014-01-05 13:00:00",
+        "facebook": 200,
+        "twitter": 20,
+        "pageviews": 5000
+      },
+      {
+        "datetime": "2014-02-04 13:00:00",
+        "facebook": 200,
+        "twitter": 2000,
+        "pageviews": 10000
+      },
+      {
+        "datetime": "2014-03-04 13:00:00",
+        "facebook": 300,
+        "twitter": 3000,
+        "pageviews": 25000
+      },
+      {
+        "datetime": "2014-04-04 13:00:00",
+        "facebook": 40000,
+        "twitter": 3500,
+        "pageviews": 50000
+      },
+      {
+        "datetime": "2014-05-04 13:00:00",
+        "facebook": 50000,
+        "twitter": 4000,
+        "pageviews": 100000
       }
     ],
-    "events": [
-      {
-        "type": "mention",
-        "datetime": "2014-01-04 13:00:00",
-        "metadata": "TK"
-      }
-    ]
-  },
-  {
+		"events": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "citation",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			},
+			{
+				"datetime": "2014-04-02 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "change",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			}
+		]
+  },{
     "org_id": "propalpatine",
     "article_url": "http://www.propalpatine.org/article/Much-promise-for-new-Senate",
     "article_uid": "a3",
@@ -229,21 +258,32 @@
         "num_refers": 1,
         "refer_urls": [
           "http://example.com/"
-        ],
-        "events": [
-          {
-            "type": "mention",
-            "metadata": "TK"
-          }
         ]
       }
     ],
-    "events": [
-      {
-        "type": "mention",
-        "datetime": "2014-01-04 13:00:00",
-        "metadata": "TK"
-      }
-    ]
+		"events": [
+			{
+				"datetime": "2000-04-01 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "citation",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			},
+			{
+				"datetime": "2002-06-02 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"tags": [
+					{
+						"category": "change",
+						"attribute": "media"
+					}
+				],
+				"related_links": []
+			}
+		]
   }
 ]

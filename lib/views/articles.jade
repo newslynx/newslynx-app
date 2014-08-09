@@ -48,11 +48,8 @@ block templates
 							option an average article
 							option another thing
 			section(data-name="timeline")
-				h3.title When was this story posted to social media and how many times?
-				.description
-					p More people are posting this story on Facebook than on Twitter, which is unusual. Spikes occurred on Twitter on Jan 2 at 3pm and again at 8pm.
-				#timeline-container
-					img(src="images/dummy/timeline.png")
+				h3.title How many people saw it and when was it shared on social media?
+				#ST-chart
 			section(data-name="social-posts")
 				h3.title Who is posting this story to social media?
 				img(src="images/dummy/social-posts.png")
@@ -108,6 +105,9 @@ block templates
 		.article-detail-row-container
 			.destroy &times;
 
+block css
+	link(rel='stylesheet', href='/stylesheets/thirdparty/spotted-tail.css')
+
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
@@ -115,6 +115,7 @@ block bootstrap-data
 		pageData.articleSummaries =!{JSON.stringify(articleSummaries)};
 		pageData.articleRowDetails =!{JSON.stringify(articleRowDetails)};
 		pageData.articleDetails =!{JSON.stringify(articleDetails)};
+		pageData.eventSchemas =!{JSON.stringify(eventSchemas)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
@@ -122,4 +123,5 @@ block scripts
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
+	script(src="javascripts/thirdparty/spotted-tail.js")
 	script(src="javascripts/main.js")

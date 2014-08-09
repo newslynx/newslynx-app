@@ -1,0 +1,88 @@
+@import 'nib'
+
+#ST-chart
+	position relative
+	width 100%
+	min-height 200px
+
+.ST-canvas 
+	font 10px sans-serif
+
+.ST-canvas .ST-line 
+	fill none
+	stroke steelblue
+	stroke-width 1.5px
+
+.ST-canvas .ST-axis,.ST-canvas text
+	cursor default
+	-webkit-touch-callout none
+	-webkit-user-select none
+	-khtml-user-select none
+	-moz-user-select -moz-none
+	-ms-user-select none
+	user-select none
+
+.ST-canvas text
+	opacity .75
+
+.ST-canvas .ST-axis path,
+.ST-canvas .ST-axis line 
+	fill none
+	stroke #ccc
+	shape-rendering crispEdges
+
+.ST-canvas .ST-brush .extent 
+	stroke #fff
+	fill-opacity .125
+	shape-rendering crispEdges
+
+.ST-canvas .ST-point, .ST-canvas path, .ST-canvas line
+	pointer-events none
+
+.ST-canvas .ST-point circle 
+	fill #000
+.ST-canvas .ST-point text 
+	font-size 1.2em
+	text-shadow 0 0 6px #fff
+
+.ST-note line
+	stroke #ccc
+	stroke-width 1px
+
+.ST-note rect
+	fill none
+	pointer-events all
+
+.ST-note.ST-active line
+	stroke #000
+
+.ST-note.ST-active text
+	display block !important
+
+.ST-note-btns
+	position absolute
+	left 0
+	bottom 0
+	button
+		width 100%
+		display block
+
+.ST-y,.ST-brush
+	path.domain,.tick line
+		stroke none
+.ST-x
+	.tick
+		text
+			font-size 1.1em
+			transform translateY(5px)
+		line
+			stroke none
+
+.ST-category-timeline-hr
+	stroke #ccc
+	stroke-width 1px
+	shape-rendering crispEdges
+
+.ST-category-timeline-name
+	font-size 1.3em
+	font-weight 200

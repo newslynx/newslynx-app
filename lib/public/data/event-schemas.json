@@ -1,0 +1,33 @@
+[
+		{
+			"name": "Citation",
+			"properties": {
+				"color": "#fc0",
+				"subTypes": [
+					{"name": "City council", "color": "#fc1"}
+				]
+			}
+		},		{
+			"name": "Change",
+			"properties": {
+				"color": "#f0c",
+				"subTypes": [
+					{"name": "Legislative action", "color": "#f1c"}
+				]
+			}
+		},		{
+			"name": "Achievement",
+			"properties": {
+				"color": "#0cf",
+				"subTypes": [
+					{"name": "Best monthly traffic", "color": "#1cf"}
+				]
+			}
+		},		{
+			"name": "Other",
+			"properties": {
+				"color": "#cc",
+				"subTypes": []
+			}
+		}
+	]

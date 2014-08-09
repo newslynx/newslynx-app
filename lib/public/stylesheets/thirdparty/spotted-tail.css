@@ -1,8 +1,7 @@
 #ST-chart {
   position: relative;
   width: 100%;
-  max-width: 580px;
-  height: 200px;
+  min-height: 200px;
 }
 .ST-canvas {
   font: 10px sans-serif;
@@ -13,7 +12,7 @@
   stroke-width: 1.5px;
 }
 .ST-canvas .ST-axis,
-text {
+.ST-canvas text {
   cursor: default;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -25,10 +24,15 @@ text {
   -ms-user-select: none;
   user-select: none;
 }
+.ST-canvas text {
+  opacity: 0.75;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+  filter: alpha(opacity=75);
+}
 .ST-canvas .ST-axis path,
 .ST-canvas .ST-axis line {
   fill: none;
-  stroke: #000;
+  stroke: #ccc;
   shape-rendering: crispEdges;
 }
 .ST-canvas .ST-brush .extent {
@@ -42,8 +46,11 @@ text {
   pointer-events: none;
 }
 .ST-canvas .ST-point circle {
-  fill: none;
-  stroke: #444;
+  fill: #000;
+}
+.ST-canvas .ST-point text {
+  font-size: 1.2em;
+  text-shadow: 0 0 6px #fff;
 }
 .ST-note line {
   stroke: #ccc;
@@ -61,33 +68,36 @@ text {
 }
 .ST-note-btns {
   position: absolute;
-  right: 10px;
+  left: 0;
   bottom: 0;
 }
-/* User styles */
-.ST-note-btns {
-  width: 50px;
+.ST-note-btns button {
+  width: 100%;
+  display: block;
 }
-#ST-chart button {
-  background: transparent;
-  border: none;
-  float: right;
-  cursor: pointer;
-  width: 50px;
-  padding: 0;
-  margin: 5px 0 0 0;
-  border: 1px solid #ccc;
-  text-shadow: 0 2px 1px rgba(0,0,0,0.3);
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
-  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.15);
-  box-shadow: 0 2px 2px rgba(0,0,0,0.15);
-  background-color: #f8f8f8;
+.ST-y path.domain,
+.ST-brush path.domain,
+.ST-y .tick line,
+.ST-brush .tick line {
+  stroke: none;
 }
-#ST-chart button:hover {
-  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.25);
-  box-shadow: 0 2px 2px rgba(0,0,0,0.25);
+.ST-x .tick text {
+  font-size: 1.1em;
+  -webkit-transform: translateY(5px);
+  -moz-transform: translateY(5px);
+  -o-transform: translateY(5px);
+  -ms-transform: translateY(5px);
+  transform: translateY(5px);
 }
-#ST-chart button:active {
-  background-color: #ededed;
+.ST-x .tick line {
+  stroke: none;
+}
+.ST-category-timeline-hr {
+  stroke: #ccc;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.ST-category-timeline-name {
+  font-size: 1.3em;
+  font-weight: 200;
 }

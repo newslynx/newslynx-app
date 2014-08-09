@@ -735,6 +735,11 @@ input {
   display: inline;
   margin-left: 10px;
 }
+.article-detail-container #ST-chart {
+  max-width: 960px;
+  height: 500px;
+  margin-bottom: 50px;
+}
 /* end main article styles */
 /* A R T I C L E  R O W */
 .article-detail-row-wrapper {
