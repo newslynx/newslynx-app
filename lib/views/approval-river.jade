@@ -38,36 +38,36 @@ block templates
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= countAssociatedItems(uid, 'recipe_uid', 'riverItems') %> pending
+				.count <%= countAssociatedItems(uid, 'source', 'riverItems') %> pending
 				.title <%= settings.name %>
 				.description <%= settings.search_query %>
 				.toolbar
 					.btn.settings-switch
 						span.fa.fa-cog
 						span.text  Edit
-					|<span class="service-icon" data-service="<%= toLowerCase(service) %>"></span>
+					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span>
 					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
 					.title Recipe settings
 					form
-						<%= bakeRecipeUpdateForm(uid, service, settings) %>
+						<%= bakeRecipeUpdateForm(uid, source, settings) %>
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Save")
 
 	script(type="text/jst")#recipe-creator-templ
-		|<div class="drawer-list-outer scroll-to" data-destination="<%= toLowerCase(service) %>">
+		|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
 		.drawer-list-inner
-			.title <%= service %>
+			.title <%= prettyPrintSource(source) %>
 		|</div>
 
 	script(type="text/jst")#recipe-form-templ
 		.recipe-form-container
-			|<div class="title" id="<%= toLowerCase(service) %>-recipe"><span class="service-icon" data-service="<%= toLowerCase(service) %>"></span><span class="text">New <%= service %> recipe</span></div>
+			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
-				<%= bakeForm(service, schema) %>
+				<%= bakeForm(source, schema) %>
 				.buttons-container
 					input.save(type="submit", value="Save")
 
@@ -79,10 +79,10 @@ block templates
 				.approval-btn-container(data-which="no")
 					.approval-btn ×
 			.approval-child(data-which="info")
-				.title <%= title %>
+				.title <%= name %>
 				.description The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.
 				.toolbar
-					.origin-recipe From recipe: <%= recipe_uid %>
+					.origin-recipe From recipe: <%= uid %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner

@@ -919,6 +919,9 @@ input {
 .form-row {
   padding-bottom: 5px;
 }
+.form-row input {
+  margin-left: 0;
+}
 .buttons-container button,
 .buttons-container input[type="submit"] {
   margin: 0 3px 0 0;
