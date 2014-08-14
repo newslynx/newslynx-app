@@ -1,0 +1,29 @@
+[
+  {
+    "source": "r1",
+    "uid": "a1",
+    "datetime": "2014-04-02 12:02:01",
+	  "name": "Empire declares ProPalpatine best news site",
+	  "link": "http://empire.all/awards.html",
+	  "text": "The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions."
+  },{
+    "source": "r2",
+    "uid": "a2",
+    "datetime": "2014-03-02 12:02:01",
+	  "name": "ProPalpatine wins Coruscant award",
+	  "link": "http://empire.all/awards.html",
+	  "text": "The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions."
+  },{
+    "source": "r3",
+    "uid": "a3",
+    "datetime": "2014-01-02 12:02:01",
+	  "name": "ProPalpatine exposes anti-fracking movement's ties to the Rebels",
+	  "link": "http://empire.all/awards.html"
+  },{
+    "source": "r3",
+    "uid": "a4",
+    "datetime": "2014-01-01 12:02:01",
+	  "name": "PropPalpatine readers find rebel base on Hoth through Viper probe droid sensor journalism project",
+	  "link": "http://empire.all/awards.html"
+  }
+]

@@ -1,0 +1,152 @@
+[
+	{
+		"source": "google-alert",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"search_query": {
+				"type": "text",
+				"help": {
+					"hint": "Help text tk"
+				}
+			},
+			"result_type": {
+				"type": "select",
+				"options": [
+					"Everything",
+					"News",
+					"Blogs",
+					"Video",
+					"Discussion",
+					"Books"
+				]
+			},
+			"language": {
+				"type": "select",
+				"options": [
+					"English",
+					"Spanish",
+					"Esperanto"
+				]
+			},
+			"region": {
+				"type": "select",
+				"options": [
+					"Any"
+				]
+			},
+			"how_many": {
+				"type": "select",
+				"options": [
+					"Only the best results",
+					"All results"
+				]
+			}
+		}
+	},{
+		"source": "twitter-search",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"q": {
+				"type": "text",
+				"help": {
+					"link": "https://dev.twitter.com/docs/using-search"
+				}
+			},
+			"result_type": {
+				"type": "select",
+				"options": [
+					"TKTK",
+					"TKTK"
+				]
+			}
+		}
+	},{
+		"source": "twitter-list",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"owner_screen_name": {
+				"type": "text",
+				"help": {
+					"hint": "cspan"
+				}
+			},
+			"slug": {
+				"type": "text",
+				"help": {
+					"hint": "members-of-congress"
+				}
+			}
+		}
+	},{
+		"source": "twitter-user",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"screen_name": {
+				"type": "text",
+				"help": {
+					"hint": "NYTimes"
+				}
+			}
+		}
+	},{
+		"source": "reddit-search",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"search_query": {
+				"type": "text",
+				"help": {
+					"link": "http://www.reddit.com/wiki/search",
+					"hint": "site:propalpatine.org AND \"rebel alliance\""
+				}
+			}
+		}
+	},{
+		"source": "facebook-page",
+		"schema": {
+			"requires_approval": {
+				"type": "checkbox",
+				"selected": true
+			},
+			"name": {
+				"type": "text"
+			},
+			"page_id": {
+				"type": "text",
+				"help": {
+					"link": "http://github.com/newslynx/wiki/ TKTK",
+					"hint": "site:propalpatine.org AND \"rebel alliance\""
+				}
+			}
+		}
+	}
+]
