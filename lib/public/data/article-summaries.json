@@ -1,58 +1,138 @@
 [
   {
-    "article_uid": "a1",
-    "pub_date": "2014-06-13",
-    "headline": "Senate's vote overwhelmingly favors Empire",
-    "author": "Darth Sidious",
-    "tags": [
-      "tag 1",
-      "tag 2"
-    ],
-    "pageviews": 1000,
-    "fb_shares": 500,
-    "fb_likes": 2000,
-    "twitter_mentions": 750
-  },
-  {
-    "article_uid": "a2",
-    "pub_date": "2014-06-10",
-    "headline": "Naboo deal folds",
-    "author": "Darth Sidious",
-    "tags": [
-      "tag 2",
-      "tag 3"
-    ],
-    "pageviews": 300,
-    "fb_shares": 100,
-    "fb_likes": 1000,
-    "twitter_mentions": 5000
-  },
-  {
-    "article_uid": "a3",
-    "pub_date": "2014-05-10",
-    "headline": "Much promise for new Senate",
-    "author": "Tarsus Valorum",
-    "tags": [
-      "tag 1",
-      "tag 4"
-    ],
-    "pageviews": 8000,
-    "fb_shares": 200,
-    "fb_likes": 500,
-    "twitter_mentions": 4000
-  },
-  {
-    "article_uid": "a4",
-    "pub_date": "2014-05-11",
-    "headline": "Article to be fetched",
-    "author": "Tarsus Valorum",
-    "tags": [
-      "tag 1",
-      "tag 4"
-    ],
-    "pageviews": 8000,
-    "fb_shares": 200,
-    "fb_likes": 500,
-    "twitter_mentions": 4000
-  }
+		"uid": "art1",
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"datetime": "2014-06-13",
+		"quant_metrics": [
+			{
+				"metric": "Twitter",
+				"count": 2
+			},{
+				"metric": "Facebook",
+				"count": 344
+			},{
+				"metric": "pageviews",
+				"count": 500
+			},{
+				"metric": "time-on-page",
+				"count": 88
+			},{
+				"metric": "internal",
+				"count": 232
+			},{
+				"metric": "external",
+				"count": 32
+			}
+		],
+		"qual_metrics": [
+			{
+				"metric": "subject-tags",
+				"id": "st1"
+			},{
+				"metric": "subject-tags",
+				"id": "st2"
+			},{
+				"metric": "impact-tags",
+				"id": "it1"
+			},{
+				"metric": "impact-tags",
+				"id": "it2"
+			}
+		]
+	},{
+		"uid": "art2",
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"title": "Naboo deal folds",
+		"datetime": "2014-06-10",
+		"quant_metrics": [
+			{
+				"metric": "Twitter",
+				"count": 4
+			},{
+				"metric": "Facebook",
+				"count": 244
+			},{
+				"metric": "pageviews",
+				"count": 750
+			},{
+				"metric": "time-on-page",
+				"count": 880
+			},{
+				"metric": "internal",
+				"count": 132
+			},{
+				"metric": "external",
+				"count": 12
+			}
+		],
+		"qual_metrics": [
+			{
+				"metric": "subject-tags",
+				"id": "st1"
+			},{
+				"metric": "subject-tags",
+				"id": "st2"
+			},{
+				"metric": "impact-tags",
+				"id": "it1"
+			},{
+				"metric": "impact-tags",
+				"id": "it2"
+			}
+		]
+	},{
+		"uid": "art3",
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"title": "Much promise for new Senate",
+		"datetime": "2014-05-10",
+		"quant_metrics": [
+			{
+				"metric": "Twitter",
+				"count": 40
+			},{
+				"metric": "Facebook",
+				"count": 214
+			},{
+				"metric": "pageviews",
+				"count": 700
+			},{
+				"metric": "time-on-page",
+				"count": 700
+			},{
+				"metric": "internal",
+				"count": 82
+			},{
+				"metric": "external",
+				"count": 120
+			}
+		],
+		"qual_metrics": [
+			{
+				"metric": "subject-tags",
+				"id": "st1"
+			},{
+				"metric": "subject-tags",
+				"id": "st2"
+			},{
+				"metric": "impact-tags",
+				"id": "it1"
+			},{
+				"metric": "impact-tags",
+				"id": "it2"
+			}
+		]
+	}
 ]
