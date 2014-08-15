@@ -1,0 +1,28 @@
+{
+	"subject": [
+		{
+			"uid": "st1",
+			"name": "Fracking",
+			"color": "#fc0"
+		},{
+			"uid": "st2",
+			"name": "Rebels",
+			"color": "#f0c"
+		}
+	],
+	"impact": [
+		{
+			"uid": "it1",
+			"name": "Mentioned by congress",
+			"category": "citation", 
+			"type": "institution",
+			"color": "#0cf"
+		},{
+			"uid": "it2",
+			"name": "Mentioned by Chancellor",
+			"category": "citation", 
+			"type": "institution",
+			"color": "#c0f"
+		}
+	]
+}

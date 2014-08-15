@@ -1,0 +1,147 @@
+[
+	{
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"uid": "a1",
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"datetime": "2014-06-13",
+		"aggregate_stats": {
+			"internal_referrer_percent": 43,
+			"internal_referrer_percent": 57,
+			"top_twitter_referrers": [],
+			"top_fb_referrers": []
+		},
+		"timeseries_stats": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			},
+			{
+				"datetime": "2014-02-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			}
+		],
+		"subject_tags": ["st1"],
+		"events": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"impact_tags": ["it1"],
+				"related_links": []
+			},
+			{
+				"datetime": "2002-06-02 13:00:00",
+				"name": "Congress talked about us",
+				"impact_tags": ["it2"],
+				"related_links": []
+			}
+		]
+	},{
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"uid": "a1",
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"datetime": "2014-06-13",
+		"aggregate_stats": {
+			"internal_referrer_percent": 43,
+			"internal_referrer_percent": 57,
+			"top_twitter_referrers": [],
+			"top_fb_referrers": []
+		},
+		"timeseries_stats": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			},
+			{
+				"datetime": "2014-02-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			}
+		],
+		"subject_tags": ["st1"],
+		"events": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"impact_tags": ["it1"],
+				"related_links": []
+			},
+			{
+				"datetime": "2002-06-02 13:00:00",
+				"name": "Congress talked about us",
+				"impact_tags": ["it2"],
+				"related_links": []
+			}
+		]
+	},{
+		"org_id": "propalpatine",
+		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
+		"uid": "a1",
+		"title": "Senators vote overwhelmingly in favor of Empire",
+		"authors": [
+			"Darth Sidious"
+		],
+		"datetime": "2014-06-13",
+		"aggregate_stats": {
+			"internal_referrer_percent": 43,
+			"internal_referrer_percent": 57,
+			"top_twitter_referrers": [],
+			"top_fb_referrers": []
+		},
+		"timeseries_stats": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			},
+			{
+				"datetime": "2014-02-04 13:00:00",
+				"twitter_shares": 123,
+				"facebook_likes": 123,
+				"pageviews": 123,
+				"avg_time": 100,
+				"bounce_rate": 0.95,
+			}
+		],
+		"subject_tags": ["st1"],
+		"events": [
+			{
+				"datetime": "2014-01-04 13:00:00",
+				"name": "Jon Stewart talked about us",
+				"impact_tags": ["it1"],
+				"related_links": []
+			},
+			{
+				"datetime": "2002-06-02 13:00:00",
+				"name": "Congress talked about us",
+				"impact_tags": ["it2"],
+				"related_links": []
+			}
+		]
+	}
+]

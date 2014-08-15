@@ -19,12 +19,12 @@ block templates
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.pub-date <%= date(pub_date) %>
-				.title <%= headline %>
+				.pub-date <%= date(datetime) %>
+				.title <%= title %>
 
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
-			.pub-date <%= date(pub_datetime) %>
+			.pub-date <%= date(datetime) %>
 			h2.headline <%= title %>
 			.tag-container
 				.tag-title Tags:
@@ -113,7 +113,6 @@ block bootstrap-data
 		var pageData = {};
 		pageData.org =!{JSON.stringify(org)};
 		pageData.articleSummaries =!{JSON.stringify(articleSummaries)};
-		pageData.articleRowDetails =!{JSON.stringify(articleRowDetails)};
 		pageData.articleDetails =!{JSON.stringify(articleDetails)};
 		pageData.eventSchemas =!{JSON.stringify(eventSchemas)};
 

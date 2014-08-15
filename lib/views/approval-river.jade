@@ -96,6 +96,7 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
+		pageData.org =!{JSON.stringify(org)};   
 		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
 		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.riverItems =!{JSON.stringify(riverItems)};   
