@@ -2,7 +2,8 @@
 	{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "a1",
+		"uid": "artD1",
+		"article_uid": "art1",
 		"title": "Senators vote overwhelmingly in favor of Empire",
 		"authors": [
 			"Darth Sidious"
@@ -50,12 +51,13 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "a1",
-		"title": "Senators vote overwhelmingly in favor of Empire",
+		"uid": "artD2",
+		"article_uid": "art2",
+		"title": "Nabool deal folds",
 		"authors": [
 			"Darth Sidious"
 		],
-		"datetime": "2014-06-13",
+    "datetime": "2014-06-10",
 		"aggregate_stats": {
 			"internal_referrer_percent": 43,
 			"internal_referrer_percent": 57,
@@ -98,12 +100,13 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "a1",
-		"title": "Senators vote overwhelmingly in favor of Empire",
+		"uid": "artD3",
+		"article_uid": "art3",
+		"title": "Much promise for new Senate",
 		"authors": [
 			"Darth Sidious"
 		],
-		"datetime": "2014-06-13",
+    "datetime": "2014-05-10",
 		"aggregate_stats": {
 			"internal_referrer_percent": 43,
 			"internal_referrer_percent": 57,

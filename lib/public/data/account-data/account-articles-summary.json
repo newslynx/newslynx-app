@@ -10,11 +10,11 @@
     "datetime": "2014-06-13",
     "quant_metrics": [
       {
-        "metric": "Twitter",
+        "metric": "twitter",
         "count": 2
       },
       {
-        "metric": "Facebook",
+        "metric": "facebook",
         "count": 344
       },
       {
@@ -50,6 +50,10 @@
       {
         "metric": "impact-tags",
         "id": "it2"
+      },
+      {
+        "metric": "impact-tags",
+        "id": "it3"
       }
     ]
   },
@@ -64,11 +68,11 @@
     "datetime": "2014-06-10",
     "quant_metrics": [
       {
-        "metric": "Twitter",
+        "metric": "twitter",
         "count": 4
       },
       {
-        "metric": "Facebook",
+        "metric": "facebook",
         "count": 244
       },
       {
@@ -118,11 +122,11 @@
     "datetime": "2014-05-10",
     "quant_metrics": [
       {
-        "metric": "Twitter",
+        "metric": "twitter",
         "count": 40
       },
       {
-        "metric": "Facebook",
+        "metric": "facebook",
         "count": 214
       },
       {

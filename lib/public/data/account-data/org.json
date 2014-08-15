@@ -47,9 +47,14 @@
   },
   "subject_tags": [
     {
-      "uid": "st1",
+      "uid": "st2",
       "name": "Fracking",
       "color": "#fc0"
+    },
+    {
+      "uid": "st1",
+      "name": "Fracking",
+      "color": "#f0c"
     }
   ],
   "impact_tags": [
@@ -59,6 +64,20 @@
       "category": "citation",
       "type": "institution",
       "color": "#0cf"
+    },
+    {
+      "uid": "it2",
+      "name": "Mentioned by congress",
+      "category": "citation",
+      "type": "institution",
+      "color": "#0fc"
+    },
+    {
+      "uid": "it3",
+      "name": "Bill passed",
+      "category": "change",
+      "type": "institution",
+      "color": "#c0f"
     }
   ]
 }
