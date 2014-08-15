@@ -4,7 +4,7 @@
     "enabled": true,
     "source": "reddit-search",
     "settings": {
-    	"requires_approval": true,
+      "requires_approval": true,
       "name": "Domain mentions on Reddit",
       "search_query": "propalpatine.org"
     }
@@ -14,7 +14,7 @@
     "enabled": true,
     "source": "google-alert",
     "settings": {
-    	"requires_approval": true,
+      "requires_approval": true,
       "name": "Media site mentions",
       "search_query": "\"ProPalpatine\"",
       "result_type": "Everything",
@@ -28,7 +28,7 @@
     "enabled": true,
     "source": "google-alert",
     "settings": {
-    	"requires_approval": true,
+      "requires_approval": true,
       "name": "Fracking coverage",
       "search_query": "\"ProPalpatine\" AND \"Fracking\"",
       "result_type": "Everything",
