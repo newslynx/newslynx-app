@@ -29,7 +29,9 @@ block templates
 			.tag-container
 				.tag-title Tags:
 				ul.tags
-					li.tag Environmental reporting
+					<% _.each(subject_tags, function(subject_tag){ %>
+					|<li class="tag" style="background-color:<%= subject_tag.color %>;"><%= subject_tag.name %></li>
+					<% }) %>
 				.edit-tags
 					button Edit
 			.toolbar
