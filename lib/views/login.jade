@@ -8,8 +8,7 @@ block drawer
 			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
 
 block content
-	if req.user
-		h3 Hello #{req.user.name}
+	if apikey
 		p You have successfully logged in!
 	else
 		form(action='/login', method='POST')#login
@@ -21,3 +20,6 @@ block content
 				input(type='password', name='password')
 			div
 				input(type='submit', value='Log In')
+			if err_msg
+				div.error Login failed! 
+					span= err_msg
