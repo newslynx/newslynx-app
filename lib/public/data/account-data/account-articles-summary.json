@@ -1,6 +1,7 @@
 [
   {
     "uid": "art1",
+    "article_uid": "art1",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
@@ -79,6 +80,7 @@
   },
   {
     "uid": "art2",
+    "article_uid": "art2",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
@@ -133,6 +135,7 @@
   },
   {
     "uid": "art3",
+    "article_uid": "art3",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
