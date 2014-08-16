@@ -45,15 +45,40 @@
     "google": [],
     "twitter": []
   },
-  "subject_tags": [
+ "subject_tags": [
     {
-      "uid": "st2",
+      "uid": "st1",
       "name": "Fracking",
       "color": "#fc0"
     },
     {
-      "uid": "st1",
-      "name": "Fracking",
+      "uid": "st2",
+      "name": "Rebels",
+      "color": "#f0c"
+    },
+    {
+      "uid": "st3",
+      "name": "Hoth",
+      "color": "#f0c"
+    },
+    {
+      "uid": "st4",
+      "name": "Bounty hunters",
+      "color": "#f0c"
+    },
+    {
+      "uid": "st5",
+      "name": "Greedo",
+      "color": "#f0c"
+    },
+    {
+      "uid": "st6",
+      "name": "Millenium Falcon Ops",
+      "color": "#f0c"
+    },
+    {
+      "uid": "st7",
+      "name": "The Force",
       "color": "#f0c"
     }
   ],
@@ -67,17 +92,47 @@
     },
     {
       "uid": "it2",
-      "name": "Mentioned by congress",
+      "name": "Mentioned by Chancellor",
       "category": "citation",
       "type": "institution",
-      "color": "#0fc"
+      "color": "#c0f"
     },
     {
       "uid": "it3",
-      "name": "Bill passed",
+      "name": "Force grown",
       "category": "change",
-      "type": "institution",
+      "type": "community",
       "color": "#c0f"
     }
-  ]
+  ],
+  "metric_maxes": [
+		{
+			"metric": "twitter_mentions",
+			"max": 1000
+		},
+		{
+			"metric": "facebook_shares",
+			"max": 1000
+		},
+		{
+			"metric": "facebook_likes",
+			"max": 1000
+		},
+		{
+			"metric": "pageviews",
+			"max": 1000
+		},
+		{
+			"metric": "time_on_page",
+			"max": 1000
+		},
+		{
+			"metric": "internal_traffic_percent",
+			"max": 1000
+		},
+		{
+			"metric": "external_traffic_percent",
+			"max": 1000
+		}
+	]
 }

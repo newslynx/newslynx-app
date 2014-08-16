@@ -36,23 +36,43 @@
     ],
     "qual_metrics": [
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st1"
       },
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st2"
       },
       {
-        "metric": "impact-tags",
+        "metric": "subject_tags",
+        "id": "st3"
+      },
+      {
+        "metric": "subject_tags",
+        "id": "st4"
+      },
+      {
+        "metric": "subject_tags",
+        "id": "st5"
+      },
+      {
+        "metric": "subject_tags",
+        "id": "st6"
+      },
+      {
+        "metric": "subject_tags",
+        "id": "st7"
+      },
+      {
+        "metric": "impact_tags",
         "id": "it1"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it2"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it3"
       }
     ]
@@ -94,19 +114,19 @@
     ],
     "qual_metrics": [
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st1"
       },
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st2"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it1"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it2"
       }
     ]
@@ -148,19 +168,19 @@
     ],
     "qual_metrics": [
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st1"
       },
       {
-        "metric": "subject-tags",
+        "metric": "subject_tags",
         "id": "st2"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it1"
       },
       {
-        "metric": "impact-tags",
+        "metric": "impact_tags",
         "id": "it2"
       }
     ]
