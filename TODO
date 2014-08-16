@@ -1,4 +1,0 @@
-* possibly rework controller logic so that click events update hash, hash represents the collection which sets model states
-	* click events alter hash based on data attribute such as radio, checkbox
-	* data attribute determined by state model
-* Default state is everything is active
