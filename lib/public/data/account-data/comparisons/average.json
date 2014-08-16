@@ -1,0 +1,30 @@
+[
+	{
+		"metric": "twitter_mentions",
+		"value": 500
+	},
+	{
+		"metric": "facebook_shares",
+		"value": 500
+	},
+	{
+		"metric": "facebook_likes",
+		"value": 500
+	},
+	{
+		"metric": "pageviews",
+		"value": 500
+	},
+	{
+		"metric": "time_on_page",
+		"value": 500
+	},
+	{
+		"metric": "internal_traffic_percent",
+		"value": 500
+	},
+	{
+		"metric": "external_traffic_percent",
+		"value": 500
+	}
+]
