@@ -128,14 +128,14 @@ block templates
 					a(href="/about") Read our data retention policy for more information.
 				.setting-group
 					.setting-title Authenticated
-					if req.user.oAuthTokens.length
-						p.auth-result.success Yes
-					else
-						p.auth-result.fail No
-						a(href='/auth/google').authenticate
-							button Grant access
-							//- form(action='/organizations/settings', method='POST')
-							//- 	!= form
+					//- if req.user.oAuthTokens.length
+					//- 	p.auth-result.success Yes
+					//- else
+					p.auth-result.fail No
+					a(href='/auth/google').authenticate
+						button Grant access
+						//- form(action='/organizations/settings', method='POST')
+						//- 	!= form
 			.save-container
 				input(type="submit" value="Save changes")#save
 

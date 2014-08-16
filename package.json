@@ -23,7 +23,8 @@
     "serve-favicon": "~2.0.1",
     "stylus": "0.42.3",
     "underscore": "1.6.x",
-    "validator": "3.x"
+    "validator": "3.x",
+    "tracer": "~0.7.1"
   },
   "devDependencies": {
     "nodemon": "1.x"
