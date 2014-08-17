@@ -106,7 +106,7 @@
       "name": "Mentioned by congress",
       "category": "citation",
       "type": "institution",
-      "color": "#0cf",
+      "color": "#fc0",
       "articles": 5
     },
     {
@@ -114,7 +114,7 @@
       "name": "Mentioned by Chancellor",
       "category": "citation",
       "type": "institution",
-      "color": "#c0f",
+      "color": "#f0a",
       "articles": 3
     },
     {
