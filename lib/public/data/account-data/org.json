@@ -33,12 +33,24 @@
     {
       "owner_screen_name": "ProPalpatine",
       "slug": "propalpatine-staff"
+    },
+    {
+      "owner_screen_name": "ProPalpatine",
+      "slug": "propalpatine-enemies"
+    },
+    {
+      "owner_screen_name": "ProPalpatine",
+      "slug": "mos-eisley-regulars"
     }
   ],
   "facebook_accounts": [
     {
       "page_id": "propalpatine",
       "is_main": true
+    },
+    {
+      "page_id": "mos-eisley-bar",
+      "is_main": false
     }
   ],
   "google_alerts": [

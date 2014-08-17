@@ -74,7 +74,7 @@ block templates
 						<%  for (var i = 0; i < twitter_staff_list.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner %>" class="multi-child double" data-key="owner"/>
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
 							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" data-key="slug"/>
 						<% } %>
 					button.add Add
@@ -86,7 +86,7 @@ block templates
 						<%  for (var i = 0; i < twitter_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].screen_name %>" class="multi-child" data-key="screen_name" />
 							|<input class="input-item" type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add				
@@ -97,7 +97,7 @@ block templates
 						<%  for (var i = 0; i < facebook_accounts.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].handle %>" class="multi-child" data-key="handle" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= facebook_accounts[i].page_id %>" class="multi-child" data-key="page_id" />
 							|<input class="input-item" type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add
