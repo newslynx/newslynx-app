@@ -1,15 +1,20 @@
-{
-  "user_name": "ProPalpatine",
-  "domain": "ProPalpatine.org",
-  "email": "merlynne@propalpatine.org",
-  "password": "",
-  "api_key": "",
-  "org_id": "propalpatine",
-  "homepage": "http://www.propalpatine.org/",
-  "timezone": "-7",
-  "short_urls": [
-    "propalp.tn"
-  ],
+{ 
+  "user": {
+    "user_name": "ProPalpatine",
+    "domain": "ProPalpatine.org",
+    "email": "merlynne@propalpatine.org",
+    "password": "",
+    "api_key": "",
+    "org_id": "propalpatine",
+    "homepage": "http://www.propalpatine.org/",
+    "timezone": "-7",
+    "google_auth": false,
+    "twitter_auth": false,
+    "facebook_auth": false,
+    "short_urls": [
+      "propalp.tn"
+    ]   
+  },
   "rss_feeds": [
     {
       "url": " http://feeds.propalpatine.org/propalpatine/main?format=xml",
@@ -41,10 +46,6 @@
   "google_alerts": [
     "http://www.google.com/alerts/feeds/14752688329844321840/4874425503898649357"
   ],
-  "tokens": {
-    "google": [],
-    "twitter": []
-  },
  "subject_tags": [
     {
       "uid": "st1",
