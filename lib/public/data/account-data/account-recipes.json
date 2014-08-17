@@ -1,6 +1,7 @@
 [
   {
     "uid": "r1",
+    "pending_alerts": ["alt1", "alt2"],
     "enabled": true,
     "source": "reddit-search",
     "settings": {
@@ -11,6 +12,7 @@
   },
   {
     "uid": "r2",
+    "pending_alerts": ["alt2", "alt3"],
     "enabled": true,
     "source": "google-alert",
     "settings": {
@@ -25,6 +27,7 @@
   },
   {
     "uid": "r3",
+    "pending_alerts": ["alt4", "alt5"],
     "enabled": true,
     "source": "google-alert",
     "settings": {
