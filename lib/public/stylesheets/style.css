@@ -1108,6 +1108,7 @@ button.add {
   padding: 0;
   border: none;
   background: transparent;
+  vertical-align: bottom;
 }
 .sp-container {
   border-color: #ccc;
