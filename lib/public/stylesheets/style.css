@@ -142,8 +142,9 @@ body[data-modal=true] {
   padding-right: 5px;
 }
 #left-rail #header-container .settings a {
-  padding: 0 6px 0 6px;
-  font-size: 1.6em;
+  padding: 0 7px 0 7px;
+  font-size: 1.8em;
+  margin-top: -2px;
   color: #9e9e9e;
 }
 #left-rail #header-container .settings a:hover {
