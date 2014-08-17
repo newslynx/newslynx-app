@@ -109,7 +109,7 @@ block templates
 						<%  for (var i = 0; i < subject_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" />
+							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-uid="<%= subject_tags[i].uid %>" />
 							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
@@ -121,14 +121,14 @@ block templates
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
-							|<select name='category' class="input-item multi-child">
+							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name" data-uid="<%= impact_tags[i].uid %>"/>
+							|<select name='category' class="input-item multi-child" data-key="category">
 							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Citation</option>
 							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Change</option>
 							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Achievement</option>
 							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Other</option>
 							|</select>
-							|<select name='attribute' class="input-item multi-child">
+							|<select name='attribute' class="input-item multi-child" data-key="attribute">
 							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Institutional</option>
 							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Community</option>
 							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Individual</option>
@@ -150,8 +150,6 @@ block templates
 					p.auth-result.fail No
 					a(href='/auth/google').authenticate
 						button Grant access
-						//- form(action='/organizations/settings', method='POST')
-						//- 	!= form
 			.save-container
 				input(type="submit" value="Save changes")#save
 
@@ -181,7 +179,7 @@ block templates
 			<% } else if (flag == 'checkbox') { %>
 			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'color') { %>
-			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" data-group="'+group+'" data-key="'+keys[1]+'"/>') %>
+			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="'+group+'" data-key="'+keys[1]+'" data-uid="false" />') %>
 			<% } %>
 
 	script(type="text/jst")#multi-input-double-templ
@@ -194,21 +192,21 @@ block templates
 	script(type="text/jst")#impact-tag-input-templ
 		li.input.multi
 			.multi-child.destroy &times;
-			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name"/>
-			|<select name='category' class="input-item multi-child">
+			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-uid="false"/>
+			|<select name='category' class="input-item multi-child" data-key="category">
 			|<option value='citation' selected> Citation</option>
 			|<option value='change'>Change</option>
 			|<option value='achievement'>Achievement</option>
 			|<option value='other'>Other</option>
 			|</select>
-			|<select name='attribute' class="input-item multi-child">
+			|<select name='attribute' class="input-item multi-child" data-key="attribute">
 			|<option value='citation' selected> Institutional</option>
 			|<option value='change'>Community</option>
 			|<option value='achievement'>Individual</option>
 			|<option value='other'>Internal</option>
 			|<option value='other'>Media</option>
 			|</select>
-			|<input class="input-item color-picker" type="text" data-color="#ccc" data-group="impact" data-key="color"/>
+			|<input class="input-item color-picker" type="text" data-color="#ccc" value="#ccc" data-group="impact" data-key="color"/>
 
 block bootstrap-data
 	script(id="page-data").
