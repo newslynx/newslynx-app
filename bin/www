@@ -1,12 +1,26 @@
 #!/usr/bin/env node
 
 var _ = require('underscore');
-var debug = require('debug')('newslynx-app');
+// var debug = require('debug')('newslynx-app');
 var app = require('../lib/app');
+var http = require('http');
+var https = require('https');
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  message = _.template('Express server listening on port <%= port %> (<%= env %>)')
-  debug(message({port: server.address().port, env: app.get('env')}));
-});
+function launchServers(options){
+	var http_server = http.createServer(app).listen( app.get('port') )
+	// var https_server = https.createServer(https_options, app).listen( app.get('port') );
+
+	// var http_server = http.createServer(app).listen(app.get('port'), function() {
+	//   message = _.template('Express server listening on port <%= port %> (<%= env %>)')
+	//   debug(message({port: server.address().port, env: app.get('env')}));
+	// });
+}
+
+var https_options = {
+	key:'keyFile',
+	cert:'certFile'
+}
+
+launchServers();

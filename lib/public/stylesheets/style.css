@@ -316,7 +316,7 @@ body[data-section="login"] #drawer {
 }
 /* end section specific styles */
 /* D R A W E R */
-body[data-section="settings"] #content {
+body[data-section="login"] #content {
   padding: 15px;
 }
 #drawer p {
