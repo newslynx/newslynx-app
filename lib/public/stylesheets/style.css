@@ -40,6 +40,9 @@ ul {
   -webkit-margin-end: 0px;
   -webkit-padding-start: 0;
 }
+p {
+  margin: 0;
+}
 input[type="search"] {
   -webkit-appearance: searchfield;
   -moz-appearance: searchfield;
@@ -1029,8 +1032,10 @@ body[data-section="settings"] #content {
 }
 .setting-description {
   font-size: 1.2em;
-  margin-bottom: 5px;
   color: #7c7c7c;
+}
+.setting-description p {
+  margin-bottom: 5px;
 }
 .setting-title,
 .inputs-container,
@@ -1071,6 +1076,9 @@ body[data-section="settings"] #content {
 }
 #settings .input.multi {
   margin-left: 0;
+}
+#account-authentication .setting-group {
+  margin-top: 20px;
 }
 .setting-flag {
   font-size: 1.2em;
@@ -1151,9 +1159,14 @@ button.add {
   padding-top: 10px;
   border-top: 1px solid #ccc;
 }
+.auth-container {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+}
 .auth-result {
-  font-size: 1.2em;
-  display: inline;
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
 .success {
   color: #529624;

@@ -29,6 +29,9 @@ h1,h2,h3,h4,ul
 	-webkit-margin-end 0px
 	-webkit-padding-start 0
 
+p
+	margin 0
+
 
 input[type="search"]
 	appearance searchfield
@@ -849,8 +852,9 @@ select_width = 76px
 	// background-color #fc0
 .setting-description
 	font-size 1.2em
-	margin-bottom 5px
 	color bg_gray
+.setting-description p
+	margin-bottom 5px
 .setting-title,.inputs-container,.multi-child,.color-picker
 	display inline-block
 	vertical-align top
@@ -875,7 +879,9 @@ select_width = 76px
 		height 20px
 	.input.multi
 		margin-left 0
-
+#account-authentication
+	.setting-group
+		margin-top 20px
 .setting-flag
 	font-size 1.2em
 	font-weight bold
@@ -936,9 +942,13 @@ button.add
 	margin-top 10px
 	padding-top 10px
 	border-top 1px solid #ccc
+.auth-container
+	display inline-block
+	vertical-align top
+	margin-left destroy_width
 .auth-result
-	font-size 1.2em
-	display inline
+	font-size 1.3em
+	margin-bottom 10px
 .success
 	color enable_green
 .fail
