@@ -5,6 +5,9 @@ block drawer
 	.division-description
 		p Here you can change your account settings to track new Twitter or Facebook accounts or alert your Google Authentication
 
+//- The settings template works by looking for `.inputs-container` items which are nodes in the json. They require children to be `.input-item`. If an `.input-item` has `.multi` class
+//- then it will be interpreted as a part of a list of items. Maybe it would be better if `.inputs-container` were the one to take the `.multi` tag. There are also `.multi-child` tags.
+//- If an item doesn't have a `data-key` then it's inserted into the array or the key just as a string and not as an object.
 block templates
 	script(type="text/jst")#settings-templ
 		#settings
@@ -40,7 +43,7 @@ block templates
 								|<option value='-8'  <% ((timezone == '-8') ? print('selected') : '')  %> > (GMT -8:00) Pacific Time</option>
 								|<option value='-9'  <% ((timezone == '-9') ? print('selected') : '')  %> > (GMT -9:00) Alaska</option>
 								|<option value='-10' <% ((timezone == '-10') ? print('selected') : '') %> > (GMT -10:00) Hawaii</option>
-				.setting-grou
+				.setting-group
 					.setting-description Does your site publish an RSS feed of all its articles?
 					.setting-flag Includes full article text?
 					.setting-title URLs
@@ -110,13 +113,28 @@ block templates
 							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
-				.setting-group
+				.setting-group(data-group="impact-tags")
+					.setting-flag Category
+					.setting-flag Attribute
 					#impact-tags.setting-title Impact tags
-					ul.inputs-container(data-placeholder="Legislative impact" data-flag="color" data-group="impact" data-key="impact_tags")
+					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags")
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
 							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name"/>
+							|<select name='category' class="input-item multi-child">
+							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Citation</option>
+							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Change</option>
+							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Achievement</option>
+							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Other</option>
+							|</select>
+							|<select name='attribute' class="input-item multi-child">
+							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Institutional</option>
+							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Community</option>
+							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Individual</option>
+							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Internal</option>
+							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Media</option>
+							|</select>
 							|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
 					button.add Add	
@@ -172,6 +190,25 @@ block templates
 			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder0 %>" data-key="<%= keys[0] %>" />
 			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder1 %>" data-key="<%= keys[1] %>" />
 			<% (flag) ? print('<input class="input-item" type="'+flag+'" data-key="'+keys[2]+'" />') : '' %>
+
+	script(type="text/jst")#impact-tag-input-templ
+		li.input.multi
+			.multi-child.destroy &times;
+			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name"/>
+			|<select name='category' class="input-item multi-child">
+			|<option value='citation' selected> Citation</option>
+			|<option value='change'>Change</option>
+			|<option value='achievement'>Achievement</option>
+			|<option value='other'>Other</option>
+			|</select>
+			|<select name='attribute' class="input-item multi-child">
+			|<option value='citation' selected> Institutional</option>
+			|<option value='change'>Community</option>
+			|<option value='achievement'>Individual</option>
+			|<option value='other'>Internal</option>
+			|<option value='other'>Media</option>
+			|</select>
+			|<input class="input-item color-picker" type="text" data-color="#ccc" data-group="impact" data-key="color"/>
 
 block bootstrap-data
 	script(id="page-data").

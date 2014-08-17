@@ -821,6 +821,9 @@ input_width = 200px
 destroy_width = 20px
 input_margin = 5px
 setting_title_width = 100px
+inputs_width = 500px
+select_width = 76px
+
 .settings-group
 	width 600px
 	position relative
@@ -854,13 +857,14 @@ setting_title_width = 100px
 #settings
 	margin-bottom 50px
 	.inputs-container
-		width 450px
+		width inputs_width
 		// background-color #f0c
 	.input
 		height 25px
 		margin-left destroy_width
-		input[type='text']
+		input[type='text'],select
 			margin 0 input_margin 0 0
+		input[type='text'],input[type='password']
 			width input_width
 		input[type='radio'],input[type='checkbox']
 			margin 0
@@ -874,8 +878,14 @@ setting_title_width = 100px
 
 .setting-flag
 	font-size 1.2em
+	font-weight bold
 	margin-bottom 3px
-	margin-left (setting_title_width + destroy_width + input_width + input_margin )
+	margin-left ( setting_title_width + destroy_width + input_width + input_margin*1.6 )
+.setting-group[data-group="impact-tags"] .setting-flag
+	display inline-block
+.setting-group[data-group="impact-tags"] .setting-flag:nth-child(2)
+	margin-left 56px
+	margin-right 50px // Bump the next line to the next line
 .destroy.multi-child
 	width destroy_width
 	height 100%
