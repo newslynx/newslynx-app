@@ -22,19 +22,19 @@
   ],
   "twitter_accounts": [
     {
-      "handle": "ProPalpatine",
+      "screen_name": "ProPalpatine",
       "is_main": true
     }
   ],
   "twitter_staff_list": [
     {
-      "owner": "ProPalpatine",
+      "owner_screen_name": "ProPalpatine",
       "slug": "propalpatine-staff"
     }
   ],
   "facebook_accounts": [
     {
-      "handle": "propalpatine",
+      "page_id": "propalpatine",
       "is_main": true
     }
   ],
