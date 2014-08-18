@@ -58,7 +58,7 @@
 			{
 				"datetime": "2014-01-04 13:00:00",
 				"name": "Jon Stewart talked about us",
-				"impact_tags": ["it1"],
+				"impact_tags": ["it1","it2"],
 				"related_links": []
 			},
 			{

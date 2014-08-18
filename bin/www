@@ -1,12 +1,44 @@
 #!/usr/bin/env node
 
 var _ = require('underscore');
-var debug = require('debug')('newslynx-app');
+// var debug = require('debug')('newslynx-app');
 var app = require('../lib/app');
+var fs = require('fs');
+var http = require('http');
+var https = require('https');
+var async = require('async');
 
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), function() {
-  message = _.template('Express server listening on port <%= port %> (<%= env %>)')
-  debug(message({port: server.address().port, env: app.get('env')}));
-});
+function readFileAsUtf8(path, cb){
+	fs.readFile(path, 'utf-8', cb);
+}
+
+function launchServers(options){
+	var http_server = http.createServer(app).listen( app.get('port') );
+	// TODO, figure out https loading the csr and key files
+	// var https_server = https.createServer(options, app).listen( app.get('port') );
+
+	// Old can be deleted later
+	// var http_server = http.createServer(app).listen(app.get('port'), function() {
+	//   message = _.template('Express server listening on port <%= port %> (<%= env %>)')
+	//   debug(message({port: server.address().port, env: app.get('env')}));
+	// });
+}
+
+function loadCerts (){
+	async.map([
+		'lib/ssl/newslynx-app.key',
+		'lib/ssl/newslynx-app.csr'
+		], 
+		readFileAsUtf8, 
+		function(err, results){
+			var https_options = {
+				key: results[0],
+				cert: results[1]
+			}
+			launchServers(https_options);
+	});
+}
+
+loadCerts();

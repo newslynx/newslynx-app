@@ -20,6 +20,6 @@ block content
 				input(type='password', name='password')
 			div
 				input(type='submit', value='Log In')
-			if err_msg
-				div.error Login failed! 
-					.fail-alert= err_msg
+			if msg
+				div.msg
+					=msg

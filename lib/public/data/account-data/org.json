@@ -1,4 +1,4 @@
-{
+{ 
   "user_name": "ProPalpatine",
   "domain": "ProPalpatine.org",
   "email": "merlynne@propalpatine.org",
@@ -7,6 +7,9 @@
   "org_id": "propalpatine",
   "homepage": "http://www.propalpatine.org/",
   "timezone": "-7",
+  "google_auth": false,
+  "twitter_auth": false,
+  "facebook_auth": false,
   "short_urls": [
     "propalp.tn"
   ],
@@ -30,21 +33,29 @@
     {
       "owner_screen_name": "ProPalpatine",
       "slug": "propalpatine-staff"
+    },
+    {
+      "owner_screen_name": "ProPalpatine",
+      "slug": "propalpatine-enemies"
+    },
+    {
+      "owner_screen_name": "ProPalpatine",
+      "slug": "mos-eisley-regulars"
     }
   ],
   "facebook_accounts": [
     {
       "page_id": "propalpatine",
       "is_main": true
+    },
+    {
+      "page_id": "mos-eisley-bar",
+      "is_main": false
     }
   ],
   "google_alerts": [
     "http://www.google.com/alerts/feeds/14752688329844321840/4874425503898649357"
   ],
-  "tokens": {
-    "google": [],
-    "twitter": []
-  },
  "subject_tags": [
     {
       "uid": "st1",
@@ -95,7 +106,7 @@
       "name": "Mentioned by congress",
       "category": "citation",
       "type": "institution",
-      "color": "#0cf",
+      "color": "#fc0",
       "articles": 5
     },
     {
@@ -103,7 +114,7 @@
       "name": "Mentioned by Chancellor",
       "category": "citation",
       "type": "institution",
-      "color": "#c0f",
+      "color": "#f0a",
       "articles": 3
     },
     {
