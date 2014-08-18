@@ -54,7 +54,7 @@ block templates
 						li.input.multi
 							.multi-child.destroy &times;
 							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
-							|<input class="input-item" type="checkbox" <% ((rss_feeds[i].full_text === true) ? print('checked') : '') %> data-key="full_text"/>
+							|<input class="input-item" type="checkbox" <% ((rss_feeds[i].is_full_text === true) ? print('checked') : '') %> data-key="is_full_text"/>
 						<% } %>
 					button.add Add
 			#social.settings-group
