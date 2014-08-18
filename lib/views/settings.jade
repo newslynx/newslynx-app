@@ -74,12 +74,12 @@ block templates
 					.setting-description 
 						p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
 					.setting-title Staff lists
-					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_list")
-						<%  for (var i = 0; i < twitter_staff_list.length; i++) { %>
+					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_lists")
+						<%  for (var i = 0; i < twitter_staff_lists.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_list[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
-							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_list[i].slug %>" class="multi-child double" data-key="slug"/>
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
+							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
 						<% } %>
 					button.add Add
 				#twitter-accounts.setting-group
@@ -87,23 +87,23 @@ block templates
 						p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
 					.setting-flag Is main account?
 					.setting-title Twitter accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_accounts")
-						<%  for (var i = 0; i < twitter_accounts.length; i++) { %>
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users")
+						<%  for (var i = 0; i < twitter_users.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_accounts[i].screen_name %>" class="multi-child" data-key="screen_name" />
-							|<input class="input-item" type="radio" name="twitter" <% ((twitter_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_users[i].screen_name %>" class="multi-child" data-key="screen_name" />
+							|<input class="input-item" type="radio" name="twitter" <% ((twitter_users[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add				
 				.setting-group
 					.setting-flag Is main account?
 					#facebook-accounts.setting-title Facebook accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_accounts")
-						<%  for (var i = 0; i < facebook_accounts.length; i++) { %>
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_pages")
+						<%  for (var i = 0; i < facebook_pages.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= facebook_accounts[i].page_id %>" class="multi-child" data-key="page_id" />
-							|<input class="input-item" type="radio" name="facebook" <% ((facebook_accounts[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
+							|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add
 			#tags.settings-group
@@ -151,7 +151,7 @@ block templates
 				.setting-group
 					.setting-title Google analytics
 					.auth-container
-						<% if (google_auth) { %>
+						<% if (google_analytics_auth) { %>
 						p.auth-result.success Authenticated.
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
