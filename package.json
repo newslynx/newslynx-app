@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-  	"watch": "watchify ./lib/public/javascripts/main.js -o ./lib/public/javascripts/main.bundle.js",
+  	"watch": "watchify ./lib/public/javascripts/main.js -o ./lib/public/javascripts/main.bundle.js -v && stylus -u nib -w ./lib/public/stylesheets",
     "start": "npm watch && nodemon ./bin/www -e jade,js,styl,json"
   },
   "dependencies": {
