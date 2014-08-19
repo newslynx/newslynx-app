@@ -49,7 +49,7 @@ block templates
 						p Does your site publish an RSS feed of all its articles?
 					.setting-flag Includes full article text?
 					.setting-title URLs
-					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds")
+					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds" data-child-keys="['url','is_full_text']")
 						<%  for (var i = 0; i < rss_feeds.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -74,7 +74,7 @@ block templates
 					.setting-description 
 						p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
 					.setting-title Staff lists
-					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_lists")
+					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_lists" data-child-keys="['owner_screen_name', 'slug']")
 						<%  for (var i = 0; i < twitter_staff_lists.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -87,7 +87,7 @@ block templates
 						p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
 					.setting-flag Is main account?
 					.setting-title Twitter accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users")
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users" data-child-keys="['screen_name', 'is_main']")
 						<%  for (var i = 0; i < twitter_users.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -98,7 +98,7 @@ block templates
 				.setting-group
 					.setting-flag Is main account?
 					#facebook-accounts.setting-title Facebook accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_pages")
+					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_pages" data-child-keys="['page_id','is_main']")
 						<%  for (var i = 0; i < facebook_pages.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -110,7 +110,7 @@ block templates
 				.settings-title Tags
 				#article-tags.setting-group
 					.setting-title Article tags
-					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="subject_tags")
+					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="subject_tags" data-child-keys="['name','color']")
 						<%  for (var i = 0; i < subject_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -122,7 +122,7 @@ block templates
 					.setting-flag Category
 					.setting-flag Attribute
 					.setting-title Impact tags
-					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags")
+					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys="['name', 'category', 'attribute','color']")
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
