@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www -e jade,js,styl,json"
   },
   "dependencies": {
     "async": "~0.9.0",
