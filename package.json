@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-  	"watch": "watchify ./lib/public/javascripts/main.js -o ./lib/public/javascripts/main.bundle.js -v && stylus -u nib -w ./lib/public/stylesheets",
     "start": "npm watch && nodemon ./bin/www -e jade,js,styl,json"
   },
   "dependencies": {
@@ -30,6 +29,12 @@
   },
   "devDependencies": {
     "nodemon": "1.x",
-    "watchify": "~1.0.2"
+    "watchify": "~1.0.2",
+    "gulp-uglifyjs": "~0.4.2",
+    "gulp-nodemon": "~1.0.4",
+    "gulp-plumber": "~0.6.4",
+    "jshint": "~2.5.4",
+    "gulp": "~3.8.7",
+    "gulp-jshint": "~1.8.4"
   }
 }
