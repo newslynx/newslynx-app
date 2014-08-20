@@ -253,4 +253,48 @@ block scripts
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/spectrum.js")
-	script(src="javascripts/main.bundle.js")
+		
+		//- Helpers
+	script(src="javascripts/helpers/common.js")
+	script(src="javascripts/helpers/modelsAndCollections.js")
+	script(src="javascripts/helpers/templates.js")
+
+	//- Models
+	script(src="javascripts/models/detail_item.js")
+	script(src="javascripts/models/drawer_list_item.js")
+	script(src="javascripts/models/org.js")
+	script(src="javascripts/models/river_item.js")
+	script(src="javascripts/models/row_item.js")
+	script(src="javascripts/models/section_mode.js")
+	script(src="javascripts/models/tags.js")
+
+	//- Collections
+	script(src="javascripts/collections/detail_items.js")
+	script(src="javascripts/collections/drawer_items.js")
+	script(src="javascripts/collections/impact_tags.js")
+	script(src="javascripts/collections/row_items.js")
+	script(src="javascripts/collections/subject_tags.js")
+
+	//- App
+	script(src="javascripts/app/helpers.js")
+	script(src="javascripts/app/Articles.js")
+	script(src="javascripts/app/ApprovalRiver.js")
+	script(src="javascripts/app/Settings.js")
+	
+	//- Views
+	script(src="javascripts/views/helpers.js")
+	script(src="javascripts/views/ArticleDetail.js")
+	script(src="javascripts/views/ArticleDetailGrid.js")
+	script(src="javascripts/views/ArticleDetailRow.js")
+	script(src="javascripts/views/DivisionSwitcher.js")
+	script(src="javascripts/views/DrawerListItem.js")
+	script(src="javascripts/views/DrawerListItemStatic.js")
+	script(src="javascripts/views/RecipeForm.js")
+	script(src="javascripts/views/RiverItem.js")
+	script(src="javascripts/views/Tag.js")
+		
+	//- Routing
+	script(src="javascripts/routing/routing.js")
+
+	//- Put it all together
+	script(src="javascripts/main.js")
