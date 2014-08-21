@@ -65,12 +65,11 @@ gulp.task('demon', function () {
 		ext: 'js jade styl json',
 		ignore: ["main.bundled.js"]
   })
-	.on('start', ['nib', 'uglify', 'watch'])
-	.on('change', ['nib', 'uglify', 'watch'])
+	.on('start', ['watch'])
 	.on('restart', function () {
 		console.log('Gulp restarted!');
 	});
 });
 
-gulp.task('default', ['nib', 'uglify', 'demon']);
+gulp.task('default', ['demon']);
 // gulp.task('default', ['server',  'watch']);
