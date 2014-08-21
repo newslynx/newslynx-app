@@ -4,9 +4,11 @@ var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglifyjs');
 var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
-
+var stylus = require('gulp-stylus');
+var nib = require('nib');
 var paths = {
 	js: 		[
+					'lib/public/javascripts/namespace.js',
 					'lib/public/javascripts/helpers/*.js',
 					'lib/public/javascripts/models/*.js',
 					'lib/public/javascripts/collections/*.js',
@@ -45,10 +47,16 @@ gulp.task('uglify', function() {
 			}
 		}))
 		.pipe(gulp.dest('lib/public/javascripts'))
+});	
+
+gulp.task('nib', function () {
+	gulp.src('lib/public/stylesheets/*.styl')
+		.pipe(stylus({use: [nib()]}))
+		.pipe(gulp.dest('lib/public/stylesheets'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch(paths.js, ['uglify']);
+	gulp.watch(paths.js, ['nib', 'uglify']);
 });
 
 gulp.task('demon', function () {
@@ -57,12 +65,12 @@ gulp.task('demon', function () {
 		ext: 'js jade styl json',
 		ignore: ["main.bundled.js"]
   })
-	.on('start', ['uglify', 'watch'])
-	.on('change', ['uglify', 'watch'])
+	.on('start', ['nib', 'uglify', 'watch'])
+	.on('change', ['nib', 'uglify', 'watch'])
 	.on('restart', function () {
 		console.log('Gulp restarted!');
 	});
 });
 
-gulp.task('default', ['uglify', 'demon']);
+gulp.task('default', ['nib', 'uglify', 'demon']);
 // gulp.task('default', ['server',  'watch']);
