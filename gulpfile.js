@@ -66,7 +66,7 @@ gulp.task('demon', function () {
 		ext: 'js jade styl json',
 		ignore: ["main.bundled.js"]
   })
-	// .on('start', ['watch'])
+	.on('start', ['watch'])
 	.on('restart', function () {
 		console.log('Gulp restarted!');
 	});
