@@ -3,10 +3,11 @@
     "uid": "r1",
     "pending_alerts": ["alt1", "alt2"],
     "enabled": true,
+    "type": "discussion",
+    "name": "Domain mentions on Reddit",
     "source": "reddit-search",
     "settings": {
       "requires_approval": true,
-      "name": "Domain mentions on Reddit",
       "search_query": "propalpatine.org"
     }
   },
@@ -14,10 +15,11 @@
     "uid": "r2",
     "pending_alerts": ["alt2", "alt3"],
     "enabled": true,
+    "type": "discussion",
+    "name": "Media site mentions",
     "source": "google-alert",
     "settings": {
       "requires_approval": true,
-      "name": "Media site mentions",
       "search_query": "\"ProPalpatine\"",
       "result_type": "Everything",
       "language": "English",
@@ -29,10 +31,11 @@
     "uid": "r3",
     "pending_alerts": ["alt4", "alt5"],
     "enabled": true,
+    "type": "discussion",
+    "name": "Fracking coverage",
     "source": "google-alert",
     "settings": {
       "requires_approval": true,
-      "name": "Fracking coverage",
       "search_query": "\"ProPalpatine\" AND \"Fracking\"",
       "result_type": "Everything",
       "language": "English",
