@@ -50,13 +50,14 @@ gulp.task('uglify', function() {
 });	
 
 gulp.task('nib', function () {
-	gulp.src('lib/public/stylesheets/*.styl')
+	gulp.src(paths.css)
 		.pipe(stylus({use: [nib()]}))
 		.pipe(gulp.dest('lib/public/stylesheets'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch(paths.js, ['nib', 'uglify']);
+	gulp.watch(paths.css, ['nib']);
+	gulp.watch(paths.js, ['uglify']);
 });
 
 gulp.task('demon', function () {
@@ -65,7 +66,7 @@ gulp.task('demon', function () {
 		ext: 'js jade styl json',
 		ignore: ["main.bundled.js"]
   })
-	.on('start', ['watch'])
+	// .on('start', ['watch'])
 	.on('restart', function () {
 		console.log('Gulp restarted!');
 	});
