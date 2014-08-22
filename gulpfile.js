@@ -6,6 +6,16 @@ var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
+
+// Handle an error based on its severity level.
+// Log all levels, and exit the process for fatal levels.
+function handleError(level, error) {
+	gutil.log(error.message);
+}
+ 
+// Convenience handler for error-level errors.
+function onError(error) { handleError.call(this, 'error', error); this.end();}
+
 var paths = {
 	js: 		[
 					'lib/public/javascripts/namespace.js',
@@ -34,7 +44,8 @@ gulp.task('lintjs', function() {
 	return gulp.src(paths.js)
 		.pipe(plumber())
 		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+		.pipe(jshint.reporter('default'))
+		on('error', onError);
 });
 
 gulp.task('uglify', function() {
@@ -47,12 +58,16 @@ gulp.task('uglify', function() {
 			}
 		}))
 		.pipe(gulp.dest('lib/public/javascripts'))
+		on('error', onError);
+
 });	
 
 gulp.task('nib', function () {
 	gulp.src(paths.css)
 		.pipe(stylus({use: [nib()]}))
-		.pipe(gulp.dest('lib/public/stylesheets'));
+		.pipe(gulp.dest('lib/public/stylesheets'))
+		on('error', onError);
+
 });
 
 gulp.task('watch', function() {
