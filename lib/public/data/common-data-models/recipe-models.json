@@ -1,6 +1,7 @@
 [
 	{
 		"source": "google-alert",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -50,6 +51,7 @@
 		}
 	},{
 		"source": "twitter-search",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -74,6 +76,7 @@
 		}
 	},{
 		"source": "twitter-list",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -97,6 +100,7 @@
 		}
 	},{
 		"source": "twitter-user",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -114,6 +118,7 @@
 		}
 	},{
 		"source": "reddit-search",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -132,6 +137,7 @@
 		}
 	},{
 		"source": "facebook-page",
+		"type": "discussion",
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
