@@ -38,8 +38,8 @@ block templates
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= countAssociatedItems(uid, 'source', 'riverItems') %> pending
-				.title <%= settings.name %>
+				.count <%= pending %> pending
+				.title <%= name %>
 				.description <%= settings.search_query %>
 				.toolbar
 					.btn.settings-switch

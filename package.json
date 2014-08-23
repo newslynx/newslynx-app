@@ -33,6 +33,7 @@
     "gulp": "~3.8.7",
     "gulp-jshint": "~1.8.4",
     "gulp-stylus": "~1.3.0",
-    "nib": "~1.0.3"
+    "nib": "~1.0.3",
+    "queue-async": "~1.0.7"
   }
 }

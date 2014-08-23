@@ -6,7 +6,7 @@ var app = require('../lib/app');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var async = require('async');
+var queue = require('queue-async');
 
 app.set('port', process.env.PORT || 3000);
 
@@ -27,12 +27,10 @@ function launchServers(options){
 }
 
 function loadCerts (){
-	async.map([
-		'lib/ssl/newslynx-app.key',
-		'lib/ssl/newslynx-app.csr'
-		], 
-		readFileAsUtf8, 
-		function(err, results){
+	queue()
+		.defer(readFileAsUtf8, 'lib/ssl/newslynx-app.key')
+		.defer(readFileAsUtf8, 'lib/ssl/newslynx-app.csr')
+		.awaitAll(function(err, results){
 			var https_options = {
 				key: results[0],
 				cert: results[1]
