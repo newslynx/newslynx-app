@@ -25,7 +25,7 @@ var paths = {
 					'lib/public/javascripts/app/*.js',
 					'lib/public/javascripts/views/*.js',
 					'lib/public/javascripts/routing/*.js',
-					'lib/public/javascripts/main.js'
+					'lib/public/javascripts/init.js'
 					],
 	css:    ['lib/public/stylesheets/*.styl'],
 	jade:   [
