@@ -1,0 +1,19 @@
+{
+	"asignee": {
+		"type": "select",
+		"options": [ ]
+	},
+	"title": {
+		"type": "text"
+	},
+	"what_happened": {
+		"type": "text"
+	},
+	"significance": {
+		"type": "text"
+	},
+	"impact_tags": {
+		"type": "select",
+		"options": [ ]
+	}
+}
