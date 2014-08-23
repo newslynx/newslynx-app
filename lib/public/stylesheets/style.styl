@@ -40,7 +40,7 @@ input[type="search"]
 	appearance searchfield
 button
 	margin 0
-button:hover,input[type="submit"]:hover
+button:hover,input[type="submit"]:hover,input[type="button"]:hover
 	cursor pointer
 
 input[type="password"],input[type="text"]
@@ -752,6 +752,8 @@ group_margin = 30px
 		font-weight bold
 		border-bottom 1px solid border_gray
 		margin-bottom 5px
+.modal-inner:hover
+	cursor default !important
 .modal-outer.active
 	display block
 	position absolute
@@ -763,7 +765,7 @@ group_margin = 30px
 		margin-left 0
 .buttons-container
 	button,input[type="submit"]
-		margin 0 3px 0 0
+		margin 0 5px 0 -2px
 .recipe-form-container
 	width 450px
 	margin-left 50px
@@ -777,6 +779,9 @@ group_margin = 30px
 		height @width
 		left -(@width + 5)px
 		margin-bottom 5px
+
+input.destroy
+	float right
 
 .toolbar
 	.service-icon
@@ -807,7 +812,7 @@ group_margin = 30px
 			width 40%
 			margin-bottom 3px
 		.input-text-container
-			width 55%
+			width 59%
 			display inline-block
 		.help-row
 			text-align right

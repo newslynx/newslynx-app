@@ -55,7 +55,8 @@ button {
   margin: 0;
 }
 button:hover,
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+input[type="button"]:hover {
   cursor: pointer;
 }
 input[type="password"],
@@ -918,6 +919,9 @@ input {
   border-bottom: 1px solid #777676;
   margin-bottom: 5px;
 }
+.modal-inner:hover {
+  cursor: default !important;
+}
 .modal-outer.active {
   display: block;
   position: absolute;
@@ -934,7 +938,7 @@ input {
 }
 .buttons-container button,
 .buttons-container input[type="submit"] {
-  margin: 0 3px 0 0;
+  margin: 0 5px 0 -2px;
 }
 .recipe-form-container {
   width: 450px;
@@ -951,6 +955,9 @@ input {
   height: 40px;
   left: -45px;
   margin-bottom: 5px;
+}
+input.destroy {
+  float: right;
 }
 .toolbar .service-icon {
   width: 15px;
@@ -986,7 +993,7 @@ input {
 }
 .modal-outer form .input-text-container,
 .recipe-form-container form .input-text-container {
-  width: 55%;
+  width: 59%;
   display: inline-block;
 }
 .modal-outer form .help-row,
