@@ -48,17 +48,17 @@ mixin articles
 //- 	li.section.active(data-section="events")
 //- 		span.nav-link Events
 		
-mixin home
-	li.section.active(data-section="home")
-		span.nav-link Home
+//- mixin home
+//- 	li.section.active(data-section="home")
+//- 		span.nav-link Home
 		
 nav
 	ul.main-sections
-		if (page == 'home')
-			mixin home
-		else	
-			li.section(data-section="home")
-				a(href="/") Home
+		//- if (page == 'home')
+		//- 	mixin home
+		//- else	
+		//- 	li.section(data-section="home")
+		//- 		a(href="/") Home
 		if (page == 'approval-river')
 			mixin approval-river
 		else	

@@ -113,10 +113,10 @@ body[data-modal=true] {
 }
 #left-rail #header-container a {
   text-decoration: none;
-  color: #f2f2f2;
+  color: #ccc;
 }
 #left-rail #header-container a:hover h1 {
-  text-decoration: underline;
+  color: #fff;
 }
 #left-rail #header-container img,
 #left-rail #header-container h1.page-title {

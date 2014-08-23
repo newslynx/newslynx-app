@@ -45,7 +45,7 @@ gulp.task('lintjs', function() {
 		.pipe(plumber())
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'))
-		on('error', onError);
+		.on('error', onError);
 });
 
 gulp.task('uglify', function() {
@@ -58,7 +58,7 @@ gulp.task('uglify', function() {
 			}
 		}))
 		.pipe(gulp.dest('lib/public/javascripts'))
-		on('error', onError);
+		.on('error', onError);
 
 });	
 
@@ -66,7 +66,7 @@ gulp.task('nib', function () {
 	gulp.src(paths.css)
 		.pipe(stylus({use: [nib()]}))
 		.pipe(gulp.dest('lib/public/stylesheets'))
-		on('error', onError);
+		.on('error', onError);
 
 });
 
