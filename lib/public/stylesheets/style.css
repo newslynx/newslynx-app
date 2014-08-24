@@ -620,6 +620,25 @@ body[data-section="home"] #content {
 .approval-child .description {
   font-size: 1.2em;
 }
+.show-hide-default-event {
+  font-size: 1.4em;
+  margin: 5px 0 15px 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.show-hide-default-event .toggle-default-event {
+  color: #0092ce;
+}
+.show-hide-default-event .toggle-default-event:hover {
+  color: #0082b6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.default-event-container {
+  display: none;
+}
 /* end approval river */
 /* T E X T  S T Y L E S  */
 .division-title,
@@ -633,7 +652,6 @@ body[data-section="home"] #content {
   font-size: 1.2em;
 }
 label {
-  font-size: 1.2em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -994,7 +1012,7 @@ input.destroy {
 }
 .modal-outer form .form-row-label-container,
 .recipe-form-container form .form-row-label-container {
-  font-size: 1.3em;
+  font-size: 1.4em;
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
@@ -1216,6 +1234,7 @@ button.add {
 #login label {
   display: inline-block;
   width: 70px;
+  font-size: 1.3em;
 }
 #login input[type="submit"] {
   margin-top: 10px;
