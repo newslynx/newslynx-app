@@ -8,18 +8,21 @@ block drawer
 		li(data-mode="my-recipes") My recipes
 		li(data-mode="create-new") + Create
 	.drawer-container.mode-content(data-mode="my-recipes")
-		//- .drawer-section-title.drawer-item  Show approval candidates from:
-		//- ul#alert-sources.drawer-item
-		.drawer-pointer Show me...
-		.drawer-list-item
-			.view-all.drawer-list-outer
-				.inputs-container
-					input(type="checkbox")
-					input(type="radio")
-				.drawer-list-inner
-					.title Pending items for all recipes
-		.drawer-pointer Or, pending items for just...
-		ul#recipes.drawer-list-item-ul
+		if (accountRecipes.length != 0)
+			.drawer-pointer Show me...
+			.drawer-list-item
+				.view-all.drawer-list-outer
+					.inputs-container
+						input(type="checkbox")
+						input(type="radio")
+					.drawer-list-inner
+						.title Pending items for all recipes
+			.drawer-pointer Or, pending items for just...
+			ul#recipes.drawer-list-item-ul
+		else
+			.drawer-pointer 
+				p You don't have any recipes yet!
+				p Click the <span>Create</span> button above to start. Or, if you've just made some. refresh the page.
 	.drawer-container.mode-content(data-mode="create-new")
 		.drawer-pointer  Add any one of these receipes with the form on the right.
 		ul#recipe-creators
