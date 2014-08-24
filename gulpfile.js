@@ -11,6 +11,7 @@ var nib = require('nib');
 // Log all levels, and exit the process for fatal levels.
 function handleError(level, error) {
 	gutil.log(error.message);
+	this.end()
 }
  
 // Convenience handler for error-level errors.

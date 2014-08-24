@@ -537,13 +537,19 @@ body[data-section="home"] #content {
 }
 /* end home */
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-recipes"],
 #content[data-mode="create-new"] {
+  padding: 25px 30px;
+}
+#content[data-mode="create-new"] .article-detail-wrapper {
+  margin: 10px 0 55px 0;
+  padding: 10px 10px 10px 50px;
+}
+#content[data-mode="my-recipes"] {
   padding: 25px 60px;
 }
-#content[data-mode="my-recipes"] .article-detail-wrapper,
-#content[data-mode="create-new"] .article-detail-wrapper {
-  margin: 20px 0 75px 0;
+#content[data-mode="my-recipes"] .article-detail-wrapper {
+  margin: 10px 0 55px 0;
+  padding: 10px;
 }
 .drawer-pointer {
   padding: 20px 10px 8px 10px;
@@ -964,10 +970,6 @@ input {
 .buttons-container input[type="submit"] {
   margin: 0 5px 0 -2px;
 }
-.recipe-form-container {
-  width: 450px;
-  margin-left: 50px;
-}
 .recipe-form-container .title {
   position: relative;
   font-size: 3em;
@@ -975,10 +977,17 @@ input {
   margin-bottom: 25px;
 }
 .recipe-form-container .service-icon {
+  top: 0;
   width: 40px;
   height: 40px;
   left: -45px;
   margin-bottom: 5px;
+}
+.recipe-form-container .submit-msg {
+  display: inline;
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 1.4em;
 }
 .form-checkbox-group {
   display: block;
@@ -1018,6 +1027,9 @@ input.destroy {
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
+}
+.modal-outer form .form-row-label-container.form-row-label-top,
+.recipe-form-container form .form-row-label-container.form-row-label-top {
   vertical-align: top;
 }
 .modal-outer form .form-row-input-container,

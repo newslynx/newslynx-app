@@ -433,10 +433,16 @@ body[data-section="home"] #content
 /* end home */
 
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="my-recipes"],#content[data-mode="create-new"]
+#content[data-mode="create-new"]
+	padding 25px 30px
+	.article-detail-wrapper
+		margin 10px 0 55px 0
+		padding 10px 10px 10px 50px
+#content[data-mode="my-recipes"]
 	padding 25px 60px
 	.article-detail-wrapper
-		margin 20px 0 75px 0
+		margin 10px 0 55px 0
+		padding 10px
 
 .drawer-pointer
 	padding 20px 10px 8px 10px
@@ -789,18 +795,22 @@ group_margin = 30px
 	button,input[type="submit"]
 		margin 0 5px 0 -2px
 .recipe-form-container
-	width 450px
-	margin-left 50px
 	.title
 		position relative
 		font-size 3em
 		color bg_gray
 		margin-bottom 25px
 	.service-icon
+		top 0
 		width 40px
 		height @width
 		left -(@width + 5)px
 		margin-bottom 5px
+	.submit-msg
+		display inline
+		padding-left 5px
+		vertical-align bottom
+		font-size 1.4em
 
 .form-checkbox-group
 	display block
@@ -837,6 +847,7 @@ input.destroy
 			display inline-block
 			width 40%
 			margin-bottom 3px
+		.form-row-label-container.form-row-label-top
 			vertical-align top
 		.form-row-input-container
 			width 59%
