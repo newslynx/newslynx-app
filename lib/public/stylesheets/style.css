@@ -546,6 +546,7 @@ body[data-section="home"] #content {
 #content[data-mode="create-new"] .article-detail-wrapper {
   margin: 10px 0 55px 0;
   padding: 10px 10px 10px 50px;
+  max-width: 600px;
 }
 #content[data-mode="my-recipes"] {
   padding: 25px 60px;
@@ -636,6 +637,7 @@ body[data-section="home"] #content {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  line-height: 1.4em;
 }
 .show-hide-default-event .toggle-default-event[data-status="open"] {
   color: #529624;
@@ -968,6 +970,9 @@ input {
 }
 .form-row input {
   margin-left: 0;
+}
+.buttons-container {
+  margin-top: 10px;
 }
 .buttons-container button,
 .buttons-container input[type="submit"] {

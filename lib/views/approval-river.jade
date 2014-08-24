@@ -52,7 +52,11 @@ block templates
 				.modal-inner
 					.title Recipe settings
 					form
-						<%= bakeRecipeUpdateForm(uid, source, settings, name) %>
+						<%= bakeRecipeUpdateForm(uid, source, settings, name, 'schema') %>
+						.show-hide-default-event This recipe triggers events with some default properties. 
+							span.toggle-default-event(data-status="closed") Disabled
+						.default-event-container
+						<%= bakeRecipeUpdateForm(uid, source, default_event, name, 'default_event') %>
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Save")
