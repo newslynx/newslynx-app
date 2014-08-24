@@ -628,11 +628,13 @@ body[data-section="home"] #content {
   -ms-user-select: none;
   user-select: none;
 }
-.show-hide-default-event .toggle-default-event {
-  color: #0092ce;
+.show-hide-default-event .toggle-default-event[data-status="open"] {
+  color: #529624;
+}
+.show-hide-default-event .toggle-default-event[data-status="closed"] {
+  color: #9e0000;
 }
 .show-hide-default-event .toggle-default-event:hover {
-  color: #0082b6;
   text-decoration: underline;
   cursor: pointer;
 }

@@ -70,7 +70,7 @@ block templates
 			form
 				<%= bakeForm(schema) %>
 				.show-hide-default-event This recipe triggers events with some default properties. 
-					span.toggle-default-event Disabled
+					span.toggle-default-event(data-status="closed") Disabled
 				.default-event-container
 					<%= bakeForm(default_event) %>
 				.buttons-container

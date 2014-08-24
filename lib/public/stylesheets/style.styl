@@ -498,10 +498,11 @@ body[data-section="home"] #content
 	font-size 1.4em
 	margin 5px 0 15px 0
 	user-select none
-	.toggle-default-event
-		color link_blue
+	.toggle-default-event[data-status="open"]
+		color enable_green
+	.toggle-default-event[data-status="closed"]
+		color disabled_red
 	.toggle-default-event:hover
-		color link_blue_hover
 		text-decoration underline
 		cursor pointer
 
