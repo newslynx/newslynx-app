@@ -509,9 +509,9 @@ body[data-section="home"] #content
 	margin 5px 0 15px 0
 	user-select none
 	line-height 1.4em
-	.toggle-default-event[data-status="open"]
+	.toggle-default-event[data-status="true"]
 		color enable_green
-	.toggle-default-event[data-status="closed"]
+	.toggle-default-event[data-status="false"]
 		color disabled_red
 	.toggle-default-event:hover
 		text-decoration underline
@@ -778,7 +778,7 @@ group_margin = 30px
 	background-color #fff
 	padding 20px
 	border 1px solid #000
-	width 420px
+	width 525px
 	z-index 99999
 	.title
 		font-size 1.4em
@@ -797,7 +797,7 @@ group_margin = 30px
 	input
 		margin-left 0
 .buttons-container
-	margin-top 10px
+	padding-top 10px
 	button,input[type="submit"]
 		margin 0 5px 0 -2px
 .recipe-form-container

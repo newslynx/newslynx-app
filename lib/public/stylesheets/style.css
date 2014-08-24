@@ -639,10 +639,10 @@ body[data-section="home"] #content {
   user-select: none;
   line-height: 1.4em;
 }
-.show-hide-default-event .toggle-default-event[data-status="open"] {
+.show-hide-default-event .toggle-default-event[data-status="true"] {
   color: #529624;
 }
-.show-hide-default-event .toggle-default-event[data-status="closed"] {
+.show-hide-default-event .toggle-default-event[data-status="false"] {
   color: #9e0000;
 }
 .show-hide-default-event .toggle-default-event:hover {
@@ -945,7 +945,7 @@ input {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #000;
-  width: 420px;
+  width: 525px;
   z-index: 99999;
 }
 .modal-inner .title {
@@ -972,7 +972,7 @@ input {
   margin-left: 0;
 }
 .buttons-container {
-  margin-top: 10px;
+  padding-top: 10px;
 }
 .buttons-container button,
 .buttons-container input[type="submit"] {

@@ -2,6 +2,7 @@
 	{
 		"source": "google-alert",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -52,6 +53,7 @@
 	},{
 		"source": "twitter-search",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -78,6 +80,7 @@
 	},{
 		"source": "twitter-list",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -102,6 +105,7 @@
 	},{
 		"source": "twitter-user",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -120,6 +124,7 @@
 	},{
 		"source": "reddit-search",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
@@ -139,6 +144,7 @@
 	},{
 		"source": "facebook-page",
 		"type": "discussion",
+		"set_default_event": false,
 		"schema": {
 			"requires_approval": {
 				"type": "checkbox",
