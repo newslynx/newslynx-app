@@ -502,6 +502,7 @@ body[data-section="home"] #content
 	font-size 1.2em
 label
 	font-size 1.2em
+	user-select none
 input
 	margin-bottom 5px
 .pub-date
@@ -780,6 +781,10 @@ group_margin = 30px
 		left -(@width + 5)px
 		margin-bottom 5px
 
+.form-checkbox-group
+	display block
+	width 100%
+
 input.destroy
 	float right
 
@@ -806,12 +811,13 @@ input.destroy
 
 .modal-outer,.recipe-form-container
 	form
-		label
+		.form-row-label-container
 			font-size 1.3em
 			display inline-block
 			width 40%
 			margin-bottom 3px
-		.input-text-container
+			vertical-align top
+		.form-row-input-container
 			width 59%
 			display inline-block
 		.help-row

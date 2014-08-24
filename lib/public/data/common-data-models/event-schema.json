@@ -13,7 +13,7 @@
 		"type": "text"
 	},
 	"impact_tags": {
-		"type": "select",
+		"type": "checkbox",
 		"options": [ ]
 	}
 }

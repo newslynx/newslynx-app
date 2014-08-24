@@ -68,7 +68,9 @@ block templates
 		.recipe-form-container
 			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
-				<%= bakeForm(source, schema) %>
+				<%= bakeForm(schema) %>
+				.show-hide-default-event Prepopulate event information
+				<%= bakeForm(default_event) %>
 				.buttons-container
 					input.save(type="submit", value="Save")
 

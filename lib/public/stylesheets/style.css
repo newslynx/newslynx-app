@@ -634,6 +634,10 @@ body[data-section="home"] #content {
 }
 label {
   font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 input {
   margin-bottom: 5px;
@@ -956,6 +960,10 @@ input {
   left: -45px;
   margin-bottom: 5px;
 }
+.form-checkbox-group {
+  display: block;
+  width: 100%;
+}
 input.destroy {
   float: right;
 }
@@ -984,15 +992,16 @@ input.destroy {
 .service-icon[data-service="reddit"] {
   background-image: url("/images/reddit.png");
 }
-.modal-outer form label,
-.recipe-form-container form label {
+.modal-outer form .form-row-label-container,
+.recipe-form-container form .form-row-label-container {
   font-size: 1.3em;
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
+  vertical-align: top;
 }
-.modal-outer form .input-text-container,
-.recipe-form-container form .input-text-container {
+.modal-outer form .form-row-input-container,
+.recipe-form-container form .form-row-input-container {
   width: 59%;
   display: inline-block;
 }
