@@ -1017,6 +1017,11 @@ input.destroy {
   top: -12px;
   right: 0;
 }
+.toolbar .service-icon .service-method-label {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
 .service-icon {
   position: absolute;
   -webkit-background-size: contain;

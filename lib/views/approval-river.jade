@@ -43,12 +43,12 @@ block templates
 			.drawer-list-inner
 				.count <%= pending %> pending
 				.title <%= name %>
-				.description <%= settings.search_query %>
+				.description Query: `<%= displaySearchParams(source, settings) %>`
 				.toolbar
 					.btn.settings-switch
 						span.octicon.octicon-gear
 						span.text  Edit
-					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span>
+					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"><span class="service-method-label"><%= methodFromSource(source) %></span></span>
 					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 			.modal-outer
 				.modal-overlay
