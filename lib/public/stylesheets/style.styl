@@ -303,7 +303,7 @@ body[data-section="login"]
 /* D R A W E R */
 division_switcher_height = 50px
 drawer_pointer_padding = 62px
-
+drawer_item_single_line = 37px
 
 body[data-section="login"] #content
 	padding 15px
@@ -420,10 +420,13 @@ body[data-section="login"] #content
 	.inputs-container input[type="radio"]
 		display block
 
-#article-list
-	height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding)
+.drawer-list-item-ul
+	height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding + 1) // Plus one because apparently this is like one pixel off	
 	overflow-x hidden
 	overflow-y scroll
+.drawer-container[data-mode="my-recipes"]
+	.drawer-list-item-ul
+		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line ) // Plus one because apparently this is like one pixel off	
 /* end drawer item */
 
 /* H O M E */

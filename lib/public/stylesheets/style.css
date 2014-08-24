@@ -525,10 +525,13 @@ body[data-section="login"] #content {
 #drawer[data-mode="my-recipes"] .inputs-container input[type="radio"] {
   display: block;
 }
-#article-list {
-  height: calc(100vh - 112px);
+.drawer-list-item-ul {
+  height: calc(100vh - 113px);
   overflow-x: hidden;
   overflow-y: scroll;
+}
+.drawer-container[data-mode="my-recipes"] .drawer-list-item-ul {
+  height: calc(100vh - 180px);
 }
 /* end drawer item */
 /* H O M E */
