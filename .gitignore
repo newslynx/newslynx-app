@@ -56,6 +56,3 @@ node_modules
 
 # SSL
 lib/ssl/*
-
-# Compiled javascript
-lib/public/javascripts/main.bundled.js
