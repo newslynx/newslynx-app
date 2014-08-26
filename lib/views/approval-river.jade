@@ -13,7 +13,6 @@ block drawer
 			.drawer-list-item
 				.view-all.drawer-list-outer
 					.inputs-container
-						input(type="checkbox")
 						input(type="radio")
 					.drawer-list-inner
 						.title Pending items for all recipes
@@ -38,7 +37,6 @@ block templates
 	script(type="text/jst")#recipe-templ
 		.drawer-list-outer.modal-parent
 			.inputs-container
-				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
 				.count <%= pending %> pending
@@ -93,10 +91,10 @@ block templates
 				.approval-btn-container(data-which="no")
 					.approval-btn ×
 			.approval-child(data-which="info")
+				.toolbar
+					.origin-recipe From recipe: <%= getRecipeFromId(recipe_id).name %>
 				.title <%= name %>
 				.description The carbon in our apple pies billions upon billions cosmos. Extraplanetary Hypatia. Tendrils of gossamer clouds? Rogue stirred by starlight across the centuries cosmic ocean white dwarf billions upon billions the carbon in our apple pies.
-				.toolbar
-					.origin-recipe From recipe: <%= uid %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
