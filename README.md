@@ -24,3 +24,11 @@ npm start
 ````
 
 The sample article page is here <http://localhost:3000/article>
+
+#### Some useful things
+
+Find all in project excluding uglified js
+
+````
+/Users/mike/wrk/projects/newslynx/newslynx-app/lib,-*.bundled.js
+````

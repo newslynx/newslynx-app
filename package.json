@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "gulp"
+    "start": "nodemon -x \"make all\" Makefile"
   },
   "dependencies": {
     "async": "~0.9.0",
