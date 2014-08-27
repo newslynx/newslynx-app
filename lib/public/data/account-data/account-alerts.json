@@ -1,4 +1,6 @@
-[
+{
+	"min_timestamp": 1408800255,
+	"results": [
   {
     "uid": "503655471577071617-7",
     "text": "@BergsonSandra @ShaggyCoe @MynameisElwood @lisareed13 See you tomorrow Poedarling. Mahooosive mwahs &amp; a Lola furkle x http://t.co/MFfG1Bu6uD",
@@ -185,7 +187,7 @@
   {
     "uid": "503286729441554433-7",
     "text": "RT @shosha16: Noucentista universal : Sense l'editor Jaume Vallcorba (1949-2014) la cultura catalana seria avui m√©s petita... http://t.co/J‚Ä¶",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/Lola_2004/statuses/503286729441554433",
     "urls": [
       "http://elmati.cat/article/4163/noucentista-universal"
@@ -196,7 +198,7 @@
   {
     "uid": "503280988936732672-7",
     "text": "\"Lola where you going you slut you go and you come back late shame on you\" My dad talking to my cat.",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/Reverend_Shaun/statuses/503280988936732672",
     "urls": [],
     "timestamp": 1408844512,
@@ -205,7 +207,7 @@
   {
     "uid": "503264811304898560-7",
     "text": "Lola. ‚ô•\n\n#Love #Cat #InstaCat #InstaPet #NoFilter @ Campo Grande, Rio de Janeiro http://t.co/M8khtVxWZw",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/Luciianar_/statuses/503264811304898560",
     "urls": [
       "http://instagram.com/p/sDYNE8v69Y/"
@@ -216,7 +218,7 @@
   {
     "uid": "503231976057212928-7",
     "text": "Amo esses olhos , amo azul , amo essa gata Ì†ΩÌ≤ïÌ†ΩÌ±ëÌ†ΩÌ∏∫ #lola #love #cat #BlueEyes http://t.co/XHezxKbmpP",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/pandicorniapayn/statuses/503231976057212928",
     "urls": [
       "http://instagram.com/p/sDJEO1KB4O/"
@@ -227,7 +229,7 @@
   {
     "uid": "503205613506027521-7",
     "text": "E quem resiste? De tanto pedir o Barney pra minha m√£e, a Lola ganhou e n√£o desgruda mais. #lola #cat‚Ä¶ http://t.co/8Q4etmK0c3",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/cacarvalho/statuses/503205613506027521",
     "urls": [
       "http://instagram.com/p/sC9SKfBgHH/"
@@ -247,7 +249,7 @@
   {
     "uid": "503160508716167168-7",
     "text": "Lola crawls up into my arms like a human baby, proceeds to purr, drool and fall asleep. F*ck I love this cat.",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/LauraAHawkins/statuses/503160508716167168",
     "urls": [],
     "timestamp": 1408815788,
@@ -256,7 +258,7 @@
   {
     "uid": "503119985414533120-7",
     "text": "RT @EvaPiquer: Mor l'editor Jaume Vallcorba als 65 anys. Un retrat d'ell en catorze reflexions: http://t.co/fu0RpIJIFo",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/Lola_2004/statuses/503119985414533120",
     "urls": [
       "http://catorze.naciodigital.cat/noticia/356/jaume/vallcorba/no/he/tingut/mai/sensacio/treballar"
@@ -267,7 +269,7 @@
   {
     "uid": "503108819267096576-7",
     "text": "@Lola_Dreambomb Loki Thor Loki or is it the name of your cat :)",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/Alex_Rams13/statuses/503108819267096576",
     "urls": [],
     "timestamp": 1408803464,
@@ -276,7 +278,7 @@
   {
     "uid": "503097735973986305-7",
     "text": "Another incident with my older cat. Have given timeout he is so annoying. Lola only playing not even in same room and goes after her.",
-    "recipe_id": 7,
+    "recipe_id": 6,
     "link": "http://twitter.com/polo1425/statuses/503097735973986305",
     "urls": [],
     "timestamp": 1408800822,
@@ -292,3 +294,4 @@
     "default_event": {}
   }
 ]
+}
