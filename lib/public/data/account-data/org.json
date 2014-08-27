@@ -58,43 +58,43 @@
   ],
  "subject_tags": [
     {
-      "uid": "st1",
+      "id": "st1",
       "name": "Fracking",
       "color": "#cf0",
 			"articles": 8
     },
     {
-      "uid": "st2",
+      "id": "st2",
       "name": "Rebels",
       "color": "#f0c",
 			"articles": 2
     },
     {
-      "uid": "st3",
+      "id": "st3",
       "name": "Hoth",
       "color": "#0cf",
 			"articles": 14
     },
     {
-      "uid": "st4",
+      "id": "st4",
       "name": "Bounty hunters",
       "color": "#f0c",
 			"articles": 1
     },
     {
-      "uid": "st5",
+      "id": "st5",
       "name": "Greedo",
       "color": "#f0c",
 			"articles": 12
     },
     {
-      "uid": "st6",
+      "id": "st6",
       "name": "Millenium Falcon Ops",
       "color": "#f0c",
       "articles": 2
     },
     {
-      "uid": "st7",
+      "id": "st7",
       "name": "The Force",
       "color": "#f0c",
       "articles": 5
@@ -102,7 +102,7 @@
   ],
   "impact_tags": [
     {
-      "uid": "it1",
+      "id": "it1",
       "name": "Mentioned by congress",
       "category": "citation",
       "type": "institution",
@@ -110,7 +110,7 @@
       "articles": 5
     },
     {
-      "uid": "it2",
+      "id": "it2",
       "name": "Mentioned by Chancellor",
       "category": "citation",
       "type": "institution",
@@ -118,7 +118,7 @@
       "articles": 3
     },
     {
-      "uid": "it3",
+      "id": "it3",
       "name": "Force grown",
       "category": "change",
       "type": "community",

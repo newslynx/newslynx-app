@@ -1,0 +1,11 @@
+{
+	"timestamp": {
+		"type": "text"
+	},
+	"text": {
+		"type": "text"
+	},
+	"link": {
+		"type": "text"
+	}
+}

@@ -53,11 +53,9 @@ block templates
 				.modal-inner
 					.title Recipe settings
 					form
-						<%= bakeRecipeUpdateForm(uid, source, settings, name, 'schema') %>
 						.show-hide-default-event This recipe triggers events with some default properties. 
 							|<span class="toggle-default-event" data-status="<%= set_default_event %>"><%= formatDefaultEventEnabled(set_default_event) %></span>
 						|<div class="default-event-container" <% (set_default_event) ? print(' style="display:block;"') : print('') %>>
-						<%= bakeRecipeUpdateForm(uid, source, default_event, name, 'default_event') %>
 						|</div>
 						.buttons-container
 							button.cancel Cancel
@@ -74,11 +72,9 @@ block templates
 		.recipe-form-container
 			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
-				<%= bakeForm(schema) %>
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
 				.default-event-container
-					<%= bakeForm(default_event) %>
 				.buttons-container
 					input.save(type="submit", value="Create")
 					span.submit-msg
@@ -101,6 +97,7 @@ block templates
 					.title Create new event
 					.description Add options here and a form for adding a tag, associating with an article etc.
 					form
+						<%= bakeEventCreationForm(recipe_id, text, link, timestamp) %>
 						.buttons-container
 							button.cancel Cancel
 							input.save(type="submit", value="Create")
@@ -112,6 +109,7 @@ block bootstrap-data
 		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
 		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.riverItems =!{JSON.stringify(riverItems)};   
+		pageData.eventSchema =!{JSON.stringify(eventSchema)};   
 
 
 block scripts

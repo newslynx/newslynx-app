@@ -1,6 +1,6 @@
 [
   {
-    "uid": "r1",
+    "id": "r1",
     "pending_alerts": ["alt1", "alt2"],
     "enabled": true,
     "type": "discussion",
@@ -12,7 +12,7 @@
     }
   },
   {
-    "uid": "r2",
+    "id": "r2",
     "pending_alerts": ["alt2", "alt3"],
     "enabled": true,
     "type": "discussion",
@@ -28,7 +28,7 @@
     }
   },
   {
-    "uid": "r3",
+    "id": "r3",
     "pending_alerts": ["alt4", "alt5"],
     "enabled": true,
     "type": "discussion",

@@ -19,12 +19,12 @@ block templates
 				input(type="checkbox")
 				input(type="radio")
 			.drawer-list-inner
-				.pub-date <%= date(datetime) %>
+				.pub-date <%= date(timestamp) %>
 				.title <%= title %>
 
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
-			.pub-date <%= date(datetime) %>
+			.pub-date <%= date(timestamp) %>
 			h2.headline <%= title %>
 			.tag-container
 				.tag-title Tags:

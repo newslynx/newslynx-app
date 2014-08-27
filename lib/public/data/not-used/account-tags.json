@@ -1,51 +1,51 @@
 {
   "subject": [
     {
-      "uid": "st1",
+      "id": "st1",
       "name": "Fracking",
       "color": "#fc0"
     },
     {
-      "uid": "st2",
+      "id": "st2",
       "name": "Rebels",
       "color": "#f0c"
     },
     {
-      "uid": "st3",
+      "id": "st3",
       "name": "Rebels",
       "color": "#f0c"
     },
     {
-      "uid": "st4",
+      "id": "st4",
       "name": "Rebels",
       "color": "#f0c"
     },
     {
-      "uid": "st5",
+      "id": "st5",
       "name": "Rebels",
       "color": "#f0c"
     },
     {
-      "uid": "st6",
+      "id": "st6",
       "name": "Rebels",
       "color": "#f0c"
     },
     {
-      "uid": "st7",
+      "id": "st7",
       "name": "Rebels",
       "color": "#f0c"
     }
   ],
   "impact": [
     {
-      "uid": "it1",
+      "id": "it1",
       "name": "Mentioned by congress",
       "category": "citation",
       "type": "institution",
       "color": "#0cf"
     },
     {
-      "uid": "it2",
+      "id": "it2",
       "name": "Mentioned by Chancellor",
       "category": "citation",
       "type": "institution",

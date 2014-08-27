@@ -114,7 +114,7 @@ block templates
 						<%  for (var i = 0; i < subject_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-uid="<%= subject_tags[i].uid %>" />
+							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
 							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="articles" data-key="color" />
 						<% } %>
 					button.add Add				
@@ -126,7 +126,7 @@ block templates
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name" data-uid="<%= impact_tags[i].uid %>"/>
+							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= impact_tags[i].id %>"/>
 							|<select name='category' class="input-item multi-child" data-key="category">
 							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Citation</option>
 							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Change</option>
@@ -210,7 +210,7 @@ block templates
 			<% } else if (flag == 'checkbox') { %>
 			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'color') { %>
-			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="'+group+'" data-key="'+keys[1]+'" data-uid="false" />') %>
+			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="'+group+'" data-key="'+keys[1]+'" data-id="false" />') %>
 			<% } %>
 
 	script(type="text/jst")#multi-input-double-templ
@@ -223,7 +223,7 @@ block templates
 	script(type="text/jst")#impact-tag-input-templ
 		li.input.multi
 			.multi-child.destroy &times;
-			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-uid="false"/>
+			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-id="false"/>
 			|<select name='category' class="input-item multi-child" data-key="category">
 			|<option value='citation' selected> Citation</option>
 			|<option value='change'>Change</option>

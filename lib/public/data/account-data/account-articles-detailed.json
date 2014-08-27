@@ -2,13 +2,13 @@
 	{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "artD1",
-		"article_uid": "art1",
+		"id": "artD1",
+		"article_id": "art1",
 		"title": "Senators vote overwhelmingly in favor of Empire",
 		"authors": [
 			"Darth Sidious"
 		],
-		"datetime": "2014-06-13",
+		"timestamp": "2014-06-13",
 		"aggregate_stats": {
 			"internal_referrer_percent": 43,
 			"internal_referrer_percent": 57,
@@ -17,37 +17,37 @@
 		},
 		"timeseries_stats": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"twitter_shares": 1023,
 				"facebook_likes": 2023,
 				"pageviews": 50023
 			},{
-				"datetime": "2014-02-05 13:00:00",
+				"timestamp": "2014-02-05 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 5223,
 				"pageviews": 60023
 			},{
-				"datetime": "2014-02-06 13:00:00",
+				"timestamp": "2014-02-06 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 5523,
 				"pageviews": 7000
 			},{
-				"datetime": "2014-02-07 13:00:00",
+				"timestamp": "2014-02-07 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 5623,
 				"pageviews": 70023
 			},{
-				"datetime": "2014-02-08 13:00:00",
+				"timestamp": "2014-02-08 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 5723,
 				"pageviews": 80023
 			},{
-				"datetime": "2014-02-09 13:00:00",
+				"timestamp": "2014-02-09 13:00:00",
 				"twitter_shares": 1603,
 				"facebook_likes": 6223,
 				"pageviews": 85023
 			},{
-				"datetime": "2014-10-10 13:00:00",
+				"timestamp": "2014-10-10 13:00:00",
 				"twitter_shares": 2203,
 				"facebook_likes": 8223,
 				"pageviews": 900023
@@ -56,13 +56,13 @@
 		"subject_tags": ["st1"],
 		"events": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"name": "Jon Stewart talked about us",
 				"impact_tags": ["it1","it2"],
 				"related_links": []
 			},
 			{
-				"datetime": "2014-06-02 13:00:00",
+				"timestamp": "2014-06-02 13:00:00",
 				"name": "Congress talked about us",
 				"impact_tags": ["it2"],
 				"related_links": []
@@ -71,13 +71,13 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "artD2",
-		"article_uid": "art2",
+		"id": "artD2",
+		"article_id": "art2",
 		"title": "Nabool deal folds",
 		"authors": [
 			"Darth Sidious"
 		],
-    "datetime": "2014-06-10",
+    "timestamp": "2014-06-10",
 		"aggregate_stats": {
 			"internal_referrer_percent": 43,
 			"internal_referrer_percent": 57,
@@ -86,13 +86,13 @@
 		},
 		"timeseries_stats": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"twitter_shares": 123,
 				"facebook_likes": 123,
 				"pageviews": 123
 			},
 			{
-				"datetime": "2014-02-05 13:00:00",
+				"timestamp": "2014-02-05 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 1223,
 				"pageviews": 1223
@@ -101,13 +101,13 @@
 		"subject_tags": ["st1"],
 		"events": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"name": "Jon Stewart talked about us",
 				"impact_tags": ["it1"],
 				"related_links": []
 			},
 			{
-				"datetime": "2002-06-02 13:00:00",
+				"timestamp": "2002-06-02 13:00:00",
 				"name": "Congress talked about us",
 				"impact_tags": ["it2"],
 				"related_links": []
@@ -116,13 +116,13 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"uid": "artD3",
-		"article_uid": "art3",
+		"id": "artD3",
+		"article_id": "art3",
 		"title": "Much promise for new Senate",
 		"authors": [
 			"Darth Sidious"
 		],
-    "datetime": "2014-05-10",
+    "timestamp": "2014-05-10",
 		"aggregate_stats": {
 			"internal_referrer_percent": 43,
 			"internal_referrer_percent": 57,
@@ -131,13 +131,13 @@
 		},
 		"timeseries_stats": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"twitter_shares": 123,
 				"facebook_likes": 123,
 				"pageviews": 123
 			},
 			{
-				"datetime": "2014-02-05 13:00:00",
+				"timestamp": "2014-02-05 13:00:00",
 				"twitter_shares": 1203,
 				"facebook_likes": 1223,
 				"pageviews": 1223
@@ -146,13 +146,13 @@
 		"subject_tags": ["st1"],
 		"events": [
 			{
-				"datetime": "2014-01-04 13:00:00",
+				"timestamp": "2014-01-04 13:00:00",
 				"name": "Jon Stewart talked about us",
 				"impact_tags": ["it1"],
 				"related_links": []
 			},
 			{
-				"datetime": "2002-06-02 13:00:00",
+				"timestamp": "2002-06-02 13:00:00",
 				"name": "Congress talked about us",
 				"impact_tags": ["it2"],
 				"related_links": []

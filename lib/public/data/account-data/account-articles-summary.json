@@ -1,14 +1,14 @@
 [
   {
-    "uid": "art1",
-    "article_uid": "art1",
+    "id": "art1",
+    "article_id": "art1",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Senators vote overwhelmingly in favor of Empire",
-    "datetime": "2014-06-13",
+    "timestamp": "2014-06-13",
     "quant_metrics": [
       {
         "metric": "twitter",
@@ -79,15 +79,15 @@
     ]
   },
   {
-    "uid": "art2",
-    "article_uid": "art2",
+    "id": "art2",
+    "article_id": "art2",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Naboo deal folds",
-    "datetime": "2014-06-10",
+    "timestamp": "2014-06-10",
     "quant_metrics": [
       {
         "metric": "twitter",
@@ -134,15 +134,15 @@
     ]
   },
   {
-    "uid": "art3",
-    "article_uid": "art3",
+    "id": "art3",
+    "article_id": "art3",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Much promise for new Senate",
-    "datetime": "2014-05-10",
+    "timestamp": "2014-05-10",
     "quant_metrics": [
       {
         "metric": "twitter",
