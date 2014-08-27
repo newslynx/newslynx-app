@@ -39,4 +39,5 @@ function loadCerts (){
 	});
 }
 
-loadCerts();
+// loadCerts();
+launchServers();

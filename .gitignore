@@ -53,6 +53,7 @@ node_modules
 
 # Development database
 *.sqlite
+*.rdb
 
 # SSL
 lib/ssl/*
