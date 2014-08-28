@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon -x \"make all\" Makefile"
+    "start": "nodemon ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
   },
   "dependencies": {
     "async": "~0.9.0",
@@ -21,19 +21,12 @@
     "underscore": "1.6.x",
     "validator": "3.x",
     "tracer": "~0.7.1",
-    "stylus": "~0.48.0"
+    "stylus": "~0.48.0",
+    "nib": "~1.0.3",
+    "uglify-js": "~2.4.15"
   },
   "devDependencies": {
     "nodemon": "1.x",
-    "watchify": "~1.0.2",
-    "gulp-uglifyjs": "~0.4.2",
-    "gulp-nodemon": "~1.0.4",
-    "gulp-plumber": "~0.6.4",
-    "jshint": "~2.5.4",
-    "gulp": "~3.8.7",
-    "gulp-jshint": "~1.8.4",
-    "gulp-stylus": "~1.3.0",
-    "nib": "~1.0.3",
     "queue-async": "~1.0.7"
   }
 }
