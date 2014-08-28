@@ -964,6 +964,10 @@ input {
   border-bottom: 1px solid #777676;
   margin-bottom: 5px;
 }
+.modal-inner .description {
+  margin-bottom: 5px;
+  font-size: 1.2em;
+}
 .modal-inner:hover {
   cursor: default !important;
 }
