@@ -95,6 +95,7 @@ block templates
 					.origin-recipe From recipe: <%= getRecipeFromId(recipe_id).name %>
 				.title <%= name %>
 				.description <%= text %>
+				//-|<a href="<%= link %>" class="embedly-card">embedly card</a>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
@@ -124,6 +125,7 @@ block scripts
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	//- script(src="javascripts/thirdparty/waypoints.min.js")
 	script(src="javascripts/thirdparty/jquery-ui.min.js")
+	script(src="javascripts/thirdparty/embedly.js")
 
 	//- Put it all together
 	script(src="javascripts/main.bundled.js")

@@ -445,11 +445,11 @@ body[data-section="home"] #content
 		padding 10px 10px 10px 50px
 		max-width 600px
 #content[data-mode="my-recipes"]
-	padding 25px 60px
+	padding 5px 20px
 	.article-detail-wrapper
-		margin 10px 0 55px 0
+		margin 10px
 		padding 10px
-		width 100%
+		width 375px
 
 .drawer-pointer
 	padding 20px 10px 8px 10px
@@ -468,25 +468,23 @@ body[data-section="home"] #content
 #drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
 	background-color select_blue
 	cursor default
-.approval-child
-	display inline-block
-	height 100%
-	vertical-align top
 .approval-child[data-which="btns"]
 	margin-right 1%
 .approval-child[data-which="info"]
 	width 85%
 .approval-btn-container
 	text-align center
-	width 38px
-	height @width
-	display table
+	width 50%
+	display inline-table
+	color #4e4e4e
 .approval-btn-container[data-which="yes"]
-	color enable_green
+	background-color #A2F4BF
+	// color enable_green
 .approval-btn-container[data-which="no"]
-	color disabled_red
+	background-color #FFB0B0
+	// color disabled_red
 .approval-btn
-	font-size 2.3em
+	font-size 1.8em
 	width 100%
 	user-select none
 	border 2px solid transparent
@@ -531,6 +529,8 @@ body[data-section="home"] #content
 // 	transition height 200ms cubic-bezier(0,0,.2,1)
 // .default-event-container.slide-open
 // 	height 100%
+
+
 /* end approval river */
 
 /* T E X T  S T Y L E S  */

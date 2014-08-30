@@ -551,12 +551,12 @@ body[data-section="home"] #content {
   max-width: 600px;
 }
 #content[data-mode="my-recipes"] {
-  padding: 25px 60px;
+  padding: 5px 20px;
 }
 #content[data-mode="my-recipes"] .article-detail-wrapper {
-  margin: 10px 0 55px 0;
+  margin: 10px;
   padding: 10px;
-  width: 100%;
+  width: 375px;
 }
 .drawer-pointer {
   padding: 20px 10px 8px 10px;
@@ -581,11 +581,6 @@ body[data-section="home"] #content {
   background-color: #88cfff;
   cursor: default;
 }
-.approval-child {
-  display: inline-block;
-  height: 100%;
-  vertical-align: top;
-}
 .approval-child[data-which="btns"] {
   margin-right: 1%;
 }
@@ -594,18 +589,18 @@ body[data-section="home"] #content {
 }
 .approval-btn-container {
   text-align: center;
-  width: 38px;
-  height: 38px;
-  display: table;
+  width: 50%;
+  display: inline-table;
+  color: #4e4e4e;
 }
 .approval-btn-container[data-which="yes"] {
-  color: #529624;
+  background-color: #a2f4bf;
 }
 .approval-btn-container[data-which="no"] {
-  color: #9e0000;
+  background-color: #ffb0b0;
 }
 .approval-btn {
-  font-size: 2.3em;
+  font-size: 1.8em;
   width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
