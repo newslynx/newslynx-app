@@ -67,6 +67,9 @@ input[type="text"] {
 body[data-modal=true] {
   overflow: hidden;
 }
+body[data-modal=true] .drawer-list-item-ul {
+  overflow: hidden;
+}
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper {
   width: 100%;
