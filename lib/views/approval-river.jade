@@ -1,8 +1,5 @@
 extends layout
 
-//- block css
-//- 	link(rel='stylesheet', href='/stylesheets/fancybox/jquery.fancybox.css')
-
 block drawer
 	ul.division-switcher
 		li(data-mode="my-recipes") My recipes
@@ -64,13 +61,13 @@ block templates
 							input.save(type="submit", value="Save")
 							input.destroy(type="button", value="Delete")
 
-	script(type="text/jst")#recipe-creator-templ
+	script(type="text/jst")#recipe-schema-list-item
 		|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
 		.drawer-list-inner
 			.title <%= prettyPrintSource(source) %>
 		|</div>
 
-	script(type="text/jst")#recipe-form-templ
+	script(type="text/jst")#recipe-schema-form-templ
 		.recipe-form-container
 			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
@@ -83,7 +80,7 @@ block templates
 					input.save(type="submit", value="Create")
 					span.submit-msg
 
-	script(type="text/jst")#river-item-templ
+	script(type="text/jst")#alert-templ
 		.river-item-container.modal-parent
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="yes")
