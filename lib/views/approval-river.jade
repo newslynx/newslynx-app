@@ -61,7 +61,7 @@ block templates
 							input.save(type="submit", value="Save")
 							input.destroy(type="button", value="Delete")
 
-	script(type="text/jst")#recipe-schema-list-item
+	script(type="text/jst")#recipe-schema-list-item-templ
 		|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
 		.drawer-list-inner
 			.title <%= prettyPrintSource(source) %>
