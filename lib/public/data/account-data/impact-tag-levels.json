@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Institution",
+		"color": "#f0c",
+		"articles": 4
+	},
+	{
+		"name": "Media",
+		"color": "#fc0",
+		"articles": 4
+	},
+	{
+		"name": "Community",
+		"color": "#0cf",
+		"articles": 4
+	},
+	{
+		"name": "Individual",
+		"color": "#cf0",
+		"articles": 4
+	},
+	{
+		"name": "Internal",
+		"color": "#0fc",
+		"articles": 4
+	}
+]

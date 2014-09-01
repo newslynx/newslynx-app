@@ -11,7 +11,7 @@ mixin articles
 	li.section.active(data-section="articles")
 		span.nav-link Articles
 	li.section-options
-		.section-title Use these filters to add articles to the drawer on the right
+		.section-title Select articles by...
 		.option-container(data-type="search")
 			.option-title Keywords
 			input(type="search" name="article-search" results="5" placeholder="Search..." incremental)
@@ -19,26 +19,29 @@ mixin articles
 			.option-title Date range
 			input(type="text" placeholder="From..." data-dir="from")
 			input(type="text" placeholder="To..." data-dir="to")
-		.option-container(data-type="sort")
-			.option-title Sort by
-			select
-				option Publish date
-				option # impact events
-				option Pageviews
-				option Twitter mentions
-				option Faceook Likes &amp; Shares
-				option Social media shares
+		//- .option-container(data-type="sort")
+		//- 	.option-title Sort by
+		//- 	select
+		//- 		option Publish date
+		//- 		option # impact events
+		//- 		option Pageviews
+		//- 		option Twitter mentions
+		//- 		option Faceook Likes &amp; Shares
+		//- 		option Social media shares
 		.option-container(data-type="subject-tags")
 			.option-title Subject tags
+			ul.tag-list
+		.option-container(data-type="impact-tag-categories")
+			.option-title Impact categories
+			ul.tag-list
+		.option-container(data-type="impact-tag-levels")
+			.option-title Impact levels
 			ul.tag-list
 		.option-container(data-type="impact-tags")
 			.option-title Impact tags
 			ul.tag-list
-			.edit
-				a(href="/settings#tags").out-link Edit tags
-		.option-container(data-type="search")
-			.option-title Add results to drawer
-			button Search
+			//- .edit
+			//- 	a(href="/settings#tags").out-link Edit tags
 
 //- mixin series
 //- 	li.section.active(data-section="series")

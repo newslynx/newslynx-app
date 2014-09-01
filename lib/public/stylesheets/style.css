@@ -250,7 +250,7 @@ body[data-modal=true] .drawer-list-item-ul {
 }
 .tag-list .tag-container {
   position: relative;
-  top: 2px;
+  top: 1px;
   padding: 5px 8px;
   border-left: 4px solid #0cf;
   border-right-top-radius: 3px;
@@ -267,7 +267,7 @@ body[data-modal=true] .drawer-list-item-ul {
 .tag-list .tag-name,
 .tag-list .tag-count {
   display: inline-block;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .tag-list .tag-count {
   float: right;
@@ -573,6 +573,9 @@ body[data-section="home"] #content {
 }
 .drawer-pointer p span {
   font-weight: bold;
+}
+.drawer-pointer.center {
+  text-align: center;
 }
 #recipe-sources {
   padding: 0;

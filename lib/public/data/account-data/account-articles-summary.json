@@ -1,14 +1,15 @@
 [
   {
     "id": "art1",
-    "article_id": "art1",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Senators vote overwhelmingly in favor of Empire",
-    "timestamp": "2014-06-13",
+    "timestamp": 1409517366,
+    "subject_tags": ["st2", "st3", "st4"],
+    "impact_tags": ["it2", "it3"],
     "quant_metrics": [
       {
         "metric": "twitter",
@@ -34,60 +35,19 @@
         "metric": "external",
         "count": 32
       }
-    ],
-    "qual_metrics": [
-      {
-        "metric": "subject_tags",
-        "id": "st1"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st2"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st3"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st4"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st5"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st6"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st7"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it1"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it2"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it3"
-      }
     ]
   },
   {
     "id": "art2",
-    "article_id": "art2",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Naboo deal folds",
-    "timestamp": "2014-06-10",
+    "timestamp": 1409517366,
+    "subject_tags": ["st1", "st2"],
+    "impact_tags": ["it1", "it2", "it3"],
     "quant_metrics": [
       {
         "metric": "twitter",
@@ -113,36 +73,19 @@
         "metric": "external",
         "count": 12
       }
-    ],
-    "qual_metrics": [
-      {
-        "metric": "subject_tags",
-        "id": "st1"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st2"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it1"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it2"
-      }
     ]
   },
   {
     "id": "art3",
-    "article_id": "art3",
     "org_id": "propalpatine",
     "url": "http://www.propalpatine.org/article/Senators-vote-Empire",
     "authors": [
       "Darth Sidious"
     ],
     "title": "Much promise for new Senate",
-    "timestamp": "2014-05-10",
+    "timestamp": 1409517366,
+    "subject_tags": ["st4"],
+    "impact_tags": ["it1"],
     "quant_metrics": [
       {
         "metric": "twitter",
@@ -167,24 +110,6 @@
       {
         "metric": "external",
         "count": 120
-      }
-    ],
-    "qual_metrics": [
-      {
-        "metric": "subject_tags",
-        "id": "st1"
-      },
-      {
-        "metric": "subject_tags",
-        "id": "st2"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it1"
-      },
-      {
-        "metric": "impact_tags",
-        "id": "it2"
       }
     ]
   }

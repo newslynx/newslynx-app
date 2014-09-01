@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Citation",
+		"color": "#f0c",
+		"articles": 2
+	},
+	{
+		"name": "Change",
+		"color": "#fc0",
+		"articles": 2
+	},
+	{
+		"name": "Achievement",
+		"color": "#0cf",
+		"articles": 2
+	},
+	{
+		"name": "Others",
+		"color": "#cf0",
+		"articles": 2
+	}
+]
