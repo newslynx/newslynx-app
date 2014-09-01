@@ -4,15 +4,7 @@ block drawer
 	ul.division-switcher
 		li(data-mode="compare") Compare
 		li(data-mode="single") Detail view
-	.drawer-pointer
-		.drawer-item
-			.add-to-comparison(data-action="replace")
-				span.octicon-sync.octicon  
-				span  Replace comparison with selection
-		.drawer-item
-			.add-to-comparison(data-action="append")
-				span.octicon-plus.octicon  
-				span  Append selection to comparision
+	#drawer-pointers-container
 	ul#article-list.drawer-list-item-ul
 
 block templates
@@ -20,6 +12,18 @@ block templates
 		.tag-container
 			.tag-name <%= name %>
 			.tag-count <%= articles %>
+
+	script(type="text/jst")#drawer-pointers-templ
+		.drawer-pointer
+			.drawer-item
+				.add-to-comparison(data-action="replace")
+					span.octicon-sync.octicon  
+					span  Replace comparison with selection
+			.drawer-item 
+				.add-to-comparison(data-action="append")
+					span.octicon-plus.octicon  
+					span  Append selection to comparision
+
 
 	script(type="text/jst")#article-summary-drawer-templ
 		.drawer-list-outer
