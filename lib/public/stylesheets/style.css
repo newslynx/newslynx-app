@@ -1167,13 +1167,13 @@ body[data-section="settings"] #content {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 3px;
-  margin-left: 328px;
+  margin-left: 329px;
 }
 .setting-group[data-group="impact-tags"] .setting-flag {
   display: inline-block;
 }
 .setting-group[data-group="impact-tags"] .setting-flag:nth-child(2) {
-  margin-left: 56px;
+  margin-left: 58px;
   margin-right: 50px;
 }
 .destroy.multi-child {
