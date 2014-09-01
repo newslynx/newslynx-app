@@ -272,6 +272,15 @@ body[data-modal=true] .drawer-list-item-ul {
 .tag-list .tag-count {
   float: right;
 }
+.tag-list .color-swatch {
+  display: inline-block;
+  height: 10px;
+  width: 5px;
+  margin-right: 3px;
+}
+.tag-list .info {
+  display: inline-block;
+}
 .option-container .edit a {
   font-size: 1.3em;
   display: inline-block;
@@ -573,6 +582,24 @@ body[data-section="home"] #content {
 }
 .drawer-pointer p span {
   font-weight: bold;
+}
+.drawer-pointer .drawer-item {
+  padding: 5px;
+}
+.drawer-pointer .drawer-item .add-to-comparison {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  padding: 7px 7px 7px 17px;
+  color: #53a373;
+  font-weight: 400;
+  background-color: #c8edd7;
+}
+.drawer-pointer .drawer-item:hover {
+  cursor: pointer;
+}
+.drawer-pointer .drawer-item:hover .add-to-comparison {
+  background-color: #b1e6c7;
+  color: #3d915f;
 }
 .drawer-pointer.center {
   text-align: center;
@@ -1266,7 +1293,7 @@ button.add {
   margin: 0;
 }
 .save-container {
-  margin-top: 50px;
+  margin: 25px 0;
 }
 .save-container input {
   font-size: 2.4em;

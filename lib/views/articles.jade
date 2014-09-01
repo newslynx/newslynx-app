@@ -4,8 +4,15 @@ block drawer
 	ul.division-switcher
 		li(data-mode="compare") Compare
 		li(data-mode="single") Detail view
-	.drawer-pointer.center
-		button Add checked articles to comparison
+	.drawer-pointer
+		.drawer-item
+			.add-to-comparison(data-action="replace")
+				span.octicon-sync.octicon  
+				span  Replace comparison with selection
+		.drawer-item
+			.add-to-comparison(data-action="append")
+				span.octicon-plus.octicon  
+				span  Append selection to comparision
 	ul#article-list.drawer-list-item-ul
 
 block templates
@@ -14,7 +21,7 @@ block templates
 			.tag-name <%= name %>
 			.tag-count <%= articles %>
 
-	script(type="text/jst")#article-summary-templ
+	script(type="text/jst")#article-summary-drawer-templ
 		.drawer-list-outer
 			.inputs-container
 				input(type="checkbox")
@@ -22,6 +29,18 @@ block templates
 			.drawer-list-inner
 				.pub-date <%= date(timestamp) %>
 				.title <%= title %>
+				ul.tag-list#subject-tags
+					<% _.each(subject_tags_full, function(tag){ %>
+					li.subject-tag
+						|<div class="color-swatch" style="background-color:<%= tag.color %>"></div>
+						.info <%= tag.name %>
+					<% }) %>
+				ul.tag-list#impact-tags
+					<% _.each(impact_tags_full, function(tag){ %>
+					li.impact-tag
+						|<div class="color-swatch" style="background-color:<%= tag.color %>"></div>
+						.info <%= tag.name %>, <%= tag.category %>,  <%= tag.level %>
+					<% }) %>
 
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
@@ -121,6 +140,7 @@ block bootstrap-data
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
 		pageData.articleDetails 				=!{JSON.stringify(articleDetails)};
 		pageData.eventSchemas 					=!{JSON.stringify(eventSchemas)};
+		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")

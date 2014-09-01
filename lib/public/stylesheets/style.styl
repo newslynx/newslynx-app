@@ -248,6 +248,13 @@ events = #c13d3d
 		font-size 1.2em
 	.tag-count
 		float right
+	.color-swatch // This is TK, design and integration with existing css styles needs to be done more comprehensively
+		display inline-block
+		height 10px
+		width 5px
+		margin-right 3px
+	.info
+		display inline-block
 
 .option-container
 	.edit
@@ -463,6 +470,21 @@ body[data-section="home"] #content
 		padding-bottom 8px
 		span
 			font-weight bold
+	.drawer-item
+		padding 5px
+		.add-to-comparison
+			border-radius 2px
+			padding 7px 7px 7px 17px
+			color #53A373
+			font-weight 400
+			background-color tint(articles, 72%)
+	.drawer-item:hover
+		cursor pointer
+	.drawer-item:hover .add-to-comparison
+		background-color tint(articles, 60%)
+		color #3D915F
+
+
 .drawer-pointer.center
 	text-align center
 #recipe-sources
@@ -1035,7 +1057,7 @@ button.add
 		margin 0
 
 .save-container
-	margin-top 50px
+	margin 25px 0
 	input
 		font-size 2.4em
 /* end settings */
