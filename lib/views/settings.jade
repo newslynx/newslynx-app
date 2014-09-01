@@ -143,6 +143,11 @@ block templates
 							|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
 					button.add Add	
+			.settings-group
+				.save-container
+					.setting-description
+						p Please save your changes before using the authentication tools below, which will refresh the page and you might lose unsaved changes.
+					input(type="submit" value="Save changes")#save
 			#account-authentication.settings-group
 				.settings-title Account authentication
 				.setting-description 
@@ -181,8 +186,6 @@ block templates
 							a(href='/auth/facebook').authenticate
 								button Grant access
 						<% }  %>			
-			.save-container
-				input(type="submit" value="Save changes")#save
 
 
 	//- script(type="text/jst")#settings-group-templ
