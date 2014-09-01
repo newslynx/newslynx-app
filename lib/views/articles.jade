@@ -29,7 +29,6 @@ block templates
 		.drawer-list-outer
 			.inputs-container
 				input(type="checkbox")
-				input(type="radio")
 			.drawer-list-inner
 				.pub-date <%= date(timestamp) %>
 				.title <%= title %>
@@ -127,7 +126,7 @@ block templates
 			.rows
 
 	//-  TODO, sort by % over comparison
-	script(type="text/jst")#article-detail-row-templ
+	script(type="text/jst")#article-summary-row-templ
 		.article-detail-row-container
 			.destroy &times;
 
