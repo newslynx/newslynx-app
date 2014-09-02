@@ -20,9 +20,9 @@ block templates
 					span.octicon-sync.octicon  
 					span  Replace comparison with selection
 			.drawer-item 
-				.add-to-comparison(data-action="append")
+				.add-to-comparison(data-action="add")
 					span.octicon-plus.octicon  
-					span  Append selection to comparision
+					span  Add selection to comparision
 
 
 	script(type="text/jst")#article-summary-drawer-templ
@@ -105,7 +105,7 @@ block templates
 				.header-dimensions-container
 					.header-el.cell.wide(data-metric="title")
 						.name Headline
-					.header-el.cell.date(data-metric="date")
+					.header-el.cell.date(data-metric="date").active
 						.name Date
 					.header-el.cell.multi(data-metric="twitter")
 						.name Twitter
