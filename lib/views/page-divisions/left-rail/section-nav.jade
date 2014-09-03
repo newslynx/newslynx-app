@@ -10,7 +10,7 @@ mixin approval-river
 mixin articles
 	li.section.active(data-section="articles")
 		span.nav-link Articles
-	li.section-options
+	li.section-options(data-section-options="articles")
 		.section-title Select articles by...
 		.option-container(data-type="search")
 			.option-title Keywords
@@ -29,16 +29,20 @@ mixin articles
 		//- 		option Faceook Likes &amp; Shares
 		//- 		option Social media shares
 		.option-container(data-type="subject-tags")
-			.option-title Subject tags
+			.option-title Subject tags — 
+				span.show-hide(data-open="false") Show
 			ul.tag-list
 		.option-container(data-type="impact-tag-categories")
-			.option-title Impact categories
+			.option-title Impact categories — 
+				span.show-hide(data-open="false") Show
 			ul.tag-list
 		.option-container(data-type="impact-tag-levels")
-			.option-title Impact levels
+			.option-title Impact levels — 
+				span.show-hide(data-open="false") Show
 			ul.tag-list
 		.option-container(data-type="impact-tags")
-			.option-title Impact tags
+			.option-title Impact tags — 
+				span.show-hide(data-open="false") Show
 			ul.tag-list
 			//- .edit
 			//- 	a(href="/settings#tags").out-link Edit tags
@@ -62,6 +66,11 @@ nav
 		//- else	
 		//- 	li.section(data-section="home")
 		//- 		a(href="/") Home
+		if (page == 'about')
+			mixin about
+		else	
+			li.section(data-section="about")
+				a(href="/about") About
 		if (page == 'approval-river')
 			mixin approval-river
 		else	
@@ -72,11 +81,6 @@ nav
 		else	
 			li.section(data-section="articles")
 				a(href="/articles") Articles
-		if (page == 'about')
-			mixin about
-		else	
-			li.section(data-section="about")
-				a(href="/about") About
 		//- if (page == 'series')
 		//- 	mixin series
 		//- else	
