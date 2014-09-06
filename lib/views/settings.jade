@@ -122,7 +122,7 @@ block templates
 					.setting-flag Category
 					.setting-flag Level
 					.setting-title Impact tags
-					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys='["name", "category", "attribute","color"]')
+					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys='["name", "category", "level","color"]')
 						<%  for (var i = 0; i < impact_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
@@ -133,7 +133,7 @@ block templates
 							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Achievement</option>
 							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Other</option>
 							|</select>
-							|<select name='attribute' class="input-item multi-child" data-key="attribute">
+							|<select name='level' class="input-item multi-child" data-key="level">
 							|<option value='institution'  <% ((impact_tags[i].level == 'institution') ? print('selected') : '')  %> > Institution</option>
 							|<option value='media'  <% ((impact_tags[i].level == 'media') ? print('selected') : '')  %> > Media</option>
 							|<option value='community'  <% ((impact_tags[i].level == 'community') ? print('selected') : '')  %> > Community</option>
@@ -233,7 +233,7 @@ block templates
 			|<option value='achievement'>Achievement</option>
 			|<option value='other'>Other</option>
 			|</select>
-			|<select name='attribute' class="input-item multi-child" data-key="attribute">
+			|<select name='level' class="input-item multi-child" data-key="level">
 			|<option value='citation' selected> Institutional</option>
 			|<option value='change'>Community</option>
 			|<option value='achievement'>Individual</option>

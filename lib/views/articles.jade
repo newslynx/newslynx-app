@@ -49,14 +49,12 @@ block templates
 		.article-detail-container
 			.pub-date <%= date(timestamp) %>
 			h2.headline <%= title %>
-			.tag-container
-				.tag-title Tags:
+			.tag-container(data-which="subject")
+				.tag-title Subject tags:
 				ul.tags
-					<% _.each(subject_tags_full, function(subject_tag){ %>
-					|<li class="tag" style="background-color:<%= subject_tag.color %>;"><%= subject_tag.name %></li>
-					<% }) %>
-				.edit-tags
-					button Edit
+			.tag-container(data-which="impact")
+				.tag-title Impact tags:
+				ul.tags
 			.toolbar
 				.group-container(data-side="left")
 					.group-item
