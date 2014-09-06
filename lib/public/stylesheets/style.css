@@ -917,6 +917,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 .header-el:hover {
   cursor: pointer;
@@ -924,6 +925,32 @@ input {
 }
 .header-el.active {
   color: #0eb521;
+  white-space: nowrap;
+}
+.header-el .name {
+  display: inline-block;
+}
+.header-el.active:after {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 3px;
+  font-size: 0.8em;
+}
+.header-el.active:hover:after {
+  text-decoration: none;
+}
+.header-el.active[data-sort-ascending="true"]:after {
+  content: '▲';
+  position: relative;
+  top: -2px;
+}
+.header-el.active[data-sort-ascending="false"]:after {
+  content: '▲';
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 /* end header styles */
 .cell.title {

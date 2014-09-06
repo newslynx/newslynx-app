@@ -748,11 +748,29 @@ group_margin = 30px
 .header-el
 	font-size 1.1em
 	user-select none
+	position relative
 .header-el:hover
 	cursor pointer
 	text-decoration underline
 .header-el.active
 	color the_green
+	white-space no-wrap
+.header-el .name
+	display inline-block
+.header-el.active:after
+	display inline-block
+	text-decoration none
+	margin-left 3px
+	font-size .8em
+.header-el.active:hover:after
+	text-decoration none
+.header-el.active[data-sort-ascending="true"]:after
+	content '▲'
+	position relative
+	top -2px
+.header-el.active[data-sort-ascending="false"]:after
+	content '▲'
+	transform rotate(180deg)
 /* end header styles */
 
 
