@@ -52,7 +52,7 @@ block templates
 			.tag-container
 				.tag-title Tags:
 				ul.tags
-					<% _.each(subject_tags, function(subject_tag){ %>
+					<% _.each(subject_tags_full, function(subject_tag){ %>
 					|<li class="tag" style="background-color:<%= subject_tag.color %>;"><%= subject_tag.name %></li>
 					<% }) %>
 				.edit-tags
