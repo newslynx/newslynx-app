@@ -3,7 +3,7 @@ extends layout
 block drawer
 	ul.division-switcher
 		li(data-mode="compare") Compare
-		li(data-mode="single") Detail view
+		li(data-mode="detail") Detail view
 	#drawer-pointers-container
 	ul#article-list.drawer-list-item-ul
 
@@ -105,7 +105,7 @@ block templates
 				.header-dimensions-container
 					.header-el.cell.wide(data-metric="title")
 						.name Headline
-					.header-el.cell.date(data-metric="date").active
+					.header-el.cell.date(data-metric="timestamp").active
 						.name Date
 					.header-el.cell.multi(data-metric="twitter")
 						.name Twitter
