@@ -641,22 +641,24 @@ input
 	.tag-container
 		margin 5px 0
 	.tag-title
-		display inline
+		display inline-block
 		font-size 1.2em
+		width 75px
 	ul.tags
 		display inline
 		.tag
 			display inline
-			padding 3px 5px
-			background-color #fc0
+			padding 2px 5px
+			background-color #ccc
 			margin-left 5px
 			user-select none
+			color #666
 			border-radius 2px
 			font-size 1.1em
 			position relative
-		.tag:hover
+		.tag:not(.empty):hover
 			cursor pointer
-		.tag:hover:after
+		.tag:not(.empty):hover:after
 			position absolute
 			left 0
 			top 0

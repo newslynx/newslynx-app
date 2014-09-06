@@ -806,8 +806,9 @@ input {
   margin: 5px 0;
 }
 .article-detail-container .tag-title {
-  display: inline;
+  display: inline-block;
   font-size: 1.2em;
+  width: 75px;
 }
 .article-detail-container ul.tags {
   display: inline;
@@ -815,21 +816,22 @@ input {
 .article-detail-container ul.tags .tag {
   display: inline;
   padding: 3px 5px;
-  background-color: #fc0;
+  background-color: #ccc;
   margin-left: 5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: #666;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   font-size: 1.1em;
   position: relative;
 }
-.article-detail-container ul.tags .tag:hover {
+.article-detail-container ul.tags .tag:not(.empty):hover {
   cursor: pointer;
 }
-.article-detail-container ul.tags .tag:hover:after {
+.article-detail-container ul.tags .tag:not(.empty):hover:after {
   position: absolute;
   left: 0;
   top: 0;
