@@ -581,9 +581,8 @@ input
 
 .article-detail-container
 	.toolbar
-		overflow auto
 		margin 20px 0 40px 0
-		padding-bottom 10px
+		// padding-bottom 10px
 		border-bottom 1px solid #ccc
 	.pub-date
 		font-size 1.2em
@@ -617,16 +616,20 @@ input
 			margin-bottom 5px
 		ul.tabs
 			.tab
+				position relative
+				top 1px
 				font-size 1.3em
 				display inline-block
-				padding 5px 8px
+				padding 8px
 				margin-right 5px
 				font-weight 200
 				letter-spacing 1px
 				user-select none
+				border 1px solid transparent
+				border-bottom none
 			.tab.active
-				background articles
-				color #fff
+				border-color #ccc
+				background-color #fff
 			.tab:hover
 				cursor pointer
 				text-decoration underline
@@ -634,6 +637,7 @@ input
 				cursor default
 				text-decoration none
 	.group-container[data-side="right"]
+		margin-bottom 6px
 		.group-item
 			float right
 			display block
@@ -685,8 +689,11 @@ input
 		.tag:not(.empty):hover
 			.tag-text
 				visibility hidden
-
-
+.detail-section
+	display none
+// To show on load, later controled by tabs
+.detail-section[data-group='life']
+	display block
 /* end main article styles */
 /* A R T I C L E  R O W */
 .article-detail-row-wrapper

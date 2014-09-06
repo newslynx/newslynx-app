@@ -69,8 +69,8 @@ block templates
 					.group-item
 						.group-title Tell me about:
 						ul.tabs
-							li.tab.active This story's life
-							li.tab Who's reading and sharing it
+							li.tab.active(data-group="life") This story's life
+							li.tab(data-group="reading") Who's reading and sharing it
 				.group-container(data-side="right")
 					.group-item
 						button.create-event + Create event
@@ -79,23 +79,25 @@ block templates
 						select#article-comparer
 							option an average article
 							option another thing
-			section(data-name="timeline")
-				h3.title How many people saw it and when was it shared on social media?
-				#ST-chart
-			section(data-name="social-posts")
-				h3.title Who is posting this story to social media?
-				img(src="images/dummy/social-posts.png")
-			section(data-name="traffic-sources")
-				h3.title Where is traffic coming from?
-				.description
-					p This article generally has above-average traffic both from internal and external referalls. As a percentage, external traffic is larger by 10%, which is pretty normal.
-				img(src="images/dummy/traffic-sources.png")
-			section(data-name="citations")
-				h3.title Who is citing this story
-				img(src="images/dummy/citations.png")
-			section(data-name="events")
-				h3.title What events have happened around this story?
-				img(src="images/dummy/events.png")
+			section.detail-section(data-group="life")
+				section(data-which="timeline")
+					h3.title How many people saw it and when was it shared on social media?
+					#ST-chart
+				section(data-which="events")
+					h3.title What events have happened around this story?
+					img(src="images/dummy/events.png")
+			section.detail-section(data-group="reading")
+				section(data-which="social-posts")
+					h3.title Who is posting this story to social media?
+					img(src="images/dummy/social-posts.png")
+				section(data-which="traffic-sources")
+					h3.title Where is traffic coming from?
+					.description
+						p This article generally has above-average traffic both from internal and external referalls. As a percentage, external traffic is larger by 10%, which is pretty normal.
+					img(src="images/dummy/traffic-sources.png")
+				//- section(data-which="citations")
+				//- 	h3.title Who is citing this story
+				//- 	img(src="images/dummy/citations.png")
 
 	script(type="text/jst")#article-grid-container-templ
 		#compare-grid

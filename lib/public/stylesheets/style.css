@@ -726,9 +726,7 @@ input {
   padding: 25px;
 }
 .article-detail-container .toolbar {
-  overflow: auto;
   margin: 20px 0 40px 0;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ccc;
 }
 .article-detail-container .pub-date {
@@ -774,9 +772,11 @@ input {
   margin-bottom: 5px;
 }
 .article-detail-container .group-container ul.tabs .tab {
+  position: relative;
+  top: 1px;
   font-size: 1.3em;
   display: inline-block;
-  padding: 5px 8px;
+  padding: 8px;
   margin-right: 5px;
   font-weight: 200;
   letter-spacing: 1px;
@@ -784,10 +784,12 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border: 1px solid transparent;
+  border-bottom: none;
 }
 .article-detail-container .group-container ul.tabs .tab.active {
-  background: #3ec173;
-  color: #fff;
+  border-color: #ccc;
+  background-color: #fff;
 }
 .article-detail-container .group-container ul.tabs .tab:hover {
   cursor: pointer;
@@ -796,6 +798,9 @@ input {
 .article-detail-container .group-container ul.tabs .tab.active:hover {
   cursor: default;
   text-decoration: none;
+}
+.article-detail-container .group-container[data-side="right"] {
+  margin-bottom: 6px;
 }
 .article-detail-container .group-container[data-side="right"] .group-item {
   float: right;
@@ -864,6 +869,12 @@ input {
 }
 .article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover .tag-text {
   visibility: hidden;
+}
+.detail-section {
+  display: none;
+}
+.detail-section[data-group='life'] {
+  display: block;
 }
 /* end main article styles */
 /* A R T I C L E  R O W */
