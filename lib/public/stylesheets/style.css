@@ -809,6 +809,10 @@ input {
   display: inline-block;
   font-size: 1.2em;
   width: 75px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .article-detail-container ul.tags {
   display: inline;
@@ -828,16 +832,22 @@ input {
   font-size: 1.1em;
   position: relative;
 }
-.article-detail-container ul.tags .tag.empty:hover {
+.article-detail-container ul.tags .tag:hover {
   cursor: default;
 }
-.article-detail-container ul.tags .tag:not(.empty):hover {
+.article-detail-container .edit-tags {
+  display: inline;
+  margin-left: 10px;
+}
+.article-detail-container #ST-chart {
+  max-width: 960px;
+  height: 500px;
+  margin-bottom: 50px;
+}
+.article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover {
   cursor: pointer;
 }
-.article-detail-container ul.tags .tag:not(.empty):hover .tag-text {
-  visibility: hidden;
-}
-.article-detail-container ul.tags .tag:not(.empty):hover:after {
+.article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover:after {
   position: absolute;
   left: 0;
   top: 0;
@@ -852,14 +862,8 @@ input {
   border-radius: 2px;
   background-color: rgba(0,0,0,0.15);
 }
-.article-detail-container .edit-tags {
-  display: inline;
-  margin-left: 10px;
-}
-.article-detail-container #ST-chart {
-  max-width: 960px;
-  height: 500px;
-  margin-bottom: 50px;
+.article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover .tag-text {
+  visibility: hidden;
 }
 /* end main article styles */
 /* A R T I C L E  R O W */

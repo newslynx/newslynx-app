@@ -10,7 +10,7 @@ block drawer
 block templates
 	script(type="text/jst")#tag-templ
 		.tag-container
-			.tag-name <%= name %>
+			.tag-name <%= toTitleCase(name) %>
 			.tag-count <%= articles %>
 
 	script(type="text/jst")#drawer-pointers-templ
@@ -30,7 +30,7 @@ block templates
 			.inputs-container
 				input(type="checkbox")
 			.drawer-list-inner
-				.pub-date <%= date(timestamp) %>
+				.pub-date <%= prettyDate(timestamp) %>
 				.title <%= title %>
 				ul.tag-list#subject-tags
 					<% _.each(subject_tags_full, function(tag){ %>
@@ -45,16 +45,23 @@ block templates
 						.info <%= tag.name %>, <%= tag.category %>,  <%= tag.level %>
 					<% }) %>
 
+	script(type="text/jst")#article-detail-tag-templ
+		span.tag-text <%= toTitleCase(name) %>
+
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
-			.pub-date <%= date(timestamp) %>
+			.pub-date <%= prettyDate(timestamp) %>
 			h2.headline <%= title %>
 			.tag-container(data-which="subject")
 				.tag-title Subject tags:
 				ul.tags
 					li.tag.empty None
-			.tag-container(data-which="impact")
-				.tag-title Impact tags:
+			.tag-container(data-which="impact-categories")
+				.tag-title Impact cat.:
+				ul.tags
+					li.tag.empty None
+			.tag-container(data-which="impact-levels")
+				.tag-title Impact levels:
 				ul.tags
 					li.tag.empty None
 			.toolbar

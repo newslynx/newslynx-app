@@ -1,26 +1,26 @@
 [
 	{
-		"name": "Institution",
+		"name": "institution",
 		"color": "#f0c",
 		"articles": 4
 	},
 	{
-		"name": "Media",
+		"name": "media",
 		"color": "#fc0",
 		"articles": 4
 	},
 	{
-		"name": "Community",
+		"name": "community",
 		"color": "#0cf",
 		"articles": 4
 	},
 	{
-		"name": "Individual",
+		"name": "individual",
 		"color": "#cf0",
 		"articles": 4
 	},
 	{
-		"name": "Internal",
+		"name": "internal",
 		"color": "#0fc",
 		"articles": 4
 	}

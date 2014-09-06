@@ -657,12 +657,18 @@ input
 			border-radius 2px
 			font-size 1.1em
 			position relative
-		.tag.empty:hover
+		.tag:hover
 			cursor default
+	.edit-tags
+		display inline
+		margin-left 10px
+	#ST-chart
+		max-width 960px
+		height 500px
+		margin-bottom 50px
+	.tag-container[data-which="subject"]
 		.tag:not(.empty):hover
 			cursor pointer
-			.tag-text
-				visibility hidden
 		.tag:not(.empty):hover:after
 			position absolute
 			left 0
@@ -676,15 +682,10 @@ input
 			line-height 1.5em
 			border-radius 2px
 			background-color rgba(0,0,0,.15)
-			// border 1px solid #ccc
-			// box-sizing border-box
-	.edit-tags
-		display inline
-		margin-left 10px
-	#ST-chart
-		max-width 960px
-		height 500px
-		margin-bottom 50px
+		.tag:not(.empty):hover
+			.tag-text
+				visibility hidden
+
 
 /* end main article styles */
 /* A R T I C L E  R O W */
