@@ -644,6 +644,7 @@ input
 		display inline-block
 		font-size 1.2em
 		width 75px
+		user-select none
 	ul.tags
 		display inline
 		.tag
@@ -656,6 +657,8 @@ input
 			border-radius 2px
 			font-size 1.1em
 			position relative
+		.tag.empty:hover
+			cursor default
 		.tag:not(.empty):hover
 			cursor pointer
 			.tag-text

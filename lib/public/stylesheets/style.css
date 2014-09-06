@@ -828,6 +828,9 @@ input {
   font-size: 1.1em;
   position: relative;
 }
+.article-detail-container ul.tags .tag.empty:hover {
+  cursor: default;
+}
 .article-detail-container ul.tags .tag:not(.empty):hover {
   cursor: pointer;
 }
@@ -847,8 +850,7 @@ input {
   line-height: 1.5em;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: rgba(0,0,0,0.2);
-  font-weight: bold;
+  background-color: rgba(0,0,0,0.15);
 }
 .article-detail-container .edit-tags {
   display: inline;
