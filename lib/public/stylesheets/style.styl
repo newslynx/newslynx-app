@@ -638,15 +638,39 @@ input
 			float right
 			display block
 			margin-left 50%
+	.tag-container
+		margin 5px 0
 	.tag-title
 		display inline
+		font-size 1.2em
 	ul.tags
 		display inline
 		.tag
 			display inline
-			padding 5px
+			padding 3px 5px
 			background-color #fc0
 			margin-left 5px
+			user-select none
+			border-radius 2px
+			font-size 1.1em
+			position relative
+		.tag:hover
+			cursor pointer
+		.tag:hover:after
+			position absolute
+			left 0
+			top 0
+			text-align center
+			width 100%
+			height 100%
+			content 'Remove'
+			letter-spacing 1px
+			color #000
+			line-height 1.5em
+			border-radius 2px
+			background-color #fff
+			border 1px solid #ccc
+			box-sizing border-box
 	.edit-tags
 		display inline
 		margin-left 10px

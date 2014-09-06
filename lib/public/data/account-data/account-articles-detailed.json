@@ -2,8 +2,7 @@
 	{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"id": "artD1",
-		"article_id": "art1",
+		"id": "art1",
 		"title": "Senators vote overwhelmingly in favor of Empire",
 		"authors": [
 			"Darth Sidious"
@@ -72,8 +71,7 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"id": "artD2",
-		"article_id": "art2",
+		"id": "art2",
 		"title": "Nabool deal folds",
 		"authors": [
 			"Darth Sidious"
@@ -118,8 +116,7 @@
 	},{
 		"org_id": "propalpatine",
 		"url": "http://www.propalpatine.org/article/Senators-vote-Empire",
-		"id": "artD3",
-		"article_id": "art3",
+		"id": "art3",
 		"title": "Much promise for new Senate",
 		"authors": [
 			"Darth Sidious"
