@@ -658,6 +658,8 @@ input
 			position relative
 		.tag:not(.empty):hover
 			cursor pointer
+			.tag-text
+				visibility hidden
 		.tag:not(.empty):hover:after
 			position absolute
 			left 0
@@ -667,12 +669,12 @@ input
 			height 100%
 			content 'Remove'
 			letter-spacing 1px
-			color #000
+			color #fff
 			line-height 1.5em
 			border-radius 2px
-			background-color #fff
-			border 1px solid #ccc
-			box-sizing border-box
+			background-color rgba(0,0,0,.15)
+			// border 1px solid #ccc
+			// box-sizing border-box
 	.edit-tags
 		display inline
 		margin-left 10px

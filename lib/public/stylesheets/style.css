@@ -815,7 +815,7 @@ input {
 }
 .article-detail-container ul.tags .tag {
   display: inline;
-  padding: 3px 5px;
+  padding: 2px 5px;
   background-color: #ccc;
   margin-left: 5px;
   -webkit-user-select: none;
@@ -831,6 +831,9 @@ input {
 .article-detail-container ul.tags .tag:not(.empty):hover {
   cursor: pointer;
 }
+.article-detail-container ul.tags .tag:not(.empty):hover .tag-text {
+  visibility: hidden;
+}
 .article-detail-container ul.tags .tag:not(.empty):hover:after {
   position: absolute;
   left: 0;
@@ -840,15 +843,12 @@ input {
   height: 100%;
   content: 'Remove';
   letter-spacing: 1px;
-  color: #000;
+  color: #fff;
   line-height: 1.5em;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.2);
+  font-weight: bold;
 }
 .article-detail-container .edit-tags {
   display: inline;
