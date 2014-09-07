@@ -760,16 +760,17 @@ input {
 }
 .article-detail-container .headline {
   font-size: 2.8em;
+  line-height: 1em;
 }
 .article-detail-container .title {
   font-size: 2.2em;
+  line-height: 1.2em;
 }
 .article-detail-container .headline:before,
 .article-detail-container .title:before {
   position: absolute;
   color: #ddd;
   font-weight: 400;
-  top: 1px;
 }
 .article-detail-container .headline:before {
   left: -24px;
@@ -833,19 +834,49 @@ input {
   margin: 5px 0;
 }
 .article-detail-container .article-info-title {
-  width: 75px;
+  position: relative;
+  width: 80px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.article-detail-container .article-info-title-text {
+  border-bottom: 1px dotted transparent;
 }
 .article-detail-container .article-info-title,
 .article-detail-container .author {
   font-size: 1.2em;
   display: inline-block;
 }
-.article-detail-container .author {
-  margin-left: 3px;
+.article-detail-container .author,
+.article-detail-container .tag {
+  margin-right: 5px;
+}
+.article-detail-container .author:not(.empty):first-child {
+  margin-left: -2px;
+}
+.article-detail-container .article-info-container[data-which="subject"]:hover {
+  cursor: pointer;
+}
+.article-detail-container .article-info-container[data-which="subject"]:hover .article-info-title-text {
+  border-bottom-color: #666;
+}
+.article-detail-container .article-info-container[data-which="subject"]:hover .article-info-title:before {
+  color: #000;
+}
+.article-detail-container .article-info-container[data-which="subject"]:active .article-info-title-text {
+  border-bottom-style: solid;
+  border-bottom-color: #303030;
+}
+.article-detail-container .article-info-container[data-which="subject"] .article-info-title:before {
+  font: normal normal 12px octicons;
+  content: '\f058';
+  position: absolute;
+  top: 1px;
+  padding-right: 100%;
+  left: -16px;
+  color: #ccc;
 }
 .article-detail-container ul.tags,
 .article-detail-container ul.authors {
@@ -856,7 +887,6 @@ input {
   display: inline;
   padding: 2px 5px;
   background-color: #ccc;
-  margin-left: 5px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

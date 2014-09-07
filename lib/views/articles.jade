@@ -47,7 +47,8 @@ block templates
 			.pub-date <%= prettyDate(timestamp) %>
 			h2.headline <%= title %>
 			.article-info-container(data-which="author")
-				.article-info-title Author(s):
+				.article-info-title
+					span.article-info-title-text Author(s):
 				ul.authors
 					<% if (!authors.length) { %>
 					li.author.empty --
@@ -56,15 +57,18 @@ block templates
 					<% print(authors_markup) %>
 					<% } %>
 			.article-info-container(data-which="subject")
-				.article-info-title Subject tags:
+				.article-info-title#add-subject-tag 
+					span.article-info-title-text Subject tags:
 				ul.tags
 					li.tag.empty None
 			.article-info-container(data-which="impact-categories")
-				.article-info-title Impact cat.:
+				.article-info-title 
+					span.article-info-title-text Impact cat.:
 				ul.tags
 					li.tag.empty None
 			.article-info-container(data-which="impact-levels")
-				.article-info-title Impact levels:
+				.article-info-title 
+					span.article-info-title-text Impact levels:
 				ul.tags
 					li.tag.empty None
 			.toolbar
@@ -84,7 +88,7 @@ block templates
 							option another thing
 			section.detail-section(data-group="life")
 				section(data-which="timeline")
-					h3.title How many people saw it and when was it shared on social media?
+					h3.title How many people visited and when was it shared on social media?
 					#ST-chart
 				section(data-which="events")
 					h3.title What events have happened around this story?

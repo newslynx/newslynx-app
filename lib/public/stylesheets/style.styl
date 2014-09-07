@@ -604,13 +604,14 @@ input
 		position relative
 	.headline
 		font-size 2.8em
+		line-height 1em
 	.title
 		font-size 2.2em
+		line-height 1.2em
 	.headline:before,.title:before
 		position absolute
 		color #DDD
 		font-weight 400
-		top 1px
 	.headline:before
 		left -24px
 		content '# '
@@ -659,20 +660,44 @@ input
 	.article-info-container
 		margin 5px 0
 	.article-info-title
-		width 75px
+		position relative
+		width 80px
 		user-select none
+	.article-info-title-text
+		border-bottom 1px dotted transparent
 	.article-info-title,.author
 		font-size 1.2em
 		display inline-block
-	.author
-		margin-left 3px
+	.author,.tag
+		margin-right 5px
+	.author:not(.empty):first-child
+		margin-left -2px
+	.article-info-container[data-which="subject"]:hover
+		cursor pointer
+		.article-info-title-text
+			border-bottom-color #666
+		.article-info-title:before
+			color #000
+	.article-info-container[data-which="subject"]:active
+		.article-info-title-text
+			border-bottom-style solid
+			border-bottom-color #303030
+	.article-info-container[data-which="subject"]
+		.article-info-title:before
+			font normal normal 12px octicons
+			content '\f058'
+			position absolute
+			top 1px
+			padding-right 100%
+			left -16px
+			color #ccc
+		
 	ul.tags,ul.authors
 		display inline
 		.tag
 			display inline
 			padding 2px 5px
 			background-color #ccc
-			margin-left 5px
 			user-select none
 			color #666
 			border-radius 2px
