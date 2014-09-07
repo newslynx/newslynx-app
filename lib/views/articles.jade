@@ -42,6 +42,11 @@ block templates
 	script(type="text/jst")#article-detail-tag-templ
 		span.tag-text <%= toTitleCase(name) %>
 
+	script(type="text/jst")#article-detail-account-subject-tag-templ
+		label.tag-text 
+			input(type="checkbox")
+			| <%= toTitleCase(name) %>
+
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container
 			.pub-date <%= prettyDate(timestamp) %>
@@ -56,9 +61,20 @@ block templates
 					<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author+'</div>'}).join(',') %>
 					<% print(authors_markup) %>
 					<% } %>
-			.article-info-container(data-which="subject")
+			.article-info-container(data-which="subject").modal-parent
 				.article-info-title#add-subject-tag 
 					span.article-info-title-text Subject tags:
+				.modal-outer
+					.modal-overlay.modal-close
+					.modal-inner
+						.title Edit subject tags
+						ul#subject-tag-settings
+							li.empty
+								| You don't have any subject tags yet! Create some on the 
+								a(href="/settings") settings
+								|  page.
+						.buttons-container
+							button.cancel.modal-close Done
 				ul.tags
 					li.tag.empty None
 			.article-info-container(data-which="impact-categories")

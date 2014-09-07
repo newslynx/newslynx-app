@@ -297,8 +297,10 @@ body[data-modal=true] .drawer-list-item-ul {
 }
 .tag-list .placeholder {
   font-size: 1.2em;
-  font-weight: bold;
   text-align: center;
+  letter-spacing: 1px;
+  font-weight: 200;
+  padding-top: 5px;
 }
 .option-container .tag-list {
   display: none;
@@ -877,6 +879,12 @@ input {
   padding-right: 100%;
   left: -16px;
   color: #ccc;
+}
+.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings {
+  padding: 10px 0;
+}
+.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li {
+  font-size: 1.2em;
 }
 .article-detail-container ul.tags,
 .article-detail-container ul.authors {

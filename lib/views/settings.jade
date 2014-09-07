@@ -109,13 +109,13 @@ block templates
 			#tags.settings-group
 				.settings-title Tags
 				#article-tags.setting-group
-					.setting-title Article tags
-					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="articles" data-key="subject_tags" data-child-keys='["name","color"]')
+					.setting-title Subject tags
+					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="subject" data-key="subject_tags" data-child-keys='["name","color"]')
 						<%  for (var i = 0; i < subject_tags.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
 							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
-							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="articles" data-key="color" />
+							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
 						<% } %>
 					button.add Add				
 				#impact-tags.setting-group(data-group="impact-tags")
@@ -213,7 +213,7 @@ block templates
 			<% } else if (flag == 'checkbox') { %>
 			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'color') { %>
-			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="'+group+'" data-key="'+keys[1]+'" data-id="false" />') %>
+			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
 			<% } %>
 
 	script(type="text/jst")#multi-input-double-templ
