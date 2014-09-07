@@ -46,16 +46,25 @@ block templates
 		.article-detail-container
 			.pub-date <%= prettyDate(timestamp) %>
 			h2.headline <%= title %>
-			.tag-container(data-which="subject")
-				.tag-title Subject tags:
+			.article-info-container(data-which="author")
+				.article-info-title Author(s):
+				ul.authors
+					<% if (!authors.length) { %>
+					li.author.empty --
+					<% } else { %>
+					<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author+'</div>'}).join(',') %>
+					<% print(authors_markup) %>
+					<% } %>
+			.article-info-container(data-which="subject")
+				.article-info-title Subject tags:
 				ul.tags
 					li.tag.empty None
-			.tag-container(data-which="impact-categories")
-				.tag-title Impact cat.:
+			.article-info-container(data-which="impact-categories")
+				.article-info-title Impact cat.:
 				ul.tags
 					li.tag.empty None
-			.tag-container(data-which="impact-levels")
-				.tag-title Impact levels:
+			.article-info-container(data-which="impact-levels")
+				.article-info-title Impact levels:
 				ul.tags
 					li.tag.empty None
 			.toolbar

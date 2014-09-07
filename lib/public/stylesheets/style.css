@@ -829,22 +829,30 @@ input {
   display: block;
   margin-left: 50%;
 }
-.article-detail-container .tag-container {
+.article-detail-container .article-info-container {
   margin: 5px 0;
 }
-.article-detail-container .tag-title {
-  display: inline-block;
-  font-size: 1.2em;
+.article-detail-container .article-info-title {
   width: 75px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.article-detail-container ul.tags {
+.article-detail-container .article-info-title,
+.article-detail-container .author {
+  font-size: 1.2em;
+  display: inline-block;
+}
+.article-detail-container .author {
+  margin-left: 3px;
+}
+.article-detail-container ul.tags,
+.article-detail-container ul.authors {
   display: inline;
 }
-.article-detail-container ul.tags .tag {
+.article-detail-container ul.tags .tag,
+.article-detail-container ul.authors .tag {
   display: inline;
   padding: 2px 5px;
   background-color: #ccc;
@@ -859,7 +867,8 @@ input {
   font-size: 1.1em;
   position: relative;
 }
-.article-detail-container ul.tags .tag:hover {
+.article-detail-container ul.tags .tag:hover,
+.article-detail-container ul.authors .tag:hover {
   cursor: default;
 }
 .article-detail-container .edit-tags {
