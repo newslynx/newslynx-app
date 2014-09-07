@@ -591,7 +591,7 @@ body[data-section="home"] #content {
   padding: 0;
 }
 .drawer-pointer .drawer-item {
-  padding: 5px;
+  padding: 4px;
 }
 .drawer-pointer .drawer-item .add-to-comparison {
   -webkit-border-radius: 2px;
