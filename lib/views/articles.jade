@@ -23,6 +23,10 @@ block templates
 				.add-to-comparison(data-action="add")
 					span.octicon-plus.octicon  
 					span  Add selection to comparision
+			.drawer-item.contains-input
+				label.toggle-all
+					input(type="checkbox")
+					|  Toggle all
 
 
 	script(type="text/jst")#article-summary-drawer-templ
@@ -33,17 +37,7 @@ block templates
 				.pub-date <%= prettyDate(timestamp) %>
 				.title <%= title %>
 				ul.tag-list#subject-tags
-					<% _.each(subject_tags_full, function(tag){ %>
-					li.subject-tag
-						|<div class="color-swatch" style="background-color:<%= tag.color %>"></div>
-						.info <%= tag.name %>
-					<% }) %>
 				ul.tag-list#impact-tags
-					<% _.each(impact_tags_full, function(tag){ %>
-					li.impact-tag
-						|<div class="color-swatch" style="background-color:<%= tag.color %>"></div>
-						.info <%= tag.name %>, <%= tag.category %>,  <%= tag.level %>
-					<% }) %>
 
 	script(type="text/jst")#article-detail-tag-templ
 		span.tag-text <%= toTitleCase(name) %>
@@ -150,7 +144,7 @@ block bootstrap-data
 		pageData.subject_tags 					=!{JSON.stringify(subject_tags)};
 		pageData.impact_tags 						=!{JSON.stringify(impact_tags)};
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
-		pageData.articleDetails 				=!{JSON.stringify(articleDetails)};
+		//- pageData.articleDetails 				=!{JSON.stringify(articleDetails)};
 		pageData.eventSchemas 					=!{JSON.stringify(eventSchemas)};
 		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
 

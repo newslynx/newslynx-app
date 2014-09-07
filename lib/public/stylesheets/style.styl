@@ -126,6 +126,7 @@ section_nav_margin_top = 10px
 		background-color #000
 		// box-shadow 0 6px 12px #000
 		padding 3px 0 0 0
+		user-select none
 		a
 			text-decoration none
 			color #ccc 
@@ -254,6 +255,12 @@ section_nav_margin_top = 10px
 		margin-right 3px
 	.info
 		display inline-block
+	.out-link
+		color #f4a9ff
+	.placeholder
+		font-size 1.2em
+		font-weight bold
+		text-align center
 
 .option-container
 	.tag-list
@@ -458,6 +465,8 @@ body[data-section="home"] #content
 		padding-bottom 8px
 		span
 			font-weight bold
+	.drawer-item.contains-input
+		padding 0
 	.drawer-item
 		padding 5px
 		.add-to-comparison
@@ -476,6 +485,11 @@ body[data-section="home"] #content
 	.add-to-comparison:active
 		background-color tint(articles, 45%) !important
 		text-shadow 1px 1px 3px rgba(234, 250, 231, .5)
+	.toggle-all
+		color #666
+	.toggle-all:hover
+		cursor pointer
+		color #000
 
 
 .drawer-pointer.center
@@ -701,6 +715,7 @@ input
 	border-bottom 1px solid #eaeaea
 	height 28px
 	background-color #fff
+	user-select none
 	.title:hover
 		text-decoration underline
 		cursor pointer
@@ -723,6 +738,7 @@ input
 		text-align right
 		font-weight bold
 		padding-right 5px
+		user-select none
 		// background-color #0cf
 	.destroy:hover
 		cursor pointer
@@ -743,6 +759,7 @@ group_margin = 30px
 
 #compare-grid
 	width 100%
+	user-select none
 .cell
 	display inline-block
 	vertical-align top
