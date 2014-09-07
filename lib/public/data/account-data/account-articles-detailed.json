@@ -9,13 +9,7 @@
 		],
 		"timestamp": 1406852996,
     "subject_tags": [1,5],
-		"aggregate_stats": {
-			"internal_referrer_percent": 43,
-			"internal_referrer_percent": 57,
-			"top_twitter_referrers": [],
-			"top_fb_referrers": []
-		},
-		"timeseries_stats": [
+		"timeseries_stats": [ 
 			{
 				"timestamp": 1406926562,
 				"twitter_shares": 1023,
