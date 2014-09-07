@@ -858,13 +858,14 @@ input {
 .article-detail-container .author:not(.empty):first-child {
   margin-left: -2px;
 }
-.article-detail-container .article-info-container[data-which="subject"]:hover {
+.article-detail-container .article-info-container[data-which="subject"] .article-info-title:hover,
+.article-detail-container .article-info-container[data-which="subject"] .article-info-title:hover:before {
   cursor: pointer;
 }
-.article-detail-container .article-info-container[data-which="subject"]:hover .article-info-title-text {
+.article-detail-container .article-info-container[data-which="subject"] .article-info-title:hover .article-info-title-text {
   border-bottom-color: #666;
 }
-.article-detail-container .article-info-container[data-which="subject"]:hover .article-info-title:before {
+.article-detail-container .article-info-container[data-which="subject"] .article-info-title:hover:before {
   color: #000;
 }
 .article-detail-container .article-info-container[data-which="subject"]:active .article-info-title-text {
@@ -885,6 +886,15 @@ input {
 }
 .article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li {
   font-size: 1.2em;
+}
+.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li label:hover,
+.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li input:hover {
+  cursor: pointer !important;
+}
+.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li .tag-text {
+  padding: 1px 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 .article-detail-container ul.tags,
 .article-detail-container ul.authors {

@@ -43,9 +43,9 @@ block templates
 		span.tag-text <%= toTitleCase(name) %>
 
 	script(type="text/jst")#article-detail-account-subject-tag-templ
-		label.tag-text 
-			input(type="checkbox")
-			| <%= toTitleCase(name) %>
+		label
+			| <input type="checkbox" <%= doesThisArticleHaveThisTag(name) %> ></input>
+			| <span class="tag-text"><%= toTitleCase(name) %></span>
 
 	script(type="text/jst")#article-detail-templ
 		.article-detail-container

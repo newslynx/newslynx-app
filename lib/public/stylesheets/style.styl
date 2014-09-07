@@ -674,11 +674,14 @@ input
 		margin-right 5px
 	.author:not(.empty):first-child
 		margin-left -2px
-	.article-info-container[data-which="subject"]:hover
-		cursor pointer
-		.article-info-title-text
-			border-bottom-color #666
-		.article-info-title:before
+	.article-info-container[data-which="subject"]
+		.article-info-title:hover,
+		.article-info-title:hover:before
+			cursor pointer
+		.article-info-title:hover
+			.article-info-title-text
+				border-bottom-color #666
+		.article-info-title:hover:before
 			color #000
 	.article-info-container[data-which="subject"]:active
 		.article-info-title-text
@@ -697,6 +700,11 @@ input
 			padding 10px 0
 			li
 				font-size 1.2em
+				label:hover,input:hover
+					cursor pointer !important
+				.tag-text
+					padding 1px 5px
+					border-radius 2px
 	ul.tags,ul.authors
 		display inline
 		.tag
