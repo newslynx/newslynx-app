@@ -3,7 +3,10 @@ header#header-container
 		img(src="images/merlynne-white.png")
 		h1.page-title NewsLynx
 	ul.settings
-		li.admin-item
-			if apikey
-				a(href="/settings").util-btn.octicon.octicon-tools
-				a(href="/logout").util-btn.octicon.octicon-sign-out
+		if apikey
+			li.admin-item(aria-label="Settings")
+					a(href="/settings").util-btn
+						.octicon.octicon-tools
+			li.admin-item(aria-label="Sign out")
+					a(href="/logout").util-btn
+						.octicon.octicon-sign-out

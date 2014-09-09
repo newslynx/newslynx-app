@@ -130,6 +130,7 @@ section_nav_margin_top = 10px
 		a
 			text-decoration none
 			color #ccc 
+			display inline-block
 		a:hover h1
 			color #fff
 		img, h1.page-title
@@ -138,24 +139,30 @@ section_nav_margin_top = 10px
 			height 45px
 			width @height
 		h1.page-title
-			top 20%
 			font-size 2.5em
 			margin 0
 			padding 0
 			font-weight 200
 			display inline-block
-			vertical-align top
+			vertical-align text-bottom
+			top -8px
 		.settings
 			display inline-block
 			position relative
-			top 20px
-			float right
-			padding-right 5px
+			top -13px
+			width 37%
+			text-align right
+			vertical-align text-bottom
+			.admin-item
+				display inline-block
+				vertical-align middle
+				width 33px
+				text-algn left
 			a
 				padding 0 7px 0 7px
-				font-size 1.7em
-				margin-top -2px
 				color #9e9e9e
+				.octicon
+					font-size 18px
 			a:hover
 				color #fff
 	.section-options[data-section-options="articles"]
@@ -1233,52 +1240,58 @@ button.add
 .tt-suggestion p
 	margin 0
 
-/*
-.twitter-typeahead .tt-query,
-.twitter-typeahead .tt-hint
-	margin-bottom 0
-
-.tt-hint
-	display block
-	width 100%
-	padding 8px 12px
-	font-size 14px
-	line-height 1.428571429
-	color #999
-	vertical-align middle
-	background-color #ffffff
-	border 1px solid #cccccc
-	border-radius 4px
-	box-shadow inset 0 1px 1px rgba(0, 0, 0, 0.075)
-	transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
-
-.tt-dropdown-menu
-	min-width 160px
-	margin-top 2px
-	padding 5px 0
-	background-color #ffffff
-	border 1px solid #cccccc
-	border 1px solid rgba(0, 0, 0, 0.15)
-	border-radius 4px
-	box-shadow 0 6px 12px rgba(0, 0, 0, 0.175)
-	background-clip padding-box
-
-
-.tt-suggestion
-	display block
-	padding 3px 20px
-
-.tt-suggestion.tt-is-under-cursor
-	color #fff
-	background-color #dfdfdf
-
-.tt-suggestion.tt-is-under-cursor a
-	color #fff
-
-.tt-suggestion p
-	margin 0
-*/
 /* end typeahead */
+
+/* Tooltips */
+.tooltipped:hover:before,
+.tooltipped:hover:after
+	display inline-block
+
+.tooltipped:before,
+.tooltipped:after
+	position absolute
+	display none
+	right 50%
+
+// .tooltipped-i:before,
+// .tooltipped-i:after,
+.tooltipped:before,
+.tooltipped:after
+	pointer-events none
+
+tooltip_y_offset = 10px
+.tooltipped:before
+	z-index 9998
+	width 0
+	height 0
+	color rgba(0,0,0,0.8)
+	content ""
+	border 5px solid transparent
+	top auto
+	bottom -1*tooltip_y_offset
+	margin-right -5px
+	border-bottom-color rgba(0,0,0,0.8)
+
+.tooltipped:after
+	z-index 9997
+	transform translateX(50%)
+	margin-top tooltip_y_offset
+	top 100%
+	padding 1px 8px 2px 8px
+	font-size 1.2em
+	line-height 1.5
+	color #fff
+	text-align center
+	text-decoration none
+	word-wrap break-word
+	white-space pre
+	content attr(aria-label)
+	background rgba(0,0,0,0.8)
+	border-radius 3px
+	-webkit-font-smoothing subpixel-antialiased
+
+
+/* end tooltips */
 
 /* user styles, to be got from server */
 social_color = #66c2a5
