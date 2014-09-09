@@ -1,6 +1,9 @@
 {
 	"assignee": {
-		"type": "text"
+		"type": "text",
+		"help": {
+			"hint": "Search by headline..."
+		}
 	},
 	"title": {
 		"type": "text"

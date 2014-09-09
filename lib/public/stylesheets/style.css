@@ -1184,6 +1184,29 @@ input {
 .form-row input {
   margin-left: 0;
 }
+.form-row.article-assignees {
+  margin-left: 40%;
+}
+.article-assignee {
+  position: relative;
+}
+.article-assignee input {
+  pointer-events: none;
+  width: 95%;
+  border: none;
+}
+.article-assignee .remove-assignee {
+  padding-right: 5px;
+  vertical-align: top;
+  font-size: 1.5em;
+  color: #ccc;
+}
+.article-assignee:hover {
+  cursor: pointer;
+}
+.article-assignee:hover .remove-assignee {
+  color: #000;
+}
 .buttons-container {
   padding-top: 10px;
 }
@@ -1497,7 +1520,7 @@ button.add {
 .tt-dropdown-menu {
   width: 100%;
   margin-top: 3px;
-  padding: 8px 0;
+  padding: 4px 0;
   background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0,0,0,0.2);
