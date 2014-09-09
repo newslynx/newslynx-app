@@ -173,9 +173,9 @@ block bootstrap-data
 		pageData.subject_tags 					=!{JSON.stringify(subject_tags)};
 		pageData.impact_tags 						=!{JSON.stringify(impact_tags)};
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
-		//- pageData.articleDetails 				=!{JSON.stringify(articleDetails)};
 		pageData.eventSchemas 					=!{JSON.stringify(eventSchemas)};
 		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
+		pageData.articleHeadlines 			=!{JSON.stringify(articleHeadlines)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
@@ -185,6 +185,7 @@ block scripts
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")
+	script(src="javascripts/thirdparty/bloodhound.js")
 	script(src="javascripts/thirdparty/pourover.js")
 		
 	//- Put it all together
