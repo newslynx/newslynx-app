@@ -67,7 +67,7 @@ block templates
 				.modal-outer
 					.modal-overlay.modal-close
 					.modal-inner
-						.title Edit subject tags
+						.modal-title Edit subject tags
 						ul#subject-tag-settings
 							li.empty
 								| You don't have any subject tags yet! Create some on the 
@@ -175,7 +175,6 @@ block bootstrap-data
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
 		pageData.eventSchemas 					=!{JSON.stringify(eventSchemas)};
 		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
-		pageData.articleHeadlines 			=!{JSON.stringify(articleHeadlines)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
@@ -185,7 +184,7 @@ block scripts
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")
-	script(src="javascripts/thirdparty/bloodhound.js")
+	script(src="javascripts/thirdparty/typeahead.bundle.min.js")
 	script(src="javascripts/thirdparty/pourover.js")
 		
 	//- Put it all together

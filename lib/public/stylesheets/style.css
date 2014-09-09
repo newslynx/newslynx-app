@@ -1157,7 +1157,7 @@ input {
   width: 525px;
   z-index: 99999;
 }
-.modal-inner .title {
+.modal-inner .modal-title {
   font-size: 1.4em;
   font-weight: bold;
   border-bottom: 1px solid #777676;
@@ -1487,5 +1487,84 @@ button.add {
   color: #9e0000;
 }
 /* end login */
+/* T Y P E A H E A D */
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-hint {
+  color: #999;
+}
+.tt-dropdown-menu {
+  width: 100%;
+  margin-top: 3px;
+  padding: 8px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.4em;
+}
+.tt-suggestion:hover {
+  cursor: pointer;
+}
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+/*
+.twitter-typeahead .tt-query,
+.twitter-typeahead .tt-hint
+	margin-bottom 0
+
+.tt-hint
+	display block
+	width 100%
+	padding 8px 12px
+	font-size 14px
+	line-height 1.428571429
+	color #999
+	vertical-align middle
+	background-color #ffffff
+	border 1px solid #cccccc
+	border-radius 4px
+	box-shadow inset 0 1px 1px rgba(0, 0, 0, 0.075)
+	transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+
+.tt-dropdown-menu
+	min-width 160px
+	margin-top 2px
+	padding 5px 0
+	background-color #ffffff
+	border 1px solid #cccccc
+	border 1px solid rgba(0, 0, 0, 0.15)
+	border-radius 4px
+	box-shadow 0 6px 12px rgba(0, 0, 0, 0.175)
+	background-clip padding-box
+
+
+.tt-suggestion
+	display block
+	padding 3px 20px
+
+.tt-suggestion.tt-is-under-cursor
+	color #fff
+	background-color #dfdfdf
+
+.tt-suggestion.tt-is-under-cursor a
+	color #fff
+
+.tt-suggestion p
+	margin 0
+*/
+/* end typeahead */
 /* user styles, to be got from server */
 /* end user styles*/

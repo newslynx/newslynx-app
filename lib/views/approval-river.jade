@@ -48,7 +48,7 @@ block templates
 			.modal-outer
 				.modal-overlay
 				.modal-inner
-					.title Recipe settings
+					.modal-title Recipe settings
 					form
 						<%= bakeRecipeUpdateForm(id, source, settings, name, 'schema') %>
 						.show-hide-default-event This recipe triggers events with some default properties. 
@@ -96,8 +96,8 @@ block templates
 			.modal-outer
 				.modal-overlay
 				.modal-inner
-					.title Create new event
-					.description Add options here and a form for adding a tag, associating with an article etc.
+					.modal-title Create new event
+					.description Describe what this event is, its significance and what article its related to.
 					form
 						<%= bakeEventCreationForm(recipe_id, text, link, timestamp) %>
 						.buttons-container
@@ -112,6 +112,7 @@ block bootstrap-data
 		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.alerts =!{JSON.stringify(alerts)};   
 		pageData.eventSchema =!{JSON.stringify(eventSchema)};   
+		pageData.articleSkeletons =!{JSON.stringify(articleSkeletons)};   
 
 
 block scripts
@@ -120,11 +121,10 @@ block scripts
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
-	//- script(src="javascripts/thirdparty/jquery.isotope.fit-columns.js")
-	//- script(src="javascripts/thirdparty/waypoints.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/embedly.js")
 	script(src="javascripts/thirdparty/pourover.js")
+	script(src="javascripts/thirdparty/typeahead.bundle.min.js")
 
 	//- Put it all together
 	script(src="javascripts/main.bundled.js")

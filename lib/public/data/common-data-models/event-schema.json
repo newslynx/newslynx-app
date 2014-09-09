@@ -1,7 +1,6 @@
 {
-	"asignee": {
-		"type": "select",
-		"options": [ ]
+	"assignee": {
+		"type": "text"
 	},
 	"title": {
 		"type": "text"
