@@ -535,6 +535,18 @@ body[data-section="login"] #content {
   background-color: #6dc4ff;
   cursor: pointer;
 }
+#drawer[data-mode="detail"] .inputs-container input[type="radio"] {
+  display: block;
+}
+#drawer[data-mode="detail"] .inputs-container input[type="checkbox"] {
+  display: none;
+}
+#drawer[data-mode="compare"] .inputs-container input[type="radio"] {
+  display: none;
+}
+#drawer[data-mode="compare"] .inputs-container input[type="checkbox"] {
+  display: block;
+}
 #drawer[data-mode="compare"] .inputs-container,
 #drawer[data-mode="detail"] .inputs-container,
 #drawer[data-mode="my-recipes"] .inputs-container,

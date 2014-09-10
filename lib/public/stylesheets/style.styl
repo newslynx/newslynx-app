@@ -424,6 +424,20 @@ body[data-section="login"] #content
 	background-color darken(select_blue, 7%)
 	cursor pointer
 
+// These might need to be display inline-block
+#drawer[data-mode="detail"]
+	.inputs-container input[type="radio"]
+		display block
+	.inputs-container input[type="checkbox"]
+		display none
+
+#drawer[data-mode="compare"]
+	.inputs-container input[type="radio"]
+		display none
+	.inputs-container input[type="checkbox"]
+		display block
+
+
 #drawer[data-mode="compare"],
 #drawer[data-mode="detail"],
 #drawer[data-mode="my-recipes"]
