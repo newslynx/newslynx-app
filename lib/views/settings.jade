@@ -38,12 +38,12 @@ block templates
 						li.input
 							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 							select(name='timezone').input-item
-								|<option value='-5'  <% ((timezone == '-5') ? print('selected') : '')  %> > (GMT -5:00) Eastern Time</option>
-								|<option value='-6'  <% ((timezone == '-6') ? print('selected') : '')  %> > (GMT -6:00) Central Time</option>
-								|<option value='-7'  <% ((timezone == '-7') ? print('selected') : '')  %> > (GMT -7:00) Mountain Time</option>
-								|<option value='-8'  <% ((timezone == '-8') ? print('selected') : '')  %> > (GMT -8:00) Pacific Time</option>
-								|<option value='-9'  <% ((timezone == '-9') ? print('selected') : '')  %> > (GMT -9:00) Alaska</option>
-								|<option value='-10' <% ((timezone == '-10') ? print('selected') : '') %> > (GMT -10:00) Hawaii</option>
+								|<option value='-5'  <% ((timezone == '-4') ? print('selected') : '')  %> > (GMT -4:00) Eastern Time</option>
+								|<option value='-6'  <% ((timezone == '-5') ? print('selected') : '')  %> > (GMT -5:00) Central Time</option>
+								|<option value='-7'  <% ((timezone == '-6') ? print('selected') : '')  %> > (GMT -6:00) Mountain Time</option>
+								|<option value='-8'  <% ((timezone == '-7') ? print('selected') : '')  %> > (GMT -7:00) Pacific Time</option>
+								|<option value='-9'  <% ((timezone == '-8') ? print('selected') : '')  %> > (GMT -8:00) Alaska</option>
+								|<option value='-10' <% ((timezone == '-9') ? print('selected') : '') %> > (GMT -9:00) Hawaii</option>
 				.setting-group
 					.setting-description 
 						p Does your site publish an RSS feed of all its articles?

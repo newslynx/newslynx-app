@@ -944,6 +944,8 @@ group_margin = 30px
 	border 1px solid #000
 	width 525px
 	z-index 99999
+	form
+		margin-top 10px
 	.modal-title
 		font-size 1.4em
 		font-weight bold
@@ -952,6 +954,27 @@ group_margin = 30px
 	.description
 		margin-bottom 5px
 		font-size 1.2em
+	input[name="timestamp"],input[name="assignees"]
+		pointer-events none
+		border 0
+		color #fff
+		display none
+	.labelled:after,
+	.labelled:after
+		color #000
+		content attr(aria-label)
+		font-size 13px
+		display inline-block
+		width 266px
+		white-space nowrap
+		overflow hidden
+		vertical-align bottom
+		position relative
+		top 1px
+	.remove-assignee.labelled:after
+		padding-left 5px
+	input[name="assignees"]
+		display none
 .modal-inner:hover
 	cursor default !important
 .modal-outer.active
@@ -965,15 +988,14 @@ group_margin = 30px
 		margin-left 0
 .form-row.article-assignees
 	margin-left 40%
+.article-assignee:last-child
+	margin-bottom 8px
 .article-assignee
 	position relative
 	input
-		pointer-events none
-		width 95%
-		border none
+		width 93%
 	.remove-assignee
 		padding-right 5px
-		vertical-align top
 		font-size 1.5em
 		color #ccc
 .article-assignee:hover

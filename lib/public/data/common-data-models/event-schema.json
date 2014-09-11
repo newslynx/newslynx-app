@@ -1,5 +1,5 @@
 {
-	"assignee": {
+	"assignees": {
 		"type": "text",
 		"help": {
 			"hint": "Search by headline..."

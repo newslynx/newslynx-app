@@ -1178,6 +1178,9 @@ input {
   width: 525px;
   z-index: 99999;
 }
+.modal-inner form {
+  margin-top: 10px;
+}
 .modal-inner .modal-title {
   font-size: 1.4em;
   font-weight: bold;
@@ -1187,6 +1190,31 @@ input {
 .modal-inner .description {
   margin-bottom: 5px;
   font-size: 1.2em;
+}
+.modal-inner input[name="timestamp"],
+.modal-inner input[name="assignees"] {
+  pointer-events: none;
+  border: 0;
+  color: #fff;
+  display: none;
+}
+.modal-inner .labelled:after {
+  color: #000;
+  content: attr(aria-label);
+  font-size: 13px;
+  display: inline-block;
+  width: 266px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+  position: relative;
+  top: 1px;
+}
+.modal-inner .remove-assignee.labelled:after {
+  padding-left: 5px;
+}
+.modal-inner input[name="assignees"] {
+  display: none;
 }
 .modal-inner:hover {
   cursor: default !important;
@@ -1208,17 +1236,17 @@ input {
 .form-row.article-assignees {
   margin-left: 40%;
 }
+.article-assignee:last-child {
+  margin-bottom: 8px;
+}
 .article-assignee {
   position: relative;
 }
 .article-assignee input {
-  pointer-events: none;
-  width: 95%;
-  border: none;
+  width: 93%;
 }
 .article-assignee .remove-assignee {
   padding-right: 5px;
-  vertical-align: top;
   font-size: 1.5em;
   color: #ccc;
 }
