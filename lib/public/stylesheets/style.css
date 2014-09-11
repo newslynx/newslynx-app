@@ -638,12 +638,17 @@ body[data-section="home"] #content {
   background-color: #94dcb2 !important;
   text-shadow: 1px 1px 3px rgba(234,250,231,0.5);
 }
-.drawer-pointer .toggle-all {
+.drawer-pointer .toggle-all:not(.disabled) {
   color: #666;
 }
-.drawer-pointer .toggle-all:hover {
+.drawer-pointer .toggle-all:not(.disabled):hover {
   cursor: pointer;
   color: #000;
+}
+.drawer-pointer .toggle-all.disabled {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 .drawer-pointer.center {
   text-align: center;
