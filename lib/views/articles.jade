@@ -37,8 +37,8 @@ block templates
 			.drawer-list-inner
 				.pub-date <%= prettyDate(timestamp) %>
 				.title <%= title %>
-				ul.tag-list#subject-tags
-				ul.tag-list#impact-tags
+				ul.tag-list.subject-tags-container
+				ul.tag-list.impact-tags-container
 
 	script(type="text/jst")#article-detail-tag-templ
 		span.tag-text <%= toTitleCase(name) %>
