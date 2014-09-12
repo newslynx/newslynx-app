@@ -230,6 +230,14 @@ body[data-modal=true] .drawer-list-item-ul {
 .main-sections .option-container[data-type="date-range"] input[data-dir="to"] {
   float: right;
 }
+.main-sections .option-container[data-type="date-range"] .clear-date-range {
+  display: none;
+  text-transform: none;
+}
+.main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
 .section-options,
 .section-subnav {
   background-color: #7c7c7c;

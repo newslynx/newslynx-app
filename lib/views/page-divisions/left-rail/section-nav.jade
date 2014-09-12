@@ -15,8 +15,10 @@ mixin articles
 		.option-container(data-type="search")
 			.option-title Keywords
 			input(type="search" name="article-title-searcher" results="5" placeholder="Search headlines..." incremental)#article-title-searcher
-		.option-container(data-type="date-range")
-			.option-title Date range
+		.option-container(data-type="date-range")#date-range-searcher
+			.option-title Date range 
+				.clear-date-range — 
+					span Clear
 			input(type="text" placeholder="From..." data-dir="from")
 			input(type="text" placeholder="To..." data-dir="to")
 		//- .option-container(data-type="sort")

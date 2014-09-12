@@ -202,10 +202,18 @@ section_nav_margin_top = 10px
 		background-color highlight_gray
 	.section.active .nav-link:hover
 		cursor default
-	.option-container[data-type="date-range"] input
-		width 45%
-	.option-container[data-type="date-range"] input[data-dir="to"]
-		float right
+	.option-container[data-type="date-range"]
+		input
+			width 45%
+		input[data-dir="to"]
+			float right
+		.clear-date-range
+			display none
+			text-transform none
+		.clear-date-range span:hover
+			cursor pointer
+			text-decoration underline
+
 
 .section-options,.section-subnav
 	background-color bg_gray
