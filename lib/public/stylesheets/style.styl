@@ -946,6 +946,14 @@ group_margin = 30px
 
 
 /* M O D A L  W I N D O W S */
+#content[data-mode="my-recipes"]
+	.modal-inner
+		input[name="timestamp"]
+			pointer-events none
+			border 0
+			color #fff
+			display none
+
 .modal-outer
 	display none
 .modal-outer,.modal-overlay
@@ -974,7 +982,6 @@ group_margin = 30px
 	.description
 		margin-bottom 5px
 		font-size 1.2em
-	#content[mode="my-recipes"] input[name="timestamp"],
 	input[name="assignees"]
 		pointer-events none
 		border 0
@@ -994,8 +1001,6 @@ group_margin = 30px
 		top 1px
 	.remove-assignee.labelled:after
 		padding-left 5px
-	input[name="assignees"]
-		display none
 .modal-inner:hover
 	cursor default !important
 .modal-outer.active
