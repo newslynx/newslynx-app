@@ -180,8 +180,6 @@ section_nav_margin_top = 10px
 		text-shadow 0 0px 12px #535353
 	.section.active:hover
 		cursor default
-	.option-container
-		margin 12px 0 12px
 	input, select
 		width 100%
 		display inline-block
@@ -190,6 +188,9 @@ section_nav_margin_top = 10px
 		padding-top 2px
 	.section-options, .nav-link, a:not(.out-link)
 		padding 10px 25px
+	.section-options,.section-subnav
+		background-color bg_gray
+		color #fff
 	.nav-link,a
 		color #f2f2f2
 	.nav-link, a:not(.out-link)
@@ -215,10 +216,6 @@ section_nav_margin_top = 10px
 			text-decoration underline
 
 
-.section-options,.section-subnav
-	background-color bg_gray
-	color #fff
-	
 .section-options
 	input[type="search"]
 		height 23px
@@ -288,6 +285,7 @@ section_nav_margin_top = 10px
 		padding-top 5px
 
 .option-container
+	margin 12px 0 12px
 	.tag-list
 		display none
 
@@ -346,7 +344,6 @@ body[data-section="login"] #content
 	
 #drawer
 	p
-		// font-size 1.3em
 		line-height 1.3em
 .drawer-title,.division-switcher
 	width 100%
@@ -473,7 +470,23 @@ body[data-section="login"] #content
 .drawer-container[data-mode="my-recipes"]
 	.drawer-list-item-ul
 		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line ) // Plus one because apparently this is like one pixel off	
+
 /* end drawer item */
+
+/* A R T I C L E  D E T A I L */
+.detail-section[data-group="life"]
+	section[data-which="events"]
+		.events-container
+			margin-top 20px
+		.section-options
+			width 175px
+			.section-title
+				color #535353
+				font-weight normal
+			.option-title
+				border-bottom-color #d8d5d5
+
+/* end article detail */
 
 /* H O M E */
 body[data-section="home"] #content
@@ -1355,8 +1368,6 @@ tooltip_y_offset = 10px
 	background rgba(0,0,0,0.8)
 	border-radius 3px
 	-webkit-font-smoothing subpixel-antialiased
-
-
 /* end tooltips */
 
 /* user styles, to be got from server */

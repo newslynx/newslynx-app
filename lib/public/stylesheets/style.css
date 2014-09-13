@@ -189,9 +189,6 @@ body[data-modal=true] .drawer-list-item-ul {
 .main-sections .section.active:hover {
   cursor: default;
 }
-.main-sections .option-container {
-  margin: 12px 0 12px;
-}
 .main-sections input,
 .main-sections select {
   width: 100%;
@@ -205,6 +202,11 @@ body[data-modal=true] .drawer-list-item-ul {
 .main-sections .nav-link,
 .main-sections a:not(.out-link) {
   padding: 10px 25px;
+}
+.main-sections .section-options,
+.main-sections .section-subnav {
+  background-color: #7c7c7c;
+  color: #fff;
 }
 .main-sections .nav-link,
 .main-sections a {
@@ -237,11 +239,6 @@ body[data-modal=true] .drawer-list-item-ul {
 .main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-.section-options,
-.section-subnav {
-  background-color: #7c7c7c;
-  color: #fff;
 }
 .section-options input[type="search"] {
   height: 23px;
@@ -328,6 +325,9 @@ body[data-modal=true] .drawer-list-item-ul {
   letter-spacing: 1px;
   font-weight: 200;
   padding-top: 5px;
+}
+.option-container {
+  margin: 12px 0 12px;
 }
 .option-container .tag-list {
   display: none;
@@ -596,6 +596,21 @@ body[data-section="login"] #content {
   height: calc(100vh - 180px);
 }
 /* end drawer item */
+/* A R T I C L E  D E T A I L */
+.detail-section[data-group="life"] section[data-which="events"] .events-container {
+  margin-top: 20px;
+}
+.detail-section[data-group="life"] section[data-which="events"] .section-options {
+  width: 175px;
+}
+.detail-section[data-group="life"] section[data-which="events"] .section-options .section-title {
+  color: #535353;
+  font-weight: normal;
+}
+.detail-section[data-group="life"] section[data-which="events"] .section-options .option-title {
+  border-bottom-color: #d8d5d5;
+}
+/* end article detail */
 /* H O M E */
 body[data-section="home"] #content {
   padding: 15px;

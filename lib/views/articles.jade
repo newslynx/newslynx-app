@@ -11,7 +11,7 @@ block templates
 	script(type="text/jst")#tag-templ
 		.tag-container
 			.tag-name <%= toTitleCase(name) %>
-			.tag-count <%= articles %>
+			.tag-count <%= count %>
 
 	script(type="text/jst")#drawer-pointers-templ
 		.drawer-pointer
@@ -109,7 +109,29 @@ block templates
 					#ST-chart
 				section(data-which="events")
 					h3.title What events have happened around this story?
-					img(src="images/dummy/events.png")
+					.events-container
+						.section-options
+							.section-title Filter by...
+							.option-container(data-type="impact-tags")
+								.option-title Tags — 
+									span.show-hide(data-open="false") Show
+								ul.tag-list
+									li.placeholder
+										| None yet! <br/>
+										| Create them in   
+										a.out-link(href="/settings") settings
+										| .
+							.option-container(data-type="impact-tag-categories")
+								.option-title Categories — 
+									span.show-hide(data-open="false") Show
+								ul.tag-list
+							.option-container(data-type="impact-tag-levels")
+								.option-title Levels — 
+									span.show-hide(data-open="false") Show
+								ul.tag-list
+						.section-items-container#events-gallery-container
+
+
 			section.detail-section(data-group="reading")
 				section(data-which="social-posts")
 					h3.title Who is posting this story to social media?

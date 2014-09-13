@@ -39,16 +39,6 @@ mixin articles
 					| Create them in   
 					a.out-link(href="/settings") settings
 					| .
-
-
-		.option-container(data-type="impact-tag-categories")
-			.option-title Impact categories — 
-				span.show-hide(data-open="false") Show
-			ul.tag-list
-		.option-container(data-type="impact-tag-levels")
-			.option-title Impact levels — 
-				span.show-hide(data-open="false") Show
-			ul.tag-list
 		.option-container(data-type="impact-tags")
 			.option-title Impact tags — 
 				span.show-hide(data-open="false") Show
@@ -58,6 +48,14 @@ mixin articles
 					| Create them in   
 					a.out-link(href="/settings") settings
 					| .
+		.option-container(data-type="impact-tag-categories")
+			.option-title Impact categories — 
+				span.show-hide(data-open="false") Show
+			ul.tag-list
+		.option-container(data-type="impact-tag-levels")
+			.option-title Impact levels — 
+				span.show-hide(data-open="false") Show
+			ul.tag-list
 
 			//- .edit
 			//- 	a(href="/settings#tags").out-link Edit tags
