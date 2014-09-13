@@ -602,6 +602,10 @@ body[data-section="login"] #content {
 }
 .detail-section[data-group="life"] section[data-which="events"] .section-options {
   width: 175px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .detail-section[data-group="life"] section[data-which="events"] .section-options .section-title {
   color: #535353;
