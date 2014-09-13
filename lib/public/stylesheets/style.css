@@ -269,11 +269,11 @@ body[data-modal=true] .drawer-list-item-ul {
 }
 .drawer-list-inner .tag-list-title {
   display: inline-block;
-  width: 20px;
+  width: 30px;
 }
 .drawer-list-inner .tag-list {
   font-size: 1.1em;
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 }
 .drawer-list-inner .tag-list li {
   display: inline-block;
@@ -602,30 +602,63 @@ body[data-section="login"] #content {
 }
 /* end drawer item */
 /* A R T I C L E  D E T A I L */
-.detail-section[data-group="life"] section[data-which="events"] .events-container {
+#events-container {
   margin-top: 20px;
 }
-.detail-section[data-group="life"] section[data-which="events"] .tag-wrapper:hover .tag-container {
+#events-container .placeholder {
+  text-align: center;
+  font-size: 1.5em;
+  font-style: italic;
+}
+#events-container .tag-wrapper:hover .tag-container {
   background-color: #f2f2f2;
 }
-.detail-section[data-group="life"] section[data-which="events"] .section-options {
+#events-container .section-options {
   width: 175px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
-.detail-section[data-group="life"] section[data-which="events"] .section-options .section-title {
+#events-container .section-options .section-title {
   color: #535353;
   font-weight: normal;
 }
-.detail-section[data-group="life"] section[data-which="events"] .section-options .option-title {
+#events-container .section-options .option-title {
   border-bottom-color: #d8d5d5;
 }
-.events-container .placeholder {
-  text-align: center;
-  font-size: 1.5em;
-  font-style: italic;
+#events-gallery-container,
+.section-options {
+  display: inline-block;
+  vertical-align: top;
+}
+#events-gallery-container {
+  width: calc(100% - 175px);
+  padding-left: 20px;
+}
+.event-container {
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  height: 375px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.event-container .event-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #c0f;
+}
+.event-container:nth-child(odd) {
+  margin-right: 10px;
+}
+@media (max-width: 1260px) {
+  .event-container {
+    width: 100%;
+    margin: 0 !important;
+  }
 }
 /* end article detail */
 /* H O M E */

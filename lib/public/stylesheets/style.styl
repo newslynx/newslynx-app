@@ -478,26 +478,50 @@ body[data-section="login"] #content
 /* end drawer item */
 
 /* A R T I C L E  D E T A I L */
-.detail-section[data-group="life"]
-	section[data-which="events"]
-		.events-container
-			margin-top 20px
-		.tag-wrapper:hover .tag-container
-			background-color #f2f2f2
-		.section-options
-			width 175px
-			user-select none
-			.section-title
-				color #535353
-				font-weight normal
-			.option-title
-				border-bottom-color #d8d5d5
-.events-container
+filter_opts_width = 175px
+#events-container
+	margin-top 20px
 	.placeholder
 		text-align center
 		font-size 1.5em
 		font-style italic
+	.tag-wrapper:hover .tag-container
+		background-color #f2f2f2
+	.section-options
+		width filter_opts_width
+		user-select none
+		.section-title
+			color #535353
+			font-weight normal
+		.option-title
+			border-bottom-color #d8d5d5
 
+#events-gallery-container,.section-options
+	display inline-block
+	vertical-align top
+#events-gallery-container
+	width 'calc(100% - %s)' % filter_opts_width
+	padding-left 20px
+.event-container
+	display inline-block
+	vertical-align top
+	width 48%
+	height 375px
+	padding 10px
+	border 1px solid #ccc
+	.event-content
+		width 100%
+		height 100%
+		overflow-y scroll	
+		overflow-x hidden
+		background-color #c0f
+.event-container:nth-child(odd)
+	margin-right 10px
+
+@media (max-width: 1260px)
+	.event-container
+		width 100%
+		margin 0 !important
 /* end article detail */
 
 /* H O M E */
