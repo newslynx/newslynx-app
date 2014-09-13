@@ -267,7 +267,10 @@ body[data-modal=true] .drawer-list-item-ul {
   cursor: pointer;
   text-decoration: underline;
 }
-.drawer-list-inner .tag-list li {
+.drawer-list-inner .tag-list.subject-tags-container {
+  font-size: 1.1em;
+}
+.drawer-list-inner .tag-list.subject-tags-container li {
   display: inline-block;
   padding: 1px 4px;
   margin-right: 3px;
