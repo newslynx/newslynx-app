@@ -203,6 +203,8 @@ section_nav_margin_top = 10px
 		background-color highlight_gray
 	.section.active .nav-link:hover
 		cursor default
+	.tag-wrapper:hover .tag-container
+		background-color #A1A1A1
 	.option-container[data-type="date-range"]
 		input
 			width 45%
@@ -250,8 +252,6 @@ section_nav_margin_top = 10px
 		padding-bottom 4px
 	.tag-wrapper:hover
 		cursor pointer
-	.tag-wrapper:hover .tag-container
-		background-color #A1A1A1
 	.tag-container
 		position relative
 		top 1px
@@ -478,6 +478,9 @@ body[data-section="login"] #content
 	section[data-which="events"]
 		.events-container
 			margin-top 20px
+		.tag-wrapper:hover .tag-container
+			background-color #f2f2f2
+
 		.section-options
 			width 175px
 			user-select none

@@ -226,6 +226,9 @@ body[data-modal=true] .drawer-list-item-ul {
 .main-sections .section.active .nav-link:hover {
   cursor: default;
 }
+.main-sections .tag-wrapper:hover .tag-container {
+  background-color: #a1a1a1;
+}
 .main-sections .option-container[data-type="date-range"] input {
   width: 45%;
 }
@@ -279,9 +282,6 @@ body[data-modal=true] .drawer-list-item-ul {
 }
 .tag-list .tag-wrapper:hover {
   cursor: pointer;
-}
-.tag-list .tag-wrapper:hover .tag-container {
-  background-color: #a1a1a1;
 }
 .tag-list .tag-container {
   position: relative;
@@ -599,6 +599,9 @@ body[data-section="login"] #content {
 /* A R T I C L E  D E T A I L */
 .detail-section[data-group="life"] section[data-which="events"] .events-container {
   margin-top: 20px;
+}
+.detail-section[data-group="life"] section[data-which="events"] .tag-wrapper:hover .tag-container {
+  background-color: #f2f2f2;
 }
 .detail-section[data-group="life"] section[data-which="events"] .section-options {
   width: 175px;
