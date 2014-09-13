@@ -955,13 +955,15 @@ group_margin = 30px
 	bottom 0
 .modal-overlay
 	background-color rgba(0,0,0,.7)
-	z-index 9999
+	z-index 9
+.modal-overlay:hover
+	cursor pointer
 .modal-inner
 	background-color #fff
 	padding 20px
 	border 1px solid #000
 	width 525px
-	z-index 99999
+	z-index 99
 	form
 		margin-top 10px
 	.modal-title
@@ -972,7 +974,8 @@ group_margin = 30px
 	.description
 		margin-bottom 5px
 		font-size 1.2em
-	input[name="timestamp"],input[name="assignees"]
+	#content[mode="my-recipes"] input[name="timestamp"],
+	input[name="assignees"]
 		pointer-events none
 		border 0
 		color #fff

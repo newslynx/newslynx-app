@@ -63,7 +63,7 @@ block templates
 					<% print(authors_markup) %>
 					<% } %>
 			.article-info-container(data-which="subject").modal-parent
-				.article-info-title#add-subject-tag 
+				.article-info-title#add-subject-tag.modal-toggle
 					span.article-info-title-text Subject tags:
 				.modal-outer
 					.modal-overlay.modal-close
@@ -96,8 +96,8 @@ block templates
 							li.tab.active(data-group="life") This story's life
 							li.tab(data-group="reading") Who's reading and sharing it
 				.group-container(data-side="right")
-					.group-item
-						button.create-event + Create event
+					.group-item#event-creator-container.modal-parent
+						button.create-event.modal-toggle + Create event
 					.group-item
 						span.icon-comparison vs 
 						select#article-comparer
@@ -175,14 +175,16 @@ block bootstrap-data
 		pageData.subject_tags 					=!{JSON.stringify(subject_tags)};
 		pageData.impact_tags 						=!{JSON.stringify(impact_tags)};
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
-		pageData.eventSchemas 					=!{JSON.stringify(eventSchemas)};
+		pageData.eventCreatorSchema 		=!{JSON.stringify(eventCreatorSchema)};
 		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
+		pageData.impactCategoriesInfo		=!{JSON.stringify(impactCategoriesInfo)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
+	script(src="javascripts/thirdparty/d3.databinding.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")

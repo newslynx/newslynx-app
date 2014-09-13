@@ -1192,14 +1192,17 @@ input {
 }
 .modal-overlay {
   background-color: rgba(0,0,0,0.7);
-  z-index: 9999;
+  z-index: 9;
+}
+.modal-overlay:hover {
+  cursor: pointer;
 }
 .modal-inner {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #000;
   width: 525px;
-  z-index: 99999;
+  z-index: 99;
 }
 .modal-inner form {
   margin-top: 10px;
@@ -1214,7 +1217,7 @@ input {
   margin-bottom: 5px;
   font-size: 1.2em;
 }
-.modal-inner input[name="timestamp"],
+.modal-inner #content[mode="my-recipes"] input[name="timestamp"],
 .modal-inner input[name="assignees"] {
   pointer-events: none;
   border: 0;
