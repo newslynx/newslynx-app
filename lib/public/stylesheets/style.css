@@ -359,6 +359,9 @@ body[data-section="approval-river"] .division-switcher li.active {
   background-color: #12b7dd;
   text-shadow: 0 0px 12px #535353;
 }
+body[data-section="articles"] {
+  min-width: 1115px;
+}
 body[data-section="articles"] .section.active > .nav-link {
   background-color: #3ec173;
 }
@@ -809,7 +812,7 @@ input {
   line-height: 1em;
 }
 .article-detail-container .title {
-  font-size: 2.2em;
+  font-size: 1.8em;
   line-height: 1.2em;
 }
 .article-detail-container .headline:before,
@@ -868,13 +871,16 @@ input {
   cursor: default;
   text-decoration: none;
 }
+.article-detail-container .group-container[data-side="left"] .group-item {
+  min-width: 315px;
+}
 .article-detail-container .group-container[data-side="right"] {
   margin-bottom: 6px;
 }
 .article-detail-container .group-container[data-side="right"] .group-item {
   float: right;
   display: block;
-  margin-left: 50%;
+  clear: both;
 }
 .article-detail-container .article-info-container {
   margin: 5px 0;

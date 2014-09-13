@@ -317,6 +317,7 @@ body[data-section="approval-river"]
 		background-color approval_river
 		text-shadow 0 0px 12px #535353
 body[data-section="articles"]
+	min-width 1115px
 	.section.active > .nav-link
 		background-color articles
 	#drawer
@@ -647,7 +648,7 @@ input
 		font-size 2.8em
 		line-height 1em
 	.title
-		font-size 2.2em
+		font-size 1.8em
 		line-height 1.2em
 	.headline:before,.title:before
 		position absolute
@@ -692,12 +693,15 @@ input
 			.tab.active:hover
 				cursor default
 				text-decoration none
+	.group-container[data-side="left"]
+		.group-item
+			min-width 315px
 	.group-container[data-side="right"]
 		margin-bottom 6px
 		.group-item
 			float right
 			display block
-			margin-left 50%
+			clear both
 	.article-info-container
 		margin 5px 0
 	.article-info-title
