@@ -617,6 +617,11 @@ body[data-section="login"] #content {
 .detail-section[data-group="life"] section[data-which="events"] .section-options .option-title {
   border-bottom-color: #d8d5d5;
 }
+.events-container .placeholder {
+  text-align: center;
+  font-size: 1.5em;
+  font-style: italic;
+}
 /* end article detail */
 /* H O M E */
 body[data-section="home"] #content {
@@ -814,6 +819,9 @@ input {
 }
 #content[data-mode="detail"] {
   padding: 25px 50px;
+}
+#content[data-mode="detail"] .article-detail-wrapper {
+  padding-bottom: 50px;
 }
 #content[data-mode="compare"] {
   padding: 25px;

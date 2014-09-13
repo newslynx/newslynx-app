@@ -480,7 +480,6 @@ body[data-section="login"] #content
 			margin-top 20px
 		.tag-wrapper:hover .tag-container
 			background-color #f2f2f2
-
 		.section-options
 			width 175px
 			user-select none
@@ -489,6 +488,11 @@ body[data-section="login"] #content
 				font-weight normal
 			.option-title
 				border-bottom-color #d8d5d5
+.events-container
+	.placeholder
+		text-align center
+		font-size 1.5em
+		font-style italic
 
 /* end article detail */
 
@@ -646,8 +650,11 @@ input
 #content
 	padding 0
 
+padding_verts = 25px
 #content[data-mode="detail"]
-	padding 25px 50px
+	padding padding_verts 50px
+	.article-detail-wrapper
+		padding-bottom padding_verts*2
 
 #content[data-mode="compare"]
 	padding 25px

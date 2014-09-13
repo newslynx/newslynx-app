@@ -110,6 +110,7 @@ block templates
 				section(data-which="events")
 					h3.title What events have happened around this story?
 					.events-container
+						<% if (events.length) { %>
 						.section-options
 							.section-title Filter by...
 							.option-container(data-type="impact-tags")
@@ -117,19 +118,23 @@ block templates
 									span.show-hide(data-open="false") Show
 								ul.tag-list
 									li.placeholder
-										| None yet! <br/>
-										| Create them in   
-										a.out-link(href="/settings") settings
-										| .
+										| None yet!
 							.option-container(data-type="impact-tag-categories")
 								.option-title Categories — 
 									span.show-hide(data-open="false") Show
 								ul.tag-list
+									li.placeholder
+										| None yet!
 							.option-container(data-type="impact-tag-levels")
 								.option-title Levels — 
 									span.show-hide(data-open="false") Show
 								ul.tag-list
+									li.placeholder
+										| None yet!
 						.section-items-container#events-gallery-container
+						<% } else { %>
+						.placeholder You haven't created any events for this article yet. 
+						<% } %>
 
 
 			section.detail-section(data-group="reading")
