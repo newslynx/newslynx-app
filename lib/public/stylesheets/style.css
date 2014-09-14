@@ -1024,21 +1024,6 @@ input {
   left: -16px;
   color: #ccc;
 }
-.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings {
-  padding: 10px 0;
-}
-.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li {
-  font-size: 1.2em;
-}
-.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li label:hover,
-.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li input:hover {
-  cursor: pointer !important;
-}
-.article-detail-container .article-info-container[data-which="subject"] #subject-tag-settings li .tag-text {
-  padding: 1px 5px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
 .article-detail-container ul.tags,
 .article-detail-container ul.authors {
   display: inline;
@@ -1091,6 +1076,18 @@ input {
 }
 .article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover .tag-text {
   visibility: hidden;
+}
+#subject-tag-settings li {
+  font-size: 1.2em;
+}
+#subject-tag-settings li label:hover,
+#subject-tag-settings li input:hover {
+  cursor: pointer !important;
+}
+#subject-tag-settings li .tag-text {
+  padding: 1px 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 .detail-section {
   display: none;
@@ -1319,8 +1316,9 @@ input {
   margin-bottom: 5px;
 }
 .modal-inner .description {
-  margin-bottom: 5px;
-  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-style: italic;
 }
 .modal-inner input[name="assignees"] {
   pointer-events: none;

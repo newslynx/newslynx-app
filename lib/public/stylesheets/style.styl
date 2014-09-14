@@ -808,15 +808,6 @@ padding_verts = 25px
 			padding-right 100%
 			left -16px
 			color #ccc
-		#subject-tag-settings
-			padding 10px 0
-			li
-				font-size 1.2em
-				label:hover,input:hover
-					cursor pointer !important
-				.tag-text
-					padding 1px 5px
-					border-radius 2px
 	ul.tags,ul.authors
 		display inline
 		.tag
@@ -856,6 +847,14 @@ padding_verts = 25px
 		.tag:not(.empty):hover
 			.tag-text
 				visibility hidden
+#subject-tag-settings
+	li
+		font-size 1.2em
+		label:hover,input:hover
+			cursor pointer !important
+		.tag-text
+			padding 1px 5px
+			border-radius 2px
 .detail-section
 	display none
 // To show on load, later controled by tabs
@@ -1053,8 +1052,9 @@ group_margin = 30px
 		border-bottom 1px solid border_gray
 		margin-bottom 5px
 	.description
-		margin-bottom 5px
-		font-size 1.2em
+		margin-bottom 15px
+		font-size 1.3em
+		font-style italic
 	input[name="assignees"]
 		pointer-events none
 		border 0
