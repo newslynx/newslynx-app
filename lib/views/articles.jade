@@ -155,15 +155,15 @@ block templates
 	script(type="text/jst")#article-grid-container-templ
 		#compare-grid
 			.header
-				.header-meta-container
-					.header-meta.cell
-						.name Social shares
-					.header-meta.cell
-						.name Visitors
-					.header-meta.cell
-						.name Sources
-					.header-meta.cell.bars
-						.name Tags
+				//- .header-meta-container
+				//- 	.header-meta.cell
+				//- 		.name Social shares
+				//- 	.header-meta.cell
+				//- 		.name Visitors
+				//- 	//- .header-meta.cell
+				//- 	//- 	.name Sources
+				//- 	.header-meta.cell.bars
+				//- 		.name Tags
 				.header-dimensions-container
 					.header-el.cell.wide(data-metric="title")
 						.name Headline
@@ -174,17 +174,17 @@ block templates
 					.header-el.cell.multi(data-metric="facebook")
 						.name Facebook
 					.header-el.cell.multi(data-metric="pageviews")
-						.name Pageviews
+						.name Views
 					.header-el.cell.multi(data-metric="avg_time_on_page")
 						.name Time/page
-					.header-el.cell.multi(data-metric="internal")
-						.name Internal
-					.header-el.cell.multi(data-metric="external")
-						.name External
+					//- .header-el.cell.multi(data-metric="internal")
+					//- 	.name Internal
+					//- .header-el.cell.multi(data-metric="external")
+					//- 	.name External
 					.header-el.cell.bars(data-metric="subject")
-						.name Subject
+						.name Subj. tags
 					.header-el.cell.bars(data-metric="impact")
-						.name Impact
+						.name Imp. tags
 			.rows
 
 	//-  TODO, sort by % over comparison

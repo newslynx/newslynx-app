@@ -985,18 +985,18 @@ padding_verts = 25px
 		cursor pointer
 		color #000
 
-.article-detail-row-container
-	padding 5px 0 
+// .article-detail-row-container
+// 	padding 5px 0 
 
 single_width = 8%
-multi_width = 13%
-wide_width = 11%
-bars_width = 8%
+multi_width = 18%
+wide_width = 10%
+bars_width = 10%
 
-single_margin = 20px
+single_margin = 2.5%
 date_margin = single_margin/2
-bullet_margin = 10px
-group_margin = 30px
+bullet_margin = 2%
+group_margin = 5%
 
 #compare-grid
 	width 100%
@@ -1004,6 +1004,7 @@ group_margin = 30px
 .cell
 	display inline-block
 	vertical-align top
+	padding 5px 0
 .cell.gfx
 	vertical-align bottom
 	position relative
@@ -1046,28 +1047,35 @@ group_margin = 30px
 	font-size 1.1em
 	user-select none
 	position relative
+	color #666
 .header-el:hover
 	cursor pointer
-	text-decoration underline
+	color #000
 .header-el.active
 	color the_green
-	white-space no-wrap
+.header-el.active:hover
+	color darken(the_green, 15%)
 .header-el .name
 	display inline-block
+	white-space nowrap
 .header-el.active:after
 	display inline-block
 	text-decoration none
 	margin-left 3px
 	font-size .8em
+	position relative
 .header-el.active:hover:after
 	text-decoration none
 .header-el.active[data-sort-ascending="true"]:after
 	content '▲'
-	position relative
-	top -2px
 .header-el.active[data-sort-ascending="false"]:after
 	content '▲'
 	transform rotate(180deg)
+	top 2px
+
+@media (max-width: 1147px )
+	.cell.date
+		margin-right single_margin
 /* end header styles */
 
 

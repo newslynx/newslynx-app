@@ -1250,9 +1250,6 @@ input {
   cursor: pointer;
   color: #000;
 }
-.article-detail-row-container {
-  padding: 5px 0;
-}
 #compare-grid {
   width: 100%;
   -webkit-user-select: none;
@@ -1263,6 +1260,7 @@ input {
 .cell {
   display: inline-block;
   vertical-align: top;
+  padding: 5px 0;
 }
 .cell.gfx {
   vertical-align: bottom;
@@ -1271,27 +1269,27 @@ input {
 }
 .cell {
   width: 8%;
-  margin-right: 20px;
+  margin-right: 2.5%;
 }
 .cell.multi {
-  width: 6.5%;
-  margin-right: 10px;
+  width: 9%;
+  margin-right: 2%;
 }
 .cell.date {
-  margin-right: 10px;
+  margin-right: 1.25%;
 }
 .cell.wide {
-  width: 11%;
+  width: 10%;
 }
 .cell.bar {
-  width: 8%;
+  width: 10%;
 }
 .header-meta {
-  margin-right: 30px;
+  margin-right: 5%;
 }
 .header-dimensions-container .cell.multi:nth-child(even),
 .article-detail-row-container .cell.multi:nth-child(odd) {
-  margin-right: 30px;
+  margin-right: 5%;
 }
 /* Header styles */
 .header-meta-container,
@@ -1304,15 +1302,15 @@ input {
   border-bottom: 1px solid #ccc;
 }
 .header-meta {
-  width: calc(13% + 10px);
+  width: calc(18% + 2%);
   text-align: center;
   font-size: 1.1em;
 }
 .header-meta.bars {
-  width: calc(16% + 10px);
+  width: calc(20% + 2%);
 }
 .header-meta:first-child {
-  margin-left: calc(19% + 30px);
+  margin-left: calc(18% + 3.75%);
 }
 .header-el {
   font-size: 1.1em;
@@ -1321,31 +1319,34 @@ input {
   -ms-user-select: none;
   user-select: none;
   position: relative;
+  color: #666;
 }
 .header-el:hover {
   cursor: pointer;
-  text-decoration: underline;
+  color: #000;
 }
 .header-el.active {
   color: #0eb521;
-  white-space: nowrap;
+}
+.header-el.active:hover {
+  color: #0c9a1c;
 }
 .header-el .name {
   display: inline-block;
+  white-space: nowrap;
 }
 .header-el.active:after {
   display: inline-block;
   text-decoration: none;
   margin-left: 3px;
   font-size: 0.8em;
+  position: relative;
 }
 .header-el.active:hover:after {
   text-decoration: none;
 }
 .header-el.active[data-sort-ascending="true"]:after {
   content: '▲';
-  position: relative;
-  top: -2px;
 }
 .header-el.active[data-sort-ascending="false"]:after {
   content: '▲';
@@ -1354,6 +1355,12 @@ input {
   -o-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  top: 2px;
+}
+@media (max-width: 1147px) {
+  .cell.date {
+    margin-right: 2.5%;
+  }
 }
 /* end header styles */
 .cell .title-text {
