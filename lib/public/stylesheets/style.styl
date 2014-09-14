@@ -1071,7 +1071,7 @@ group_margin = 30px
 /* end header styles */
 
 
-.cell.title
+.cell .title-text
 	white-space no-wrap
 	overflow-x hidden
 	font-size 1.2em
@@ -1079,6 +1079,7 @@ group_margin = 30px
 	font-size 1.2em
 .bullet-container
 	background-color #eee
+	overflow hidden
 .bullet
 	background-color select_blue
 	height 10px
@@ -1517,6 +1518,10 @@ tooltip_y_offset = 10px
 	background rgba(0,0,0,0.8)
 	border-radius 3px
 	-webkit-font-smoothing subpixel-antialiased
+.tooltipped[data-tooltip-align="left"]:after
+	transform translateX(0%)
+	left 0
+	right auto
 /* end tooltips */
 
 /* user styles, to be got from server */

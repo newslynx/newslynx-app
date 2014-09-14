@@ -1356,7 +1356,7 @@ input {
   transform: rotate(180deg);
 }
 /* end header styles */
-.cell.title {
+.cell .title-text {
   white-space: nowrap;
   overflow-x: hidden;
   font-size: 1.2em;
@@ -1366,6 +1366,7 @@ input {
 }
 .bullet-container {
   background-color: #eee;
+  overflow: hidden;
 }
 .bullet {
   background-color: #88cfff;
@@ -1891,6 +1892,15 @@ button.add {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+.tooltipped[data-tooltip-align="left"]:after {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  left: 0;
+  right: auto;
 }
 /* end tooltips */
 /* user styles, to be got from server */
