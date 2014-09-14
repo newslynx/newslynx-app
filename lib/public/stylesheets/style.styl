@@ -139,6 +139,7 @@ content_width = 850
 header_height = 50px
 furniture_width = leftrail_width + drawer_width
 page_width = (leftrail_width + drawer_width + content_width)
+article_min_width = 1115px
 
 // Colors
 dummy = #fc0
@@ -400,7 +401,7 @@ body[data-section="approval-river"]
 		background-color approval_river
 		text-shadow 0 0px 12px #535353
 body[data-section="articles"]
-	min-width 1115px
+	min-width article_min_width
 	.section.active > .nav-link
 		background-color articles
 	#drawer
@@ -781,8 +782,8 @@ padding_verts = 25px
 	.article-detail-wrapper
 		padding-bottom padding_verts*2
 
-#content[data-mode="compare"]
-	padding 25px
+// #content[data-mode="compare"]
+// 	padding 25px
 
 .article-detail-container
 	.toolbar
@@ -998,9 +999,27 @@ date_margin = single_margin/2
 bullet_margin = 2%
 group_margin = 5%
 
+header_height = 25px
+compare_grid_padding = 25px
+
+
 #compare-grid
 	width 100%
 	user-select none
+	.header,.rows
+		padding 0 compare_grid_padding
+	.header
+		padding-top compare_grid_padding
+		background-color #EDEDED
+		position fixed
+		top 0
+		right -1*compare_grid_padding*2 // This is a little hack to keep the row the same size as the header. Essentially removing the left and right padding on the header so they both have the same total width
+		left drawer_width + leftrail_width
+		padding-top 22px
+		z-index 99999
+		min-width article_min_width - drawer_width - leftrail_width + compare_grid_padding*2
+	.rows
+		margin-top compare_grid_padding*2 + 5
 .cell
 	display inline-block
 	vertical-align top
@@ -1034,7 +1053,7 @@ group_margin = 5%
 .header-dimensions-container
 	font-weight bold
 	margin-bottom 3px
-	border-bottom 1px solid #ccc
+	// border-bottom 1px solid #ccc
 .header-meta
 	width unquote('calc('+multi_width+' + '+bullet_margin+')')
 	text-align center

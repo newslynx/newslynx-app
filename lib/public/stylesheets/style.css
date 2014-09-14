@@ -993,9 +993,6 @@ input {
 #content[data-mode="detail"] .article-detail-wrapper {
   padding-bottom: 50px;
 }
-#content[data-mode="compare"] {
-  padding: 25px;
-}
 .article-detail-container .toolbar {
   margin: 20px 0 40px 0;
   border-bottom: 1px solid #ccc;
@@ -1257,6 +1254,24 @@ input {
   -ms-user-select: none;
   user-select: none;
 }
+#compare-grid .header,
+#compare-grid .rows {
+  padding: 0 25px;
+}
+#compare-grid .header {
+  padding-top: 25px;
+  background-color: #ededed;
+  position: fixed;
+  top: 0;
+  right: -50px;
+  left: 535px;
+  padding-top: 22px;
+  z-index: 99999;
+  min-width: 630px;
+}
+#compare-grid .rows {
+  margin-top: 55px;
+}
 .cell {
   display: inline-block;
   vertical-align: top;
@@ -1299,7 +1314,6 @@ input {
 .header-dimensions-container {
   font-weight: bold;
   margin-bottom: 3px;
-  border-bottom: 1px solid #ccc;
 }
 .header-meta {
   width: calc(18% + 2%);
