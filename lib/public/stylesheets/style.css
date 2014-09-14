@@ -80,17 +80,6 @@ input.destroy {
   border-radius: 3px;
   -moz-user-select: none;
 }
-button:hover {
-  text-decoration: none;
-  background-color: #ddd;
-  background-image: -webkit-linear-gradient(#eee, #ddd);
-  background-image: -moz-linear-gradient(#eee, #ddd);
-  background-image: -o-linear-gradient(#eee, #ddd);
-  background-image: -ms-linear-gradient(#eee, #ddd);
-  background-image: linear-gradient(#eee, #ddd);
-  background-repeat: repeat-x;
-  border-color: #ccc;
-}
 input[type="submit"] {
   color: #fff;
   text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
@@ -103,17 +92,6 @@ input[type="submit"] {
   background-repeat: repeat-x;
   border: 1px solid #5ca941;
 }
-input[type="submit"]:hover {
-  color: #fff;
-  background-color: #569e3d;
-  background-image: -webkit-linear-gradient(#79d858, #569e3d);
-  background-image: -moz-linear-gradient(#79d858, #569e3d);
-  background-image: -o-linear-gradient(#79d858, #569e3d);
-  background-image: -ms-linear-gradient(#79d858, #569e3d);
-  background-image: linear-gradient(#79d858, #569e3d);
-  background-repeat: repeat-x;
-  border-color: #4a993e;
-}
 input.destroy {
   color: #900;
 }
@@ -121,6 +99,17 @@ button:hover,
 input[type="submit"]:hover,
 input.destroy:hover {
   cursor: pointer;
+}
+button:hover {
+  text-decoration: none;
+  background-color: #ddd;
+  background-image: -webkit-linear-gradient(#eee, #ddd);
+  background-image: -moz-linear-gradient(#eee, #ddd);
+  background-image: -o-linear-gradient(#eee, #ddd);
+  background-image: -ms-linear-gradient(#eee, #ddd);
+  background-image: linear-gradient(#eee, #ddd);
+  background-repeat: repeat-x;
+  border-color: #ccc;
 }
 input.destroy:hover {
   color: #900;
@@ -134,6 +123,35 @@ input.destroy:hover {
   background-image: linear-gradient(#dc5f59, #b33630);
   background-repeat: repeat-x;
   border-color: #cd504a;
+}
+input[type="submit"]:hover {
+  color: #fff;
+  background-color: #569e3d;
+  background-image: -webkit-linear-gradient(#79d858, #569e3d);
+  background-image: -moz-linear-gradient(#79d858, #569e3d);
+  background-image: -o-linear-gradient(#79d858, #569e3d);
+  background-image: -ms-linear-gradient(#79d858, #569e3d);
+  background-image: linear-gradient(#79d858, #569e3d);
+  background-repeat: repeat-x;
+  border-color: #4a993e;
+}
+button:active {
+  background-color: #dcdcdc;
+  background-image: none;
+  border-color: #b5b5b5;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
+}
+input[type="submit"]:active {
+  background-color: #569e3d;
+  background-image: none;
+  border-color: #418737;
+}
+input.destroy:active {
+  color: #fff;
+  background-color: #b33630;
+  background-image: none;
+  border-color: #9f312c;
 }
 input[type="password"],
 input[type="text"] {
@@ -1739,8 +1757,10 @@ button.add {
 .save-container {
   margin: 25px 0;
 }
-.save-container input {
-  font-size: 2.4em;
+.save-container input[type="submit"] {
+  margin-top: 5px !important;
+  font-size: 1.6em;
+  font-weight: normal !important;
 }
 /* end settings */
 /* L O G I N */
