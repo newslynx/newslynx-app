@@ -276,6 +276,10 @@ body[data-modal=true] .drawer-list-item-ul {
 .event-container .tag-list {
   font-size: 1.1em;
   margin-bottom: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .drawer-list-inner .tag-list li,
 .event-container .tag-list li {
@@ -284,6 +288,10 @@ body[data-modal=true] .drawer-list-item-ul {
   margin-right: 3px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+.drawer-list-inner .tag-list li:hover,
+.event-container .tag-list li:hover {
+  cursor: default;
 }
 .tag-list .tag-wrapper {
   padding-bottom: 4px;
@@ -643,13 +651,12 @@ body[data-section="login"] #content {
   display: inline-block;
   vertical-align: top;
   width: 48%;
-  height: 375px;
   padding: 10px;
   border: 1px solid #ccc;
 }
 .event-container .event-content {
   width: 100%;
-  height: 100%;
+  max-height: 375px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -673,7 +680,7 @@ body[data-section="login"] #content {
   font-size: 1.2em;
 }
 .event-container:nth-child(odd) {
-  margin-right: 10px;
+  margin: 0 10px 10px 0;
 }
 @media (max-width: 1260px) {
   .event-container {
