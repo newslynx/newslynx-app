@@ -42,7 +42,7 @@ p
 input[type="search"]
 	appearance searchfield
 
-button,input.destroy,select
+button,input.destroy
 	color #333
 	background-color #EEE
 	background-image linear-gradient(#FCFCFC, #EEE)
@@ -53,6 +53,7 @@ button,input[type="submit"],input.destroy
 	font-weight bold
 	text-shadow 0px 1px 0px rgba(255, 255, 255, 0.9)
 	white-space nowrap
+	border-radius 3px
 	
 button,input[type="submit"],input.destroy,select
 	margin 0
@@ -62,11 +63,13 @@ button,input[type="submit"],input.destroy,select
 	vertical-align middle
 	cursor pointer
 	background-repeat repeat-x
-	border-radius 3px
 	-moz-user-select none
 
+button.mini
+	padding 0 6px
+
 select
-	padding 2px 8px !important
+	padding 1px 8px !important
 	text-shadow none
 
 input[type="submit"]
@@ -646,39 +649,53 @@ body[data-section="home"] #content
 	padding 20px 10px 8px 10px
 	font-size 1.3em
 	font-weight bold
-	color #303030
+	color #666
 	p
 		font-weight normal
 		padding-bottom 8px
 		span
 			font-weight bold
-	.drawer-item.contains-input
-		padding 0
-	.drawer-item
-		padding 4px
-		.add-to-comparison
-			border-radius 2px
-			padding 7px 7px 7px 17px
-			color #53A373
-			font-weight 400
-			background-color tint(articles, 72%)
-			box-shadow 1px 1px 2px -1px rgba(26, 92, 3, .5)
-			text-shadow 1px 1px 3px rgba(234, 250, 231, 1.0)
-	.drawer-item:hover
-		cursor pointer
-	.drawer-item:hover .add-to-comparison
-		background-color tint(articles, 60%)
-		color #3D915F
-	.add-to-comparison:active
-		background-color tint(articles, 45%) !important
-		text-shadow 1px 1px 3px rgba(234, 250, 231, .5)
-	.toggle-all:not(.disabled)
-		color #666
-	.toggle-all:not(.disabled):hover
-		cursor pointer
-		color #000
-	.toggle-all.disabled
-		opacity .5
+			
+#drawer[data-mode="compare"]
+	.drawer-pointer
+		padding 10px
+		.drawer-item[data-type="contains-input"]
+			padding 0
+		.drawer-item-group
+			margin-bottom 5px
+		.drawer-item
+			padding 4px
+			.add-to-comparison
+				font-size 11px
+				width 100%
+				// border-radius 2px
+				// padding 7px 7px 7px 17px
+				// color #53A373
+				// font-weight 400
+				// background-color tint(articles, 72%)
+				// box-shadow 1px 1px 2px -1px rgba(26, 92, 3, .5)
+				// text-shadow 1px 1px 3px #eafae7
+			select
+				font-size 11px
+				padding 1px 2px !important
+				margin-right 5px
+			button.mini
+				float right
+		.drawer-item[data-type="action-item"]:hover
+			cursor pointer
+		// .drawer-item[data-type="action-item"]:hover .add-to-comparison
+		// 	background-color tint(articles, 60%)
+		// 	color #3D915F
+		// .add-to-comparison:active
+		// 	background-color tint(articles, 45%) !important
+		// 	text-shadow 1px 1px 3px rgba(234, 250, 231, .5)
+		.toggle-all:not(.disabled)
+			color #666
+		.toggle-all:not(.disabled):hover
+			cursor pointer
+			color #000
+		.toggle-all.disabled
+			opacity .5
 
 
 .drawer-pointer.center
@@ -1010,16 +1027,18 @@ compare_grid_padding = 25px
 		padding 0 compare_grid_padding
 	.header
 		padding-top compare_grid_padding
-		background-color #EDEDED
+		background-color #eee
 		position fixed
 		top 0
 		right -1*compare_grid_padding*2 // This is a little hack to keep the row the same size as the header. Essentially removing the left and right padding on the header so they both have the same total width
 		left drawer_width + leftrail_width
-		padding-top 22px
+		padding-top 21px
 		z-index 99999
 		min-width article_min_width - drawer_width - leftrail_width + compare_grid_padding*2
+		border-bottom 1px solid #e3e3e3
 	.rows
 		margin-top compare_grid_padding*2 + 5
+		margin-bottom compare_grid_padding + 15
 .cell
 	display inline-block
 	vertical-align top
@@ -1107,15 +1126,17 @@ compare_grid_padding = 25px
 .bullet-container
 	background-color #eee
 	overflow hidden
+	position relative
 .bullet
 	background-color select_blue
 	height 10px
 .marker
 	position absolute
-	top -2px
+	top 0px
 	height 14px
-	background-color #6f6f6f // TODO, maybe make this a standard gry or make a standard gray this
+	background-color bg_gray // TODO, maybe make this a standard gry or make a standard gray this
 	width 2px
+	opacity .5
 
 .bar-column
 	display inline-block

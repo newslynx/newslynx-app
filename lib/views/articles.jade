@@ -15,18 +15,28 @@ block templates
 
 	script(type="text/jst")#drawer-pointers-templ
 		.drawer-pointer
-			.drawer-item
-				.add-to-comparison(data-action="replace")
-					span.octicon-sync.octicon  
-					span  Replace comparison with selection
-			.drawer-item 
-				.add-to-comparison(data-action="add")
-					span.octicon-plus.octicon  
-					span  Add selection to comparision
-			.drawer-item.contains-input
-				label.toggle-all
-					input(type="checkbox")
-					|  Toggle all
+			.drawer-item-group
+				.drawer-item
+					.item-text Compare against...
+					select.alter-comparison-marker(data-which="dimension")
+						option(value="mean") Average of
+						option(value="median") Median of
+					select.alter-comparison-marker(data-which="group")
+						option(value="all") all articles
+					button.mini#alter-comparison-marker Set
+			.drawer-item-group
+				.drawer-item(data-type="action-item")
+					button.add-to-comparison(data-action="replace")
+						span.octicon-sync.octicon  
+						span  Replace comparison with selection
+				.drawer-item(data-type="action-item") 
+					button.add-to-comparison(data-action="add")
+						span.octicon-plus.octicon  
+						span  Add selection to comparision
+				.drawer-item(data-type="contains-input")
+					label.toggle-all
+						input(type="checkbox")
+						|  Toggle all
 
 
 	script(type="text/jst")#article-summary-drawer-templ
