@@ -267,15 +267,18 @@ body[data-modal=true] .drawer-list-item-ul {
   cursor: pointer;
   text-decoration: underline;
 }
-.drawer-list-inner .tag-list-title {
+.drawer-list-inner .tag-list-title,
+.event-container .tag-list-title {
   display: inline-block;
   width: 30px;
 }
-.drawer-list-inner .tag-list {
+.drawer-list-inner .tag-list,
+.event-container .tag-list {
   font-size: 1.1em;
   margin-bottom: 2px;
 }
-.drawer-list-inner .tag-list li {
+.drawer-list-inner .tag-list li,
+.event-container .tag-list li {
   display: inline-block;
   padding: 1px 4px;
   margin-right: 3px;
@@ -649,7 +652,25 @@ body[data-section="login"] #content {
   height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  background-color: #c0f;
+}
+.event-container .event-timestamp {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+.event-container .event-item,
+.event-container .event-title {
+  margin-bottom: 10px;
+}
+.event-container .event-title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.event-container .event-item-title {
+  font-weight: bold;
+}
+.event-container .event-item-text,
+.event-container .event-item-title {
+  font-size: 1.2em;
 }
 .event-container:nth-child(odd) {
   margin-right: 10px;

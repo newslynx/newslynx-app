@@ -239,18 +239,21 @@ section_nav_margin_top = 10px
 			cursor pointer
 			text-decoration underline
 
-.drawer-list-inner
+.drawer-list-inner,.event-container
 	.tag-list-title
 		display inline-block
 		width 30px
 	.tag-list
 		font-size 1.1em
 		margin-bottom 2px
+		user-select none
 		li
 			display inline-block
 			padding 1px 4px
 			margin-right 3px
 			border-radius 2px
+		li:hover
+			cursor default
 .tag-list
 	.tag-wrapper
 		padding-bottom 4px
@@ -496,6 +499,7 @@ filter_opts_width = 175px
 		.option-title
 			border-bottom-color #d8d5d5
 
+// Events
 #events-gallery-container,.section-options
 	display inline-block
 	vertical-align top
@@ -514,7 +518,19 @@ filter_opts_width = 175px
 		height 100%
 		overflow-y scroll	
 		overflow-x hidden
-		background-color #c0f
+		// background-color #c0f
+	.event-timestamp
+		font-size 1.1em
+		text-transform uppercase
+	.event-item,.event-title
+		margin-bottom 10px
+	.event-title
+		font-size 1.8em
+		font-weight bold
+	.event-item-title
+		font-weight bold
+	.event-item-text,.event-item-title
+		font-size 1.2em
 .event-container:nth-child(odd)
 	margin-right 10px
 
@@ -522,6 +538,8 @@ filter_opts_width = 175px
 	.event-container
 		width 100%
 		margin 0 !important
+// end events
+
 /* end article detail */
 
 /* H O M E */
