@@ -656,9 +656,6 @@ body[data-section="login"] #content {
 }
 .event-container .event-content {
   width: 100%;
-  max-height: 375px;
-  overflow-y: scroll;
-  overflow-x: hidden;
 }
 .event-container .event-timestamp {
   font-size: 1.1em;
@@ -1724,6 +1721,9 @@ button.add {
 }
 /* end typeahead */
 /* Tooltips */
+.tooltipped {
+  position: relative;
+}
 .tooltipped:hover:before,
 .tooltipped:hover:after {
   display: inline-block;
@@ -1760,7 +1760,7 @@ button.add {
   margin-top: 10px;
   top: 100%;
   padding: 1px 8px 2px 8px;
-  font-size: 1.2em;
+  font-size: 12px;
   line-height: 1.5;
   color: #fff;
   text-align: center;
