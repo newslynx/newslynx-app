@@ -776,6 +776,9 @@ body[data-section="login"] #content {
 .event-container .event-item-title {
   font-weight: bold;
 }
+.event-container .event-tags-container {
+  margin-top: 2px;
+}
 .event-container .event-item-text,
 .event-container .event-item-title {
   font-size: 1.2em;
@@ -1007,6 +1010,10 @@ input {
 .article-detail-container .headline {
   font-size: 2.8em;
   line-height: 1em;
+  margin-bottom: 10px;
+}
+.article-detail-container .headline a {
+  color: #000;
 }
 .article-detail-container .title {
   font-size: 1.8em;
