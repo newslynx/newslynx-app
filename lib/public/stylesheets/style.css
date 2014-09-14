@@ -51,13 +51,89 @@ input[type="search"] {
   -moz-appearance: searchfield;
   appearance: searchfield;
 }
-button {
+button,
+input.destroy {
+  color: #333;
+  background-color: #eee;
+  background-image: -webkit-linear-gradient(#fcfcfc, #eee);
+  background-image: -moz-linear-gradient(#fcfcfc, #eee);
+  background-image: -o-linear-gradient(#fcfcfc, #eee);
+  background-image: -ms-linear-gradient(#fcfcfc, #eee);
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+}
+button,
+input[type="submit"],
+input.destroy {
   margin: 0;
+  position: relative;
+  display: inline-block;
+  padding: 5px 8px;
+  font-size: 13px;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.9);
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-repeat: repeat-x;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-user-select: none;
+}
+button:hover {
+  text-decoration: none;
+  background-color: #ddd;
+  background-image: -webkit-linear-gradient(#eee, #ddd);
+  background-image: -moz-linear-gradient(#eee, #ddd);
+  background-image: -o-linear-gradient(#eee, #ddd);
+  background-image: -ms-linear-gradient(#eee, #ddd);
+  background-image: linear-gradient(#eee, #ddd);
+  background-repeat: repeat-x;
+  border-color: #ccc;
+}
+input[type="submit"] {
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
+  background-color: #60b044;
+  background-image: -webkit-linear-gradient(#8add6d, #60b044);
+  background-image: -moz-linear-gradient(#8add6d, #60b044);
+  background-image: -o-linear-gradient(#8add6d, #60b044);
+  background-image: -ms-linear-gradient(#8add6d, #60b044);
+  background-image: linear-gradient(#8add6d, #60b044);
+  background-repeat: repeat-x;
+  border: 1px solid #5ca941;
+}
+input[type="submit"]:hover {
+  color: #fff;
+  background-color: #569e3d;
+  background-image: -webkit-linear-gradient(#79d858, #569e3d);
+  background-image: -moz-linear-gradient(#79d858, #569e3d);
+  background-image: -o-linear-gradient(#79d858, #569e3d);
+  background-image: -ms-linear-gradient(#79d858, #569e3d);
+  background-image: linear-gradient(#79d858, #569e3d);
+  background-repeat: repeat-x;
+  border-color: #4a993e;
+}
+input.destroy {
+  color: #900;
 }
 button:hover,
 input[type="submit"]:hover,
-input[type="button"]:hover {
+input.destroy:hover {
   cursor: pointer;
+}
+input.destroy:hover {
+  color: #900;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+  background-color: #b33630;
+  background-image: -webkit-linear-gradient(#dc5f59, #b33630);
+  background-image: -moz-linear-gradient(#dc5f59, #b33630);
+  background-image: -o-linear-gradient(#dc5f59, #b33630);
+  background-image: -ms-linear-gradient(#dc5f59, #b33630);
+  background-image: linear-gradient(#dc5f59, #b33630);
+  background-repeat: repeat-x;
+  border-color: #cd504a;
 }
 input[type="password"],
 input[type="text"] {

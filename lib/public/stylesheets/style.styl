@@ -41,10 +41,65 @@ p
 
 input[type="search"]
 	appearance searchfield
-button
+
+button,input.destroy
+	color #333
+	background-color #EEE
+	background-image linear-gradient(#FCFCFC, #EEE)
+	border 1px solid #D5D5D5
+
+button,input[type="submit"],input.destroy
 	margin 0
-button:hover,input[type="submit"]:hover,input[type="button"]:hover
+	position relative
+	display inline-block
+	padding 5px 8px
+	font-size 13px
+	font-weight bold
+	text-shadow 0px 1px 0px rgba(255, 255, 255, 0.9)
+	white-space nowrap
+	vertical-align middle
 	cursor pointer
+	background-repeat repeat-x
+	border-radius 3px
+	-moz-user-select none
+
+
+button:hover
+	text-decoration none
+	background-color #DDD
+	background-image linear-gradient(#EEE, #DDD)
+	background-repeat repeat-x
+	border-color #CCC
+
+input[type="submit"]
+	color #FFF
+	text-shadow 0px -1px 0px rgba(0, 0, 0, 0.25)
+	background-color #60B044
+	background-image linear-gradient(#8ADD6D, #60B044)
+	background-repeat repeat-x
+	border 1px solid #5CA941
+
+input[type="submit"]:hover
+	color #FFF
+	background-color #569E3D
+	background-image linear-gradient(#79D858, #569E3D)
+	background-repeat repeat-x
+	border-color #4A993E
+
+input.destroy
+	color #900
+
+button:hover,input[type="submit"]:hover,input.destroy:hover
+	cursor pointer
+
+input.destroy:hover
+	color #900
+	color #FFF
+	text-shadow 0px -1px 0px rgba(0, 0, 0, 0.3)
+	background-color #B33630
+	background-image linear-gradient(#DC5F59, #B33630)
+	background-repeat repeat-x
+	border-color #CD504A
 
 input[type="password"],input[type="text"]
 	margin-left 0
