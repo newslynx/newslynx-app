@@ -42,26 +42,32 @@ p
 input[type="search"]
 	appearance searchfield
 
-button,input.destroy
+button,input.destroy,select
 	color #333
 	background-color #EEE
 	background-image linear-gradient(#FCFCFC, #EEE)
 	border 1px solid #D5D5D5
 
 button,input[type="submit"],input.destroy
-	margin 0
-	position relative
-	display inline-block
 	padding 5px 8px
-	font-size 13px
 	font-weight bold
 	text-shadow 0px 1px 0px rgba(255, 255, 255, 0.9)
 	white-space nowrap
+	
+button,input[type="submit"],input.destroy,select
+	margin 0
+	position relative
+	display inline-block
+	font-size 13px
 	vertical-align middle
 	cursor pointer
 	background-repeat repeat-x
 	border-radius 3px
 	-moz-user-select none
+
+select
+	padding 2px 8px !important
+	text-shadow none
 
 input[type="submit"]
 	color #FFF
@@ -837,14 +843,18 @@ padding_verts = 25px
 	.group-container[data-side="left"]
 		.group-item
 			min-width 315px
-		button
-			margin-bottom 5px
 	.group-container[data-side="right"]
 		margin-bottom 6px
 		.group-item
 			float right
 			display block
 			clear both
+		.octicon
+			vertical-align sub
+			padding-right 5px
+			cursor default
+		button
+			margin-bottom 5px
 	.article-info-container
 		margin 5px 0
 	.article-info-title

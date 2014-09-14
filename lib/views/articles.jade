@@ -99,10 +99,11 @@ block templates
 					.group-item#event-creator-container.modal-parent
 						button.create-event.modal-toggle + Create event
 					.group-item
-						span.icon-comparison vs 
+						.octicon.octicon-git-compare
 						select#article-comparer
-							option an average article
-							option another thing
+							option(selected) Compare
+							option(value="avg") an average article
+							option(value="perc_95") 95th percentile
 			section.detail-section(data-group="life")
 				section(data-which="timeline")
 					h3.title How many people visited and when was it shared on social media?
