@@ -685,7 +685,7 @@ body[data-section="login"] #content {
 @media (max-width: 1260px) {
   .event-container {
     width: 100%;
-    margin: 0 !important;
+    margin: 0 0 10px 0 !important;
   }
 }
 /* end article detail */
