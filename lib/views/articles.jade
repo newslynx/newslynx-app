@@ -109,12 +109,12 @@ block templates
 				.group-container(data-side="right")
 					.group-item#event-creator-container.modal-parent
 						button.create-event.modal-toggle + Create event
-					.group-item
-						.octicon.octicon-git-compare
-						select#article-comparer
-							option(selected) Compare
-							option(value="avg") an average article
-							option(value="perc_95") 95th percentile
+					//- .group-item
+					//- 	.octicon.octicon-git-compare
+					//- 	select#article-comparer
+					//- 		option(selected) Compare
+					//- 		option(value="avg") an average article
+					//- 		option(value="perc_95") 95th percentile
 			section.detail-section(data-group="life")
 				section(data-which="timeline")
 					h3.title How many people visited and when was it shared on social media?
@@ -216,7 +216,6 @@ block bootstrap-data
 		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
 		pageData.eventCreatorSchema 		=!{JSON.stringify(eventCreatorSchema)};
 		pageData.orgInfo			 					=!{JSON.stringify(orgInfo)};
-		pageData.impactCategoriesInfo		=!{JSON.stringify(impactCategoriesInfo)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
