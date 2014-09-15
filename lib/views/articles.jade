@@ -15,7 +15,7 @@ block templates
 
 	script(type="text/jst")#drawer-pointers-templ
 		.drawer-pointer
-			.drawer-item-group
+			.drawer-item-group(data-which="comparison-marker")
 				.drawer-item
 					.item-text Compare against...
 					select.alter-comparison-marker(data-which="dimension")
@@ -24,7 +24,7 @@ block templates
 					select.alter-comparison-marker(data-which="group")
 						option(value="all") all articles
 					button.mini#alter-comparison-marker Set
-			.drawer-item-group
+			.drawer-item-group(data-which="comparison-additions")
 				.drawer-item(data-type="action-item")
 					button.add-to-comparison(data-action="replace")
 						span.octicon-sync.octicon  

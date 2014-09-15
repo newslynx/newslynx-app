@@ -126,6 +126,13 @@ input.destroy:active
 	background-image none
 	border-color #9f312c
 
+.disabled button
+	opacity .3
+	pointer-events none
+
+.disabled:hover button,.disabled:hover button:hover,.disabled:hover
+	cursor default !important
+
 
 input[type="password"],input[type="text"]
 	margin-left 0
@@ -656,7 +663,7 @@ body[data-section="home"] #content
 		span
 			font-weight bold
 			
-#drawer[data-mode="compare"]
+#drawer[data-mode="compare"],#drawer[data-mode="detail"]
 	.drawer-pointer
 		padding 10px
 		.drawer-item[data-type="contains-input"]
@@ -683,12 +690,15 @@ body[data-section="home"] #content
 				float right
 		.drawer-item[data-type="action-item"]:hover
 			cursor pointer
+
 		// .drawer-item[data-type="action-item"]:hover .add-to-comparison
 		// 	background-color tint(articles, 60%)
 		// 	color #3D915F
 		// .add-to-comparison:active
 		// 	background-color tint(articles, 45%) !important
 		// 	text-shadow 1px 1px 3px rgba(234, 250, 231, .5)
+		.toggle-all
+			user-select none
 		.toggle-all:not(.disabled)
 			color #666
 		.toggle-all:not(.disabled):hover

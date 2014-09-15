@@ -165,6 +165,17 @@ input.destroy:active {
   background-image: none;
   border-color: #9f312c;
 }
+.disabled button {
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  pointer-events: none;
+}
+.disabled:hover button,
+.disabled:hover button:hover,
+.disabled:hover {
+  cursor: default !important;
+}
 input[type="password"],
 input[type="text"] {
   margin-left: 0;
@@ -830,41 +841,59 @@ body[data-section="home"] #content {
 .drawer-pointer p span {
   font-weight: bold;
 }
-#drawer[data-mode="compare"] .drawer-pointer {
+#drawer[data-mode="compare"] .drawer-pointer,
+#drawer[data-mode="detail"] .drawer-pointer {
   padding: 10px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="contains-input"] {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="contains-input"],
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="contains-input"] {
   padding: 0;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group {
   margin-bottom: 5px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item {
   padding: 4px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item .add-to-comparison {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item .add-to-comparison,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item .add-to-comparison {
   font-size: 11px;
   width: 100%;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item select {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item select,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item select {
   font-size: 11px;
   padding: 1px 2px !important;
   margin-right: 5px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item button.mini {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item button.mini,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item button.mini {
   float: right;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="action-item"]:hover {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="action-item"]:hover,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="action-item"]:hover {
   cursor: pointer;
 }
-#drawer[data-mode="compare"] .drawer-pointer .toggle-all:not(.disabled) {
+#drawer[data-mode="compare"] .drawer-pointer .toggle-all,
+#drawer[data-mode="detail"] .drawer-pointer .toggle-all {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#drawer[data-mode="compare"] .drawer-pointer .toggle-all:not(.disabled),
+#drawer[data-mode="detail"] .drawer-pointer .toggle-all:not(.disabled) {
   color: #666;
 }
-#drawer[data-mode="compare"] .drawer-pointer .toggle-all:not(.disabled):hover {
+#drawer[data-mode="compare"] .drawer-pointer .toggle-all:not(.disabled):hover,
+#drawer[data-mode="detail"] .drawer-pointer .toggle-all:not(.disabled):hover {
   cursor: pointer;
   color: #000;
 }
-#drawer[data-mode="compare"] .drawer-pointer .toggle-all.disabled {
+#drawer[data-mode="compare"] .drawer-pointer .toggle-all.disabled,
+#drawer[data-mode="detail"] .drawer-pointer .toggle-all.disabled {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
