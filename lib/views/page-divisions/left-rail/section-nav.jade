@@ -21,15 +21,11 @@ mixin articles
 					span Clear
 			input(type="text" placeholder="From..." data-dir="from")
 			input(type="text" placeholder="To..." data-dir="to")
-		//- .option-container(data-type="sort")
-		//- 	.option-title Sort by
-		//- 	select
-		//- 		option Publish date
-		//- 		option # impact events
-		//- 		option Pageviews
-		//- 		option Twitter mentions
-		//- 		option Faceook Likes &amp; Shares
-		//- 		option Social media shares
+		.option-container(data-type="sort")#article-drawer-sorter
+			.option-title Sort by
+			select
+				option(value="timestamp_desc") Publish date
+				option(value="pageviews_desc") Pageviews
 		.option-container(data-type="subject-tags")
 			.option-title Subject tags — 
 				span.show-hide(data-open="false") Show

@@ -312,10 +312,6 @@ body[data-modal=true] .drawer-list-item-ul {
   width: 100%;
   display: inline-block;
 }
-.main-sections select {
-  height: 26px;
-  padding-top: 2px;
-}
 .main-sections .section-options,
 .main-sections .nav-link,
 .main-sections a:not(.out-link) {
