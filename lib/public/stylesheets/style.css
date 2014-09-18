@@ -389,7 +389,6 @@ body[data-modal=true] .drawer-list-item-ul {
 .drawer-list-inner .tag-list,
 .event-container .tag-list {
   font-size: 1.1em;
-  margin-bottom: 2px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -399,7 +398,7 @@ body[data-modal=true] .drawer-list-item-ul {
 .event-container .tag-list li {
   display: inline-block;
   padding: 1px 4px;
-  margin-right: 3px;
+  margin: 0 3px 2px 0;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }

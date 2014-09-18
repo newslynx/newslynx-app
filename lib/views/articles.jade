@@ -57,7 +57,7 @@ block templates
 
 	script(type="text/jst")#article-detail-account-subject-tag-templ
 		label
-			| <input type="checkbox" <%= doesThisArticleHaveThisTag(name) %> ></input>
+			| <input type="checkbox" <%= boolToStr(selected, 'checked') %> ></input>
 			| <span class="tag-text"><%= toTitleCase(name) %></span>
 
 	script(type="text/jst")#article-detail-templ
