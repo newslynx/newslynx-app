@@ -1291,7 +1291,7 @@ input {
 #compare-grid .header {
   padding-top: 25px;
   background-color: #eee;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: -50px;
   left: 535px;
