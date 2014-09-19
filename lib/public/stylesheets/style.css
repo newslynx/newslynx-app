@@ -1959,6 +1959,15 @@ button.add {
   left: 0;
   right: auto;
 }
+.tooltipped[data-tooltip-align="right"]:after {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  left: auto;
+  right: -10px;
+}
 /* end tooltips */
 /* user styles, to be got from server */
 /* end user styles*/
