@@ -570,6 +570,8 @@ load_more_button_padding = 10px
 /* end drawer item */
 
 /* A R T I C L E  D E T A I L */
+padding_verts = 25px
+padding_horitz = 50px
 filter_opts_width = 175px
 #events-container
 	margin-top 20px
@@ -582,11 +584,16 @@ filter_opts_width = 175px
 	.section-options
 		width filter_opts_width
 		user-select none
+		background-color #fff
 		.section-title
 			color #535353
 			font-weight normal
 		.option-title
 			border-bottom-color #d8d5d5
+	.section-options.stuck
+		position fixed
+		top 5px
+		left drawer_width + leftrail_width + padding_horitz
 
 // Events
 #events-gallery-container,.section-options
@@ -595,6 +602,8 @@ filter_opts_width = 175px
 #events-gallery-container
 	width 'calc(100% - %s)' % filter_opts_width
 	padding-left 20px
+	min-height 700px // Give this a min-height to avoid jumping screen on a restrictive filter set
+	float right
 .event-container
 	display inline-block
 	vertical-align top
@@ -805,9 +814,8 @@ input
 #content
 	padding 0
 
-padding_verts = 25px
 #content[data-mode="detail"]
-	padding padding_verts 50px
+	padding padding_verts padding_horitz
 	.article-detail-wrapper
 		padding-bottom padding_verts*2
 

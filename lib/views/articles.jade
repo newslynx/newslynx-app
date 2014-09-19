@@ -125,7 +125,7 @@ block templates
 					h3.title What events have happened around this story?
 					#events-container
 						<% if (events.length) { %>
-						.section-options
+						.section-options.sticky
 							.section-title Filter by...
 							.option-container(data-type="impact-tags")
 								.option-title Tags — 
@@ -145,7 +145,7 @@ block templates
 								ul.tag-list
 									li.placeholder
 										| None yet!
-						.section-items-container#events-gallery-container
+						.section-items-container#events-gallery-container.sticky-anchor
 						<% } else { %>
 						.placeholder You haven't created any events for this article yet. 
 						<% } %>

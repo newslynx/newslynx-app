@@ -744,6 +744,7 @@ body[data-section="login"] #content {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-color: #fff;
 }
 #events-container .section-options .section-title {
   color: #535353;
@@ -751,6 +752,11 @@ body[data-section="login"] #content {
 }
 #events-container .section-options .option-title {
   border-bottom-color: #d8d5d5;
+}
+#events-container .section-options.stuck {
+  position: fixed;
+  top: 5px;
+  left: 585px;
 }
 #events-gallery-container,
 .section-options {
@@ -760,6 +766,8 @@ body[data-section="login"] #content {
 #events-gallery-container {
   width: calc(100% - 175px);
   padding-left: 20px;
+  min-height: 700px;
+  float: right;
 }
 .event-container {
   display: inline-block;
