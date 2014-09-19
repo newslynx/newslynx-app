@@ -1072,8 +1072,6 @@ compare_grid_padding = 25px
 	width wide_width
 .cell.bar
 	width bars_width
-.header-meta
-	margin-right group_margin
 	// background-color #fc0
 .header-dimensions-container .cell.multi:nth-child(even),
 .article-detail-row-container .cell.multi:nth-child(odd)
@@ -1084,20 +1082,23 @@ compare_grid_padding = 25px
 .header-dimensions-container
 	font-weight bold
 	margin-bottom 3px
-	// border-bottom 1px solid #ccc
-.header-meta
-	width unquote('calc('+multi_width+' + '+bullet_margin+')')
-	text-align center
-	font-size 1.1em
-.header-meta.bars
-	width unquote('calc('+bars_width*2+' + '+bullet_margin+')')
-.header-meta:first-child
-	margin-left unquote('calc('+(single_width + unit(wide_width,""))+' + '+(single_margin + date_margin)+')')
+// .header-meta-container
+// 	position absolute
+// 	top 5px
+// 	.comparison-figure-label
+// 		font-weight bold
 .header-el
 	font-size 1.1em
 	user-select none
 	position relative
 	color #666
+	white-space nowrap
+	.comparison-figure
+		position absolute
+		right 0
+		color #bab9b9 !important
+		font-weight normal
+		border-bottom 1px dotted #ccc
 .header-el:hover
 	cursor pointer
 	color #000

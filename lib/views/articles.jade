@@ -17,7 +17,7 @@ block templates
 		.drawer-pointer
 			.drawer-item-group(data-which="comparison-marker")
 				.drawer-item
-					.item-text Compare against...
+					.item-text Compare to...
 					select.alter-comparison-marker(data-which="dimension")
 						option(value="mean") Average of
 						option(value="median") Median of
@@ -168,14 +168,11 @@ block templates
 		#compare-grid
 			.header
 				//- .header-meta-container
-				//- 	.header-meta.cell
-				//- 		.name Social shares
-				//- 	.header-meta.cell
-				//- 		.name Visitors
-				//- 	//- .header-meta.cell
-				//- 	//- 	.name Sources
-				//- 	.header-meta.cell.bars
-				//- 		.name Tags
+				//- 	.header-meta Compared to  
+				//- 		span.comparison-figure-label.comparison-figure-measurement averages 
+				//- 		span of 
+				//- 		span.comparison-figure-label.comparison-figure-category all articles
+				//- 		span .
 				.header-dimensions-container
 					.header-el.cell.wide(data-metric="title")
 						.name Headline
@@ -183,12 +180,16 @@ block templates
 						.name Date
 					.header-el.cell.multi(data-metric="twitter")
 						.name Twitter
+						span.comparison-figure.tooltipped(aria-label="") 
 					.header-el.cell.multi(data-metric="facebook")
 						.name Facebook
+						span.comparison-figure.tooltipped(aria-label="") 
 					.header-el.cell.multi(data-metric="pageviews")
 						.name Views
+						span.comparison-figure.tooltipped(aria-label="") 
 					.header-el.cell.multi(data-metric="avg_time_on_page")
-						.name Time/page
+						.name Time
+						span.comparison-figure.tooltipped(aria-label="") 
 					//- .header-el.cell.multi(data-metric="internal")
 					//- 	.name Internal
 					//- .header-el.cell.multi(data-metric="external")
