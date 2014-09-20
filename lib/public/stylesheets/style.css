@@ -92,6 +92,18 @@ select {
   padding: 1px 8px !important;
   text-shadow: none;
 }
+textarea {
+  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding: 3px;
+  -webkit-box-shadow: inset 2px 2px 2px 0px #ddd;
+  box-shadow: inset 2px 2px 2px 0px #ddd;
+  min-height: 50px;
+  margin: 10px;
+  overflow: auto;
+  width: 300px;
+  border: 1px solid #aaa;
+}
 input[type="submit"] {
   color: #fff;
   text-shadow: 0px -1px 0px rgba(0,0,0,0.25);
@@ -1053,7 +1065,7 @@ input {
 .article-detail-container .headline a {
   color: #000;
 }
-.article-detail-container .title {
+.article-detail-container .detail-section .title {
   font-size: 1.8em;
   line-height: 1.2em;
 }
