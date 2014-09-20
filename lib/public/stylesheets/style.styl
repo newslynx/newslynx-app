@@ -1031,7 +1031,7 @@ input
 // 	padding 5px 0 
 
 single_width = 8%
-multi_width = 18%
+bullet_width = 18%
 wide_width = 10%
 bars_width = 10%
 
@@ -1075,8 +1075,8 @@ compare_grid_padding = 25px
 .cell
 	width single_width
 	margin-right single_margin
-.cell.multi
-	width (multi_width/2)
+.cell.bullet
+	width (bullet_width/2)
 	margin-right bullet_margin
 .cell.date
 	margin-right date_margin
@@ -1085,8 +1085,8 @@ compare_grid_padding = 25px
 .cell.bar
 	width bars_width
 	// background-color #fc0
-.header-dimensions-container .cell.multi:nth-child(even),
-.article-detail-row-container .cell.multi:nth-child(odd)
+.header-dimensions-container .cell.bullet:nth-child(even),
+.article-detail-row-container .cell.bullet:nth-child(odd)
 	margin-right group_margin
 /* Header styles */
 .header-meta-container,.header-dimensions-container

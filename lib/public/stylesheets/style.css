@@ -1327,7 +1327,7 @@ input {
   width: 8%;
   margin-right: 2.5%;
 }
-.cell.multi {
+.cell.bullet {
   width: 9%;
   margin-right: 2%;
 }
@@ -1340,8 +1340,8 @@ input {
 .cell.bar {
   width: 10%;
 }
-.header-dimensions-container .cell.multi:nth-child(even),
-.article-detail-row-container .cell.multi:nth-child(odd) {
+.header-dimensions-container .cell.bullet:nth-child(even),
+.article-detail-row-container .cell.bullet:nth-child(odd) {
   margin-right: 5%;
 }
 /* Header styles */
