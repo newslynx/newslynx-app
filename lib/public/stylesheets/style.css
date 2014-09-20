@@ -1182,23 +1182,7 @@ input {
 .article-detail-container ul.authors {
   display: inline;
 }
-.article-detail-container ul.tags .tag,
-.article-detail-container ul.authors .tag {
-  display: inline;
-  padding: 2px 5px;
-  background-color: #ccc;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #666;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  font-size: 1.1em;
-  position: relative;
-}
-.article-detail-container ul.tags .tag:hover,
-.article-detail-container ul.authors .tag:hover {
+.article-detail-container .tag:hover {
   cursor: default;
 }
 .article-detail-container .edit-tags {
@@ -1230,6 +1214,23 @@ input {
 }
 .article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover .tag-text {
   visibility: hidden;
+}
+.tags .tag {
+  display: inline;
+  padding: 2px 5px;
+  background-color: #ccc;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #666;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 1.1em;
+  position: relative;
+}
+.tags .tag:hover {
+  cursor: pointer;
 }
 #subject-tag-settings li {
   font-size: 1.2em;
@@ -1514,8 +1515,6 @@ input {
   white-space: nowrap;
   overflow: hidden;
   vertical-align: bottom;
-  position: relative;
-  top: 1px;
 }
 .modal-inner .remove-assignee.labelled:after {
   padding-left: 5px;
@@ -1553,6 +1552,7 @@ input {
   padding-right: 5px;
   font-size: 1.5em;
   color: #ccc;
+  white-space: nowrap;
 }
 .article-assignee:hover {
   cursor: pointer;
@@ -1629,6 +1629,11 @@ input.destroy {
   display: inline-block;
   width: 40%;
   margin-bottom: 3px;
+  vertical-align: top;
+}
+.modal-outer form .form-row-label-container.has-help-link,
+.recipe-form-container form .form-row-label-container.has-help-link {
+  margin-top: 10px;
 }
 .modal-outer form .form-row-label-container.form-row-label-top,
 .recipe-form-container form .form-row-label-container.form-row-label-top {
@@ -1650,7 +1655,9 @@ input.destroy {
   position: absolute;
 }
 .modal-outer form input[type="text"],
-.recipe-form-container form input[type="text"] {
+.recipe-form-container form input[type="text"],
+.modal-outer form textarea,
+.recipe-form-container form textarea {
   width: 100%;
   margin: 0;
 }

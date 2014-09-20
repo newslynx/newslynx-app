@@ -937,17 +937,8 @@ input
 			color #ccc
 	ul.tags,ul.authors
 		display inline
-		.tag
-			display inline
-			padding 2px 5px
-			background-color #ccc
-			user-select none
-			color #666
-			border-radius 2px
-			font-size 1.1em
-			position relative
-		.tag:hover
-			cursor default
+	.tag:hover
+		cursor default
 	.edit-tags
 		display inline
 		margin-left 10px
@@ -974,6 +965,19 @@ input
 		.tag:not(.empty):hover
 			.tag-text
 				visibility hidden
+
+.tags
+	.tag
+		display inline
+		padding 2px 5px
+		background-color #ccc
+		user-select none
+		color #666
+		border-radius 2px
+		font-size 1.1em
+		position relative
+	.tag:hover
+		cursor pointer
 #subject-tag-settings
 	li
 		font-size 1.2em
@@ -1229,8 +1233,6 @@ compare_grid_padding = 25px
 		white-space nowrap
 		overflow hidden
 		vertical-align bottom
-		position relative
-		top 1px
 	.remove-assignee.labelled:after
 		padding-left 5px
 .modal-inner:hover
@@ -1256,6 +1258,7 @@ compare_grid_padding = 25px
 		padding-right 5px
 		font-size 1.5em
 		color #ccc
+		white-space nowrap
 .article-assignee:hover
 	cursor pointer
 	.remove-assignee
@@ -1320,6 +1323,10 @@ input.destroy
 			display inline-block
 			width 40%
 			margin-bottom 3px
+			vertical-align top
+		// TODO, remove this class once we set up margins for help text items
+		.form-row-label-container.has-help-link
+			margin-top 10px
 		.form-row-label-container.form-row-label-top
 			vertical-align top
 		.form-row-input-container
@@ -1331,7 +1338,7 @@ input.destroy
 		.hint-row
 			color bg_gray
 			position absolute
-		input[type="text"]
+		input[type="text"],textarea
 			width 100%
 			margin 0
 		select
