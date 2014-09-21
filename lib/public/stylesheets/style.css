@@ -96,8 +96,8 @@ textarea {
   font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 3px;
-  -webkit-box-shadow: inset 2px 2px 2px 0px #ddd;
-  box-shadow: inset 2px 2px 2px 0px #ddd;
+  -webkit-box-shadow: 1px 2px 1px 0px #ededed inset;
+  box-shadow: 1px 2px 1px 0px #ededed inset;
   min-height: 50px;
   margin: 10px;
   overflow: auto;
