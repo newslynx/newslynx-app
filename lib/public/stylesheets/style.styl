@@ -67,6 +67,7 @@ button,input[type="submit"],input.destroy,select
 
 button.mini
 	padding 0 6px
+	font-size 12px
 
 select
 	padding 1px 8px !important
@@ -420,6 +421,7 @@ body[data-section="approval-river"]
 		text-shadow 0 0px 12px #535353
 body[data-section="articles"]
 	min-width article_min_width
+	overflow-x hidden
 	.section.active > .nav-link
 		background-color articles
 	#drawer
@@ -623,24 +625,31 @@ filter_opts_width = 175px
 	border 1px solid #ccc
 	.event-content
 		width 100%
+		position relative
 		// max-height 375px
 		// overflow-y scroll	
 		// overflow-x hidden
 		// background-color #c0f
 	.event-timestamp
-		font-size 1.1em
+		font-size 1.2em
 		text-transform uppercase
+		margin-bottom 3px
 	.event-item,.event-title
 		margin-bottom 10px
 	.event-title
 		font-size 1.8em
 		font-weight bold
+		line-height 1.2em
 	.event-item-title
 		font-weight bold
 	.event-tags-container
 		margin-top 2px
 	.event-item-text,.event-item-title
 		font-size 1.2em
+	.edit-event-container
+		position absolute
+		top 0
+		right 0
 .event-container:nth-child(odd)
 	margin 0 10px 10px 0
 
@@ -831,7 +840,7 @@ input
 		padding-bottom padding_verts*2
 
 // #content[data-mode="compare"]
-// 	padding 25px
+// 	overflow-x hidden
 
 .article-detail-container
 	.toolbar
@@ -848,7 +857,7 @@ input
 		margin-bottom 10px
 		a
 			color #000
-	.detail-section .title
+	h3.title
 		font-size 1.8em
 		line-height 1.2em
 	.headline:before,.title:before
@@ -1150,6 +1159,8 @@ compare_grid_padding = 25px
 @media (max-width: 1147px )
 	.cell.date
 		margin-right single_margin
+	// body[data-section="articles"]
+	// 	overflow-x auto
 /* end header styles */
 
 

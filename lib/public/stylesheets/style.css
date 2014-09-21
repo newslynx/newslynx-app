@@ -87,6 +87,7 @@ select {
 }
 button.mini {
   padding: 0 6px;
+  font-size: 12px;
 }
 select {
   padding: 1px 8px !important;
@@ -502,6 +503,7 @@ body[data-section="approval-river"] .division-switcher li.active {
 }
 body[data-section="articles"] {
   min-width: 1115px;
+  overflow-x: hidden;
 }
 body[data-section="articles"] .section.active > .nav-link {
   background-color: #3ec173;
@@ -790,10 +792,12 @@ body[data-section="login"] #content {
 }
 .event-container .event-content {
   width: 100%;
+  position: relative;
 }
 .event-container .event-timestamp {
-  font-size: 1.1em;
+  font-size: 1.2em;
   text-transform: uppercase;
+  margin-bottom: 3px;
 }
 .event-container .event-item,
 .event-container .event-title {
@@ -802,6 +806,7 @@ body[data-section="login"] #content {
 .event-container .event-title {
   font-size: 1.8em;
   font-weight: bold;
+  line-height: 1.2em;
 }
 .event-container .event-item-title {
   font-weight: bold;
@@ -812,6 +817,11 @@ body[data-section="login"] #content {
 .event-container .event-item-text,
 .event-container .event-item-title {
   font-size: 1.2em;
+}
+.event-container .edit-event-container {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .event-container:nth-child(odd) {
   margin: 0 10px 10px 0;
@@ -1065,7 +1075,7 @@ input {
 .article-detail-container .headline a {
   color: #000;
 }
-.article-detail-container .detail-section .title {
+.article-detail-container h3.title {
   font-size: 1.8em;
   line-height: 1.2em;
 }
