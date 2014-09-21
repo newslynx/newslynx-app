@@ -108,3 +108,9 @@
 .ST-event-rect {
   fill-opacity: 0.5;
 }
+.ST-tooltipped text {
+  display: none;
+}
+.ST-tooltipped:hover text {
+  display: block;
+}
