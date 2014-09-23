@@ -1621,7 +1621,7 @@ input {
   left: -45px;
   margin-bottom: 5px;
 }
-.recipe-form-container .submit-msg {
+.submit-msg {
   display: inline;
   padding-left: 5px;
   vertical-align: bottom;
@@ -1712,7 +1712,7 @@ body[data-section="settings"] #content {
   padding: 25px 35px 25px 35px;
 }
 .settings-group {
-  width: 600px;
+  width: 650px;
   position: relative;
 }
 .settings-title {
@@ -1753,7 +1753,7 @@ body[data-section="settings"] #content {
   margin-bottom: 50px;
 }
 #settings .inputs-container {
-  width: 500px;
+  width: 550px;
 }
 #settings .input {
   height: 25px;
@@ -1795,8 +1795,8 @@ body[data-section="settings"] #content {
   display: inline-block;
 }
 .setting-group[data-group="impact-tags"] .setting-flag:nth-child(2) {
-  margin-left: 58px;
-  margin-right: 50px;
+  margin-left: 85px;
+  margin-right: 55px;
 }
 .destroy.multi-child {
   width: 20px;
