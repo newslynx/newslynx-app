@@ -659,6 +659,23 @@ filter_opts_width = 175px
 		margin 0 0 10px 0 !important
 // end events
 
+// Navigating articles
+.article-detail-navigation
+	text-align center
+	transform translateY(-50%)
+	li
+		padding 0 5px
+		display inline-block
+		font-size 1.4em
+		color #ccc
+		// .octicon
+		// 	font-size 20px
+		// 	line-height 0
+	li:hover
+		color #000
+		cursor pointer
+// end navigating articles
+
 /* end article detail */
 
 /* H O M E */
@@ -849,6 +866,7 @@ input
 		border-bottom 1px solid #ccc
 	.pub-date
 		font-size 1.2em
+		margin-bottom 4px
 	.headline,.title
 		position relative
 	.headline
@@ -1019,17 +1037,11 @@ input
 	height 28px
 	background-color #fff
 	user-select none
+
+.article-detail-row-container
 	.title:hover
 		text-decoration underline
 		cursor pointer
-// .article-detail-row-wrapper:nth-child(even)
-// 	border-color #eaeaea	
-// 	background-color #eaeaea	
-// .destroy
-// 	font-size 1.5em
-// 	user-select none
-
-.article-detail-row-container
 	.destroy
 		width 25px
 		position absolute
@@ -1625,32 +1637,3 @@ tooltip_y_offset = 10px
 	left auto
 	right -10px
 /* end tooltips */
-
-/* user styles, to be got from server */
-social_color = #66c2a5
-major_impact_color = #fc8d62
-citation_color = #8da0cb
-darken_border = 30%
-darken_color = 80%
-/* end user styles*/
-// .tag[data-tag*="social"]
-// 	background-color social_color
-// 	border-color darken(social_color, darken_border)
-// 	color darken(social_color, darken_color)
-// .ST-note[data-note-type*="social"] line
-// 	stroke social_color
-
-// .tag[data-tag*="major-event"]
-// 	background-color major_impact_color
-// 	border-color darken(major_impact_color, darken_border)
-// 	color darken(social_color, darken_color)
-// .ST-note[data-note-type*="major-event"] line
-// 	stroke major_impact_color
-
-// .tag[data-tag*="citation"]
-// 	background-color citation_color
-// 	border-color darken(citation_color, darken_border)
-// 	color darken(social_color, darken_color)
-// .ST-note[data-note-type*="citation"] line
-// 	stroke citation_color
-

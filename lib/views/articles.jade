@@ -61,6 +61,9 @@ block templates
 			| <span class="tag-text"><%= toTitleCase(name) %></span>
 
 	script(type="text/jst")#article-detail-templ
+		ul.article-detail-navigation
+			li.tooltipped.prev
+			li.tooltipped.next
 		.article-detail-container
 			.pub-date <%= prettyDate(timestamp) %>
 			h2.headline 
