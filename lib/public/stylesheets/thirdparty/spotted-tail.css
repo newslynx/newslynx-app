@@ -73,6 +73,11 @@
 .ST-x .tick line {
   stroke: #ccc;
 }
+.ST-brush g:not(.ST-brusher) {
+  opacity: 0.25;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+  filter: alpha(opacity=25);
+}
 .ST-brush .ST-event-rect,
 .ST-brush .ST-event-circle {
   pointer-events: none;
