@@ -1,12 +1,14 @@
 {
 	"citation": "#fc0",
-	"change": "#fc0",
-	"achievement": "#fc0",
-	"other": "#fc0",
-	"institution": "#fc0",
-	"community": "#fc0",
-	"individual": "#fc0",
-	"media": "#fc0",
-	"internal": "#fc0",
-	"homepage": "#fc0"
+	"change": "#0cf",
+	"achievement": "#f0c",
+	"other": "#c0f",
+	"institution": "#9ce",
+	"community": "#0ec",
+	"individual": "#cf4",
+	"media": "#ff2",
+	"internal": "#fd2",
+	"homepage": "#ee3224",
+	"twitter": "#99a",
+	"facebook": "#44e"
 }
