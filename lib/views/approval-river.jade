@@ -107,13 +107,11 @@ block templates
 block bootstrap-data
 	script(id="page-data").
 		var pageData = {};
-		pageData.org =!{JSON.stringify(org)};   
 		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
 		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.alerts =!{JSON.stringify(alerts)};   
 		pageData.eventSchema =!{JSON.stringify(eventSchema)};   
 		pageData.articleSkeletons =!{JSON.stringify(articleSkeletons)};   
-		pageData.orgInfo =!{JSON.stringify(orgInfo)};   
 
 
 block scripts
