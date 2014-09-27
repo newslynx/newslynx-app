@@ -5,7 +5,7 @@ block drawer
 		li(data-mode="my-recipes") My recipes
 		li(data-mode="create") + Create
 	#drawer-pointers-container
-	ul.drawer-list-item-ul
+	ul.drawer-list-item-ul#recipes
 
 
 block css
@@ -22,7 +22,6 @@ block templates
 				.drawer-list-inner
 					.title Pending alerts for all recipes
 		.drawer-pointer Or, pending alerts for just...
-		ul#recipes.drawer-list-item-ul
 		<% } else { %>
 		.drawer-pointer 
 			p You don't have any recipes yet!
@@ -35,35 +34,35 @@ block templates
 			ul#recipe-creators
 
 
-	//- script(type="text/jst")#recipe-templ
-	//- 	.drawer-list-outer.modal-parent
-	//- 		.inputs-container
-	//- 			input(type="radio")
-	//- 		.drawer-list-inner
-	//- 			.count <%= pending %> pending
-	//- 			.title <%= name %>
-	//- 			.description Query: `<%= displaySearchParams(source, settings) %>`
-	//- 			.toolbar
-	//- 				.btn.settings-switch
-	//- 					span.octicon.octicon-gear
-	//- 					span.text  Edit
-	//- 				|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"><span class="service-method-label"><%= methodFromSource(source) %></span></span>
-	//- 				|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
-	//- 		.modal-outer
-	//- 			.modal-overlay
-	//- 			.modal-inner
-	//- 				.modal-title Recipe settings
-	//- 				form
-	//- 					<%= bakeRecipeUpdateForm(id, source, settings, name, 'schema') %>
-	//- 					.show-hide-default-event This recipe triggers events with some default properties. 
-	//- 						|<span class="toggle-default-event" data-status="<%= set_default_event %>"><%= formatDefaultEventEnabled(set_default_event) %></span>
-	//- 					|<div class="default-event-container" <% (set_default_event) ? print(' style="display:block;"') : print('') %>>
-	//- 					<%= bakeRecipeUpdateForm(id, source, default_event, name, 'default_event') %>
-	//- 					|</div>
-	//- 					.buttons-container
-	//- 						button.cancel Cancel
-	//- 						input.save(type="submit", value="Save")
-	//- 						input.destroy(type="button", value="Delete")
+	script(type="text/jst")#recipe-templ
+		.drawer-list-outer.modal-parent
+			.inputs-container
+				input(type="radio")
+			.drawer-list-inner
+				.count <%= pending %> pending
+				.title <%= name %>
+				.description Query: `<%= displaySearchParams(source, settings) %>`
+				.toolbar
+					.btn.settings-switch
+						span.octicon.octicon-gear
+						span.text  Edit
+					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"><span class="service-method-label"><%= methodFromSource(source) %></span></span>
+					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
+			.modal-outer
+				.modal-overlay
+				.modal-inner
+					.modal-title Recipe settings
+					form
+						//-<%= bakeRecipeUpdateForm(id, source, settings, name, 'schema') %>
+						.show-hide-default-event This recipe triggers events with some default properties. 
+							|<span class="toggle-default-event" data-status="<%= set_default_event %>"><%= formatDefaultEventEnabled(set_default_event) %></span>
+						|<div class="default-event-container" <% (set_default_event) ? print(' style="display:block;"') : print('') %>>
+						//-<%= bakeRecipeUpdateForm(id, source, default_event, name, 'default_event') %>
+						|</div>
+						.buttons-container
+							button.cancel Cancel
+							input.save(type="submit", value="Save")
+							input.destroy(type="button", value="Delete")
 
 	//- script(type="text/jst")#recipe-schema-list-item-templ
 	//- 	|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
