@@ -850,6 +850,34 @@ body[data-section="login"] #content {
   color: #000;
   cursor: pointer;
 }
+/* V I Z S */
+.article-detail-viz-container {
+  width: 50%;
+  height: 200px;
+  display: inline-block;
+}
+.viz-container {
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+.viz-container .bar-container {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 2%;
+}
+.viz-container .bar {
+  min-width: 1px;
+  background-color: #88cfff;
+  height: 100%;
+}
+.viz-container .bar .label {
+  font-size: 1.1em;
+  margin-left: 3px;
+  color: #000;
+  white-space: nowrap;
+}
+/* end vizs */
 /* end article detail */
 /* H O M E */
 body[data-section="home"] #content {
