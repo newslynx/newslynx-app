@@ -2,9 +2,6 @@
 	"timestamp": {
 		"type": "timestamp"
 	},
-	"text": {
-		"type": "text"
-	},
 	"link": {
 		"type": "text"
 	}
