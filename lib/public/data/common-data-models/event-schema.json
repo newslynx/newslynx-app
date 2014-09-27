@@ -1,6 +1,6 @@
 {
 	"assignees": {
-		"type": "text",
+		"type": "article-search",
 		"help": {
 			"hint": "Search by headline..."
 		}
@@ -9,10 +9,10 @@
 		"type": "text"
 	},
 	"what_happened": {
-		"type": "text"
+		"type": "paragraph"
 	},
 	"significance": {
-		"type": "text"
+		"type": "paragraph"
 	},
 	"impact_tags": {
 		"type": "checkbox",

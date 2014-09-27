@@ -872,6 +872,8 @@ body[data-section="home"] #content {
   margin: 10px;
   padding: 10px;
   width: 375px;
+  display: inline-block;
+  vertical-align: top;
 }
 .drawer-pointer {
   padding: 20px 10px 8px 10px;
@@ -1497,12 +1499,6 @@ input {
 }
 /* end main article styles */
 /* M O D A L  W I N D O W S */
-#content[data-mode="my-recipes"] .modal-inner input[name="timestamp"] {
-  pointer-events: none;
-  border: 0;
-  color: #fff;
-  display: none;
-}
 .modal-outer {
   display: none;
 }

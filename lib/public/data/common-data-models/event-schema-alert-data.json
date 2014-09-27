@@ -1,6 +1,6 @@
 {
 	"timestamp": {
-		"type": "text"
+		"type": "timestamp"
 	},
 	"text": {
 		"type": "text"

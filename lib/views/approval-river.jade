@@ -8,6 +8,9 @@ block drawer
 	ul.drawer-list-item-ul
 
 
+block css
+	link(rel='stylesheet', href='/stylesheets/thirdparty/pikaday.css')
+
 block templates
 	script(type="text/jst")#drawer-my-recipes-templ
 		<% if (hasRecipes) { %>
@@ -81,29 +84,18 @@ block templates
 	//- 				input.save(type="submit", value="Create")
 	//- 				span.submit-msg
 
-	//- script(type="text/jst")#alert-templ
-	//- 	.river-item-container.modal-parent
-	//- 		.approval-child(data-which="btns")
-	//- 			.approval-btn-container(data-which="yes")
-	//- 				.approval-btn ✓
-	//- 			.approval-btn-container(data-which="no")
-	//- 				.approval-btn ×
-	//- 		.approval-child(data-which="info")
-	//- 			.toolbar
-	//- 				.origin-recipe From recipe: <%= getRecipeFromId(recipe_id).name %>
-	//- 			.title <%= name %>
-	//- 			.description <%= text %>
-	//- 			//-|<a href="<%= link %>" class="embedly-card">embedly card</a>
-	//- 		.modal-outer
-	//- 			.modal-overlay
-	//- 			.modal-inner
-	//- 				.modal-title Create new event
-	//- 				.description Describe what this event is, its significance and what article its related to.
-	//- 				form
-	//- 					<%= bakeEventCreationForm(recipe_id, text, link, timestamp) %>
-	//- 					.buttons-container
-	//- 						button.cancel Cancel
-	//- 						input.save(type="submit", value="Create")
+	script(type="text/jst")#alert-templ
+		.river-item-container.modal-parent
+			.approval-child(data-which="btns")
+				.approval-btn-container(data-which="yes")
+					.approval-btn ✓
+				.approval-btn-container(data-which="no")
+					.approval-btn ×
+			.approval-child(data-which="info")
+				.toolbar
+					.origin-recipe From recipe: <%= getRecipeFromId(recipe_id).name %>
+				.title <%= name %>
+				.description <%= text %>
 
 block bootstrap-data
 	script(id="page-data").
@@ -111,7 +103,7 @@ block bootstrap-data
 		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
 		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
 		pageData.alerts =!{JSON.stringify(alerts)};   
-		pageData.eventSchema =!{JSON.stringify(eventSchema)};   
+		pageData.eventCreatorSchema =!{JSON.stringify(eventCreatorSchema)};   
 		pageData.articleSkeletons =!{JSON.stringify(articleSkeletons)};   
 
 
@@ -122,8 +114,8 @@ block scripts
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
-	script(src="javascripts/thirdparty/embedly.js")
 	script(src="javascripts/thirdparty/pourover.js")
+	script(src="javascripts/thirdparty/pikaday.js")
 	script(src="javascripts/thirdparty/typeahead.bundle.min.js")
 
 	//- Put it all together
