@@ -855,6 +855,7 @@ body[data-section="login"] #content {
   width: 50%;
   height: 200px;
   display: inline-block;
+  vertical-align: top;
 }
 .viz-container {
   margin-top: 10px;
@@ -1125,7 +1126,7 @@ input {
   color: #000;
 }
 .article-detail-container h3.title {
-  font-size: 1.8em;
+  font-size: 1.7em;
   line-height: 1.2em;
 }
 .article-detail-container .headline:before,
