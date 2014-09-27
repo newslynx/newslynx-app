@@ -70,7 +70,7 @@ block templates
 
 	script(type="text/jst")#recipe-schema-form-templ
 		.recipe-form-container
-			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
+			|<div class="recipe-title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
 				//- <%= bakeForm(schema) %>
 				.show-hide-default-event This recipe triggers events with some default properties. 
