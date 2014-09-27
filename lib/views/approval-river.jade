@@ -28,10 +28,8 @@ block templates
 			p Click the <span>Create</span> button above to start. Or, refresh the page if you've just made some.
 		<% } %>
 
-	script(type="text/jst")#drawer-my-recipes-templ
-		.drawer-container.mode-content(data-mode="create-new")
-			.drawer-pointer  Add any one of these receipes with the form on the right.
-			ul#recipe-creators
+	script(type="text/jst")#drawer-create-templ
+		.drawer-pointer  Add any one of these recipes with the form on the right.
 
 
 	script(type="text/jst")#recipe-templ
@@ -64,24 +62,24 @@ block templates
 							input.save(type="submit", value="Save")
 							input.destroy(type="button", value="Delete")
 
-	//- script(type="text/jst")#recipe-schema-list-item-templ
-	//- 	|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
-	//- 	.drawer-list-inner
-	//- 		.title <%= prettyPrintSource(source) %>
-	//- 	|</div>
+	script(type="text/jst")#recipe-schema-list-item-templ
+		|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
+		.drawer-list-inner
+			.title <%= prettyPrintSource(source) %>
+		|</div>
 
-	//- script(type="text/jst")#recipe-schema-form-templ
-	//- 	.recipe-form-container
-	//- 		|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
-	//- 		form
-	//- 			<%= bakeForm(schema) %>
-	//- 			.show-hide-default-event This recipe triggers events with some default properties. 
-	//- 				span.toggle-default-event(data-status="false") Disabled
-	//- 			.default-event-container
-	//- 				<%= bakeForm(default_event) %>
-	//- 			.buttons-container
-	//- 				input.save(type="submit", value="Create")
-	//- 				span.submit-msg
+	script(type="text/jst")#recipe-schema-form-templ
+		.recipe-form-container
+			|<div class="title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
+			form
+				//- <%= bakeForm(schema) %>
+				.show-hide-default-event This recipe triggers events with some default properties. 
+					span.toggle-default-event(data-status="false") Disabled
+				.default-event-container
+					//- <%= bakeForm(default_event) %>
+				.buttons-container
+					input.save(type="submit", value="Create")
+					span.submit-msg
 
 	script(type="text/jst")#alert-templ
 		.river-item-container.modal-parent

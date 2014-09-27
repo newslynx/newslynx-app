@@ -11,43 +11,11 @@
 			"name": {
 				"type": "text"
 			},
-			"search_query": {
+			"url": {
 				"type": "text",
 				"help": {
 					"hint": "Help text tk"
 				}
-			},
-			"result_type": {
-				"type": "select",
-				"options": [
-					"Everything",
-					"News",
-					"Blogs",
-					"Video",
-					"Discussion",
-					"Books"
-				]
-			},
-			"language": {
-				"type": "select",
-				"options": [
-					"English",
-					"Spanish",
-					"Esperanto"
-				]
-			},
-			"region": {
-				"type": "select",
-				"options": [
-					"Any"
-				]
-			},
-			"how_many": {
-				"type": "select",
-				"options": [
-					"Only the best results",
-					"All results"
-				]
 			}
 		}
 	},{
