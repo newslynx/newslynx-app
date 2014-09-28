@@ -197,8 +197,8 @@ input[type="text"] {
 body[data-modal=true] {
   overflow: hidden;
 }
-body[data-modal=true] .drawer-list-item-ul {
-  overflow: hidden;
+body[data-modal=true] #recipes.drawer-list-item-ul {
+  overflow-y: hidden !important;
 }
 /* M A I N  P A G E  E L E M E N T S  */
 #main-wrapper {

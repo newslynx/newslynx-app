@@ -42,8 +42,8 @@ block templates
 				.description Query: `<%= displaySearchParams(source, settings) %>`
 				.toolbar
 					.btn.settings-switch
-						span.octicon.octicon-gear
-						span.text  Edit
+						span.octicon.octicon-gear(style="margin-right: 3px;")
+						span.text Edit
 					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"><span class="service-method-label"><%= methodFromSource(source) %></span></span>
 					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
 			.modal-outer
@@ -58,7 +58,7 @@ block templates
 						//-<%= bakeRecipeUpdateForm(id, source, default_event, name, 'default_event') %>
 						|</div>
 						.buttons-container
-							button.cancel Cancel
+							button.cancel.modal-close Cancel
 							input.save(type="submit", value="Save")
 							input.destroy(type="button", value="Delete")
 
