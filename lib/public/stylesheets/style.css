@@ -739,6 +739,11 @@ body[data-section="login"] #content {
 .drawer-container[data-mode="my-recipes"] .drawer-list-item-ul {
   height: calc(100vh - 180px);
 }
+#recipes {
+  height: calc(100vh - 179px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
 /* end drawer item */
 /* A R T I C L E  D E T A I L */
 #events-container {
