@@ -858,7 +858,7 @@ body[data-section="login"] #content {
   margin-bottom: 25px;
 }
 .article-detail-viz-container:nth-child(odd) {
-  margin-right: 5%;
+  margin-right: 4%;
 }
 .viz-container {
   margin-top: 10px;
@@ -1174,6 +1174,7 @@ input {
   vertical-align: bottom;
   height: 100%;
   width: 50%;
+  white-space: nowrap;
 }
 .article-detail-container .group-container .group-title {
   font-size: 1.3em;
