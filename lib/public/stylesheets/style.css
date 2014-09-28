@@ -1692,7 +1692,7 @@ input.destroy {
 .toolbar .service-icon {
   width: 15px;
   height: 15px;
-  bottom: -5px;
+  bottom: 5px;
   right: 0;
 }
 .toolbar .service-icon .service-method-label {
