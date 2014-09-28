@@ -874,11 +874,18 @@ body[data-section="login"] #content {
 .viz-container .bar-text {
   overflow: hidden;
   font-size: 1.2em;
-  margin-bottom: 10px;
+  padding: 5px 0;
+  margin-bottom: 0;
 }
 .viz-container .bar-text a {
   position: relative;
   top: -3px;
+  padding: 7px 0;
+  color: #b7b7b7;
+}
+.viz-container .bar-text a .highlight {
+  font-weight: bold;
+  color: #000;
 }
 .viz-container .bar {
   min-width: 1px;
