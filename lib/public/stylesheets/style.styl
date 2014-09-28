@@ -701,6 +701,7 @@ filter_opts_width = 175px
 	.bar-container
 		height 25px
 		background-color #eee
+		position relative
 	.bar-text
 		overflow hidden
 		font-size 1.2em
@@ -718,11 +719,13 @@ filter_opts_width = 175px
 		min-width 1px
 		background-color select_blue
 		height 100%
-		.label
-			font-size 1.1em
-			margin-left 3px
-			color #000
-			white-space nowrap
+	.label
+		position absolute
+		font-size 1.1em
+		top 0
+		left 3px
+		color #000
+		white-space nowrap
 
 /* end vizs */
 
@@ -1242,13 +1245,23 @@ compare_grid_padding = 25px
 .bullet
 	background-color select_blue
 	height 10px
-.marker
-	position absolute
+.marker,.marker-container
+	position absolute !important
 	top 0px
-	height 14px
-	background-color bg_gray // TODO, maybe make this a standard gry or make a standard gray this
+	height 100%
+.marker
 	width 2px
-	opacity .5
+	background-color rgba(124, 124, 124, .5)
+.viz-container
+	.marker-container
+		padding 0 10px
+		transform translateX(-50%)
+		z-index 9
+	.marker
+		position relative !important
+	.marker,.marker-container
+		width 3px	
+	
 
 .bar-column
 	display inline-block

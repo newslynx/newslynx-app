@@ -879,6 +879,7 @@ body[data-section="login"] #content {
 .viz-container .bar-container {
   height: 25px;
   background-color: #eee;
+  position: relative;
 }
 .viz-container .bar-text {
   overflow: hidden;
@@ -901,9 +902,11 @@ body[data-section="login"] #content {
   background-color: #88cfff;
   height: 100%;
 }
-.viz-container .bar .label {
+.viz-container .label {
+  position: absolute;
   font-size: 1.1em;
-  margin-left: 3px;
+  top: 0;
+  left: 3px;
   color: #000;
   white-space: nowrap;
 }
@@ -1531,15 +1534,31 @@ input {
   background-color: #88cfff;
   height: 10px;
 }
-.marker {
-  position: absolute;
+.marker,
+.marker-container {
+  position: absolute !important;
   top: 0px;
-  height: 14px;
-  background-color: #7c7c7c;
+  height: 100%;
+}
+.marker {
   width: 2px;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-  filter: alpha(opacity=50);
+  background-color: rgba(124,124,124,0.5);
+}
+.viz-container .marker-container {
+  padding: 0 10px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9;
+}
+.viz-container .marker {
+  position: relative !important;
+}
+.viz-container .marker,
+.viz-container .marker-container {
+  width: 3px;
 }
 .bar-column {
   display: inline-block;
