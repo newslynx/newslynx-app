@@ -682,16 +682,24 @@ filter_opts_width = 175px
 	width 50%
 	display inline-block
 	vertical-align top
-	margin-bottom 10px
+	margin-bottom 25px
 .viz-container
 	margin-top 10px
 	width 88%
 	height 100%
-	.bar-container
-		background-color #eee
+	.bar-container,.bar-text
 		width 100%
-		height 25px
 		margin-bottom 5px
+	.bar-container
+		height 25px
+		background-color #eee
+	.bar-text
+		overflow hidden
+		font-size 1.2em
+		margin-bottom 10px
+		a
+			position relative
+			top -3px
 	.bar
 		min-width 1px
 		background-color select_blue
