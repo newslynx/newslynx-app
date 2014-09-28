@@ -859,13 +859,14 @@ body[data-section="login"] #content {
 }
 .viz-container {
   margin-top: 10px;
-  width: 100%;
+  width: 85%;
   height: 100%;
 }
 .viz-container .bar-container {
+  background-color: #eee;
   width: 100%;
-  height: 35px;
-  margin-bottom: 2%;
+  height: 25px;
+  margin-bottom: 5px;
 }
 .viz-container .bar {
   min-width: 1px;
@@ -1139,7 +1140,7 @@ input {
   left: -24px;
   content: '# ';
 }
-.article-detail-container .title:before {
+.article-detail-container .title.hashtagged:before {
   left: -32px;
   content: '## ';
 }
