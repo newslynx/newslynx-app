@@ -852,14 +852,17 @@ body[data-section="login"] #content {
 }
 /* V I Z S */
 .article-detail-viz-container {
-  width: 50%;
+  width: 46%;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 25px;
 }
+.article-detail-viz-container:nth-child(odd) {
+  margin-right: 5%;
+}
 .viz-container {
   margin-top: 10px;
-  width: 88%;
+  width: 100%;
   height: 100%;
 }
 .viz-container .bar-container,
@@ -881,7 +884,7 @@ body[data-section="login"] #content {
   position: relative;
   top: -3px;
   padding: 7px 0;
-  color: #b7b7b7;
+  color: #909090;
 }
 .viz-container .bar-text a .highlight {
   font-weight: bold;
