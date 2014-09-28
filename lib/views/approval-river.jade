@@ -85,6 +85,7 @@ block templates
 		.river-item-container.modal-parent
 			.approval-child(data-which="info")
 				.toolbar
+					|<a href="<%= link %>" target="_blank" class="link">Link</a>
 					| <span class="service-icon" data-service="<%= serviceFromSource(getRecipeFromId(recipe_id).source) %>"></span>
 					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
 				.title <%= name %>

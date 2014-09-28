@@ -1042,9 +1042,6 @@ body[data-section="home"] #content {
   width: 33%;
   height: 26px;
 }
-.approval-child[data-which="info"] {
-  width: 85%;
-}
 .approval-btn-container {
   text-align: left;
   display: inline-block;
@@ -1055,10 +1052,10 @@ body[data-section="home"] #content {
   font-size: 13px;
 }
 .approval-btn-container:first-child {
-  width: 40px;
+  width: 30px;
 }
 .approval-btn-container:nth-child(2) {
-  padding-left: 18px;
+  padding-left: 8px;
   width: 50px;
 }
 .approval-btn-container:hover {
@@ -1105,6 +1102,7 @@ body[data-section="home"] #content {
 }
 .approval-child .toolbar {
   position: relative;
+  margin-bottom: 5px;
 }
 .approval-child .toolbar .service-icon {
   position: relative !important;
@@ -1118,6 +1116,12 @@ body[data-section="home"] #content {
   font-size: 1.2em;
   margin-left: 3px;
   color: #bbbaba;
+}
+.approval-child .link {
+  position: absolute;
+  right: 2px;
+  top: -1px;
+  font-size: 1.3em;
 }
 .show-hide-default-event {
   font-size: 1.4em;
@@ -1747,6 +1751,9 @@ input[name="assignees"] {
 }
 input.destroy {
   float: right;
+}
+.toolbar {
+  position: relative;
 }
 .toolbar .service-icon {
   width: 15px;
