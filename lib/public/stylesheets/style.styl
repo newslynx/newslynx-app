@@ -742,8 +742,10 @@ body[data-section="home"] #content
 	padding 25px 30px
 	.article-detail-wrapper
 		margin 10px 0 55px 0
-		padding 10px 10px 10px 50px
-		max-width 600px
+		padding 30px 30px 35px 70px
+		max-width 650px
+#content[data-mode="create"],#content[data-mode="my-recipes"]
+	background-color #f2f2f2
 #content[data-mode="my-recipes"]
 	padding 5px 20px
 	.article-detail-wrapper
@@ -752,6 +754,12 @@ body[data-section="home"] #content
 		width 375px
 		display inline-block
 		vertical-align top
+#content[data-mode="create"] .article-detail-wrapper,
+#content[data-mode="my-recipes"] .article-detail-wrapper 
+		border 1px solid #ccc
+		background-color #fff
+		border-radius 2px
+		box-shadow 0px 0px 6px #d4d4d4
 
 .drawer-pointer
 	padding 20px 10px 8px 10px
@@ -821,20 +829,31 @@ body[data-section="home"] #content
 	background-color select_blue
 	cursor default
 .approval-child[data-which="btns"]
-	margin-right 1%
+	margin-top 10px
+	width 33%
+	height 26px
 .approval-child[data-which="info"]
 	width 85%
 .approval-btn-container
-	text-align center
-	width 50%
-	display inline-table
+	text-align left
+	display inline-block
 	color #4e4e4e
+	opacity .4
+	font-size 13px
+.approval-btn-container:first-child
+	width 40px
+.approval-btn-container:nth-child(2)
+	padding-left 18px
+	width 50px
+.approval-btn-container:hover
+	opacity 1
+	cursor pointer
 .approval-btn-container[data-which="yes"]
-	background-color #A2F4BF
-	// color enable_green
+	// background-color #A2F4BF
+	color enable_green
 .approval-btn-container[data-which="no"]
-	background-color #FFB0B0
-	// color disabled_red
+	// background-color #FFB0B0
+	color disabled_red
 .approval-btn
 	font-size 1.8em
 	width 100%
@@ -842,14 +861,16 @@ body[data-section="home"] #content
 	border 2px solid transparent
 	display table-cell
 	vertical-align middle
-.approval-btn-container .approval-btn:hover
-	cursor pointer
-.approval-btn-container .approval-btn:active
-	color #fff
-.approval-btn-container[data-which="yes"] .approval-btn:hover
-	border-color enable_green
-.approval-btn-container[data-which="no"] .approval-btn:hover
-	border-color disabled_red
+// .approval-btn-container .approval-btn:active
+// 	color #fff
+// .approval-btn-container[data-which="yes"] .approval-btn:hover
+// 	opacity 1
+//	background-color enable_green
+//	color #fff
+// .approval-btn-container[data-which="no"] .approval-btn:hover
+// 	opacity 1
+//	background-color disabled_red
+//	color #fff
 .approval-btn-container[data-which="yes"] .approval-btn:active
 	background-color enable_green
 .approval-btn-container[data-which="no"] .approval-btn:active

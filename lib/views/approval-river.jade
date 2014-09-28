@@ -83,16 +83,16 @@ block templates
 
 	script(type="text/jst")#alert-templ
 		.river-item-container.modal-parent
-			.approval-child(data-which="btns")
-				.approval-btn-container(data-which="yes")
-					.approval-btn ✓
-				.approval-btn-container(data-which="no")
-					.approval-btn ×
 			.approval-child(data-which="info")
 				.toolbar
 					.origin-recipe From recipe: <%= getRecipeFromId(recipe_id).name %>
 				.title <%= name %>
 				.description <%= text %>
+			.approval-child(data-which="btns")
+				.approval-btn-container(data-which="no")
+					.approval-btn.octicon.octicon-x
+				.approval-btn-container(data-which="yes")
+					.approval-btn.octicon.octicon-check
 
 block bootstrap-data
 	script(id="page-data").
