@@ -648,6 +648,7 @@ body[data-section="login"] #content {
   bottom: 0;
   position: absolute;
   right: 0;
+  display: none;
 }
 .drawer-list-item .enable-switch[data-enabled="true"],
 .drawer-options .enable-switch[data-enabled="true"],
@@ -1691,7 +1692,7 @@ input.destroy {
 .toolbar .service-icon {
   width: 15px;
   height: 15px;
-  top: -8px;
+  bottom: -5px;
   right: 0;
 }
 .toolbar .service-icon .service-method-label {
