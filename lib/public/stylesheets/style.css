@@ -853,9 +853,9 @@ body[data-section="login"] #content {
 /* V I Z S */
 .article-detail-viz-container {
   width: 50%;
-  height: 200px;
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 10px;
 }
 .viz-container {
   margin-top: 10px;
@@ -864,7 +864,7 @@ body[data-section="login"] #content {
 }
 .viz-container .bar-container {
   width: 100%;
-  height: 20%;
+  height: 35px;
   margin-bottom: 2%;
 }
 .viz-container .bar {
