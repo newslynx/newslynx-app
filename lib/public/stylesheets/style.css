@@ -1778,6 +1778,10 @@ input.destroy {
   width: 59%;
   display: inline-block;
 }
+.modal-outer form .form-row-input-container .title,
+.recipe-form-container form .form-row-input-container .title {
+  font-size: 11px;
+}
 .modal-outer form .help-row,
 .recipe-form-container form .help-row {
   text-align: right;
