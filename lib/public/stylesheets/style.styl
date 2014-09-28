@@ -508,7 +508,6 @@ body[data-section="login"] #content
 		font-size 1.2em
 		color bg_gray
 	.toolbar
-		position relative
 		font-size 1.2em
 		margin-top 11px
 	.settings-switch,.enable-switch
@@ -838,21 +837,19 @@ body[data-section="home"] #content
 	text-align left
 	display inline-block
 	color #4e4e4e
-	opacity .4
+	opacity .65
 	font-size 13px
 .approval-btn-container:first-child
-	width 40px
+	width 30px
 .approval-btn-container:nth-child(2)
-	padding-left 18px
+	padding-left 8px
 	width 50px
 .approval-btn-container:hover
 	opacity 1
 	cursor pointer
 .approval-btn-container[data-which="yes"]
-	// background-color #A2F4BF
 	color enable_green
 .approval-btn-container[data-which="no"]
-	// background-color #FFB0B0
 	color disabled_red
 .approval-btn
 	font-size 1.8em
@@ -861,20 +858,14 @@ body[data-section="home"] #content
 	border 2px solid transparent
 	display table-cell
 	vertical-align middle
-// .approval-btn-container .approval-btn:active
-// 	color #fff
-// .approval-btn-container[data-which="yes"] .approval-btn:hover
-// 	opacity 1
-//	background-color enable_green
-//	color #fff
-// .approval-btn-container[data-which="no"] .approval-btn:hover
-// 	opacity 1
-//	background-color disabled_red
-//	color #fff
-.approval-btn-container[data-which="yes"] .approval-btn:active
-	background-color enable_green
-.approval-btn-container[data-which="no"] .approval-btn:active
-	background-color disabled_red
+.approval-btn-container[data-which="yes"]:hover
+	color darken(enable_green, 10%)
+.approval-btn-container[data-which="no"]:hover
+	color darken(disabled_red, 10%)
+.approval-btn-container[data-which="yes"]:active
+	color darken(enable_green, 45%)
+.approval-btn-container[data-which="no"]:active
+	color darken(disabled_red, 45%)
 
 .approval-child
 	.title
@@ -882,6 +873,20 @@ body[data-section="home"] #content
 		margin-bottom 3px
 	.description
 		font-size 1.2em
+	.toolbar
+		position relative
+		margin-bottom 5px
+		.service-icon
+			position relative !important
+			left auto
+			bottom auto
+			right auto
+	.origin-recipe
+		display inline-block
+		vertical-align top
+		font-size 1.2em
+		margin-left 3px
+		color #bbbaba
 
 .show-hide-default-event
 	font-size 1.4em
