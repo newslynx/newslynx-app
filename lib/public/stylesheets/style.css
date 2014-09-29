@@ -85,6 +85,9 @@ select {
   background-repeat: repeat-x;
   -moz-user-select: none;
 }
+select {
+  font-size: 12px !important;
+}
 button.mini {
   padding: 0 6px;
   font-size: 12px;
