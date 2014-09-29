@@ -660,6 +660,9 @@ filter_opts_width = 175px
 	.event-container
 		width 100%
 		margin 0 0 10px 0 !important
+	#content[data-mode="my-recipes"]
+		.article-detail-wrapper
+			width 90% !important
 // end events
 
 // Navigating articles
@@ -750,7 +753,7 @@ body[data-section="home"] #content
 	.article-detail-wrapper
 		margin 10px
 		padding 10px
-		width 375px
+		width 47%
 		display inline-block
 		vertical-align top
 #content[data-mode="create"] .article-detail-wrapper,
@@ -759,6 +762,8 @@ body[data-section="home"] #content
 		background-color #fff
 		border-radius 2px
 		box-shadow 0px 0px 6px #d4d4d4
+
+
 
 .drawer-pointer
 	padding 20px 10px 8px 10px
@@ -881,6 +886,8 @@ body[data-section="home"] #content
 			left auto
 			bottom auto
 			right auto
+		.timestamp
+			font-size 1.2em
 	.origin-recipe
 		display inline-block
 		vertical-align top
@@ -1258,8 +1265,6 @@ compare_grid_padding = 25px
 @media (max-width: 1147px )
 	.cell.date
 		margin-right single_margin
-	// body[data-section="articles"]
-	// 	overflow-x auto
 /* end header styles */
 
 

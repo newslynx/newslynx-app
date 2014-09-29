@@ -836,6 +836,9 @@ body[data-section="login"] #content {
     width: 100%;
     margin: 0 0 10px 0 !important;
   }
+  #content[data-mode="my-recipes"] .article-detail-wrapper {
+    width: 90% !important;
+  }
 }
 .article-detail-navigation {
   text-align: center;
@@ -935,7 +938,7 @@ body[data-section="home"] #content {
 #content[data-mode="my-recipes"] .article-detail-wrapper {
   margin: 10px;
   padding: 10px;
-  width: 375px;
+  width: 47%;
   display: inline-block;
   vertical-align: top;
 }
@@ -1109,6 +1112,9 @@ body[data-section="home"] #content {
   left: auto;
   bottom: auto;
   right: auto;
+}
+.approval-child .toolbar .timestamp {
+  font-size: 1.2em;
 }
 .approval-child .origin-recipe {
   display: inline-block;

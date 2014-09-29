@@ -88,6 +88,7 @@ block templates
 					|<a href="<%= link %>" target="_blank" class="link">Link</a>
 					| <span class="service-icon" data-service="<%= serviceFromSource(getRecipeFromId(recipe_id).source) %>"></span>
 					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
+				.timestamp <%= prettyTimestamp(timestamp) %>
 				.title <%= name %>
 				.description <%= text %>
 			.approval-child(data-which="btns")
