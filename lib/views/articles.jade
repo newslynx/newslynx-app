@@ -116,6 +116,7 @@ block templates
 						ul.tabs
 							li.tab(data-group="life") This story's life
 							li.tab(data-group="reading") How people are reading &amp; finding it
+							li.tab(data-group="tweeting") Who tweeted it?
 				.group-container(data-side="right")
 					.group-item#event-creator-container.modal-parent
 						button.create-event.modal-toggle + Create event
@@ -157,10 +158,15 @@ block templates
 						<% } else { %>
 						.placeholder You haven't created any events for this article yet. &mdash; <em>Merlynne</em>
 						<% } %>
-
-
 			section.detail-section(data-group="reading")
 				.placeholder Google Analytics hasn't compiled the data for this article yet. It will usually appear one day after publication. &mdash; <em>Merlynne</em>
+			section.detail-section(data-group="tweeting")
+				.placeholder No one's tweeted this story yet  
+					span(style="font-style:normal;") 😞. 
+					| If you'd like, 
+					a(href="mailto:favors@newslynx.org") I could ask
+					|  Brian and Michael to tweet about it for you?
+					|  &mdash; <em>Merlynne</em>
 
 	script(type="text/jst")#article-grid-container-templ
 		#compare-grid
