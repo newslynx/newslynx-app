@@ -756,7 +756,7 @@ body[data-section="login"] #content {
 /* end drawer item */
 /* A R T I C L E  D E T A I L */
 #events-container {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 #events-container .placeholder {
   text-align: center;
@@ -773,6 +773,7 @@ body[data-section="login"] #content {
   -ms-user-select: none;
   user-select: none;
   background-color: #fff;
+  padding-top: 10px;
 }
 #events-container .section-options .section-title {
   color: #535353;
@@ -803,6 +804,7 @@ body[data-section="login"] #content {
   width: 48%;
   padding: 10px;
   border: 1px solid #ccc;
+  margin-top: 10px;
 }
 .event-container .event-content {
   width: 100%;
@@ -838,7 +840,8 @@ body[data-section="login"] #content {
   right: 0;
 }
 .event-container:nth-child(odd) {
-  margin: 0 10px 10px 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 @media (max-width: 1260px) {
   .event-container {
@@ -952,13 +955,20 @@ body[data-section="home"] #content {
   vertical-align: top;
 }
 #content[data-mode="create"] .article-detail-wrapper,
-#content[data-mode="my-recipes"] .article-detail-wrapper {
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#events-gallery-container .event-container {
   border: 1px solid #ccc;
   background-color: #fff;
   -webkit-border-radius: 2px;
   border-radius: 2px;
+}
+#content[data-mode="my-recipes"] .article-detail-wrapper {
   -webkit-box-shadow: 0px 0px 6px #d4d4d4;
   box-shadow: 0px 0px 6px #d4d4d4;
+}
+#events-gallery-container .event-container {
+  -webkit-box-shadow: 0px 0px 5px #dbdbdb;
+  box-shadow: 0px 0px 5px #dbdbdb;
 }
 .drawer-pointer {
   padding: 20px 10px 8px 10px;
