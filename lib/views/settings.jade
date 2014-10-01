@@ -46,7 +46,7 @@ block templates
 								|<option value='-10' <% ((timezone == '-9') ? print('selected') : '') %> > (GMT -9:00) Hawaii</option>
 				.setting-group
 					.setting-description 
-						p Does your site publish an RSS feed of all its articles?
+						p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
 					.setting-flag Includes full article text?
 					.setting-title URLs
 					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds" data-child-keys='["url","is_full_text"]')
@@ -176,7 +176,7 @@ block templates
 							a(href='/auth/twitter').authenticate
 								button Grant access
 						<% }  %>
-				.setting-group
+				.setting-group(style="display:none;")
 					.setting-title Facebook
 					.auth-container
 						<% if (facebook_auth) { %>
