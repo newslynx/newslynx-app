@@ -749,7 +749,7 @@ body[data-section="login"] #content {
   height: calc(100vh - 180px);
 }
 #recipes {
-  height: calc(100vh - 179px);
+  height: calc(100vh - 227px);
   overflow-x: hidden;
   overflow-y: scroll;
 }
