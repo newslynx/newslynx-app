@@ -597,10 +597,6 @@ padding_horitz = 50px
 filter_opts_width = 175px
 #events-container
 	margin-top 10px
-	.placeholder
-		text-align center
-		font-size 1.5em
-		font-style italic
 	.tag-wrapper:hover .tag-container
 		background-color #f2f2f2
 	.section-options
@@ -617,7 +613,16 @@ filter_opts_width = 175px
 		position fixed
 		top 5px
 		left drawer_width + leftrail_width + padding_horitz
-
+#content[data-mode="my-recipes"] .placeholder,
+#content[data-mode="create"] .placeholder,
+#events-container .placeholder,
+.detail-section .placeholder
+		text-align center
+		font-size 1.5em
+		font-style italic
+		margin 0 auto
+		max-width 530px
+		width 100%
 // Events
 #events-gallery-container,.section-options
 	display inline-block

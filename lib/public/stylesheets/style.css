@@ -758,11 +758,6 @@ body[data-section="login"] #content {
 #events-container {
   margin-top: 10px;
 }
-#events-container .placeholder {
-  text-align: center;
-  font-size: 1.5em;
-  font-style: italic;
-}
 #events-container .tag-wrapper:hover .tag-container {
   background-color: #f2f2f2;
 }
@@ -786,6 +781,17 @@ body[data-section="login"] #content {
   position: fixed;
   top: 5px;
   left: 585px;
+}
+#content[data-mode="my-recipes"] .placeholder,
+#content[data-mode="create"] .placeholder,
+#events-container .placeholder,
+.detail-section .placeholder {
+  text-align: center;
+  font-size: 1.5em;
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 530px;
+  width: 100%;
 }
 #events-gallery-container,
 .section-options {
