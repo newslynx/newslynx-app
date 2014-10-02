@@ -804,8 +804,7 @@ body[data-section="login"] #content {
 #events-container .placeholder,
 .detail-section .placeholder {
   text-align: center;
-  font-size: 1.5em;
-  font-style: italic;
+  font-size: 1.6em;
   margin: 0 auto;
   max-width: 530px;
   width: 100%;
