@@ -5,11 +5,15 @@ mixin about
 mixin approval-river
 	li.section.active(data-section="approval-river")
 		span.nav-link Approval river
+			//- .section-img
+			//- 	img(src="images/merlynne/potion.svg")
 
 			
 mixin articles
 	li.section.active(data-section="articles")
 		span.nav-link Articles
+			//- .section-img
+			//- 	img(src="images/merlynne/t-square.svg")
 	li.section-options(data-section-options="articles")
 		.section-title Select articles by...
 		.option-container(data-type="search")
@@ -92,21 +96,25 @@ nav
 		//- else	
 		//- 	li.section(data-section="home")
 		//- 		a(href="/") Home
-		if (page == 'about')
-			mixin about
-		else	
-			li.section(data-section="about")
-				a(href="/about") About
+		//- if (page == 'about')
+		//- 	mixin about
+		//- else	
+		//- 	li.section(data-section="about")
+		//- 		a(href="/about") About
 		if (page == 'approval-river')
 			mixin approval-river
 		else	
 			li.section(data-section="approval-river")
 				a(href="/approval-river") Approval river
+					//- .section-img
+					//- 	img(src="images/merlynne/potion.svg")
 		if (page == 'articles')
 			mixin articles
 		else	
 			li.section(data-section="articles")
 				a(href="/articles") Articles
+					//- .section-img
+					//- 	img(src="images/merlynne/t-square.svg")
 		//- if (page == 'series')
 		//- 	mixin series
 		//- else	

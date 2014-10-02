@@ -375,6 +375,14 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   cursor: pointer;
   text-decoration: underline;
 }
+.main-sections .section-img {
+  float: right;
+  padding-top: 2px;
+  width: 20px;
+}
+.main-sections .section-img img {
+  width: 100%;
+}
 .section-options input[type="search"] {
   height: 23px;
 }
