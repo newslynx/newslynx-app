@@ -216,7 +216,9 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   vertical-align: top;
   height: 100%;
 }
-#drawer,
+#drawer {
+  overflow: hidden;
+}
 #content {
   overflow-x: hidden;
 }
@@ -531,6 +533,13 @@ body[data-section="login"] #drawer {
 /* D R A W E R */
 body[data-section="login"] #content {
   padding: 15px;
+}
+#drawer .merlynne-img {
+  width: 65%;
+  margin: 0 auto;
+}
+#drawer .merlynne-img img {
+  width: 100%;
 }
 #drawer p {
   line-height: 1.3em;
@@ -934,9 +943,67 @@ body[data-section="login"] #content {
 /* end article detail */
 /* H O M E */
 body[data-section="home"] #content {
-  padding: 15px;
+  padding: 10px 15px;
 }
-/* end home */
+/* H O M E  P A G E  */
+#home-page {
+  width: 620px;
+}
+#home-page h2,
+#home-page h3,
+#home-page p {
+  margin-bottom: 10px;
+}
+#home-page h3,
+#home-page h4,
+#home-page h5 {
+  margin-top: 5px;
+}
+#home-page h2 {
+  font-size: 2.75em;
+}
+#home-page h3 {
+  font-size: 2em;
+}
+#home-page h4 {
+  font-size: 1.9em;
+}
+#home-page h5 {
+  font-size: 1.5em;
+}
+#home-page h4,
+#home-page h5 {
+  margin-bottom: 10px;
+}
+#home-page p {
+  font-size: 1.3em;
+}
+#home-page ul {
+  list-style: disc;
+  margin: 0 0 20px 20px;
+}
+#home-page li {
+  font-size: 1.3em;
+  line-height: 20px;
+}
+#home-page li .li-name-text {
+  font-weight: bold;
+}
+#home-page li .li-name {
+  padding: 1px 5px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+#home-page .help-us-out {
+  background-color: #add8e6;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+#home-page .look-at-me {
+  font-weight: bold;
+}
+/* end home page */
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="create"] {
   padding: 25px 30px;

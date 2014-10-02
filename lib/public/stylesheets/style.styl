@@ -198,7 +198,9 @@ events = #c13d3d
 	vertical-align top
 	height 100%
 
-#drawer, #content
+#drawer
+	overflow hidden
+#content
 	overflow-x hidden
 #left-rail
 	width leftrail_width
@@ -450,6 +452,13 @@ drawer_item_single_line = 37px
 
 body[data-section="login"] #content
 	padding 15px
+
+#drawer
+	.merlynne-img
+		width 65%
+		margin 0 auto
+		img
+			width 100%
 	
 #drawer
 	p
@@ -749,9 +758,49 @@ filter_opts_width = 175px
 
 /* H O M E */
 body[data-section="home"] #content
-	padding 15px
+	padding 10px 15px
 
-/* end home */
+/* H O M E  P A G E  */
+#home-page
+	width 620px
+	h2,h3,p
+		margin-bottom 10px
+		// font-weight normal
+	h3,h4,h5
+		margin-top 5px
+	h2
+		font-size 2.75em
+	h3
+		font-size 2em
+	h4
+		font-size 1.9em
+	h5
+		font-size 1.5em
+	h4,h5
+		margin-bottom 10px
+	p
+		font-size 1.3em
+	ul
+		list-style disc
+		margin 0 0 20px 20px
+	li
+		font-size 1.3em
+		line-height 20px
+		.li-name-text
+			font-weight bold
+		.li-name
+			padding 1px 5px
+			border-radius 2px
+	.help-us-out 
+		background-color lightblue
+		padding 10px
+		border-radius 5px
+	.look-at-me
+		font-weight bold
+		color #00b602
+
+
+/* end home page */
 
 /*  A P P R O V A L  R I V E R   */
 #content[data-mode="create"]

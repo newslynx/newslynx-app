@@ -1,7 +1,88 @@
 extends layout
 
 block drawer
-	.division-title Home
+	.division-title Hello!
+	.merlynne-img
+		img(src="images/merlynne/wave.svg")
 
 block content
-	p Is where I want to be.
+	#home-page
+		h2 Welcome to NewsLynx!
+
+		p I'm Merlynne Jones, the Chief Impcat Officer around here. I'll be showing you around while Brian and Michael are off in the machine somewhere connecting wires. NewsLynx is divided into three main pages: <span class="look-at-me">Settings</span>, the <span class="look-at-me">Approval River</span> and your <span class="look-at-me">Articles</span>. Let's check out each of them and we'll discuss features as we go!
+
+		h3 Settings
+
+		p I know what you're thinking: "Settings are boring!" They might not be as delectable to sink your teeth into as a tasty squirrel or snowshoe hare on a cold winter's hunt, but they're the foundation for getting the most out of NewsLynx. To access them, click on the tools in the top left of the screen.
+
+		p We'll skip the basic stuff under <span class="look-at-me">Site</span> and <span class="look-at-me">Social</span> &mdash; most of those fields are self-explanatory or include little descriptions anyway. Let's talk about <span class="look-at-me">Tags</span>
+
+		h4 Tags
+
+		h5 Subject matter tags
+
+		p NewsLynx lets you organize your articles with subject matter tags. For instance, let's say have a newsroom beat around <span class="look-at-me">Fracking</span>. Create a subject tag on the settings with that name and pick a color. You can choose any color but there's also a palette I've picked out. Later on, you can add that tag to any article. If an article is relevant to both <span class="look-at-me">Fracking</span> and, say, <span class="look-at-me">Politics</span>, you can add both tags. An article can have any number of subject tags!
+
+		p Subject tags are really helpful for analysis. Once you've grouped articles under a tag, you can do things like get an average of all pageviews or Twitter shares in that group. But we'll get to that later. The important thing to remember is that the more you tag your articles, the more meaningful comparisons you can make later on down the road.
+
+		p.help-us-out One of the things I've tasked Brian and Michael with for the upcoming weeks is to find ways we can automatically assign subject tags. They'll be reaching out to you to discuss what kinds of subject tags your newsroom would like and how we could automate that more.</p>
+
+		h5 Impact tags
+
+		p One of the reasons I tasked Brian and Michael with making NewsLynx was so newsrooms could better keep track of impactful <span class="look-at-me">events</span> and group them together in meaningful ways. To do this, we have impact tags, which you create on the <a href="/settings">Settings</a> page just like subject tags. In addition to a color, each impact has a <span class="look-at-me">category</span> and a <span class="look-at-me">level</span>.
+
+		p An impact tag can have one of four categories:
+		ul
+			li <span class="li-name" style="background-color:#10e346;color:#fff;">Citation</span> &mdash; Someone mentioned your journalism, like in a court case, or someone big on the Twitter.
+			li <span class="li-name" style="background-color:#0cf;color:#fff;">Change</span> &mdash; Your journalism led to something happening, like a law being passed.
+			li <span class="li-name" style="background-color:#f0c;color:#fff;">Achievement</span> &mdash; Your journalism stands out in some way, like an award, or record page views.
+			li <span class="li-name" style="background-color:#c0f;color:#fff;">Other</span> &mdash; ¯\_(ツ)_/¯
+
+		p And one of five levels:
+
+		ul
+			li <span class="li-name" style="background-color:#9ce">Institution</span> &mdash; A government or organization
+			li <span class="li-name" style="background-color:#DEA4CB">Community</span> &mdash; A group of people, loosely defined by you.
+			li <span class="li-name" style="background-color:#cf4">Individual</span> &mdash; A single person
+			li <span class="li-name" style="background-color:#ff2">Media</span> &mdash; A media organization that republishes, picks up or cites your work
+			li <span class="li-name" style="background-color:#fd2">Internal</span> &mdash; Maybe this article got your team more respect or became a model for future stories.
+
+		p Importantly, impact tags don't belong to articles directly &mdash; hey get assigned to <span class="look-at-me">events</span> which are in turn assigned to articles. When you're browsing and searching articles, you can still filter articles by impact tag, category or level.
+
+		h4 Authenticating
+
+		p The last thing to do before leaving the <span class="look-at-me">Settings</span> page is to authenticate with Google Analytics and Twitter. This will allow NewsLynx to pull in your existing analytics data. We use Twitter authentication to count your article mentions. How we use and store your data is covered in more detail in our <a href="http://github.com/newslynx/data-retention" target="_blank">data retention policy</a>.
+
+		h3 Approval river
+
+		p Now that the settings are out of the way, we can start measuring some impact! The <span class="look-at-me">Approval River</span> is your one place to go for monitoring a number of automatic tasks that are out there, constantly crawling the web for evidence of your journalism and its effects.
+
+		p In the <span class="look-at-me">Approval River</span>, you create <span class="look-at-me">recipes</span> according to a number of different search types. So far, we have the following recipe types:
+
+		ul
+			li <span class="li-name" style="background-color:#4686c6;color:#fff;">Google Alerts</span> &mdash; Enter a pre-existing Google Alert to have its matches show up in the approval river.
+			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter search</span> &mdash; A basic search of the Twitter search API.
+			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter list search</span> &mdash; Monitor discussions among a list of Twitter users, useful if you're monitoring a group of people, like members of congress.
+			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter user search</span> &mdash; Follow one person very closely.
+			li <span class="li-name" style="background-color:#f05b1b;color:#fff;">Reddit search</span> &mdash; Useful to monitor whether your domain or an article's URL is being discussed on Reddit.
+			li <span class="li-name" style="background-color:#3b5998;color:#fff;">Facebook page search</span> &mdash; Monitor the text of posts by a given Facebook page.
+
+		p The process goes something like this
+
+		p <!-- INSERT GFX - RECIPE -> ALERT -> EVENT -> ARTICLE -->
+
+		p Recipes create events when they find a match. If you approve an alert, it becomes an event with whatever default properties you specified when you made the recipe. Events are assigned to articles and then show up on that article's page.
+
+		h3 Articles
+
+		p To get all of the required data into the the articles page, I locked Brian and Michael in my basement for two months this summer and only let them out once a day for lunch to go get sandwiches. That's what we talk about when we talk about Big Data.
+
+		p The articles page has two main views: <span class="look-at-me">compare</span> and <span class="look-at-me">detail</span>. 
+
+		p You add articles to the comparison view by using the filters in the left rail and then hitting the + button. Or, if you want to replace the current view with your selected articles, click the replace button.
+
+		p Each metric comes with with a built-in comparison number. On load, it shows you the average of all articles. Use the dropdown selections in the drawer to change whether you want to select the <span class="look-at-me">median</span> or a different subset of articles, such as the average of all articles in a given subject tag. It is here that he power of grouping by subject tag shows its force.
+
+
+
+
