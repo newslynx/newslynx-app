@@ -307,7 +307,7 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
 #left-rail .section-options[data-section-options="articles"] {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(100vh - 195px);
+  height: calc(100vh - 150px);
 }
 /* L E F T  R A I L */
 .main-sections {
