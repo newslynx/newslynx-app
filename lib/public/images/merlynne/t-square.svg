@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="35px"
+	 height="35px" viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve">
+<g id="Layer_2">
+	
+		<rect x="0.565" y="15.864" transform="matrix(-0.6156 0.7881 -0.7881 -0.6156 40.3923 16.7302)" fill="none" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" width="31.101" height="4.704"/>
+</g>
+<g id="Layer_1">
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" x1="22.493" y1="13.436" x2="21.44" y2="12.614"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" x1="17.799" y1="19.446" x2="16.746" y2="18.623"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.75" stroke-miterlimit="10" x1="13.104" y1="25.454" x2="12.052" y2="24.632"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="25.032" y1="10.185" x2="23.979" y2="9.363"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="20.208" y1="16.358" x2="19.156" y2="15.536"/>
+	
+		<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="15.54" y1="22.387" x2="14.487" y2="21.564"/>
+	<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.5" stroke-miterlimit="10" x1="10.712" y1="28.53" x2="9.661" y2="27.708"/>
+	
+		<text transform="matrix(0.6366 -0.7712 0.7712 0.6366 11.1035 24.5469)" fill="#FFFFFF" font-family="'MyriadPro-BoldCond'" font-size="2">1</text>
+	
+		<text transform="matrix(0.6366 -0.7712 0.7712 0.6366 16.0176 18.6602)" fill="#FFFFFF" font-family="'MyriadPro-BoldCond'" font-size="2">2</text>
+	
+		<text transform="matrix(0.6366 -0.7712 0.7712 0.6366 20.9102 12.7017)" fill="#FFFFFF" font-family="'MyriadPro-BoldCond'" font-size="2">3</text>
+	<path fill="#FFFFFF" d="M21.5,7.292c0.354,0.276,0.057-0.063,0.333-0.417l0.459-0.625c0.276-0.354,1.843-1.974,1.489-2.25
+		c0,0-4.957-0.904-5.484-1.278C17.944,2.471,16.5,1.317,16.5,1.317c-0.354-0.276-0.865-0.213-1.142,0.14l0,0
+		c-0.276,0.354-0.213,0.864,0.141,1.14L21.5,7.292z"/>
+	<path fill="#FFFFFF" d="M25.495,10.387c-0.357-0.27,0.047-0.071,0.317-0.428l0.485-0.605c0.271-0.359,1.431-2.292,1.788-2.021
+		c0,0,2.156,4.554,2.652,4.966c0.335,0.277,1.822,1.373,1.822,1.373c0.357,0.27,0.43,0.78,0.16,1.139l0,0
+		c-0.27,0.358-0.78,0.43-1.138,0.16L25.495,10.387z"/>
+</g>
+</svg>
