@@ -40,12 +40,12 @@ block templates
 						li.input
 							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 							select(name='timezone').input-item
-								|<option value='-5'  <% ((timezone == '-4') ? print('selected') : '')  %> > (GMT -4:00) Eastern Time</option>
-								|<option value='-6'  <% ((timezone == '-5') ? print('selected') : '')  %> > (GMT -5:00) Central Time</option>
-								|<option value='-7'  <% ((timezone == '-6') ? print('selected') : '')  %> > (GMT -6:00) Mountain Time</option>
-								|<option value='-8'  <% ((timezone == '-7') ? print('selected') : '')  %> > (GMT -7:00) Pacific Time</option>
-								|<option value='-9'  <% ((timezone == '-8') ? print('selected') : '')  %> > (GMT -8:00) Alaska</option>
-								|<option value='-10' <% ((timezone == '-9') ? print('selected') : '') %> > (GMT -9:00) Hawaii</option>
+								|<option value='-4'  <% ((timezone == '-4') ? print('selected') : '')  %> > (GMT -4:00) Eastern Time</option>
+								|<option value='-5'  <% ((timezone == '-5') ? print('selected') : '')  %> > (GMT -5:00) Central Time</option>
+								|<option value='-6'  <% ((timezone == '-6') ? print('selected') : '')  %> > (GMT -6:00) Mountain Time</option>
+								|<option value='-7'  <% ((timezone == '-7') ? print('selected') : '')  %> > (GMT -7:00) Pacific Time</option>
+								|<option value='-8'  <% ((timezone == '-8') ? print('selected') : '')  %> > (GMT -8:00) Alaska</option>
+								|<option value='-9'  <% ((timezone == '-9') ? print('selected') : '') %> > (GMT -9:00) Hawaii</option>
 				.setting-group
 					.setting-description 
 						p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
@@ -69,7 +69,7 @@ block templates
 						<%  for (var i = 0; i < short_urls.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" class="multi-child" />
+							|<input class="input-item multi-child" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" />
 						<% } %>
 					button.add Add
 				#staff-lists.setting-group
@@ -202,10 +202,10 @@ block templates
 	//- 		.setting-title <%= setting_title %>
 	//- 		|<ul class="inputs-container" <% (multi === true) ? print('data-placeholder="'+placeholder+'"' : '') %> <% (flag === true) ? print('data-flag="'+flag+'"' : '') %> ></ul>
 
-	//- script(type="text/jst")#single-input-templ
-	//- 	ul.inputs-container
-	//- 		li.input
-	//- 			|<input type="text" placeholder="<%= placeholder %>" value="<% (val) ? print(val) : '' %>">
+	script(type="text/jst")#single-input-templ
+		li.input.multi
+			.multi-child.destroy &times;
+			|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
 
 	script(type="text/jst")#multi-input-templ
 		li.input.multi
