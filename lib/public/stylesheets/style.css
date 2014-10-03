@@ -1371,6 +1371,9 @@ input {
 .article-detail-container .group-container[data-side="left"] .group-item {
   min-width: 315px;
 }
+.article-detail-container .group-container[data-side="right"] {
+  margin-bottom: 6px;
+}
 .article-detail-container .group-container[data-side="right"] .group-item {
   float: right;
   display: block;
@@ -1380,9 +1383,6 @@ input {
   vertical-align: sub;
   padding-right: 5px;
   cursor: default;
-}
-.article-detail-container .group-container[data-side="right"] button {
-  margin-bottom: 5px;
 }
 .article-detail-container .article-info-container {
   margin: 5px 0;
@@ -1850,6 +1850,7 @@ input[name="assignees"] {
   padding-left: 5px;
   vertical-align: bottom;
   font-size: 1.4em;
+  white-space: normal;
 }
 .form-checkbox-group {
   display: block;
