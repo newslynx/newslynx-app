@@ -307,7 +307,7 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
 #left-rail .section-options[data-section-options="articles"] {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 195px);
 }
 /* L E F T  R A I L */
 .main-sections {
@@ -374,14 +374,6 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
 .main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
   cursor: pointer;
   text-decoration: underline;
-}
-.main-sections .section-img {
-  float: right;
-  padding-top: 2px;
-  width: 20px;
-}
-.main-sections .section-img img {
-  width: 100%;
 }
 .section-options input[type="search"] {
   height: 23px;
@@ -804,7 +796,8 @@ body[data-section="login"] #content {
 #events-container .placeholder,
 .detail-section .placeholder {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 1.5em;
+  font-style: italic;
   margin: 0 auto;
   max-width: 530px;
   width: 100%;
@@ -953,63 +946,22 @@ body[data-section="home"] #content {
   padding: 10px 15px;
 }
 /* H O M E  P A G E  */
-#home-page {
-  width: 620px;
-}
 #home-page h2,
 #home-page h3,
+#home-page h4,
 #home-page p {
   margin-bottom: 10px;
-}
-#home-page h3,
-#home-page h4,
-#home-page h5 {
-  margin-top: 5px;
+  font-weight: normal;
 }
 #home-page h2 {
   font-size: 2.75em;
 }
 #home-page h3 {
-  font-size: 2em;
-}
-#home-page h4 {
-  font-size: 1.9em;
-}
-#home-page h5 {
-  font-size: 1.5em;
-}
-#home-page h4,
-#home-page h5 {
-  margin-bottom: 10px;
+  font-weight: 2em;
+margin-top
 }
 #home-page p {
   font-size: 1.3em;
-}
-#home-page ul {
-  list-style: disc;
-  margin: 0 0 20px 20px;
-}
-#home-page li {
-  font-size: 1.3em;
-  line-height: 20px;
-}
-#home-page li .li-name-text {
-  font-weight: bold;
-}
-#home-page li .li-name {
-  padding: 1px 5px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-}
-#home-page .help-us-out {
-  background-color: #add8e6;
-  padding: 10px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-#home-page .look-at-me {
-  font-weight: bold;
-  color: #00b602;
 }
 /* end home page */
 /*  A P P R O V A L  R I V E R   */
@@ -1371,9 +1323,6 @@ input {
 .article-detail-container .group-container[data-side="left"] .group-item {
   min-width: 315px;
 }
-.article-detail-container .group-container[data-side="right"] {
-  margin-bottom: 6px;
-}
 .article-detail-container .group-container[data-side="right"] .group-item {
   float: right;
   display: block;
@@ -1383,6 +1332,9 @@ input {
   vertical-align: sub;
   padding-right: 5px;
   cursor: default;
+}
+.article-detail-container .group-container[data-side="right"] button {
+  margin-bottom: 5px;
 }
 .article-detail-container .article-info-container {
   margin: 5px 0;
@@ -1850,7 +1802,6 @@ input[name="assignees"] {
   padding-left: 5px;
   vertical-align: bottom;
   font-size: 1.4em;
-  white-space: normal;
 }
 .form-checkbox-group {
   display: block;
