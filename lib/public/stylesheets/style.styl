@@ -275,7 +275,7 @@ section_nav_margin_top = 10px
 	.section-options[data-section-options="articles"]
 		overflow-y scroll
 		overflow-x hidden
-		height 'calc(100vh - %s)' % (header_height + section_li_height*3 + section_nav_margin_top)
+		height 'calc(100vh - %s)' % (header_height + section_li_height*2 + section_nav_margin_top)
 
 
 /* L E F T  R A I L */
@@ -320,6 +320,12 @@ section_nav_margin_top = 10px
 		.clear-date-range span:hover
 			cursor pointer
 			text-decoration underline
+	.section-img
+		float right
+		padding-top 2px
+		width 20px
+		img
+			width 100%
 
 
 .section-options
@@ -627,8 +633,8 @@ filter_opts_width = 175px
 #events-container .placeholder,
 .detail-section .placeholder
 		text-align center
-		font-size 1.5em
-		font-style italic
+		font-size 1.6em
+		// font-style italic
 		margin 0 auto
 		max-width 530px
 		width 100%
@@ -764,16 +770,43 @@ body[data-section="home"] #content
 
 /* H O M E  P A G E  */
 #home-page
-	h2,h3,h4,p
+	width 620px
+	h2,h3,p
 		margin-bottom 10px
-		font-weight normal
+		// font-weight normal
+	h3,h4,h5
+		margin-top 5px
 	h2
 		font-size 2.75em
 	h3
-		font-weight 2em
-		margin-top 
+		font-size 2em
+	h4
+		font-size 1.9em
+	h5
+		font-size 1.5em
+	h4,h5
+		margin-bottom 10px
 	p
 		font-size 1.3em
+	ul
+		list-style disc
+		margin 0 0 20px 20px
+	li
+		font-size 1.3em
+		line-height 20px
+		.li-name-text
+			font-weight bold
+		.li-name
+			padding 1px 5px
+			border-radius 2px
+	.help-us-out 
+		background-color lightblue
+		padding 10px
+		border-radius 5px
+	.look-at-me
+		font-weight bold
+		color #00b602
+
 
 /* end home page */
 
@@ -1059,7 +1092,7 @@ input
 		.group-item
 			min-width 315px
 	.group-container[data-side="right"]
-		// margin-bottom 6px
+		margin-bottom 6px
 		.group-item
 			float right
 			display block
@@ -1068,8 +1101,8 @@ input
 			vertical-align sub
 			padding-right 5px
 			cursor default
-		button
-			margin-bottom 5px
+		// button.create-event
+		// 	margin-bottom 5px
 	.article-info-container
 		margin 5px 0
 	.article-info-title
@@ -1460,6 +1493,7 @@ input[name="assignees"]
 	padding-left 5px
 	vertical-align bottom
 	font-size 1.4em
+	white-space normal
 .form-checkbox-group
 	display block
 	width 100%
