@@ -895,6 +895,9 @@ body[data-section="login"] #content {
 .article-detail-viz-container:nth-child(odd) {
   margin-right: 4%;
 }
+.article-detail-viz-container[data-which="tweets"] {
+  width: auto;
+}
 .viz-container {
   margin-top: 10px;
   width: 100%;
