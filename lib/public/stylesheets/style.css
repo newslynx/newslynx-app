@@ -1046,7 +1046,8 @@ body[data-section="home"] #content {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#content[data-mode="my-recipes"] .article-detail-wrapper {
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#content[data-mode="create"] .article-detail-wrapper {
   -webkit-box-shadow: 0px 0px 6px #d4d4d4;
   box-shadow: 0px 0px 6px #d4d4d4;
 }
