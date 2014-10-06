@@ -832,7 +832,8 @@ body[data-section="home"] #content
 	border 1px solid #ccc
 	background-color #fff
 	border-radius 2px
-#content[data-mode="my-recipes"] .article-detail-wrapper
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#content[data-mode="create"] .article-detail-wrapper
 	box-shadow 0px 0px 6px #d4d4d4
 #events-gallery-container .event-container
 	box-shadow 0px 0px 5px #dbdbdb
@@ -1483,17 +1484,20 @@ input[name="assignees"]
 		color bg_gray
 		margin-bottom 25px
 	.service-icon
-		top 0
+		top -4px
 		width 40px
 		height @width
 		left -(@width + 5)px
 		margin-bottom 5px
+	.service-icon[data-service="reddit"]
+		top -7px
 .submit-msg
-	display inline
+	display inline-block
 	padding-left 5px
 	vertical-align bottom
 	font-size 1.4em
 	white-space normal
+	width 260px
 .form-checkbox-group
 	display block
 	width 100%
@@ -1521,11 +1525,13 @@ input.destroy
 	bottom 0
 	background-position right
 .service-icon[data-service="google"]
-	background-image url(/images/google.png)
+	background-image url(/images/service-icons/logos-01.svg)
 .service-icon[data-service="twitter"]
-	background-image url(/images/twitter.png)
+	background-image url(/images/service-icons/logos-02.svg)
 .service-icon[data-service="reddit"]
-	background-image url(/images/reddit.png)
+	background-image url(/images/service-icons/logos-03.svg)
+.service-icon[data-service="facebook"]
+	background-image url(/images/service-icons/logos-04.svg)
 
 .modal-outer,.recipe-form-container
 	form

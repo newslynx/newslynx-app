@@ -956,61 +956,61 @@ body[data-section="home"] #content {
   padding: 10px 15px;
 }
 /* H O M E  P A G E  */
-#home-page {
+#home-page-instructions {
   width: 620px;
 }
-#home-page h2,
-#home-page h3,
-#home-page p {
+#home-page-instructions h2,
+#home-page-instructions h3,
+#home-page-instructions p {
   margin-bottom: 10px;
 }
-#home-page h3,
-#home-page h4,
-#home-page h5 {
+#home-page-instructions h3,
+#home-page-instructions h4,
+#home-page-instructions h5 {
   margin-top: 5px;
 }
-#home-page h2 {
+#home-page-instructions h2 {
   font-size: 2.75em;
 }
-#home-page h3 {
+#home-page-instructions h3 {
   font-size: 2em;
 }
-#home-page h4 {
+#home-page-instructions h4 {
   font-size: 1.9em;
 }
-#home-page h5 {
+#home-page-instructions h5 {
   font-size: 1.5em;
 }
-#home-page h4,
-#home-page h5 {
+#home-page-instructions h4,
+#home-page-instructions h5 {
   margin-bottom: 10px;
 }
-#home-page p {
+#home-page-instructions p {
   font-size: 1.3em;
 }
-#home-page ul {
+#home-page-instructions ul {
   list-style: disc;
   margin: 0 0 20px 20px;
 }
-#home-page li {
+#home-page-instructions li {
   font-size: 1.3em;
   line-height: 20px;
 }
-#home-page li .li-name-text {
+#home-page-instructions li .li-name-text {
   font-weight: bold;
 }
-#home-page li .li-name {
+#home-page-instructions li .li-name {
   padding: 1px 5px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#home-page .help-us-out {
+#home-page-instructions .help-us-out {
   background-color: #add8e6;
   padding: 10px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
-#home-page .look-at-me {
+#home-page-instructions .look-at-me {
   font-weight: bold;
   color: #00b602;
 }
@@ -1046,7 +1046,8 @@ body[data-section="home"] #content {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#content[data-mode="my-recipes"] .article-detail-wrapper {
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#content[data-mode="create"] .article-detail-wrapper {
   -webkit-box-shadow: 0px 0px 6px #d4d4d4;
   box-shadow: 0px 0px 6px #d4d4d4;
 }
@@ -1842,18 +1843,22 @@ input[name="assignees"] {
   margin-bottom: 25px;
 }
 .recipe-form-container .service-icon {
-  top: 0;
+  top: -4px;
   width: 40px;
   height: 40px;
   left: -45px;
   margin-bottom: 5px;
 }
+.recipe-form-container .service-icon[data-service="reddit"] {
+  top: -7px;
+}
 .submit-msg {
-  display: inline;
+  display: inline-block;
   padding-left: 5px;
   vertical-align: bottom;
   font-size: 1.4em;
   white-space: normal;
+  width: 260px;
 }
 .form-checkbox-group {
   display: block;
@@ -1887,13 +1892,16 @@ input.destroy {
   background-position: right;
 }
 .service-icon[data-service="google"] {
-  background-image: url("/images/google.png");
+  background-image: url("/images/service-icons/logos-01.svg");
 }
 .service-icon[data-service="twitter"] {
-  background-image: url("/images/twitter.png");
+  background-image: url("/images/service-icons/logos-02.svg");
 }
 .service-icon[data-service="reddit"] {
-  background-image: url("/images/reddit.png");
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
 }
 .modal-outer form .form-row-label-container,
 .recipe-form-container form .form-row-label-container {
