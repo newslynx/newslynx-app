@@ -1483,11 +1483,13 @@ input[name="assignees"]
 		color bg_gray
 		margin-bottom 25px
 	.service-icon
-		top 0
+		top -4px
 		width 40px
 		height @width
 		left -(@width + 5)px
 		margin-bottom 5px
+	.service-icon[data-service="reddit"]
+		top -7px
 .submit-msg
 	display inline
 	padding-left 5px
@@ -1521,11 +1523,13 @@ input.destroy
 	bottom 0
 	background-position right
 .service-icon[data-service="google"]
-	background-image url(/images/google.png)
+	background-image url(/images/service-icons/logos-01.svg)
 .service-icon[data-service="twitter"]
-	background-image url(/images/twitter.png)
+	background-image url(/images/service-icons/logos-02.svg)
 .service-icon[data-service="reddit"]
-	background-image url(/images/reddit.png)
+	background-image url(/images/service-icons/logos-03.svg)
+.service-icon[data-service="facebook"]
+	background-image url(/images/service-icons/logos-04.svg)
 
 .modal-outer,.recipe-form-container
 	form

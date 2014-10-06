@@ -1842,7 +1842,7 @@ input[name="assignees"] {
   margin-bottom: 25px;
 }
 .recipe-form-container .service-icon {
-  top: 0;
+  top: -7px;
   width: 40px;
   height: 40px;
   left: -45px;
@@ -1887,13 +1887,16 @@ input.destroy {
   background-position: right;
 }
 .service-icon[data-service="google"] {
-  background-image: url("/images/google.png");
+  background-image: url("/images/service-icons/logos-01.svg");
 }
 .service-icon[data-service="twitter"] {
-  background-image: url("/images/twitter.png");
+  background-image: url("/images/service-icons/logos-02.svg");
 }
 .service-icon[data-service="reddit"] {
-  background-image: url("/images/reddit.png");
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
 }
 .modal-outer form .form-row-label-container,
 .recipe-form-container form .form-row-label-container {
