@@ -1842,11 +1842,14 @@ input[name="assignees"] {
   margin-bottom: 25px;
 }
 .recipe-form-container .service-icon {
-  top: -7px;
+  top: -4px;
   width: 40px;
   height: 40px;
   left: -45px;
   margin-bottom: 5px;
+}
+.recipe-form-container .service-icon[data-service="reddit"] {
+  top: -7px;
 }
 .submit-msg {
   display: inline;
