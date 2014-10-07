@@ -54,3 +54,6 @@ node_modules
 # Development database
 *.sqlite
 *.rdb
+
+# Secrets
+secrets/
