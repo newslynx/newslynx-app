@@ -1,37 +1,35 @@
-#!/usr/bin/env node
-
 var _ = require('underscore');
 var app = require('../lib/app');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
 var debug = require('tracer').console();
+// app.set('ssl_port', process.env.NEWSLYNX_SSL_PORT || 443);
 app.set('http_port', process.env.NEWSLYNX_HTTP_PORT || 3000);
 
 function readFileAsUtf8(path, cb){
-	fs.readFile(path, 'utf-8', cb);
+        fs.readFile(path, 'utf-8', cb);
 }
 
 function launchServers(options){
-	// debug.log(options)
-	// var http_server = http.createServer(app).listen( app.get('port') );
-	// TODO, figure out https loading the csr and key files
-	var https_server = https.createServer(options, app).listen( app.get('port') );
+        // Launch a secure server
+        var ssl_port = app.get('ssl_port'),
+                        http_port = app.get('http_port');
 
-	// Old can be deleted later
-	// var http_server = http.createServer(app).listen(app.get('port'), function() {
-	//   message = _.template('Express server listening on port <%= port %> (<%= env %>)')
-	//   debug(message({port: server.address().port, env: app.get('env')}));
-	// });
+        // var https_server = https.createServer(options, app).listen( ssl_port );
+        // console.log('HTTPS listening on port ', ssl_port, '...');
+
+        var http_server = http.createServer(app).listen(http_port );
+        console.log('HTTP listening on port', http_port, '...');
 }
 
-function loadCerts (){
-		var https_options = {
-			key: fs.readFileSync('secrets/newslynx-secrets/app-ssl/newslynx/newslynx.key'),
-			cert: fs.readFileSync('secrets/newslynx-secrets/app-ssl/app.gandi-newslynx.crt')
-		};
-		launchServers(https_options);
+// function loadCerts (){
+//              var https_options = {
+//                      key: fs.readFileSync('secrets/newslynx-secrets/app-ssl/newslynx/newslynx.key'),
+//                      cert: fs.readFileSync('secrets/newslynx-secrets/app-ssl/app.gandi-newslynx.crt')
+//              };
+//              launchServers(https_options);
 
-}
-
-loadCerts();
+// }
+launchServers();
+// loadCerts();
