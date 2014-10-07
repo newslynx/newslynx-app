@@ -56,4 +56,4 @@ node_modules
 *.rdb
 
 # Secrets
-secrets/
+newslynx-secrets/
