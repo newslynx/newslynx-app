@@ -6,8 +6,8 @@ var app = require('../lib/app');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var queue = require('queue-async');
-
+// var queue = require('queue-async');
+var debug = require('tracer').console();
 app.set('port', process.env.PORT || 3000);
 
 function readFileAsUtf8(path, cb){
@@ -15,9 +15,10 @@ function readFileAsUtf8(path, cb){
 }
 
 function launchServers(options){
-	var http_server = http.createServer(app).listen( app.get('port') );
+	// debug.log(options)
+	// var http_server = http.createServer(app).listen( app.get('port') );
 	// TODO, figure out https loading the csr and key files
-	// var https_server = https.createServer(options, app).listen( app.get('port') );
+	var https_server = https.createServer(options, app).listen( app.get('port') );
 
 	// Old can be deleted later
 	// var http_server = http.createServer(app).listen(app.get('port'), function() {
@@ -27,17 +28,24 @@ function launchServers(options){
 }
 
 function loadCerts (){
-	queue()
-		.defer(readFileAsUtf8, 'lib/ssl/newslynx-app.key')
-		.defer(readFileAsUtf8, 'lib/ssl/newslynx-app.csr')
-		.awaitAll(function(err, results){
-			var https_options = {
-				key: results[0],
-				cert: results[1]
-			}
-			launchServers(https_options);
-	});
+		var https_options = {
+			key: fs.readFileSync('lib/ssl/newslynx/newslynx.key'),
+			cert: fs.readFileSync('lib/ssl/gandi-newslynx.crt')
+		};
+		launchServers(https_options);
+
+
+	// queue()
+	// 	.defer(readFileAsUtf8, 'lib/ssl/newslynx.key')
+	// 	.defer(readFileAsUtf8, 'lib/ssl/newslynx.csr')
+	// 	.awaitAll(function(err, results){
+	// 		var https_options = {
+	// 			key: results[0],
+	// 			cert: results[1]
+	// 		};
+	// 		launchServers(https_options);
+	// });
 }
 
-// loadCerts();
-launchServers();
+loadCerts();
+// launchServers();
