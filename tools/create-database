@@ -1,8 +1,0 @@
-#!/usr/bin/env node
-
-var settings = require('../lib/settings');
-var models = require('../lib/models');
-
-models.sequelize.sync(settings.database.sync).success(function(){
-    console.log('Created newslynx database.');
-});

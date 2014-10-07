@@ -29,8 +29,8 @@ function launchServers(options){
 
 function loadCerts (){
 		var https_options = {
-			key: fs.readFileSync('lib/ssl/newslynx/newslynx.key'),
-			cert: fs.readFileSync('lib/ssl/gandi-newslynx.crt')
+			key: fs.readFileSync('../newslynx-secrets/app-ssl/newslynx/newslynx.key'),
+			cert: fs.readFileSync('../newslynx-secrets/app-ssl/gandi-newslynx.crt')
 		};
 		launchServers(https_options);
 
