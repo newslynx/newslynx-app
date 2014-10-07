@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
 var _ = require('underscore');
-// var debug = require('debug')('newslynx-app');
 var app = require('../lib/app');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-// var queue = require('queue-async');
 var debug = require('tracer').console();
 app.set('port', process.env.PORT || 3000);
 
@@ -34,18 +32,6 @@ function loadCerts (){
 		};
 		launchServers(https_options);
 
-
-	// queue()
-	// 	.defer(readFileAsUtf8, 'lib/ssl/newslynx.key')
-	// 	.defer(readFileAsUtf8, 'lib/ssl/newslynx.csr')
-	// 	.awaitAll(function(err, results){
-	// 		var https_options = {
-	// 			key: results[0],
-	// 			cert: results[1]
-	// 		};
-	// 		launchServers(https_options);
-	// });
 }
 
 loadCerts();
-// launchServers();
