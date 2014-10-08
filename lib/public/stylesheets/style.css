@@ -1474,6 +1474,15 @@ input {
 .article-detail-container .tag-container[data-which="subject"] .tag:not(.empty):hover .tag-text {
   visibility: hidden;
 }
+@media (max-width: 1250px) {
+  .group-container[data-side="right"] {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
 .tags .tag {
   display: inline;
   padding: 2px 5px;
