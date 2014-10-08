@@ -980,6 +980,7 @@ body[data-section="home"] #content {
 }
 #home-page-instructions h5 {
   font-size: 1.5em;
+  color: #6f6c6c;
 }
 #home-page-instructions h4,
 #home-page-instructions h5 {
@@ -1004,8 +1005,8 @@ body[data-section="home"] #content {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#home-page-instructions .help-us-out {
-  background-color: #add8e6;
+#home-page-instructions .attention {
+  background-color: #cee6ef;
   padding: 10px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -1013,6 +1014,9 @@ body[data-section="home"] #content {
 #home-page-instructions .look-at-me {
   font-weight: bold;
   color: #00b602;
+}
+#home-page-instructions img.bordered {
+  border: 1px solid #ccc;
 }
 /* end home page */
 /*  A P P R O V A L  R I V E R   */

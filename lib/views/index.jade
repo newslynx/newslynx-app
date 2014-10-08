@@ -25,7 +25,7 @@ block content
 
 		p Subject tags are really helpful for analysis. Once you've grouped articles under a tag, you can do things like get an average of all pageviews or Twitter shares in that group. But we'll get to that later. The important thing to remember is that the more you tag your articles, the more meaningful comparisons you can make later on down the road.
 
-		p.help-us-out One of the things I've tasked Brian and Michael with for the upcoming weeks is to find ways we can automatically assign subject tags. They'll be reaching out to you to discuss what kinds of subject tags your newsroom would like and how we could automate that more.</p>
+		p.attention One of the things I've tasked Brian and Michael with for the upcoming weeks is to find ways we can automatically assign subject tags. They'll be reaching out to you to discuss what kinds of subject tags your newsroom would like and how we could automate that process more.
 
 		h5 Impact tags
 
@@ -67,11 +67,46 @@ block content
 			li <span class="li-name" style="background-color:#f05b1b;color:#fff;">Reddit search</span> &mdash; Useful to monitor whether your domain or an article's URL is being discussed on Reddit.
 			li <span class="li-name" style="background-color:#3b5998;color:#fff;">Facebook page search</span> &mdash; Monitor the text of posts by a given Facebook page.
 
+		p.attention Note: This is just a preliminary list. If you use other services, <a href="mailto:merlynne@newslynx.org">send me an email</a> and I'll crack the whip to get it implemented. We are already looking into services like mention.net where you could simply forward those email alerts to a @newslynx.org address but we'd like to know all the different services people are using in order to build a robust ingestion system.
+
 		p The process goes something like this:
 
 		p <!-- INSERT GFX - RECIPE -> ALERT -> EVENT -> ARTICLE -->
 
-		p Recipes create events when they find a match. If you approve an alert, it becomes an event with whatever default properties you specified when you made the recipe. Events are assigned to articles and then show up on that article's page.
+		p Recipes create alerts when they find a match. If you approve an alert, it becomes an event with the default properties you optionally specified when you made the recipe. Events are assigned to articles and then show up on that article's page. Here's an example:
+
+		p Let's say we're doing an investigative series on the dissapearance of the Lynx primary sources of food, the Snowshoe Hare. Let's make a recipe that will look for mentions of "Snowshoe Hare" by members of congress on Twitter because one of the potential outcomes of this series is more congressional attention.
+
+		p.attention Note: All searches are case-insensitive. Searches can have more options, however, such as case-sensitive and even fuzzy matching. <a href="mailto:merlynne@newslynx.org">Send me an email</a> if that's a feature you want and I'll have Brian and Michael add it in.
+
+		p
+			img(src="images/instructions/recipe-snowshoe-hare.png").bordered
+
+		p We've given this recipe a name, what to search for and we've already started filling out information for potential events that follow from this recipe. Each event has these five fields:
+
+		ul
+			li <strong>Assignee(s)</strong> &mdash; One or more article that this event is related to
+			li <strong>Title</strong> &mdash; A summary phrase for this event.
+			li <strong>What happened</strong> &mdash; A description of the events that unfolded that you consider to be impactful.
+			li <strong>Significance</strong> &mdash; Why do you care about these events? How do they tie into your goals and your expectations or what it enabled your newsrooms to do down the road.
+
+		p We filled out <em>some</em> of these fields now in order to help future us remember why we made this recipe in the first place. Setting default information is <em>completely</em> optional.
+
+		p After a few days, we see that it created an alert of a member of congress, in this case Senator Jones, tweeting about Snowshoe Hares.
+
+		p
+			img(src="images/instructions/alert-snowshoe-hare.png")
+
+		p Let's approve it and turn this alert into an event! Once we click the green check, we get this window, which should look familiar from the default properties options.
+
+		p
+			img(src="images/instructions/create-event-snowshoe-hare.png").bordered
+
+		p We're not bound to what we put in the defaults, though — they're just a guide. We've added some more specific language and we've selected the exact article Senator Jones discussed.
+
+		p.attention All of the fields are required when you approve an alert and turn it into an event.
+
+		p When we hit "Save", that event will now appear on that article's page from within NewsLynx.
 
 		h3 Articles
 
@@ -82,6 +117,9 @@ block content
 		p You add articles to the comparison view by using the filters in the left rail and then hitting the + button. Or, if you want to replace the current view with your selected articles, click the replace button.
 
 		p Each metric comes with with a built-in comparison number. On load, it shows you the average of all articles. Use the dropdown selections in the drawer to change whether you want to select the <span class="look-at-me">median</span> or a different subset of articles, such as the average of all articles in a given subject tag. It is here that he power of grouping by subject tag shows its force.
+
+		p.attention Do you want to go directly from reading an article on your website to its NewsLynx page? Check out our bookmarklet <a href="http://newslynx.github.io/LynxIt" target="_blank">LynxIt</a>! Drag it to your bookmarks bar and click it from an article on your site to jump directly to the NewsLynx page. The only caveat is the article has to already be in the system. If it's not, we're working on the ability to manually add articles! It should be ready to use around mid-October!
+
 
 
 
