@@ -93,7 +93,7 @@ block templates
 					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
 				.timestamp <%= prettyTimestamp(timestamp) %>
 				.title <%= name %>
-				.description <%= text %>
+				.description <%= autolink(text ) %>
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="no")
 					.approval-btn.octicon.octicon-x
@@ -120,6 +120,7 @@ block scripts
 	script(src="javascripts/thirdparty/pourover.js")
 	script(src="javascripts/thirdparty/pikaday.js")
 	script(src="javascripts/thirdparty/typeahead.bundle.min.js")
+	script(src="javascripts/thirdparty/Autolinker.min.js")
 
 	//- Put it all together
 	script(src="javascripts/main.bundled.js")
