@@ -57,6 +57,10 @@ block content
 
 		p Now that the settings are out of the way, we can start measuring some impact! The <span class="look-at-me">Approval River</span> is your one place to go for monitoring a number of automatic tasks that are out there, constantly crawling the web for evidence of your journalism and its effects.
 
+		p.attention Each section, such as Approval River or Articles, has subsections. You always navigate a subsection using the buttons at the top of the page such as these options for the Approval River which let you view existing recipes or create new ones:
+			| <br/>
+			| <img src="images/instructions/division-switcher.png"/ class="centered">
+
 		p In the <span class="look-at-me">Approval River</span>, you create <span class="look-at-me">recipes</span> according to a number of different search types. So far, we have the following recipe types:
 
 		ul
@@ -67,17 +71,20 @@ block content
 			li <span class="li-name" style="background-color:#f05b1b;color:#fff;">Reddit search</span> &mdash; Useful to monitor whether your domain or an article's URL is being discussed on Reddit.
 			li <span class="li-name" style="background-color:#3b5998;color:#fff;">Facebook page search</span> &mdash; Monitor the text of posts by a given Facebook page.
 
-		p.attention Note: This is just a preliminary list. If you use other services, <a href="mailto:merlynne@newslynx.org">send me an email</a> and I'll crack the whip to get it implemented. We are already looking into services like mention.net where you could simply forward those email alerts to a @newslynx.org address but we'd like to know all the different services people are using in order to build a robust ingestion system.
+		p.attention Note: This is just a preliminary list. If you use other services, <a href="https://groups.google.com/forum/#!forum/newslynx">let's make a list</a> and I'll crack the whip to get it implemented. We are already looking into services like mention.net where you could simply forward those email alerts to a @newslynx.org address but we'd like to know all the different services people are using in order to build a robust ingestion system.
 
 		p The process goes something like this:
 
-		p <!-- INSERT GFX - RECIPE -> ALERT -> EVENT -> ARTICLE -->
+		ul 
+			li <strong>Recipes</strong> generate <strong>alerts</strong>. 
+			li <strong>Alerts</strong>, when approved, become <strong>events</strong> attached to one or more articles.
+			li Each <strong>event</strong> has one or more <strong>impact tag</strong> which in turn gets associated with the assigned article.
 
 		p Recipes create alerts when they find a match. If you approve an alert, it becomes an event with the default properties you optionally specified when you made the recipe. Events are assigned to articles and then show up on that article's page. Here's an example:
 
 		p Let's say we're doing an investigative series on the dissapearance of the Lynx primary sources of food, the Snowshoe Hare. Let's make a recipe that will look for mentions of "Snowshoe Hare" by members of congress on Twitter because one of the potential outcomes of this series is more congressional attention.
 
-		p.attention Note: All searches are case-insensitive. Searches can have more options, however, such as case-sensitive and even fuzzy matching. <a href="mailto:merlynne@newslynx.org">Send me an email</a> if that's a feature you want and I'll have Brian and Michael add it in.
+		p.attention Note: All searches are case-insensitive. Searches can have more options, however, such as case-sensitive and even fuzzy matching. <a href="https://groups.google.com/forum/#!forum/newslynx">Chime in</a> if that's a feature you want and I'll have Brian and Michael add it in.
 
 		p
 			img(src="images/instructions/recipe-snowshoe-hare.png").bordered
@@ -114,13 +121,53 @@ block content
 
 		p The articles page has two main views: <span class="look-at-me">compare</span> and <span class="look-at-me">detail</span>. 
 
-		p You add articles to the comparison view by using the filters in the left rail and then hitting the + button. Or, if you want to replace the current view with your selected articles, click the replace button.
+		h4 Comparisons
 
-		p Each metric comes with with a built-in comparison number. On load, it shows you the average of all articles. Use the dropdown selections in the drawer to change whether you want to select the <span class="look-at-me">median</span> or a different subset of articles, such as the average of all articles in a given subject tag. It is here that he power of grouping by subject tag shows its force.
+		p One of the challenges in creating NewsLynx was figuring out how to allow for easy comparisons and, importantly, how can you quickly <em>find</em> the articles you want to compare. When you open the articles page, it will automatically load your top 20 highest performing articles in terms of pageviews. The column it loads these into we call "the drawer."
+
+		p.attention Is there a more important metric you would like to rank articles by on load? <a href="https://groups.google.com/forum/#!forum/newslynx">Let's have a discusion about it!</a>
+
+		p Let's say you want to compare another set of articles. You can use the filters and search options in the left rail to filter by date, headline text or any subject and impact tags you might have already filed them under.
+
+		p.attention We're soon adding the ability to search by author and even article topic, even if you haven't categorized the article at all! We're scanning the article's text and adding those key subject matter words to the available search text.
+
+		p Now that you've filterd down some articles you want to compare, you have two options: <span class="look-at-me">add</span> these new articles to the comparison view, or <span class="look-at-me">replace</span> the current comparison view with your new selection. Click on the appropriately labeled button on the drawer.
+
+		p
+			img(src="images/instructions/article-drawer-buttons.png")
+
+		p All of the columns in the comparison table are sortable (and animated!). You'll notice these little gray markers in each of the blue bars. These are the comparison figures. By default it loads the average article performance in that category but you can change it to the median using the options in the drawer (pictured above). As soon as we get everyone's account set up, we're going to roll out some smaller article subsets. For now, you can compare each figure against the average or median of all articles.
+
+		p The value of that comparison figure is shown next to the column header. You can hover over it for more info.
+
+		p
+			img(src="images/instructions/article-comparisons.png")
+
+		p When would you use the median over the average? Good question. Let's say you have one article that <em>vastly</em> outperformed all others and pulled up the average. If you want to discount the weight of that article, you can use the median. Similarly, these bars are only filled with blue up to the 97.5th percentile. Just like the median, this means that a single huge article won't make all of the bars for your other article's tiny. 
+
+		h4 Details
+
+		p Comparison are all well and good but we still gotta get down to each article, especially if we want to see our events we made!
+
+		p Each detail page shows a time series of the Twitter mentions and Facebook shares alongside your promotion for that article such as when it appeared on the home page or when staff members or the main Twitter account pushed it out. That way you can get more context to the numbers you're seeing. 
+
+		p Events are displayed below the graph and you can filter them just like you filtered articles in the comparison view. You can also create events directly on this page using the "Create event" button.
+
+		p There's more to the article page than just the graph and your events, too. We take the information in your Google Analytics, break it down and apply the same comparison figures in the comparison view. We also pull in every tweet that mentions your article and sort them by the follower count of the tweeter
+
+		p
+			img(src="images/instructions/article-detail.png" style="width: 95%").bordered
 
 		p.attention Do you want to go directly from reading an article on your website to its NewsLynx page? Check out our bookmarklet <a href="http://newslynx.github.io/LynxIt" target="_blank">LynxIt</a>! Drag it to your bookmarks bar and click it from an article on your site to jump directly to the NewsLynx page. The only caveat is the article has to already be in the system. If it's not, we're working on the ability to manually add articles! It should be ready to use around mid-October!
 
+		p As you can see, we put a lot of information into NewsLynx and we'd love to hear your feedback and how we can make it most useful to you. You can email us directly at <a href="merlynne@newslynx.org">merlynne@newslynx.org</a>. Or, we'd love it if you became active on our <a href="https://groups.google.com/forum/#!forum/newslynx">Google Group</a> where you can share tips with other newsrooms.
 
+		p The project will go through at least December 31st and after that we'll see where we can take it! We really appreciate your participation in this trial and if you have any questions, please don't hesitate to contact us!
+
+		.signed
+			p &dash; <em>The NewsLynx Team, (Merlynne Jones, Brian Abelson &amp; Michael Keller)</em>
+
+			p.details <a href="http://newslynx.org" target="_blank">NewsLynx</a> is a research project of the <a href="" target="_blank">Tow Center for Digital Journalism</a> at Columbia University. Read our <a href="http://github.com/newslynx/data-retention" target="_blank">data retention policy</a>.
 
 
 

@@ -1015,8 +1015,22 @@ body[data-section="home"] #content {
   font-weight: bold;
   color: #00b602;
 }
+#home-page-instructions img {
+  max-width: 750px;
+}
 #home-page-instructions img.bordered {
   border: 1px solid #ccc;
+}
+#home-page-instructions img.centered {
+  margin: 5px auto 0 auto;
+  display: inherit;
+}
+#home-page-instructions .details {
+  font-size: 1.2em;
+}
+#home-page-instructions .signed {
+  margin-top: 35px;
+  margin-bottom: 25px;
 }
 /* end home page */
 /*  A P P R O V A L  R I V E R   */
