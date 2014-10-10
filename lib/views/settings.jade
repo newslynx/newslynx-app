@@ -160,7 +160,9 @@ block templates
 					.setting-title Google analytics
 					.auth-container
 						<% if (google_analytics_auth) { %>
-						p.auth-result.success Authenticated.
+						p.auth-result.success Authenticated. (
+							a(href="https://security.google.com/settings/security/permissions" target="_blank") Revoke access
+							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
 						p
@@ -171,7 +173,9 @@ block templates
 					.setting-title Twitter
 					.auth-container
 						<% if (twitter_auth) { %>
-						p.auth-result.success Authenticated.
+						p.auth-result.success Authenticated. (
+							a(href="https://twitter.com/settings/applications" target="_blank") Revoke access
+							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
 						p
