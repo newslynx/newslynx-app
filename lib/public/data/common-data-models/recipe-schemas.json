@@ -11,10 +11,10 @@
 			"name": {
 				"type": "text"
 			},
-			"url": {
+			"rss_url": {
 				"type": "text",
 				"help": {
-					"hint": "Help text tk"
+					"hint": "https://www.google.com/alerts/feeds/05981244251884627857/3784443082785217725"
 				}
 			}
 		}
@@ -68,6 +68,9 @@
 				"help": {
 					"hint": "members-of-congress"
 				}
+			},
+			"search_query": {
+				"type": "text"
 			}
 		}
 	},{
@@ -87,6 +90,9 @@
 				"help": {
 					"hint": "NYTimes"
 				}
+			},
+			"search_query": {
+				"type": "text"
 			}
 		}
 	},{
@@ -127,6 +133,9 @@
 					"link": "http://github.com/newslynx/wiki/ TKTK",
 					"hint": "site:propalpatine.org AND \"rebel alliance\""
 				}
+			},
+			"search_query": {
+				"type": "text"
 			}
 		}
 	}
