@@ -64,7 +64,7 @@ block content
 		p In the <span class="look-at-me">Approval River</span>, you create <span class="look-at-me">recipes</span> according to a number of different search types. So far, we have the following recipe types:
 
 		ul
-			li <span class="li-name" style="background-color:#4686c6;color:#fff;">Google Alerts</span> &mdash; Enter a pre-existing Google Alert to have its matches show up in the approval river.
+			li <span class="li-name" style="background-color:#4686c6;color:#fff;">Google Alerts</span> &mdash; Enter the RSS feed URL of a pre-existing Google Alert to have its matches show up in the approval river. <a href="#how-make-a-google-alert-recipe">Where do I get the RSS URL?</a>
 			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter search</span> &mdash; A basic search of the Twitter search API.
 			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter list search</span> &mdash; Monitor discussions among a list of Twitter users, useful if you're monitoring a group of people, like members of congress.
 			li <span class="li-name" style="background-color:#70b7e3;color:#fff;">Twitter user search</span> &mdash; Follow one person very closely.
@@ -72,7 +72,9 @@ block content
 			li <span class="li-name" style="background-color:#3b5998;color:#fff;">Facebook page search</span> &mdash; Monitor the text of posts by a given Facebook page.
 
 		p.attention Note: This is just a preliminary list. If you use other services, <a href="https://groups.google.com/forum/#!forum/newslynx">let's make a list</a> and I'll crack the whip to get it implemented. We are already looking into services like mention.net where you could simply forward those email alerts to a @newslynx.org address but we'd like to know all the different services people are using in order to build a robust ingestion system.
-
+		
+		p.attention#how-make-a-google-alert-recipe <strong>How do I find the RSS URL of a Google Alert?</strong> &mdash; Google Alerts can be delivered either to an email address or published as an RSS Feed. To see or make alerts, go to your dashboard at <a href="https://www.google.com/alerts" target="_blank">https://www.google.com/alerts</a>. If you have an existing alert, click its pencil icon to bring up its options. If you're making a new alert, type your search term and then click "Show options" to view the menu. Under "Deliver to", select "RSS Feed." If you click "Update alert" to close out of the edit interface, you should now see an RSS icon next to the pencil. Click that to open the RSS feed and copy its URL. Paste that URL into the NewsLynx recipe creator form.
+		
 		p The process goes something like this:
 
 		ul 
@@ -84,7 +86,7 @@ block content
 
 		p Let's say we're doing an investigative series on the dissapearance of the Lynx primary sources of food, the Snowshoe Hare. Let's make a recipe that will look for mentions of "Snowshoe Hare" by members of congress on Twitter because one of the potential outcomes of this series is more congressional attention.
 
-		p.attention Note: All searches are case-insensitive. Searches can have more options, however, such as case-sensitive and even fuzzy matching. <a href="https://groups.google.com/forum/#!forum/newslynx">Chime in</a> if that's a feature you want and I'll have Brian and Michael add it in.
+		p.attention Note: All searches are case-insensitive. Searches can have more options, however, such as case-sensitive and even fuzzy matching. <a href="https://groups.google.com/forum/#!forum/newslynx">Chime in</a> if that's a feature you want and I'll have Michael add it in.
 
 		p
 			img(src="images/instructions/recipe-snowshoe-hare.png").bordered
