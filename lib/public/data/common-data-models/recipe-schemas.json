@@ -9,7 +9,10 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "\"ProPalpatine\" mentions on news sites"
+				}
 			},
 			"url": {
 				"type": "text",
@@ -29,12 +32,16 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "\"ProPalpatine\" mentions on twitter"
+				}
 			},
 			"q": {
 				"type": "text",
 				"help": {
-					"link": "https://dev.twitter.com/docs/using-search"
+					"link": "https://dev.twitter.com/docs/using-search",
+					"hint": "ProPalpatine"
 				}
 			},
 			"result_type": {
@@ -56,7 +63,10 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "Empire funding discussion"
+				}
 			},
 			"owner_screen_name": {
 				"type": "text",
@@ -71,7 +81,10 @@
 				}
 			},
 			"search_query": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "\"Death Star earmarks\""
+				}
 			}
 		}
 	},{
@@ -84,16 +97,22 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "Competitor libel"
+				}
 			},
 			"screen_name": {
 				"type": "text",
 				"help": {
-					"hint": "NYTimes"
+					"hint": "TataouineTimes"
 				}
 			},
 			"search_query": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "\"ProPalpatine is \""
+				}
 			}
 		}
 	},{
@@ -106,7 +125,10 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "Rebel chatter"
+				}
 			},
 			"search_query": {
 				"type": "text",
@@ -126,17 +148,22 @@
 				"selected": true
 			},
 			"name": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "Alderaan sympathizers"
+				}
 			},
 			"page_id": {
 				"type": "text",
 				"help": {
-					"link": "http://github.com/newslynx/wiki/ TKTK",
-					"hint": "site:propalpatine.org AND \"rebel alliance\""
+					"hint": "1513527"
 				}
 			},
 			"search_query": {
-				"type": "text"
+				"type": "text",
+				"help": {
+					"hint": "#AlderaanLives"
+				}
 			}
 		}
 	}

@@ -53,11 +53,9 @@ block templates
 				.modal-inner
 					.modal-title Recipe settings
 					form
-						//-<%= bakeRecipeUpdateForm(id, source, settings, name, 'schema') %>
 						.show-hide-default-event This recipe triggers events with some default properties. 
 							|<span class="toggle-default-event" data-status="<%= set_default_event %>"><%= formatDefaultEventEnabled(set_default_event) %></span>
 						|<div class="default-event-container" <% (set_default_event) ? print(' style="display:block;"') : print('') %>>
-						//-<%= bakeRecipeUpdateForm(id, source, default_event, name, 'default_event') %>
 						|</div>
 						.buttons-container
 							button.cancel.modal-close Cancel
@@ -75,11 +73,9 @@ block templates
 		.recipe-form-container
 			|<div class="recipe-title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
 			form
-				//- <%= bakeForm(schema) %>
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
 				.default-event-container
-					//- <%= bakeForm(default_event) %>
 				.buttons-container
 					input.save(type="submit", value="Create")
 					span.submit-msg
