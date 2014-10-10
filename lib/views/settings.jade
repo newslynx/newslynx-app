@@ -58,7 +58,7 @@ block templates
 							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
 							|<input class="input-item" type="checkbox" <% ((rss_feeds[i].is_full_text === true) ? print('checked') : '') %> data-key="is_full_text"/>
 						<% } %>
-					button.add Add
+					button.add +
 			#social.settings-group
 				.settings-title Promotion
 				.setting-group
@@ -71,7 +71,7 @@ block templates
 							.multi-child.destroy &times;
 							|<input class="input-item multi-child" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" />
 						<% } %>
-					button.add Add
+					button.add +
 				#staff-lists.setting-group
 					.setting-description 
 						p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
@@ -83,7 +83,7 @@ block templates
 							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
 							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
 						<% } %>
-					button.add Add
+					button.add +
 				#twitter-accounts.setting-group
 					.setting-description 
 						p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
@@ -96,7 +96,7 @@ block templates
 							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_users[i].screen_name %>" class="multi-child" data-key="screen_name" />
 							|<input class="input-item" type="radio" name="twitter" <% ((twitter_users[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
-					button.add Add				
+					button.add +				
 				.setting-group
 					.setting-flag Is main account?
 					#facebook-accounts.setting-title Facebook accounts
@@ -107,7 +107,7 @@ block templates
 							|<input class="input-item" type="text" placeholder="Enter page name, e.g. ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
 							|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
-					button.add Add
+					button.add +
 			#tags.settings-group
 				.settings-title Tags
 				#article-tags.setting-group
@@ -119,7 +119,7 @@ block templates
 							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
 							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
 						<% } %>
-					button.add Add				
+					button.add +				
 				#impact-tags.setting-group(data-group="impact-tags")
 					.setting-flag Category
 					.setting-flag Level
@@ -144,7 +144,7 @@ block templates
 							|</select>
 							|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 						<% } %>
-					button.add Add	
+					button.add +	
 			.settings-group
 				.save-container
 					.setting-description
