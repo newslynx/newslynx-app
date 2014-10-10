@@ -80,7 +80,7 @@
 					"hint": "members-of-congress"
 				}
 			},
-			"search_query": {
+			"filter": {
 				"type": "text",
 				"help": {
 					"hint": "\"Death Star earmarks\""
@@ -108,7 +108,7 @@
 					"hint": "TataouineTimes"
 				}
 			},
-			"search_query": {
+			"filter": {
 				"type": "text",
 				"help": {
 					"hint": "\"ProPalpatine is \""
@@ -159,7 +159,7 @@
 					"hint": "1513527"
 				}
 			},
-			"search_query": {
+			"filter": {
 				"type": "text",
 				"help": {
 					"hint": "#AlderaanLives"
