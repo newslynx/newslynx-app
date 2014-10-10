@@ -41,7 +41,9 @@ block templates
 			.drawer-list-inner
 				.count <%= pending %> pending
 				.title <%= name %>
+				<% if (displaySearchParams(source, settings)) { %>
 				.description Query: `<%= displaySearchParams(source, settings) %>`
+				<% } %>
 				.toolbar
 					.btn.settings-switch
 						span.octicon.octicon-gear(style="margin-right: 3px;")

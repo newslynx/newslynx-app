@@ -105,3 +105,6 @@
 .ST-tooltipped:hover text {
   display: block;
 }
+.ST-event-circle.ST-hyperlinked:hover {
+  cursor: pointer;
+}
