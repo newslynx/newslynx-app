@@ -279,6 +279,7 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   display: inline-block;
   vertical-align: text-bottom;
   top: -8px;
+  width: 106px;
 }
 #left-rail #header-container .settings {
   display: inline-block;
