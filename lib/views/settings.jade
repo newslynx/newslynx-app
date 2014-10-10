@@ -60,7 +60,7 @@ block templates
 						<% } %>
 					button.add Add
 			#social.settings-group
-				.settings-title Social
+				.settings-title Promotion
 				.setting-group
 					.setting-description 
 						p If you use a custom URL shortener, what do your links look like on twitter. Please omit a trailing slash.
@@ -104,7 +104,7 @@ block templates
 						<%  for (var i = 0; i < facebook_pages.length; i++) { %>
 						li.input.multi
 							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
+							|<input class="input-item" type="text" placeholder="Enter page name, e.g. ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
 							|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 						<% } %>
 					button.add Add
