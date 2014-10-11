@@ -2082,6 +2082,7 @@ body[data-section="settings"] #content {
 }
 button.add {
   display: block;
+  margin-top: 5px;
   margin-left: 120px;
 }
 .color-picker {
