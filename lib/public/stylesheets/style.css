@@ -1426,7 +1426,6 @@ input {
   font-size: 1.2em;
   display: inline-block;
 }
-.article-detail-container .author,
 .article-detail-container .tag {
   margin-right: 5px;
 }
