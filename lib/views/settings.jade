@@ -161,7 +161,7 @@ block templates
 					.auth-container
 						<% if (google_analytics_auth) { %>
 						p.auth-result.success Authenticated. (
-							a(href="https://security.google.com/settings/security/permissions" target="_blank") Revoke access
+							a(href="/auth/google/revoke" target="_blank") Revoke access
 							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
