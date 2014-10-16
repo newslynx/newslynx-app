@@ -1224,7 +1224,7 @@ body[data-section="home"] #content {
   margin-bottom: 3px;
 }
 .approval-child .author {
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 .approval-child .description,
 .approval-child .author {
@@ -1242,6 +1242,13 @@ body[data-section="home"] #content {
 }
 .approval-child .toolbar .timestamp {
   font-size: 1.2em;
+}
+.approval-child .articles-mentioned {
+  font-size: 1.2em;
+  margin-top: 8px;
+}
+.approval-child .articles-mentioned li {
+  margin-left: 8px;
 }
 .approval-child .origin-recipe {
   display: inline-block;
