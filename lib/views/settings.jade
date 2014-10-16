@@ -174,7 +174,7 @@ block templates
 					.auth-container
 						<% if (twitter_auth) { %>
 						p.auth-result.success Authenticated. (
-							a(href="https://twitter.com/settings/applications" target="_blank") Revoke access
+							a(href="/auth/twitter/revoke" target="_blank") Revoke access
 							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
