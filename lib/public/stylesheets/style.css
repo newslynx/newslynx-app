@@ -1248,7 +1248,9 @@ body[data-section="home"] #content {
   margin-top: 8px;
 }
 .approval-child .articles-mentioned li {
-  margin-left: 8px;
+  margin-left: 11px;
+  list-style: disc;
+  color: #a8a8a8;
 }
 .approval-child .alert-section-title {
   text-decoration: underline;
@@ -1259,7 +1261,7 @@ body[data-section="home"] #content {
   vertical-align: top;
   font-size: 1.2em;
   margin-left: 3px;
-  color: #bbbaba;
+  color: #a8a8a8;
 }
 .approval-child .link {
   position: absolute;
