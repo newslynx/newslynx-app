@@ -1308,7 +1308,7 @@ input {
   padding: 25px 50px;
 }
 #content[data-mode="detail"] .article-detail-wrapper {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 .article-detail-container .toolbar {
   margin: 20px 0 40px 0;
