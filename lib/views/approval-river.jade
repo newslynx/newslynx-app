@@ -39,7 +39,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= pending %> pending
+				.count <%= addCommas(pending) %> pending
 				.title <%= name %>
 				<% if (displaySearchParams(source, settings)) { %>
 				.description Query: `<%= displaySearchParams(source, settings) %>`
@@ -91,7 +91,17 @@ block templates
 					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
 					.timestamp <%= prettyTimestamp(timestamp) %>
 				.title <%= name %>
-				.description <%= autolink(text ) %>
+				<% if (author) { %>
+				<% var author_prefix = "", author_prefix = ""; %>
+				<% if (serviceFromSource(getRecipeFromId(recipe_id).source) == 'twitter') { %>
+				<% author_prefix = "@"; %>
+				<% } %>
+				<% if (serviceFromSource(getRecipeFromId(recipe_id).source) == 'twitter') { %>
+				<% author_suffix = ' &mdash; ' + addCommas(raw.followers_count) + ' followers'; %>
+				<% } %>
+				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+author)) +'</strong>'+ author_suffix+'</div>') %>
+				<% } %>
+				.description <%= autolink(text) %>
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="no")
 					.approval-btn.octicon.octicon-x

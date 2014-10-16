@@ -1223,12 +1223,16 @@ body[data-section="home"] #content {
   font-size: 1.7em;
   margin-bottom: 3px;
 }
-.approval-child .description {
+.approval-child .author {
+  margin-bottom: 3px;
+}
+.approval-child .description,
+.approval-child .author {
   font-size: 1.2em;
 }
 .approval-child .toolbar {
   position: relative;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 .approval-child .toolbar .service-icon {
   position: relative !important;
