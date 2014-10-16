@@ -40,12 +40,12 @@ block templates
 						li.input
 							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 							select(name='timezone').input-item
-								|<option value='America/New_York'  <% ((timezone == '-America/New_York') ? print('selected') : '')  %> > Eastern Time</option>
-								|<option value='America/Chicago'  <% ((timezone == 'America/Chicago') ? print('selected') : '')  %> > Central Time</option>
-								|<option value='America/Denver'  <% ((timezone == 'America/Denver') ? print('selected') : '')  %> > Mountain Time</option>
-								|<option value='America/Los_Angeles'  <% ((timezone == 'America/Los_Angeles') ? print('selected') : '')  %> > Pacific Time</option>
-								|<option value='America/Juneau'  <% ((timezone == 'America/Juneau') ? print('selected') : '')  %> > Alaska</option>
-								|<option value='Pacific/Honolulu'  <% ((timezone == 'Pacific/Honolulu') ? print('selected') : '') %> > Hawaii</option>
+								|<option value='US/Eastern'  <% ((timezone == 'US/Eastern') ? print('selected') : '')  %> > Eastern Time</option>
+								|<option value='US/Central'  <% ((timezone == 'US/Central') ? print('selected') : '')  %> > Central Time</option>
+								|<option value='US/Mountain'  <% ((timezone == 'US/Mountain') ? print('selected') : '')  %> > Mountain Time</option>
+								|<option value='US/Pacific'  <% ((timezone == 'US/Pacific') ? print('selected') : '')  %> > Pacific Time</option>
+								|<option value='US/Alaska'  <% ((timezone == 'US/Alaska') ? print('selected') : '')  %> > Alaska</option>
+								|<option value='US/Hawaii'  <% ((timezone == 'US/Hawaii') ? print('selected') : '') %> > Hawaii</option>
 				.setting-group
 					.setting-description 
 						p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.

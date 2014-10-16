@@ -75,7 +75,7 @@ block templates
 					<% if (!authors.length) { %>
 					li.author.empty --
 					<% } else { %>
-					<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author+'</div>'}).join(',') %>
+					<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.trim()+'</div>'}).join(', ') %>
 					<% print(authors_markup) %>
 					<% } %>
 			.article-info-container(data-which="subject").modal-parent
@@ -240,6 +240,7 @@ block scripts
 	script(src="javascripts/thirdparty/jquery.shiftclick.js")
 	script(src="//platform.twitter.com/widgets.js" charset="utf-8")
 	script(src="javascripts/thirdparty/Autolinker.min.js")
+	script(src="javascripts/thirdparty/moment.js")
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 
 	//- Put it all together
