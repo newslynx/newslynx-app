@@ -1250,6 +1250,10 @@ body[data-section="home"] #content {
 .approval-child .articles-mentioned li {
   margin-left: 8px;
 }
+.approval-child .alert-section-title {
+  text-decoration: underline;
+  margin-bottom: 3px;
+}
 .approval-child .origin-recipe {
   display: inline-block;
   vertical-align: top;
