@@ -109,7 +109,7 @@ block templates
 				<% list_markup += '<div class="alert-section-title">Article'+s+' mentioned:</div>'; %>
 				<% article_ids.forEach(function(articleId){ %>
 				<% list_markup += '<li>' %>
-				<% list_markup += '<a href="https://towcenter.newslynx.org/articles/#detail/'+articleId+'" target="_blank">'+getHeadlineFromArticleId(articleId)+'</a>'; %>
+				<% list_markup += '<a href="https://towcenter.newslynx.org/articles#detail/'+articleId+'" target="_blank">'+getHeadlineFromArticleId(articleId)+'</a>'; %>
 				<% list_markup += '</li>' %>
 				<% }); %>
 				<% list_markup += '</ul>' %>
