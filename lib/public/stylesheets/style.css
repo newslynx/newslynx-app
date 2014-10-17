@@ -1847,7 +1847,7 @@ input[name="assignees"] {
   position: fixed;
 }
 .form-row {
-  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 .form-row input {
   margin-left: 0;
