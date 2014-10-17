@@ -155,13 +155,13 @@ block templates
 				.settings-title Account authentication
 				.setting-description 
 					p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
-						a(href="/about") Read our data retention policy for more information.
+					p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
 				.setting-group
 					.setting-title Google analytics
 					.auth-container
 						<% if (google_analytics_auth) { %>
 						p.auth-result.success Authenticated. (
-							a(href="/auth/google/revoke" target="_blank") Revoke access
+							a(href="/auth/google/revoke") Revoke access
 							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
@@ -174,7 +174,7 @@ block templates
 					.auth-container
 						<% if (twitter_auth) { %>
 						p.auth-result.success Authenticated. (
-							a(href="/auth/twitter/revoke" target="_blank") Revoke access
+							a(href="/auth/twitter/revoke") Revoke access
 							| )
 						<% } else { %>
 						p.auth-result.fail Not authenticated.
