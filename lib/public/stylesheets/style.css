@@ -857,6 +857,9 @@ body[data-section="login"] #content {
 .event-container .event-item-title {
   font-size: 1.2em;
 }
+.event-container .event-item-text {
+  overflow: hidden;
+}
 .event-container .edit-event-container {
   position: absolute;
   top: 0;
@@ -1833,7 +1836,7 @@ input[name="assignees"] {
   padding-left: 5px;
 }
 .modal-inner:hover {
-  cursor: default !important;
+  cursor: move !important;
 }
 .modal-outer.active {
   display: block;
