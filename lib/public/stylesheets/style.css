@@ -1851,9 +1851,14 @@ input[name="assignees"] {
 }
 .form-row.article-assignees {
   margin-left: 40%;
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-.article-assignee:last-child {
-  margin-bottom: 8px;
+.form-row-input-container {
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .article-assignee {
   position: relative;

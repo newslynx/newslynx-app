@@ -677,6 +677,8 @@ filter_opts_width = 175px
 		margin-top 2px
 	.event-item-text,.event-item-title
 		font-size 1.2em
+	.event-item-text
+		overflow hidden
 	.edit-event-container
 		position absolute
 		top 0
@@ -1488,8 +1490,15 @@ input[name="assignees"]
 		margin-left 0
 .form-row.article-assignees
 	margin-left 40%
-.article-assignee:last-child
-	margin-bottom 8px
+	max-height 75px
+	overflow-y scroll
+	overflow-x hidden
+// .article-assignee:last-child
+// 	margin-bottom 8px
+.form-row-input-container
+	max-height 75px
+	overflow-y scroll
+	overflow-x hidden
 .article-assignee
 	position relative
 	input
