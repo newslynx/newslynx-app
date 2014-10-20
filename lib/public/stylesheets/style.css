@@ -1858,7 +1858,7 @@ input[name="assignees"] {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.form-row-input-container {
+.form-row-input-container[data-which="impact_tags"] {
   max-height: 75px;
   overflow-y: scroll;
   overflow-x: hidden;
