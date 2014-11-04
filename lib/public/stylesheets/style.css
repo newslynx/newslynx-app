@@ -310,6 +310,10 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   overflow-x: hidden;
   height: calc(100vh - 150px);
 }
+#add-article > button {
+  width: 100%;
+  margin-bottom: 10px;
+}
 /* L E F T  R A I L */
 .main-sections {
   margin-top: 10px;
@@ -1611,7 +1615,7 @@ input {
   right: -50px;
   left: 535px;
   padding-top: 21px;
-  z-index: 99999;
+  z-index: 1;
   min-width: 630px;
   border-bottom: 1px solid #e3e3e3;
 }
@@ -1810,6 +1814,7 @@ input {
   font-weight: bold;
   border-bottom: 1px solid #777676;
   margin-bottom: 5px;
+  color: #000;
 }
 .modal-inner .description {
   margin-bottom: 15px;
@@ -1858,8 +1863,9 @@ input[name="assignees"] {
   overflow-y: scroll;
   overflow-x: hidden;
 }
-.form-row-input-container[data-which="impact_tags"] {
-  max-height: 75px;
+.form-row-input-container[data-which="impact_tags"],
+.form-row-input-container[data-which="subject_tags"] {
+  max-height: 95px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -1887,6 +1893,7 @@ input[name="assignees"] {
 .buttons-container button,
 .buttons-container input[type="submit"] {
   margin: 0 5px 0 -2px;
+  width: auto;
 }
 .recipe-form-container .recipe-title {
   position: relative;
@@ -1962,6 +1969,7 @@ input.destroy {
   width: 40%;
   margin-bottom: 3px;
   vertical-align: top;
+  color: #000;
 }
 .modal-outer form .form-row-label-container.has-help-link,
 .recipe-form-container form .form-row-label-container.has-help-link {
@@ -1979,6 +1987,10 @@ input.destroy {
 .modal-outer form .form-row-input-container .title,
 .recipe-form-container form .form-row-input-container .title {
   font-size: 11px;
+}
+.modal-outer form .form-row-input-container input[type="checkbox"],
+.recipe-form-container form .form-row-input-container input[type="checkbox"] {
+  width: auto;
 }
 .modal-outer form .help-row,
 .recipe-form-container form .help-row {

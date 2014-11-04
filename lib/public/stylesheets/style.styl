@@ -277,6 +277,9 @@ section_nav_margin_top = 10px
 		overflow-y scroll
 		overflow-x hidden
 		height 'calc(100vh - %s)' % (header_height + section_li_height*2 + section_nav_margin_top)
+#add-article > button
+	width 100%
+	margin-bottom 10px
 
 
 /* L E F T  R A I L */
@@ -1289,7 +1292,7 @@ compare_grid_padding = 25px
 		right -1*compare_grid_padding*2 // This is a little hack to keep the row the same size as the header. Essentially removing the left and right padding on the header so they both have the same total width
 		left drawer_width + leftrail_width
 		padding-top 21px
-		z-index 99999
+		z-index 1
 		min-width article_min_width - drawer_width - leftrail_width + compare_grid_padding*2
 		border-bottom 1px solid #e3e3e3
 	.rows
@@ -1456,6 +1459,7 @@ compare_grid_padding = 25px
 		font-weight bold
 		border-bottom 1px solid border_gray
 		margin-bottom 5px
+		color #000
 	.description
 		margin-bottom 15px
 		font-size 1.3em
@@ -1495,8 +1499,9 @@ input[name="assignees"]
 	overflow-x hidden
 // .article-assignee:last-child
 // 	margin-bottom 8px
-.form-row-input-container[data-which="impact_tags"]
-	max-height 75px
+.form-row-input-container[data-which="impact_tags"],
+.form-row-input-container[data-which="subject_tags"]
+	max-height 95px
 	overflow-y scroll
 	overflow-x hidden
 .article-assignee
@@ -1516,6 +1521,7 @@ input[name="assignees"]
 	padding-top 10px
 	button,input[type="submit"]
 		margin 0 5px 0 -2px
+		width auto
 .recipe-form-container
 	.recipe-title
 		position relative
@@ -1580,6 +1586,7 @@ input.destroy
 			width 40%
 			margin-bottom 3px
 			vertical-align top
+			color #000
 		// TODO, remove this class once we set up margins for help text items
 		.form-row-label-container.has-help-link
 			margin-top 15px
@@ -1590,6 +1597,8 @@ input.destroy
 			display inline-block
 			.title
 				font-size 11px
+			input[type="checkbox"]
+				width auto
 		.help-row
 			text-align right
 			margin-bottom 2px

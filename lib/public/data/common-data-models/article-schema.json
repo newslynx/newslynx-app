@@ -1,0 +1,21 @@
+{
+	"timestamp": {
+		"type": "timestamp"
+	},
+	"link": {
+		"type": "text"
+	},
+	"title": {
+		"type": "text"
+	},
+	"authors": {
+		"type": "text",
+		"help": {
+			"hint": "Separate names by commas"
+		}
+	},
+	"subject_tags": {
+		"type": "checkbox",
+		"options": [ ]
+	}
+}
