@@ -1920,10 +1920,13 @@ input[name="assignees"] {
   width: 260px;
 }
 .submit-msg a {
-  padding: 0;
-  font-size: 13px;
-  font-weight: normal;
-  color: #0092ce;
+  padding: 0 !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+  color: #0092ce !important;
+}
+.submit-msg a:hover {
+  background-color: #fff !important;
 }
 .form-checkbox-group {
   display: block;
