@@ -310,6 +310,9 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   overflow-x: hidden;
   height: calc(100vh - 150px);
 }
+#add-article {
+  display: none;
+}
 #add-article > button {
   width: 100%;
   margin-bottom: 10px;
