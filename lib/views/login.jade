@@ -8,7 +8,7 @@ block drawer
 			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
 
 block content
-	if apikey
+	if info.apikey
 		p You have successfully logged in!
 	else
 		form(action='/login', method='POST')#login
@@ -20,6 +20,6 @@ block content
 				input(type='password', name='password')
 			div
 				input(type='submit', value='Log In')
-			if msg
+			if info.msg
 				div.msg
-					=msg
+					=info.msg

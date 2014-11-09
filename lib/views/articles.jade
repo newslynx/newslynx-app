@@ -190,7 +190,7 @@ block templates
 						.name Views
 						span.comparison-figure.tooltipped(aria-label="") 
 					.header-el.cell.bullets(data-metric="avg_time_on_page")
-						.name Time
+						.name Time on page
 						span.comparison-figure.tooltipped(aria-label="") 
 					.header-el.cell.multi(data-metric="per_external")
 						.name Extern.
@@ -214,17 +214,7 @@ block css
 
 block bootstrap-data
 	script(id="page-data").
-		var pageData = {};
-		pageData.impact_tag_categories 	=!{JSON.stringify(impact_tag_categories)};
-		pageData.impact_tag_levels		 	=!{JSON.stringify(impact_tag_levels)};
-		pageData.subject_tags 					=!{JSON.stringify(subject_tags)};
-		pageData.impact_tags 						=!{JSON.stringify(impact_tags)};
-		pageData.articleSummaries 			=!{JSON.stringify(articleSummaries)};
-		pageData.eventCreatorSchema 		=!{JSON.stringify(eventCreatorSchema)};
-		pageData.articleComparisons			=!{JSON.stringify(articleComparisons)};
-		pageData.attributeColorLookup 	=!{JSON.stringify(attributeColorLookup)};
-		pageData.timezone 							=!{JSON.stringify(timezone)};
-		pageData.addArticleSchema 			=!{JSON.stringify(addArticleSchema)};
+		var pageData 	=!{JSON.stringify(info)};
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
