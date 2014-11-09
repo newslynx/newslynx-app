@@ -1869,6 +1869,13 @@ input[name="assignees"] {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.form-row-input-container .placeholder {
+  font-size: 1.2em !important;
+  color: #000;
+}
+.form-row-input-container .placeholder a {
+  color: #0092ce;
+}
 .article-assignee {
   position: relative;
 }
