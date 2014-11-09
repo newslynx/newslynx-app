@@ -40,6 +40,8 @@ block templates
 						li.input
 							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
 							select(name='timezone').input-item
+								|<option value='Europe/Paris'  <% ((timezone == 'Europe/Paris') ? print('selected') : '')  %> > Western Europe</option>
+								|<option value='Europe/London'  <% ((timezone == 'Europe/London') ? print('selected') : '')  %> > GMT</option>
 								|<option value='US/Eastern'  <% ((timezone == 'US/Eastern') ? print('selected') : '')  %> > Eastern Time</option>
 								|<option value='US/Central'  <% ((timezone == 'US/Central') ? print('selected') : '')  %> > Central Time</option>
 								|<option value='US/Mountain'  <% ((timezone == 'US/Mountain') ? print('selected') : '')  %> > Mountain Time</option>

@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
+    "start": "forever ./bin/www",
+    "debug": "nodemon ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
   },
   "dependencies": {
     "async": "~0.9.0",

@@ -1,33 +1,35 @@
-newslynx-app
+NewsLynx App
 ============
 
-Code and Issue Tracking for Newslynx App
+Code for Newslynx App
 
-## Developing
+#### Pro
 
-#### First time
+If not already installed:
 
-If not already installed
-
-`npm install nodemon -g`
+`npm install forever -g`
 
 ````bash
 npm install
 npm start
 ````
 
-#### Normal
+#### Debug mode
+
+If not already installed:
+
+`npm install nodemon -g`
 
 ````
-npm start
+npm run debug
 ````
 
-<http://0.0.0.0:3000>
+Then visit: <http://0.0.0.0:3000>
 
 #### Some useful things
 
 Find all in project excluding uglified js
 
 ````
-/Users/mike/wrk/projects/newslynx/newslynx-app/lib,-*.bundled.js,-*.bundled.js.map
+path/to/newslynx-app/lib,-*.bundled.js,-*.bundled.js.map
 ````

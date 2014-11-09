@@ -4,32 +4,14 @@ var fs = require('fs');
 var http = require('http');
 var https = require('https');
 var debug = require('tracer').console();
-// app.set('ssl_port', process.env.NEWSLYNX_SSL_PORT || 443);
 app.set('http_port', process.env.NEWSLYNX_HTTP_PORT || 3000);
 
-function readFileAsUtf8(path, cb){
-        fs.readFile(path, 'utf-8', cb);
-}
-
 function launchServers(options){
-        // Launch a secure server
-        var ssl_port = app.get('ssl_port'),
-                        http_port = app.get('http_port');
+	// Launch a secure server
+	var http_port = app.get('http_port');
+	var http_server = http.createServer(app).listen(http_port );
 
-        // var https_server = https.createServer(options, app).listen( ssl_port );
-        // console.log('HTTPS listening on port ', ssl_port, '...');
-
-        var http_server = http.createServer(app).listen(http_port );
-        console.log('HTTP listening on port', http_port, '...');
+	console.log('HTTP listening on port', http_port, '...');
 }
 
-// function loadCerts (){
-//              var https_options = {
-//                      key: fs.readFileSync('secrets/newslynx-secrets/app-ssl/newslynx/newslynx.key'),
-//                      cert: fs.readFileSync('secrets/newslynx-secrets/app-ssl/app.gandi-newslynx.crt')
-//              };
-//              launchServers(https_options);
-
-// }
 launchServers();
-// loadCerts();

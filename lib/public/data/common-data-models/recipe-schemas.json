@@ -18,7 +18,7 @@
 				"type": "text",
 				"help": {
 					"link": "https://towcenter.newslynx.org#how-make-a-google-alert-recipe",
-					"hint": "https://www.google.com/alerts/feeds/05981244251884627857/3784443082785217725"
+					"hint": "RSS URL, e.g. https://www.google.com/alerts/feeds/05981244251884627857/3784443082785217725"
 				}
 			}
 		}
