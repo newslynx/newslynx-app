@@ -123,14 +123,7 @@ block templates
 
 block bootstrap-data
 	script(id="page-data").
-		var pageData = {};
-		pageData.recipeSchemas =!{JSON.stringify(recipeSchemas)};   
-		pageData.accountRecipes =!{JSON.stringify(accountRecipes)};   
-		pageData.alerts =!{JSON.stringify(alerts)};   
-		pageData.eventCreatorSchema =!{JSON.stringify(eventCreatorSchema)};   
-		pageData.articleSkeletons =!{JSON.stringify(articleSkeletons)};   
-		pageData.timezone =!{JSON.stringify(timezone)};   
-
+		var pageData =!{JSON.stringify(info)};   
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")

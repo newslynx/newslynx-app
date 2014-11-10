@@ -253,8 +253,7 @@ block templates
 
 block bootstrap-data
 	script(id="page-data").
-		var pageData = {};
-		pageData.org =!{JSON.stringify(org)};
+		var pageData =!{JSON.stringify(info)};
 
 block css
 	link(rel='stylesheet', href='/stylesheets/thirdparty/spectrum.css')

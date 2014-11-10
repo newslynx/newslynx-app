@@ -103,14 +103,14 @@ nav
 		//- else	
 		//- 	li.section(data-section="about")
 		//- 		a(href="/about") About
-		if (page == 'approval-river')
+		if (info.page == 'approval-river')
 			mixin approval-river
 		else	
 			li.section(data-section="approval-river")
 				a(href="/approval-river") Approval river
 					//- .section-img
 					//- 	img(src="images/merlynne/potion.svg")
-		if (page == 'articles')
+		if (info.page == 'articles')
 			mixin articles
 		else	
 			li.section(data-section="articles")

@@ -1676,9 +1676,18 @@ input {
 .header-el .comparison-figure {
   position: absolute;
   right: 0;
-  color: #bab9b9 !important;
   font-weight: normal;
-  border-bottom: 1px dotted #ccc;
+  -webkit-transform: translateY(-105%);
+  -moz-transform: translateY(-105%);
+  -o-transform: translateY(-105%);
+  -ms-transform: translateY(-105%);
+  transform: translateY(-105%);
+  width: 100%;
+  color: #666 !important;
+  font-size: 0.9em;
+}
+.header-el .comparison-figure .comparison-figure-dimension {
+  text-transform: uppercase;
 }
 .header-el:hover {
   cursor: pointer;
