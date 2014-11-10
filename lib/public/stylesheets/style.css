@@ -1579,7 +1579,7 @@ input {
 .article-detail-row-container .destroy {
   width: 25px;
   position: absolute;
-  top: 0;
+  top: 1px;
   left: -25px;
   height: 100%;
   font-size: 1.4em;
@@ -1628,31 +1628,29 @@ input {
   vertical-align: top;
   padding: 5px 0;
 }
-.cell.gfx {
+.cell.gfx:not(.header-el) {
   vertical-align: bottom;
   position: relative;
-  top: -3px;
+  top: -2px;
 }
 .cell {
-  width: 8%;
-  margin-right: 2.5%;
+  width: 8.5%;
+  margin-right: 2%;
 }
-.cell.bullet {
+.cell.gfx {
   width: 9%;
   margin-right: 2%;
 }
 .cell.date {
-  margin-right: 1.25%;
+  width: 8.5%;
+  margin-right: 0%;
 }
 .cell.wide {
   width: 10%;
 }
-.cell.bar {
-  width: 10%;
-}
-.header-dimensions-container .cell.bullet:nth-child(even),
-.article-detail-row-container .cell.bullet:nth-child(odd) {
-  margin-right: 5%;
+.cell.bars {
+  width: 7%;
+  margin-right: 1.5%;
 }
 /* Header styles */
 .header-meta-container,
@@ -1727,7 +1725,7 @@ input {
 }
 @media (max-width: 1147px) {
   .cell.date {
-    margin-right: 2.5%;
+    margin-right: 2%;
   }
 }
 /* end header styles */
@@ -1746,7 +1744,7 @@ input {
 }
 .bullet {
   background-color: #88cfff;
-  height: 10px;
+  height: 11px;
 }
 .marker,
 .marker-container {
