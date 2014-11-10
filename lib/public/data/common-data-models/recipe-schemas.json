@@ -51,6 +51,12 @@
 					"popular",
 					"mixed"
 				]
+			},
+			"min_followers": {
+				"type": "number",
+				"help": {
+					"hint": "Show from people with X followers, e.g. 5000"
+				}
 			}
 		}
 	},{
@@ -84,6 +90,12 @@
 				"type": "text",
 				"help": {
 					"hint": "\"Death Star earmarks\""
+				}
+			},
+			"min_followers": {
+				"type": "number",
+				"help": {
+					"hint": "Show from people with X followers, e.g. 5000"
 				}
 			}
 		}
