@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "forever ./bin/www",
-    "debug": "forever /usr/local/bin/nodemon --exitcrash ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
+    "debug": "nodemon ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
   },
   "dependencies": {
     "async": "~0.9.0",
