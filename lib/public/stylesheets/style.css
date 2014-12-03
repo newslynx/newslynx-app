@@ -233,7 +233,6 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   background-color: #fc0;
   border-right: 1px solid #777676;
   position: relative;
-  z-index: 8;
 }
 #content {
   width: calc(100% - 535px);
