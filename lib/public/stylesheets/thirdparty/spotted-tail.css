@@ -106,6 +106,7 @@
 }
 .ST-event-rect {
   fill-opacity: 0.5;
+  pointer-events: none;
 }
 .ST-tooltipped text {
   display: none;
@@ -120,6 +121,7 @@
 .ST-follow-line {
   stroke: #000;
   stroke-width: 1px;
+  pointer-events: none;
 }
 #ST-hover-window-container {
   position: absolute;
