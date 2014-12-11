@@ -8,10 +8,7 @@
 	"title": {
 		"type": "text"
 	},
-	"what_happened": {
-		"type": "paragraph"
-	},
-	"significance": {
+	"description": {
 		"type": "paragraph"
 	},
 	"impact_tags": {

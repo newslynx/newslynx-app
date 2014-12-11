@@ -4,6 +4,7 @@
 	position relative
 	width 100%
 	min-height 200px
+	box-sizing border-box
 
 .ST-canvas 
 	font 10px sans-serif
@@ -45,6 +46,8 @@
 
 .ST-canvas .ST-point circle 
 	fill #000
+	stroke-width .5px
+	stroke #fff
 .ST-canvas .ST-point text 
 	font-size 1.2em
 	text-shadow 0 0 6px #fff
@@ -80,6 +83,9 @@
 .ST-event-circle
 	stroke #fff
 	fill-opacity .7
+.ST-event-circle.ST-highlighted,
+.ST-event-rect.ST-highlighted
+	stroke #000
 .ST-event-rect
 	fill-opacity .5
 
@@ -92,3 +98,53 @@
 
 .ST-event-circle.ST-hyperlinked:hover
 	cursor pointer
+	
+.ST-follow-line
+	stroke #000
+	stroke-width 1px
+	
+#ST-hover-window-container
+	position absolute
+	font-family Helvetica, sans-serif
+	width 250px
+	font-size 13px
+	background-color rgba(255,255,255,.75)
+	border 1px solid #ccc
+	padding 10px
+	box-sizing border-box
+	border-radius 3px
+	pointer-events none
+	z-index 9999999
+.ST-hover-swatch,
+.ST-hover-section-label,
+.ST-hover-event-info-item-text,
+.ST-hover-section-value
+	display inline-block
+	vertical-align top
+.ST-hover-swatch
+	width 8px
+	height @width
+	margin-right 5px
+.ST-hover-section-label
+	width 125px
+	
+.ST-hover-event-info-category-label
+	text-transform uppercase
+	font-size .8em
+	font-weight bold
+	margin-top 10px
+	margin-bottom 2px
+.ST-hover-timestamp
+	margin-bottom 5px
+.ST-hover-event-info-timestamp
+	font-size .9em
+	font-style italic
+	margin 5px 0 3px 0
+	
+.ST-hover-event-info-item
+	margin-bottom 5px
+		
+.ST-hover-event-info-timestamp.ST-highlighted
+	span
+		padding 2px 5px
+		background-color #FFE325
