@@ -141,9 +141,18 @@ input.destroy:active
 	background-image none
 	border-color #9f312c
 
-.disabled button
+.disabled button,
+button.disabled
 	opacity .4
 	pointer-events none
+	
+.loading-spinner
+	background url(../images/gifs/arrows.gif) no-repeat 77px center
+	min-height 2em
+	display inline-block
+	margin 0 auto
+	background-size auto 65%
+	padding-right 25px
 
 .disabled:hover button,.disabled:hover button:hover,.disabled:hover
 	cursor default !important

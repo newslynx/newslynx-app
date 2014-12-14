@@ -181,11 +181,22 @@ input.destroy:active {
   background-image: none;
   border-color: #9f312c;
 }
-.disabled button {
+.disabled button,
+button.disabled {
   opacity: 0.4;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
   pointer-events: none;
+}
+.loading-spinner {
+  background: url("../images/gifs/arrows.gif") no-repeat 77px center;
+  min-height: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  -webkit-background-size: auto 65%;
+  -moz-background-size: auto 65%;
+  background-size: auto 65%;
+  padding-right: 25px;
 }
 .disabled:hover button,
 .disabled:hover button:hover,
