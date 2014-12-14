@@ -770,9 +770,12 @@ body[data-section="login"] #content {
   height: calc(100vh - 180px);
 }
 #recipes {
-  height: calc(100vh - 227px);
+  height: auto;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+#drawer[data-mode="my-recipes"] #recipes {
+  height: calc(100vh - 227px);
 }
 /* end drawer item */
 /* A R T I C L E  D E T A I L */
