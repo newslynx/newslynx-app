@@ -1,3 +1,4 @@
+require('newrelic');
 var _ = require('underscore');
 var app = require('../lib/app');
 var fs = require('fs');
