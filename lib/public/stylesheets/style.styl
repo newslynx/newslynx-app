@@ -141,9 +141,18 @@ input.destroy:active
 	background-image none
 	border-color #9f312c
 
-.disabled button
+.disabled button,
+button.disabled
 	opacity .4
 	pointer-events none
+	
+.loading-spinner
+	background url(../images/gifs/arrows.gif) no-repeat 77px center
+	min-height 2em
+	display inline-block
+	margin 0 auto
+	background-size auto 65%
+	padding-right 25px
 
 .disabled:hover button,.disabled:hover button:hover,.disabled:hover
 	cursor default !important
@@ -591,9 +600,11 @@ body[data-section="login"] #content
 		margin-right 10px
 	.drawer-list-inner
 		width 85%
+		
+#content[data-mode="my-recipes"]
 	.load-more
-		width 100%
-		font-size 1.1em
+		display table // Not sure why this makes centering work
+		margin 30px auto
 
 load_more_button_height = 40px
 load_more_button_padding = 10px

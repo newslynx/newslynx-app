@@ -7,6 +7,8 @@ block drawer
 	#drawer-pointers-container
 	ul.drawer-list-item-ul#recipes
 
+//- block content
+//- 	button.load-more Load more alerts...
 
 block css
 	link(rel='stylesheet', href='/stylesheets/thirdparty/pikaday.css')
@@ -14,8 +16,6 @@ block css
 block templates
 	script(type="text/jst")#drawer-my-recipes-templ
 		<% if (hasRecipes) { %>
-		.drawer-item
-			button.load-more Load more alerts...
 		.drawer-pointer Show me...
 		.drawer-list-item
 			.view-all.drawer-list-outer
@@ -92,7 +92,7 @@ block templates
 					.timestamp <%= prettyTimestamp(timestamp) %>
 				.title <%= name %>
 				<% if (author) { %>
-				<% var author_prefix = "", author_prefix = ""; %>
+				<% var author_prefix = "", author_suffix = ""; %>
 				<% if (serviceFromSource(getRecipeFromId(recipe_id).source) == 'twitter') { %>
 				<% author_prefix = "@"; %>
 				<% } %>
