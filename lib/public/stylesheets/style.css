@@ -815,6 +815,13 @@ body[data-section="login"] #content {
   top: 5px;
   left: 585px;
 }
+#content[data-mode="my-recipes"] .placeholder {
+  -webkit-transform: translateY(125px);
+  -moz-transform: translateY(125px);
+  -o-transform: translateY(125px);
+  -ms-transform: translateY(125px);
+  transform: translateY(125px);
+}
 #content[data-mode="my-recipes"] .placeholder,
 #content[data-mode="create"] .placeholder,
 #events-container .placeholder,
