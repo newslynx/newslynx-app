@@ -1153,6 +1153,10 @@ body[data-section="home"] #content {
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="action-item"]:hover {
   cursor: pointer;
 }
+#drawer[data-mode="compare"] .drawer-pointer .alter-comparison-marker[data-which="group"],
+#drawer[data-mode="detail"] .drawer-pointer .alter-comparison-marker[data-which="group"] {
+  width: 110px;
+}
 #drawer[data-mode="compare"] .drawer-pointer .toggle-all,
 #drawer[data-mode="detail"] .drawer-pointer .toggle-all {
   -webkit-user-select: none;
