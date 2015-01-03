@@ -68,47 +68,51 @@ block templates
 			.pub-date <%= prettyDate(timestamp) %>
 			h2.headline 
 				| <a href=<%= url %> target="_blank"><%= title %></a>
-			.article-info-container(data-which="author")
-				.article-info-title
-					span.article-info-title-text Author(s):
-				ul.authors
-					<% if (!authors.length) { %>
-					li.author.empty --
-					<% } else { %>
-					<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.trim()+'</div>'}).join(', ') %>
-					<% print(authors_markup) %>
-					<% } %>
-			.article-info-container(data-which="subject").modal-parent
-				.article-info-title#add-subject-tag.modal-toggle
-					span.article-info-title-text Subject tags:
-				.modal-outer
-					.modal-overlay.modal-close
-					.modal-inner
-						.modal-title Edit subject tags
-						ul#subject-tag-settings
-							.description
-								| You don't have any subject tags yet! Create some on the 
-								a(href="/settings") settings
-								|  page.
-						.buttons-container
-							button.cancel.modal-close Done
-				ul.tags
-					li.tag.empty None
-			.article-info-container(data-which="impact")
-				.article-info-title 
-					span.article-info-title-text Impact tags:
-				ul.tags
-					li.tag.empty None
-			.article-info-container(data-which="impact-categories")
-				.article-info-title 
-					span.article-info-title-text Impact cats:
-				ul.tags
-					li.tag.empty None
-			.article-info-container(data-which="impact-levels")
-				.article-info-title 
-					span.article-info-title-text Impact levels:
-				ul.tags
-					li.tag.empty None
+			.article-info-wrapper
+				| <a id="download-data" href="" download="newslynx-article-<%= id %>.zip">
+				button(data-which="download-data") Download data
+				| </a>
+				.article-info-container(data-which="author")
+					.article-info-title
+						span.article-info-title-text Author(s):
+					ul.authors
+						<% if (!authors.length) { %>
+						li.author.empty --
+						<% } else { %>
+						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.trim()+'</div>'}).join(', ') %>
+						<% print(authors_markup) %>
+						<% } %>
+				.article-info-container(data-which="subject").modal-parent
+					.article-info-title#add-subject-tag.modal-toggle
+						span.article-info-title-text Subject tags:
+					.modal-outer
+						.modal-overlay.modal-close
+						.modal-inner
+							.modal-title Edit subject tags
+							ul#subject-tag-settings
+								.description
+									| You don't have any subject tags yet! Create some on the 
+									a(href="/settings") settings
+									|  page.
+							.buttons-container
+								button.cancel.modal-close Done
+					ul.tags
+						li.tag.empty None
+				.article-info-container(data-which="impact")
+					.article-info-title 
+						span.article-info-title-text Impact tags:
+					ul.tags
+						li.tag.empty None
+				.article-info-container(data-which="impact-categories")
+					.article-info-title 
+						span.article-info-title-text Impact cats:
+					ul.tags
+						li.tag.empty None
+				.article-info-container(data-which="impact-levels")
+					.article-info-title 
+						span.article-info-title-text Impact levels:
+					ul.tags
+						li.tag.empty None
 			.toolbar
 				.group-container(data-side="left")
 					.group-item
@@ -233,6 +237,8 @@ block scripts
 	script(src="javascripts/thirdparty/Autolinker.min.js")
 	script(src="javascripts/thirdparty/moment.js")
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
+	script(src="javascripts/thirdparty/zip.js")
+	script(src="javascripts/thirdparty/ykk.js")
 
 	//- Put it all together
 	script(src="javascripts/main.bundled.js")

@@ -1453,6 +1453,14 @@ input {
   padding-right: 5px;
   cursor: default;
 }
+.article-detail-container .article-info-wrapper {
+  position: relative;
+}
+.article-detail-container .article-info-wrapper #download-data {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .article-detail-container .article-info-container {
   margin: 5px 0;
 }
