@@ -1,7 +1,7 @@
 NewsLynx App
 ============
 
-Code for Newslynx App
+Code for Newslynx App. Log issues [here](https://github.com/newslynx/issues).
 
 #### Pro
 
