@@ -525,7 +525,10 @@ body[data-section="login"] #content
 	.active:hover
 		cursor default
 
-.drawer-list-item,.drawer-options,.drawer-section-title,.drawer-pointer
+.drawer-list-item,
+.drawer-options,
+.drawer-section-title,
+.drawer-pointer
 	user-select none
 	.btn
 		padding 5px 0
@@ -610,18 +613,18 @@ load_more_button_height = 40px
 load_more_button_padding = 10px
 #article-list
 	position relative
-	height "calc(100vh - %s)" % (division_switcher_height + 198 - 1) // 166 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
+	height "calc(100vh - %s)" % (division_switcher_height + 183) // 183 is the height of the junk in the drawer.
 	overflow-x hidden
 	overflow-y scroll
 .drawer-container[data-mode="my-recipes"]
 	.drawer-list-item-ul
-		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line ) // Plus one because apparently this is like one pixel off	
+		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line )
 #recipes
 	height auto
 	overflow-x hidden
 	overflow-y scroll
 #drawer[data-mode="my-recipes"] #recipes
-	height "calc(100vh - %s)" % (division_switcher_height + 178 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
+	height "calc(100vh - %s)" % (division_switcher_height + 114 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
 /* end drawer item */
 
 /* A R T I C L E  D E T A I L */
@@ -874,9 +877,10 @@ body[data-section="home"] #content
 #events-gallery-container .event-container
 	box-shadow 0px 0px 5px #dbdbdb
 
-
+#drawer-pointers-container
+	border-bottom 1px dashed #ccc
 .drawer-pointer
-	padding 20px 10px 8px 10px
+	padding 12px
 	font-size 1.3em
 	font-weight bold
 	color #666
@@ -886,18 +890,24 @@ body[data-section="home"] #content
 		span
 			font-weight bold
 			
-#drawer[data-mode="compare"],#drawer[data-mode="detail"]
+#drawer[data-mode="compare"],
+#drawer[data-mode="detail"]
+	padding-bottom 25px
+	.load-more
+		position absolute
+		bottom 20px
 	.drawer-pointer
-		padding 10px
+		padding 10px 10px 10px 8px
 		.drawer-item[data-type="contains-input"]
 			padding 2px 0 0 0
-		.drawer-item-group
+		.drawer-item-group[data-which="comparison-marker"]
 			margin-bottom 5px
 		.drawer-item
 			padding 2px
 			.item-text
 				margin-bottom 3px
-			.add-to-comparison,.load-more
+			.add-to-comparison,
+			.load-more
 				font-size 11px
 				width 100%
 				// border-radius 2px
@@ -907,6 +917,9 @@ body[data-section="home"] #content
 				// background-color tint(articles, 72%)
 				// box-shadow 1px 1px 2px -1px rgba(26, 92, 3, .5)
 				// text-shadow 1px 1px 3px #eafae7
+			.item-text[data-which="article-count"]
+				font-weight normal
+				text-align center
 			select
 				font-size 11px
 				padding 1px 2px !important

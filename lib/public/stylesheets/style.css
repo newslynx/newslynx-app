@@ -771,7 +771,7 @@ body[data-section="login"] #content {
 }
 #article-list {
   position: relative;
-  height: calc(100vh - 247px);
+  height: calc(100vh - 233px);
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -784,7 +784,7 @@ body[data-section="login"] #content {
   overflow-y: scroll;
 }
 #drawer[data-mode="my-recipes"] #recipes {
-  height: calc(100vh - 227px);
+  height: calc(100vh - 163px);
 }
 /* end drawer item */
 /* A R T I C L E  D E T A I L */
@@ -1099,8 +1099,11 @@ body[data-section="home"] #content {
   -webkit-box-shadow: 0px 0px 5px #dbdbdb;
   box-shadow: 0px 0px 5px #dbdbdb;
 }
+#drawer-pointers-container {
+  border-bottom: 1px dashed #ccc;
+}
 .drawer-pointer {
-  padding: 20px 10px 8px 10px;
+  padding: 12px;
   font-size: 1.3em;
   font-weight: bold;
   color: #666;
@@ -1112,16 +1115,25 @@ body[data-section="home"] #content {
 .drawer-pointer p span {
   font-weight: bold;
 }
+#drawer[data-mode="compare"],
+#drawer[data-mode="detail"] {
+  padding-bottom: 25px;
+}
+#drawer[data-mode="compare"] .load-more,
+#drawer[data-mode="detail"] .load-more {
+  position: absolute;
+  bottom: 20px;
+}
 #drawer[data-mode="compare"] .drawer-pointer,
 #drawer[data-mode="detail"] .drawer-pointer {
-  padding: 10px;
+  padding: 10px 10px 10px 8px;
 }
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="contains-input"],
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="contains-input"] {
   padding: 2px 0 0 0;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group,
-#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group {
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-marker"],
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-marker"] {
   margin-bottom: 5px;
 }
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item,
@@ -1138,6 +1150,11 @@ body[data-section="home"] #content {
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item .load-more {
   font-size: 11px;
   width: 100%;
+}
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item .item-text[data-which="article-count"],
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item .item-text[data-which="article-count"] {
+  font-weight: normal;
+  text-align: center;
 }
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item select,
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item select {
