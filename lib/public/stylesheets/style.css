@@ -1593,6 +1593,7 @@ input {
 }
 #subject-tag-settings li {
   font-size: 1.2em;
+  display: inline-block;
 }
 #subject-tag-settings li label:hover,
 #subject-tag-settings li input:hover {
