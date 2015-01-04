@@ -475,7 +475,8 @@ body[data-modal=true] #recipes.drawer-list-item-ul {
   font-size: 1.2em;
 }
 .tag-list .tag-count {
-  float: right;
+  position: absolute;
+  right: 8px;
 }
 .tag-list .color-swatch {
   display: inline-block;
@@ -1121,8 +1122,8 @@ body[data-section="home"] #content {
 }
 #drawer[data-mode="compare"] .load-more,
 #drawer[data-mode="detail"] .load-more {
-  position: absolute;
-  bottom: 20px;
+  display: table;
+  margin: 10px auto 20px auto;
 }
 #drawer[data-mode="compare"] .drawer-pointer,
 #drawer[data-mode="detail"] .drawer-pointer {

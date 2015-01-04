@@ -398,7 +398,8 @@ section_nav_margin_top = 10px
 		display inline-block
 		font-size 1.2em
 	.tag-count
-		float right
+		position absolute
+		right 8px
 	.color-swatch // This is TK, design and integration with existing css styles needs to be done more comprehensively
 		display inline-block
 		height 10px
@@ -894,8 +895,8 @@ body[data-section="home"] #content
 #drawer[data-mode="detail"]
 	padding-bottom 25px
 	.load-more
-		position absolute
-		bottom 20px
+		display table
+		margin 10px auto 20px auto
 	.drawer-pointer
 		padding 10px 10px 10px 8px
 		.drawer-item[data-type="contains-input"]
