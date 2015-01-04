@@ -145,14 +145,26 @@ input.destroy:active
 button.disabled
 	opacity .4
 	pointer-events none
-	
+
 .loading-spinner
-	background url(../images/gifs/arrows.gif) no-repeat 77px center
+	background-image url(../images/gifs/arrows-transparent.gif)
+	background-repeat no-repeat
+	background-position 77px center
 	min-height 2em
 	display inline-block
 	margin 0 auto
 	background-size auto 65%
 	padding-right 25px
+	
+#alert-spinner
+	font-size 1.2em
+	padding-top 5px
+	text-align center
+	margin 0px auto
+	display table
+	height 24px
+	margin-top 20px
+	background-position right center
 
 .disabled:hover button,.disabled:hover button:hover,.disabled:hover
 	cursor default !important
