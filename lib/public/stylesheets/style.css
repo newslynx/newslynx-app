@@ -1243,11 +1243,12 @@ body[data-section="home"] #content {
   font-size: 13px;
 }
 .approval-btn-container:first-child {
-  width: 30px;
+  padding-left: 9px;
+  width: 32px;
 }
 .approval-btn-container:nth-child(2) {
-  padding-left: 8px;
-  width: 50px;
+  width: 40px;
+  padding-left: 10px;
 }
 .approval-btn-container:hover {
   opacity: 1;
@@ -1262,7 +1263,7 @@ body[data-section="home"] #content {
   color: #9e0000;
 }
 .approval-btn {
-  font-size: 1.8em;
+  font-size: 2.2em;
   width: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
