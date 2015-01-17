@@ -86,7 +86,6 @@ block templates
 		.river-item-container.modal-parent
 			.approval-child(data-which="info")
 				.toolbar
-					|<a href="<%= link %>" target="_blank" class="link">Link</a>
 					| <span class="service-icon" data-service="<%= serviceFromSource(getRecipeFromId(recipe_id).source) %>"></span>
 					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
 					.timestamp <%= prettyTimestamp(timestamp) %>
@@ -119,11 +118,13 @@ block templates
 				<% list_markup += '</ul>' %>
 				<% print(list_markup); %>
 				<% } %>
+				.link
+					|<a href="<%= link %>" target="_blank">Link</a>
 			.approval-child(data-which="btns")
-				.approval-btn-container(data-which="no")
-					.approval-btn.octicon.octicon-x
 				.approval-btn-container(data-which="yes")
 					.approval-btn.octicon.octicon-check
+				.approval-btn-container(data-which="no")
+					.approval-btn.octicon.octicon-x
 
 block bootstrap-data
 	script(id="page-data").

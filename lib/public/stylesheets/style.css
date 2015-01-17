@@ -1112,6 +1112,9 @@ body[data-section="home"] #content {
   -webkit-box-shadow: 0px 0px 5px #dbdbdb;
   box-shadow: 0px 0px 5px #dbdbdb;
 }
+.river-item-container {
+  position: relative;
+}
 #drawer-pointers-container {
   border-bottom: 1px dashed #ccc;
 }
@@ -1224,12 +1227,14 @@ body[data-section="home"] #content {
   cursor: default;
 }
 .approval-child[data-which="btns"] {
-  margin-top: 10px;
   width: 33%;
   height: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .approval-btn-container {
-  text-align: left;
+  float: right;
   display: inline-block;
   color: #4e4e4e;
   opacity: 0.65;
@@ -1329,10 +1334,24 @@ body[data-section="home"] #content {
   color: #a8a8a8;
 }
 .approval-child .link {
-  position: absolute;
-  right: 2px;
-  top: -1px;
+  margin-top: 3px;
+  text-align: right;
+  display: inline-block;
+  background-color: #0092ce;
+  padding: 1px 11px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  float: right;
   font-size: 1.3em;
+}
+.approval-child .link a {
+  color: #fff;
+}
+.approval-child .link a:hover {
+  text-decoration: none;
+}
+.approval-child .link:hover {
+  background-color: #0075a5;
 }
 .show-hide-default-event {
   font-size: 1.4em;
