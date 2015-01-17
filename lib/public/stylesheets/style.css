@@ -1890,7 +1890,7 @@ input {
   margin-bottom: 5px;
   color: #000;
 }
-.modal-inner .description {
+.modal-inner .description:not(textarea) {
   margin-bottom: 15px;
   font-size: 1.3em;
   font-style: italic;
