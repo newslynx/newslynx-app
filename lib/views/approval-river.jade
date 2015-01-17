@@ -101,6 +101,10 @@ block templates
 				<% } %>
 				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+author)) +'</strong>'+ author_suffix+'</div>') %>
 				<% } %>
+				<% var domain =  extractDomain(link) %>
+				<% if (domain != 'twitter.com' && domain != 'facebook.com' || domain != 'reddit.com') { %>
+				.domain <% print(domain) %>  
+				<% } %>
 				.description <%= autolink(text) %>
 				<% if (article_ids.length) { %>
 				<% var list_markup = '<ul class="articles-mentioned">'; %>
