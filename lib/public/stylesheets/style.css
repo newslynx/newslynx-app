@@ -1334,7 +1334,7 @@ body[data-section="home"] #content {
   color: #a8a8a8;
 }
 .approval-child .link {
-  margin-top: 3px;
+  margin-top: 10px;
   text-align: right;
   display: inline-block;
   background-color: #0092ce;
@@ -1343,6 +1343,9 @@ body[data-section="home"] #content {
   border-radius: 3px;
   float: right;
   font-size: 1.3em;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
 }
 .approval-child .link a {
   color: #fff;
@@ -1351,7 +1354,9 @@ body[data-section="home"] #content {
   text-decoration: none;
 }
 .approval-child .link:hover {
-  background-color: #0075a5;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 .show-hide-default-event {
   font-size: 1.4em;
