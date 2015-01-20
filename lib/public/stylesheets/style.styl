@@ -626,7 +626,7 @@ load_more_button_height = 40px
 load_more_button_padding = 10px
 #article-list
 	position relative
-	height "calc(100vh - %s)" % (division_switcher_height + 183) // 183 is the height of the junk in the drawer.
+	height "calc(100vh - %s)" % (division_switcher_height + 151) // 183 is the height of the junk in the drawer.
 	overflow-x hidden
 	overflow-y scroll
 .drawer-container[data-mode="my-recipes"]
@@ -918,6 +918,13 @@ body[data-section="home"] #content
 			padding 2px 0 0 0
 		.drawer-item-group[data-which="comparison-marker"]
 			margin-bottom 5px
+		.drawer-item-group[data-which="comparison-additions"]
+			.drawer-item[data-type="action-item"]:first-child
+				margin-right 2%
+			.drawer-item[data-type="action-item"]
+				width 49%
+				display inline-block
+				vertical-align top
 		.drawer-item
 			padding 2px
 			.item-text
