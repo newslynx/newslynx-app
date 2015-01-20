@@ -784,7 +784,7 @@ body[data-section="login"] #content {
 }
 #article-list {
   position: relative;
-  height: calc(100vh - 233px);
+  height: calc(100vh - 201px);
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -1152,6 +1152,16 @@ body[data-section="home"] #content {
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-marker"],
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-marker"] {
   margin-bottom: 5px;
+}
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"]:first-child,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"]:first-child {
+  margin-right: 2%;
+}
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"],
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"] {
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
 }
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item,
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item {
