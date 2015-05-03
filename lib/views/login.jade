@@ -11,10 +11,10 @@ block content
 	if info.apikey
 		p You have successfully logged in!
 	else
-		form(action='/login', method='POST')#login
+		form(action='/auth/login', method='POST')#login
 			div
-				label Username: 
-				input(type='text', name='username')
+				label Email: 
+				input(type='text', name='email')
 			div
 				label Password: 
 				input(type='password', name='password')
