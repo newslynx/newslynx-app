@@ -13,12 +13,12 @@ block content
 			.settings-title Account
 			#email.setting-group
 				.setting-title Email
-				ul.inputs-container.js-inputs-container(data-key="email")
+				ul.inputs-container.js-inputs-container(data-setting-name="email")
 					li.input-parent.js-input-parent
 						input.js-input-item(placeholder="merlynne@newslynx.org" type="text")&attributes({'value': info.user.email})
 			#password.setting-group
 				.setting-title Change password
-				ul.inputs-container(data-key="password")
+				ul.inputs-container(data-setting-name="password")
 					li.input-parent
 						input.js-input-item(type="password" placeholder="New password...")
 					li.input-parent
@@ -27,12 +27,12 @@ block content
 			.settings-title Site
 			#home-page.setting-group
 				.setting-title Home page
-				ul.inputs-container.js-inputs-container(data-key="homepage")
+				ul.inputs-container.js-inputs-container(data-setting-name="homepage")
 					li.input-parent.js-input-parent
 						input.js-input-item(placeholder="propalpatine.org" type="text")&attributes({'value': info.org.homepage})
 			#home-page.setting-group
 				.setting-title Time zone
-				ul.inputs-container.js-inputs-container(data-key="timezone")
+				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
 					li.input-parent.js-input-parent
 						select(name='timezone').js-input-item
 							option(value='Europe/Paris', selected=info.org.timezone == 'Europe/Paris') Western Europe
