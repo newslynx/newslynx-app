@@ -2151,16 +2151,12 @@ body[data-section="settings"] #content {
   position: relative;
 }
 .settings-title {
+  font-weight: bold;
   font-size: 1.8em;
   margin-bottom: 15px;
   border-bottom: 1px solid #ccc;
   position: relative;
-}
-.settings-title:before {
-  content: '# ';
-  color: #ccc;
-  position: absolute;
-  left: -15px;
+  color: #adadad;
 }
 .setting-group {
   margin-bottom: 20px;
@@ -2190,33 +2186,29 @@ body[data-section="settings"] #content {
 #settings .inputs-container {
   width: 550px;
 }
-#settings .input {
+#settings .input-parent {
   height: 25px;
   margin-left: 20px;
 }
-#settings .input input[type='text'],
-#settings .input select {
+#settings .input-parent input[type='text'],
+#settings .input-parent select {
   margin: 0 5px 0 0;
 }
-#settings .input input[type='text'],
-#settings .input input[type='password'] {
+#settings .input-parent input[type='text'],
+#settings .input-parent input[type='password'] {
   width: 200px;
 }
-#settings .input input[type='radio'],
-#settings .input input[type='checkbox'] {
+#settings .input-parent input[type='radio'],
+#settings .input-parent input[type='checkbox'] {
   margin: 0;
 }
-#settings .input input[type='password'] {
-  margin: 0 0 5px 20px;
+#settings .input-parent input[type='password'] {
   clear: right;
 }
-#settings .input input[type='text'],
+#settings .input-parent input[type='text'],
 #settings .input-action-btn,
 #settings .color-picker {
   height: 22px;
-}
-#settings .input.multi {
-  margin-left: 0;
 }
 #settings .js-input-parent[data-changed="true"] .js-input-actions-container {
   display: inline-block;

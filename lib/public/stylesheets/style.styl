@@ -192,6 +192,7 @@ dummy = #fc0
 the_beige = #f3f0df
 the_green = #0eb521
 leftrail_gray = #393939
+light_gray = #ADADAD
 bg_gray = #7C7C7C
 highlight_gray = #666
 border_gray = #777676
@@ -1738,16 +1739,17 @@ select_width = 132px
 	position relative
 	// background-color #0cf
 .settings-title
-	// font-weight bold
+	font-weight bold
 	font-size 1.8em
 	margin-bottom 15px
 	border-bottom 1px solid #ccc
 	position relative
-.settings-title:before
-	content '# '
-	color #ccc
-	position absolute
-	left -15px
+	color light_gray
+// .settings-title:before
+// 	content '# '
+// 	color #ccc
+// 	position absolute
+// 	left -15px
 .setting-group
 	margin-bottom 20px
 .setting-title
@@ -1769,7 +1771,7 @@ select_width = 132px
 	.inputs-container
 		width inputs_width
 		// background-color #f0c
-	.input
+	.input-parent
 		height 25px
 		margin-left destroy_width
 		input[type='text'],
@@ -1782,14 +1784,11 @@ select_width = 132px
 		input[type='checkbox']
 			margin 0
 		input[type='password']
-			margin 0 0 5px destroy_width
 			clear right
-	.input input[type='text'],
+	.input-parent input[type='text'],
 	.input-action-btn,
 	.color-picker
 		height 22px
-	.input.multi
-		margin-left 0
 	.js-input-parent[data-changed="true"]
 		.js-input-actions-container
 			display inline-block
