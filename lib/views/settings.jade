@@ -7,196 +7,198 @@ block drawer
 	.merlynne-img(style="width:90%;")
 		img(src="images/merlynne/knobs.svg")
 
-//- The settings template works by looking for `.inputs-container` items which are nodes in the json. They require children to be `.input-item`. If an `.input-item` has `.multi` class
-//- then it will be interpreted as a part of a list of items. Maybe it would be better if `.inputs-container` were the one to take the `.multi` tag. There are also `.multi-child` tags.
-//- If an item doesn't have a `data-key` then it's inserted into the array or the key just as a string and not as an object.
-block templates
-	script(type="text/jst")#settings-templ
-		#settings
-			#account.settings-group
-				.settings-title Account
-				#email.setting-group
-					.setting-title Email
-					ul.inputs-container(data-key="email")
-						li.input
-							|<input class="input-item" type="text" placeholder="merlynne@newslynx.org" value="<%= email %>"/>
-				#password.setting-group
-					.setting-title Change password
-					ul.inputs-container(data-key="password")
-						li.input.multi
-							input.input-item(type="password" placeholder="New password...")
-						li.input.multi
-							input.input-item(type="password" placeholder="Confirm...")
-			#site.settings-group
-				.settings-title Site
-				#home-page.setting-group
-					.setting-title Home page
-					ul.inputs-container(data-key="homepage")
-						li.input
-							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= homepage %>">
-				#home-page.setting-group
-					.setting-title Time zone
-					ul.inputs-container(data-key="timezone")
-						li.input
-							//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
-							select(name='timezone').input-item
-								|<option value='Europe/Paris'  <% ((timezone == 'Europe/Paris') ? print('selected') : '')  %> > Western Europe</option>
-								|<option value='Europe/London'  <% ((timezone == 'Europe/London') ? print('selected') : '')  %> > GMT</option>
-								|<option value='US/Eastern'  <% ((timezone == 'US/Eastern') ? print('selected') : '')  %> > Eastern Time</option>
-								|<option value='US/Central'  <% ((timezone == 'US/Central') ? print('selected') : '')  %> > Central Time</option>
-								|<option value='US/Mountain'  <% ((timezone == 'US/Mountain') ? print('selected') : '')  %> > Mountain Time</option>
-								|<option value='US/Pacific'  <% ((timezone == 'US/Pacific') ? print('selected') : '')  %> > Pacific Time</option>
-								|<option value='US/Alaska'  <% ((timezone == 'US/Alaska') ? print('selected') : '')  %> > Alaska</option>
-								|<option value='US/Hawaii'  <% ((timezone == 'US/Hawaii') ? print('selected') : '') %> > Hawaii</option>
-				.setting-group
-					.setting-description 
-						p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
-					.setting-flag Includes full article text?
-					.setting-title RSS Feed URLs
-					ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds" data-child-keys='["url","is_full_text"]')
-						<%  for (var i = 0; i < rss_feeds.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
-							|<input class="input-item" type="checkbox" <% ((rss_feeds[i].is_full_text === true) ? print('checked') : '') %> data-key="is_full_text"/>
-						<% } %>
-					button.add +
-			#social.settings-group
-				.settings-title Promotion
-				.setting-group
-					.setting-description 
-						p If you use a custom URL shortener, what do your links look like on twitter. Please omit a trailing slash.
-					.setting-title Short URL
-					ul.inputs-container(data-placeholder="propalp.tn" data-key="short_urls")
-						<%  for (var i = 0; i < short_urls.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item multi-child" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" />
-						<% } %>
-					button.add +
-				#staff-lists.setting-group
-					.setting-description 
-						p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
-					.setting-title Staff lists
-					ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_lists" data-child-keys='["owner_screen_name", "slug"]')
-						<%  for (var i = 0; i < twitter_staff_lists.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
-							|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
-						<% } %>
-					button.add +
-				#twitter-accounts.setting-group
-					.setting-description 
-						p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
-					.setting-flag Is main account?
-					.setting-title Twitter accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users" data-child-keys='["screen_name", "is_main"]')
-						<%  for (var i = 0; i < twitter_users.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_users[i].screen_name %>" class="multi-child" data-key="screen_name" />
-							|<input class="input-item" type="radio" name="twitter" <% ((twitter_users[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
-						<% } %>
-					button.add +				
-				.setting-group
-					.setting-flag Is main account?
-					#facebook-accounts.setting-title Facebook accounts
-					ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_pages" data-child-keys='["page_id","is_main"]')
-						<%  for (var i = 0; i < facebook_pages.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Enter page name, e.g. ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
-							|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
-						<% } %>
-					button.add +
-			#tags.settings-group
-				.settings-title Tags
-				#article-tags.setting-group
-					.setting-title Subject tags
-					ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="subject" data-key="subject_tags" data-child-keys='["name","color"]')
-						<%  for (var i = 0; i < subject_tags.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
-							|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
-						<% } %>
-					button.add +				
-				#impact-tags.setting-group(data-group="impact-tags")
-					.setting-flag Category
-					.setting-flag Level
-					.setting-title Impact tags
-					ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys='["name", "category", "level", "color"]')
-						<%  for (var i = 0; i < impact_tags.length; i++) { %>
-						li.input.multi
-							.multi-child.destroy &times;
-							|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= impact_tags[i].id %>"/>
-							|<select name='category' class="input-item multi-child" data-key="category">
-							|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Citation</option>
-							|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Change</option>
-							|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Achievement</option>
-							|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Other</option>
-							|</select>
-							|<select name='level' class="input-item multi-child" data-key="level">
-							|<option value='institution'  <% ((impact_tags[i].level == 'institution') ? print('selected') : '')  %> > Institution</option>
-							|<option value='media'  <% ((impact_tags[i].level == 'media') ? print('selected') : '')  %> > Media</option>
-							|<option value='community'  <% ((impact_tags[i].level == 'community') ? print('selected') : '')  %> > Community</option>
-							|<option value='individual'  <% ((impact_tags[i].level == 'individual') ? print('selected') : '')  %> > Individual</option>
-							|<option value='internal'  <% ((impact_tags[i].level == 'internal') ? print('selected') : '')  %> > Internal</option>
-							|</select>
-							|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
-						<% } %>
-					button.add +	
-			.settings-group
-				.save-container
-					.setting-description
-						p Please save your changes before using the authentication tools below, which refresh the page and you might lose unsaved changes.
-					input(type="submit" value="Save changes")#save
-					.submit-msg 
-			#account-authentication.settings-group
-				.settings-title Account authentication
+block content
+	#settings
+		#account.settings-group
+			.settings-title Account
+			#email.setting-group
+				.setting-title Email
+				ul.inputs-container.js-inputs-container(data-key="email")
+					li.input.js-input-parent(data-changed="false")
+						input.js-input-item(placeholder="merlynne@newslynx.org" type="text")&attributes({'value': info.user.email})
+			#password.setting-group
+				.setting-title Change password
+				ul.inputs-container(data-key="password")
+					li.input.multi
+						input.input-item(type="password" placeholder="New password...")
+					li.input.multi
+						input.input-item(type="password" placeholder="Confirm...")
+		#site.settings-group
+			.settings-title Site
+			#home-page.setting-group
+				.setting-title Home page
+				ul.inputs-container(data-key="homepage")
+					li.input
+						//- |<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= homepage %>">
+			#home-page.setting-group
+				.setting-title Time zone
+				ul.inputs-container(data-key="timezone")
+					li.input
+						//- |<input type="text" placeholder="propalpatine.org" value="<%= homepage %>">
+						select(name='timezone').input-item
+							option(value='Europe/Paris') Western Europe
+							option(value='Europe/London') GMT
+							option(value='US/Eastern') US / Eastern
+							option(value='US/Central') Us / Central
+							option(value='US/Mountain') US / Mountain
+							option(value='US/Pacific') US / Pacific
+							option(value='US/Alaska') Alaska
+							option(value='US/Hawaii') Hawaii
+			.setting-group
 				.setting-description 
-					p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
-					p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
-				.setting-group
-					.setting-title Google analytics
-					.auth-container
-						<% if (google_analytics_auth) { %>
-						p.auth-result.success Authenticated. (
-							a(href="/auth/google/revoke") Revoke access
-							| )
-						<% } else { %>
-						p.auth-result.fail Not authenticated.
-						p
-							a(href='/auth/google').authenticate
-								button Grant access
-						<% }  %>
-				.setting-group
-					.setting-title Twitter
-					.auth-container
-						<% if (twitter_auth) { %>
-						p.auth-result.success Authenticated. (
-							a(href="/auth/twitter/revoke") Revoke access
-							| )
-						<% } else { %>
-						p.auth-result.fail Not authenticated.
-						p
-							a(href='/auth/twitter').authenticate
-								button Grant access
-						<% }  %>
-				.setting-group(style="display:none;")
-					.setting-title Facebook
-					.auth-container
-						<% if (facebook_auth) { %>
-						p.auth-result.success Authenticated.
-						<% } else { %>
-						p.auth-result.fail Not authenticated.
-						p
-							a(href='/auth/facebook').authenticate
-								button Grant access
-						<% }  %>			
+					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
+				.setting-flag Includes full article text?
+				.setting-title RSS Feed URLs
+				ul.inputs-container(data-placeholder="propalpatine.org" data-flag="checkbox" data-key="rss_feeds" data-child-keys='["url","is_full_text"]')
+					//- <%  for (var i = 0; i < rss_feeds.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
+					//- 	|<input class="input-item" type="checkbox" <% ((rss_feeds[i].is_full_text === true) ? print('checked') : '') %> data-key="is_full_text"/>
+					//- <% } %>
+				button.add +
+		#social.settings-group
+			.settings-title Promotion
+			.setting-group
+				.setting-description 
+					p If you use a custom URL shortener, what do your links look like on twitter. Please omit a trailing slash.
+				.setting-title Short URL
+				ul.inputs-container(data-placeholder="propalp.tn" data-key="short_urls")
+					//- <%  for (var i = 0; i < short_urls.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item multi-child" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" />
+					//- <% } %>
+				button.add +
+			#staff-lists.setting-group
+				.setting-description 
+					p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
+				.setting-title Staff lists
+				ul.inputs-container(data-layout="double" data-placeholder='["ProPalpatine","staff"]' data-key="twitter_staff_lists" data-child-keys='["owner_screen_name", "slug"]')
+					//- <%  for (var i = 0; i < twitter_staff_lists.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
+					//- 	|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
+					//- <% } %>
+				button.add +
+			#twitter-accounts.setting-group
+				.setting-description 
+					p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
+				.setting-flag Is main account?
+				.setting-title Twitter accounts
+				ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users" data-child-keys='["screen_name", "is_main"]')
+					//- <%  for (var i = 0; i < twitter_users.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_users[i].screen_name %>" class="multi-child" data-key="screen_name" />
+					//- 	|<input class="input-item" type="radio" name="twitter" <% ((twitter_users[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+					//- <% } %>
+				button.add +				
+			.setting-group
+				.setting-flag Is main account?
+				#facebook-accounts.setting-title Facebook accounts
+				ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="facebook" data-key="facebook_pages" data-child-keys='["page_id","is_main"]')
+					//- <%  for (var i = 0; i < facebook_pages.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="Enter page name, e.g. ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
+					//- 	|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
+					//- <% } %>
+				button.add +
+		#tags.settings-group
+			.settings-title Tags
+			#article-tags.setting-group
+				.setting-title Subject tags
+				ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="subject" data-key="subject_tags" data-child-keys='["name","color"]')
+					//- <%  for (var i = 0; i < subject_tags.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
+					//- 	|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
+					//- <% } %>
+				button.add +				
+			#impact-tags.setting-group(data-group="impact-tags")
+				.setting-flag Category
+				.setting-flag Level
+				.setting-title Impact tags
+				ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys='["name", "category", "level", "color"]')
+					//- <%  for (var i = 0; i < impact_tags.length; i++) { %>
+					//- li.input.multi
+					//- 	.multi-child.destroy &times;
+					//- 	|<input class="input-item" type="text" placeholder="Legislative impact" value="<%= impact_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= impact_tags[i].id %>"/>
+					//- 	|<select name='category' class="input-item multi-child" data-key="category">
+					//- 	|<option value='citation'  <% ((impact_tags[i].category == 'citation') ? print('selected') : '')  %> > Citation</option>
+					//- 	|<option value='change'  <% ((impact_tags[i].category == 'change') ? print('selected') : '')  %> > Change</option>
+					//- 	|<option value='achievement'  <% ((impact_tags[i].category == 'achievement') ? print('selected') : '')  %> > Achievement</option>
+					//- 	|<option value='other'  <% ((impact_tags[i].category == 'other') ? print('selected') : '')  %> > Other</option>
+					//- 	|</select>
+					//- 	|<select name='level' class="input-item multi-child" data-key="level">
+					//- 	|<option value='institution'  <% ((impact_tags[i].level == 'institution') ? print('selected') : '')  %> > Institution</option>
+					//- 	|<option value='media'  <% ((impact_tags[i].level == 'media') ? print('selected') : '')  %> > Media</option>
+					//- 	|<option value='community'  <% ((impact_tags[i].level == 'community') ? print('selected') : '')  %> > Community</option>
+					//- 	|<option value='individual'  <% ((impact_tags[i].level == 'individual') ? print('selected') : '')  %> > Individual</option>
+					//- 	|<option value='internal'  <% ((impact_tags[i].level == 'internal') ? print('selected') : '')  %> > Internal</option>
+					//- 	|</select>
+					//- 	|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
+					//- <% } %>
+				button.add +	
+		.settings-group
+			.save-container
+				.setting-description
+					p Please save your changes before using the authentication tools below, which refresh the page and you might lose unsaved changes.
+				input(type="submit" value="Save changes")#save
+				.submit-msg 
+		//- #account-authentication.settings-group
+		//- 	.settings-title Account authentication
+		//- 	.setting-description 
+		//- 		p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
+		//- 		p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
+		//- 	.setting-group
+		//- 		.setting-title Google analytics
+		//- 		.auth-container
+		//- 			<% if (google_analytics_auth) { %>
+		//- 			p.auth-result.success Authenticated. (
+		//- 				a(href="/auth/google/revoke") Revoke access
+		//- 				| )
+		//- 			<% } else { %>
+		//- 			p.auth-result.fail Not authenticated.
+		//- 			p
+		//- 				a(href='/auth/google').authenticate
+		//- 					button Grant access
+		//- 			<% }  %>
+		//- 	.setting-group
+		//- 		.setting-title Twitter
+		//- 		.auth-container
+		//- 			<% if (twitter_auth) { %>
+		//- 			p.auth-result.success Authenticated. (
+		//- 				a(href="/auth/twitter/revoke") Revoke access
+		//- 				| )
+		//- 			<% } else { %>
+		//- 			p.auth-result.fail Not authenticated.
+		//- 			p
+		//- 				a(href='/auth/twitter').authenticate
+		//- 					button Grant access
+		//- 			<% }  %>
+		//- 	.setting-group(style="display:none;")
+		//- 		.setting-title Facebook
+		//- 		.auth-container
+		//- 			<% if (facebook_auth) { %>
+		//- 			p.auth-result.success Authenticated.
+		//- 			<% } else { %>
+		//- 			p.auth-result.fail Not authenticated.
+		//- 			p
+		//- 				a(href='/auth/facebook').authenticate
+		//- 					button Grant access
+		//- 			<% }  %>			
 
+block templates
+	script(type="text/jst")#input-actions-templ
+		.input-actions-container.js-input-actions-container
+			.input-action-btn(data-which="cancel") Cancel
+			.input-action-btn(data-which="save") Save
 
+	
 	//- script(type="text/jst")#settings-group-templ
 	//- 	.settings-group
 	//- 		.settings-title <%= settings_title %>
@@ -208,48 +210,48 @@ block templates
 	//- 		.setting-title <%= setting_title %>
 	//- 		|<ul class="inputs-container" <% (multi === true) ? print('data-placeholder="'+placeholder+'"' : '') %> <% (flag === true) ? print('data-flag="'+flag+'"' : '') %> ></ul>
 
-	script(type="text/jst")#single-input-templ
-		li.input.multi
-			.multi-child.destroy &times;
-			|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
+	//- script(type="text/jst")#single-input-templ
+	//- 	li.input.multi
+	//- 		.multi-child.destroy &times;
+	//- 		|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
 
-	script(type="text/jst")#multi-input-templ
-		li.input.multi
-			.multi-child.destroy &times;
-			|<input class="multi-child input-item" type="text" placeholder="<%= placeholder %>" data-key="<%= keys[0] %>"/>
-			<% if (flag == 'radio') { %>
-			<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
-			<% } else if (flag == 'checkbox') { %>
-			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
-			<% } else if (flag == 'color') { %>
-			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
-			<% } %>
+	//- script(type="text/jst")#multi-input-templ
+	//- 	li.input.multi
+	//- 		.multi-child.destroy &times;
+	//- 		|<input class="multi-child input-item" type="text" placeholder="<%= placeholder %>" data-key="<%= keys[0] %>"/>
+	//- 		<% if (flag == 'radio') { %>
+	//- 		<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
+	//- 		<% } else if (flag == 'checkbox') { %>
+	//- 		<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
+	//- 		<% } else if (flag == 'color') { %>
+	//- 		<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
+	//- 		<% } %>
 
-	script(type="text/jst")#multi-input-double-templ
-		li.input.multi
-			.multi-child.destroy &times;
-			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder0 %>" data-key="<%= keys[0] %>" />
-			|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder1 %>" data-key="<%= keys[1] %>" />
-			<% (flag) ? print('<input class="input-item" type="'+flag+'" data-key="'+keys[2]+'" />') : '' %>
+	//- script(type="text/jst")#multi-input-double-templ
+	//- 	li.input.multi
+	//- 		.multi-child.destroy &times;
+	//- 		|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder0 %>" data-key="<%= keys[0] %>" />
+	//- 		|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder1 %>" data-key="<%= keys[1] %>" />
+	//- 		<% (flag) ? print('<input class="input-item" type="'+flag+'" data-key="'+keys[2]+'" />') : '' %>
 
-	script(type="text/jst")#impact-tag-input-templ
-		li.input.multi
-			.multi-child.destroy &times;
-			|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-id="false"/>
-			|<select name='category' class="input-item multi-child" data-key="category">
-			|<option value='citation' selected> Citation</option>
-			|<option value='change'>Change</option>
-			|<option value='achievement'>Achievement</option>
-			|<option value='other'>Other</option>
-			|</select>
-			|<select name='level' class="input-item multi-child" data-key="level">
-			|<option value='institution' selected> Institution</option>
-			|<option value='community'>Community</option>
-			|<option value='individual'>Individual</option>
-			|<option value='internal'>Internal</option>
-			|<option value='media'>Media</option>
-			|</select>
-			|<input class="input-item color-picker" type="text" data-color="#ccc" value="#ccc" data-group="impact" data-key="color"/>
+	//- script(type="text/jst")#impact-tag-input-templ
+	//- 	li.input.multi
+	//- 		.multi-child.destroy &times;
+	//- 		|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-id="false"/>
+	//- 		|<select name='category' class="input-item multi-child" data-key="category">
+	//- 		|<option value='citation' selected> Citation</option>
+	//- 		|<option value='change'>Change</option>
+	//- 		|<option value='achievement'>Achievement</option>
+	//- 		|<option value='other'>Other</option>
+	//- 		|</select>
+	//- 		|<select name='level' class="input-item multi-child" data-key="level">
+	//- 		|<option value='institution' selected> Institution</option>
+	//- 		|<option value='community'>Community</option>
+	//- 		|<option value='individual'>Individual</option>
+	//- 		|<option value='internal'>Internal</option>
+	//- 		|<option value='media'>Media</option>
+	//- 		|</select>
+	//- 		|<input class="input-item color-picker" type="text" data-color="#ccc" value="#ccc" data-group="impact" data-key="color"/>
 
 block bootstrap-data
 	script(id="page-data").
@@ -265,5 +267,4 @@ block scripts
 	script(src="javascripts/thirdparty/spectrum.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 		
-	//- Put it all together
 	script(src="javascripts/main.bundled.js")

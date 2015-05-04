@@ -2211,11 +2211,44 @@ body[data-section="settings"] #content {
   clear: right;
 }
 #settings .input input[type='text'],
+#settings .input-action-btn,
 #settings .color-picker {
-  height: 20px;
+  height: 22px;
 }
 #settings .input.multi {
   margin-left: 0;
+}
+#settings .js-input-parent[data-changed="true"] .js-input-actions-container {
+  display: inline-block;
+}
+#settings .js-input-parent[data-changed="false"] .js-input-actions-container {
+  display: none;
+}
+#settings .input-actions-container,
+#settings .input-action-btn {
+  display: inline-block;
+  vertical-align: top;
+}
+#settings .input-action-btn {
+  padding: 5px;
+  color: #fff;
+  width: 50px;
+  text-align: center;
+  opacity: 0.7;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  filter: alpha(opacity=70);
+}
+#settings .input-action-btn[data-which="cancel"] {
+  background-color: #9e0000;
+}
+#settings .input-action-btn[data-which="save"] {
+  background-color: #529624;
+}
+#settings .input-action-btn:hover {
+  cursor: pointer;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 #account-authentication .setting-group {
   margin-top: 20px;

@@ -1772,19 +1772,49 @@ select_width = 132px
 	.input
 		height 25px
 		margin-left destroy_width
-		input[type='text'],select
+		input[type='text'],
+		select
 			margin 0 input_margin 0 0
-		input[type='text'],input[type='password']
+		input[type='text'],
+		input[type='password']
 			width input_width
-		input[type='radio'],input[type='checkbox']
+		input[type='radio'],
+		input[type='checkbox']
 			margin 0
 		input[type='password']
 			margin 0 0 5px destroy_width
 			clear right
-	.input input[type='text'],.color-picker
-		height 20px
+	.input input[type='text'],
+	.input-action-btn,
+	.color-picker
+		height 22px
 	.input.multi
 		margin-left 0
+	.js-input-parent[data-changed="true"]
+		.js-input-actions-container
+			display inline-block
+	.js-input-parent[data-changed="false"]
+		.js-input-actions-container
+			display none
+	.input-actions-container,
+	.input-action-btn
+		display inline-block
+		vertical-align top
+	.input-action-btn
+		padding 5px
+		color white
+		width 50px
+		text-align center
+		opacity .7
+		// text-transform uppercase
+		// letter-spacing 1px
+	.input-action-btn[data-which="cancel"]
+		background-color disabled_red
+	.input-action-btn[data-which="save"]
+		background-color enable_green
+	.input-action-btn:hover
+		cursor pointer
+		opacity 1
 #account-authentication
 	.setting-group
 		margin-top 20px
