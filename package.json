@@ -21,6 +21,7 @@
     "js-yaml": "^3.3.0",
     "morgan": "~1.0.0",
     "nib": "~1.0.3",
+    "queue-async": "^1.0.7",
     "redis": "^0.12.1",
     "request": "2.x",
     "scrypt": "3.x",
@@ -32,7 +33,6 @@
     "validator": "3.x"
   },
   "devDependencies": {
-    "nodemon": "1.x",
-    "queue-async": "~1.0.7"
+    "nodemon": "~1.3.0"
   }
 }
