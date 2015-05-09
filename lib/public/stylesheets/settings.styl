@@ -44,7 +44,10 @@ select_width = 132px
 	color bg_gray
 .setting-description p
 	margin-bottom 5px
-.setting-title,.inputs-container,.multi-child,.color-picker
+.setting-title,
+.inputs-container,
+.multi-child,
+.color-picker
 	display inline-block
 	vertical-align top
 #settings
@@ -93,13 +96,13 @@ select_width = 132px
 	.input-action-btn[data-which="cancel"]
 		background-color #ddd
 		border-color darken(@background-color, 15%)
+		&:hover
+			background-color darken(@background-color, 7%)
 	.input-action-btn[data-which="save"]
 		background-color select_blue
 		border-color darken(@background-color, 15%)
-	.input-action-btn[data-which="cancel"]:hover
-		background-color darken(#ddd, 7%)
-	.input-action-btn[data-which="save"]:hover
-		background-color darken(select_blue, 8%)
+		&:hover
+			background-color darken(@background-color, 8%)
 	.input-action-btn:hover
 		cursor pointer
 #account-authentication
@@ -135,17 +138,21 @@ button.add[data-first="true"]
 	width 25px
 // Color picker style overrides
 // The arrow
-.sp-replacer:hover .sp-dd
-	color #999
+.sp-replacer:hover 
+	.sp-dd
+		color #999
 .sp-dd
 	font-size 18px
 	line-height 0px
 	color #ccc
 	padding 0
 	transorm scaleX(-0.7)
+	display none
 .sp-preview
 	margin-right 0
 	border none
+	width 22px
+	height @width
 .sp-replacer
 	padding 0
 	border none
@@ -153,6 +160,7 @@ button.add[data-first="true"]
 	vertical-align top
 .sp-container
 	border-color #ccc
+	background-color #fff
 .sp-picker-container
 	border none
 .sp-input
@@ -161,11 +169,14 @@ button.add[data-first="true"]
 .sp-cancel
 	color #000 !important
 .sp-palette .sp-thumb-el
-	border-color #ECECEC
-.sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active
+	border-color #fff
+.sp-palette .sp-thumb-el:hover, 
+.sp-palette .sp-thumb-el.sp-thumb-active
 	border-color #303030
-.sp-palette.sp-thumb.sp-cf
-	width 80px
+// .sp-palette.sp-thumb.sp-cf
+// 	width 80px
+.sp-palette .sp-thumb-active .sp-thumb-inner
+	background-image none
 .sp-palette-row-selection
 	margin-top 10px
 	padding-top 10px

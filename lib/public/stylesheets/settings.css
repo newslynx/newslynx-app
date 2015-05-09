@@ -585,13 +585,13 @@ input {
 .drawer-pointer.center {
   text-align: center;
 }
-body[data-section="settings"] #content {
+#content {
   padding: 25px 35px 25px 35px;
 }
-body[data-section="settings"] .section.active > .nav-link {
+.section.active > .nav-link {
   background-color: #b980c2;
 }
-body[data-section="settings"] #drawer {
+#drawer {
   background-color: #f4ebf5;
 }
 .settings-group {
@@ -685,12 +685,12 @@ body[data-section="settings"] #drawer {
   background-color: #ddd;
   border-color: #bcbcbc;
 }
+#settings .input-action-btn[data-which="cancel"]:hover {
+  background-color: #cecece;
+}
 #settings .input-action-btn[data-which="save"] {
   background-color: #88cfff;
   border-color: #4db7ff;
-}
-#settings .input-action-btn[data-which="cancel"]:hover {
-  background-color: #cecece;
 }
 #settings .input-action-btn[data-which="save"]:hover {
   background-color: #69c2ff;
@@ -749,10 +749,13 @@ button.add[data-first="true"] {
   color: #ccc;
   padding: 0;
   transorm: scaleX(-0.7);
+  display: none;
 }
 .sp-preview {
   margin-right: 0;
   border: none;
+  width: 22px;
+  height: 22px;
 }
 .sp-replacer {
   padding: 0;
@@ -762,6 +765,7 @@ button.add[data-first="true"] {
 }
 .sp-container {
   border-color: #ccc;
+  background-color: #fff;
 }
 .sp-picker-container {
   border: none;
@@ -775,14 +779,14 @@ button.add[data-first="true"] {
   color: #000 !important;
 }
 .sp-palette .sp-thumb-el {
-  border-color: #ececec;
+  border-color: #fff;
 }
 .sp-palette .sp-thumb-el:hover,
 .sp-palette .sp-thumb-el.sp-thumb-active {
   border-color: #303030;
 }
-.sp-palette.sp-thumb.sp-cf {
-  width: 80px;
+.sp-palette .sp-thumb-active .sp-thumb-inner {
+  background-image: none;
 }
 .sp-palette-row-selection {
   margin-top: 10px;
