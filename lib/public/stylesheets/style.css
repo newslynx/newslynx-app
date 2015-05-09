@@ -2153,7 +2153,8 @@ body[data-section="settings"] #content {
 .settings-title {
   font-weight: bold;
   font-size: 1.8em;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 7px;
   border-bottom: 1px solid #ccc;
   position: relative;
   color: #adadad;
@@ -2222,21 +2223,32 @@ body[data-section="settings"] #content {
   vertical-align: top;
 }
 #settings .input-action-btn {
-  padding: 5px;
-  color: #fff;
-  width: 50px;
-  font-weight: bold;
+  padding: 4px;
+  width: 80px;
   text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  margin-right: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 #settings .input-action-btn[data-which="cancel"] {
-  background-color: #ccc;
+  background-color: #ddd;
+  border-color: #bcbcbc;
 }
 #settings .input-action-btn[data-which="save"] {
   background-color: #88cfff;
+  border-color: #4db7ff;
+}
+#settings .input-action-btn[data-which="cancel"]:hover {
+  background-color: #cecece;
+}
+#settings .input-action-btn[data-which="save"]:hover {
+  background-color: #6dc4ff;
 }
 #settings .input-action-btn:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 #account-authentication .setting-group {
   margin-top: 20px;
@@ -2269,6 +2281,14 @@ button.add {
   display: block;
   margin-top: 5px;
   margin-left: 120px;
+}
+button.add[data-first="true"] {
+  margin-left: 0;
+  -webkit-transform: translateY(-40%);
+  -moz-transform: translateY(-40%);
+  -o-transform: translateY(-40%);
+  -ms-transform: translateY(-40%);
+  transform: translateY(-40%);
 }
 .color-picker {
   width: 25px;

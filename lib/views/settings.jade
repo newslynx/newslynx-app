@@ -112,13 +112,17 @@ block content
 			#article-tags.setting-group
 				.setting-title Subject tags
 				ul.inputs-container(data-placeholder="Fracking" data-flag="color" data-group="subject" data-key="subject_tags" data-child-keys='["name","color"]')
+					if (info.tags.subject.length)
+						button.add(data-first='true') Create my first one!				
+					else
+						button.add +				
+
 					//- <%  for (var i = 0; i < subject_tags.length; i++) { %>
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
 					//- 	|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
 					//- 	|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
 					//- <% } %>
-				button.add +				
 			#impact-tags.setting-group(data-group="impact-tags")
 				.setting-flag Category
 				.setting-flag Level

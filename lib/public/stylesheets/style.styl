@@ -1741,7 +1741,8 @@ select_width = 132px
 .settings-title
 	font-weight bold
 	font-size 1.8em
-	margin-bottom 15px
+	margin-bottom 25px
+	padding-bottom 7px
 	border-bottom 1px solid #ccc
 	position relative
 	color light_gray
@@ -1800,20 +1801,27 @@ select_width = 132px
 		display inline-block
 		vertical-align top
 	.input-action-btn
-		padding 5px
-		color #fff
-		width 50px
-		font-weight bold
+		padding 4px
+		width 80px
 		text-align center
-		// text-transform uppercase
-		// letter-spacing 1px
+		letter-spacing 1px
+		text-transform uppercase
+		border 1px solid transparent
+		margin-right 3px
+		border-radius 2px
+		// font-size 1.1em
 	.input-action-btn[data-which="cancel"]
-		background-color #ccc
+		background-color #ddd
+		border-color darken(@background-color, 15%)
 	.input-action-btn[data-which="save"]
 		background-color select_blue
+		border-color darken(@background-color, 15%)
+	.input-action-btn[data-which="cancel"]:hover
+		background-color darken(#ddd, 7%)
+	.input-action-btn[data-which="save"]:hover
+		background-color darken(select_blue, 8%)
 	.input-action-btn:hover
 		cursor pointer
-		text-decoration underline
 #account-authentication
 	.setting-group
 		margin-top 20px
@@ -1840,6 +1848,9 @@ button.add
 	display block
 	margin-top 5px
 	margin-left (setting_title_width + destroy_width)
+button.add[data-first="true"]
+	margin-left 0
+	transform translateY(-40%)
 .color-picker
 	width 25px
 // Color picker style overrides
