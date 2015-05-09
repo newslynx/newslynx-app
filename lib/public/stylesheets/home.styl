@@ -1,20 +1,21 @@
 @require 'blueprint'
 
-// Todo remove these pointless section specific-styles bc the stylesheets are now section-specific
-body[data-section="home"] 
-	#content
-		padding 10px 15px
-	.section.active > .nav-link
-		background-color home
-	#drawer
-		background-color tint(home, 90%)
+#content
+	padding 10px 15px
+.section.active > .nav-link
+	background-color home
+#drawer
+	background-color tint(home, 90%)
 
 #home-page-instructions
 	width 620px
-	h2,h3,p
+	h2,
+	h3,
+	p
 		margin-bottom 10px
-		// font-weight normal
-	h3,h4,h5
+	h3,
+	h4,
+	h5
 		margin-top 5px
 	h2
 		font-size 2.75em
@@ -25,7 +26,8 @@ body[data-section="home"]
 	h5
 		font-size 1.5em
 		color #6f6c6c
-	h4,h5
+	h4,
+	h5
 		margin-bottom 10px
 	p
 		font-size 1.3em
