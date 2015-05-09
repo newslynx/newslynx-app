@@ -1,0 +1,122 @@
+#drawer
+	.merlynne-img
+		width 65%
+		margin 0 auto
+		img
+			width 100%
+	
+#drawer
+	p
+		line-height 1.3em
+.drawer-title,
+.division-switcher
+	width 100%
+	font-size 2.4em
+	font-weight 100
+// TODO, possibly remove .drawer-item
+.drawer-title,
+.drawer-item,
+.drawer-list-outer,
+.modal-outer
+	padding 10px
+	user-select none
+.drawer-short-item
+	padding 0 15px
+.drawer-section-title
+	font-size 1.4em
+	font-weight 200
+	
+.division-switcher
+	font-size 1.8em
+	display table
+	background-color bg_gray
+	li
+		display table-cell
+		width 50%
+		text-align center
+		vertical-align middle
+		padding 5px
+		height division_switcher_height
+		color #fff
+		user-select none
+	li:not(.active):hover
+		cursor pointer
+		background-color tint(highlight_gray, 30%)
+	.active:hover
+		cursor default
+
+.drawer-list-item,
+.drawer-options,
+.drawer-section-title,
+.drawer-pointer
+	user-select none
+	.btn
+		padding 5px 0
+	.pub-date
+		font-size 1.1em
+	.title
+		font-size 1.4em
+		margin-bottom 2px
+	.count
+		text-transform uppercase
+		margin-bottom 2px
+	.description
+		font-size 1.2em
+		color bg_gray
+	.toolbar
+		font-size 1.2em
+		margin-top 11px
+	.settings-switch,.enable-switch
+		display inline-block
+	.enable-switch
+		bottom 0
+		position absolute
+		right 0
+		display none
+	.enable-switch[data-enabled="true"]
+		color enable_green
+	.enable-switch[data-enabled="false"]
+		color disabled_red
+	.settings-switch:not(.active):hover .text,.enable-switch:hover
+		text-decoration underline
+		cursor pointer
+	.settings-switch:active
+		color #666
+	.modal-switch.active:hover
+		cursor default
+	// .enable-switch[data-enabled="true"]:active
+	// 	color shade(enable_green, 80%)
+	// .enable-switch[data-enabled="false"]:active
+	// 	color shade(disabled_red, 80%)
+.drawer-list-outer:not(.active):hover
+	cursor pointer
+	background-color tint(select_blue, 45%)
+.drawer-list-outer.active
+	background-color select_blue
+.drawer-list-outer.active:hover
+	cursor default
+
+		
+.division-title,
+.division-description
+	padding 10px
+.division-title
+	font-size 2.75em
+.division-description
+	font-size 1.2em
+
+#drawer-pointers-container
+	border-bottom 1px dashed #ccc
+.drawer-pointer
+	padding 12px
+	font-size 1.3em
+	font-weight bold
+	color #666
+	p
+		font-weight normal
+		padding-bottom 8px
+		span
+			font-weight bold
+			
+.drawer-pointer.center
+	text-align center

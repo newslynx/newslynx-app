@@ -2230,8 +2230,8 @@ body[data-section="settings"] #content {
   text-transform: uppercase;
   border: 1px solid transparent;
   margin-right: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 #settings .input-action-btn[data-which="cancel"] {
   background-color: #ddd;
@@ -2245,7 +2245,7 @@ body[data-section="settings"] #content {
   background-color: #cecece;
 }
 #settings .input-action-btn[data-which="save"]:hover {
-  background-color: #6dc4ff;
+  background-color: #69c2ff;
 }
 #settings .input-action-btn:hover {
   cursor: pointer;
@@ -2283,12 +2283,11 @@ button.add {
   margin-left: 120px;
 }
 button.add[data-first="true"] {
-  margin-left: 0;
-  -webkit-transform: translateY(-40%);
-  -moz-transform: translateY(-40%);
-  -o-transform: translateY(-40%);
-  -ms-transform: translateY(-40%);
-  transform: translateY(-40%);
+  -webkit-transform: translateY(-95%);
+  -moz-transform: translateY(-95%);
+  -o-transform: translateY(-95%);
+  -ms-transform: translateY(-95%);
+  transform: translateY(-95%);
 }
 .color-picker {
   width: 25px;

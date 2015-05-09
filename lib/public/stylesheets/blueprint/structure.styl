@@ -1,0 +1,48 @@
+leftrail_width = 250px
+drawer_width = 285px
+content_width = 850
+header_height = 50px
+furniture_width = leftrail_width + drawer_width
+page_width = (leftrail_width + drawer_width + content_width)
+article_min_width = 1115px
+
+section_li_height = 45px
+section_nav_margin_top = 10px
+
+$pages = about home login settings approval-river articles
+
+#main-wrapper
+	width 100%
+	height 100%
+	min-width 960px //TK
+#left-rail,
+#drawer,
+#content
+	display inline-block
+	// position relative
+	vertical-align top
+	height 100%
+	
+#content
+	padding 0
+
+#drawer
+	overflow hidden
+#content
+	overflow-x hidden
+#left-rail
+	width leftrail_width
+	background-color leftrail_gray
+	overflow hidden
+	z-index 9
+#drawer
+	width drawer_width
+	background-color dummy
+	border-right 1px solid border_gray
+	position relative
+#content
+	width "calc(100% - %s)" % (drawer_width + leftrail_width)
+
+.division-description
+	p 
+		margin-bottom 10px

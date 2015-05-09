@@ -1,150 +1,3 @@
-@import 'nib'
-
-link_blue = #0092ce
-link_blue_hover = #0082b6
-
-*
-	box-sizing border-box
-html
-	font-size 16px
-body
-	font 62.5% "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
-	margin 0
-html,body
-	height 100%
-a
-	color link_blue
-	text-decoration none
-a:hover
-	color link_blue_hover
-	text-decoration underline
-ul
-	list-style none
-	margin 0
-	padding 0
-
-h1,h2,h3,h4,ul
-	margin 0
-	padding 0
-	-webkit-margin-before 0px
-	-webkit-margin-after 0px
-	-webkit-margin-start 0px
-	-webkit-margin-end 0px
-	-webkit-padding-start 0
-
-p
-	margin 0
-
-.division-description
-	p 
-		margin-bottom 10px
-
-input[type="search"]
-	appearance searchfield
-
-button,input.destroy
-	color #333
-	background-color #EEE
-	background-image linear-gradient(#FCFCFC, #EEE)
-	border 1px solid #D5D5D5
-
-button,input[type="submit"],input.destroy
-	padding 5px 8px
-	font-weight bold
-	text-shadow 0px 1px 0px rgba(255, 255, 255, 0.9)
-	white-space nowrap
-	border-radius 3px
-	
-button,input[type="submit"],input.destroy,select
-	margin 0
-	position relative
-	display inline-block
-	font-size 13px
-	vertical-align top
-	cursor pointer
-	background-repeat repeat-x
-	-moz-user-select none
-
-select
-	font-size 12px !important
-
-button.mini
-	padding 0 6px
-	font-size 12px
-
-select
-	padding 1px 8px !important
-	text-shadow none
-
-textarea
-	font-family "Helvetica Neue","Lucida Grande", Helvetica, Arial, sans-serif
-	font-size 12px
-	padding 3px
-	box-shadow 1px 2px 1px 0px #ededed inset
-	min-height 50px
-	margin 10px
-	overflow auto
-	width 300px    
-	border 1px solid #aaa
-
-input[type="submit"]
-	color #FFF
-	text-shadow 0px -1px 0px rgba(0, 0, 0, 0.25)
-	background-color #60B044
-	background-image linear-gradient(#8ADD6D, #60B044)
-	background-repeat repeat-x
-	border 1px solid #5CA941
-
-input.destroy
-	color #900
-
-button:hover,input[type="submit"]:hover,input.destroy:hover
-	cursor pointer
-
-button:hover
-	text-decoration none
-	background-color #DDD
-	background-image linear-gradient(#EEE, #DDD)
-	background-repeat repeat-x
-	border-color #CCC
-
-input.destroy:hover
-	color #900
-	color #FFF
-	text-shadow 0px -1px 0px rgba(0, 0, 0, 0.3)
-	background-color #B33630
-	background-image linear-gradient(#DC5F59, #B33630)
-	background-repeat repeat-x
-	border-color #CD504A
-
-input[type="submit"]:hover
-	color #FFF
-	background-color #569E3D
-	background-image linear-gradient(#79D858, #569E3D)
-	background-repeat repeat-x
-	border-color #4A993E
-
-button:active
-	background-color #dcdcdc
-	background-image none
-	border-color #b5b5b5
-	box-shadow inset 0 2px 4px rgba(0,0,0,0.15)
-
-input[type="submit"]:active
-	background-color #569e3d
-	background-image none
-	border-color #418737
-
-input.destroy:active
-	color #fff
-	background-color #b33630
-	background-image none
-	border-color #9f312c
-
-.disabled button,
-button.disabled
-	opacity .4
-	pointer-events none
 
 .loading-spinner
 	background-image url(../images/gifs/arrows-transparent.gif)
@@ -166,139 +19,20 @@ button.disabled
 	margin-top 20px
 	background-position right center
 
-.disabled:hover button,.disabled:hover button:hover,.disabled:hover
-	cursor default !important
-
-
-input[type="password"],input[type="text"]
-	margin-left 0
 /* M O D E S */
 body[data-modal=true]
 	overflow hidden
 	#recipes.drawer-list-item-ul
 		overflow-y hidden !important
 
-// Widths
-leftrail_width = 250px
-drawer_width = 285px
-content_width = 850
-header_height = 50px
-furniture_width = leftrail_width + drawer_width
-page_width = (leftrail_width + drawer_width + content_width)
-article_min_width = 1115px
 
-// Colors
-dummy = #fc0
-the_beige = #f3f0df
-the_green = #0eb521
-leftrail_gray = #393939
-light_gray = #ADADAD
-bg_gray = #7C7C7C
-highlight_gray = #666
-border_gray = #777676
-bg_blue = #b4d5ec
-select_blue = #88cfff
-enable_green = #529624
-disabled_red = #9E0000
-// Page colors
-login = #d6ccdf
-about = #e3943b
-home = #008def
-approval_river = #12b7dd
-articles = #3ec173
-settings = #b980c2
-events = #c13d3d
 
 /* M A I N  P A G E  E L E M E N T S  */
-#main-wrapper
-	width 100%
-	height 100%
-	min-width 960px //TK
-#left-rail,#drawer, #content
-	display inline-block
-	// position relative
-	vertical-align top
-	height 100%
 
-#drawer
-	overflow hidden
-#content
-	overflow-x hidden
-#left-rail
-	width leftrail_width
-	background-color leftrail_gray
-	overflow hidden
-	// box-shadow 0px 0px 6px #000
-	z-index 9
-#drawer
-	width drawer_width
-	background-color dummy
-	border-right 1px solid border_gray
-	position relative
-	// box-shadow 0px 0px 8px darken(dummy, 10%)
-	// z-index 8
-#content
-	width "calc(100% - %s)" % (drawer_width + leftrail_width)
 /* end main page elements */
 
 /* H E A D E R	*/
-section_li_height = 45px
-section_nav_margin_top = 10px
 
-#left-rail
-	height 100%
-	color #fff
-	overflow-x hidden
-	#header-container
-		height header_height
-		width 100%
-		background-color #000
-		// box-shadow 0 6px 12px #000
-		padding 3px 0 0 0
-		user-select none
-		a
-			text-decoration none
-			color #ccc 
-			display inline-block
-		a:hover h1
-			color #fff
-		img, h1.page-title
-			position relative
-		img
-			height 45px
-			width @height
-		h1.page-title
-			font-size 2.5em
-			margin 0
-			padding 0
-			font-weight 200
-			display inline-block
-			vertical-align text-bottom
-			top -8px
-			width 106px
-		.settings
-			display inline-block
-			position relative
-			top -13px
-			width 37%
-			text-align right
-			vertical-align text-bottom
-			.admin-item
-				display inline-block
-				vertical-align middle
-				width 33px
-				text-algn left
-			a
-				padding 0 7px 0 7px
-				color #9e9e9e
-				.octicon
-					font-size 18px
-			a:hover
-				color #fff
-	.section-options[data-section-options="articles"]
-		overflow-y scroll
-		overflow-x hidden
-		height 'calc(100vh - %s)' % (header_height + section_li_height*2 + section_nav_margin_top)
 // #add-article
 // 	display none
 #add-article > button
@@ -307,53 +41,7 @@ section_nav_margin_top = 10px
 
 
 /* L E F T  R A I L */
-.main-sections
-	margin-top 10px
-	li
-		user-select none
-	.section.active .nav-link
-		text-shadow 0 0px 12px #535353
-	.section.active:hover
-		cursor default
-	input, select
-		width 100%
-		display inline-block
-	.section-options, .nav-link, a:not(.out-link)
-		padding 10px 25px
-	.section-options,.section-subnav
-		background-color bg_gray
-		color #fff
-	.nav-link,a
-		color #f2f2f2
-	.nav-link, a:not(.out-link)
-		font-size 2em
-		font-weight 100
-		display block
-		text-decoration none
-	a:hover:not(.out-link)
-		cursor pointer
-		background-color highlight_gray
-	.section.active .nav-link:hover
-		cursor default
-	.tag-wrapper:hover .tag-container
-		background-color #A1A1A1
-	.option-container[data-type="date-range"]
-		input
-			width 45%
-		input[data-dir="to"]
-			float right
-		.clear-date-range
-			display none
-			text-transform none
-		.clear-date-range span:hover
-			cursor pointer
-			text-decoration underline
-	.section-img
-		float right
-		padding-top 2px
-		width 20px
-		img
-			width 100%
+
 
 
 .section-options
@@ -446,11 +134,11 @@ body[data-section="about"]
 		background-color about
 	#drawer
 		background-color tint(about, 90%)
-body[data-section="home"]
-	.section.active > .nav-link
-		background-color home
-	#drawer
-		background-color tint(home, 90%)
+// body[data-section="home"]
+// 	.section.active > .nav-link
+// 		background-color home
+// 	#drawer
+// 		background-color tint(home, 90%)
 body[data-section="approval-river"] 
 	.section.active > .nav-link
 		background-color approval_river
@@ -469,14 +157,14 @@ body[data-section="articles"]
 	.division-switcher li.active
 		background-color articles
 		text-shadow 0 0px 12px #535353
-body[data-section="settings"] 
-	.section.active > .nav-link
-		background-color settings
-	#drawer
-		background-color tint(settings, 85%)
-body[data-section="login"] 
-	#drawer
-		background-color login
+// body[data-section="settings"] 
+// 	.section.active > .nav-link
+// 		background-color settings
+// 	#drawer
+// 		background-color tint(settings, 85%)
+// body[data-section="login"] 
+// 	#drawer
+// 		background-color login
 
 /* end section specific styles */
 
@@ -485,32 +173,36 @@ division_switcher_height = 50px
 drawer_pointer_padding = 62px
 drawer_item_single_line = 37px
 
-body[data-section="login"] #content
-	padding 15px
+// body[data-section="login"] #content
+// 	padding 15px
 
-#drawer
-	.merlynne-img
-		width 65%
-		margin 0 auto
-		img
-			width 100%
+// #drawer
+// 	.merlynne-img
+// 		width 65%
+// 		margin 0 auto
+// 		img
+// 			width 100%
 	
-#drawer
-	p
-		line-height 1.3em
-.drawer-title,.division-switcher
-	width 100%
-	font-size 2.4em
-	font-weight 100
-// TODO, possibly remove .drawer-item
-.drawer-title,.drawer-item,.drawer-list-outer,.modal-outer
-	padding 10px
-	user-select none
-.drawer-short-item
-	padding 0 15px
-.drawer-section-title
-	font-size 1.4em
-	font-weight 200
+// #drawer
+// 	p
+// 		line-height 1.3em
+// .drawer-title,.division-switcher
+// 	width 100%
+// 	font-size 2.4em
+// 	font-weight 100
+// // TODO, possibly remove .drawer-item
+// .drawer-title,
+// .drawer-item,
+// .drawer-list-outer,
+// .modal-outer
+// 	padding 10px
+// 	user-select none
+// .drawer-short-item
+// 	padding 0 15px
+// .drawer-section-title
+// 	font-size 1.4em
+// 	font-weight 200
+
 // .drawer-list-inner
 // 	border-left 3px solid select_blue
 // 	padding 6px 0 6px 5px
@@ -520,75 +212,103 @@ body[data-section="login"] #content
 // .drawer-list-inner,.tag-container
 // 	transition border-left-width .1s linear,padding-left .1s linear
 /*   A R T I C L E  S T Y L E S   */
-.division-switcher
-	font-size 1.8em
-	display table
-	background-color bg_gray
-	li
-		display table-cell
-		width 50%
-		text-align center
-		vertical-align middle
-		padding 5px
-		height division_switcher_height
-		color #fff
-		user-select none
-	li:not(.active):hover
-		cursor pointer
-		background-color tint(highlight_gray, 30%)
-	.active:hover
-		cursor default
+// .division-switcher
+// 	font-size 1.8em
+// 	display table
+// 	background-color bg_gray
+// 	li
+// 		display table-cell
+// 		width 50%
+// 		text-align center
+// 		vertical-align middle
+// 		padding 5px
+// 		height division_switcher_height
+// 		color #fff
+// 		user-select none
+// 	li:not(.active):hover
+// 		cursor pointer
+// 		background-color tint(highlight_gray, 30%)
+// 	.active:hover
+// 		cursor default
 
-.drawer-list-item,
-.drawer-options,
-.drawer-section-title,
-.drawer-pointer
-	user-select none
-	.btn
-		padding 5px 0
-	.pub-date
-		font-size 1.1em
-	.title
-		font-size 1.4em
-		margin-bottom 2px
-	.count
-		text-transform uppercase
-		margin-bottom 2px
-	.description
-		font-size 1.2em
-		color bg_gray
-	.toolbar
-		font-size 1.2em
-		margin-top 11px
-	.settings-switch,.enable-switch
-		display inline-block
-	.enable-switch
-		bottom 0
-		position absolute
-		right 0
-		display none
-	.enable-switch[data-enabled="true"]
-		color enable_green
-	.enable-switch[data-enabled="false"]
-		color disabled_red
-	.settings-switch:not(.active):hover .text,.enable-switch:hover
-		text-decoration underline
-		cursor pointer
-	.settings-switch:active
-		color #666
-	.modal-switch.active:hover
-		cursor default
-	// .enable-switch[data-enabled="true"]:active
-	// 	color shade(enable_green, 80%)
-	// .enable-switch[data-enabled="false"]:active
-	// 	color shade(disabled_red, 80%)
-.drawer-list-outer:not(.active):hover
-	cursor pointer
-	background-color tint(select_blue, 45%)
-.drawer-list-outer.active
-	background-color select_blue
-.drawer-list-outer.active:hover
-	cursor default
+// .drawer-list-item,
+// .drawer-options,
+// .drawer-section-title,
+// .drawer-pointer
+// 	user-select none
+// 	.btn
+// 		padding 5px 0
+// 	.pub-date
+// 		font-size 1.1em
+// 	.title
+// 		font-size 1.4em
+// 		margin-bottom 2px
+// 	.count
+// 		text-transform uppercase
+// 		margin-bottom 2px
+// 	.description
+// 		font-size 1.2em
+// 		color bg_gray
+// 	.toolbar
+// 		font-size 1.2em
+// 		margin-top 11px
+// 	.settings-switch,.enable-switch
+// 		display inline-block
+// 	.enable-switch
+// 		bottom 0
+// 		position absolute
+// 		right 0
+// 		display none
+// 	.enable-switch[data-enabled="true"]
+// 		color enable_green
+// 	.enable-switch[data-enabled="false"]
+// 		color disabled_red
+// 	.settings-switch:not(.active):hover .text,.enable-switch:hover
+// 		text-decoration underline
+// 		cursor pointer
+// 	.settings-switch:active
+// 		color #666
+// 	.modal-switch.active:hover
+// 		cursor default
+// 	// .enable-switch[data-enabled="true"]:active
+// 	// 	color shade(enable_green, 80%)
+// 	// .enable-switch[data-enabled="false"]:active
+// 	// 	color shade(disabled_red, 80%)
+// .drawer-list-outer:not(.active):hover
+// 	cursor pointer
+// 	background-color tint(select_blue, 45%)
+// .drawer-list-outer.active
+// 	background-color select_blue
+// .drawer-list-outer.active:hover
+// 	cursor default
+// #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+// #drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
+// 	background-color darken(select_blue, 7%)
+// 	cursor pointer
+
+// // These might need to be display inline-block
+// #drawer[data-mode="detail"]
+// 	.inputs-container input[type="radio"]
+// 		display block
+// 	.inputs-container input[type="checkbox"]
+// 		display none
+
+// #drawer[data-mode="compare"]
+// 	.inputs-container input[type="radio"]
+// 		display none
+// 	.inputs-container input[type="checkbox"]
+// 		display block
+
+// #drawer[data-mode="compare"],
+// #drawer[data-mode="detail"],
+// #drawer[data-mode="my-recipes"]
+// 	.inputs-container,.drawer-list-inner
+// 		display inline-block
+// 		vertical-align top
+// 	.inputs-container
+// 		margin-right 10px
+// 	.drawer-list-inner
+// 		width 85%
 #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
 #drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
 	background-color darken(select_blue, 7%)
@@ -616,8 +336,7 @@ body[data-section="login"] #content
 	.inputs-container
 		margin-right 10px
 	.drawer-list-inner
-		width 85%
-		
+		width 85%		
 #content[data-mode="my-recipes"]
 	.load-more
 		display table // Not sure why this makes centering work
@@ -808,57 +527,57 @@ body[data-section="home"] #content
 	padding 10px 15px
 
 /* H O M E  P A G E  */
-#home-page-instructions
-	width 620px
-	h2,h3,p
-		margin-bottom 10px
-		// font-weight normal
-	h3,h4,h5
-		margin-top 5px
-	h2
-		font-size 2.75em
-	h3
-		font-size 2em
-	h4
-		font-size 1.9em
-	h5
-		font-size 1.5em
-		color #6f6c6c
-	h4,h5
-		margin-bottom 10px
-	p
-		font-size 1.3em
-	ul
-		list-style disc
-		margin 0 0 20px 20px
-	li
-		font-size 1.3em
-		line-height 20px
-		.li-name-text
-			font-weight bold
-		.li-name
-			padding 1px 5px
-			border-radius 2px
-	.attention
-		background-color #CEE6EF
-		padding 10px
-		border-radius 5px
-	.look-at-me
-		font-weight bold
-		color #00b602
-	img
-		max-width 750px
-		// width 100%
-	img.bordered
-		border 1px solid #ccc
-	img.centered
-		margin 5px auto 0 auto
-		display inherit
-	.details
-		font-size 1.2em
-	.signed
-		margin-top 35px
-		margin-bottom 25px
+// #home-page-instructions
+// 	width 620px
+// 	h2,h3,p
+// 		margin-bottom 10px
+// 		// font-weight normal
+// 	h3,h4,h5
+// 		margin-top 5px
+// 	h2
+// 		font-size 2.75em
+// 	h3
+// 		font-size 2em
+// 	h4
+// 		font-size 1.9em
+// 	h5
+// 		font-size 1.5em
+// 		color #6f6c6c
+// 	h4,h5
+// 		margin-bottom 10px
+// 	p
+// 		font-size 1.3em
+// 	ul
+// 		list-style disc
+// 		margin 0 0 20px 20px
+// 	li
+// 		font-size 1.3em
+// 		line-height 20px
+// 		.li-name-text
+// 			font-weight bold
+// 		.li-name
+// 			padding 1px 5px
+// 			border-radius 2px
+// 	.attention
+// 		background-color #CEE6EF
+// 		padding 10px
+// 		border-radius 5px
+// 	.look-at-me
+// 		font-weight bold
+// 		color #00b602
+// 	img
+// 		max-width 750px
+// 		// width 100%
+// 	img.bordered
+// 		border 1px solid #ccc
+// 	img.centered
+// 		margin 5px auto 0 auto
+// 		display inherit
+// 	.details
+// 		font-size 1.2em
+// 	.signed
+// 		margin-top 35px
+// 		margin-bottom 25px
 
 
 /* end home page */
@@ -893,18 +612,18 @@ body[data-section="home"] #content
 .river-item-container
 	position relative
 
-#drawer-pointers-container
-	border-bottom 1px dashed #ccc
-.drawer-pointer
-	padding 12px
-	font-size 1.3em
-	font-weight bold
-	color #666
-	p
-		font-weight normal
-		padding-bottom 8px
-		span
-			font-weight bold
+// #drawer-pointers-container
+// 	border-bottom 1px dashed #ccc
+// .drawer-pointer
+// 	padding 12px
+// 	font-size 1.3em
+// 	font-weight bold
+// 	color #666
+// 	p
+// 		font-weight normal
+// 		padding-bottom 8px
+// 		span
+// 			font-weight bold
 			
 #drawer[data-mode="compare"],
 #drawer[data-mode="detail"]
@@ -972,8 +691,8 @@ body[data-section="home"] #content
 			opacity .5
 
 
-.drawer-pointer.center
-	text-align center
+// .drawer-pointer.center
+// 	text-align center
 #recipe-sources
 	padding 0
 .view-all:hover
@@ -1105,25 +824,25 @@ body[data-section="home"] #content
 /* end approval river */
 
 /* T E X T  S T Y L E S  */
-.division-title,.division-description
-	padding 10px
-.division-title
-	font-size 2.75em
-.division-description
-	font-size 1.2em
-label
-	user-select none
+// .division-title,.division-description
+// 	padding 10px
+// .division-title
+// 	font-size 2.75em
+// .division-description
+// 	font-size 1.2em
+// label
+// 	user-select none
 	// font-size 1.2em
-input
-	margin-bottom 5px
+// input
+// 	margin-bottom 5px
 .pub-date
 	text-transform uppercase
 	margin-bottom 3px
 /* end text styles */
 
 /*  M A I N  A R T I C L E  */
-#content
-	padding 0
+// #content
+// 	padding 0
 
 #content[data-mode="detail"]
 	padding padding_verts padding_horitz
@@ -1724,210 +1443,22 @@ input.destroy
 /* end modal windows */
 
 /* S E T T I N G S */
-body[data-section="settings"] #content
-	padding 25px 35px 25px 35px
 
-input_width = 200px
-destroy_width = 20px
-input_margin = 5px
-setting_title_width = 100px
-inputs_width = 550px
-select_width = 132px
-
-.settings-group
-	width 650px
-	position relative
-	// background-color #0cf
-.settings-title
-	font-weight bold
-	font-size 1.8em
-	margin-bottom 25px
-	padding-bottom 7px
-	border-bottom 1px solid #ccc
-	position relative
-	color light_gray
-// .settings-title:before
-// 	content '# '
-// 	color #ccc
-// 	position absolute
-// 	left -15px
-.setting-group
-	margin-bottom 20px
-.setting-title
-	font-size 1.2em
-	width setting_title_width
-	font-weight bold
-	// color darken(settings, 35%)
-	// background-color #fc0
-.setting-description
-	font-size 1.2em
-	color bg_gray
-.setting-description p
-	margin-bottom 5px
-.setting-title,.inputs-container,.multi-child,.color-picker
-	display inline-block
-	vertical-align top
-#settings
-	margin-bottom 50px
-	.inputs-container
-		width inputs_width
-		// background-color #f0c
-	.input-parent
-		height 25px
-		margin-left destroy_width
-		input[type='text'],
-		select
-			margin 0 input_margin 0 0
-		input[type='text'],
-		input[type='password']
-			width input_width
-		input[type='radio'],
-		input[type='checkbox']
-			margin 0
-		input[type='password']
-			clear right
-	.input-parent input[type='text'],
-	.input-action-btn,
-	.color-picker
-		height 22px
-	.js-input-parent[data-changed="true"]
-		.js-input-actions-container
-			display inline-block
-	.js-input-parent[data-changed="false"]
-		.js-input-actions-container
-			display none
-	.input-actions-container,
-	.input-action-btn
-		display inline-block
-		vertical-align top
-	.input-action-btn
-		padding 4px
-		width 80px
-		text-align center
-		letter-spacing 1px
-		text-transform uppercase
-		border 1px solid transparent
-		margin-right 3px
-		border-radius 2px
-		// font-size 1.1em
-	.input-action-btn[data-which="cancel"]
-		background-color #ddd
-		border-color darken(@background-color, 15%)
-	.input-action-btn[data-which="save"]
-		background-color select_blue
-		border-color darken(@background-color, 15%)
-	.input-action-btn[data-which="cancel"]:hover
-		background-color darken(#ddd, 7%)
-	.input-action-btn[data-which="save"]:hover
-		background-color darken(select_blue, 8%)
-	.input-action-btn:hover
-		cursor pointer
-#account-authentication
-	.setting-group
-		margin-top 20px
-.setting-flag
-	font-size 1.2em
-	font-weight bold
-	margin-bottom 3px
-	margin-left ( setting_title_width + destroy_width + input_width + input_margin*1.6 + 1 )
-.setting-group[data-group="impact-tags"] .setting-flag
-	display inline-block
-.setting-group[data-group="impact-tags"] .setting-flag:nth-child(2)
-	margin-left 85px
-	margin-right 55px // Bump the next line to the next line
-.destroy.multi-child
-	width destroy_width
-	height 100%
-	text-align center
-	font-size 1.4em
-	color #aaa
-.destroy.multi-child:hover
-	cursor pointer
-	color #000
-button.add
-	display block
-	margin-top 5px
-	margin-left (setting_title_width + destroy_width)
-button.add[data-first="true"]
-	margin-left 0
-	transform translateY(-40%)
-.color-picker
-	width 25px
-// Color picker style overrides
-// The arrow
-.sp-replacer:hover .sp-dd
-	color #999
-.sp-dd
-	font-size 18px
-	line-height 0px
-	color #ccc
-	padding 0
-.sp-preview
-	margin-right 0
-	border none
-.sp-replacer
-	padding 0
-	border none
-	background transparent
-	vertical-align top
-.sp-container
-	border-color #ccc
-.sp-picker-container
-	border none
-.sp-input
-	background auto
-	border-radius 0
-.sp-cancel
-	color #000 !important
-.sp-palette .sp-thumb-el
-	border-color #ECECEC
-.sp-palette .sp-thumb-el:hover, .sp-palette .sp-thumb-el.sp-thumb-active
-	border-color #303030
-.sp-palette.sp-thumb.sp-cf
-	width 80px
-.sp-palette-row-selection
-	margin-top 10px
-	padding-top 10px
-	border-top 1px solid #ccc
-.auth-container
-	display inline-block
-	vertical-align top
-	margin-left destroy_width
-.auth-result
-	font-size 1.3em
-	margin-bottom 10px
-.success
-	color enable_green
-.fail
-	color disabled_red
-.authenticate
-	display block
-	color #000 !important
-	margin-top 3px
-	button
-		margin 0
-
-.save-container
-	margin 25px 0
-	input[type="submit"]
-		margin-top 5px !important
-		font-size 1.6em
-		font-weight normal!important
 /* end settings */
 
 /* L O G I N */
-#login
-	label
-		display inline-block
-		width 70px
-		font-size 1.3em
-	input[type="submit"]
-		margin-top 10px
-.msg
-	font-size 1.3em
-	margin-top 10px
-.msg.fail
-	color disabled_red
+// #login
+// 	label
+// 		display inline-block
+// 		width 70px
+// 		font-size 1.3em
+// 	input[type="submit"]
+// 		margin-top 10px
+// .msg
+// 	font-size 1.3em
+// 	margin-top 10px
+// .msg.fail
+// 	color disabled_red
 
 /* end login */
 
