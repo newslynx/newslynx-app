@@ -638,31 +638,31 @@ input {
 #settings .inputs-container {
   width: 550px;
 }
-#settings .input-parent {
+#settings .input-form {
   height: 25px;
   margin-left: 20px;
 }
-#settings .input-parent input[type='text'],
-#settings .input-parent select {
+#settings .input-form input[type='text'],
+#settings .input-form select {
   margin: 0 5px 0 0;
 }
-#settings .input-parent input[type='text'],
-#settings .input-parent input[type='password'] {
+#settings .input-form input[type='text'],
+#settings .input-form input[type='password'] {
   width: 200px;
 }
-#settings .input-parent input[type='radio'],
-#settings .input-parent input[type='checkbox'] {
+#settings .input-form input[type='radio'],
+#settings .input-form input[type='checkbox'] {
   margin: 0;
 }
-#settings .input-parent input[type='password'] {
+#settings .input-form input[type='password'] {
   clear: right;
 }
-#settings .input-parent input[type='text'],
+#settings .input-form input[type='text'],
 #settings .input-action-btn,
 #settings .color-picker {
   height: 22px;
 }
-#settings .js-parent-form[data-changed="true"] .js-input-actions-container {
+#settings .input-form[data-changed="true"] .input-actions-container {
   display: inline-block;
 }
 #settings .input-actions-container,

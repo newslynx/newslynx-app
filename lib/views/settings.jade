@@ -14,37 +14,43 @@ block content
 			#email.setting-group
 				.setting-title Email
 				ul.inputs-container.js-inputs-container(data-setting-name="email")
-					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.user.email})
-						input.js-input-item(placeholder="merlynne@newslynx.org", type="text")&attributes({'value': info.user.email})
+					- var email_settings = {name: 'email', value: info.user.email}
+					li
+						form.input-form.js-parent-form&attributes({'data-saved-settings': email_settings})
+							input.js-input-item(placeholder="merlynne@newslynx.org", type="text" name="value")&attributes({'value': info.user.email})
 			#password.setting-group
 				.setting-title Change password
 				ul.inputs-container(data-setting-name="password")
-					li.input-parent&attributes({'data-saved-settings': ''})
+					li.input-form&attributes({'data-saved-settings': ''})
 						input.js-input-item(type="password", placeholder="New password...")
-					li.input-parent&attributes({'data-saved-settings': ''})
+					li.input-form&attributes({'data-saved-settings': ''})
 						input.js-input-item(type="password", placeholder="Confirm...")
 		#site.settings-group
 			.settings-title Site
 			#home-page.setting-group
 				.setting-title Home page
 				ul.inputs-container.js-inputs-container(data-setting-name="homepage")
-					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.org.homepage})
-						input.js-input-item(placeholder="propalpatine.org", type="text")&attributes({'value': info.org.homepage})
+					- var homepage_settings = {name: 'homepage', value: info.org.homepage}
+					li
+						form.input-form.js-parent-form&attributes({'data-saved-settings': homepage_settings})
+							input.js-input-item(placeholder="propalpatine.org", type="text" name="value")&attributes({'value': info.org.homepage})
 			#home-page.setting-group
 				.setting-title Time zone
 				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
-					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.org.timezone || ''})
-						select(name='timezone', data-type="select").js-input-item
-							if (!info.org.timezone)
-								option(value='', selected=true, disabled=true) Select...
-							option(value='Europe/Paris', selected=info.org.timezone == 'Europe/Paris') Western Europe
-							option(value='Europe/London', selected=info.org.timezone == 'Europe/London') GMT
-							option(value='US/Eastern', selected=info.org.timezone == 'US/Eastern') US / Eastern 
-							option(value='US/Central', selected=info.org.timezone == 'US/Central') US / Central
-							option(value='US/Mountain', selected=info.org.timezone == 'US/Mountain') US / Mountain
-							option(value='US/Pacific', selected=info.org.timezone == 'US/Pacific') US / Pacific
-							option(value='US/Alaska', selected=info.org.timezone == 'US/Alaska') Alaska
-							option(value='US/Hawaii', selected=info.org.timezone == 'US/Hawaii') Hawaii
+					- var timezone_settings = {name: 'timezone', value: info.org.timezone}
+					li
+						form.input-form.js-parent-form&attributes({'data-saved-settings': timezone_settings})
+							select(name='value').js-input-item
+								if (!info.org.timezone)
+									option(value='', selected=true, disabled=true) Select...
+								option(value='Europe/Paris', selected=info.org.timezone == 'Europe/Paris') Western Europe
+								option(value='Europe/London', selected=info.org.timezone == 'Europe/London') GMT
+								option(value='US/Eastern', selected=info.org.timezone == 'US/Eastern') US / Eastern 
+								option(value='US/Central', selected=info.org.timezone == 'US/Central') US / Central
+								option(value='US/Mountain', selected=info.org.timezone == 'US/Mountain') US / Mountain
+								option(value='US/Pacific', selected=info.org.timezone == 'US/Pacific') US / Pacific
+								option(value='US/Alaska', selected=info.org.timezone == 'US/Alaska') Alaska
+								option(value='US/Hawaii', selected=info.org.timezone == 'US/Hawaii') Hawaii
 			.setting-group
 				.setting-description 
 					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
@@ -114,10 +120,8 @@ block content
 				ul.inputs-container.js-inputs-container(data-flag="has-color", data-group="subject-tags")
 					if (info.tags.subject.length)
 						each tag in info.tags.subject
-							- delete tag.id
-							- delete tag.thing_count
 							li
-								form.input-parent.js-parent-form.multi.js-multi&attributes({'data-saved-settings': tag })
+								form.input-form.js-parent-form.multi.js-multi&attributes({'data-saved-settings': tag })
 									.multi-child.destroy &times;
 									input.multi-child.input-item.js-input-item(type="text", value=tag.name, placeholder="Subject tag name...", name="name")
 									input.color-picker.input-item.js-input-item(type="text", value=tag.color, name="color")
@@ -231,7 +235,7 @@ block templates
 	//- 		|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
 
 	script(type="text/jst")#multi-input-templ
-		li.input-parent.js-input-parent.multi
+		li.input-form.js-parent-form.multi
 			.multi-child.destroy &times;
 			input.multi-child.input-item.js-input-item(type="text", placeholder!="<%= placeholder %>", data-key!="<%= keys[0] %>")
 			<% if (flag == 'radio') { %>
