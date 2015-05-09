@@ -14,26 +14,26 @@ block content
 			#email.setting-group
 				.setting-title Email
 				ul.inputs-container.js-inputs-container(data-setting-name="email")
-					li.input-parent.js-input-parent&attributes({'data-saved-setting': info.user.email})
+					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.user.email})
 						input.js-input-item(placeholder="merlynne@newslynx.org", type="text")&attributes({'value': info.user.email})
 			#password.setting-group
 				.setting-title Change password
 				ul.inputs-container(data-setting-name="password")
-					li.input-parent&attributes({'data-saved-setting': ''})
+					li.input-parent&attributes({'data-saved-settings': ''})
 						input.js-input-item(type="password", placeholder="New password...")
-					li.input-parent&attributes({'data-saved-setting': ''})
+					li.input-parent&attributes({'data-saved-settings': ''})
 						input.js-input-item(type="password", placeholder="Confirm...")
 		#site.settings-group
 			.settings-title Site
 			#home-page.setting-group
 				.setting-title Home page
 				ul.inputs-container.js-inputs-container(data-setting-name="homepage")
-					li.input-parent.js-input-parent&attributes({'data-saved-setting': info.org.homepage})
+					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.org.homepage})
 						input.js-input-item(placeholder="propalpatine.org", type="text")&attributes({'value': info.org.homepage})
 			#home-page.setting-group
 				.setting-title Time zone
 				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
-					li.input-parent.js-input-parent&attributes({'data-saved-setting': info.org.timezone || ''})
+					li.input-parent.js-input-parent&attributes({'data-saved-settings': info.org.timezone || ''})
 						select(name='timezone', data-type="select").js-input-item
 							if (!info.org.timezone)
 								option(value='', selected=true, disabled=true) Select...
@@ -111,11 +111,21 @@ block content
 			.settings-title Tags
 			#article-tags.setting-group
 				.setting-title Subject tags
-				ul.inputs-container(data-placeholder="Fracking", data-flag="color", data-group="subject", data-key="subject_tags", data-child-keys='["name","color"]')
+				ul.inputs-container.js-inputs-container(data-flag="has-color", data-group="subject-tags")
+					if (info.tags.subject.length)
+						each tag in info.tags.subject
+							- delete tag.id
+							- delete tag.thing_count
+							li
+								form.input-parent.js-parent-form.multi.js-multi&attributes({'data-saved-settings': tag })
+									.multi-child.destroy &times;
+									input.multi-child.input-item.js-input-item(type="text", value=tag.name, placeholder="Subject tag name...", name="name")
+									input.color-picker.input-item.js-input-item(type="text", value=tag.color, name="color")
 				if (info.tags.subject.length)
-					button.add(data-first='true') Create!
-				else
 					button.add +				
+				else 
+					button.add(data-first='true') Create!
+
 
 					//- <%  for (var i = 0; i < subject_tags.length; i++) { %>
 					//- li.input.multi
@@ -221,9 +231,9 @@ block templates
 	//- 		|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
 
 	script(type="text/jst")#multi-input-templ
-		li.input.multi
+		li.input-parent.js-input-parent.multi
 			.multi-child.destroy &times;
-			|<input class="multi-child input-item" type="text" placeholder="<%= placeholder %>" data-key="<%= keys[0] %>"/>
+			input.multi-child.input-item.js-input-item(type="text", placeholder!="<%= placeholder %>", data-key!="<%= keys[0] %>")
 			<% if (flag == 'radio') { %>
 			<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
 			<% } else if (flag == 'checkbox') { %>
@@ -271,5 +281,6 @@ block scripts
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/spectrum.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
+	script(src="javascripts/thirdparty/jquery.serializejson.min.js")
 		
 	script(src="javascripts/main.bundled.js")

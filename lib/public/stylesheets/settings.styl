@@ -13,6 +13,9 @@ select_width = 132px
 	background-color settings
 #drawer
 	background-color tint(settings, 85%)
+	
+.form-value-only
+	display none
 		
 .settings-group
 	width 650px
@@ -73,16 +76,17 @@ select_width = 132px
 	.input-action-btn,
 	.color-picker
 		height 22px
-	.js-input-parent[data-changed="true"]
+	.js-parent-form[data-changed="true"]
 		.js-input-actions-container
 			display inline-block
-	.js-input-parent[data-changed="false"]
-		.js-input-actions-container
-			display none
+			
 	.input-actions-container,
 	.input-action-btn
-		display inline-block
 		vertical-align top
+	.input-action-btn
+		display inline-block
+	.input-actions-container
+		display none
 	.input-action-btn
 		padding 4px
 		width 80px
@@ -176,7 +180,7 @@ button.add[data-first="true"]
 // .sp-palette.sp-thumb.sp-cf
 // 	width 80px
 .sp-palette .sp-thumb-active .sp-thumb-inner
-	background-image none
+	background-image none !important
 .sp-palette-row-selection
 	margin-top 10px
 	padding-top 10px

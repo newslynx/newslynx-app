@@ -594,6 +594,9 @@ input {
 #drawer {
   background-color: #f4ebf5;
 }
+.form-value-only {
+  display: none;
+}
 .settings-group {
   width: 650px;
   position: relative;
@@ -659,16 +662,18 @@ input {
 #settings .color-picker {
   height: 22px;
 }
-#settings .js-input-parent[data-changed="true"] .js-input-actions-container {
+#settings .js-parent-form[data-changed="true"] .js-input-actions-container {
   display: inline-block;
-}
-#settings .js-input-parent[data-changed="false"] .js-input-actions-container {
-  display: none;
 }
 #settings .input-actions-container,
 #settings .input-action-btn {
-  display: inline-block;
   vertical-align: top;
+}
+#settings .input-action-btn {
+  display: inline-block;
+}
+#settings .input-actions-container {
+  display: none;
 }
 #settings .input-action-btn {
   padding: 4px;
@@ -786,7 +791,7 @@ button.add[data-first="true"] {
   border-color: #303030;
 }
 .sp-palette .sp-thumb-active .sp-thumb-inner {
-  background-image: none;
+  background-image: none !important;
 }
 .sp-palette-row-selection {
   margin-top: 10px;
