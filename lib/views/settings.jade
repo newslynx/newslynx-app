@@ -13,7 +13,7 @@ block content
 			.settings-title Account
 			#email.setting-group
 				.setting-title Email
-				ul.inputs-container.js-inputs-container(data-setting-name="email")
+				ul.inputs-container.js-inputs-container(data-model="setting")
 					- var email_settings = {name: 'email', value: info.user.email}
 					li
 						form.input-form.js-parent-form&attributes({'data-saved-settings': email_settings})
@@ -29,14 +29,14 @@ block content
 			.settings-title Site
 			#home-page.setting-group
 				.setting-title Home page
-				ul.inputs-container.js-inputs-container(data-setting-name="homepage")
+				ul.inputs-container.js-inputs-container(data-model="setting")
 					- var homepage_settings = {name: 'homepage', value: info.org.homepage}
 					li
 						form.input-form.js-parent-form&attributes({'data-saved-settings': homepage_settings})
 							input.js-input-item(placeholder="propalpatine.org", type="text" name="value")&attributes({'value': info.org.homepage})
 			#home-page.setting-group
 				.setting-title Time zone
-				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
+				ul.inputs-container.js-inputs-container(data-model="setting")
 					- var timezone_settings = {name: 'timezone', value: info.org.timezone}
 					li
 						form.input-form.js-parent-form&attributes({'data-saved-settings': timezone_settings})
@@ -117,7 +117,7 @@ block content
 			.settings-title Tags
 			#article-tags.setting-group
 				.setting-title Subject tags
-				ul.inputs-container.js-inputs-container(data-flag="has-color", data-group="subject-tags")
+				ul.inputs-container.js-inputs-container(data-flag="has-color", data-model="subject_tag")
 					if (info.tags.subject.length)
 						each tag in info.tags.subject
 							li
