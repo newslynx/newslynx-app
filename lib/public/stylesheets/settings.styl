@@ -20,7 +20,6 @@ select_width = 132px
 .settings-group
 	width 650px
 	position relative
-	// background-color #0cf
 .settings-title
 	font-weight bold
 	font-size 1.8em
@@ -29,19 +28,12 @@ select_width = 132px
 	border-bottom 1px solid #ccc
 	position relative
 	color light_gray
-// .settings-title:before
-// 	content '# '
-// 	color #ccc
-// 	position absolute
-// 	left -15px
 .setting-group
 	margin-bottom 20px
 .setting-title
 	font-size 1.2em
 	width setting_title_width
 	font-weight bold
-	// color darken(settings, 35%)
-	// background-color #fc0
 .setting-description
 	font-size 1.2em
 	color bg_gray
@@ -55,60 +47,65 @@ select_width = 132px
 	vertical-align top
 #settings
 	margin-bottom 50px
-	.inputs-container
-		width inputs_width
-		// background-color #f0c
-	.input-form
-		height 25px
-		margin-left destroy_width
-		input[type='text'],
-		select
-			margin 0 input_margin 0 0
-		input[type='text'],
-		input[type='password']
-			width input_width
-		input[type='radio'],
-		input[type='checkbox']
-			margin 0
-		input[type='password']
-			clear right
-	.input-form input[type='text'],
-	.input-action-btn,
-	.color-picker
-		height 22px
-	.input-form[data-changed="true"]
-		.input-actions-container
-			display inline-block
-			
-	.input-actions-container,
-	.input-action-btn
-		vertical-align top
-	.input-action-btn
-		display inline-block
+	
+.inputs-container
+	width inputs_width
+	// background-color #f0c
+.parent-form
+	height 25px
+	margin-left destroy_width
+	input[type='text'],
+	select
+		margin 0 input_margin 0 0
+	input[type='text'],
+	input[type='password']
+		width input_width
+	input[type='radio'],
+	input[type='checkbox']
+		margin 0
+	input[type='password']
+		clear right
+.parent-form input[type='text'],
+.input-action-btn,
+.color-picker
+	height 22px
+.parent-form[data-changed="true"]
 	.input-actions-container
-		display none
-	.input-action-btn
-		padding 4px
-		width 80px
-		text-align center
-		letter-spacing 1px
-		text-transform uppercase
-		border 1px solid transparent
-		margin-right 3px
-		border-radius 2px
-		// font-size 1.1em
+		display inline-block
+		
+.input-actions-container,
+.input-action-btn
+	vertical-align top
+.input-action-btn
+	display inline-block
+.input-actions-container
+	display none
+.input-action-btn
+	padding 4px
+	width 80px
+	text-align center
+	letter-spacing 1px
+	text-transform uppercase
+	border 1px solid transparent
+	margin-right 3px
+	border-radius 2px
+	// font-size 1.1em
+.parent-form[data-new="true"]
 	.input-action-btn[data-which="cancel"]
-		background-color #ddd
-		border-color darken(@background-color, 15%)
-		&:hover
-			background-color darken(@background-color, 7%)
-	.input-action-btn[data-which="save"]
-		background-color select_blue
-		border-color darken(@background-color, 15%)
-		&:hover
-			background-color darken(@background-color, 8%)
-	.input-action-btn:hover
-		cursor pointer
+		display none
+.input-action-btn[data-which="cancel"]
+	background-color #ddd
+	border-color darken(@background-color, 15%)
+	&:hover
+		background-color darken(@background-color, 7%)
+.input-action-btn[data-which="save"]
+	background-color select_blue
+	border-color darken(@background-color, 15%)
+	&:hover
+		background-color darken(@background-color, 8%)
+.input-action-btn:hover
+	cursor pointer
+	
 #account-authentication
 	.setting-group
 		margin-top 20px
@@ -134,12 +131,10 @@ select_width = 132px
 button.add
 	display block
 	margin-top 5px
-	margin-left (setting_title_width + destroy_width)
+	margin-left (setting_title_width + destroy_width*2)
 button.add[data-first="true"]
-	// margin-left 0
 	transform translateY(-95%)
-.color-picker
-	width 25px
+
 // Color picker style overrides
 // The arrow
 .sp-replacer:hover 
@@ -162,6 +157,7 @@ button.add[data-first="true"]
 	border none
 	background transparent
 	vertical-align top
+	margin-right 5px
 .sp-container
 	border-color #ccc
 	background-color #fff
@@ -177,8 +173,6 @@ button.add[data-first="true"]
 .sp-palette .sp-thumb-el:hover, 
 .sp-palette .sp-thumb-el.sp-thumb-active
 	border-color #303030
-// .sp-palette.sp-thumb.sp-cf
-// 	width 80px
 .sp-palette .sp-thumb-active .sp-thumb-inner
 	background-image none !important
 .sp-palette-row-selection

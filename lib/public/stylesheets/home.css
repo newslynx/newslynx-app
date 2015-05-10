@@ -585,13 +585,13 @@ input {
 .drawer-pointer.center {
   text-align: center;
 }
-body[data-section="home"] #content {
+#content {
   padding: 10px 15px;
 }
-body[data-section="home"] .section.active > .nav-link {
+.section.active > .nav-link {
   background-color: #008def;
 }
-body[data-section="home"] #drawer {
+#drawer {
   background-color: #e5f3fd;
 }
 #home-page-instructions {

@@ -585,10 +585,10 @@ input {
 .drawer-pointer.center {
   text-align: center;
 }
-body[data-section="login"] #drawer {
+#drawer {
   background-color: #d6ccdf;
 }
-body[data-section="login"] #content {
+#content {
   padding: 15px;
 }
 #login label {

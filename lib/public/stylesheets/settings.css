@@ -635,47 +635,46 @@ input {
 #settings {
   margin-bottom: 50px;
 }
-#settings .inputs-container {
+.inputs-container {
   width: 550px;
 }
-#settings .input-form {
+.parent-form {
   height: 25px;
-  margin-left: 20px;
 }
-#settings .input-form input[type='text'],
-#settings .input-form select {
+.parent-form input[type='text'],
+.parent-form select {
   margin: 0 5px 0 0;
 }
-#settings .input-form input[type='text'],
-#settings .input-form input[type='password'] {
+.parent-form input[type='text'],
+.parent-form input[type='password'] {
   width: 200px;
 }
-#settings .input-form input[type='radio'],
-#settings .input-form input[type='checkbox'] {
+.parent-form input[type='radio'],
+.parent-form input[type='checkbox'] {
   margin: 0;
 }
-#settings .input-form input[type='password'] {
+.parent-form input[type='password'] {
   clear: right;
 }
-#settings .input-form input[type='text'],
-#settings .input-action-btn,
-#settings .color-picker {
+.parent-form input[type='text'],
+.input-action-btn,
+.color-picker {
   height: 22px;
 }
-#settings .input-form[data-changed="true"] .input-actions-container {
+.parent-form[data-changed="true"] .input-actions-container {
   display: inline-block;
 }
-#settings .input-actions-container,
-#settings .input-action-btn {
+.input-actions-container,
+.input-action-btn {
   vertical-align: top;
 }
-#settings .input-action-btn {
+.input-action-btn {
   display: inline-block;
 }
-#settings .input-actions-container {
+.input-actions-container {
   display: none;
 }
-#settings .input-action-btn {
+.input-action-btn {
   padding: 4px;
   width: 80px;
   text-align: center;
@@ -686,21 +685,24 @@ input {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-#settings .input-action-btn[data-which="cancel"] {
+.parent-form[data-new="true"] .input-action-btn[data-which="cancel"] {
+  display: none;
+}
+.input-action-btn[data-which="cancel"] {
   background-color: #ddd;
   border-color: #bcbcbc;
 }
-#settings .input-action-btn[data-which="cancel"]:hover {
+.input-action-btn[data-which="cancel"]:hover {
   background-color: #cecece;
 }
-#settings .input-action-btn[data-which="save"] {
+.input-action-btn[data-which="save"] {
   background-color: #88cfff;
   border-color: #4db7ff;
 }
-#settings .input-action-btn[data-which="save"]:hover {
+.input-action-btn[data-which="save"]:hover {
   background-color: #69c2ff;
 }
-#settings .input-action-btn:hover {
+.input-action-btn:hover {
   cursor: pointer;
 }
 #account-authentication .setting-group {
@@ -742,9 +744,6 @@ button.add[data-first="true"] {
   -ms-transform: translateY(-95%);
   transform: translateY(-95%);
 }
-.color-picker {
-  width: 25px;
-}
 .sp-replacer:hover .sp-dd {
   color: #999;
 }
@@ -767,6 +766,7 @@ button.add[data-first="true"] {
   border: none;
   background: transparent;
   vertical-align: top;
+  margin-right: 5px;
 }
 .sp-container {
   border-color: #ccc;
