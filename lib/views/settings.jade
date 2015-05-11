@@ -13,11 +13,11 @@ block content
 			.settings-title Account
 			#email.setting-group
 				.setting-title Email
-				ul.inputs-container.js-inputs-container(data-model="setting")
-					- var email_settings = {name: 'email', value: info.user.email}
+				ul.inputs-container.js-inputs-container(data-model="me")
+					- var email_settings = {'email': info.user.email}
 					li
 						form.parent-form.js-parent-form&attributes({'data-saved-settings': email_settings})
-							input.js-input-item(placeholder="merlynne@newslynx.org", type="text" name="value")&attributes({'value': info.user.email})
+							input.js-input-item(placeholder="merlynne@newslynx.org", type="text" name="email")&attributes({'value': info.user.email})
 			#password.setting-group
 				.setting-title Change password
 				ul.inputs-container(data-setting-name="password")
