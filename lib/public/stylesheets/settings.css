@@ -640,6 +640,7 @@ input {
 }
 .parent-form {
   height: 25px;
+  margin-left: 20px;
 }
 .parent-form input[type='text'],
 .parent-form select {
@@ -735,7 +736,7 @@ input {
 button.add {
   display: block;
   margin-top: 5px;
-  margin-left: 120px;
+  margin-left: 140px;
 }
 button.add[data-first="true"] {
   -webkit-transform: translateY(-95%);
