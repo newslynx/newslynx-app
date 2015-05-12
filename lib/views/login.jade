@@ -11,7 +11,7 @@ block content
 	if info.apikey
 		.msg You have successfully logged in!
 	else
-		form(action='/auth/login', method='POST')#login
+		form(action='/auth/:version/login', method='POST')#login
 			div
 				label Email: 
 				input(type='text', name='email')
