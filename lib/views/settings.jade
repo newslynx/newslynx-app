@@ -13,10 +13,9 @@ block content
 			.settings-title Account
 			#email.setting-group
 				.setting-title Email
-				ul.inputs-container.js-inputs-container(data-model="me")
-					- var email_settings = {'email': info.user.email}
+				ul.inputs-container.js-inputs-container(data-setting-name="email")
 					li
-						form.parent-form.js-parent-form&attributes({'data-saved-settings': email_settings})
+						form.parent-form.js-parent-form
 							input.js-input-item(placeholder="merlynne@newslynx.org", type="text" name="email")&attributes({'value': info.user.email})
 			#password.setting-group
 				.setting-title Change password
@@ -29,28 +28,26 @@ block content
 			.settings-title Site
 			#home-page.setting-group
 				.setting-title Home page
-				ul.inputs-container.js-inputs-container(data-model="setting")
-					- var homepage_settings = {name: 'homepage', value: info.org.homepage}
+				ul.inputs-container.js-inputs-container(data-setting-name="homepage")
 					li
-						form.parent-form.js-parent-form&attributes({'data-saved-settings': homepage_settings})
-							input.js-input-item(placeholder="propalpatine.org", type="text" name="value")&attributes({'value': info.org.homepage})
+						form.parent-form.js-parent-form
+							input.js-input-item(placeholder="Home page url...", type="text" name="value")
 			#home-page.setting-group
 				.setting-title Time zone
-				ul.inputs-container.js-inputs-container(data-model="setting")
+				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
 					- var timezone_settings = {name: 'timezone', value: info.org.timezone}
 					li
 						form.parent-form.js-parent-form&attributes({'data-saved-settings': timezone_settings})
 							select(name='value').js-input-item
-								if (!info.org.timezone)
-									option(value='', selected=true, disabled=true) Select...
-								option(value='Europe/Paris', selected=info.org.timezone == 'Europe/Paris') Western Europe
-								option(value='Europe/London', selected=info.org.timezone == 'Europe/London') GMT
-								option(value='US/Eastern', selected=info.org.timezone == 'US/Eastern') US / Eastern 
-								option(value='US/Central', selected=info.org.timezone == 'US/Central') US / Central
-								option(value='US/Mountain', selected=info.org.timezone == 'US/Mountain') US / Mountain
-								option(value='US/Pacific', selected=info.org.timezone == 'US/Pacific') US / Pacific
-								option(value='US/Alaska', selected=info.org.timezone == 'US/Alaska') Alaska
-								option(value='US/Hawaii', selected=info.org.timezone == 'US/Hawaii') Hawaii
+								option(value='', selected=true, disabled=true) Select...
+								option(value='Europe/Paris') Western Europe
+								option(value='Europe/London') GMT
+								option(value='US/Eastern') US / Eastern 
+								option(value='US/Central') US / Central
+								option(value='US/Mountain') US / Mountain
+								option(value='US/Pacific') US / Pacific
+								option(value='US/Alaska') Alaska
+								option(value='US/Hawaii') Hawaii
 			.setting-group
 				.setting-description 
 					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
