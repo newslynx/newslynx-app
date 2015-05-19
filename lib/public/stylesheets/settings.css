@@ -233,6 +233,28 @@ input[type="password"],
 input[type="text"] {
   margin-left: 0;
 }
+input[type="text"],
+input[type="password"] {
+  background-color: #fafafa;
+  color: #333;
+  padding: 7px 8px;
+  min-height: 34px;
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  outline: medium none;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #fff;
+  border-color: #51a7e8;
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset, 0px 0px 5px rgba(81,167,232,0.5);
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset, 0px 0px 5px rgba(81,167,232,0.5);
+}
 label {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -639,12 +661,11 @@ input {
   width: 550px;
 }
 .parent-form {
-  height: 25px;
   margin-left: 20px;
 }
 .parent-form input[type='text'],
 .parent-form select {
-  margin: 0 5px 0 0;
+  margin-right: 5px;
 }
 .parent-form input[type='text'],
 .parent-form input[type='password'] {
@@ -658,7 +679,6 @@ input {
   clear: right;
 }
 .parent-form input[type='text'],
-.input-action-btn,
 .color-picker {
   height: 22px;
 }
@@ -671,37 +691,17 @@ input {
 }
 .input-action-btn {
   display: inline-block;
+  height: 34px;
 }
 .input-actions-container {
   display: none;
 }
 .input-action-btn {
-  padding: 4px;
-  width: 80px;
   text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border: 1px solid transparent;
   margin-right: 3px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
 }
 .parent-form[data-new="true"] .input-action-btn[data-which="cancel"] {
   display: none;
-}
-.input-action-btn[data-which="cancel"] {
-  background-color: #ddd;
-  border-color: #bcbcbc;
-}
-.input-action-btn[data-which="cancel"]:hover {
-  background-color: #cecece;
-}
-.input-action-btn[data-which="save"] {
-  background-color: #88cfff;
-  border-color: #4db7ff;
-}
-.input-action-btn[data-which="save"]:hover {
-  background-color: #69c2ff;
 }
 .input-action-btn:hover {
   cursor: pointer;

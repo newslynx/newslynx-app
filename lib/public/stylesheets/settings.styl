@@ -52,11 +52,10 @@ select_width = 132px
 	width inputs_width
 	// background-color #f0c
 .parent-form
-	height 25px
 	margin-left destroy_width
 	input[type='text'],
 	select
-		margin 0 input_margin 0 0
+		margin-right input_margin
 	input[type='text'],
 	input[type='password']
 		width input_width
@@ -66,7 +65,6 @@ select_width = 132px
 	input[type='password']
 		clear right
 .parent-form input[type='text'],
-.input-action-btn,
 .color-picker
 	height 22px
 .parent-form[data-changed="true"]
@@ -78,31 +76,19 @@ select_width = 132px
 	vertical-align top
 .input-action-btn
 	display inline-block
+	height 34px
 .input-actions-container
 	display none
 .input-action-btn
-	padding 4px
-	width 80px
+	// width 80px
 	text-align center
-	letter-spacing 1px
-	text-transform uppercase
-	border 1px solid transparent
+	// letter-spacing 1px
+	// text-transform uppercase
 	margin-right 3px
-	border-radius 2px
 	// font-size 1.1em
 .parent-form[data-new="true"]
 	.input-action-btn[data-which="cancel"]
 		display none
-.input-action-btn[data-which="cancel"]
-	background-color #ddd
-	border-color darken(@background-color, 15%)
-	&:hover
-		background-color darken(@background-color, 7%)
-.input-action-btn[data-which="save"]
-	background-color select_blue
-	border-color darken(@background-color, 15%)
-	&:hover
-		background-color darken(@background-color, 8%)
 .input-action-btn:hover
 	cursor pointer
 	
