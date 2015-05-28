@@ -51,16 +51,20 @@ block content
 			.setting-group
 				.setting-description 
 					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
-				.setting-flag Includes full article text?
+				if (info.rss_feeds)
+					.setting-flag Includes full article text?
 				.setting-title RSS Feed URLs
-				ul.inputs-container(data-placeholder="propalpatine.org", data-flag="checkbox", data-key="rss_feeds", data-child-keys='["url","is_full_text"]')
+				ul.inputs-container(data-placeholder="Your RSS url...", data-flag="checkbox", data-key="rss_feeds", data-child-keys='["url","is_full_text"]')
 					//- <%  for (var i = 0; i < rss_feeds.length; i++) { %>
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
 					//- 	|<input class="input-item" type="text" placeholder="propalpatine.org" value="<%= rss_feeds[i].url %>" class="multi-child" data-key="url" />
 					//- 	|<input class="input-item" type="checkbox" <% ((rss_feeds[i].is_full_text === true) ? print('checked') : '') %> data-key="is_full_text"/>
 					//- <% } %>
-				button.add +
+				if (info.rss_feeds)
+					button.add Add...			
+				else 
+					button.add(data-first='true') Add!
 		#social.settings-group
 			.settings-title Promotion
 			.setting-group
@@ -72,8 +76,10 @@ block content
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
 					//- 	|<input class="input-item multi-child" type="text" placeholder="propalp.tn" value="<%= short_urls[i] %>" />
-					//- <% } %>
-				button.add +
+				if (info.short_url)
+					button.add Add...			
+				else 
+					button.add(data-first='true') Add!
 			#staff-lists.setting-group
 				.setting-description 
 					p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list “slug.
@@ -85,7 +91,10 @@ block content
 					//- 	|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
 					//- 	|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
 					//- <% } %>
-				button.add +
+				if (info.staff_lists)
+					button.add Add...			
+				else 
+					button.add(data-first='true') Add!
 			#twitter-accounts.setting-group
 				.setting-description 
 					p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
@@ -98,7 +107,10 @@ block content
 					//- 	|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_users[i].screen_name %>" class="multi-child" data-key="screen_name" />
 					//- 	|<input class="input-item" type="radio" name="twitter" <% ((twitter_users[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 					//- <% } %>
-				button.add +				
+				if (info.twitter_accounts)
+					button.add Add...			
+				else 
+					button.add(data-first='true') Add!
 			.setting-group
 				.setting-flag Is main account?
 				#facebook-accounts.setting-title Facebook accounts
@@ -109,14 +121,17 @@ block content
 					//- 	|<input class="input-item" type="text" placeholder="Enter page name, e.g. ProPalpatine" value="<%= facebook_pages[i].page_id %>" class="multi-child" data-key="page_id" />
 					//- 	|<input class="input-item" type="radio" name="facebook" <% ((facebook_pages[i].is_main === true) ? print('checked') : '') %> data-key="is_main" />
 					//- <% } %>
-				button.add +
+				if (info.facebook_accounts)
+					button.add Add...			
+				else 
+					button.add(data-first='true') Add!
 		#tags.settings-group
 			.settings-title Tags
 			#article-tags.setting-group
 				.setting-title Subject tags
 				ul.inputs-container.js-inputs-container(data-setting-name="subject-tags")
 				if (info.tags.subject.length)
-					button.add +				
+					button.add Add...			
 				else 
 					button.add(data-first='true') Create!
 
@@ -151,7 +166,7 @@ block content
 					//- 	|</select>
 					//- 	|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 					//- <% } %>
-				button.add +	
+				button.add Add...
 		//- .settings-group
 		//- 	.save-container
 		//- 		.setting-description
@@ -286,5 +301,5 @@ block scripts
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/jquery.serializejson.min.js")
-		
+
 	script(src="javascripts/main.bundled.js")
