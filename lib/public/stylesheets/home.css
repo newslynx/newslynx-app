@@ -230,7 +230,8 @@ button.disabled {
   cursor: default !important;
 }
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+.sp-replacer {
   margin-left: 0;
   background-color: #fafafa;
   color: #333;
@@ -247,7 +248,8 @@ input[type="password"] {
   font-size: 1.3em;
 }
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+.sp-replacer:focus {
   background-color: #fff;
   border-color: #51a7e8;
   -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset, 0px 0px 5px rgba(81,167,232,0.5);
