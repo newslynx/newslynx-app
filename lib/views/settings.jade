@@ -126,7 +126,7 @@ block content
 				.setting-flag Category
 				.setting-flag Level
 				.setting-title Impact tags
-				ul.inputs-container(data-setting-name="impact-tags")
+				ul.inputs-container.js-inputs-container(data-setting-name="impact-tags")
 				button.add(data-first=(info.tags.impact.length == 0).toString()) Add...
 					//- <%  for (var i = 0; i < impact_tags.length; i++) { %>
 					//- li.input.multi
@@ -235,7 +235,7 @@ block templates
 					option(value="citation") Citation
 					option(value="change") Change
 					option(value="achievement") Achievement
-					option(value="promotion") Promotion
+					option(value="promotion") Achievement
 					option(value="other") Other
 				select.input-item.js-input-item.multi-child(name='level')
 					option(value="institution") Institution
