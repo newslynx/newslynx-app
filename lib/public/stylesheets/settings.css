@@ -696,7 +696,8 @@ input {
   text-align: center;
   margin-right: 3px;
 }
-.parent-form[data-new="true"] .input-action-btn[data-which="cancel"] {
+.parent-form[data-new="true"] .input-action-btn[data-which="cancel"],
+.js-parent-form[data-new="true"] .input-action-btn[data-which="cancel"] {
   display: none;
 }
 .input-action-btn:hover {
