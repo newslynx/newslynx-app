@@ -35,9 +35,8 @@ block content
 			#home-page.setting-group
 				.setting-title Time zone
 				ul.inputs-container.js-inputs-container(data-setting-name="timezone")
-					- var timezone_settings = {name: 'timezone', value: info.org.timezone}
 					li
-						form.parent-form.js-parent-form&attributes({'data-saved-settings': timezone_settings})
+						form.parent-form.js-parent-form
 							select(name='value').js-input-item
 								option(value='', selected=true, disabled=true) Select...
 								option(value='Europe/Paris') Western Europe
@@ -123,11 +122,12 @@ block content
 					//- 	|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
 					//- 	|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
 					//- <% } %>
-			#impact-tags.setting-group(data-group="impact-tags")
+			#impact-tags.setting-group
 				.setting-flag Category
 				.setting-flag Level
 				.setting-title Impact tags
-				ul.inputs-container(data-placeholder="Legislative impact" data-layout="impact-tags" data-flag="color" data-group="impact" data-key="impact_tags" data-child-keys='["name", "category", "level", "color"]')
+				ul.inputs-container(data-setting-name="impact-tags")
+				button.add(data-first=(info.tags.impact.length == 0).toString()) Add...
 					//- <%  for (var i = 0; i < impact_tags.length; i++) { %>
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
@@ -147,7 +147,6 @@ block content
 					//- 	|</select>
 					//- 	|<input class="input-item color-picker" type="text" data-color="<%= impact_tags[i].color %>" value="<%= impact_tags[i].color %>" data-group="impact" data-key="color"/>
 					//- <% } %>
-				button.add(data-first=(info.tags.impact.length == 0).toString()) Add...
 		//- .settings-group
 		//- 	.save-container
 		//- 		.setting-description
@@ -225,6 +224,25 @@ block templates
 			form.parent-form.js-parent-form.multi.js-multi
 				.multi-child.destroy &times;
 				input.multi-child.input-item.js-input-item(type="text", placeholder="Subject tag name...", name="name")
+				input.color-picker.input-item.js-input-item(type="text", value='#fc0', name="color")
+
+	script(type="text/jst")#impact-tag-templ
+		li
+			form.parent-form.js-parent-form.multi.js-multi
+				.multi-child.destroy &times;
+				input.multi-child.input-item.js-input-item(type="text", placeholder="Impact tag name...", name="name")
+				select.input-item.js-input-item.multi-child(name="category")
+					option(value="citation") Citation
+					option(value="change") Change
+					option(value="achievement") Achievement
+					option(value="promotion") Promotion
+					option(value="other") Other
+				select.input-item.js-input-item.multi-child(name='level')
+					option(value="institution") Institution
+					option(value="community") Community
+					option(value="individual") Individual
+					option(value="internal") Internal
+					option(value="media") Media
 				input.color-picker.input-item.js-input-item(type="text", value='#fc0', name="color")
 
 	script(type="text/jst")#multi-input-templ
