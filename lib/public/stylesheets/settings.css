@@ -229,12 +229,10 @@ button.disabled {
 .disabled:hover {
   cursor: default !important;
 }
-input[type="password"],
-input[type="text"] {
-  margin-left: 0;
-}
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+.sp-replacer {
+  margin-left: 0;
   background-color: #fafafa;
   color: #333;
   padding: 7px 8px;
@@ -247,9 +245,11 @@ input[type="password"] {
   border: 1px solid #ccc;
   background-position: right center;
   background-repeat: no-repeat;
+  font-size: 1.3em;
 }
 input[type="text"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+.sp-replacer:focus {
   background-color: #fff;
   border-color: #51a7e8;
   -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset, 0px 0px 5px rgba(81,167,232,0.5);
@@ -669,7 +669,7 @@ input {
 }
 .parent-form input[type='text'],
 .parent-form input[type='password'] {
-  width: 200px;
+  width: 220px;
 }
 .parent-form input[type='radio'],
 .parent-form input[type='checkbox'] {
@@ -677,10 +677,6 @@ input {
 }
 .parent-form input[type='password'] {
   clear: right;
-}
-.parent-form input[type='text'],
-.color-picker {
-  height: 22px;
 }
 .parent-form[data-changed="true"] .input-actions-container {
   display: inline-block;
@@ -713,7 +709,7 @@ input {
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 3px;
-  margin-left: 329px;
+  margin-left: 349px;
 }
 .setting-group[data-group="impact-tags"] .setting-flag {
   display: inline-block;
@@ -759,8 +755,8 @@ button.add[data-first="true"] {
 .sp-preview {
   margin-right: 0;
   border: none;
-  width: 22px;
-  height: 22px;
+  width: 34px;
+  height: 34px;
 }
 .sp-replacer {
   padding: 0;

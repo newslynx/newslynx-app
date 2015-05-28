@@ -1,6 +1,7 @@
 @require 'blueprint'
 
-input_width = 200px
+input_width = 220px
+input_height = 34px
 destroy_width = 20px
 input_margin = 5px
 setting_title_width = 100px
@@ -64,9 +65,6 @@ select_width = 132px
 		margin 0
 	input[type='password']
 		clear right
-.parent-form input[type='text'],
-.color-picker
-	height 22px
 .parent-form[data-changed="true"]
 	.input-actions-container
 		display inline-block
@@ -76,7 +74,7 @@ select_width = 132px
 	vertical-align top
 .input-action-btn
 	display inline-block
-	height 34px
+	height input_height
 .input-actions-container
 	display none
 .input-action-btn
@@ -136,7 +134,7 @@ button.add[data-first="true"]
 .sp-preview
 	margin-right 0
 	border none
-	width 22px
+	width input_height
 	height @width
 .sp-replacer
 	padding 0
