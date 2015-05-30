@@ -691,7 +691,6 @@ input {
 }
 .input-actions-container {
   display: none;
-  margin-bottom: 20px;
 }
 .input-action-btn {
   text-align: center;
@@ -719,6 +718,7 @@ input {
   -o-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);
+  margin-bottom: 20px;
 }
 #impact-tags .setting-flag {
   display: inline-block;
