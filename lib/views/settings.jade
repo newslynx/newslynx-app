@@ -48,13 +48,11 @@ block content
 								option(value='US/Alaska') Alaska
 								option(value='US/Hawaii') Hawaii
 
-			.setting-group.js-setting-group(data-empty=(info.tags.foo != 0).toString())
+			.setting-group.js-setting-group(data-empty=(info.recipes['rss-feed-to-contentium'].length == 0).toString())
 				.setting-description 
 					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
-				if (info.rss_feeds)
-					.setting-flag Includes full article text?
 				.setting-title RSS Feed URLs
-				ul.inputs-container(data-placeholder="Your RSS url...", data-flag="checkbox", data-key="rss_feeds", data-child-keys='["url","is_full_text"]')
+				ul.inputs-container.js-inputs-container(data-setting-name="rss-feed-to-contentium")
 					//- <%  for (var i = 0; i < rss_feeds.length; i++) { %>
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
@@ -231,17 +229,22 @@ block templates
 				option(value="media") Media
 			input.color-picker.input-item.js-input-item(type="text", value='#fc0', name="color")
 
-	script(type="text/jst")#multi-input-templ
-		li.parent-form.js-parent-form.multi
+	script(type="text/jst")#rss-feed-templ
+		form.parent-form.js-parent-form.multi.js-multi
 			.multi-child.destroy &times;
-			input.multi-child.input-item.js-input-item(type="text", placeholder!="<%= placeholder %>", data-key!="<%= keys[0] %>")
-			<% if (flag == 'radio') { %>
-			<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
-			<% } else if (flag == 'checkbox') { %>
-			<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
-			<% } else if (flag == 'color') { %>
-			<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
-			<% } %>
+			input#hey.multi-child.input-item.js-input-item(type="text", placeholder="RSS Feed", name="options[feed_url]")
+
+	//- script(type="text/jst")#multi-input-templ
+	//- 	li.parent-form.js-parent-form.multi
+	//- 		.multi-child.destroy &times;
+	//- 		input.multi-child.input-item.js-input-item(type="text", placeholder!="<%= placeholder %>", data-key!="<%= keys[0] %>")
+	//- 		<% if (flag == 'radio') { %>
+	//- 		<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
+	//- 		<% } else if (flag == 'checkbox') { %>
+	//- 		<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
+	//- 		<% } else if (flag == 'color') { %>
+	//- 		<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
+	//- 		<% } %>
 
 	//- script(type="text/jst")#multi-input-double-templ
 	//- 	li.input.multi
