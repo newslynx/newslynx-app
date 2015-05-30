@@ -77,6 +77,7 @@ select_width = 132px
 	height input_height
 .input-actions-container
 	display none
+	margin-bottom 20px
 .input-action-btn
 	// width 80px
 	text-align center
@@ -97,13 +98,17 @@ select_width = 132px
 .setting-flag
 	font-size 1.2em
 	font-weight bold
-	margin-bottom 3px
-	margin-left ( setting_title_width + destroy_width + input_width + input_margin*1.6 + 1 )
-#impact-tags .setting-flag
-	display inline-block
-#impact-tags .setting-flag:nth-child(2)
-	margin-left 85px
-	margin-right 55px // Bump the next line to the next line
+	margin-bottom 10px
+	margin-left ( setting_title_width + destroy_width + input_width + input_margin*5 + 1 )
+#impact-tags 
+	.input-actions-container
+		transform translateX(destroy_width)
+	.setting-flag
+		display inline-block
+#impact-tags 
+	.setting-flag:nth-child(2)
+		margin-left 85px
+		margin-right 55px // Bump the next line to the next line
 .destroy.multi-child
 	width destroy_width
 	height 100%
@@ -117,8 +122,11 @@ button.add
 	display block
 	margin-top 5px
 	margin-left (setting_title_width + destroy_width*2)
-button.add[data-first="true"]
-	transform translateY(-95%)
+.setting-group[data-empty="true"]
+	.setting-flag
+		display none
+	.add
+		transform translateY(-95%)
 
 // Color picker style overrides
 // The arrow
@@ -181,6 +189,10 @@ button.add[data-first="true"]
 	margin-top 3px
 	button
 		margin 0
+		
+.js-destroy-wait
+	pointer-events none
+	opacity .5
 
 .save-container
 	margin 25px 0

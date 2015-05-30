@@ -691,6 +691,7 @@ input {
 }
 .input-actions-container {
   display: none;
+  margin-bottom: 20px;
 }
 .input-action-btn {
   text-align: center;
@@ -709,8 +710,15 @@ input {
 .setting-flag {
   font-size: 1.2em;
   font-weight: bold;
-  margin-bottom: 3px;
-  margin-left: 349px;
+  margin-bottom: 10px;
+  margin-left: 366px;
+}
+#impact-tags .input-actions-container {
+  -webkit-transform: translateX(20px);
+  -moz-transform: translateX(20px);
+  -o-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
 }
 #impact-tags .setting-flag {
   display: inline-block;
@@ -735,7 +743,10 @@ button.add {
   margin-top: 5px;
   margin-left: 140px;
 }
-button.add[data-first="true"] {
+.setting-group[data-empty="true"] .setting-flag {
+  display: none;
+}
+.setting-group[data-empty="true"] .add {
   -webkit-transform: translateY(-95%);
   -moz-transform: translateY(-95%);
   -o-transform: translateY(-95%);
@@ -818,6 +829,12 @@ button.add[data-first="true"] {
 }
 .authenticate button {
   margin: 0;
+}
+.js-destroy-wait {
+  pointer-events: none;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 .save-container {
   margin: 25px 0;
