@@ -62,20 +62,13 @@ block content
 					p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list "slug".
 				.setting-title Staff Twitter lists
 				ul.inputs-container.js-inputs-container(data-setting-name="staff-twitter-lists")
-					//- <%  for (var i = 0; i < twitter_staff_lists.length; i++) { %>
-					//- li.input.multi
-					//- 	.multi-child.destroy &times;
-					//- 	|<input class="input-item" type="text" placeholder="ProPalpatine" value="<%= twitter_staff_lists[i].owner_screen_name %>" class="multi-child double" data-key="owner_screen_name"/>
-					//- 	|<input class="input-item" type="text" placeholder="staff" value="<%= twitter_staff_lists[i].slug %>" class="multi-child double" data-key="slug"/>
-					//- <% } %>
 				button.add Add...
 
 			#twitter-accounts.setting-group.js-setting-group(data-empty=(info.tags.foo != 0).toString())
 				.setting-description 
 					p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
-				.setting-flag Is main account?
 				.setting-title Twitter accounts
-				ul.inputs-container(data-placeholder="ProPalpatine" data-flag="radio" data-group="twitter" data-key="twitter_users" data-child-keys='["screen_name", "is_main"]')
+				ul.inputs-container.js-inputs-container(data-setting-name="twitter-users")
 					//- <%  for (var i = 0; i < twitter_users.length; i++) { %>
 					//- li.input.multi
 					//- 	.multi-child.destroy &times;
@@ -223,6 +216,11 @@ block templates
 			.multi-child.destroy &times;
 			input.multi-child.input-item.js-input-item(type="text", placeholder="Owner handle...", name="options[list_owner_screen_name]")
 			input.multi-child.input-item.js-input-item(type="text", placeholder="List slug...", name="options[list_slug]")
+
+	script(type="text/jst")#twitter-user-templ
+		form.parent-form.js-parent-form.multi.js-multi
+			.multi-child.destroy &times;
+			input.multi-child.input-item.js-input-item(type="text", placeholder="Handle...", name="options[screen_name]")
 
 	//- script(type="text/jst")#multi-input-templ
 	//- 	li.parent-form.js-parent-form.multi
