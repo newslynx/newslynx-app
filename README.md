@@ -1,7 +1,9 @@
 NewsLynx App
 ============
 
-Code for Newslynx App. Log issues [here](https://github.com/newslynx/issues).
+V2 of NewsLynx's Web APP.  This is still a WIP and we should be officially open-sourcing the codebase within the coming month or so.
+
+For now, please read [the report](http://towcenter.org/research/the-newslynx-impact-tracker-produced-these-key-ideas/) we published for the [TowCenter](http://towcenter.org) on our prototype.
 
 #### Pro
 
