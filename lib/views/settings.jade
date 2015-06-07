@@ -16,13 +16,13 @@ block content
 				ul.inputs-container.js-inputs-container(data-setting-name="email")
 					li
 						form.parent-form.js-parent-form
-							input.js-input-item(placeholder="Your email...", type="text" name="email")&attributes({'value': info.user.email})
+							input.js-input-item(placeholder="Your email...", type="text" name="email")
 			#password.setting-group
 				.setting-title Change password
 				ul.inputs-container(data-setting-name="password")
-					li.parent-form&attributes({'data-saved-settings': ''})
+					li.parent-form
 						input.js-input-item(type="password", placeholder="New password...")
-					li.parent-form&attributes({'data-saved-settings': ''})
+					li.parent-form
 						input.js-input-item(type="password", placeholder="Confirm...")
 		#site.settings-group
 			.settings-title Site
@@ -38,7 +38,7 @@ block content
 					li
 						form.parent-form.js-parent-form
 							select.js-input-item(name='value')
-								option(value='', selected=true, disabled=true) Select...
+								option(value='', selected=true) Select...
 								option(value='Europe/Paris') Western Europe
 								option(value='Europe/London') GMT
 								option(value='US/Eastern') US / Eastern 
@@ -48,30 +48,30 @@ block content
 								option(value='US/Alaska') Alaska
 								option(value='US/Hawaii') Hawaii
 
-			.setting-group.js-setting-group(data-empty=(info.recipes['rss-feed-to-article'].length == 0).toString())
+			.setting-group.js-setting-group(data-empty=(info.recipes['rss-feed-to-article'] == undefined).toString())
 				.setting-description 
 					p Does your site publish an RSS feed of all its articles? RSS feeds are the main way NewsLynx brings in articles.
 				.setting-title RSS Feed URLs
 				ul.inputs-container.js-inputs-container(data-setting-name="rss-feeds")
 				button.add Add...
 
-		#social.settings-group
+		#promotion.settings-group(data-homepage-set=(info.org.homepage != undefined).toString())
 			.settings-title Promotion
-			#staff-twitter-lists.setting-group.js-setting-group(data-empty=(info.tags.foo != 0).toString())
+			#staff-twitter-lists.setting-group.js-setting-group(data-empty=(info.recipes['twitter-list-to-event'] == undefined).toString())
 				.setting-description 
 					p If you want to track how your articles are shared among staff, create a Twitter list of their accounts and add the Twitter account name who owns the list and the list "slug".
 				.setting-title Staff Twitter lists
 				ul.inputs-container.js-inputs-container(data-setting-name="staff-twitter-lists")
 				button.add Add...
 
-			#twitter-accounts.setting-group.js-setting-group(data-empty=(info.tags.foo != 0).toString())
+			#twitter-accounts.setting-group.js-setting-group(data-empty=(info.recipes['twitter-users-to-event'] == undefined).toString())
 				.setting-description 
 					p What social accounts does your newsroom use? NewsLynx monitors them to know what’s being promoted.
 				.setting-title Twitter accounts
 				ul.inputs-container.js-inputs-container(data-setting-name="twitter-users")
 				button.add Add...
 
-			.setting-group.js-setting-group(data-empty=(info.tags.foo != 0).toString())
+			.setting-group.js-setting-group(data-empty=(info.recipes['facebook-pages-to-event'] == undefined).toString())
 				#facebook-accounts.setting-title Facebook accounts
 				ul.inputs-container.js-inputs-container(data-setting-name="facebook-pages")
 				button.add Add...
@@ -103,48 +103,48 @@ block content
 		//- 			p Please save your changes before using the authentication tools below, which refresh the page and you might lose unsaved changes.
 		//- 		input(type="submit" value="Save changes")#save
 		//- 		.submit-msg 
-		//- #account-authentication.settings-group
-		//- 	.settings-title Account authentication
-		//- 	.setting-description 
-		//- 		p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
-		//- 		p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
-		//- 	.setting-group
-		//- 		.setting-title Google analytics
-		//- 		.auth-container
-		//- 			<% if (google_analytics_auth) { %>
-		//- 			p.auth-result.success Authenticated. (
-		//- 				a(href="/auth/google/revoke") Revoke access
-		//- 				| )
-		//- 			<% } else { %>
-		//- 			p.auth-result.fail Not authenticated.
-		//- 			p
-		//- 				a(href='/auth/google').authenticate
-		//- 					button Grant access
-		//- 			<% }  %>
-		//- 	.setting-group
-		//- 		.setting-title Twitter
-		//- 		.auth-container
-		//- 			<% if (twitter_auth) { %>
-		//- 			p.auth-result.success Authenticated. (
-		//- 				a(href="/auth/twitter/revoke") Revoke access
-		//- 				| )
-		//- 			<% } else { %>
-		//- 			p.auth-result.fail Not authenticated.
-		//- 			p
-		//- 				a(href='/auth/twitter').authenticate
-		//- 					button Grant access
-		//- 			<% }  %>
-		//- 	.setting-group(style="display:none;")
-		//- 		.setting-title Facebook
-		//- 		.auth-container
-		//- 			<% if (facebook_auth) { %>
-		//- 			p.auth-result.success Authenticated.
-		//- 			<% } else { %>
-		//- 			p.auth-result.fail Not authenticated.
-		//- 			p
-		//- 				a(href='/auth/facebook').authenticate
-		//- 					button Grant access
-		//- 			<% }  %>			
+		#account-authentication.settings-group
+			.settings-title Account authentication
+			.setting-description 
+				p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
+				p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
+			.setting-group
+				.setting-title Google analytics
+				.auth-container
+					<% if (google_analytics_auth) { %>
+					p.auth-result.success Authenticated. (
+						a(href="/auth/google/revoke") Revoke access
+						| )
+					<% } else { %>
+					p.auth-result.fail Not authenticated.
+					p
+						a(href='/auth/google').authenticate
+							button Grant access
+					<% }  %>
+			.setting-group
+				.setting-title Twitter
+				.auth-container
+					<% if (twitter_auth) { %>
+					p.auth-result.success Authenticated. (
+						a(href="/auth/twitter/revoke") Revoke access
+						| )
+					<% } else { %>
+					p.auth-result.fail Not authenticated.
+					p
+						a(href='/auth/twitter').authenticate
+							button Grant access
+					<% }  %>
+			.setting-group(style="display:none;")
+				.setting-title Facebook
+				.auth-container
+					<% if (facebook_auth) { %>
+					p.auth-result.success Authenticated.
+					<% } else { %>
+					p.auth-result.fail Not authenticated.
+					p
+						a(href='/auth/facebook').authenticate
+							button Grant access
+					<% }  %>			
 
 block templates
 	script(type="text/jst")#input-actions-templ

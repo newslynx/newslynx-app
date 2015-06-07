@@ -746,6 +746,22 @@ button.add {
   -ms-transform: translateY(-95%);
   transform: translateY(-95%);
 }
+#promotion[data-homepage-set="false"] {
+  pointer-events: none;
+}
+#promotion[data-homepage-set="false"] .setting-group {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+#promotion[data-homepage-set="false"] .settings-title:after {
+  content: 'Please set your homepage before creating recipes';
+  color: #9e0000;
+  font-size: 0.8em;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: normal;
+}
 .sp-replacer:hover .sp-dd {
   color: #999;
 }
