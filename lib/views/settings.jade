@@ -83,12 +83,6 @@ block content
 				ul.inputs-container.js-inputs-container(data-setting-name="subject-tags")
 				button.add Add...
 
-					//- <%  for (var i = 0; i < subject_tags.length; i++) { %>
-					//- li.input.multi
-					//- 	.multi-child.destroy &times;
-					//- 	|<input class="input-item" type="text" placeholder="Fracking" value="<%= subject_tags[i].name %>" class="multi-child" data-key="name" data-id="<%= subject_tags[i].id %>" />
-					//- 	|<input class="input-item color-picker" type="text" data-color="<%= subject_tags[i].color %>" value="<%= subject_tags[i].color %>" data-group="subject" data-key="color" />
-					//- <% } %>
 			#impact-tags.setting-group.js-setting-group(data-empty=(info.tags.impact.length == 0).toString())
 				.setting-flag Category
 				.setting-flag Level
@@ -97,12 +91,6 @@ block content
 				button.add Add...
 
 
-		//- .settings-group
-		//- 	.save-container
-		//- 		.setting-description
-		//- 			p Please save your changes before using the authentication tools below, which refresh the page and you might lose unsaved changes.
-		//- 		input(type="submit" value="Save changes")#save
-		//- 		.submit-msg 
 		#account-authentication.settings-group
 			.settings-title Account authentication
 			.setting-description 
@@ -152,23 +140,6 @@ block templates
 			button.input-action-btn(data-which="cancel") Cancel
 			input.input-action-btn(data-which="save", value="Save", type="Submit") 
 
-	
-	//- script(type="text/jst")#settings-group-templ
-	//- 	.settings-group
-	//- 		.settings-title <%= settings_title %>
-
-	//- script(type="text/jst")#setting-group-templ
-	//- 	.setting-group
-	//- 		<% (description) ? print('<div class="setting-description">'+description+'</div>' : '') %>
-	//- 		<% (flag) ? print('<div class="setting-flag">'+flag+'</div>' : '') %>
-	//- 		.setting-title <%= setting_title %>
-	//- 		|<ul class="inputs-container" <% (multi === true) ? print('data-placeholder="'+placeholder+'"' : '') %> <% (flag === true) ? print('data-flag="'+flag+'"' : '') %> ></ul>
-
-	//- script(type="text/jst")#single-input-templ
-	//- 	li.input.multi
-	//- 		.multi-child.destroy &times;
-	//- 		|<input class="input-item multi-child" type="text" placeholder="propalp.tn" />
-
 	script(type="text/jst")#subject-tag-templ
 		form.parent-form.js-parent-form.multi.js-multi
 			.multi-child.destroy &times;
@@ -213,44 +184,6 @@ block templates
 		form.parent-form.js-parent-form.multi.js-multi
 			.multi-child.destroy &times;
 			input.multi-child.input-item.js-input-item(type="text", placeholder="Page name...", name="options[page_name]")
-
-	//- script(type="text/jst")#multi-input-templ
-	//- 	li.parent-form.js-parent-form.multi
-	//- 		.multi-child.destroy &times;
-	//- 		input.multi-child.input-item.js-input-item(type="text", placeholder!="<%= placeholder %>", data-key!="<%= keys[0] %>")
-	//- 		<% if (flag == 'radio') { %>
-	//- 		<% print('<input class="input-item" type="'+flag+'" name="'+group+'" data-key="'+keys[1]+'"/>') %>
-	//- 		<% } else if (flag == 'checkbox') { %>
-	//- 		<% print('<input class="input-item" type="'+flag+'" data-key="'+keys[1]+'"/>') %>
-	//- 		<% } else if (flag == 'color') { %>
-	//- 		<% print('<input class="color-picker input-item" type="text" data-color="#ccc" value="#ccc" data-group="subject" data-key="color" data-id="false" />') %>
-	//- 		<% } %>
-
-	//- script(type="text/jst")#multi-input-double-templ
-	//- 	li.input.multi
-	//- 		.multi-child.destroy &times;
-	//- 		|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder0 %>" data-key="<%= keys[0] %>" />
-	//- 		|<input class="multi-child double input-item" type="text" placeholder="<%= placeholder1 %>" data-key="<%= keys[1] %>" />
-	//- 		<% (flag) ? print('<input class="input-item" type="'+flag+'" data-key="'+keys[2]+'" />') : '' %>
-
-	//- script(type="text/jst")#impact-tag-input-templ
-	//- 	li.input.multi
-	//- 		.multi-child.destroy &times;
-	//- 		|<input class="input-item" type="text" placeholder="Legislative impact" value="" class="multi-child" data-key="name" data-id="false"/>
-	//- 		|<select name='category' class="input-item multi-child" data-key="category">
-	//- 		|<option value='citation' selected> Citation</option>
-	//- 		|<option value='change'>Change</option>
-	//- 		|<option value='achievement'>Achievement</option>
-	//- 		|<option value='other'>Other</option>
-	//- 		|</select>
-	//- 		|<select name='level' class="input-item multi-child" data-key="level">
-	//- 		|<option value='institution' selected> Institution</option>
-	//- 		|<option value='community'>Community</option>
-	//- 		|<option value='individual'>Individual</option>
-	//- 		|<option value='internal'>Internal</option>
-	//- 		|<option value='media'>Media</option>
-	//- 		|</select>
-	//- 		|<input class="input-item color-picker" type="text" data-color="#ccc" value="#ccc" data-group="impact" data-key="color"/>
 
 block bootstrap-data
 	script(id="page-data").

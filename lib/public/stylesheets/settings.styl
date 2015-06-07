@@ -112,13 +112,15 @@ select_width = 132px
 		margin-right 55px // Bump the next line to the next line
 .destroy.multi-child
 	width destroy_width
-	height 100%
+	height input_height
 	text-align center
-	font-size 1.4em
+	font-size 1.8em
+	padding-top 4px
 	color #aaa
-.destroy.multi-child:hover
-	cursor pointer
-	color #000
+	&:hover
+		cursor pointer
+		color kill_red
+		font-weight bold
 button.add
 	display block
 	margin-top 5px
