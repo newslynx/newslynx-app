@@ -662,6 +662,7 @@ input {
 }
 .parent-form {
   margin-left: 20px;
+  white-space: nowrap;
 }
 .parent-form input[type='text'],
 .parent-form select {
@@ -711,14 +712,6 @@ input {
   font-weight: bold;
   margin-bottom: 10px;
   margin-left: 366px;
-}
-#impact-tags .input-actions-container {
-  -webkit-transform: translateX(20px);
-  -moz-transform: translateX(20px);
-  -o-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-  margin-bottom: 20px;
 }
 #impact-tags .setting-flag {
   display: inline-block;
