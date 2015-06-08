@@ -70,6 +70,31 @@ select_width = 132px
 	.input-actions-container
 		display inline-block
 		
+.js-parent-form.js-just-saved:after
+	content '🎉🎉🎉'
+	padding 5px 0 0 5px
+	font-size 1.8em
+	animation fadeOut 1500ms cubic-bezier(0, 0, .8, .5) // Timing must match timing in `AA_BaseSettings.js.modelsaved`
+		
+@keyframes fadeOut {
+	from{
+		opacity 1
+	}
+	to{
+		opacity 0
+	}
+}
+
+@keyframes decay {
+	from{
+		opacity 1
+	}
+	to{
+		opacity 0
+	}
+	
+}
+		
 .input-actions-container,
 .input-action-btn
 	vertical-align top
@@ -101,9 +126,6 @@ select_width = 132px
 	margin-bottom 10px
 	margin-left ( setting_title_width + destroy_width + input_width + input_margin*5 + 1 )
 #impact-tags 
-	// .input-actions-container
-	// 	transform translateX(destroy_width)
-	// margin-bottom 20px
 	.setting-flag
 		display inline-block
 #impact-tags 
