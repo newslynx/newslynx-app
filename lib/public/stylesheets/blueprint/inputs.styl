@@ -4,6 +4,7 @@ input[type="search"]
 	appearance searchfield
 
 button,
+input[type="button"],
 input.destroy
 	color #333
 	background-color #EEE
@@ -11,6 +12,7 @@ input.destroy
 	border 1px solid #D5D5D5
 
 button,
+input[type="button"],
 input[type="submit"],
 input.destroy
 	padding 5px 8px
@@ -19,7 +21,9 @@ input.destroy
 	white-space nowrap
 	border-radius 3px
 	
+	
 button,
+input[type="button"],
 input[type="submit"],
 input.destroy,
 select
@@ -32,10 +36,14 @@ select
 	background-repeat repeat-x
 	-moz-user-select none
 
+input[type="button"]
+	margin-right 3px
+	
 select
 	font-size 12px !important
 
-button.mini
+button.mini,
+input[type="button"].mini,
 	padding 0 6px
 	font-size 12px
 
@@ -66,11 +74,13 @@ input.destroy
 	color #900
 
 button:hover,
+input[type="button"]:hover,
 input[type="submit"]:hover,
 input.destroy:hover
 	cursor pointer
 
-button:hover
+button:hover,
+input[type="button"]:hover,
 	text-decoration none
 	background-color #DDD
 	background-image linear-gradient(#EEE, #DDD)
@@ -93,7 +103,8 @@ input[type="submit"]:hover
 	background-repeat repeat-x
 	border-color #4A993E
 
-button:active
+button:active,
+input[type="button"]:active,
 	background-color #dcdcdc
 	background-image none
 	border-color #b5b5b5
@@ -111,12 +122,15 @@ input.destroy:active
 	border-color #9f312c
 
 .disabled button,
-button.disabled
+button.disabled,
+input[type="button"].disabled,
 	opacity .4
 	pointer-events none
 	
 .disabled:hover button,
 .disabled:hover button:hover,
+.disabled:hover input[type="button"],
+.disabled:hover input[type="button"]:hover,
 .disabled:hover
 	cursor default !important
 

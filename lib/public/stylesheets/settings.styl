@@ -65,10 +65,14 @@ select_width = 132px
 	input[type='checkbox']
 		margin 0
 	input[type='password']
-		clear right
+		display block
 .parent-form[data-changed="true"]
 	.input-actions-container
 		display inline-block
+		
+#password
+		input[type="password"].js-needs-correction
+			border-color kill_red
 		
 .js-parent-form.js-just-saved:after
 	content '🎉🎉🎉'

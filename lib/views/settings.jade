@@ -19,13 +19,12 @@ block content
 							input.js-input-item(placeholder="Your email...", type="text" name="email")
 			#password.setting-group
 				.setting-title Change password
-				ul.inputs-container(data-setting-name="password")
-					li.parent-form
-						input.js-input-item(type="password", placeholder="Old password...", name="old_password")
-					li.parent-form
-						input.js-input-item(type="password", placeholder="New password...", name="new_password")
-					li.parent-form
-						input.js-input-item(type="password", placeholder="Confirm...")
+				ul.inputs-container.js-inputs-container(data-setting-name="password")
+					li
+						form.parent-form.js-parent-form
+							input.input-item.js-input-item(type="password", data-which="old", placeholder="Old password...", name="old_password")
+							input.input-item.js-input-item(type="password", data-which="new", placeholder="New password...")
+							input.input-item.js-input-item(type="password", data-which="confirm", placeholder="Confirm...", name="new_password")
 		#site.settings-group
 			.settings-title Site
 			#home-page.setting-group
@@ -104,13 +103,13 @@ block content
 					if (info.org.google_analytics_authed)
 						p.auth-result.success Authenticated. 
 							span (
-								a(href="/auth/google-analytics") Change property | 
+								a(href="/auth/google-analytics/grant") Change property | 
 								a(href="/auth/google-analytics/revoke") Revoke access
 								| )
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/google-analytics').authenticate
+							a(href='/auth/google-analytics/grant').authenticate
 								button Grant access
 			.setting-group
 				.setting-title Twitter
@@ -123,7 +122,7 @@ block content
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/twitter').authenticate
+							a(href='/auth/twitter/grant').authenticate
 								button Grant access
 			.setting-group
 				.setting-title Facebook
@@ -136,13 +135,13 @@ block content
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/facebook').authenticate
+							a(href='/auth/facebook/grant').authenticate
 								button Grant access
 
 block templates
 	script(type="text/jst")#input-actions-templ
 		.input-actions-container.js-input-actions-container
-			button.input-action-btn(data-which="cancel") Cancel
+			input.input-action-btn(data-which="cancel", value="Cancel", type="button") 
 			input.input-action-btn(data-which="save", value="Save", type="Submit") 
 
 	script(type="text/jst")#subject-tag-templ
