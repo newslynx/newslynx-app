@@ -99,40 +99,43 @@ block content
 			.setting-group
 				.setting-title Google analytics
 				.auth-container
-					<% if (google_analytics_auth) { %>
-					p.auth-result.success Authenticated. (
-						a(href="/auth/google/revoke") Revoke access
-						| )
-					<% } else { %>
-					p.auth-result.fail Not authenticated.
-					p
-						a(href='/auth/google').authenticate
-							button Grant access
-					<% }  %>
+					if (info.org.google_analytics_authed)
+						p.auth-result.success Authenticated. 
+							span (
+								a(href="/auth/google-analytics") Change property | 
+								a(href="/auth/google-analytics/revoke") Revoke access
+								| )
+					else
+						p.auth-result.fail Not authenticated.
+						p
+							a(href='/auth/google-analytics').authenticate
+								button Grant access
 			.setting-group
 				.setting-title Twitter
 				.auth-container
-					<% if (twitter_auth) { %>
-					p.auth-result.success Authenticated. (
-						a(href="/auth/twitter/revoke") Revoke access
-						| )
-					<% } else { %>
-					p.auth-result.fail Not authenticated.
-					p
-						a(href='/auth/twitter').authenticate
-							button Grant access
-					<% }  %>
-			.setting-group(style="display:none;")
+					if (info.org.twitter_authed)
+						p.auth-result.success Authenticated. 
+							span (
+								a(href="/auth/twitter/revoke") Revoke access
+								| )
+					else
+						p.auth-result.fail Not authenticated.
+						p
+							a(href='/auth/twitter').authenticate
+								button Grant access
+			.setting-group
 				.setting-title Facebook
 				.auth-container
-					<% if (facebook_auth) { %>
-					p.auth-result.success Authenticated.
-					<% } else { %>
-					p.auth-result.fail Not authenticated.
-					p
-						a(href='/auth/facebook').authenticate
-							button Grant access
-					<% }  %>			
+					if (info.org.facebook_authed)
+						p.auth-result.success Authenticated. 
+							span (
+								a(href="/auth/facebook/revoke") Revoke access
+								| )
+					else
+						p.auth-result.fail Not authenticated.
+						p
+							a(href='/auth/facebook').authenticate
+								button Grant access
 
 block templates
 	script(type="text/jst")#input-actions-templ

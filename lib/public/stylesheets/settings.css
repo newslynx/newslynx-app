@@ -840,6 +840,9 @@ button.add {
 .success {
   color: #529624;
 }
+.success span {
+  color: #000;
+}
 .fail {
   color: #9e0000;
 }
@@ -870,21 +873,11 @@ button.add {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
   }
   to {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    transform: rotate(720deg);
   }
 }
 @-webkit-keyframes fadeOut {
@@ -892,21 +885,11 @@ button.add {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
   }
   to {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    transform: rotate(720deg);
   }
 }
 @-o-keyframes fadeOut {
@@ -914,21 +897,11 @@ button.add {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
   }
   to {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    transform: rotate(720deg);
   }
 }
 @keyframes fadeOut {
@@ -936,21 +909,11 @@ button.add {
     opacity: 1;
     -ms-filter: none;
     filter: none;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
   }
   to {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
-    -webkit-transform: rotate(720deg);
-    -moz-transform: rotate(720deg);
-    -o-transform: rotate(720deg);
-    -ms-transform: rotate(720deg);
-    transform: rotate(720deg);
   }
 }
 @-moz-keyframes decay {
