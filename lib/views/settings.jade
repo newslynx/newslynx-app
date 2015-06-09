@@ -21,7 +21,9 @@ block content
 				.setting-title Change password
 				ul.inputs-container(data-setting-name="password")
 					li.parent-form
-						input.js-input-item(type="password", placeholder="New password...")
+						input.js-input-item(type="password", placeholder="Old password...", name="old_password")
+					li.parent-form
+						input.js-input-item(type="password", placeholder="New password...", name="new_password")
 					li.parent-form
 						input.js-input-item(type="password", placeholder="Confirm...")
 		#site.settings-group
