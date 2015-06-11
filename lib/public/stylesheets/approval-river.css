@@ -706,6 +706,285 @@ input {
   left: auto;
   right: -10px;
 }
+.modal-outer {
+  display: none;
+}
+.modal-outer,
+.modal-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-overlay {
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9;
+}
+.modal-overlay:hover {
+  cursor: pointer;
+}
+.modal-inner {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 525px;
+  z-index: 99;
+}
+.modal-inner form {
+  margin-top: 10px;
+}
+.modal-inner .modal-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 1px solid #777676;
+  margin-bottom: 5px;
+  color: #000;
+}
+.modal-inner .description:not(textarea) {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-style: italic;
+}
+input[name="assignees"] {
+  pointer-events: none;
+  border: 0;
+  color: #fff;
+  display: none;
+}
+.labelled:after {
+  color: #000;
+  content: attr(aria-label);
+  font-size: 13px;
+  display: inline-block;
+  width: 266px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.remove-assignee.labelled:after {
+  padding-left: 5px;
+}
+.modal-inner:hover {
+  cursor: move !important;
+}
+.modal-outer.active {
+  display: block;
+  position: absolute;
+}
+.modal-outer.active .modal-overlay,
+.modal-outer.active .modal-inner {
+  position: fixed;
+}
+.form-row {
+  margin-bottom: 5px;
+}
+.form-row input {
+  margin-left: 0;
+}
+.form-row.article-assignees {
+  margin-left: 40%;
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form-row-input-container[data-which="impact_tags"],
+.form-row-input-container[data-which="subject_tags"] {
+  max-height: 95px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space: normal;
+}
+.form-row-input-container .placeholder {
+  font-size: 1.2em !important;
+  color: #000;
+}
+.form-row-input-container .placeholder a {
+  color: #0092ce;
+}
+.article-assignee {
+  position: relative;
+}
+.article-assignee input {
+  width: 93%;
+}
+.article-assignee .remove-assignee {
+  padding-right: 5px;
+  font-size: 1.5em;
+  color: #ccc;
+  white-space: nowrap;
+}
+.article-assignee:hover {
+  cursor: pointer;
+}
+.article-assignee:hover .remove-assignee {
+  color: #000;
+}
+.buttons-container {
+  padding-top: 10px;
+}
+.buttons-container button,
+.buttons-container input[type="submit"] {
+  margin: 0 5px 0 -2px;
+  width: auto;
+}
+.recipe-form-container .recipe-title {
+  position: relative;
+  font-size: 3em;
+  color: #7c7c7c;
+  margin-bottom: 25px;
+}
+.recipe-form-container .service-icon {
+  top: -4px;
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  margin-bottom: 5px;
+}
+.recipe-form-container .service-icon[data-service="reddit"] {
+  top: -7px;
+}
+.submit-msg {
+  display: inline-block;
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 1.4em;
+  white-space: normal;
+  width: 260px;
+}
+.submit-msg a {
+  padding: 0 !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+  color: #0092ce !important;
+}
+.submit-msg a:hover {
+  background-color: #fff !important;
+}
+.form-checkbox-group {
+  display: block;
+  width: 100%;
+}
+.toolbar {
+  position: relative;
+}
+.toolbar .service-icon {
+  width: 15px;
+  height: 15px;
+  bottom: 5px;
+  right: 0;
+}
+.toolbar .service-icon .service-method-label {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+.service-icon {
+  position: absolute;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  bottom: 0;
+  background-position: right;
+}
+.service-icon[data-service="google"] {
+  background-image: url("/images/service-icons/logos-01.svg");
+}
+.service-icon[data-service="twitter"] {
+  background-image: url("/images/service-icons/logos-02.svg");
+}
+.service-icon[data-service="reddit"] {
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
+}
+.modal-outer form .form-row-label-container,
+.recipe-form-container form .form-row-label-container {
+  font-size: 1.4em;
+  display: inline-block;
+  width: 40%;
+  margin-bottom: 3px;
+  vertical-align: top;
+  color: #000;
+}
+.modal-outer form .form-row-label-container.has-help-link,
+.recipe-form-container form .form-row-label-container.has-help-link {
+  margin-top: 15px;
+}
+.modal-outer form .form-row-label-container.form-row-label-top,
+.recipe-form-container form .form-row-label-container.form-row-label-top {
+  vertical-align: top;
+}
+.modal-outer form .form-row-input-container,
+.recipe-form-container form .form-row-input-container {
+  width: 59%;
+  display: inline-block;
+}
+.modal-outer form .form-row-input-container .title,
+.recipe-form-container form .form-row-input-container .title {
+  font-size: 11px;
+}
+.modal-outer form .form-row-input-container input[type="checkbox"],
+.recipe-form-container form .form-row-input-container input[type="checkbox"] {
+  width: auto;
+}
+.modal-outer form .help-row,
+.recipe-form-container form .help-row {
+  text-align: right;
+  margin-bottom: 2px;
+}
+.modal-outer form .hint-row,
+.recipe-form-container form .hint-row {
+  color: #7c7c7c;
+  position: absolute;
+}
+.modal-outer form input[type="text"],
+.recipe-form-container form input[type="text"],
+.modal-outer form input[type="number"],
+.recipe-form-container form input[type="number"],
+.modal-outer form textarea,
+.recipe-form-container form textarea {
+  width: 100%;
+  margin: 0;
+}
+.modal-outer form select,
+.recipe-form-container form select {
+  margin: 0;
+}
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-hint {
+  color: #999;
+}
+.tt-dropdown-menu {
+  width: 100%;
+  margin-top: 3px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.4em;
+}
+.tt-suggestion:hover {
+  cursor: pointer;
+}
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+.tt-suggestion p {
+  margin: 0;
+}
 #alert-spinner {
   font-size: 1.2em;
   padding-top: 5px;
