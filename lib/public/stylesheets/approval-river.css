@@ -244,7 +244,6 @@ opacity .4 {
 input[type="text"],
 input[type="password"],
 input[type="number"],
-input[type="search"],
 textarea,
 .sp-replacer {
   margin-left: 0;
@@ -265,7 +264,6 @@ textarea,
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
-input[type="search"]:focus,
 textarea:focus,
 .sp-replacer:focus {
   background-color: #fff;
