@@ -72,7 +72,9 @@ block templates
 
 	script(type="text/jst")#recipe-schema-form-templ
 		.recipe-form-container
-			|<div class="recipe-title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSousChef(sous_chef) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
+			.recipe-title(id!="<%= source %>-recipe")
+				span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
+					span.text New <%= prettyPrintSource(source) %> recipe
 			form
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
@@ -118,7 +120,7 @@ block templates
 				<% print(list_markup); %>
 				<% } %>
 				.link
-					|<a href="<%= url %>" target="_blank">Link</a>
+					a(href!="<%= url %>", target="_blank") Link
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="yes")
 					.approval-btn.octicon.octicon-check

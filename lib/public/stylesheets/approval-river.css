@@ -15,11 +15,11 @@ body {
   height: 100%;
 }
 a {
-  color: link_blue;
+  color: #0092ce;
   text-decoration: none;
 }
 a:hover {
-  color: link_blue_hover;
+  color: #0082b6;
   text-decoration: underline;
 }
 ul {
@@ -710,6 +710,21 @@ input {
   left: auto;
   right: -10px;
 }
+.service-icon[data-service="google"] {
+  background-image: url("/images/service-icons/logos-01.svg");
+}
+.service-icon[data-service="twitter"] {
+  background-image: url("/images/service-icons/logos-02.svg");
+}
+.service-icon[data-service="reddit"] {
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
+}
+.service-icon[data-service="rss"] {
+  background-image: url("/images/service-icons/logos-05.svg");
+}
 .modal-outer {
   display: none;
 }
@@ -891,18 +906,6 @@ input[name="assignees"] {
   display: inline-block;
   bottom: 0;
   background-position: right;
-}
-.service-icon[data-service="google"] {
-  background-image: url("/images/service-icons/logos-01.svg");
-}
-.service-icon[data-service="twitter"] {
-  background-image: url("/images/service-icons/logos-02.svg");
-}
-.service-icon[data-service="reddit"] {
-  background-image: url("/images/service-icons/logos-03.svg");
-}
-.service-icon[data-service="facebook"] {
-  background-image: url("/images/service-icons/logos-04.svg");
 }
 .modal-outer form .form-row-label-container,
 .recipe-form-container form .form-row-label-container {
