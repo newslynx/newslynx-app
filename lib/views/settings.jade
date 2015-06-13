@@ -95,47 +95,52 @@ block content
 		#account-authentication.settings-group
 			.settings-title Account authentication
 			.setting-description 
-				p We use this data to show you things like pageviews and unique visitors from Google Analytics. We use your Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. We cannot post to your accounts and we do not have access to your account password. We only use data for research purposes. 
+				p NewsLynx uses this data to show you things like pageviews and unique visitors from Google Analytics. It uses Twitter and Facebook tokens for things like retrieving all of the tweets from the lists designated above. NewsLynx cannot post to your accounts and it do not have access to your account password.
 				p <strong>Please save your settings before authenticating. The authentication process will refresh the page and you will lose any unsaved changes.</strong>
 			.setting-group
 				.setting-title Google analytics
 				.auth-container
-					if (info.org.google_analytics_authed)
+					if (info.org.google_analytics_auth.is_authed)
 						p.auth-result.success Authenticated. 
 							span (
-								a(href="/auth/google-analytics/grant") Change property | 
-								a(href="/auth/google-analytics/revoke") Revoke access
+								a(href="/auths/google-analytics/grant") Change property
+								|  | 
+								a(href="/auths/google-analytics/revoke") Revoke access
 								| )
+						ul.ga-properties
+							each propertyInfo in  info.org.google_analytics_auth.properties
+								li.ga-property — #{propertyInfo.property} (#{propertyInfo.profile})
+							
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/google-analytics/grant').authenticate
+							a(href='/auths/google-analytics/grant').authenticate
 								button Grant access
 			.setting-group
 				.setting-title Twitter
 				.auth-container
-					if (info.org.twitter_authed)
+					if (info.org.twitter_auth.is_authed)
 						p.auth-result.success Authenticated. 
 							span (
-								a(href="/auth/twitter/revoke") Revoke access
+								a(href="/auths/twitter/revoke") Revoke access
 								| )
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/twitter/grant').authenticate
+							a(href='/auths/twitter/grant').authenticate
 								button Grant access
 			.setting-group
 				.setting-title Facebook
 				.auth-container
-					if (info.org.facebook_authed)
+					if (info.org.facebook_auth.is_authed)
 						p.auth-result.success Authenticated. 
 							span (
-								a(href="/auth/facebook/revoke") Revoke access
+								a(href="/auths/facebook/revoke") Revoke access
 								| )
 					else
 						p.auth-result.fail Not authenticated.
 						p
-							a(href='/auth/facebook/grant').authenticate
+							a(href='/auths/facebook/grant').authenticate
 								button Grant access
 
 block templates

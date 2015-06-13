@@ -209,8 +209,8 @@ input[type="submit"]:hover {
   border-color: #4a993e;
 }
 button:active,
-input[type="button"]:active,
-background-color #dcdcdc {
+input[type="button"]:active {
+  background-color: #dcdcdc;
   background-image: none;
   border-color: #b5b5b5;
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
@@ -881,6 +881,9 @@ button.add {
   margin-top: 5px !important;
   font-size: 1.6em;
   font-weight: normal !important;
+}
+.ga-property {
+  font-size: 1.2em;
 }
 @-moz-keyframes fadeOut {
   from {
