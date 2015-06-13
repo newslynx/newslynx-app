@@ -15,11 +15,11 @@ body {
   height: 100%;
 }
 a {
-  color: link_blue;
+  color: #0092ce;
   text-decoration: none;
 }
 a:hover {
-  color: link_blue_hover;
+  color: #0082b6;
   text-decoration: underline;
 }
 ul {

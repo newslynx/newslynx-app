@@ -747,6 +747,10 @@ input {
   padding: 20px;
   border: 1px solid #000;
   width: 525px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 14px #1a1a1a;
+  box-shadow: 0px 0px 14px #1a1a1a;
   z-index: 99;
 }
 .modal-inner form {
