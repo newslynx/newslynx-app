@@ -1,0 +1,245 @@
+@require 'blueprint'
+@require 'blueprint/tags.styl'
+@require 'blueprint/tooltips.styl'
+@require 'blueprint/modal-form.styl'
+
+load_more_button_height = 40px
+load_more_button_padding = 10px
+
+division_switcher_height = 50px
+drawer_pointer_padding = 62px
+drawer_item_single_line = 37px
+
+
+#alert-spinner
+	font-size 1.2em
+	padding-top 5px
+	text-align center
+	margin 0px auto
+	display table
+	height 24px
+	margin-top 20px
+	background-position right center
+	
+body[data-modal=true]
+	overflow hidden
+	#recipes.drawer-list-item-ul
+		overflow-y hidden !important
+
+body[data-section="approval-river"] 
+	.section.active > .nav-link
+		background-color approval_river
+	#drawer
+		background-color tint(approval_river, 90%)
+	.division-switcher li.active
+		background-color approval_river
+		text-shadow 0 0px 12px #535353
+
+
+#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
+	background-color darken(select_blue, 7%)
+	cursor pointer
+
+
+#drawer[data-mode="my-recipes"]
+	.inputs-container,.drawer-list-inner
+		display inline-block
+		vertical-align top
+	.inputs-container
+		margin-right 10px
+	.drawer-list-inner
+		width 85%		
+#content[data-mode="my-recipes"]
+	.load-more
+		display table // Not sure why this makes centering work
+		margin 30px auto
+		
+
+.drawer-container[data-mode="my-recipes"]
+	.drawer-list-item-ul
+		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line )
+#recipes
+	height auto
+	overflow-x hidden
+	overflow-y scroll
+#drawer[data-mode="my-recipes"] #recipes
+	height "calc(100vh - %s)" % (division_switcher_height + 114 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
+
+
+#content[data-mode="my-recipes"] .placeholder
+	transform translateY(125px)
+#content[data-mode="my-recipes"] .placeholder,
+#content[data-mode="create"] .placeholder,
+#events-container .placeholder,
+.detail-section .placeholder
+		text-align center
+		font-size 1.6em
+		// font-style italic
+		margin 0 auto
+		max-width 530px
+		width 100%
+		
+
+#content[data-mode="create"]
+	padding 25px 30px
+	.article-detail-wrapper
+		margin 10px 0 55px 0
+		padding 30px 30px 35px 70px
+		max-width 650px
+#content[data-mode="create"],#content[data-mode="my-recipes"]
+	background-color #f2f2f2
+#content[data-mode="my-recipes"]
+	padding 5px 20px
+	.article-detail-wrapper
+		margin 10px
+		padding 10px
+		width 47%
+		display inline-block
+		vertical-align top
+#content[data-mode="create"] .article-detail-wrapper,
+#content[data-mode="my-recipes"] .article-detail-wrapper,#events-gallery-container .event-container
+	border 1px solid #ccc
+	background-color #fff
+	border-radius 2px
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#content[data-mode="create"] .article-detail-wrapper
+	box-shadow 0px 0px 6px #d4d4d4
+#events-gallery-container .event-container
+	box-shadow 0px 0px 5px #dbdbdb
+.river-item-container
+	position relative
+
+#recipe-sources
+	padding 0
+.view-all:hover
+	cursor default
+#drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
+	background-color select_blue
+	cursor default
+.approval-child[data-which="btns"]
+	width 33%
+	height 26px
+	position absolute
+	top 0
+	right 0
+// .approval-child[data-which="info"]
+// 	width 85%
+.approval-btn-container
+	float right
+	display inline-block
+	color #4e4e4e
+	opacity .65
+	font-size 13px
+.approval-btn-container:first-child
+	padding-left 9px
+	width 32px
+.approval-btn-container:nth-child(2)
+	width 40px
+	padding-left 10px
+.approval-btn-container:hover
+	opacity 1
+	cursor pointer
+.approval-btn-container[data-which="yes"]
+	color enable_green
+.approval-btn-container[data-which="no"]
+	color disabled_red
+.approval-btn
+	font-size 2.2em
+	width 100%
+	user-select none
+	border 2px solid transparent
+	display table-cell
+	vertical-align middle
+.approval-btn-container[data-which="yes"]:hover
+	color darken(enable_green, 10%)
+.approval-btn-container[data-which="no"]:hover
+	color darken(disabled_red, 10%)
+.approval-btn-container[data-which="yes"]:active
+	color darken(enable_green, 45%)
+.approval-btn-container[data-which="no"]:active
+	color darken(disabled_red, 45%)
+
+.approval-child
+	.title
+		font-size 1.7em
+		margin-bottom 3px
+	.author
+		margin-bottom 4px
+	.domain,
+	.description,
+	.author
+		font-size 1.2em
+	.domain
+		font-weight bold
+		margin-bottom 5px
+	.toolbar
+		position relative
+		margin-bottom 8px
+		.service-icon
+			position relative !important
+			left auto
+			bottom auto
+			right auto
+		.timestamp
+			font-size 1.2em
+	.articles-mentioned
+		font-size 1.2em
+		margin-top 8px
+		li
+			margin-left 11px
+			list-style disc
+			color #A8A8A8
+	.alert-section-title
+		text-decoration underline
+		margin-bottom 3px
+	.origin-recipe
+		display inline-block
+		vertical-align top
+		font-size 1.2em
+		margin-left 3px
+		color #A8A8A8
+	.link
+		margin-top 10px
+		text-align right
+		display inline-block
+		background-color link_blue
+		padding 1px 11px
+		border-radius 3px
+		float right
+		font-size 1.3em
+		opacity .3
+		a
+			color #fff
+		a:hover
+			text-decoration none
+	.link:hover
+		opacity 1
+			
+
+.show-hide-default-event
+	font-size 1.4em
+	margin 5px 0 15px 0
+	user-select none
+	line-height 1.4em
+	.toggle-default-event[data-status="true"]
+		color enable_green
+	.toggle-default-event[data-status="false"]
+		color disabled_red
+	.toggle-default-event:hover
+		text-decoration underline
+		cursor pointer
+
+.default-event-container
+	display none
+// 	overflow hidden
+// 	transition height 200ms cubic-bezier(0,0,.2,1)
+// .default-event-container.slide-open
+// 	height 100%
+
+
+@media (max-width: 1260px)
+	#content[data-mode="my-recipes"]
+		.article-detail-wrapper
+			width 90% !important
+

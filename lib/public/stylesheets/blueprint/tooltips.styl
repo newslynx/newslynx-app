@@ -1,0 +1,56 @@
+.tooltipped
+	position relative
+.tooltipped:hover:before,
+.tooltipped:hover:after
+	display inline-block
+
+.tooltipped:before,
+.tooltipped:after
+	position absolute
+	display none
+	right 50%
+
+// .tooltipped-i:before,
+// .tooltipped-i:after,
+.tooltipped:before,
+.tooltipped:after
+	pointer-events none
+
+tooltip_y_offset = 10px
+.tooltipped:before
+	z-index 9998
+	width 0
+	height 0
+	color rgba(0,0,0,0.8)
+	content ""
+	border 5px solid transparent
+	top auto
+	bottom -1*tooltip_y_offset
+	margin-right -5px
+	border-bottom-color rgba(0,0,0,0.8)
+
+.tooltipped:after
+	z-index 9997
+	transform translateX(50%)
+	margin-top tooltip_y_offset
+	top 100%
+	padding 1px 8px 2px 8px
+	font-size 12px
+	line-height 1.5
+	color #fff
+	text-align center
+	text-decoration none
+	word-wrap break-word
+	white-space pre
+	content attr(aria-label)
+	background rgba(0,0,0,0.8)
+	border-radius 3px
+	-webkit-font-smoothing subpixel-antialiased
+.tooltipped[data-tooltip-align="left"]:after
+	transform translateX(0%)
+	left 0
+	right auto
+.tooltipped[data-tooltip-align="right"]:after
+	transform translateX(0%)
+	left auto
+	right -10px

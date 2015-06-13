@@ -15,11 +15,11 @@ body {
   height: 100%;
 }
 a {
-  color: link_blue;
+  color: #0092ce;
   text-decoration: none;
 }
 a:hover {
-  color: link_blue_hover;
+  color: #0082b6;
   text-decoration: underline;
 }
 ul {
@@ -165,6 +165,7 @@ input[type="submit"] {
 }
 input.destroy {
   color: #900;
+  float: right;
 }
 button:hover,
 input[type="button"]:hover,
@@ -242,6 +243,8 @@ opacity .4 {
 }
 input[type="text"],
 input[type="password"],
+input[type="number"],
+textarea,
 .sp-replacer {
   margin-left: 0;
   background-color: #fafafa;
@@ -260,6 +263,8 @@ input[type="password"],
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
 .sp-replacer:focus {
   background-color: #fff;
   border-color: #51a7e8;
@@ -462,7 +467,7 @@ input {
   text-align: center;
   vertical-align: middle;
   padding: 5px;
-  height: division_switcher_height;
+  height: 50px;
   color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;

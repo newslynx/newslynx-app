@@ -20,10 +20,10 @@
 	background-position right center
 
 /* M O D E S */
-body[data-modal=true]
-	overflow hidden
-	#recipes.drawer-list-item-ul
-		overflow-y hidden !important
+// body[data-modal=true]
+// 	overflow hidden
+// 	#recipes.drawer-list-item-ul
+// 		overflow-y hidden !important
 
 
 
@@ -65,7 +65,8 @@ body[data-modal=true]
 			cursor pointer
 			text-decoration underline
 
-.drawer-list-inner,.event-container
+.drawer-list-inner,
+.event-container
 	.tag-list-title
 		display inline-block
 		width 30px
@@ -139,14 +140,14 @@ body[data-section="about"]
 // 		background-color home
 // 	#drawer
 // 		background-color tint(home, 90%)
-body[data-section="approval-river"] 
-	.section.active > .nav-link
-		background-color approval_river
-	#drawer
-		background-color tint(approval_river, 90%)
-	.division-switcher li.active
-		background-color approval_river
-		text-shadow 0 0px 12px #535353
+// body[data-section="approval-river"] 
+// 	.section.active > .nav-link
+// 		background-color approval_river
+// 	#drawer
+// 		background-color tint(approval_river, 90%)
+// 	.division-switcher li.active
+// 		background-color approval_river
+// 		text-shadow 0 0px 12px #535353
 body[data-section="articles"]
 	min-width article_min_width
 	overflow-x hidden
@@ -169,9 +170,9 @@ body[data-section="articles"]
 /* end section specific styles */
 
 /* D R A W E R */
-division_switcher_height = 50px
-drawer_pointer_padding = 62px
-drawer_item_single_line = 37px
+// division_switcher_height = 50px
+// drawer_pointer_padding = 62px
+// drawer_item_single_line = 37px
 
 // body[data-section="login"] #content
 // 	padding 15px
@@ -309,10 +310,10 @@ drawer_item_single_line = 37px
 // 		margin-right 10px
 // 	.drawer-list-inner
 // 		width 85%
-#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
-#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
-	background-color darken(select_blue, 7%)
-	cursor pointer
+// #drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+// #drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
+// 	background-color darken(select_blue, 7%)
+// 	cursor pointer
 
 // These might need to be display inline-block
 #drawer[data-mode="detail"]
@@ -327,37 +328,39 @@ drawer_item_single_line = 37px
 	.inputs-container input[type="checkbox"]
 		display block
 
-#drawer[data-mode="compare"],
-#drawer[data-mode="detail"],
-#drawer[data-mode="my-recipes"]
-	.inputs-container,.drawer-list-inner
-		display inline-block
-		vertical-align top
-	.inputs-container
-		margin-right 10px
-	.drawer-list-inner
-		width 85%		
-#content[data-mode="my-recipes"]
-	.load-more
-		display table // Not sure why this makes centering work
-		margin 30px auto
 
-load_more_button_height = 40px
-load_more_button_padding = 10px
+// NEEDS PUTTING INTO ARTICLE
+// #drawer[data-mode="compare"],
+// #drawer[data-mode="detail"],
+// #drawer[data-mode="my-recipes"]
+// 	.inputs-container,.drawer-list-inner
+// 		display inline-block
+// 		vertical-align top
+// 	.inputs-container
+// 		margin-right 10px
+// 	.drawer-list-inner
+// 		width 85%		
+// #content[data-mode="my-recipes"]
+// 	.load-more
+// 		display table // Not sure why this makes centering work
+// 		margin 30px auto
+
+// load_more_button_height = 40px
+// load_more_button_padding = 10px
 #article-list
 	position relative
 	height "calc(100vh - %s)" % (division_switcher_height + 151) // 183 is the height of the junk in the drawer.
 	overflow-x hidden
 	overflow-y scroll
-.drawer-container[data-mode="my-recipes"]
-	.drawer-list-item-ul
-		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line )
-#recipes
-	height auto
-	overflow-x hidden
-	overflow-y scroll
-#drawer[data-mode="my-recipes"] #recipes
-	height "calc(100vh - %s)" % (division_switcher_height + 114 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
+// .drawer-container[data-mode="my-recipes"]
+// 	.drawer-list-item-ul
+// 		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line )
+// #recipes
+// 	height auto
+// 	overflow-x hidden
+// 	overflow-y scroll
+// #drawer[data-mode="my-recipes"] #recipes
+// 	height "calc(100vh - %s)" % (division_switcher_height + 114 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
 /* end drawer item */
 
 /* A R T I C L E  D E T A I L */
@@ -382,20 +385,25 @@ filter_opts_width = 175px
 		position fixed
 		top 5px
 		left drawer_width + leftrail_width + padding_horitz
-#content[data-mode="my-recipes"] .placeholder
-	transform translateY(125px)
-#content[data-mode="my-recipes"] .placeholder,
-#content[data-mode="create"] .placeholder,
-#events-container .placeholder,
-.detail-section .placeholder
-		text-align center
-		font-size 1.6em
-		// font-style italic
-		margin 0 auto
-		max-width 530px
-		width 100%
+		
+// NEEDS PUTTING INTO ARTICLE
+// #content[data-mode="my-recipes"] .placeholder
+// 	transform translateY(125px)
+// #content[data-mode="my-recipes"] .placeholder,
+// #content[data-mode="create"] .placeholder,
+// #events-container .placeholder,
+// .detail-section .placeholder
+// 		text-align center
+// 		font-size 1.6em
+// 		// font-style italic
+// 		margin 0 auto
+// 		max-width 530px
+// 		width 100%
+
+
 // Events
-#events-gallery-container,.section-options
+#events-gallery-container,
+.section-options
 	display inline-block
 	vertical-align top
 #events-gallery-container
@@ -447,9 +455,9 @@ filter_opts_width = 175px
 	.event-container
 		width 100%
 		margin 0 0 10px 0 !important
-	#content[data-mode="my-recipes"]
-		.article-detail-wrapper
-			width 90% !important
+	// #content[data-mode="my-recipes"]
+	// 	.article-detail-wrapper
+	// 		width 90% !important
 // end events
 
 // Navigating articles
@@ -583,34 +591,34 @@ body[data-section="home"] #content
 /* end home page */
 
 /*  A P P R O V A L  R I V E R   */
-#content[data-mode="create"]
-	padding 25px 30px
-	.article-detail-wrapper
-		margin 10px 0 55px 0
-		padding 30px 30px 35px 70px
-		max-width 650px
-#content[data-mode="create"],#content[data-mode="my-recipes"]
-	background-color #f2f2f2
-#content[data-mode="my-recipes"]
-	padding 5px 20px
-	.article-detail-wrapper
-		margin 10px
-		padding 10px
-		width 47%
-		display inline-block
-		vertical-align top
-#content[data-mode="create"] .article-detail-wrapper,
-#content[data-mode="my-recipes"] .article-detail-wrapper,#events-gallery-container .event-container
-	border 1px solid #ccc
-	background-color #fff
-	border-radius 2px
-#content[data-mode="my-recipes"] .article-detail-wrapper,
-#content[data-mode="create"] .article-detail-wrapper
-	box-shadow 0px 0px 6px #d4d4d4
-#events-gallery-container .event-container
-	box-shadow 0px 0px 5px #dbdbdb
-.river-item-container
-	position relative
+// #content[data-mode="create"]
+// 	padding 25px 30px
+// 	.article-detail-wrapper
+// 		margin 10px 0 55px 0
+// 		padding 30px 30px 35px 70px
+// 		max-width 650px
+// #content[data-mode="create"],#content[data-mode="my-recipes"]
+// 	background-color #f2f2f2
+// #content[data-mode="my-recipes"]
+// 	padding 5px 20px
+// 	.article-detail-wrapper
+// 		margin 10px
+// 		padding 10px
+// 		width 47%
+// 		display inline-block
+// 		vertical-align top
+// #content[data-mode="create"] .article-detail-wrapper,
+// #content[data-mode="my-recipes"] .article-detail-wrapper,#events-gallery-container .event-container
+// 	border 1px solid #ccc
+// 	background-color #fff
+// 	border-radius 2px
+// #content[data-mode="my-recipes"] .article-detail-wrapper,
+// #content[data-mode="create"] .article-detail-wrapper
+// 	box-shadow 0px 0px 6px #d4d4d4
+// #events-gallery-container .event-container
+// 	box-shadow 0px 0px 5px #dbdbdb
+// .river-item-container
+// 	position relative
 
 // #drawer-pointers-container
 // 	border-bottom 1px dashed #ccc
@@ -693,132 +701,132 @@ body[data-section="home"] #content
 
 // .drawer-pointer.center
 // 	text-align center
-#recipe-sources
-	padding 0
-.view-all:hover
-	cursor default
-#drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
-	background-color select_blue
-	cursor default
-.approval-child[data-which="btns"]
-	width 33%
-	height 26px
-	position absolute
-	top 0
-	right 0
-// .approval-child[data-which="info"]
-// 	width 85%
-.approval-btn-container
-	float right
-	display inline-block
-	color #4e4e4e
-	opacity .65
-	font-size 13px
-.approval-btn-container:first-child
-	padding-left 9px
-	width 32px
-.approval-btn-container:nth-child(2)
-	width 40px
-	padding-left 10px
-.approval-btn-container:hover
-	opacity 1
-	cursor pointer
-.approval-btn-container[data-which="yes"]
-	color enable_green
-.approval-btn-container[data-which="no"]
-	color disabled_red
-.approval-btn
-	font-size 2.2em
-	width 100%
-	user-select none
-	border 2px solid transparent
-	display table-cell
-	vertical-align middle
-.approval-btn-container[data-which="yes"]:hover
-	color darken(enable_green, 10%)
-.approval-btn-container[data-which="no"]:hover
-	color darken(disabled_red, 10%)
-.approval-btn-container[data-which="yes"]:active
-	color darken(enable_green, 45%)
-.approval-btn-container[data-which="no"]:active
-	color darken(disabled_red, 45%)
+// #recipe-sources
+// 	padding 0
+// .view-all:hover
+// 	cursor default
+// #drawer[data-mode="my-recipes"] .view-all.active.drawer-list-outer:hover
+// 	background-color select_blue
+// 	cursor default
+// .approval-child[data-which="btns"]
+// 	width 33%
+// 	height 26px
+// 	position absolute
+// 	top 0
+// 	right 0
+// // .approval-child[data-which="info"]
+// // 	width 85%
+// .approval-btn-container
+// 	float right
+// 	display inline-block
+// 	color #4e4e4e
+// 	opacity .65
+// 	font-size 13px
+// .approval-btn-container:first-child
+// 	padding-left 9px
+// 	width 32px
+// .approval-btn-container:nth-child(2)
+// 	width 40px
+// 	padding-left 10px
+// .approval-btn-container:hover
+// 	opacity 1
+// 	cursor pointer
+// .approval-btn-container[data-which="yes"]
+// 	color enable_green
+// .approval-btn-container[data-which="no"]
+// 	color disabled_red
+// .approval-btn
+// 	font-size 2.2em
+// 	width 100%
+// 	user-select none
+// 	border 2px solid transparent
+// 	display table-cell
+// 	vertical-align middle
+// .approval-btn-container[data-which="yes"]:hover
+// 	color darken(enable_green, 10%)
+// .approval-btn-container[data-which="no"]:hover
+// 	color darken(disabled_red, 10%)
+// .approval-btn-container[data-which="yes"]:active
+// 	color darken(enable_green, 45%)
+// .approval-btn-container[data-which="no"]:active
+// 	color darken(disabled_red, 45%)
 
-.approval-child
-	.title
-		font-size 1.7em
-		margin-bottom 3px
-	.author
-		margin-bottom 4px
-	.domain,
-	.description,
-	.author
-		font-size 1.2em
-	.domain
-		font-weight bold
-		margin-bottom 5px
-	.toolbar
-		position relative
-		margin-bottom 8px
-		.service-icon
-			position relative !important
-			left auto
-			bottom auto
-			right auto
-		.timestamp
-			font-size 1.2em
-	.articles-mentioned
-		font-size 1.2em
-		margin-top 8px
-		li
-			margin-left 11px
-			list-style disc
-			color #A8A8A8
-	.alert-section-title
-		text-decoration underline
-		margin-bottom 3px
-	.origin-recipe
-		display inline-block
-		vertical-align top
-		font-size 1.2em
-		margin-left 3px
-		color #A8A8A8
-	.link
-		margin-top 10px
-		text-align right
-		display inline-block
-		background-color link_blue
-		padding 1px 11px
-		border-radius 3px
-		float right
-		font-size 1.3em
-		opacity .3
-		a
-			color #fff
-		a:hover
-			text-decoration none
-	.link:hover
-		opacity 1
+// .approval-child
+// 	.title
+// 		font-size 1.7em
+// 		margin-bottom 3px
+// 	.author
+// 		margin-bottom 4px
+// 	.domain,
+// 	.description,
+// 	.author
+// 		font-size 1.2em
+// 	.domain
+// 		font-weight bold
+// 		margin-bottom 5px
+// 	.toolbar
+// 		position relative
+// 		margin-bottom 8px
+// 		.service-icon
+// 			position relative !important
+// 			left auto
+// 			bottom auto
+// 			right auto
+// 		.timestamp
+// 			font-size 1.2em
+// 	.articles-mentioned
+// 		font-size 1.2em
+// 		margin-top 8px
+// 		li
+// 			margin-left 11px
+// 			list-style disc
+// 			color #A8A8A8
+// 	.alert-section-title
+// 		text-decoration underline
+// 		margin-bottom 3px
+// 	.origin-recipe
+// 		display inline-block
+// 		vertical-align top
+// 		font-size 1.2em
+// 		margin-left 3px
+// 		color #A8A8A8
+// 	.link
+// 		margin-top 10px
+// 		text-align right
+// 		display inline-block
+// 		background-color link_blue
+// 		padding 1px 11px
+// 		border-radius 3px
+// 		float right
+// 		font-size 1.3em
+// 		opacity .3
+// 		a
+// 			color #fff
+// 		a:hover
+// 			text-decoration none
+// 	.link:hover
+// 		opacity 1
 			
 
-.show-hide-default-event
-	font-size 1.4em
-	margin 5px 0 15px 0
-	user-select none
-	line-height 1.4em
-	.toggle-default-event[data-status="true"]
-		color enable_green
-	.toggle-default-event[data-status="false"]
-		color disabled_red
-	.toggle-default-event:hover
-		text-decoration underline
-		cursor pointer
+// .show-hide-default-event
+// 	font-size 1.4em
+// 	margin 5px 0 15px 0
+// 	user-select none
+// 	line-height 1.4em
+// 	.toggle-default-event[data-status="true"]
+// 		color enable_green
+// 	.toggle-default-event[data-status="false"]
+// 		color disabled_red
+// 	.toggle-default-event:hover
+// 		text-decoration underline
+// 		cursor pointer
 
-.default-event-container
-	display none
-// 	overflow hidden
-// 	transition height 200ms cubic-bezier(0,0,.2,1)
-// .default-event-container.slide-open
-// 	height 100%
+// .default-event-container
+// 	display none
+// // 	overflow hidden
+// // 	transition height 200ms cubic-bezier(0,0,.2,1)
+// // .default-event-container.slide-open
+// // 	height 100%
 
 
 /* end approval river */
@@ -1008,18 +1016,18 @@ body[data-section="home"] #content
 	.group-container[data-side="right"]
 		transform translateY(-100%)
 
-.tags
-	.tag
-		display inline
-		padding 2px 5px
-		background-color #ccc
-		user-select none
-		color #666
-		border-radius 2px
-		font-size 1.1em
-		position relative
-	.tag:hover
-		cursor pointer
+// .tags
+// 	.tag
+// 		display inline
+// 		padding 2px 5px
+// 		background-color #ccc
+// 		user-select none
+// 		color #666
+// 		border-radius 2px
+// 		font-size 1.1em
+// 		position relative
+// 	.tag:hover
+// 		cursor pointer
 #subject-tag-settings
 	li
 		font-size 1.2em
@@ -1248,198 +1256,199 @@ bullet_height = 11px
 // 			color #fff
 // 			display none
 
-.modal-outer
-	display none
-.modal-outer,.modal-overlay
-	top 0
-	left 0
-	right 0
-	bottom 0
-.modal-overlay
-	background-color rgba(0,0,0,.7)
-	z-index 9
-.modal-overlay:hover
-	cursor pointer
-.modal-inner
-	background-color #fff
-	padding 20px
-	border 1px solid #000
-	width 525px
-	z-index 99
-	form
-		margin-top 10px
-	.modal-title
-		font-size 1.4em
-		font-weight bold
-		border-bottom 1px solid border_gray
-		margin-bottom 5px
-		color #000
-	.description:not(textarea)
-		margin-bottom 15px
-		font-size 1.3em
-		font-style italic
-input[name="assignees"]
-	pointer-events none
-	border 0
-	color #fff
-	display none
-.labelled:after,
-.labelled:after
-	color #000
-	content attr(aria-label)
-	font-size 13px
-	display inline-block
-	width 266px
-	white-space nowrap
-	overflow hidden
-	vertical-align bottom
-.remove-assignee.labelled:after
-	padding-left 5px
-.modal-inner:hover
-	cursor move !important
-.modal-outer.active
-	display block
-	position absolute
-	.modal-overlay,.modal-inner
-		position fixed
-.form-row
-	margin-bottom 5px
-	input
-		margin-left 0
-.form-row.article-assignees
-	margin-left 40%
-	max-height 75px
-	overflow-y scroll
-	overflow-x hidden
-// .article-assignee:last-child
-// 	margin-bottom 8px
-.form-row-input-container[data-which="impact_tags"],
-.form-row-input-container[data-which="subject_tags"]
-	max-height 95px
-	overflow-y scroll
-	overflow-x hidden
-	white-space normal
-.form-row-input-container
-	.placeholder
-		font-size 1.2em !important
-		color #000
-		a
-			color link_blue
-.article-assignee
-	position relative
-	input
-		width 93%
-	.remove-assignee
-		padding-right 5px
-		font-size 1.5em
-		color #ccc
-		white-space nowrap
-.article-assignee:hover
-	cursor pointer
-	.remove-assignee
-		color #000
-.buttons-container
-	padding-top 10px
-	button,input[type="submit"]
-		margin 0 5px 0 -2px
-		width auto
-.recipe-form-container
-	.recipe-title
-		position relative
-		font-size 3em
-		color bg_gray
-		margin-bottom 25px
-	.service-icon
-		top -4px
-		width 40px
-		height @width
-		left -(@width + 5)px
-		margin-bottom 5px
-	.service-icon[data-service="reddit"]
-		top -7px
-.submit-msg
-	display inline-block
-	padding-left 5px
-	vertical-align bottom
-	font-size 1.4em
-	white-space normal
-	width 260px
-	a
-		padding 0 !important
-		font-size 13px !important
-		font-weight normal !important
-		color link_blue !important
-	a:hover
-		background-color #fff !important
-.form-checkbox-group
-	display block
-	width 100%
+// .modal-outer
+// 	display none
+// .modal-outer,.modal-overlay
+// 	top 0
+// 	left 0
+// 	right 0
+// 	bottom 0
+// .modal-overlay
+// 	background-color rgba(0,0,0,.7)
+// 	z-index 9
+// .modal-overlay:hover
+// 	cursor pointer
+// .modal-inner
+// 	background-color #fff
+// 	padding 20px
+// 	border 1px solid #000
+// 	width 525px
+// 	z-index 99
+// 	form
+// 		margin-top 10px
+// 	.modal-title
+// 		font-size 1.4em
+// 		font-weight bold
+// 		border-bottom 1px solid border_gray
+// 		margin-bottom 5px
+// 		color #000
+// 	.description:not(textarea)
+// 		margin-bottom 15px
+// 		font-size 1.3em
+// 		font-style italic
+// input[name="assignees"]
+// 	pointer-events none
+// 	border 0
+// 	color #fff
+// 	display none
+// .labelled:after,
+// .labelled:after
+// 	color #000
+// 	content attr(aria-label)
+// 	font-size 13px
+// 	display inline-block
+// 	width 266px
+// 	white-space nowrap
+// 	overflow hidden
+// 	vertical-align bottom
+// .remove-assignee.labelled:after
+// 	padding-left 5px
+// .modal-inner:hover
+// 	cursor move !important
+// .modal-outer.active
+// 	display block
+// 	position absolute
+// 	.modal-overlay,.modal-inner
+// 		position fixed
+// .form-row
+// 	margin-bottom 5px
+// 	input
+// 		margin-left 0
+// .form-row.article-assignees
+// 	margin-left 40%
+// 	max-height 75px
+// 	overflow-y scroll
+// 	overflow-x hidden
+// // .article-assignee:last-child
+// // 	margin-bottom 8px
+// .form-row-input-container[data-which="impact_tags"],
+// .form-row-input-container[data-which="subject_tags"]
+// 	max-height 95px
+// 	overflow-y scroll
+// 	overflow-x hidden
+// 	white-space normal
+// .form-row-input-container
+// 	.placeholder
+// 		font-size 1.2em !important
+// 		color #000
+// 		a
+// 			color link_blue
+// .article-assignee
+// 	position relative
+// 	input
+// 		width 93%
+// 	.remove-assignee
+// 		padding-right 5px
+// 		font-size 1.5em
+// 		color #ccc
+// 		white-space nowrap
+// .article-assignee:hover
+// 	cursor pointer
+// 	.remove-assignee
+// 		color #000
+// .buttons-container
+// 	padding-top 10px
+// 	button,input[type="submit"]
+// 		margin 0 5px 0 -2px
+// 		width auto
+// .recipe-form-container
+// 	.recipe-title
+// 		position relative
+// 		font-size 3em
+// 		color bg_gray
+// 		margin-bottom 25px
+// 	.service-icon
+// 		top -4px
+// 		width 40px
+// 		height @width
+// 		left -(@width + 5)px
+// 		margin-bottom 5px
+// 	.service-icon[data-service="reddit"]
+// 		top -7px
+// .submit-msg
+// 	display inline-block
+// 	padding-left 5px
+// 	vertical-align bottom
+// 	font-size 1.4em
+// 	white-space normal
+// 	width 260px
+// 	a
+// 		padding 0 !important
+// 		font-size 13px !important
+// 		font-weight normal !important
+// 		color link_blue !important
+// 	a:hover
+// 		background-color #fff !important
+// .form-checkbox-group
+// 	display block
+// 	width 100%
 
-input.destroy
-	float right
+// input.destroy
+// 	float right
 
-.toolbar
-	position relative
-	.service-icon
-		width 15px
-		height @width
-		bottom 5px
-		right 0
-		.service-method-label
-			position absolute
-			right 20px
-			bottom 0
+// .toolbar
+// 	position relative
+// 	.service-icon
+// 		width 15px
+// 		height @width
+// 		bottom 5px
+// 		right 0
+// 		.service-method-label
+// 			position absolute
+// 			right 20px
+// 			bottom 0
 
-.service-icon
-	position absolute
-	background-size contain
-	background-repeat no-repeat
-	display inline-block
-	bottom 0
-	background-position right
-.service-icon[data-service="google"]
-	background-image url(/images/service-icons/logos-01.svg)
-.service-icon[data-service="twitter"]
-	background-image url(/images/service-icons/logos-02.svg)
-.service-icon[data-service="reddit"]
-	background-image url(/images/service-icons/logos-03.svg)
-.service-icon[data-service="facebook"]
-	background-image url(/images/service-icons/logos-04.svg)
+// .service-icon
+// 	position absolute
+// 	background-size contain
+// 	background-repeat no-repeat
+// 	display inline-block
+// 	bottom 0
+// 	background-position right
+// .service-icon[data-service="google"]
+// 	background-image url(/images/service-icons/logos-01.svg)
+// .service-icon[data-service="twitter"]
+// 	background-image url(/images/service-icons/logos-02.svg)
+// .service-icon[data-service="reddit"]
+// 	background-image url(/images/service-icons/logos-03.svg)
+// .service-icon[data-service="facebook"]
+// 	background-image url(/images/service-icons/logos-04.svg)
 
-.modal-outer,.recipe-form-container
-	form
-		.form-row-label-container
-			font-size 1.4em
-			display inline-block
-			width 40%
-			margin-bottom 3px
-			vertical-align top
-			color #000
-		// TODO, remove this class once we set up margins for help text items
-		.form-row-label-container.has-help-link
-			margin-top 15px
-		.form-row-label-container.form-row-label-top
-			vertical-align top
-		.form-row-input-container
-			width 59%
-			display inline-block
-			.title
-				font-size 11px
-			input[type="checkbox"]
-				width auto
-		.help-row
-			text-align right
-			margin-bottom 2px
-		.hint-row
-			color bg_gray
-			position absolute
-		input[type="text"],
-		input[type="number"],
-		textarea
-			width 100%
-			margin 0
-		select
-			margin 0
+// .modal-outer,
+// .recipe-form-container
+// 	form
+// 		.form-row-label-container
+// 			font-size 1.4em
+// 			display inline-block
+// 			width 40%
+// 			margin-bottom 3px
+// 			vertical-align top
+// 			color #000
+// 		// TODO, remove this class once we set up margins for help text items
+// 		.form-row-label-container.has-help-link
+// 			margin-top 15px
+// 		.form-row-label-container.form-row-label-top
+// 			vertical-align top
+// 		.form-row-input-container
+// 			width 59%
+// 			display inline-block
+// 			.title
+// 				font-size 11px
+// 			input[type="checkbox"]
+// 				width auto
+// 		.help-row
+// 			text-align right
+// 			margin-bottom 2px
+// 		.hint-row
+// 			color bg_gray
+// 			position absolute
+// 		input[type="text"],
+// 		input[type="number"],
+// 		textarea
+// 			width 100%
+// 			margin 0
+// 		select
+// 			margin 0
 /* end modal windows */
 
 /* S E T T I N G S */
@@ -1462,93 +1471,93 @@ input.destroy
 
 /* end login */
 
-/* T Y P E A H E A D */
-.twitter-typeahead
-	width 100%
+// /* T Y P E A H E A D */
+// .twitter-typeahead
+// 	width 100%
 
-.tt-hint
-	color #999
+// .tt-hint
+// 	color #999
 
-.tt-dropdown-menu
-	width 100%
-	margin-top 3px
-	padding 4px 0
-	background-color #fff
-	border 1px solid #ccc
-	border 1px solid rgba(0, 0, 0, 0.2)
-	border-radius 3px
-	box-shadow 0 5px 10px rgba(0,0,0,.2)
+// .tt-dropdown-menu
+// 	width 100%
+// 	margin-top 3px
+// 	padding 4px 0
+// 	background-color #fff
+// 	border 1px solid #ccc
+// 	border 1px solid rgba(0, 0, 0, 0.2)
+// 	border-radius 3px
+// 	box-shadow 0 5px 10px rgba(0,0,0,.2)
 
-.tt-suggestion
-	padding 3px 20px
-	font-size 1.4em
-.tt-suggestion:hover
-	cursor pointer
+// .tt-suggestion
+// 	padding 3px 20px
+// 	font-size 1.4em
+// .tt-suggestion:hover
+// 	cursor pointer
 
-.tt-suggestion.tt-cursor /* UPDATE newer versions use .tt-suggestion.tt-cursor */
-	color #fff
-	background-color #0097cf
+// .tt-suggestion.tt-cursor /* UPDATE newer versions use .tt-suggestion.tt-cursor */
+// 	color #fff
+// 	background-color #0097cf
 
-.tt-suggestion p
-	margin 0
+// .tt-suggestion p
+// 	margin 0
 
-/* end typeahead */
+// /* end typeahead */
 
 /* Tooltips */
-.tooltipped
-	position relative
-.tooltipped:hover:before,
-.tooltipped:hover:after
-	display inline-block
+// .tooltipped
+// 	position relative
+// .tooltipped:hover:before,
+// .tooltipped:hover:after
+// 	display inline-block
 
-.tooltipped:before,
-.tooltipped:after
-	position absolute
-	display none
-	right 50%
+// .tooltipped:before,
+// .tooltipped:after
+// 	position absolute
+// 	display none
+// 	right 50%
 
-// .tooltipped-i:before,
-// .tooltipped-i:after,
-.tooltipped:before,
-.tooltipped:after
-	pointer-events none
+// // .tooltipped-i:before,
+// // .tooltipped-i:after,
+// .tooltipped:before,
+// .tooltipped:after
+// 	pointer-events none
 
-tooltip_y_offset = 10px
-.tooltipped:before
-	z-index 9998
-	width 0
-	height 0
-	color rgba(0,0,0,0.8)
-	content ""
-	border 5px solid transparent
-	top auto
-	bottom -1*tooltip_y_offset
-	margin-right -5px
-	border-bottom-color rgba(0,0,0,0.8)
+// tooltip_y_offset = 10px
+// .tooltipped:before
+// 	z-index 9998
+// 	width 0
+// 	height 0
+// 	color rgba(0,0,0,0.8)
+// 	content ""
+// 	border 5px solid transparent
+// 	top auto
+// 	bottom -1*tooltip_y_offset
+// 	margin-right -5px
+// 	border-bottom-color rgba(0,0,0,0.8)
 
-.tooltipped:after
-	z-index 9997
-	transform translateX(50%)
-	margin-top tooltip_y_offset
-	top 100%
-	padding 1px 8px 2px 8px
-	font-size 12px
-	line-height 1.5
-	color #fff
-	text-align center
-	text-decoration none
-	word-wrap break-word
-	white-space pre
-	content attr(aria-label)
-	background rgba(0,0,0,0.8)
-	border-radius 3px
-	-webkit-font-smoothing subpixel-antialiased
-.tooltipped[data-tooltip-align="left"]:after
-	transform translateX(0%)
-	left 0
-	right auto
-.tooltipped[data-tooltip-align="right"]:after
-	transform translateX(0%)
-	left auto
-	right -10px
+// .tooltipped:after
+// 	z-index 9997
+// 	transform translateX(50%)
+// 	margin-top tooltip_y_offset
+// 	top 100%
+// 	padding 1px 8px 2px 8px
+// 	font-size 12px
+// 	line-height 1.5
+// 	color #fff
+// 	text-align center
+// 	text-decoration none
+// 	word-wrap break-word
+// 	white-space pre
+// 	content attr(aria-label)
+// 	background rgba(0,0,0,0.8)
+// 	border-radius 3px
+// 	-webkit-font-smoothing subpixel-antialiased
+// .tooltipped[data-tooltip-align="left"]:after
+// 	transform translateX(0%)
+// 	left 0
+// 	right auto
+// .tooltipped[data-tooltip-align="right"]:after
+// 	transform translateX(0%)
+// 	left auto
+// 	right -10px
 /* end tooltips */

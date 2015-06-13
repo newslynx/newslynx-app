@@ -39,26 +39,26 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(pending) %> pending
+				.count <%= addCommas(content_item_count) %> pending
 				.title <%= name %>
-				<% if (displaySearchParams(source, settings)) { %>
-				.description Query: `<%= displaySearchParams(source, settings) %>`
+				<% if (displaySearchParams(sous_chef, options)) { %>
+				.description Query: `<%= displaySearchParams(sous_chef, options) %>`
 				<% } %>
 				.toolbar
 					.btn.settings-switch
 						span.octicon.octicon-gear(style="margin-right: 3px;")
 						span.text Edit
-					|<span class="service-icon" data-service="<%= serviceFromSource(source) %>"><span class="service-method-label"><%= methodFromSource(source) %></span></span>
-					|<div class="btn enable-switch" data-enabled="<%= enabled %>"><%= formatEnabled(enabled) %></div>
+					span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
+						.span.service-method-label <%= methodFromSousChef(sous_chef) %>
+					.btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
 					.modal-title Recipe settings
 					form
 						.show-hide-default-event This recipe triggers events with some default properties. 
-							|<span class="toggle-default-event" data-status="<%= set_default_event %>"><%= formatDefaultEventEnabled(set_default_event) %></span>
-						|<div class="default-event-container" <% (set_default_event) ? print(' style="display:block;"') : print('') %>>
-						|</div>
+							span.toggle-default-event(data-status!="<%= set_default_event %>") <%= formatDefaultEventEnabled(set_default_event) %>
+						.default-event-container(style!="<% (set_default_event) ? print('display:block;') : print('') %>")
 						.buttons-container
 							button.cancel.modal-close Cancel
 							input.save(type="submit", value="Save")
@@ -66,14 +66,15 @@ block templates
 							input.destroy(type="button", value="Delete")
 
 	script(type="text/jst")#recipe-schema-list-item-templ
-		|<div class="drawer-list-outer scroll-to" data-destination="<%= source %>">
+		.drawer-list-outer.scroll-to(data-destination!="<%= source %>")
 		.drawer-list-inner
 			.title <%= prettyPrintSource(source) %>
-		|</div>
 
 	script(type="text/jst")#recipe-schema-form-templ
 		.recipe-form-container
-			|<div class="recipe-title" id="<%= source %>-recipe"><span class="service-icon" data-service="<%= serviceFromSource(source) %>"></span><span class="text">New <%= prettyPrintSource(source) %> recipe</span></div>
+			.recipe-title(id!="<%= source %>-recipe")
+				span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
+					span.text New <%= prettyPrintSource(source) %> recipe
 			form
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
@@ -86,40 +87,40 @@ block templates
 		.river-item-container.modal-parent
 			.approval-child(data-which="info")
 				.toolbar
-					| <span class="service-icon" data-service="<%= serviceFromSource(getRecipeFromId(recipe_id).source) %>"></span>
-					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).query %>
-					.timestamp <%= prettyTimestamp(timestamp) %>
+					span.service-icon(data-service!="<%= serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) %>")
+					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).options.search_query %>
+					.timestamp <%= prettyDatestamp(created) %>
 				.title <%= name %>
-				<% if (author) { %>
+				<% if (authors.length) { %>
 				<% var author_prefix = "", author_suffix = ""; %>
-				<% if (serviceFromSource(getRecipeFromId(recipe_id).source) == 'twitter') { %>
+				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
 				<% author_prefix = "@"; %>
 				<% } %>
-				<% if (serviceFromSource(getRecipeFromId(recipe_id).source) == 'twitter') { %>
-				<% author_suffix = ' &mdash; ' + addCommas(raw.followers_count) + ' followers'; %>
+				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
+				<% author_suffix = ' &mdash; ' + addCommas(meta.followers) + ' followers'; %>
 				<% } %>
-				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+author)) +'</strong>'+ author_suffix+'</div>') %>
+				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+authors[0])) +'</strong>'+ author_suffix+'</div>') %>
 				<% } %>
-				<% var domain =  extractDomain(link) %>
+				<% var domain =  extractDomain(url) %>
 				<% if (domain != 'twitter.com' && domain != 'facebook.com' || domain != 'reddit.com') { %>
 				.domain <% print(domain) %>  
 				<% } %>
-				.description <%= autolink(text) %>
-				<% if (article_ids.length) { %>
+				.description <%= autolink(meta.text || '') %>
+				<% if (content_items.length) { %>
 				<% var list_markup = '<ul class="articles-mentioned">'; %>
 				<% var s = ''; %>
-				<% if (article_ids.length > 1) { s = 's';} %>
+				<% if (content_items.length > 1) { s = 's';} %>
 				<% list_markup += '<div class="alert-section-title">Article'+s+' mentioned:</div>'; %>
-				<% article_ids.forEach(function(articleId){ %>
+				<% content_items.forEach(function(contentId){ %>
 				<% list_markup += '<li>' %>
-				<% list_markup += '<a href="https://towcenter.newslynx.org/articles#detail/'+articleId+'" target="_blank">'+getHeadlineFromArticleId(articleId)+'</a>'; %>
+				<% list_markup += '<a href="https://towcenter.newslynx.org/articles#detail/'+contentId+'" target="_blank">'+getHeadlineFromArticleId(contentId)+'</a>'; %>
 				<% list_markup += '</li>' %>
 				<% }); %>
 				<% list_markup += '</ul>' %>
 				<% print(list_markup); %>
 				<% } %>
 				.link
-					|<a href="<%= link %>" target="_blank">Link</a>
+					a(href!="<%= url %>", target="_blank") Link
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="yes")
 					.approval-btn.octicon.octicon-check
