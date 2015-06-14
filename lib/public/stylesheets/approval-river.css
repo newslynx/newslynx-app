@@ -430,6 +430,14 @@ input {
 #drawer .merlynne-img img {
   width: 100%;
 }
+#drawer[data-loading='false'] #drawer-pointers-container {
+  border-bottom-color: #ccc;
+}
+#content[data-loading='true'] {
+  background-image: url("../images/gifs/MerlynneMagicPotions.gif") !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+}
 #drawer p {
   line-height: 1.3em;
 }
@@ -605,7 +613,7 @@ input {
   font-size: 1.2em;
 }
 #drawer-pointers-container {
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed transparent;
 }
 .drawer-pointer {
   padding: 12px;
@@ -1138,7 +1146,7 @@ body[data-section="approval-river"] .division-switcher li.active {
   width: 33%;
   height: 26px;
   position: absolute;
-  top: 0;
+  top: -5px;
   right: 0;
 }
 .approval-btn-container {
@@ -1241,6 +1249,9 @@ body[data-section="approval-river"] .division-switcher li.active {
   font-size: 1.2em;
   margin-left: 3px;
   color: #a8a8a8;
+  margin-bottom: 9px;
+  max-width: 270px;
+  line-height: 13px;
 }
 .approval-child .link {
   margin-top: 10px;

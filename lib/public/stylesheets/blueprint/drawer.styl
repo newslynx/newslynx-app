@@ -8,7 +8,16 @@ drawer_item_single_line = 37px
 		margin 0 auto
 		img
 			width 100%
-	
+			
+#drawer[data-loading='false']
+	#drawer-pointers-container
+		border-bottom-color #ccc	
+		
+#content[data-loading='true']
+	background-image url(../images/gifs/MerlynneMagicPotions.gif) !important
+	background-repeat no-repeat !important
+	background-position center center !important
+
 #drawer
 	p
 		line-height 1.3em
@@ -110,7 +119,7 @@ drawer_item_single_line = 37px
 	font-size 1.2em
 
 #drawer-pointers-container
-	border-bottom 1px dashed #ccc
+	border-bottom 1px dashed transparent
 .drawer-pointer
 	padding 12px
 	font-size 1.3em
