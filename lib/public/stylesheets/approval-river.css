@@ -1043,7 +1043,7 @@ input[name="assignees"] {
 #content[data-loading='true']:before {
   content: '';
   position: absolute;
-  top: 69px;
+  top: 75px;
   width: 398px;
   height: 335px;
   background-image: url("../images/gifs/MerlynneMagicPotions.gif") !important;
@@ -1170,6 +1170,9 @@ body[data-section="approval-river"] .division-switcher li.active {
 #content[data-mode="create"] .article-detail-wrapper {
   -webkit-box-shadow: 0px 0px 6px #d4d4d4;
   box-shadow: 0px 0px 6px #d4d4d4;
+}
+#content[data-mode="create"] .article-detail-wrapper {
+  margin-left: 70px;
 }
 #events-gallery-container .event-container {
   -webkit-box-shadow: 0px 0px 5px #dbdbdb;

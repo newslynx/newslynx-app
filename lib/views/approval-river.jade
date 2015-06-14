@@ -71,7 +71,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count TODO pending
+				.count <%= addCommas(event_count) %> pending
 				//- .count <%= addCommas(event_count.pending) %> pending
 				.title <%= name %>
 
@@ -83,9 +83,9 @@ block templates
 
 	script(type="text/jst")#sous-chef-form-templ
 		.recipe-form-container
-			.recipe-title(id!="<%= source %>-recipe")
-				span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
-					span.text New <%= prettyPrintSource(source) %> recipe
+			.recipe-title(id!="<%= slug %>-recipe")
+				span.service-icon(data-service!="<%= serviceFromSousChef(slug) %>")
+				span.text New <%= name %> recipe
 			form
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
