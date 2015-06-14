@@ -14,16 +14,28 @@ merlynne_loading_gif_height = 338px
 
 #content[data-loading='true']
 	position relative
-	background-image url(../images/gifs/MerlynneMagicPotions.gif) !important
-	background-repeat no-repeat !important
-	background-position center 20% !important
+	&:after,
+	&:before
+		left 50%
+		transform translateX(-50%)
+	&:before
+		content ''
+		position absolute
+		top 69px
+		width 398px
+		height 335px
+		background-image url('../images/gifs/MerlynneMagicPotions.gif') !important
+		background-repeat no-repeat !important
+		background-position center center !important
+		border 1px solid #CCC
+		border-radius 3px
+		box-shadow 0 0 12px #E3E3E3
 	&:after
 		content 'Loading...'
 		position absolute
-		left 50%
-		top 8%
-		transform translateX(-50%)
 		font-size 1.8em
+		top 40px
+		text-shadow 0 0 2px #DADADA
 
 #alert-spinner
 	font-size 1.2em
