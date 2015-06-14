@@ -131,8 +131,8 @@ select {
   font-size: 12px !important;
 }
 button.mini,
-input[type="button"].mini,
-padding 0 6px {
+input[type="button"].mini {
+  padding: 0 6px;
   font-size: 12px;
 }
 select {
@@ -174,8 +174,8 @@ input.destroy:hover {
   cursor: pointer;
 }
 button:hover,
-input[type="button"]:hover,
-text-decoration none {
+input[type="button"]:hover {
+  text-decoration: none;
   background-color: #ddd;
   background-image: -webkit-linear-gradient(#eee, #ddd);
   background-image: -moz-linear-gradient(#eee, #ddd);
@@ -210,8 +210,8 @@ input[type="submit"]:hover {
   border-color: #4a993e;
 }
 button:active,
-input[type="button"]:active,
-background-color #dcdcdc {
+input[type="button"]:active {
+  background-color: #dcdcdc;
   background-image: none;
   border-color: #b5b5b5;
   -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
@@ -230,8 +230,10 @@ input.destroy:active {
 }
 .disabled button,
 button.disabled,
-input[type="button"].disabled,
-opacity .4 {
+input[type="button"].disabled {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
   pointer-events: none;
 }
 .disabled:hover button,
@@ -279,6 +281,18 @@ label {
 }
 input {
   margin-bottom: 5px;
+}
+.loading-spinner {
+  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-repeat: no-repeat;
+  background-position: 77px center;
+  min-height: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  -webkit-background-size: auto 65%;
+  -moz-background-size: auto 65%;
+  background-size: auto 65%;
+  padding-right: 25px;
 }
 #left-rail {
   height: 100%;
@@ -1266,7 +1280,7 @@ body[data-section="approval-river"] .division-switcher li.active {
   max-width: 270px;
   line-height: 13px;
 }
-.approval-child .link {
+.approval-child a.link {
   margin-top: 10px;
   text-align: right;
   display: inline-block;
@@ -1279,14 +1293,10 @@ body[data-section="approval-river"] .division-switcher li.active {
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
   filter: alpha(opacity=30);
-}
-.approval-child .link a {
   color: #fff;
 }
-.approval-child .link a:hover {
+.approval-child a.link:hover {
   text-decoration: none;
-}
-.approval-child .link:hover {
   opacity: 1;
   -ms-filter: none;
   filter: none;

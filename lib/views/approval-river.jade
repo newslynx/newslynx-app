@@ -120,8 +120,7 @@ block templates
 				<% list_markup += '</ul>' %>
 				<% print(list_markup); %>
 				<% } %>
-				.link
-					a(href!="<%= url %>", target="_blank") Link
+				a.link(href!="<%= url %>", target="_blank") Link
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="yes")
 					.approval-btn.octicon.octicon-check

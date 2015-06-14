@@ -43,7 +43,7 @@ select
 	font-size 12px !important
 
 button.mini,
-input[type="button"].mini,
+input[type="button"].mini
 	padding 0 6px
 	font-size 12px
 
@@ -81,7 +81,7 @@ input.destroy:hover
 	cursor pointer
 
 button:hover,
-input[type="button"]:hover,
+input[type="button"]:hover
 	text-decoration none
 	background-color #DDD
 	background-image linear-gradient(#EEE, #DDD)
@@ -105,7 +105,7 @@ input[type="submit"]:hover
 	border-color #4A993E
 
 button:active,
-input[type="button"]:active,
+input[type="button"]:active
 	background-color #dcdcdc
 	background-image none
 	border-color #b5b5b5
@@ -124,7 +124,7 @@ input.destroy:active
 
 .disabled button,
 button.disabled,
-input[type="button"].disabled,
+input[type="button"].disabled
 	opacity .4
 	pointer-events none
 	
@@ -162,3 +162,13 @@ label
 
 input
 	margin-bottom 5px
+	
+.loading-spinner
+	background-image url(../images/gifs/arrows-transparent.gif)
+	background-repeat no-repeat
+	background-position 77px center
+	min-height 2em
+	display inline-block
+	margin 0 auto
+	background-size auto 65%
+	padding-right 25px
