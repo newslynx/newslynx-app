@@ -1,4 +1,5 @@
 @require 'blueprint'
+@require 'blueprint/modal-form.styl'
 
 input_width = 220px
 input_height = 34px
@@ -244,3 +245,13 @@ button.add
 		margin-top 5px !important
 		font-size 1.6em
 		font-weight normal!important
+		
+// Some style tweaks for the modal, these might later be added to the main `modal-form.styl`
+
+.modal-inner
+	.buttons-container
+		overflow auto
+	button
+		margin 0
+		float left
+	
