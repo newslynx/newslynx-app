@@ -1206,6 +1206,9 @@ button.add {
   font-size: 1.6em;
   font-weight: normal !important;
 }
+.modal-inner {
+  width: 425px;
+}
 .modal-inner .buttons-container {
   overflow: auto;
 }
