@@ -9,9 +9,9 @@ html
 	body(data-section="#{info.page}")
 		#main-wrapper
 			include page-divisions/left-rail/index.jade
-			#drawer
+			#drawer(data-loading="true")
 				block drawer
-			#content
+			#content(data-loading="true")
 				block content
 			block bootstrap-data
 			block templates

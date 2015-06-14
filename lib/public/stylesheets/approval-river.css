@@ -433,11 +433,6 @@ input {
 #drawer[data-loading='false'] #drawer-pointers-container {
   border-bottom-color: #ccc;
 }
-#content[data-loading='true'] {
-  background-image: url("../images/gifs/MerlynneMagicPotions.gif") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-}
 #drawer p {
   line-height: 1.3em;
 }
@@ -1015,6 +1010,24 @@ input[name="assignees"] {
 }
 .tt-suggestion p {
   margin: 0;
+}
+#content[data-loading='true'] {
+  position: relative;
+  background-image: url("../images/gifs/MerlynneMagicPotions.gif") !important;
+  background-repeat: no-repeat !important;
+  background-position: center 20% !important;
+}
+#content[data-loading='true']:after {
+  content: 'Loading...';
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 1.8em;
 }
 #alert-spinner {
   font-size: 1.2em;

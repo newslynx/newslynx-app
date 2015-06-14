@@ -11,6 +11,19 @@ drawer_pointer_padding = 62px
 drawer_item_single_line = 37px
 
 
+#content[data-loading='true']
+	position relative
+	background-image url(../images/gifs/MerlynneMagicPotions.gif) !important
+	background-repeat no-repeat !important
+	background-position center 20% !important
+	&:after
+		content 'Loading...'
+		position absolute
+		left 50%
+		top 55%
+		transform translateX(-50%)
+		font-size 1.8em
+
 #alert-spinner
 	font-size 1.2em
 	padding-top 5px
