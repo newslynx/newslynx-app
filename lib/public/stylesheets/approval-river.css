@@ -742,6 +742,9 @@ input {
 .service-icon[data-service="rss"] {
   background-image: url("/images/service-icons/logos-05.svg");
 }
+.service-icon[data-service="manual"] {
+  background-image: url("/images/service-icons/logos-06.svg");
+}
 .modal-outer {
   display: none;
 }
@@ -1035,7 +1038,7 @@ input[name="assignees"] {
   content: 'Loading...';
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 8%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);

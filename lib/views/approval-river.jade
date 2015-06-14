@@ -66,6 +66,35 @@ block templates
 							span.submit-msg
 							input.destroy(type="button", value="Delete")
 
+	script(type="text/jst")#recipe-static-templ
+		.drawer-list-outer.modal-parent
+			.inputs-container
+				input(type="radio")
+			.drawer-list-inner
+				.count <%= addCommas(event_count) %> pending
+				//- .count <%= addCommas(event_count.pending) %> pending
+				.title <%= name %>
+				//- .toolbar
+				//- 	.btn.settings-switch
+				//- 		span.octicon.octicon-gear(style="margin-right: 3px;")
+				//- 		span.text Edit
+				//- 	span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
+				//- 		.span.service-method-label <%= methodFromSousChef(sous_chef) %>
+				//- 	.btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
+			//- .modal-outer
+			//- 	.modal-overlay
+			//- 	.modal-inner
+			//- 		.modal-title Recipe settings
+			//- 		form
+			//- 			.show-hide-default-event This recipe triggers events with some default properties. 
+			//- 				span.toggle-default-event(data-status!="<%= set_default_event %>") <%= formatDefaultEventEnabled(set_default_event) %>
+			//- 			.default-event-container(style!="<% (set_default_event) ? print('display:block;') : print('') %>")
+			//- 			.buttons-container
+			//- 				button.cancel.modal-close Cancel
+			//- 				input.save(type="submit", value="Save")
+			//- 				span.submit-msg
+			//- 				input.destroy(type="button", value="Delete")
+
 	script(type="text/jst")#recipe-schema-list-item-templ
 		.drawer-list-outer.scroll-to(data-destination!="<%= source %>")
 		.drawer-list-inner
@@ -88,16 +117,16 @@ block templates
 		.river-item-container.modal-parent
 			.approval-child(data-which="info")
 				.toolbar
-					span.service-icon(data-service!="<%= serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) %>")
-					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).options.search_query %>
+					span.service-icon(data-service!="<%= alertSourceIdToService(source_id) %>")
+					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> | <%= displaySearchParams(alertSourceIdToSousChef(source_id), recipe_id) %>
 					.timestamp <%= prettyDatestamp(created) %>
 				.title <%= name %>
 				<% if (authors.length) { %>
 				<% var author_prefix = "", author_suffix = ""; %>
-				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
+				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
 				<% author_prefix = "@"; %>
 				<% } %>
-				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
+				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
 				<% author_suffix = ' &mdash; ' + addCommas(meta.followers) + ' followers'; %>
 				<% } %>
 				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+authors[0])) +'</strong>'+ author_suffix+'</div>') %>
