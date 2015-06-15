@@ -39,8 +39,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(event_count) %> pending
-				//- .count <%= addCommas(event_count.pending) %> pending
+				.count <%= addCommas(event_counts.pending) %> pending
 				.title <%= name %>
 				<% if (displaySearchParams(sous_chef, options)) { %>
 				.description Query: `<%= displaySearchParams(sous_chef, options) %>`
@@ -71,8 +70,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(event_count) %> pending
-				//- .count <%= addCommas(event_count.pending) %> pending
+				.count <%= addCommas(event_counts.pending) %> pending
 				.title <%= name %>
 
 
