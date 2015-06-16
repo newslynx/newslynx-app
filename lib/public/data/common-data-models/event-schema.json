@@ -1,18 +1,18 @@
 {
 	"content_item_ids": {
-		"type": "article-search",
+		"input_type": "article-search",
 		"help": {
 			"hint": "Search by headline..."
 		}
 	},
 	"title": {
-		"type": "text"
+		"input_type": "text"
 	},
 	"description": {
-		"type": "paragraph"
+		"input_type": "paragraph"
 	},
 	"tag_ids": {
-		"type": "checkbox",
-		"options": [ ]
+		"input_type": "checkbox",
+		"input_options": [ ]
 	}
 }

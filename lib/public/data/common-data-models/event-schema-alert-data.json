@@ -1,8 +1,8 @@
 {
-	"timestamp": {
-		"type": "timestamp"
+	"datetime": {
+		"input_type": "datepicker"
 	},
 	"link": {
-		"type": "text"
+		"input_type": "text"
 	}
 }
