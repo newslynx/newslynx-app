@@ -734,6 +734,9 @@ input[name="assignees"] {
 .form-row {
   margin-bottom: 5px;
 }
+.form-row[data-hidden='true'] {
+  display: none;
+}
 .form-row input {
   margin-left: 0;
 }
@@ -1096,16 +1099,16 @@ button.add {
   -ms-transform: translateY(-95%);
   transform: translateY(-95%);
 }
-#promotion[data-homepage-set="false"] {
+#promotion[data-required-fields-set="false"] {
   pointer-events: none;
 }
-#promotion[data-homepage-set="false"] .setting-group {
+#promotion[data-required-fields-set="false"] .setting-group {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
 }
-#promotion[data-homepage-set="false"] .settings-title:after {
-  content: 'Please set your homepage before creating recipes';
+#promotion[data-required-fields-set="false"] .settings-title:after {
+  content: 'Please set your homepage and timezone before creating recipes';
   color: #9e0000;
   font-size: 0.8em;
   margin-left: 10px;

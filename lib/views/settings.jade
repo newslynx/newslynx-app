@@ -56,7 +56,7 @@ block content
 				ul.inputs-container.js-inputs-container(data-setting-name="rss-feeds")
 				button.add Add...
 
-		#promotion.settings-group(data-homepage-set=(info.org.homepage != undefined).toString())
+		#promotion.settings-group(data-required-fields-set=(info.org.homepage != undefined && info.org.timezone != undefined).toString())
 			.settings-title Promotion
 			#staff-twitter-lists.setting-group.js-setting-group(data-empty=(info.recipes['twitter-list-to-event'] == undefined).toString())
 				.setting-description 
