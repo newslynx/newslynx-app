@@ -669,6 +669,7 @@ input {
   position: absolute;
   display: none;
   right: 50%;
+  font-weight: normal;
 }
 .tooltipped:before,
 .tooltipped:after {
@@ -726,6 +727,25 @@ input {
   transform: translateX(0%);
   left: auto;
   right: -10px;
+}
+.tooltipped.question-mark {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: inline-block;
+  vertical-align: top;
+  top: -3px;
+  padding: 1px;
+  margin-left: 3px;
+  background-color: #ccc;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  font-size: x-small;
+  text-align: center;
+  color: #696868;
+  font-weight: bold;
 }
 .service-icon[data-service="google"] {
   background-image: url("/images/service-icons/logos-01.svg");
@@ -820,6 +840,9 @@ input[name="assignees"] {
 }
 .form-row {
   margin-bottom: 5px;
+}
+.form-row[data-hidden='true'] {
+  display: none;
 }
 .form-row input {
   margin-left: 0;
