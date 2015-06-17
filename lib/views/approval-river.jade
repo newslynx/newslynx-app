@@ -39,7 +39,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(event_counts.pending) %> pending
+				.count <%= handleEventCounts(last_run, scheduled, event_counts) %>
 				.title <%= name %>
 				<% if (displaySearchParams(sous_chef, options)) { %>
 				.description Query: `<%= displaySearchParams(sous_chef, options) %>`
@@ -50,7 +50,7 @@ block templates
 						span.text Edit
 					span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
 						.span.service-method-label <%= methodFromSousChef(sous_chef) %>
-					.btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
+					//- .btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
