@@ -1325,7 +1325,7 @@ body[data-section="approval-river"] .division-switcher li.active {
 }
 .show-hide-default-event {
   font-size: 1.4em;
-  margin: 5px 0 15px 0;
+  margin: 20px 0 15px 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

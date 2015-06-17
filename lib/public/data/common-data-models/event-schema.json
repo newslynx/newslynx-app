@@ -5,10 +5,10 @@
 			"hint": "Search by headline..."
 		}
 	},
-	"title": {
+	"set_event_title": {
 		"input_type": "text"
 	},
-	"description": {
+	"set_event_description": {
 		"input_type": "paragraph"
 	},
 	"tag_ids": {
