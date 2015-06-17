@@ -1,0 +1,232 @@
+@require 'service-icons.styl'
+
+.modal-outer
+	display none
+.modal-outer,
+.modal-overlay
+	top 0
+	left 0
+	right 0
+	bottom 0
+.modal-overlay
+	background-color rgba(0,0,0,.7)
+	z-index 9
+.modal-overlay:hover
+	cursor pointer
+.modal-inner
+	background-color #fff
+	padding 20px
+	border 1px solid #000
+	width 525px
+	border-radius 4px
+	box-shadow 0px 0px 14px #1a1a1a
+	z-index 99
+	form
+		margin-top 10px
+	.modal-title
+		font-size 1.4em
+		font-weight bold
+		border-bottom 1px solid border_gray
+		margin-bottom 5px
+		color #000
+	.description:not(textarea)
+		margin-bottom 15px
+		font-size 1.3em
+		font-style italic
+input[name="assignees"]
+	pointer-events none
+	border 0
+	color #fff
+	display none
+.labelled:after,
+.labelled:after
+	color #000
+	content attr(aria-label)
+	font-size 13px
+	display inline-block
+	width 266px
+	white-space nowrap
+	overflow hidden
+	vertical-align bottom
+.remove-assignee.labelled:after
+	padding-left 5px
+.modal-inner:hover
+	cursor move !important
+.modal-outer.active
+	display block
+	position absolute
+	.modal-overlay,.modal-inner
+		position fixed
+.form-row
+	margin-bottom 5px
+	&[data-hidden='true']
+		display none
+	input
+		margin-left 0
+.form-row.article-assignees
+	margin-left 40%
+	max-height 75px
+	overflow-y scroll
+	overflow-x hidden
+// .article-assignee:last-child
+// 	margin-bottom 8px
+.form-row-input-container[data-which="tag_ids"],
+.form-row-input-container[data-which="subject_tags"]
+	max-height 95px
+	overflow-y scroll
+	overflow-x hidden
+	white-space normal
+.form-row-input-container[data-which="tag_ids"]
+	box-shadow 0px 1px 2px rgba(0, 0, 0, 0.075) inset
+	background-color input_background
+	border 1px solid #CCC
+	padding 5px
+	border-radius 3px
+	&:hover
+		cursor default
+.form-row-input-container
+	.placeholder
+		font-size 1.2em !important
+		color #000
+		a
+			color link_blue
+.article-assignee
+	position relative
+	input
+		width 93%
+	.remove-assignee
+		padding-right 5px
+		font-size 1.5em
+		color #ccc
+		white-space nowrap
+.article-assignee:hover
+	cursor pointer
+	.remove-assignee
+		color #000
+.buttons-container
+	padding-top 10px
+	button,input[type="submit"]
+		margin 0 5px 0 -2px
+		width auto
+.recipe-form-container
+	.recipe-title
+		position relative
+		font-size 3em
+		color bg_gray
+		margin-bottom 25px
+	.service-icon
+		top -4px
+		width 40px
+		height @width
+		left -(@width + 5)px
+		margin-bottom 5px
+	.service-icon[data-service="reddit"]
+		top -7px
+.submit-msg
+	display inline-block
+	padding-left 5px
+	vertical-align bottom
+	font-size 1.4em
+	white-space normal
+	width 260px
+	a
+		padding 0 !important
+		font-size 13px !important
+		font-weight normal !important
+		color link_blue !important
+	a:hover
+		background-color #fff !important
+		
+.form-checkbox-group
+	display block
+	width 100%
+	
+.toolbar
+	position relative
+	.service-icon
+		width 15px
+		height @width
+		bottom 5px
+		right 0
+		.service-method-label
+			position absolute
+			right 20px
+			bottom 0
+
+.service-icon
+	position absolute
+	background-size contain
+	background-repeat no-repeat
+	display inline-block
+	bottom 0
+	background-position right
+
+.modal-outer,
+.recipe-form-container
+	form
+		.form-row-label-container
+			font-size 1.4em
+			display inline-block
+			width 40%
+			margin-bottom 3px
+			vertical-align top
+			color #000
+		// TODO, remove this class once we set up margins for help text items
+		.form-row-label-container.has-help-link
+			margin-top 15px
+		.form-row-label-container.form-row-label-top
+			vertical-align top
+		.form-row-input-container
+			width 59%
+			display inline-block
+			.title
+				font-size 11px
+			input[type="checkbox"]
+				width auto
+		.help-row
+			text-align right
+			margin-bottom 2px
+		.hint-row
+			color bg_gray
+			position absolute
+		input[type="text"],
+		input[type="number"],
+		textarea
+			width 100%
+			margin 0
+		select
+			margin 0
+			
+
+
+/* T Y P E A H E A D */
+.twitter-typeahead
+	width 100%
+
+.tt-hint
+	color #999
+
+.tt-dropdown-menu
+	width 100%
+	margin-top 3px
+	padding 4px 0
+	background-color #fff
+	border 1px solid #ccc
+	border 1px solid rgba(0, 0, 0, 0.2)
+	border-radius 3px
+	box-shadow 0 5px 10px rgba(0,0,0,.2)
+
+.tt-suggestion
+	padding 3px 20px
+	font-size 1.4em
+.tt-suggestion:hover
+	cursor pointer
+
+.tt-suggestion.tt-cursor /* UPDATE newer versions use .tt-suggestion.tt-cursor */
+	color #fff
+	background-color #0097cf
+
+.tt-suggestion p
+	margin 0
+
+/* end typeahead */
