@@ -102,7 +102,11 @@ input[name="assignees"]
 .article-assignee:hover
 	cursor pointer
 	.remove-assignee
-		color #000
+		color kill_red
+		font-weight bold
+		&:after
+			color kill_red
+			font-weight normal
 .buttons-container
 	padding-top 10px
 	button,input[type="submit"]
@@ -206,9 +210,9 @@ input[name="assignees"]
 .tt-hint
 	color #999
 
-.tt-dropdown-menu
+.tt-menu
 	width 100%
-	margin-top 3px
+	margin-top -1px
 	padding 4px 0
 	background-color #fff
 	border 1px solid #ccc
@@ -219,14 +223,19 @@ input[name="assignees"]
 .tt-suggestion
 	padding 3px 20px
 	font-size 1.4em
-.tt-suggestion:hover
+	color light_gray
+	.tt-highlight
+		color #000
+	p
+		margin 0
+		
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor
+.tt-suggestion.tt-cursor
 	cursor pointer
-
-.tt-suggestion.tt-cursor /* UPDATE newer versions use .tt-suggestion.tt-cursor */
-	color #fff
 	background-color #0097cf
-
-.tt-suggestion p
-	margin 0
+	color white
+	.tt-highlight
+		color white
 
 /* end typeahead */
