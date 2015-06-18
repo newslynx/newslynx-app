@@ -1285,6 +1285,9 @@ body[data-section="approval-river"] .division-switcher li.active {
 .approval-btn-container[data-which="no"]:active {
   color: #570000;
 }
+body[data-modal="true"] .modal-parent[data-modal-open="true"] {
+  background-color: #bde4ff;
+}
 .approval-child .title {
   font-size: 1.7em;
   margin-bottom: 3px;
