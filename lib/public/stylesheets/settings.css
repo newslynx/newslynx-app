@@ -788,7 +788,12 @@ input[name="assignees"] {
   cursor: pointer;
 }
 .article-assignee:hover .remove-assignee {
-  color: #000;
+  color: #d50000;
+  font-weight: bold;
+}
+.article-assignee:hover .remove-assignee:after {
+  color: #d50000;
+  font-weight: normal;
 }
 .buttons-container {
   padding-top: 10px;
@@ -918,9 +923,9 @@ input[name="assignees"] {
 .tt-hint {
   color: #999;
 }
-.tt-dropdown-menu {
+.tt-menu {
   width: 100%;
-  margin-top: 3px;
+  margin-top: -1px;
   padding: 4px 0;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -933,16 +938,23 @@ input[name="assignees"] {
 .tt-suggestion {
   padding: 3px 20px;
   font-size: 1.4em;
+  color: #adadad;
 }
-.tt-suggestion:hover {
-  cursor: pointer;
-}
-.tt-suggestion.tt-cursor {
-  color: #fff;
-  background-color: #0097cf;
+.tt-suggestion .tt-highlight {
+  color: #000;
 }
 .tt-suggestion p {
   margin: 0;
+}
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor {
+  cursor: pointer;
+  background-color: #0097cf;
+  color: #fff;
+}
+.tt-suggestion:hover .tt-highlight,
+.tt-suggestion.tt-cursor .tt-highlight {
+  color: #fff;
 }
 #content {
   padding: 25px 35px 25px 35px;
