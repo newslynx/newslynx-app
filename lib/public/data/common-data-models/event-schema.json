@@ -6,7 +6,7 @@
 		"input_type": "text"
 	},
 	"content_items": {
-		"input_type": "article-search",
+		"input_type": "search",
 		"help": {
 			"hint": "Search by headline..."
 		}
