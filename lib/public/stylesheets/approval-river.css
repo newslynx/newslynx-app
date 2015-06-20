@@ -1345,7 +1345,7 @@ body[data-modal="true"] .modal-parent[data-modal-open="true"] {
   color: #a8a8a8;
   margin-bottom: 9px;
   max-width: 270px;
-  line-height: 13px;
+  line-height: 14px;
 }
 .approval-child a.link {
   margin-top: 10px;

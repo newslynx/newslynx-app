@@ -1,8 +1,8 @@
 {
-	"datetime": {
+	"created": {
 		"input_type": "datepicker"
 	},
-	"link": {
+	"url": {
 		"input_type": "text"
 	},
 	"content_items": {

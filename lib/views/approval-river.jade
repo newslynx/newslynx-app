@@ -41,8 +41,8 @@ block templates
 			.drawer-list-inner
 				.count <%= handleEventCounts(last_run, schedule_by, event_counts) %>
 				.title <%= name %>
-				<% if (displaySearchParams(sous_chef, options)) { %>
-				.description Query: `<%= displaySearchParams(sous_chef, options) %>`
+				<% if (options.search_query) { %>
+				.description Query: `<%= options.search_query %>`
 				<% } %>
 				.toolbar
 					.btn.settings-switch
@@ -97,7 +97,7 @@ block templates
 			.approval-child(data-which="info")
 				.toolbar
 					span.service-icon(data-service!="<%= alertSourceIdToService(source_id) %>")
-					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> | <%= displaySearchParams(alertSourceIdToSousChef(source_id), recipe_id) %>
+					span.origin-recipe <%= displayRecipeParams(recipe_id) %>
 					.timestamp <%= prettyDatestamp(created) %>
 				.title <%= name %>
 				<% if (authors.length) { %>
