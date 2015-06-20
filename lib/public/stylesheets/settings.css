@@ -15,11 +15,11 @@ body {
   height: 100%;
 }
 a {
-  color: link_blue;
+  color: #0092ce;
   text-decoration: none;
 }
 a:hover {
-  color: link_blue_hover;
+  color: #0082b6;
   text-decoration: underline;
 }
 ul {
@@ -110,6 +110,12 @@ input.destroy {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+.pika-button.pika-day {
+  font-weight: normal;
+}
+.pika-title button {
+  text-shadow: none;
+}
 button,
 input[type="button"],
 input[type="submit"],
@@ -131,8 +137,8 @@ select {
   font-size: 12px !important;
 }
 button.mini,
-input[type="button"].mini,
-padding 0 6px {
+input[type="button"].mini {
+  padding: 0 6px;
   font-size: 12px;
 }
 select {
@@ -165,6 +171,7 @@ input[type="submit"] {
 }
 input.destroy {
   color: #900;
+  float: right;
 }
 button:hover,
 input[type="button"]:hover,
@@ -172,10 +179,9 @@ input[type="submit"]:hover,
 input.destroy:hover {
   cursor: pointer;
 }
-button:hover,
-input[type="button"]:hover,
-text-decoration none {
-  background-color: #ddd;
+button:not(.pika-prev):not(.pika-next):hover,
+input[type="button"]:hover {
+  text-decoration: none;
   background-image: -webkit-linear-gradient(#eee, #ddd);
   background-image: -moz-linear-gradient(#eee, #ddd);
   background-image: -o-linear-gradient(#eee, #ddd);
@@ -183,6 +189,10 @@ text-decoration none {
   background-image: linear-gradient(#eee, #ddd);
   background-repeat: repeat-x;
   border-color: #ccc;
+}
+button:hover,
+input[type="button"]:hover {
+  background-color: #ddd;
 }
 input.destroy:hover {
   color: #900;
@@ -229,8 +239,10 @@ input.destroy:active {
 }
 .disabled button,
 button.disabled,
-input[type="button"].disabled,
-opacity .4 {
+input[type="button"].disabled {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
   pointer-events: none;
 }
 .disabled:hover button,
@@ -242,6 +254,8 @@ opacity .4 {
 }
 input[type="text"],
 input[type="password"],
+input[type="number"],
+textarea,
 .sp-replacer {
   margin-left: 0;
   background-color: #fafafa;
@@ -260,6 +274,8 @@ input[type="password"],
 }
 input[type="text"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
 .sp-replacer:focus {
   background-color: #fff;
   border-color: #51a7e8;
@@ -274,6 +290,18 @@ label {
 }
 input {
   margin-bottom: 5px;
+}
+.loading-spinner {
+  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-repeat: no-repeat;
+  background-position: 77px center;
+  min-height: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  -webkit-background-size: auto 65%;
+  -moz-background-size: auto 65%;
+  background-size: auto 65%;
+  padding-right: 25px;
 }
 #left-rail {
   height: 100%;
@@ -425,6 +453,9 @@ input {
 #drawer .merlynne-img img {
   width: 100%;
 }
+#drawer[data-loading='false'] #drawer-pointers-container {
+  border-bottom-color: #ccc;
+}
 #drawer p {
   line-height: 1.3em;
 }
@@ -462,7 +493,7 @@ input {
   text-align: center;
   vertical-align: middle;
   padding: 5px;
-  height: division_switcher_height;
+  height: 50px;
   color: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -511,10 +542,10 @@ input {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
-.drawer-list-item .description,
-.drawer-options .description,
-.drawer-section-title .description,
-.drawer-pointer .description {
+.drawer-list-item .description:not(textarea),
+.drawer-options .description:not(textarea),
+.drawer-section-title .description:not(textarea),
+.drawer-pointer .description:not(textarea) {
   font-size: 1.2em;
   color: #7c7c7c;
 }
@@ -579,6 +610,10 @@ input {
 .drawer-pointer .modal-switch.active:hover {
   cursor: default;
 }
+body[data-modal="true"] #drawer .modal-parent.active[data-modal-open="true"] {
+  background-color: #6dc4ff;
+}
+body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-list-outer:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
@@ -600,7 +635,7 @@ input {
   font-size: 1.2em;
 }
 #drawer-pointers-container {
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed transparent;
 }
 .drawer-pointer {
   padding: 12px;
@@ -618,8 +653,339 @@ input {
 .drawer-pointer.center {
   text-align: center;
 }
+.service-icon[data-service="google"] {
+  background-image: url("/images/service-icons/logos-01.svg");
+}
+.service-icon[data-service="twitter"] {
+  background-image: url("/images/service-icons/logos-02.svg");
+}
+.service-icon[data-service="reddit"] {
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
+}
+.service-icon[data-service="rss"] {
+  background-image: url("/images/service-icons/logos-05.svg");
+}
+.service-icon[data-service="manual"] {
+  background-image: url("/images/service-icons/logos-06.svg");
+}
+body[data-modal="true"] #drawer,
+body[data-modal="true"] #content {
+  overflow-y: hidden;
+}
+.modal-outer {
+  display: none;
+}
+.modal-outer,
+.modal-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-overlay {
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9;
+}
+.modal-overlay:hover {
+  cursor: pointer;
+}
+.modal-inner {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 525px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 14px #1a1a1a;
+  box-shadow: 0px 0px 14px #1a1a1a;
+  z-index: 99;
+}
+.modal-inner form {
+  margin-top: 10px;
+}
+.modal-inner .modal-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 1px solid #777676;
+  margin-bottom: 5px;
+  color: #000;
+}
+.modal-inner .description:not(textarea) {
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  font-style: italic;
+}
+input[name="assignees"] {
+  pointer-events: none;
+  border: 0;
+  color: #fff;
+  display: none;
+}
+.labelled:after {
+  color: #000;
+  content: attr(aria-label);
+  font-size: 13px;
+  display: inline-block;
+  width: 266px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.remove-assignee.labelled:after {
+  padding-left: 5px;
+}
+.modal-inner:hover {
+  cursor: move !important;
+}
+.modal-outer.active {
+  display: block;
+  position: absolute;
+}
+.modal-outer.active .modal-overlay,
+.modal-outer.active .modal-inner {
+  position: fixed;
+}
+.form-row {
+  height: 35px;
+}
+.form-row {
+  margin-bottom: 5px;
+}
+.form-row[data-which='description'] {
+  height: 50px;
+}
+.form-row.article-assignees,
+.form-row[data-which='tag_ids'] {
+  height: auto;
+}
+.form-row[data-hidden='true'] {
+  display: none;
+}
+.form-row input {
+  margin-left: 0;
+}
+.form-row.article-assignees {
+  margin-left: 40%;
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form-row-input-container[data-which="tag_ids"],
+.form-row-input-container[data-which="subject_tags"] {
+  max-height: 95px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space: normal;
+}
+.form-row-input-container[data-which="tag_ids"] {
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.form-row-input-container[data-which="tag_ids"]:hover {
+  cursor: default;
+}
+.form-row-input-container .placeholder {
+  font-size: 1.2em !important;
+  color: #000;
+}
+.form-row-input-container .placeholder a {
+  color: #0092ce;
+}
+.article-assignee {
+  position: relative;
+}
+.article-assignee input {
+  width: 93%;
+}
+.article-assignee .remove-assignee {
+  padding-right: 5px;
+  font-size: 1.5em;
+  color: #ccc;
+  white-space: nowrap;
+}
+.article-assignee:hover {
+  cursor: pointer;
+}
+.article-assignee:hover .remove-assignee {
+  color: #d50000;
+  font-weight: bold;
+}
+.article-assignee:hover .remove-assignee:after {
+  color: #d50000;
+  font-weight: normal;
+}
+.buttons-container {
+  padding-top: 10px;
+}
+.buttons-container button,
+.buttons-container input[type="submit"] {
+  margin: 0 5px 0 -2px;
+  width: auto;
+}
+.recipe-form-container .recipe-title {
+  position: relative;
+  font-size: 3em;
+  color: #7c7c7c;
+  margin-bottom: 25px;
+}
+.recipe-form-container .service-icon {
+  top: -4px;
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  margin-bottom: 5px;
+}
+.recipe-form-container .service-icon[data-service="reddit"] {
+  top: -7px;
+}
+.submit-msg {
+  display: inline-block;
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 1.4em;
+  white-space: normal;
+  width: 260px;
+}
+.submit-msg.fail {
+  color: #9e0000;
+}
+.submit-msg a {
+  padding: 0 !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+  color: #0092ce !important;
+}
+.submit-msg a:hover {
+  background-color: #fff !important;
+}
+.form-checkbox-group {
+  display: block;
+  width: 100%;
+}
+.toolbar {
+  position: relative;
+}
+.toolbar .service-icon {
+  width: 15px;
+  height: 15px;
+  bottom: 5px;
+  right: 0;
+}
+.toolbar .service-icon .service-method-label {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+.service-icon {
+  position: absolute;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  bottom: 0;
+  background-position: right;
+}
+.modal-outer form .form-row-label-container,
+.recipe-form-container form .form-row-label-container {
+  font-size: 1.4em;
+  display: inline-block;
+  width: 40%;
+  margin-bottom: 3px;
+  vertical-align: top;
+  color: #000;
+}
+.modal-outer form .form-row-label-container.form-row-label-top,
+.recipe-form-container form .form-row-label-container.form-row-label-top {
+  vertical-align: top;
+}
+.modal-outer form .form-row-input-container,
+.recipe-form-container form .form-row-input-container {
+  width: 59%;
+  display: inline-block;
+  position: relative;
+}
+.modal-outer form .form-row-input-container input[type="checkbox"],
+.recipe-form-container form .form-row-input-container input[type="checkbox"] {
+  width: auto;
+}
+.modal-outer form .help-row,
+.recipe-form-container form .help-row {
+  position: absolute;
+  right: 0;
+  top: -12px;
+}
+.modal-outer form .hint-row,
+.recipe-form-container form .hint-row {
+  color: #7c7c7c;
+  position: absolute;
+}
+.modal-outer form input[type="text"],
+.recipe-form-container form input[type="text"],
+.modal-outer form input[type="number"],
+.recipe-form-container form input[type="number"],
+.modal-outer form textarea,
+.recipe-form-container form textarea {
+  width: 100%;
+  margin: 0;
+}
+.modal-outer form select,
+.recipe-form-container form select {
+  margin: 0;
+}
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-hint {
+  color: #999;
+}
+.tt-menu {
+  width: 100%;
+  margin-top: -1px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.4em;
+  color: #adadad;
+}
+.tt-suggestion .tt-highlight {
+  color: #000;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor {
+  cursor: pointer;
+  background-color: #0097cf;
+  color: #fff;
+}
+.tt-suggestion:hover .tt-highlight,
+.tt-suggestion.tt-cursor .tt-highlight {
+  color: #fff;
+}
+.pika-time td:nth-child(2) {
+  padding: 0 5px;
+}
 #content {
   padding: 25px 35px 25px 35px;
+  overflow-x: scroll;
 }
 .section.active > .nav-link {
   background-color: #b980c2;
@@ -772,16 +1138,16 @@ button.add {
   -ms-transform: translateY(-95%);
   transform: translateY(-95%);
 }
-#promotion[data-homepage-set="false"] {
+#promotion[data-required-fields-set="false"] {
   pointer-events: none;
 }
-#promotion[data-homepage-set="false"] .setting-group {
+#promotion[data-required-fields-set="false"] .setting-group {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
 }
-#promotion[data-homepage-set="false"] .settings-title:after {
-  content: 'Please set your homepage before creating recipes';
+#promotion[data-required-fields-set="false"] .settings-title:after {
+  content: 'Please set your homepage and timezone before creating recipes';
   color: #9e0000;
   font-size: 0.8em;
   margin-left: 10px;
@@ -884,6 +1250,16 @@ button.add {
 }
 .ga-property {
   font-size: 1.2em;
+}
+.modal-inner {
+  width: 425px;
+}
+.modal-inner .buttons-container {
+  overflow: auto;
+}
+.modal-inner button {
+  margin: 0;
+  float: left;
 }
 @-moz-keyframes fadeOut {
   from {

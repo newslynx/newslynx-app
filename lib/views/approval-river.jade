@@ -39,10 +39,10 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(content_item_count) %> pending
+				.count <%= handleEventCounts(last_run, schedule_by, event_counts) %>
 				.title <%= name %>
-				<% if (displaySearchParams(sous_chef, options)) { %>
-				.description Query: `<%= displaySearchParams(sous_chef, options) %>`
+				<% if (options.search_query) { %>
+				.description Query: `<%= options.search_query %>`
 				<% } %>
 				.toolbar
 					.btn.settings-switch
@@ -50,7 +50,7 @@ block templates
 						span.text Edit
 					span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
 						.span.service-method-label <%= methodFromSousChef(sous_chef) %>
-					.btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
+					//- .btn.enable-switch(data-enabled!="<%= enabled %>") <%= formatEnabled(enabled) %>
 			.modal-outer
 				.modal-overlay
 				.modal-inner
@@ -65,16 +65,25 @@ block templates
 							span.submit-msg
 							input.destroy(type="button", value="Delete")
 
-	script(type="text/jst")#recipe-schema-list-item-templ
-		.drawer-list-outer.scroll-to(data-destination!="<%= source %>")
-		.drawer-list-inner
-			.title <%= prettyPrintSource(source) %>
+	script(type="text/jst")#recipe-static-templ
+		.drawer-list-outer.modal-parent
+			.inputs-container
+				input(type="radio")
+			.drawer-list-inner
+				.count <%= addCommas(event_counts.pending) %> pending
+				.title <%= name %>
 
-	script(type="text/jst")#recipe-schema-form-templ
+
+	script(type="text/jst")#sous-chef-drawer-item-templ
+		.drawer-list-outer.scroll-to(data-destination!="<%= slug %>")
+			.drawer-list-inner
+				.title <%= name %>
+
+	script(type="text/jst")#sous-chef-form-templ
 		.recipe-form-container
-			.recipe-title(id!="<%= source %>-recipe")
-				span.service-icon(data-service!="<%= serviceFromSousChef(sous_chef) %>")
-					span.text New <%= prettyPrintSource(source) %> recipe
+			.recipe-title(id!="<%= slug %>-recipe")
+				span.service-icon(data-service!="<%= serviceFromSousChef(slug) %>")
+				span.text New <%= name %> recipe
 			form
 				.show-hide-default-event This recipe triggers events with some default properties. 
 					span.toggle-default-event(data-status="false") Disabled
@@ -87,16 +96,16 @@ block templates
 		.river-item-container.modal-parent
 			.approval-child(data-which="info")
 				.toolbar
-					span.service-icon(data-service!="<%= serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) %>")
-					span.origin-recipe <%= getRecipeFromId(recipe_id).name %> <%= getRecipeFromId(recipe_id).options.search_query %>
+					span.service-icon(data-service!="<%= alertSourceIdToService(source_id) %>")
+					span.origin-recipe <%= displayRecipeParams(recipe_id) %>
 					.timestamp <%= prettyDatestamp(created) %>
 				.title <%= name %>
 				<% if (authors.length) { %>
 				<% var author_prefix = "", author_suffix = ""; %>
-				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
+				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
 				<% author_prefix = "@"; %>
 				<% } %>
-				<% if (serviceFromSousChef(getRecipeFromId(recipe_id).sous_chef) == 'twitter') { %>
+				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
 				<% author_suffix = ' &mdash; ' + addCommas(meta.followers) + ' followers'; %>
 				<% } %>
 				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+authors[0])) +'</strong>'+ author_suffix+'</div>') %>
@@ -119,8 +128,7 @@ block templates
 				<% list_markup += '</ul>' %>
 				<% print(list_markup); %>
 				<% } %>
-				.link
-					a(href!="<%= url %>", target="_blank") Link
+				a.link(href!="<%= url %>", target="_blank") Link
 			.approval-child(data-which="btns")
 				.approval-btn-container(data-which="yes")
 					.approval-btn.octicon.octicon-check
@@ -136,14 +144,13 @@ block scripts
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
-	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
-	script(src="javascripts/thirdparty/pourover.js")
-	script(src="javascripts/thirdparty/pikaday.js")
-	script(src="javascripts/thirdparty/typeahead.bundle.min.js")
-	script(src="javascripts/thirdparty/Autolinker.min.js")
 	script(src="javascripts/thirdparty/moment.js")
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
+	script(src="javascripts/thirdparty/pikaday.js")
+	script(src="javascripts/thirdparty/typeahead.min.js")
+	script(src="javascripts/thirdparty/Autolinker.min.js")
+	script(src="javascripts/thirdparty/jquery.serializejson.min.js")
 
 	//- Put it all together
 	script(src="javascripts/main.bundled.js")

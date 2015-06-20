@@ -8,7 +8,11 @@ drawer_item_single_line = 37px
 		margin 0 auto
 		img
 			width 100%
-	
+			
+#drawer[data-loading='false']
+	#drawer-pointers-container
+		border-bottom-color #ccc	
+		
 #drawer
 	p
 		line-height 1.3em
@@ -64,7 +68,7 @@ drawer_item_single_line = 37px
 	.count
 		text-transform uppercase
 		margin-bottom 2px
-	.description
+	.description:not(textarea)
 		font-size 1.2em
 		color bg_gray
 	.toolbar
@@ -92,6 +96,12 @@ drawer_item_single_line = 37px
 	// 	color shade(enable_green, 80%)
 	// .enable-switch[data-enabled="false"]:active
 	// 	color shade(disabled_red, 80%)
+		
+
+body[data-modal="true"] #drawer .modal-parent.active[data-modal-open="true"]
+	background-color darken(select_blue, 7%)
+	
+body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-list-outer:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)
@@ -110,7 +120,7 @@ drawer_item_single_line = 37px
 	font-size 1.2em
 
 #drawer-pointers-container
-	border-bottom 1px dashed #ccc
+	border-bottom 1px dashed transparent
 .drawer-pointer
 	padding 12px
 	font-size 1.3em

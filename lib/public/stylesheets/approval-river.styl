@@ -1,7 +1,8 @@
 @require 'blueprint'
 @require 'blueprint/tags.styl'
 @require 'blueprint/tooltips.styl'
-@require 'blueprint/modal-form.styl'
+@require 'blueprint/forms-modals.styl'
+@require 'blueprint/tooltips.styl'
 
 load_more_button_height = 40px
 load_more_button_padding = 10px
@@ -10,6 +11,32 @@ division_switcher_height = 50px
 drawer_pointer_padding = 62px
 drawer_item_single_line = 37px
 
+merlynne_loading_gif_height = 338px
+
+#content[data-loading='true']
+	position relative
+	&:after,
+	&:before
+		left 50%
+		transform translateX(-50%)
+	&:before
+		content ''
+		position absolute
+		top 75px
+		width 398px
+		height 335px
+		background-image url('../images/gifs/MerlynneMagicPotions.gif') !important
+		background-repeat no-repeat !important
+		background-position center center !important
+		border 1px solid #CCC
+		border-radius 3px
+		box-shadow 0 0 12px #E3E3E3
+	&:after
+		content 'Loading...'
+		position absolute
+		font-size 1.8em
+		top 40px
+		text-shadow 0 0 2px #DADADA
 
 #alert-spinner
 	font-size 1.2em
@@ -58,13 +85,13 @@ body[data-section="approval-river"]
 
 .drawer-container[data-mode="my-recipes"]
 	.drawer-list-item-ul
-		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line )
+		height "calc(100vh - %s)" % (division_switcher_height + drawer_pointer_padding*1.5 + drawer_item_single_line  )
 #recipes
 	height auto
 	overflow-x hidden
 	overflow-y scroll
 #drawer[data-mode="my-recipes"] #recipes
-	height "calc(100vh - %s)" % (division_switcher_height + 114 - 1) // 130 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
+	height "calc(100vh - %s)" % (division_switcher_height + 124 - 1) // 124 is the height of the junk in the drawer. 	Minus one because apparently this is like one pixel off	
 
 
 #content[data-mode="my-recipes"] .placeholder
@@ -87,7 +114,8 @@ body[data-section="approval-river"]
 		margin 10px 0 55px 0
 		padding 30px 30px 35px 70px
 		max-width 650px
-#content[data-mode="create"],#content[data-mode="my-recipes"]
+#content[data-mode="create"],
+#content[data-mode="my-recipes"]
 	background-color #f2f2f2
 #content[data-mode="my-recipes"]
 	padding 5px 20px
@@ -98,13 +126,16 @@ body[data-section="approval-river"]
 		display inline-block
 		vertical-align top
 #content[data-mode="create"] .article-detail-wrapper,
-#content[data-mode="my-recipes"] .article-detail-wrapper,#events-gallery-container .event-container
+#content[data-mode="my-recipes"] .article-detail-wrapper,
+#events-gallery-container .event-container
 	border 1px solid #ccc
 	background-color #fff
 	border-radius 2px
 #content[data-mode="my-recipes"] .article-detail-wrapper,
 #content[data-mode="create"] .article-detail-wrapper
 	box-shadow 0px 0px 6px #d4d4d4
+#content[data-mode="create"] .article-detail-wrapper
+	margin-left 70px
 #events-gallery-container .event-container
 	box-shadow 0px 0px 5px #dbdbdb
 .river-item-container
@@ -121,7 +152,7 @@ body[data-section="approval-river"]
 	width 33%
 	height 26px
 	position absolute
-	top 0
+	top -5px
 	right 0
 // .approval-child[data-which="info"]
 // 	width 85%
@@ -159,7 +190,7 @@ body[data-section="approval-river"]
 	color darken(enable_green, 45%)
 .approval-btn-container[data-which="no"]:active
 	color darken(disabled_red, 45%)
-
+	
 .approval-child
 	.title
 		font-size 1.7em
@@ -199,7 +230,10 @@ body[data-section="approval-river"]
 		font-size 1.2em
 		margin-left 3px
 		color #A8A8A8
-	.link
+		margin-bottom 9px
+		max-width 270px
+		line-height 14px
+	a.link
 		margin-top 10px
 		text-align right
 		display inline-block
@@ -209,12 +243,10 @@ body[data-section="approval-river"]
 		float right
 		font-size 1.3em
 		opacity .3
-		a
-			color #fff
-		a:hover
+		color #fff
+		&:hover
 			text-decoration none
-	.link:hover
-		opacity 1
+			opacity 1
 			
 
 .show-hide-default-event

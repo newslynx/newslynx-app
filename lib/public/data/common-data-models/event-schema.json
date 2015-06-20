@@ -1,18 +1,32 @@
 {
-	"content_item_ids": {
-		"type": "article-search",
+	"created": {
+		"input_type": "datepicker",
+		"required": true
+	},
+	"url": {
+		"input_type": "text"
+	},
+	"img_url": {
+		"input_type": "text"
+	},
+	"content_items": {
+		"input_type": "search",
 		"help": {
 			"hint": "Search by headline..."
-		}
+		},
+		"required": true
 	},
 	"title": {
-		"type": "text"
+		"input_type": "text",
+		"required": true
 	},
 	"description": {
-		"type": "paragraph"
+		"input_type": "paragraph"
 	},
 	"tag_ids": {
-		"type": "checkbox",
-		"options": [ ]
+		"input_type": "checkbox",
+		"input_options": [ ],
+		"required": true
 	}
 }
+

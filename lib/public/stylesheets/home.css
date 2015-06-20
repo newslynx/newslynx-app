@@ -131,8 +131,8 @@ select {
   font-size: 12px !important;
 }
 button.mini,
-input[type="button"].mini,
-padding 0 6px {
+input[type="button"].mini {
+  padding: 0 6px;
   font-size: 12px;
 }
 select {
@@ -174,8 +174,8 @@ input.destroy:hover {
   cursor: pointer;
 }
 button:hover,
-input[type="button"]:hover,
-text-decoration none {
+input[type="button"]:hover {
+  text-decoration: none;
   background-color: #ddd;
   background-image: -webkit-linear-gradient(#eee, #ddd);
   background-image: -moz-linear-gradient(#eee, #ddd);
@@ -230,8 +230,10 @@ input.destroy:active {
 }
 .disabled button,
 button.disabled,
-input[type="button"].disabled,
-opacity .4 {
+input[type="button"].disabled {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
   pointer-events: none;
 }
 .disabled:hover button,
@@ -279,6 +281,18 @@ label {
 }
 input {
   margin-bottom: 5px;
+}
+.loading-spinner {
+  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-repeat: no-repeat;
+  background-position: 77px center;
+  min-height: 2em;
+  display: inline-block;
+  margin: 0 auto;
+  -webkit-background-size: auto 65%;
+  -moz-background-size: auto 65%;
+  background-size: auto 65%;
+  padding-right: 25px;
 }
 #left-rail {
   height: 100%;
@@ -430,6 +444,9 @@ input {
 #drawer .merlynne-img img {
   width: 100%;
 }
+#drawer[data-loading='false'] #drawer-pointers-container {
+  border-bottom-color: #ccc;
+}
 #drawer p {
   line-height: 1.3em;
 }
@@ -516,10 +533,10 @@ input {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
-.drawer-list-item .description,
-.drawer-options .description,
-.drawer-section-title .description,
-.drawer-pointer .description {
+.drawer-list-item .description:not(textarea),
+.drawer-options .description:not(textarea),
+.drawer-section-title .description:not(textarea),
+.drawer-pointer .description:not(textarea) {
   font-size: 1.2em;
   color: #7c7c7c;
 }
@@ -605,7 +622,7 @@ input {
   font-size: 1.2em;
 }
 #drawer-pointers-container {
-  border-bottom: 1px dashed #ccc;
+  border-bottom: 1px dashed transparent;
 }
 .drawer-pointer {
   padding: 12px;

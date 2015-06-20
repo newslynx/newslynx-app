@@ -1,5 +1,10 @@
 @require 'service-icons.styl'
 
+body[data-modal="true"]
+	#drawer,
+	#content
+		overflow-y hidden
+
 .modal-outer
 	display none
 .modal-outer,
@@ -58,7 +63,16 @@ input[name="assignees"]
 	.modal-overlay,.modal-inner
 		position fixed
 .form-row
+	height 35px
+.form-row
 	margin-bottom 5px
+	&[data-which='description']
+		height 50px
+	&.article-assignees,
+	&[data-which='tag_ids']
+		height auto
+	&[data-hidden='true']
+		display none
 	input
 		margin-left 0
 .form-row.article-assignees
@@ -68,13 +82,13 @@ input[name="assignees"]
 	overflow-x hidden
 // .article-assignee:last-child
 // 	margin-bottom 8px
-.form-row-input-container[data-which="impact_tags"],
+.form-row-input-container[data-which="tag_ids"],
 .form-row-input-container[data-which="subject_tags"]
 	max-height 95px
 	overflow-y scroll
 	overflow-x hidden
 	white-space normal
-.form-row-input-container[data-which="impact_tags"]
+.form-row-input-container[data-which="tag_ids"]
 	box-shadow 0px 1px 2px rgba(0, 0, 0, 0.075) inset
 	background-color input_background
 	border 1px solid #CCC
@@ -100,7 +114,11 @@ input[name="assignees"]
 .article-assignee:hover
 	cursor pointer
 	.remove-assignee
-		color #000
+		color kill_red
+		font-weight bold
+		&:after
+			color kill_red
+			font-weight normal
 .buttons-container
 	padding-top 10px
 	button,input[type="submit"]
@@ -127,6 +145,8 @@ input[name="assignees"]
 	font-size 1.4em
 	white-space normal
 	width 260px
+	&.fail
+		color disabled_red
 	a
 		padding 0 !important
 		font-size 13px !important
@@ -169,21 +189,20 @@ input[name="assignees"]
 			margin-bottom 3px
 			vertical-align top
 			color #000
-		// TODO, remove this class once we set up margins for help text items
-		.form-row-label-container.has-help-link
-			margin-top 15px
 		.form-row-label-container.form-row-label-top
 			vertical-align top
 		.form-row-input-container
 			width 59%
 			display inline-block
-			.title
-				font-size 11px
+			position relative
+			// .title
+			// 	font-size 11px
 			input[type="checkbox"]
 				width auto
 		.help-row
-			text-align right
-			margin-bottom 2px
+			position absolute
+			right 0
+			top -12px
 		.hint-row
 			color bg_gray
 			position absolute
@@ -204,9 +223,9 @@ input[name="assignees"]
 .tt-hint
 	color #999
 
-.tt-dropdown-menu
+.tt-menu
 	width 100%
-	margin-top 3px
+	margin-top -1px
 	padding 4px 0
 	background-color #fff
 	border 1px solid #ccc
@@ -217,14 +236,23 @@ input[name="assignees"]
 .tt-suggestion
 	padding 3px 20px
 	font-size 1.4em
-.tt-suggestion:hover
+	color light_gray
+	.tt-highlight
+		color #000
+	p
+		margin 0
+		
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor
+.tt-suggestion.tt-cursor
 	cursor pointer
-
-.tt-suggestion.tt-cursor /* UPDATE newer versions use .tt-suggestion.tt-cursor */
-	color #fff
 	background-color #0097cf
-
-.tt-suggestion p
-	margin 0
+	color white
+	.tt-highlight
+		color white
 
 /* end typeahead */
+
+.pika-time
+	td:nth-child(2)
+		padding 0 5px

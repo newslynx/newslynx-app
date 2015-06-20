@@ -1,0 +1,18 @@
+{
+	"set_event_content_items": {
+		"input_type": "article-search",
+		"help": {
+			"hint": "Search by headline..."
+		}
+	},
+	"set_event_title": {
+		"input_type": "text"
+	},
+	"set_event_description": {
+		"input_type": "paragraph"
+	},
+	"set_event_tag_ids": {
+		"input_type": "checkbox",
+		"input_options": [ ]
+	}
+}
