@@ -996,10 +996,6 @@ input[name="assignees"] {
   display: inline-block;
   position: relative;
 }
-.modal-outer form .form-row-input-container .title,
-.recipe-form-container form .form-row-input-container .title {
-  font-size: 11px;
-}
 .modal-outer form .form-row-input-container input[type="checkbox"],
 .recipe-form-container form .form-row-input-container input[type="checkbox"] {
   width: auto;
@@ -1367,7 +1363,7 @@ body[data-modal="true"] .modal-parent[data-modal-open="true"] {
 }
 .show-hide-default-event {
   font-size: 1.4em;
-  margin: 20px 0 15px 0;
+  margin: 5px 0 15px 0;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
