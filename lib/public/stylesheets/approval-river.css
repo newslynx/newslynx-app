@@ -940,6 +940,9 @@ input[name="assignees"] {
   white-space: normal;
   width: 260px;
 }
+.submit-msg.fail {
+  color: #9e0000;
+}
 .submit-msg a {
   padding: 0 !important;
   font-size: 13px !important;
