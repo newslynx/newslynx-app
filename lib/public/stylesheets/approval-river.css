@@ -1159,7 +1159,7 @@ body[data-section="approval-river"] .division-switcher li.active {
   overflow-y: scroll;
 }
 #drawer[data-mode="my-recipes"] #recipes {
-  height: calc(100vh - 163px);
+  height: calc(100vh - 173px);
 }
 #content[data-mode="my-recipes"] .placeholder {
   -webkit-transform: translateY(125px);
