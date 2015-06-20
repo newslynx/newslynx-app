@@ -533,10 +533,10 @@ input {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
-.drawer-list-item .description,
-.drawer-options .description,
-.drawer-section-title .description,
-.drawer-pointer .description {
+.drawer-list-item .description:not(textarea),
+.drawer-options .description:not(textarea),
+.drawer-section-title .description:not(textarea),
+.drawer-pointer .description:not(textarea) {
   font-size: 1.2em;
   color: #7c7c7c;
 }
@@ -838,7 +838,7 @@ input[name="assignees"] {
 .modal-outer.active .modal-inner {
   position: fixed;
 }
-.form-row:not(.article-assignees) {
+.form-row {
   height: 35px;
 }
 .form-row {
@@ -846,6 +846,10 @@ input[name="assignees"] {
 }
 .form-row[data-which='description'] {
   height: 50px;
+}
+.form-row.article-assignees,
+.form-row[data-which='tag_ids'] {
+  height: auto;
 }
 .form-row[data-hidden='true'] {
   display: none;
