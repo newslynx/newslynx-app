@@ -1,25 +1,32 @@
 {
 	"created": {
-		"input_type": "datepicker"
+		"input_type": "datepicker",
+		"required": true
 	},
 	"url": {
+		"input_type": "text"
+	},
+	"img_url": {
 		"input_type": "text"
 	},
 	"content_items": {
 		"input_type": "search",
 		"help": {
 			"hint": "Search by headline..."
-		}
+		},
+		"required": true
 	},
 	"title": {
-		"input_type": "text"
+		"input_type": "text",
+		"required": true
 	},
 	"description": {
 		"input_type": "paragraph"
 	},
 	"tag_ids": {
 		"input_type": "checkbox",
-		"input_options": [ ]
+		"input_options": [ ],
+		"required": true
 	}
 }
 
