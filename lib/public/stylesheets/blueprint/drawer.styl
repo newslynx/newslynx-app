@@ -96,6 +96,12 @@ drawer_item_single_line = 37px
 	// 	color shade(enable_green, 80%)
 	// .enable-switch[data-enabled="false"]:active
 	// 	color shade(disabled_red, 80%)
+		
+
+body[data-modal="true"] #drawer .modal-parent.active[data-modal-open="true"]
+	background-color darken(select_blue, 7%)
+	
+body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-list-outer:not(.active):hover
 	cursor pointer
 	background-color tint(select_blue, 45%)

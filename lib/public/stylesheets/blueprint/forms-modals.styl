@@ -1,5 +1,10 @@
 @require 'service-icons.styl'
 
+body[data-modal="true"]
+	#drawer,
+	#content
+		overflow-y hidden
+
 .modal-outer
 	display none
 .modal-outer,
@@ -247,3 +252,7 @@ input[name="assignees"]
 		color white
 
 /* end typeahead */
+
+.pika-time
+	td:nth-child(2)
+		padding 0 5px

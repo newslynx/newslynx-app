@@ -20,7 +20,13 @@ input.destroy
 	text-shadow 0px 1px 0px rgba(255, 255, 255, 0.9)
 	white-space nowrap
 	border-radius 3px
-	
+
+.pika-button.pika-day
+	font-weight normal
+
+.pika-title
+	button
+		text-shadow none
 	
 button,
 input[type="button"],
@@ -80,13 +86,16 @@ input[type="submit"]:hover,
 input.destroy:hover
 	cursor pointer
 
-button:hover,
+button:not(.pika-prev):not(.pika-next):hover,
 input[type="button"]:hover
 	text-decoration none
-	background-color #DDD
 	background-image linear-gradient(#EEE, #DDD)
 	background-repeat repeat-x
 	border-color #CCC
+	
+button:hover,
+input[type="button"]:hover
+	background-color #DDD
 
 input.destroy:hover
 	color #900
