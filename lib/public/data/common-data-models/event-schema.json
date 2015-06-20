@@ -1,5 +1,5 @@
 {
-	"content_item_ids": {
+	"content_items": {
 		"input_type": "article-search",
 		"help": {
 			"hint": "Search by headline..."
