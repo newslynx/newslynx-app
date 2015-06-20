@@ -840,6 +840,10 @@ input[name="assignees"] {
 }
 .form-row {
   margin-bottom: 5px;
+  height: 35px;
+}
+.form-row[data-which='description'] {
+  height: 50px;
 }
 .form-row[data-hidden='true'] {
   display: none;
@@ -980,10 +984,6 @@ input[name="assignees"] {
   vertical-align: top;
   color: #000;
 }
-.modal-outer form .form-row-label-container.has-help-link,
-.recipe-form-container form .form-row-label-container.has-help-link {
-  margin-top: 15px;
-}
 .modal-outer form .form-row-label-container.form-row-label-top,
 .recipe-form-container form .form-row-label-container.form-row-label-top {
   vertical-align: top;
@@ -992,6 +992,7 @@ input[name="assignees"] {
 .recipe-form-container form .form-row-input-container {
   width: 59%;
   display: inline-block;
+  position: relative;
 }
 .modal-outer form .form-row-input-container .title,
 .recipe-form-container form .form-row-input-container .title {
@@ -1003,8 +1004,9 @@ input[name="assignees"] {
 }
 .modal-outer form .help-row,
 .recipe-form-container form .help-row {
-  text-align: right;
-  margin-bottom: 2px;
+  position: absolute;
+  right: 0;
+  top: -12px;
 }
 .modal-outer form .hint-row,
 .recipe-form-container form .hint-row {

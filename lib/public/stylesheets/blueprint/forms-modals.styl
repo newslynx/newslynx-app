@@ -59,6 +59,9 @@ input[name="assignees"]
 		position fixed
 .form-row
 	margin-bottom 5px
+	height 35px
+	&[data-which='description']
+		height 50px
 	&[data-hidden='true']
 		display none
 	input
@@ -175,21 +178,20 @@ input[name="assignees"]
 			margin-bottom 3px
 			vertical-align top
 			color #000
-		// TODO, remove this class once we set up margins for help text items
-		.form-row-label-container.has-help-link
-			margin-top 15px
 		.form-row-label-container.form-row-label-top
 			vertical-align top
 		.form-row-input-container
 			width 59%
 			display inline-block
+			position relative
 			.title
 				font-size 11px
 			input[type="checkbox"]
 				width auto
 		.help-row
-			text-align right
-			margin-bottom 2px
+			position absolute
+			right 0
+			top -12px
 		.hint-row
 			color bg_gray
 			position absolute

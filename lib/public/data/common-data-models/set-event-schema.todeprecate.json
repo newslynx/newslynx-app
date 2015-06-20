@@ -1,25 +1,18 @@
 {
-	"datetime": {
-		"input_type": "datepicker"
-	},
-	"link": {
-		"input_type": "text"
-	},
-	"content_items": {
+	"set_event_content_items": {
 		"input_type": "article-search",
 		"help": {
 			"hint": "Search by headline..."
 		}
 	},
-	"title": {
+	"set_event_title": {
 		"input_type": "text"
 	},
-	"description": {
+	"set_event_description": {
 		"input_type": "paragraph"
 	},
-	"tag_ids": {
+	"set_event_tag_ids": {
 		"input_type": "checkbox",
 		"input_options": [ ]
 	}
 }
-

@@ -1,8 +1,0 @@
-{
-	"datetime": {
-		"input_type": "datepicker"
-	},
-	"link": {
-		"input_type": "text"
-	}
-}
