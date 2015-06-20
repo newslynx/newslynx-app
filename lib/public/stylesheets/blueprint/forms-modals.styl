@@ -57,12 +57,15 @@ input[name="assignees"]
 	position absolute
 	.modal-overlay,.modal-inner
 		position fixed
-.form-row:not(.article-assignees)
+.form-row
 	height 35px
 .form-row
 	margin-bottom 5px
 	&[data-which='description']
 		height 50px
+	&.article-assignees,
+	&[data-which='tag_ids']
+		height auto
 	&[data-hidden='true']
 		display none
 	input
