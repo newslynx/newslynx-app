@@ -1,0 +1,26 @@
+{
+	"created": {
+		"input_type": "datepicker",
+		"required": true
+	},
+	"url": {
+		"input_type": "text",
+		"required": true
+	},
+	"type": {
+		"input_type": "select",
+		"required": true,
+		"input_options": [
+			"article", 
+			"video", 
+			"slideshow", 
+			"interactive", 
+			"podcast"
+		]
+	},
+	"tag_ids": {
+		"input_type": "checkbox",
+		"options": [ ],
+		"required": true
+	}
+}
