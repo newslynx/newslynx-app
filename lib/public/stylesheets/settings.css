@@ -110,6 +110,12 @@ input.destroy {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+.pika-button.pika-day {
+  font-weight: normal;
+}
+.pika-title button {
+  text-shadow: none;
+}
 button,
 input[type="button"],
 input[type="submit"],
@@ -173,10 +179,9 @@ input[type="submit"]:hover,
 input.destroy:hover {
   cursor: pointer;
 }
-button:hover,
+button:not(.pika-prev):not(.pika-next):hover,
 input[type="button"]:hover {
   text-decoration: none;
-  background-color: #ddd;
   background-image: -webkit-linear-gradient(#eee, #ddd);
   background-image: -moz-linear-gradient(#eee, #ddd);
   background-image: -o-linear-gradient(#eee, #ddd);
@@ -184,6 +189,10 @@ input[type="button"]:hover {
   background-image: linear-gradient(#eee, #ddd);
   background-repeat: repeat-x;
   border-color: #ccc;
+}
+button:hover,
+input[type="button"]:hover {
+  background-color: #ddd;
 }
 input.destroy:hover {
   color: #900;
@@ -533,10 +542,10 @@ input {
   text-transform: uppercase;
   margin-bottom: 2px;
 }
-.drawer-list-item .description,
-.drawer-options .description,
-.drawer-section-title .description,
-.drawer-pointer .description {
+.drawer-list-item .description:not(textarea),
+.drawer-options .description:not(textarea),
+.drawer-section-title .description:not(textarea),
+.drawer-pointer .description:not(textarea) {
   font-size: 1.2em;
   color: #7c7c7c;
 }
@@ -601,6 +610,10 @@ input {
 .drawer-pointer .modal-switch.active:hover {
   cursor: default;
 }
+body[data-modal="true"] #drawer .modal-parent.active[data-modal-open="true"] {
+  background-color: #6dc4ff;
+}
+body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-list-outer:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
@@ -657,6 +670,10 @@ input {
 }
 .service-icon[data-service="manual"] {
   background-image: url("/images/service-icons/logos-06.svg");
+}
+body[data-modal="true"] #drawer,
+body[data-modal="true"] #content {
+  overflow-y: hidden;
 }
 .modal-outer {
   display: none;
@@ -732,7 +749,17 @@ input[name="assignees"] {
   position: fixed;
 }
 .form-row {
+  height: 35px;
+}
+.form-row {
   margin-bottom: 5px;
+}
+.form-row[data-which='description'] {
+  height: 50px;
+}
+.form-row.article-assignees,
+.form-row[data-which='tag_ids'] {
+  height: auto;
 }
 .form-row[data-hidden='true'] {
   display: none;
@@ -827,6 +854,9 @@ input[name="assignees"] {
   white-space: normal;
   width: 260px;
 }
+.submit-msg.fail {
+  color: #9e0000;
+}
 .submit-msg a {
   padding: 0 !important;
   font-size: 13px !important;
@@ -873,10 +903,6 @@ input[name="assignees"] {
   vertical-align: top;
   color: #000;
 }
-.modal-outer form .form-row-label-container.has-help-link,
-.recipe-form-container form .form-row-label-container.has-help-link {
-  margin-top: 15px;
-}
 .modal-outer form .form-row-label-container.form-row-label-top,
 .recipe-form-container form .form-row-label-container.form-row-label-top {
   vertical-align: top;
@@ -885,10 +911,7 @@ input[name="assignees"] {
 .recipe-form-container form .form-row-input-container {
   width: 59%;
   display: inline-block;
-}
-.modal-outer form .form-row-input-container .title,
-.recipe-form-container form .form-row-input-container .title {
-  font-size: 11px;
+  position: relative;
 }
 .modal-outer form .form-row-input-container input[type="checkbox"],
 .recipe-form-container form .form-row-input-container input[type="checkbox"] {
@@ -896,8 +919,9 @@ input[name="assignees"] {
 }
 .modal-outer form .help-row,
 .recipe-form-container form .help-row {
-  text-align: right;
-  margin-bottom: 2px;
+  position: absolute;
+  right: 0;
+  top: -12px;
 }
 .modal-outer form .hint-row,
 .recipe-form-container form .hint-row {
@@ -955,6 +979,9 @@ input[name="assignees"] {
 .tt-suggestion:hover .tt-highlight,
 .tt-suggestion.tt-cursor .tt-highlight {
   color: #fff;
+}
+.pika-time td:nth-child(2) {
+  padding: 0 5px;
 }
 #content {
   padding: 25px 35px 25px 35px;
