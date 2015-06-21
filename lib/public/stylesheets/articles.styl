@@ -149,6 +149,20 @@ body[data-section="articles"]
 	height "calc(100vh - %s)" % (division_switcher_height + 151) // 183 is the height of the junk in the drawer.
 	overflow-x hidden
 	overflow-y scroll
+	&[data-loading="true"]
+		&:before
+			content 'Loading...'
+			text-align center
+			width 100%
+			padding-top 44%
+			display block
+			font-size: 1.5em
+			background-image url('../images/gifs/arrows-transparent.gif')
+			background-repeat no-repeat
+			background-position 68% 99%
+			opacity 1
+		.load-more
+			display none !important
 	
 /* A R T I C L E  D E T A I L */
 padding_verts = 25px

@@ -1279,6 +1279,23 @@ body[data-section="articles"] .division-switcher li.active {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+#article-list[data-loading="true"]:before {
+  content: 'Loading...';
+  text-align: center;
+  width: 100%;
+  padding-top: 44%;
+  display: block;
+  font-size: 1.5em;
+  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-repeat: no-repeat;
+  background-position: 68% 99%;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+#article-list[data-loading="true"] .load-more {
+  display: none !important;
+}
 /* A R T I C L E  D E T A I L */
 #events-container {
   margin-top: 10px;
