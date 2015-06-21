@@ -110,6 +110,12 @@ input.destroy {
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+.pika-button.pika-day {
+  font-weight: normal;
+}
+.pika-title button {
+  text-shadow: none;
+}
 button,
 input[type="button"],
 input[type="submit"],
@@ -173,10 +179,9 @@ input[type="submit"]:hover,
 input.destroy:hover {
   cursor: pointer;
 }
-button:hover,
+button:not(.pika-prev):not(.pika-next):hover,
 input[type="button"]:hover {
   text-decoration: none;
-  background-color: #ddd;
   background-image: -webkit-linear-gradient(#eee, #ddd);
   background-image: -moz-linear-gradient(#eee, #ddd);
   background-image: -o-linear-gradient(#eee, #ddd);
@@ -184,6 +189,10 @@ input[type="button"]:hover {
   background-image: linear-gradient(#eee, #ddd);
   background-repeat: repeat-x;
   border-color: #ccc;
+}
+button:hover,
+input[type="button"]:hover {
+  background-color: #ddd;
 }
 input.destroy:hover {
   color: #900;
@@ -601,6 +610,10 @@ input {
 .drawer-pointer .modal-switch.active:hover {
   cursor: default;
 }
+body[data-modal="true"] #drawer .modal-parent.active[data-modal-open="true"] {
+  background-color: #6dc4ff;
+}
+body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-list-outer:not(.active):hover {
   cursor: pointer;
   background-color: #bde4ff;
