@@ -454,7 +454,7 @@ input {
   width: 100%;
 }
 #drawer[data-loading='true'] .load-more {
-  display: none;
+  display: none !important;
 }
 #drawer[data-loading='false'] #drawer-pointers-container {
   border-bottom-color: #ccc;
