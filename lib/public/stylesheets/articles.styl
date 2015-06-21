@@ -25,7 +25,7 @@ body[data-section="articles"]
 		height 23px
 	.section-title
 		font-size 1.3em
-		font-weight bold
+		// font-weight bold
 		margin-bottom 10px
 		color #C0C0C0
 	.option-title
@@ -37,6 +37,19 @@ body[data-section="articles"]
 		border-bottom 1px solid #A1A1A1
 		span
 			text-transform none
+			border-radius 2px
+			padding 1px 3px
+			border 1px solid #fff
+			width 38px
+			display inline-block
+			vertical-align top
+			text-align center
+			margin-top -3px
+			float right
+			&[data-open="true"]
+				border-color transparent
+				color #000
+				background-color #fff
 		span:hover
 			cursor pointer
 			text-decoration underline
@@ -103,6 +116,21 @@ body[data-section="articles"]
 	button
 		width 100%
 		
+
+#drawer[data-mode="compare"],
+#drawer[data-mode="detail"]
+	.inputs-container,
+	.drawer-list-inner
+		display inline-block
+		vertical-align top
+	.inputs-container
+		margin-right 10px
+	.drawer-list-inner
+		width 85%
+#drawer[data-mode="compare"] .drawer-list-outer.active:hover,
+#drawer[data-mode="my-recipes"] .drawer-list-outer.active:hover
+	background-color darken(select_blue, 7%)
+	cursor pointer
 
 #drawer[data-mode="detail"]
 	.inputs-container input[type="radio"]

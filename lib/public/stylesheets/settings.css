@@ -424,10 +424,16 @@ input {
 .main-sections .tag-wrapper:hover .tag-container {
   background-color: #a1a1a1;
 }
+.main-sections .option-container input {
+  min-height: 0;
+  height: 28px;
+  background-color: #fff;
+}
 .main-sections .option-container[data-type="date-range"] input {
   width: 45%;
+  font-size: 1.1em;
 }
-.main-sections .option-container[data-type="date-range"] input[data-dir="to"] {
+.main-sections .option-container[data-type="date-range"] input[data-dir="before"] {
   float: right;
 }
 .main-sections .option-container[data-type="date-range"] .clear-date-range {
@@ -452,6 +458,9 @@ input {
 }
 #drawer .merlynne-img img {
   width: 100%;
+}
+#drawer[data-loading='true'] .load-more {
+  display: none !important;
 }
 #drawer[data-loading='false'] #drawer-pointers-container {
   border-bottom-color: #ccc;

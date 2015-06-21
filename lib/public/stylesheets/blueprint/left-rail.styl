@@ -82,14 +82,22 @@
 		cursor default
 	.tag-wrapper:hover .tag-container
 		background-color #A1A1A1
+	.option-container
+		input
+			min-height 0 // Reset these values to override our default min-height 34px
+			height 28px
+			background-color #fff
+			padding 0 8px
 	.option-container[data-type="date-range"]
 		input
 			width 45%
-		input[data-dir="to"]
+			font-size 1.1em
+		input[data-dir="before"]
 			float right
 		.clear-date-range
-			display none
+			display inline-block
 			text-transform none
+			visibility hidden
 		.clear-date-range span:hover
 			cursor pointer
 			text-decoration underline
