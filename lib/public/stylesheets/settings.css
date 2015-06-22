@@ -428,6 +428,7 @@ input {
   min-height: 0;
   height: 28px;
   background-color: #fff;
+  padding: 0 8px;
 }
 .main-sections .option-container[data-type="date-range"] input {
   width: 45%;
@@ -437,8 +438,9 @@ input {
   float: right;
 }
 .main-sections .option-container[data-type="date-range"] .clear-date-range {
-  display: none;
+  display: inline-block;
   text-transform: none;
+  visibility: hidden;
 }
 .main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
   cursor: pointer;
