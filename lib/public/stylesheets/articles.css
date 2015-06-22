@@ -1874,7 +1874,7 @@ body[data-section="articles"] .division-switcher li.active {
   vertical-align: top;
   padding: 5px 0;
 }
-.cell.gfx:not(.header-el) {
+.cell.metric:not(.header-el) {
   vertical-align: bottom;
   position: relative;
   top: -2px;
@@ -1883,7 +1883,7 @@ body[data-section="articles"] .division-switcher li.active {
   width: 8.5%;
   margin-right: 2%;
 }
-.cell.gfx {
+.cell.metric {
   width: 9%;
   margin-right: 2%;
 }
@@ -1891,7 +1891,7 @@ body[data-section="articles"] .division-switcher li.active {
   width: 8.5%;
   margin-right: 0%;
 }
-.cell.wide {
+.cell.text {
   width: 10%;
 }
 .cell.bars {
