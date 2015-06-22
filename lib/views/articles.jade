@@ -184,11 +184,11 @@ block templates
 					<% selects.forEach(function(select){ %>
 					| <div class="header-el cell <%= select.type %>" data-metric="<%= select.name %>">
 					|	<div class="name"><%= prettyMetricName(select.name) %></div>
-					<% if (select.type == 'metric') %>
+					<% if (select.type == 'metric') {%>
 					span.comparison-figure.tooltipped(aria-label="") 
 					<% } %>
 					| </div> 
-					<% }, this); %>
+					<% }); %>
 					//- .header-el.cell.wide(data-metric="title")
 					//- 	.name Headline
 					//- .header-el.cell.date(data-metric="created")
