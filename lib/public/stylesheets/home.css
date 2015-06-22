@@ -424,15 +424,23 @@ input {
 .main-sections .tag-wrapper:hover .tag-container {
   background-color: #a1a1a1;
 }
+.main-sections .option-container input {
+  min-height: 0;
+  height: 28px;
+  background-color: #fff;
+  padding: 0 8px;
+}
 .main-sections .option-container[data-type="date-range"] input {
   width: 45%;
+  font-size: 1.1em;
 }
-.main-sections .option-container[data-type="date-range"] input[data-dir="to"] {
+.main-sections .option-container[data-type="date-range"] input[data-dir="before"] {
   float: right;
 }
 .main-sections .option-container[data-type="date-range"] .clear-date-range {
-  display: none;
+  display: inline-block;
   text-transform: none;
+  visibility: hidden;
 }
 .main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
   cursor: pointer;
