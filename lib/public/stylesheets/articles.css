@@ -1930,7 +1930,7 @@ body[data-section="articles"] .division-switcher li.active {
   color: #666 !important;
   font-size: 0.9em;
 }
-.header-el .comparison-figure .comparison-figure-dimension {
+.header-el .comparison-figure .comparison-figure-operation {
   text-transform: uppercase;
 }
 .header-el:hover {

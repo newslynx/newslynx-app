@@ -182,7 +182,7 @@ block templates
 				//- 		span .
 				#header-dimensions-container
 					<% selects.forEach(function(select){ %>
-					| <div class="header-el cell <%= select.type %>" data-metric="<%= select.name %>">
+					| <div class="header-el cell <%= select.type %> <%= isActiveMetric(select.name, sort) %>" data-metric="<%= select.name %>">
 					|	<div class="name"><%= prettyMetricName(select.name) %></div>
 					<% if (select.type == 'metric') {%>
 					span.comparison-figure.tooltipped(aria-label="") 
