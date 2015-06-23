@@ -182,7 +182,7 @@ block templates
 				//- 		span .
 				#header-dimensions-container
 					<% selects.forEach(function(select){ %>
-					.header-el.cell(class!="<%= select.kind %>", data-metric!="<%= select.name %>")
+					.header-el.cell(class!="<%= select.kind %>ar", data-metric!="<%= select.name %>")
 						.name <%= prettyMetricName(select.name) %>
 						<% if (select.kind == 'metric') {%>
 						span.comparison-figure.tooltipped(aria-label="") 
@@ -228,7 +228,8 @@ block templates
 			<% } else if (select.kind == 'metric'){ %>
 			.cell.gfx.tooltipped(aria-label!="<%= prettyMetric(metrics[select.name], select.aggregation) + ' ' + select.display_name %>")
 				.bullet-container
-					.bullet(style!="width: <%= calcSize.call(view, select.name, metrics[select.name]) %>;")
+					.bullet(style!="width: <%= calcSize(select.name, metrics[select.name], comparisonMax, comparisonGroup) %>;")
+					.marker(style!=" calcSize(<%= select.name %>, comparisonOperation, comparisonMax, comparisonGroup)")
 			<% }  %>
 			<% }); %>
 
