@@ -38,7 +38,7 @@ block templates
 					.item-text(data-which="article-count") 
 				.drawer-item(data-type="contains-input")
 					label.toggle-all
-						input(type="checkbox" checked)
+						input(type="checkbox")
 						|  Toggle all
 
 
@@ -182,12 +182,11 @@ block templates
 				//- 		span .
 				#header-dimensions-container
 					<% selects.forEach(function(select){ %>
-					| <div class="header-el cell <%= select.type %> <%= isActiveMetric(select.name, sort) %>" data-metric="<%= select.name %>">
-					|	<div class="name"><%= prettyMetricName(select.name) %></div>
-					<% if (select.type == 'metric') {%>
-					span.comparison-figure.tooltipped(aria-label="") 
-					<% } %>
-					| </div> 
+					.header-el.cell(class!="<%= select.kind %> <%= isActiveMetric(select.name, sort) %>", data-metric!="<%= select.name %>")
+						.name <%= prettyMetricName(select.name) %>
+						<% if (select.kind == 'metric') {%>
+						span.comparison-figure.tooltipped(aria-label="") 
+						<% } %>
 					<% }); %>
 					//- .header-el.cell.wide(data-metric="title")
 					//- 	.name Headline
@@ -220,6 +219,18 @@ block templates
 	script(type="text/jst")#article-summary-row-templ
 		.article-detail-row-container
 			.destroy &times;
+			<% selects.forEach(function(select){ %>
+			<% if (select.kind == 'text'){ %>
+			.cell.text.tooltipped(data-tooltip-align="left", id!="<%= id %>", aria-label!="<%= htmlDecode(title) %>")
+				.title-text <%= title %>
+			<% } else if (select.kind == 'date'){ %>
+			.cell.date.single(data-created!="<%= created %>") <%= conciseDate(created) %>
+			<% } else if (select.kind == 'metric'){ %>
+			.cell.gfx.tooltipped(aria-label!="<%= prettyMetric(metrics[select.name], select.aggregation) + ' ' + select.display_name %>")
+				.bullet-container
+					.bullet(style!="width: <%= calcSize.call(view, select.name, metrics[select.name]) %>;")
+			<% }  %>
+			<% }); %>
 
 block css
 	link(rel='stylesheet', href='/stylesheets/thirdparty/spotted-tail.css')
@@ -234,7 +245,6 @@ block scripts
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
-	script(src="javascripts/thirdparty/d3.databinding.js")  <!-- TODO, could delete this -->
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")
