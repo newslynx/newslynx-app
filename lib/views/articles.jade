@@ -221,7 +221,7 @@ block templates
 			.destroy &times;
 			<% selects.forEach(function(select){ %>
 			<% if (select.kind == 'text'){ %>
-			.cell.text.tooltipped(data-tooltip-align="left", id!="<%= id %>", aria-label!="<%= htmlDecode(title) %>")
+			.cell.text.tooltipped.go-to-detail(data-tooltip-align="left", data-id!="<%= id %>", aria-label!="<%= htmlDecode(title) %>")
 				.title-text <%= title %>
 			<% } else if (select.kind == 'date'){ %>
 			.cell.date.single(data-created!="<%= created %>") <%= conciseDate(created) %>

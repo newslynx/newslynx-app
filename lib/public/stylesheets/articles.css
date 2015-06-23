@@ -1816,7 +1816,7 @@ body[data-section="articles"] .division-switcher li.active {
   -ms-user-select: none;
   user-select: none;
 }
-.article-detail-row-container .title:hover {
+.article-detail-row-container .text:hover {
   text-decoration: underline;
   cursor: pointer;
 }
