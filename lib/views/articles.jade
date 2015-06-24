@@ -58,8 +58,8 @@ block templates
 
 	script(type="text/jst")#article-detail-account-subject-tag-templ
 		label
-			| <input type="checkbox" <%= boolToStr(selected, 'checked') %> ></input>
-			| <span class="tag-text"><%= toTitleCase(name) %></span>
+			input(type="checkbox", checked!="<%= boolToStr(selected, 'checked') %>")
+			span.tag-text <%= toTitleCase(name) %>
 
 	script(type="text/jst")#article-detail-templ
 		ul.article-detail-navigation
@@ -68,11 +68,10 @@ block templates
 		.article-detail-container
 			.pub-date <%= prettyDate(created) %>
 			h2.headline 
-				| <a href=<%= url %> target="_blank"><%= title %></a>
+				a(href!="<%= url %>", target="_blank") <%= title %>
 			.article-info-wrapper
-				| <a id="download-data" href="" download="newslynx-article-<%= id %>.zip">
+				a(id="download-data", href="", download!="newslynx-article-<%= id %>.zip")
 				button(data-which="download-data") Download data
-				| </a>
 				.article-info-container(data-which="author")
 					.article-info-title
 						span.article-info-title-text Author(s):
@@ -80,7 +79,7 @@ block templates
 						<% if (!authors.length) { %>
 						li.author.empty --
 						<% } else { %>
-						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.trim()+'</div>'}).join(', ') %>
+						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author+'</div>'}).join(', ') %>
 						<% print(authors_markup) %>
 						<% } %>
 				.article-info-container(data-which="subject").modal-parent
