@@ -74,7 +74,7 @@ block templates
 					button(data-which="download-data") Download data
 				.article-info-container(data-which="author")
 					.article-info-title
-						span.article-info-title-text Author(s):
+						span.article-info-title-text Author<% authors.length > 1 ? print ('s') : print('') %>:
 					ul.authors
 						<% if (!authors.length) { %>
 						li.author.empty --
