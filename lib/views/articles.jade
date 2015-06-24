@@ -70,8 +70,8 @@ block templates
 			h2.headline 
 				a(href!="<%= url %>", target="_blank") <%= title %>
 			.article-info-wrapper
-				a(id="download-data", href="", download!="newslynx-article-<%= id %>.zip")
-				button(data-which="download-data") Download data
+				a#download-data(href="", download!="newslynx-article-<%= id %>.zip")
+					button(data-which="download-data") Download data
 				.article-info-container(data-which="author")
 					.article-info-title
 						span.article-info-title-text Author(s):
@@ -79,7 +79,7 @@ block templates
 						<% if (!authors.length) { %>
 						li.author.empty --
 						<% } else { %>
-						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author+'</div>'}).join(', ') %>
+						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.name+'</div>'}).join(', ') %>
 						<% print(authors_markup) %>
 						<% } %>
 				.article-info-container(data-which="subject").modal-parent
@@ -137,7 +137,7 @@ block templates
 				section(data-which="events")
 					h3.title.hashtagged What events have happened around this story?
 					#events-container
-						<% if (events.length) { %>
+						<% if (false && events.length) { %>
 						.section-options.sticky
 							.section-title Filter by...
 							.option-container(data-type="impact-tags")
