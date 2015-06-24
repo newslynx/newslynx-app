@@ -1296,6 +1296,9 @@ body[data-section="articles"] .division-switcher li.active {
 #article-list[data-loading="true"] .load-more {
   display: none !important;
 }
+#article-list[data-loading="true"] .load-more.loading-spinner {
+  background-position: 77% center;
+}
 /* A R T I C L E  D E T A I L */
 #events-container {
   margin-top: 10px;

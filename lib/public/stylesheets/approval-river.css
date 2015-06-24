@@ -294,7 +294,7 @@ input {
 .loading-spinner {
   background-image: url("../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
-  background-position: 77px center;
+  background-position: 77% center;
   min-height: 2em;
   display: inline-block;
   margin: 0 auto;
