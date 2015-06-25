@@ -1606,7 +1606,7 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #f2f2f2;
 }
 .article-detail-container section.detail-section {
-  padding: 20px 50px;
+  padding: 30px 50px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   min-height: 700px;
