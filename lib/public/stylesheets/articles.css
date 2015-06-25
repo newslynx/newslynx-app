@@ -1591,6 +1591,9 @@ body[data-section="articles"] .division-switcher li.active {
 #content[data-mode="detail"] {
   padding: 20px 0;
 }
+#content[data-mode="detail"] .article-info-wrapper {
+  position: relative;
+}
 #content[data-mode="detail"] .article-summary-info-container {
   position: relative;
   padding: 0 50px;
