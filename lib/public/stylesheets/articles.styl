@@ -167,17 +167,17 @@ body[data-section="articles"]
 			display none !important
 	
 /* A R T I C L E  D E T A I L */
-padding_verts = 25px
+padding_verts = 20px
 padding_horitz = 50px
 filter_opts_width = 175px
 #events-container
 	margin-top 10px
 	.tag-wrapper:hover .tag-container
-		background-color #f2f2f2
+		background-color bck_gray
 	.section-options
 		width filter_opts_width
 		user-select none
-		background-color #fff
+		// background-color #fff
 		padding-top 10px
 		.section-title
 			color #535353
@@ -222,6 +222,8 @@ filter_opts_width = 175px
 	padding 10px
 	border 1px solid #ccc
 	margin-top 10px
+	box-shadow 0 0 6px #D4D4D4
+	background-color #fff
 	.event-content
 		width 100%
 		position relative
@@ -418,18 +420,34 @@ filter_opts_width = 175px
 // Might need #content padding 0
 
 #content[data-mode="detail"]
-	padding padding_verts padding_horitz
-	.article-detail-wrapper
-		padding-bottom padding_verts*4
+	padding padding_verts 0
+	// background-color bck_gray
+	// .article-detail-wrapper
+	// 	padding-bottom padding_verts*4
+	.article-summary-info-container
+		position relative
+		padding 0 padding_horitz
 
 // #content[data-mode="compare"]
 // 	overflow-x hidden
 
 .article-detail-container
-	.toolbar
-		margin 20px 0 40px 0
-		// padding-bottom 10px
+	overflow auto
+	section
+		overflow auto
+		background-color bck_gray
+	section.detail-section
+		padding padding_verts padding_horitz
+		border-top 1px solid #ccc
 		border-bottom 1px solid #ccc
+		min-height 700px
+		
+	.toolbar
+		position relative
+		top 1
+		margin-top 20px
+		// padding-bottom 10px
+		// border-bottom 1px solid #ccc
 	.pub-date
 		font-size 1.2em
 		margin-bottom 4px
@@ -450,10 +468,10 @@ filter_opts_width = 175px
 		font-weight 400
 	.headline:before
 		left -24px
-		content '# '
+		// content '# '
 	.title.hashtagged:before
 		left -32px
-		content '## '
+		// content '## '
 	.description
 		font-size 1.3em
 	.group-container
@@ -481,7 +499,7 @@ filter_opts_width = 175px
 				border-bottom none
 			.tab.active
 				border-color #ccc
-				background-color #fff
+				background-color bck_gray
 			.tab:hover
 				cursor pointer
 				text-decoration underline
@@ -503,10 +521,8 @@ filter_opts_width = 175px
 			cursor default
 		// button.create-event
 		// 	margin-bottom 5px
-	.article-info-wrapper
-		position relative
 	.article-info-container
-		margin 5px 0
+		margin 2px 0
 	.article-info-title
 		position relative
 		width 80px
@@ -592,6 +608,7 @@ filter_opts_width = 175px
 			padding 1px 5px
 			border-radius 2px
 .detail-section
+	overflow auto
 	display none
 // To show on load, later controled by tabs
 .detail-section[data-group='life']

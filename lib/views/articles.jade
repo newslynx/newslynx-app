@@ -86,70 +86,71 @@ block templates
 			li.tooltipped.prev
 			li.tooltipped.next
 		.article-detail-container
-			.pub-date <%= prettyDate(created) %>
-			h2.headline 
-				a(href!="<%= url %>", target="_blank") <%= title %>
-			.article-info-wrapper
-				a#download-data(href="", download!="newslynx-article-<%= id %>.zip")
-					button(data-which="download-data") Download data
-				.article-info-container(data-which="author")
-					.article-info-title
-						span.article-info-title-text Author<% authors.length > 1 ? print ('s') : print('') %>:
-					ul.authors
-						<% if (!authors.length) { %>
-						li.author.empty --
-						<% } else { %>
-						<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.name+'</div>'}).join(', ') %>
-						<% print(authors_markup) %>
-						<% } %>
-				.article-info-container(data-which="subject").modal-parent
-					.article-info-title#add-subject-tag.modal-toggle
-						span.article-info-title-text Subject tags:
-					.modal-outer
-						.modal-overlay.modal-close
-						.modal-inner
-							.modal-title Edit subject tags
-							ul#subject-tag-settings
-								.description
-									| You don't have any subject tags yet! Create some on the 
-									a(href="/settings") settings
-									|  page.
-							.buttons-container
-								button.cancel.modal-close Done
-					ul.tags
-						li.tag.empty None
-				.article-info-container(data-which="impact")
-					.article-info-title 
-						span.article-info-title-text Impact tags:
-					ul.tags
-						li.tag.empty None
-				.article-info-container(data-which="impact-categories")
-					.article-info-title 
-						span.article-info-title-text Impact cats:
-					ul.tags
-						li.tag.empty None
-				.article-info-container(data-which="impact-levels")
-					.article-info-title 
-						span.article-info-title-text Impact levels:
-					ul.tags
-						li.tag.empty None
-			.toolbar
-				.group-container(data-side="left")
-					.group-item
-						.group-title Tell me about:
-						ul.tabs
-							li.tab(data-group="life") This story's life
-							li.tab(data-group="reading") How people are reading &amp; finding it
-							li.tab(data-group="tweeting") Who tweeted it?
-				.group-container(data-side="right")
-					.group-item#event-creator-container.modal-parent
-						button.create-event.modal-toggle + Create event
-					//- .group-item
-					//- 	.octicon.octicon-git-compare
-					//- 	select#article-comparer
-					//- 		option(selected) Compare
-					//- 		option(value="avg") an average article
-					//- 		option(value="perc_95") 95th percentile
+			.article-summary-info-container
+				.pub-date <%= prettyDate(created) %>
+				h2.headline 
+					a(href!="<%= url %>", target="_blank") <%= title %>
+				.article-info-wrapper
+					a#download-data(href="", download!="newslynx-article-<%= id %>.zip")
+						button(data-which="download-data") Download data
+					.article-info-container(data-which="author")
+						.article-info-title
+							span.article-info-title-text Author<% authors.length > 1 ? print ('s') : print('') %>:
+						ul.authors
+							<% if (!authors.length) { %>
+							li.author.empty --
+							<% } else { %>
+							<% var authors_markup = authors.map(function(author){ return '<div class="author">'+author.name+'</div>'}).join(', ') %>
+							<% print(authors_markup) %>
+							<% } %>
+					.article-info-container(data-which="subject").modal-parent
+						.article-info-title#add-subject-tag.modal-toggle
+							span.article-info-title-text Subject tags:
+						.modal-outer
+							.modal-overlay.modal-close
+							.modal-inner
+								.modal-title Edit subject tags
+								ul#subject-tag-settings
+									.description
+										| You don't have any subject tags yet! Create some on the 
+										a(href="/settings") settings
+										|  page.
+								.buttons-container
+									button.cancel.modal-close Done
+						ul.tags
+							li.tag.empty None
+					.article-info-container(data-which="impact")
+						.article-info-title 
+							span.article-info-title-text Impact tags:
+						ul.tags
+							li.tag.empty None
+					.article-info-container(data-which="impact-categories")
+						.article-info-title 
+							span.article-info-title-text Impact cats:
+						ul.tags
+							li.tag.empty None
+					.article-info-container(data-which="impact-levels")
+						.article-info-title 
+							span.article-info-title-text Impact levels:
+						ul.tags
+							li.tag.empty None
+				.toolbar
+					.group-container(data-side="left")
+						.group-item
+							.group-title Tell me about:
+							ul.tabs
+								li.tab(data-group="life") This story's life
+								li.tab(data-group="reading") How people are reading &amp; finding it
+								li.tab(data-group="tweeting") Who tweeted it?
+					.group-container(data-side="right")
+						.group-item#event-creator-container.modal-parent
+							button.create-event.modal-toggle + Create event
+						//- .group-item
+						//- 	.octicon.octicon-git-compare
+						//- 	select#article-comparer
+						//- 		option(selected) Compare
+						//- 		option(value="avg") an average article
+						//- 		option(value="perc_95") 95th percentile
 			section.detail-section(data-group="life")
 				section(data-which="timeline")
 					h3.title.hashtagged How many people visited and when was it shared on social media?
