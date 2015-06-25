@@ -53,6 +53,26 @@ block templates
 				ul.tag-list.subject-tags-container
 				ul.tag-list.impact-tags-container
 
+	script(type="text/jst")#article-detail-event-templ
+		.event-content.modal-parent
+			.event-created <%= prettyDatestamp(created) %>
+			.event-title <%= title %>
+			.event-item
+				.event-item-title Description
+				.event-item-text <%= convertLineBreaksToHtml(description) %>
+			<% if (url){ %>
+			.event-item
+				.event-item-title URL
+				.event-item-text
+					a(href!="<%= url %>", target="_blank") <%= url %>
+			<% } %>
+			.event-item
+				.event-item-title Tags
+				ul.event-tags-container.tag-list
+				//- To be filled in by the JavaScript so that each tag has a view
+			.edit-event-container
+				button.modal-toggle.mini Edit
+
 	script(type="text/jst")#article-detail-tag-templ
 		span.tag-text <%= toTitleCase(name) %>
 
@@ -136,8 +156,7 @@ block templates
 					#ST-chart
 				section(data-which="events")
 					h3.title.hashtagged What events have happened around this story?
-					#events-container
-						<% if (false && events.length) { %>
+					#events-container(data-loading="true")
 						.section-options.sticky
 							.section-title Filter by...
 							.option-container(data-type="impact-tags")
@@ -159,9 +178,7 @@ block templates
 									li.placeholder
 										| None yet!
 						.section-items-container#events-gallery-container.sticky-anchor
-						<% } else { %>
 						.placeholder You haven't created any events for this article yet. &mdash; <em>Merlynne</em>
-						<% } %>
 			section.detail-section(data-group="reading")
 				.placeholder Google Analytics hasn't compiled the data for this article yet. It will usually appear one day after publication. &mdash; <em>Merlynne</em>
 			section.detail-section(data-group="tweeting")
