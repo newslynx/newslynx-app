@@ -231,7 +231,7 @@ filter_opts_width = 175px
 		// overflow-y scroll	
 		// overflow-x hidden
 		// background-color #c0f
-	.event-timestamp
+	.event-created
 		font-size 1.2em
 		text-transform uppercase
 		margin-bottom 3px
@@ -256,6 +256,13 @@ filter_opts_width = 175px
 .event-container:nth-child(odd)
 	margin-right 10px
 	margin-bottom 10px
+	
+#events-filters.section-options 
+	.option-title span
+		border-color #000
+		&[data-open="true"]
+			color #fff
+			background-color #000
 
 @media (max-width: 1260px)
 	.event-container
