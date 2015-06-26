@@ -665,7 +665,7 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   text-align: center;
 }
 .tags .tag {
-  display: inline;
+  display: inline-block;
   padding: 2px 5px;
   background-color: #ccc;
   -webkit-user-select: none;

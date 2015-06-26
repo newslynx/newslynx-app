@@ -246,7 +246,7 @@ block templates
 			.cell.metric.tooltipped(aria-label!="<%= prettyMetric(metrics[select.name], select.aggregation) + ' ' + select.display_name %>", data-value!="<%= metrics[select.name] %>")
 				.bullet-container
 					.bullet(style!="width: <%= calcSize(select.name, metrics[select.name], comparisonMax, comparisonGroup) %>;")
-					.marker(style!=" calcSize(<%= select.name %>, comparisonOperation, comparisonMax, comparisonGroup)")
+					.marker(style!="left: <%= calcSize(select.name, comparisonOperation, comparisonMax, comparisonGroup) %>;", data-metric-name!="<%= select.name %>")
 			<% }  %>
 			<% }); %>
 
