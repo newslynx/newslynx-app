@@ -37,22 +37,34 @@ body[data-section="articles"]
 		border-bottom 1px solid #A1A1A1
 		span
 			text-transform none
-			border-radius 2px
-			padding 1px 3px
-			border 1px solid #fff
 			width 38px
-			display inline-block
-			vertical-align top
 			text-align center
 			margin-top -3px
-			float right
-			&[data-open="true"]
-				border-color transparent
-				color #000
-				background-color #fff
-		span:hover
-			cursor pointer
-			text-decoration underline
+			&.count
+				color #fff
+				font-size 1.1em
+				margin-left 2px
+			&.show-hide,
+			&.clear
+				float right
+				border-radius 2px
+				padding 1px 3px
+				&:hover
+					cursor pointer
+					text-decoration underline
+			&.show-hide
+				border 1px solid #fff
+				&[data-open="true"]
+					border-color transparent
+					color #000
+					background-color #fff
+			&.clear
+				visibility hidden
+				background-color kill_red
+				width 20px
+				&:hover
+					text-decoration none
+					background-color darken(kill_red, 10%)
 			
 .drawer-list-inner,
 .event-container
@@ -109,6 +121,9 @@ body[data-section="articles"]
 
 .option-container
 	margin 12px 0 12px
+	&.disabled
+		pointer-events none
+		opacity .5
 	.tag-list
 		display none
 

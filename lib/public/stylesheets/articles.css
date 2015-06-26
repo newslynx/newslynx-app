@@ -437,15 +437,6 @@ input {
 .main-sections .option-container[data-type="date-range"] input[data-dir="before"] {
   float: right;
 }
-.main-sections .option-container[data-type="date-range"] .clear-date-range {
-  display: inline-block;
-  text-transform: none;
-  visibility: hidden;
-}
-.main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
 .main-sections .section-img {
   float: right;
   padding-top: 2px;
@@ -1137,25 +1128,43 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .section-options .option-title span {
   text-transform: none;
+  width: 38px;
+  text-align: center;
+  margin-top: -3px;
+}
+.section-options .option-title span.count {
+  color: #fff;
+  font-size: 1.1em;
+  margin-left: 2px;
+}
+.section-options .option-title span.show-hide,
+.section-options .option-title span.clear {
+  float: right;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   padding: 1px 3px;
-  border: 1px solid #fff;
-  width: 38px;
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  margin-top: -3px;
-  float: right;
 }
-.section-options .option-title span[data-open="true"] {
+.section-options .option-title span.show-hide:hover,
+.section-options .option-title span.clear:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.section-options .option-title span.show-hide {
+  border: 1px solid #fff;
+}
+.section-options .option-title span.show-hide[data-open="true"] {
   border-color: transparent;
   color: #000;
   background-color: #fff;
 }
-.section-options .option-title span:hover {
-  cursor: pointer;
-  text-decoration: underline;
+.section-options .option-title span.clear {
+  visibility: hidden;
+  background-color: #d50000;
+  width: 20px;
+}
+.section-options .option-title span.clear:hover {
+  text-decoration: none;
+  background-color: #c00000;
 }
 .drawer-list-inner .tag-list-title,
 .event-container .tag-list-title {
@@ -1234,6 +1243,12 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .option-container {
   margin: 12px 0 12px;
+}
+.option-container.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
 }
 .option-container .tag-list {
   display: none;
@@ -1960,6 +1975,7 @@ body[data-section="articles"] .division-switcher li.active {
   font-size: 0.9em;
 }
 .header-el .comparison-figure .comparison-figure-operation {
+  float: left;
   text-transform: uppercase;
 }
 .header-el .comparison-figure .comparison-figure-value {

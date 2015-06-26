@@ -23,14 +23,15 @@ mixin articles
 			input(type="text", name="article-title-searcher", placeholder="Search for...")#article-title-searcher
 		.option-container(data-type="date-range")#date-range-searcher
 			.option-title Date range 
-				span.clear-date-range(data-open="true") Clear
+				span.clear X
 			input(type="text" placeholder="After..." data-dir="after")
 			input(type="text" placeholder="Before..." data-dir="before")
 		.option-container(data-type="sort")#article-drawer-sorter
 			.option-title Sort by
 			select
 		.option-container(data-type="subject-tags")
-			.option-title Subject tags 
+			.option-title Subject tags —
+				span.count  
 				span.show-hide(data-open="false") Show
 			ul.tag-list
 				li.placeholder
@@ -39,7 +40,8 @@ mixin articles
 					a.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="impact-tags")
-			.option-title Impact tags 
+			.option-title Impact tags —
+				span.count 
 				span.show-hide(data-open="false") Show
 			ul.tag-list
 				li.placeholder
@@ -48,7 +50,8 @@ mixin articles
 					a.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="categories")
-			.option-title Impact categories 
+			.option-title Impact categories —
+				span.count 
 				span.show-hide(data-open="false") Show
 			ul.tag-list
 				li.placeholder
@@ -57,7 +60,8 @@ mixin articles
 					a.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="levels")
-			.option-title Impact levels 
+			.option-title Impact levels —
+				span.count 
 				span.show-hide(data-open="false") Show
 			ul.tag-list
 				li.placeholder
