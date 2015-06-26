@@ -1256,6 +1256,50 @@ body[data-section="articles"] .division-switcher li.active {
 .option-container[data-type="search"] button {
   width: 100%;
 }
+.option-container[data-type="sort"] {
+  margin-bottom: 20px;
+}
+.option-container[data-type="sort"] select {
+  width: 84%;
+}
+.option-container[data-type="sort"] .sort-direction,
+.option-container[data-type="sort"] select {
+  display: inline-block;
+  vertical-align: top;
+}
+.option-container[data-type="sort"] .sort-direction {
+  color: #fff;
+  width: 13%;
+  margin-left: 5px;
+  height: 21px;
+  position: relative;
+}
+.option-container[data-type="sort"] .sort-direction:after {
+  font-size: 1.3em;
+  position: relative;
+  top: 1px;
+  right: -3px;
+  width: 85%;
+  text-align: center;
+  border: 1px solid #fff;
+  display: inline-block;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.option-container[data-type="sort"] .sort-direction[data-dir="-"]:after {
+  content: '↓';
+}
+.option-container[data-type="sort"] .sort-direction[data-dir=""]:after {
+  content: '↑';
+  background-color: #fff;
+  color: #000;
+}
+.option-container[data-type="sort"] .sort-direction:hover {
+  cursor: pointer;
+}
+.option-container[data-type="sort"] .sort-direction:hover:after {
+  text-decoration: underline;
+}
 #drawer[data-mode="compare"] .inputs-container,
 #drawer[data-mode="detail"] .inputs-container,
 #drawer[data-mode="compare"] .drawer-list-inner,

@@ -130,6 +130,40 @@ body[data-section="articles"]
 .option-container[data-type="search"]
 	button
 		width 100%
+.option-container[data-type="sort"]
+	margin-bottom 20px
+	select
+		width 84%
+	.sort-direction,
+	select
+		display inline-block
+		vertical-align top
+	.sort-direction
+		color #fff
+		width 13%
+		margin-left 5px
+		height 21px
+		position relative
+		&:after
+			font-size 1.3em
+			position relative
+			top 1px
+			right -3px
+			width 85%
+			text-align center
+			border 1px solid #fff
+			display inline-block
+			border-radius 2px
+		&[data-dir="-"]:after
+			content '↓'
+		&[data-dir=""]:after
+			content '↑'
+			background-color #fff
+			color #000
+		&:hover
+			cursor pointer
+			&:after
+				text-decoration underline			
 		
 
 #drawer[data-mode="compare"],
