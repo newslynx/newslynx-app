@@ -437,15 +437,6 @@ input {
 .main-sections .option-container[data-type="date-range"] input[data-dir="before"] {
   float: right;
 }
-.main-sections .option-container[data-type="date-range"] .clear-date-range {
-  display: inline-block;
-  text-transform: none;
-  visibility: hidden;
-}
-.main-sections .option-container[data-type="date-range"] .clear-date-range span:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
 .main-sections .section-img {
   float: right;
   padding-top: 2px;
