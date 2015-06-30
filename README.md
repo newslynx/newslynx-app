@@ -7,7 +7,7 @@ For now, please read [the report](http://towcenter.org/research/the-newslynx-imp
 
 ## Installation
 
-Install dependencies with `npm install`
+Install dependencies with `npm install`. You'll also need Redis for sessioning, which you can [brew](http://brew.sh) install with `brew install redis`. Start Redis by typing `redis-server` on the command line.
 
 ### Development mode
 
@@ -51,6 +51,8 @@ This documentation will explain the architecture and design patterns in use in t
 ### Express App architecture 
 
 #### Authentication
+
+#### Sessioning with Redis
 
 #### Concatenating and Uglifying JavaScript
 
