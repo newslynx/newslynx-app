@@ -1971,7 +1971,7 @@ body[data-section="articles"] .division-switcher li.active {
 .cell.metric:not(.header-el) {
   vertical-align: bottom;
   position: relative;
-  top: -2px;
+  top: 2px;
 }
 .cell {
   width: 8.5%;
@@ -2133,8 +2133,11 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .bar {
   width: 100%;
-  margin-top: 1px;
+  padding-top: 1px;
   height: 4px;
+}
+.bar-container[data-group="impact_tags"] .bar {
+  height: 3px;
 }
 /* end main article styles */
 /* end comparison grid */
