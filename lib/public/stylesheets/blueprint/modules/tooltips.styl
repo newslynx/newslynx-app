@@ -18,6 +18,7 @@
 	pointer-events none
 
 tooltip_y_offset = 4px
+tooltip_y_offset_low = tooltip_y_offset + 10
 
 .tooltipped:before
 	z-index 9998
@@ -48,6 +49,13 @@ tooltip_y_offset = 4px
 	background rgba(0,0,0,0.8)
 	border-radius 3px
 	-webkit-font-smoothing subpixel-antialiased
+	
+.tooltipped[data-tooltip-vertical="low"]
+	&:before
+		bottom -1*tooltip_y_offset_low
+	&:after
+		margin-top tooltip_y_offset_low
+
 .tooltipped[data-tooltip-align="left"]:after
 	transform translateX(0%)
 	left 0

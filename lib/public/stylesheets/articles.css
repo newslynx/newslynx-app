@@ -725,6 +725,12 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   border-radius: 3px;
   -webkit-font-smoothing: subpixel-antialiased;
 }
+.tooltipped[data-tooltip-vertical="low"]:before {
+  bottom: -14px;
+}
+.tooltipped[data-tooltip-vertical="low"]:after {
+  margin-top: 14px;
+}
 .tooltipped[data-tooltip-align="left"]:after {
   -webkit-transform: translateX(0%);
   -moz-transform: translateX(0%);

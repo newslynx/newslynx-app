@@ -224,7 +224,7 @@ block templates
 					<% subject_tags_grouped.forEach(function(subjectTagColumn){ %>
 					.bar-column
 						<% subjectTagColumn.forEach(function(subjectTag){ %>
-						.bar.tooltipped(style!="background-color: <%= subjectTag.color %>;", aria-label!="<%= subjectTag.name %>")
+						.bar.tooltipped(style!="background-color: <%= subjectTag.color %>;", aria-label!="<%= subjectTag.name %>", data-tooltip-align="right", data-tooltip-vertical="low")
 						<% }); %>
 					<% }); %>
 
