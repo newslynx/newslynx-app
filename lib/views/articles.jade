@@ -233,7 +233,6 @@ block templates
 					<% impact_tags_grouped.forEach(function(impactTagColumn){ %>
 					.bar-column
 						<% impactTagColumn.values.forEach(function(impactTagGroup){ %>
-						<%= console.log(impactTagGroup) %>
 						.bar.tooltipped(style!="background-color: <%= impactTagGroup.values.color %>;", aria-label!="<%= impactTagGroup.values.count %> <%= impactTagGroup.values.name %>: <%= toTitleCase(impactTagGroup.values.level) %> <%= impactTagGroup.values.category %>", data-tooltip-align="right", data-tooltip-vertical="low")
 						<% }); %>
 					<% }); %>
