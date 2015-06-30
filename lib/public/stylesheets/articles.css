@@ -698,7 +698,7 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   content: "";
   border: 5px solid transparent;
   top: auto;
-  bottom: -10px;
+  bottom: -4px;
   margin-right: -5px;
   border-bottom-color: rgba(0,0,0,0.8);
 }
@@ -709,7 +709,7 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   -o-transform: translateX(50%);
   -ms-transform: translateX(50%);
   transform: translateX(50%);
-  margin-top: 10px;
+  margin-top: 4px;
   top: 100%;
   padding: 1px 8px 2px 8px;
   font-size: 12px;
@@ -2020,10 +2020,10 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .header-el .comparison-figure .comparison-figure-operation {
   float: left;
-  text-transform: uppercase;
 }
 .header-el .comparison-figure .comparison-figure-value {
   float: right;
+  font-weight: bold;
 }
 .header-el:hover {
   cursor: pointer;

@@ -194,48 +194,16 @@ block templates
 	script(type="text/jst")#article-grid-container-templ
 		#compare-grid
 			.header
-				//- .header-meta-container
-				//- 	.header-meta Compared to  
-				//- 		span.comparison-figure-label.comparison-figure-measurement averages 
-				//- 		span of 
-				//- 		span.comparison-figure-label.comparison-figure-category all articles
-				//- 		span .
 				#header-dimensions-container
 					<% selects.forEach(function(select){ %>
 					.header-el.cell(class!="<%= select.kind %>", data-metric!="<%= select.name %>")
-						.name <%= prettyMetricName(select.name) %>
+						.name <%= prettyMetricName(select.name, 'super-pretty') %>
 						<% if (select.kind == 'metric') {%>
 						span.comparison-figure.tooltipped(aria-label="") 
 						<% } %>
 					<% }); %>
-					//- .header-el.cell.wide(data-metric="title")
-					//- 	.name Headline
-					//- .header-el.cell.date(data-metric="created")
-					//- 	.name Date
-					//- .header-el.cell.gfx(data-metric="twitter")
-					//- 	.name Twitter
-					//- 	span.comparison-figure.tooltipped(aria-label="") 
-					//- .header-el.cell.gfx(data-metric="facebook")
-					//- 	.name Facebook
-					//- 	span.comparison-figure.tooltipped(aria-label="") 
-					//- .header-el.cell.gfx(data-metric="pageviews").active
-					//- 	.name Views
-					//- 	span.comparison-figure.tooltipped(aria-label="") 
-					//- .header-el.cell.gfx(data-metric="avg_time_on_page")
-					//- 	.name Time/page
-					//- 	span.comparison-figure.tooltipped(aria-label="") 
-					//- .header-el.cell.gfx(data-metric="per_external")
-					//- 	.name Extern.
-					//- 	span.comparison-figure.tooltipped(aria-label="") 
-					//- .header-el.cell.multi(data-metric="internal")
-					//- 	.name internal
-					//- .header-el.cell.bars(data-metric="subject")
-					//- 	.name Subj. tags
-					//- .header-el.cell.bars(data-metric="impact")
-					//- 	.name Imp. tags
 			.rows
 
-	//-  TODO, sort by % over comparison
 	script(type="text/jst")#article-summary-row-templ
 		.article-detail-row-container
 			.destroy &times;
@@ -246,11 +214,15 @@ block templates
 			<% } else if (select.kind == 'date'){ %>
 			.cell.date.single(data-created!="<%= created %>") <%= conciseDate(created) %>
 			<% } else if (select.kind == 'metric'){ %>
-			.cell.metric.tooltipped(aria-label!="<%= prettyMetric(metrics[select.name], select.aggregation) + ' ' + select.display_name %>", data-value!="<%= metrics[select.name] %>")
+			.cell.metric.tooltipped(aria-label!="<%= prettyMetricValue(metrics[select.name], select.aggregation) + ' ' + select.display_name %>", data-value!="<%= metrics[select.name] %>")
 				.bullet-container
 					.bullet(style!="width: <%= calcSize(select.name, metrics[select.name], comparisonMax, comparisonGroup) %>;")
 					.marker(style!="left: <%= calcSize(select.name, comparisonOperation, comparisonMax, comparisonGroup) %>;", data-metric-name!="<%= select.name %>")
-			<% }  %>
+			<% } else if (select.kind == 'bars') { %>
+			.cell.bars
+				.bar-container(data-group!="<%= select.name %>")
+
+			<% } %>
 			<% }); %>
 
 block css
