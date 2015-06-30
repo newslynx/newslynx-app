@@ -846,13 +846,15 @@ bullet_height = 11px
 .bullet
 	background-color select_blue
 	height bullet_height
-.marker,.marker-container
+.marker,
+.marker-container
 	position absolute !important
 	top 0px
 	height 100%
 .marker
 	width 2px
 	background-color rgba(124, 124, 124, .5)
+	transition left 450ms cubic-bezier(.19, 1, .22, 1)
 .viz-container
 	.marker-container
 		padding 0 10px
