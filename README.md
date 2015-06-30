@@ -1,19 +1,35 @@
 NewsLynx App
 ============
 
-V2 of NewsLynx's Web App.  This is still a WIP and we should be officially open-sourcing the codebase in late June/July 2015
+V2 of NewsLynx's Web App.  This is still a WIP and we should be officially open-sourcing the codebase in late July 2015
 
 For now, please read [the report](http://towcenter.org/research/the-newslynx-impact-tracker-produced-these-key-ideas/) we published for the [TowCenter](http://towcenter.org) on our prototype.
 
-#### Pro
+## Installation
 
-If not already installed:
+Install dependencies with `npm install`
 
-`npm install forever -g`
+### Development mode
+
+Install `nodemon` and `forever` globally if not already installed.
 
 ````bash
-npm install
-npm start
+npm install forever -g
+npm install nodemon -g
+````
+
+Run with 
+
+````bash
+npm run debug
+````
+
+### Production mode
+
+Install `forever` globally if not already installed.
+
+````bash
+npm install forever -g
 ````
 
 #### Debug mode
@@ -22,11 +38,49 @@ If not already installed:
 
 `npm install nodemon -g`
 
-````
-npm run debug
+````bash
+npm start
 ````
 
 Then visit: <http://0.0.0.0:3000>
+
+## Documentation
+
+This documentation will explain the architecture and design patterns in use in the Express app and each section's Backbone app.
+
+### Express App architecture 
+
+#### Authentication
+
+#### Concatenating and Uglifying JavaScript
+
+#### Transforming data
+
+### Front-end architecture
+
+#### How section-specific JavaScript is loaded
+
+#### How section-specific CSS is loaded
+
+### Settings
+
+#### Change detection
+
+#### Modal windows
+
+### Approval River
+
+#### Form construction
+
+#### Form validation
+
+### Articles
+
+#### Comparison view
+
+##### Isotope
+
+#### Detail view
 
 #### Some useful things
 
