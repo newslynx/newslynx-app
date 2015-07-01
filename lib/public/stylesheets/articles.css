@@ -669,7 +669,13 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   font-size: 1.1em;
   position: relative;
 }
-.tags .tag:hover {
+.tags .tag.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.tags .tag:not(.disabled):hover {
   cursor: pointer;
 }
 .tooltipped {
