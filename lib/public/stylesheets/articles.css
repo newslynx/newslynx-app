@@ -1878,17 +1878,16 @@ body[data-section="articles"] .division-switcher li.active {
   }
 }
 #subject-tag-settings li {
-  font-size: 1.2em;
+  margin-bottom: 5px;
   display: inline-block;
 }
 #subject-tag-settings li label:hover,
 #subject-tag-settings li input:hover {
   cursor: pointer !important;
 }
-#subject-tag-settings li .tag-text {
-  padding: 1px 5px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+#subject-tag-settings li input {
+  margin: 0 5px 0 0;
+  padding: 0;
 }
 .detail-section {
   overflow: auto;

@@ -78,7 +78,7 @@ block templates
 
 	script(type="text/jst")#article-detail-account-subject-tag-templ
 		label
-			input(type="checkbox", checked!="<%= boolToStr(selected, 'checked') %>")
+			| <input type="checkbox" <%= boolToStr(checked, 'checked') %> ></input>
 			span.tag-text <%= toTitleCase(name) %>
 
 	script(type="text/jst")#article-detail-templ
@@ -110,7 +110,7 @@ block templates
 							.modal-overlay.modal-close
 							.modal-inner
 								.modal-title Edit subject tags
-								ul#subject-tag-settings
+								ul#subject-tag-settings.tags
 									.description
 										| You don't have any subject tags yet! Create some on the 
 										a(href="/settings") settings
