@@ -72,6 +72,7 @@ block templates
 				//- To be filled in by the JavaScript so that each tag has a view
 			.edit-event-container
 				button.modal-toggle.mini Edit
+			.modal-outer
 
 	script(type="text/jst")#article-detail-tag-templ
 		span.tag-text <%= toTitleCase(name) %>
@@ -262,8 +263,9 @@ block scripts
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 	script(src="javascripts/thirdparty/pikaday.js")
 	script(src="javascripts/thirdparty/jquery.shiftclick.js")
-	script(src="//platform.twitter.com/widgets.js" charset="utf-8")
+	script(src="//platform.twitter.com/widgets.js")
 	script(src="javascripts/thirdparty/Autolinker.min.js")
+	script(src="javascripts/thirdparty/jquery.serializejson.min.js")
 	script(src="javascripts/thirdparty/zip.js")
 	script(src="javascripts/thirdparty/ykk.js")
 

@@ -238,6 +238,7 @@ input.destroy:active {
   border-color: #9f312c;
 }
 .disabled button,
+.disabled input,
 button.disabled,
 input[type="button"].disabled {
   opacity: 0.4;
@@ -669,7 +670,13 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
   font-size: 1.1em;
   position: relative;
 }
-.tags .tag:hover {
+.tags .tag.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.tags .tag:not(.disabled):hover {
   cursor: pointer;
 }
 .service-icon[data-service="google"] {
@@ -1028,7 +1035,7 @@ input[name="assignees"] {
   content: "";
   border: 5px solid transparent;
   top: auto;
-  bottom: -10px;
+  bottom: -4px;
   margin-right: -5px;
   border-bottom-color: rgba(0,0,0,0.8);
 }
@@ -1039,7 +1046,7 @@ input[name="assignees"] {
   -o-transform: translateX(50%);
   -ms-transform: translateX(50%);
   transform: translateX(50%);
-  margin-top: 10px;
+  margin-top: 4px;
   top: 100%;
   padding: 1px 8px 2px 8px;
   font-size: 12px;
@@ -1054,6 +1061,12 @@ input[name="assignees"] {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   -webkit-font-smoothing: subpixel-antialiased;
+}
+.tooltipped[data-tooltip-vertical="low"]:before {
+  bottom: -14px;
+}
+.tooltipped[data-tooltip-vertical="low"]:after {
+  margin-top: 14px;
 }
 .tooltipped[data-tooltip-align="left"]:after {
   -webkit-transform: translateX(0%);

@@ -238,6 +238,7 @@ input.destroy:active {
   border-color: #9f312c;
 }
 .disabled button,
+.disabled input,
 button.disabled,
 input[type="button"].disabled {
   opacity: 0.4;
@@ -1785,7 +1786,7 @@ body[data-section="articles"] .division-switcher li.active {
   cursor: default;
 }
 .article-detail-container .article-info-container {
-  margin: 2px 0;
+  margin: 1px 0;
 }
 .article-detail-container .article-info-title {
   position: relative;
@@ -1805,6 +1806,7 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .article-detail-container .tag {
   margin-right: 5px;
+  margin-top: 2px;
 }
 .article-detail-container .author:not(.empty):first-child {
   margin-left: -2px;
