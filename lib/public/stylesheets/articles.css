@@ -855,6 +855,7 @@ input[name="assignees"] {
   white-space: nowrap;
   overflow: hidden;
   vertical-align: bottom;
+  font-weight: normal;
 }
 .remove-assignee.labelled:after {
   padding-left: 5px;
@@ -923,6 +924,20 @@ input[name="assignees"] {
 }
 .article-assignee {
   position: relative;
+  background-color: #88cfff;
+  width: 88.5%;
+  padding: 0 5px;
+  height: 24px;
+  border: 1px solid #26a8ff;
+  line-height: 19px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  -webkit-transform: translateX(28px);
+  -moz-transform: translateX(28px);
+  -o-transform: translateX(28px);
+  -ms-transform: translateX(28px);
+  transform: translateX(28px);
 }
 .article-assignee input {
   width: 93%;
@@ -930,8 +945,10 @@ input[name="assignees"] {
 .article-assignee .remove-assignee {
   padding-right: 5px;
   font-size: 1.5em;
-  color: #ccc;
+  color: #d50000;
   white-space: nowrap;
+  line-height: 20px;
+  font-weight: bold;
 }
 .article-assignee:hover {
   cursor: pointer;
@@ -1495,6 +1512,10 @@ body[data-section="articles"] .division-switcher li.active {
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .article-detail-navigation li {
   padding: 0 5px;
