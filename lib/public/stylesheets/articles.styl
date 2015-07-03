@@ -126,9 +126,6 @@ body[data-section="articles"]
 
 .option-container
 	margin 12px 0 12px
-	&.disabled
-		pointer-events none
-		opacity .5
 	.tag-list
 		display none
 
@@ -238,6 +235,8 @@ filter_opts_width = 175px
 			font-weight normal
 		.option-title
 			border-bottom-color #d8d5d5
+			span.count
+				color #535353
 	.section-options.stuck
 		position fixed
 		top 5px
@@ -481,8 +480,6 @@ filter_opts_width = 175px
 		.toggle-all:not(.disabled):hover
 			cursor pointer
 			color #000
-		.toggle-all.disabled
-			opacity .5
 /* end drawer */
 
 
