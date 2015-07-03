@@ -58,3 +58,4 @@ node_modules
 # App
 lib/public/javascripts/main.bundled.js
 lib/public/javascripts/main.bundled.js.map
+*.css
