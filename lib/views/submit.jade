@@ -1,13 +1,27 @@
-extends layout
+doctype html
+html
+	head
+		title NewsLynx | 
+			= info.title
+		link(rel='stylesheet', href='/stylesheets/thirdparty/pikaday.css')
+		link(rel='stylesheet', href='/stylesheets/octicon/octicons.css')
+		link(rel='stylesheet', href='/stylesheets/#{info.page}.css')
+	body(data-section="#{info.page}")
+		#main-wrapper
+			#form-container
 
-block drawer
-	.division-title Submit
-	.division-description 
-		p Use this form to submit an impactful event.
-		p It will be added once approved your local impcat wrangler.
-	.merlynne-img
-		img(src="images/merlynne/wave.svg")
+	script(id="page-data").
+		var pageData 	=!{JSON.stringify(info)};
 
-block content
-	form
-		p form content goes here
+	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	script(src="javascripts/thirdparty/underscore-min.js")
+	script(src="javascripts/thirdparty/backbone-min.js")
+	script(src="javascripts/thirdparty/typeahead.min.js")
+	script(src="javascripts/thirdparty/pourover.js")
+	script(src="javascripts/thirdparty/moment.js")
+	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
+	script(src="javascripts/thirdparty/pikaday.js")
+	script(src="javascripts/thirdparty/jquery.serializejson.min.js")
+
+	//- Put it all together
+	script(src="javascripts/main.bundled.js")
