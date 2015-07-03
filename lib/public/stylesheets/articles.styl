@@ -18,6 +18,10 @@ body[data-section="articles"]
 #add-article > button
 	width 100%
 	margin-bottom 10px
+	
+.load-more
+	display table
+	margin 10px auto 20px auto
 
 .section-options
 	input[type="search"]
@@ -263,6 +267,11 @@ filter_opts_width = 175px
 	padding-left 20px
 	min-height 700px // Give this a min-height to avoid jumping screen on a restrictive filter set
 	float right
+	.load-more
+		width 55%
+		&.loading-spinner
+			background-position 67% center !important
+
 .event-container
 	display inline-block
 	vertical-align top
@@ -399,8 +408,6 @@ filter_opts_width = 175px
 #drawer[data-mode="detail"]
 	padding-bottom 25px
 	.load-more
-		display table
-		margin 10px auto 20px auto
 		width 90%
 	.drawer-pointer
 		padding 10px 10px 10px 8px
