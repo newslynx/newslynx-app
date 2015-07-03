@@ -14,6 +14,8 @@ body[data-section="articles"]
 		background-color articles
 		text-shadow 0 0px 12px #535353
 
+// #content[data-loading="true"]
+// 	overflow hidden
 
 #add-article > button
 	width 100%
@@ -241,8 +243,22 @@ filter_opts_width = 175px
 		top 5px
 		left drawer_width + leftrail_width + padding_horitz
 	&[data-loading="true"]
-		#events-gallery-container
+		.load-more
 			display none
+		#events-filters:after
+			display block
+			position absolute
+			top 50%
+			right 0px
+			content 'Loading...'
+			text-align center
+			width 100%
+			font-size 1.5em
+			background-image url('../images/gifs/arrows-transparent.gif')
+			background-repeat no-repeat
+			background-position 82% 99%
+			transform translate(215%, -25%)
+
 		
 
 // Maybe indent needs differing here
@@ -315,6 +331,7 @@ filter_opts_width = 175px
 	margin-bottom 10px
 	
 #events-filters.section-options 
+	position relative
 	.option-title span
 		border-color #000
 		&[data-open="true"]
