@@ -1,7 +1,6 @@
 {
-  "name": "newslynx-app",
+  "name": "newslynx",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "start": "forever ./bin/www",
     "debug": "nodemon ./bin/www -e jade,js,styl,json --ignore lib/public/javascripts/main.bundled.js"
