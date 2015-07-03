@@ -8,7 +8,16 @@ html
 		link(rel='stylesheet', href='/stylesheets/#{info.page}.css')
 	body(data-section="#{info.page}")
 		#main-wrapper
+			#header-toolbar
+				.content-wrapper
+					a#logo(href="/")
+						img(src="/images/merlynne-white.png")
+						h1.page-title NewsLynx
 			#form-container
+				.modal-outer
+					.modal-inner
+						.modal-title Add an event for approval
+						form
 
 	script(id="page-data").
 		var pageData 	=!{JSON.stringify(info)};

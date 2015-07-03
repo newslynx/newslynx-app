@@ -1,9 +1,38 @@
 @require 'blueprint'
+@require 'blueprint/modules/header-toolbar.styl'
 @require 'blueprint/modules/forms-modals.styl'
 
 
-#content
-	padding 25px 35px 25px 35px
-	
-#drawer
-	background-color login
+body
+	background-color the_beige
+
+#form-container
+	.modal-outer
+		display block
+	.modal-inner
+		background-color #fff
+		border-radius 3px
+		border 2px solid #ccc
+		// padding 10px
+		// width 720px
+		margin 15px auto 0 auto
+		min-height 200px
+		box-shadow 0 0 12px #E6DFB9
+		&:hover
+			cursor default
+
+#logo
+	color #ccc
+	img
+		height 100%
+	img,
+	h1.page-title
+		display inline-block
+		vertical-align middle
+		margin-right 5px
+		font-weight 200
+	h1.page-title
+		transform translateY(2px)
+		&:hover
+			color #fff
+			cursor pointer

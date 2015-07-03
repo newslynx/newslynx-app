@@ -1,4 +1,8 @@
 {
+	"status": {
+		"input_type": "hidden",
+		"required": true
+	},
 	"created": {
 		"input_type": "datepicker",
 		"required": true

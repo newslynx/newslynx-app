@@ -8,7 +8,7 @@ block drawer
 			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
 
 block content
-	if info.apikey
+	if info.authed
 		.msg You have successfully logged in!
 	else
 		form(action='/auth/_VERSION/login', method='POST')#login
