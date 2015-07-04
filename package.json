@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "start": "bash bin/standalone",
-    "app": "gulp && forever ./bin/www",
+    "app": "gulp && forever ./bin/www run",
     "dev": "bash bin/dev",
     "dev-files": "gulp watch-files",
-    "dev-server": "nodemon -e jade,json ./bin/www"
+    "dev-server": "nodemon -e jade,json ./bin/www run"
   },
   "dependencies": {
     "async": "~0.9.0",
