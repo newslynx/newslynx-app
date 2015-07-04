@@ -39,10 +39,10 @@ gulp.task('compile-stylus', function() {
 gulp.task('compile-js', function() {
   return gulp.src(paths.js)
     .pipe(plumber())
-    .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(concat('main.bundled.js'))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
+    // .pipe(uglify())
+    // .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./lib/public/javascripts/'));
 });
 
