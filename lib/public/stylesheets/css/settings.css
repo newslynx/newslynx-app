@@ -312,7 +312,7 @@ input {
   margin-bottom: 5px;
 }
 .loading-spinner {
-  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 77px center;
   min-height: 2em;

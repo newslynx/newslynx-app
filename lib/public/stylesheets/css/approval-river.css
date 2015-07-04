@@ -312,7 +312,7 @@ input {
   margin-bottom: 5px;
 }
 .loading-spinner {
-  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 77px center;
   min-height: 2em;
@@ -1153,7 +1153,7 @@ input[name="assignees"] {
   top: 75px;
   width: 398px;
   height: 335px;
-  background-image: url("../images/gifs/MerlynneMagicPotions.gif") !important;
+  background-image: url("../../images/gifs/MerlynneMagicPotions.gif") !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   border: 1px solid #ccc;
@@ -1375,7 +1375,6 @@ body[data-section="approval-river"] .division-switcher li.active {
 }
 .approval-child .toolbar {
   position: relative;
-  margin-bottom: 8px;
 }
 .approval-child .toolbar .service-icon {
   position: relative !important;

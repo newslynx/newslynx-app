@@ -99,22 +99,22 @@ block templates
 					span.service-icon(data-service!="<%= alertSourceIdToService(source_id) %>")
 					span.origin-recipe <%= displayRecipeParams(recipe_id) %>
 					.timestamp <%= prettyDatestamp(created) %>
-				.title <%= name %>
-				<% if (authors.length) { %>
-				<% var author_prefix = "", author_suffix = ""; %>
-				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
-				<% author_prefix = "@"; %>
-				<% } %>
-				<% if (alertSourceIdToService(source_id) == 'twitter') { %>
-				<% author_suffix = ' &mdash; ' + addCommas(meta.followers) + ' followers'; %>
-				<% } %>
-				<% print('<div class="author">'+'<strong>'+ autolink((author_prefix+authors[0])) +'</strong>'+ author_suffix+'</div>') %>
-				<% } %>
+				//- <% if (authors.length) { %>
+				//- <% var author_prefix = "", author_suffix = ""; %>
+				//- <% if (alertSourceIdToService(source_id) == 'twitter') { %>
+				//- <% author_prefix = "@"; %>
+				//- <% } %>
+				//- <% if (alertSourceIdToService(source_id) == 'twitter') { %>
+				//- <% author_suffix = ' &mdash; ' + addCommas(meta.followers) + ' followers'; %>
+				//- <% } %>
+				//- <% print('<div class="author">'+'<strong>'+ autolink((author_prefix+authors[0])) +'</strong>'+ author_suffix+'</div>') %>
+				//- <% } %>
 				<% var domain =  extractDomain(url) %>
 				<% if (domain != 'twitter.com' && domain != 'facebook.com' || domain != 'reddit.com') { %>
 				.domain <% print(domain) %>  
 				<% } %>
-				.description <%= autolink(meta.text || '') %>
+				.title <%= title %>
+				.description <%= autolink(description || '') %>
 				<% if (content_items.length) { %>
 				<% var list_markup = '<ul class="articles-mentioned">'; %>
 				<% var s = ''; %>
@@ -142,11 +142,17 @@ block bootstrap-data
 
 block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	//- For electron app bundling (https://github.com/atom/electron/issues/345)
+	script.
+		if (typeof module === "object" && typeof module.exports === "object") {$ = jQuery = module.exports;}
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/moment.js")
+	//- For electron app bundling (https://github.com/atom/electron/issues/345)
+	script.
+		if (typeof module === "object" && typeof module.exports === "object") {moment = module.exports;}
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 	script(src="javascripts/thirdparty/pikaday.js")
 	script(src="javascripts/thirdparty/typeahead.min.js")

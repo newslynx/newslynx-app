@@ -312,7 +312,7 @@ input {
   margin-bottom: 5px;
 }
 .loading-spinner {
-  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 77px center;
   min-height: 2em;
@@ -1389,7 +1389,7 @@ body[data-section="articles"] .division-switcher li.active {
   padding-top: 44%;
   display: block;
   font-size: 1.5em;
-  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 68% 99%;
   opacity: 1;
@@ -1441,7 +1441,7 @@ body[data-section="articles"] .division-switcher li.active {
   text-align: center;
   width: 100%;
   font-size: 1.5em;
-  background-image: url("../images/gifs/arrows-transparent.gif");
+  background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 82% 99%;
   -webkit-transform: translate(215%, -25%);
