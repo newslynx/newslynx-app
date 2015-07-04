@@ -18,11 +18,10 @@ npm install forever -g
 npm install nodemon -g
 ````
 
-Run with 
 
-````bash
-npm run debug
-````
+In a perfect world, you could run `npm run dev` and that would compile your Stylus, concatenate and minify your JavaScript and run your nodemon server, restarting it when changes are made. The first part works but currently nodemon doesn't quite like working with gulp.
+
+For now, watch changes to the files in one shell window wit `npm run dev-files` and the nodemon server with `npm run dev-server`.
 
 ### Production mode
 
