@@ -56,6 +56,6 @@ node_modules
 *.rdb
 
 # App
-lib/public/javascripts/main.bundled.js
-lib/public/javascripts/main.bundled.js.map
-*.css
+# lib/public/javascripts/main.bundled.js
+# lib/public/javascripts/main.bundled.js.map
+# *.css
