@@ -20,7 +20,7 @@ function launchServers(options){
 var launch_command = process.argv[2];
 if (launch_command === 'run'){
   launchServers();
-} else {
+} else if (launch_command){
   throw new Error('If you want to run the server from the command line, you must supply the `run` command: `./bin/www run`.\n')
 }
 
