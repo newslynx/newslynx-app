@@ -3,9 +3,10 @@
   "description": "A platform for measuring the quantitative and qualitative impact of journalism.",
   "version": "0.0.1",
   "scripts": {
-    "start": "gulp && forever ./bin/www",
-    "dev": "gulp dev",
-    "dev-files": "gulp files",
+    "start": "bash bin/standalone",
+    "app": "gulp && forever ./bin/www",
+    "dev": "bash bin/dev",
+    "dev-files": "gulp watch-files",
     "dev-server": "nodemon -e jade,json ./bin/www"
   },
   "dependencies": {

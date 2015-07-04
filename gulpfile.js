@@ -5,7 +5,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-var nodemon = require('gulp-nodemon');
+// var nodemon = require('gulp-nodemon');
 
 var paths = {
   css: {
@@ -28,11 +28,10 @@ var paths = {
 };
 
 gulp.task('compile-stylus', function() {
-  // Stylus has an awkward and perplexing 'include css' option
   gulp.src(paths.css.main)
     .pipe(plumber())
     .pipe(stylus({
-      use: nib(),
+      use: nib()
     }))
     .pipe(gulp.dest('lib/public/stylesheets/css/'));
 });
@@ -52,18 +51,18 @@ gulp.task('watch', function() {
   gulp.watch(paths.js, ['compile-js']);
 });
 
-gulp.task('demon', function () {
-  nodemon({
-    script: './bin/www',
-    ext: 'jade json'
-  })
-    .on('start', ['default', 'watch'])
-    .on('change', ['watch'])
-    .on('restart', function () {
-      console.log('restarted!');
-    });
-});
+// gulp.task('demon', function () {
+//   nodemon({
+//     script: './bin/www',
+//     ext: 'jade json'
+//   })
+//     .on('start', ['default', 'watch'])
+//     .on('change', ['watch'])
+//     .on('restart', function () {
+//       console.log('restarted!');
+//     });
+// });
 
-gulp.task('default', ['compile-stylus', 'compile-js']);
-gulp.task('files', ['watch', 'compile-stylus', 'compile-js']);
-gulp.task('dev', ['demon']);
+gulp.task('default', ['compile-stylus', 'compile-js']); // Simply compile
+gulp.task('watch-files',   ['watch', 'compile-stylus', 'compile-js']); // Watch files for changes
+// gulp.task('dev', ['demon']);

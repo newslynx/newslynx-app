@@ -9,39 +9,30 @@ For now, please read [the report](http://towcenter.org/research/the-newslynx-imp
 
 Install dependencies with `npm install`. You'll also need Redis for sessioning, which you can [brew](http://brew.sh) install with `brew install redis`. Start Redis by typing `redis-server` on the command line.
 
-### Development mode
-
-Install `nodemon` and `forever` globally if not already installed.
+Install `nodemon` and `forever` globally if not already installed. Nodemon isn't used in production but it's good to have to cover all scenarios below
 
 ````bash
 npm install forever -g
 npm install nodemon -g
 ````
 
-
-In a perfect world, you could run `npm run dev` and that would compile your Stylus, concatenate and minify your JavaScript and run your nodemon server, restarting it when changes are made. The first part works but currently nodemon doesn't quite like working with gulp.
-
-For now, watch changes to the files in one shell window wit `npm run dev-files` and the nodemon server with `npm run dev-server`.
-
 ### Production mode
 
-Install `forever` globally if not already installed.
-
-````bash
-npm install forever -g
-````
-
-#### Debug mode
-
-If not already installed:
-
-`npm install nodemon -g`
+Run with the following, which will run Redis in the background, compile your CSS and JS and run the server with forever.
 
 ````bash
 npm start
 ````
 
 Then visit: <http://0.0.0.0:3000>
+
+#### Other npm commands (production scenarios and development)
+
+* `npm run app` — Compile CSS + JS and run the app with forever. You will need to be running a redis server elsewhere. Use this scenario **in production** if you are running newslynx-core on the same box since that will handle running redis.
+* `npm run dev` — Compile CSS + JS and watch for changes, run redis and run the server with nodemon, which will restart the server when you change jade and json files or the express app. Use this scenario when **developing locally**.
+* `npm run dev-files` — Compile CSS + JS and watch for changes. Does no run the app. Use this scenario when **developing locally** in conjunction with the following command so you can see the output in two shell windows.
+* `npm run dev-server` — Runs the server with nodemon and the same restart policy as above. Use in conjunction when **developing locally** with `npm run dev-files`.
+
 
 ## Documentation
 

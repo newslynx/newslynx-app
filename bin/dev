@@ -1,0 +1,3 @@
+redis-server &
+nodemon -e jade.json ./bin/www &
+gulp watch-files
