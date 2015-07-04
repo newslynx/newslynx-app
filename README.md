@@ -9,7 +9,7 @@ For now, please read [the report](http://towcenter.org/research/the-newslynx-imp
 
 Install dependencies with `npm install`. You'll also need Redis for sessioning, which you can [brew](http://brew.sh) install with `brew install redis`. Start Redis by typing `redis-server` on the command line.
 
-Install `nodemon` and `forever` globally if not already installed. Nodemon isn't used in production but it's good to have to cover all scenarios below
+Install `nodemon` and `forever` globally if not already installed. Nodemon isn't used in production but it's good to have to cover all scenarios below.
 
 ````bash
 npm install forever -g
