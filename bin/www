@@ -13,7 +13,10 @@ function launchServers(options){
   var http_port = app.get('http_port');
   var http_server = http.createServer(app).listen(http_port );
 
-  console.log('HTTP listening on port', http_port, '...');
+  console.log(chalk.green('##################################'));
+  console.log(chalk.green('# HTTP listening on port '+http_port+'... #'));
+  console.log(chalk.green('##################################'));
+
 }
 
 // This file can both be run via the command line if given the proper flag or as a nodemodule
