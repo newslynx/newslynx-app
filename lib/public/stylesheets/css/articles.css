@@ -1995,7 +1995,7 @@ body[data-section="articles"] .division-switcher li.active {
 .article-detail-row-container .destroy {
   width: 25px;
   position: absolute;
-  top: 1px;
+  top: 2px;
   left: -25px;
   height: 100%;
   font-size: 1.4em;
@@ -2010,7 +2010,7 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .article-detail-row-container .destroy:hover {
   cursor: pointer;
-  color: #000;
+  color: #d50000;
 }
 /* end article row */
 /* C O M P A R I S O N  G R I D */
