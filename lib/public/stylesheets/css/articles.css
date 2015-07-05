@@ -1102,6 +1102,8 @@ input[name="assignees"] {
 .recipe-form-container form input[type="text"],
 .modal-outer form input[type="number"],
 .recipe-form-container form input[type="number"],
+.modal-outer form input[type="password"],
+.recipe-form-container form input[type="password"],
 .modal-outer form textarea,
 .recipe-form-container form textarea {
   width: 100%;

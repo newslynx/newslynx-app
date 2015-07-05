@@ -1,25 +1,26 @@
-extends layout
-
-block drawer
-	.division-title Log-in
-	.division-description 
-		p Sign in here with your NewsLynx user credentials.
-		p If you'd like an account, email us at 
-			a(href="mailto:signup@newslynx.org") signup@newslynx.org.
-
-block content
-	if info.authed
-		.msg You have successfully logged in!
-	else
-		form(action='/auth/_VERSION/login', method='POST')#login
-			div
-				label Email: 
-				input(type='text', name='email')
-			div
-				label Password: 
-				input(type='password', name='password')
-			div
-				input(type='submit', value='Log In')
-			if info.msg
-				.msg
-					=info.msg
+doctype html
+html
+	head
+		title NewsLynx | 
+			= info.title
+		link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
+	body(data-section="#{info.page}")
+		#main-wrapper
+			#form-container
+				.modal-outer
+					.modal-inner
+						.modal-title Sign in to 
+							span NewsLynx!
+						if info.msg
+							.msg 
+								=info.msg
+						form(action='/auth/_VERSION/login', method='POST')#login
+							.form-row
+								//- .form-row-label-container
+								//- 	label Email: 
+								input(type='text', name='email' placeholder="you@domain.com")
+							.form-row
+								//- .form-row-label-container
+								//- 	label Password: 
+								input(type='password', name='password' placeholder="password")
+							input(type='submit', value='Log In')

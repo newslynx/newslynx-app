@@ -675,27 +675,427 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-pointer.center {
   text-align: center;
 }
-#drawer {
-  background-color: #d6ccdf;
+.service-icon[data-service="google"] {
+  background-image: url("/images/service-icons/logos-01.svg");
 }
-#content {
-  padding: 15px;
+.service-icon[data-service="twitter"] {
+  background-image: url("/images/service-icons/logos-02.svg");
 }
-label {
+.service-icon[data-service="reddit"] {
+  background-image: url("/images/service-icons/logos-03.svg");
+}
+.service-icon[data-service="facebook"] {
+  background-image: url("/images/service-icons/logos-04.svg");
+}
+.service-icon[data-service="rss"] {
+  background-image: url("/images/service-icons/logos-05.svg");
+}
+.service-icon[data-service="manual"] {
+  background-image: url("/images/service-icons/logos-06.svg");
+}
+.tags .tag {
   display: inline-block;
-  width: 70px;
+  padding: 2px 5px;
+  background-color: #ccc;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #666;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  font-size: 1.1em;
+  position: relative;
+}
+.tags .tag:not(.disabled):hover {
+  cursor: pointer;
+}
+body[data-modal="true"] #drawer,
+body[data-modal="true"] #content {
+  overflow-y: hidden;
+}
+.modal-outer {
+  display: none;
+}
+.modal-outer,
+.modal-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.modal-overlay {
+  background-color: rgba(0,0,0,0.7);
+  z-index: 9;
+}
+.modal-overlay:hover {
+  cursor: pointer;
+}
+.modal-inner {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  width: 550px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 14px #1a1a1a;
+  box-shadow: 0px 0px 14px #1a1a1a;
+  z-index: 99;
+}
+.modal-inner form {
+  margin-top: 10px;
+}
+.modal-inner .modal-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  border-bottom: 1px solid #777676;
+  margin-bottom: 5px;
+  color: #000;
+}
+.modal-inner .description:not(textarea) {
+  margin-bottom: 15px;
   font-size: 1.3em;
+  font-style: italic;
+}
+input[name="assignees"] {
+  pointer-events: none;
+  border: 0;
+  color: #fff;
+  display: none;
+}
+.labelled:after {
+  color: #000;
+  content: attr(aria-label);
+  font-size: 13px;
+  display: inline-block;
+  width: 266px;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+  font-weight: normal;
+}
+.remove-assignee.labelled:after {
+  padding-left: 5px;
+}
+.modal-inner:hover {
+  cursor: move !important;
+}
+.modal-outer.active {
+  display: block;
+  position: absolute;
+}
+.modal-outer.active .modal-overlay,
+.modal-outer.active .modal-inner {
+  position: fixed;
+}
+.form-row {
+  height: 35px;
+}
+.form-row {
+  margin-bottom: 5px;
+}
+.form-row[data-which='description'] {
+  height: 50px;
+}
+.form-row.article-assignees,
+.form-row[data-which='tag_ids'] {
+  height: auto;
+}
+.form-row[data-hidden='true'] {
+  display: none;
+}
+.form-row input {
+  margin-left: 0;
+}
+.form-row.article-assignees {
+  margin-left: 40%;
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.form-row-input-container[data-which="tag_ids"],
+.form-row-input-container[data-which="subject_tags"] {
+  max-height: 95px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  white-space: normal;
+}
+.form-row-input-container[data-which="tag_ids"] {
+  -webkit-box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075) inset;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  padding: 5px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.form-row-input-container[data-which="tag_ids"]:hover {
+  cursor: default;
+}
+.form-row-input-container .placeholder {
+  font-size: 1.2em !important;
+  color: #000;
+}
+.form-row-input-container .placeholder a {
+  color: #0092ce;
+}
+.article-assignee {
+  position: relative;
+  background-color: #88cfff;
+  width: 88.5%;
+  padding: 0 5px;
+  height: 24px;
+  border: 1px solid #26a8ff;
+  line-height: 19px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 2px;
+  -webkit-transform: translateX(28px);
+  -moz-transform: translateX(28px);
+  -o-transform: translateX(28px);
+  -ms-transform: translateX(28px);
+  transform: translateX(28px);
+}
+.article-assignee input {
+  width: 93%;
+}
+.article-assignee .remove-assignee {
+  padding-right: 5px;
+  font-size: 1.5em;
+  color: #d50000;
+  white-space: nowrap;
+  line-height: 20px;
+  font-weight: bold;
+}
+.article-assignee:hover {
+  cursor: pointer;
+}
+.article-assignee:hover .remove-assignee {
+  color: #d50000;
+  font-weight: bold;
+}
+.article-assignee:hover .remove-assignee:after {
+  color: #d50000;
+  font-weight: normal;
+}
+.buttons-container {
+  padding-top: 10px;
+}
+.buttons-container button,
+.buttons-container input[type="submit"] {
+  margin: 0 5px 0 -2px;
+  width: auto;
+}
+.recipe-form-container .recipe-title {
+  position: relative;
+  font-size: 3em;
+  color: #7c7c7c;
+  margin-bottom: 25px;
+}
+.recipe-form-container .service-icon {
+  top: -4px;
+  width: 40px;
+  height: 40px;
+  left: -45px;
+  margin-bottom: 5px;
+}
+.recipe-form-container .service-icon[data-service="reddit"] {
+  top: -7px;
+}
+.submit-msg {
+  display: inline-block;
+  padding-left: 5px;
+  vertical-align: bottom;
+  font-size: 1.4em;
+  white-space: normal;
+  width: 260px;
+}
+.submit-msg.fail {
+  color: #9e0000;
+}
+.submit-msg a {
+  padding: 0 !important;
+  font-size: 13px !important;
+  font-weight: normal !important;
+  color: #0092ce !important;
+}
+.submit-msg a:hover {
+  background-color: #fff !important;
+}
+.form-checkbox-group {
+  display: block;
+  width: 100%;
+}
+.toolbar {
+  position: relative;
+}
+.toolbar .service-icon {
+  width: 15px;
+  height: 15px;
+  bottom: 5px;
+  right: 0;
+}
+.toolbar .service-icon .service-method-label {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+}
+.service-icon {
+  position: absolute;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  bottom: 0;
+  background-position: right;
+}
+.modal-outer form .form-row-label-container,
+.recipe-form-container form .form-row-label-container {
+  font-size: 1.4em;
+  display: inline-block;
+  width: 40%;
+  margin-bottom: 3px;
+  vertical-align: top;
+  color: #000;
+}
+.modal-outer form .form-row-label-container.form-row-label-top,
+.recipe-form-container form .form-row-label-container.form-row-label-top {
+  vertical-align: top;
+}
+.modal-outer form .form-row-input-container,
+.recipe-form-container form .form-row-input-container {
+  width: 59%;
+  display: inline-block;
+  position: relative;
+}
+.modal-outer form .form-row-input-container input[type="checkbox"],
+.recipe-form-container form .form-row-input-container input[type="checkbox"] {
+  width: auto;
+}
+.modal-outer form .help-row,
+.recipe-form-container form .help-row {
+  position: absolute;
+  right: 0;
+  top: -12px;
+}
+.modal-outer form .hint-row,
+.recipe-form-container form .hint-row {
+  color: #7c7c7c;
+  position: absolute;
+}
+.modal-outer form input[type="text"],
+.recipe-form-container form input[type="text"],
+.modal-outer form input[type="number"],
+.recipe-form-container form input[type="number"],
+.modal-outer form input[type="password"],
+.recipe-form-container form input[type="password"],
+.modal-outer form textarea,
+.recipe-form-container form textarea {
+  width: 100%;
+  margin: 0;
+}
+.modal-outer form select,
+.recipe-form-container form select {
+  margin: 0;
+}
+.twitter-typeahead {
+  width: 100%;
+}
+.tt-hint {
+  color: #999;
+}
+.tt-menu {
+  width: 100%;
+  margin-top: -1px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.2);
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.tt-suggestion {
+  padding: 3px 20px;
+  font-size: 1.4em;
+  color: #adadad;
+}
+.tt-suggestion .tt-highlight {
+  color: #000;
+}
+.tt-suggestion p {
+  margin: 0;
+}
+.tt-suggestion:hover,
+.tt-suggestion.tt-cursor {
+  cursor: pointer;
+  background-color: #0097cf;
+  color: #fff;
+}
+.tt-suggestion:hover .tt-highlight,
+.tt-suggestion.tt-cursor .tt-highlight {
+  color: #fff;
+}
+.pika-time td:nth-child(2) {
+  padding: 0 5px;
+}
+body {
+  background-color: #c4dced;
+}
+#form-container .modal-outer {
+  display: block;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+}
+#form-container .modal-inner {
+  width: 450px;
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #adadad;
+  margin: 0 auto;
+  min-height: 200px;
+  -webkit-box-shadow: 0px 0px 6px #9eb7c8;
+  box-shadow: 0px 0px 6px #9eb7c8;
+}
+#form-container .modal-inner:hover {
+  cursor: default !important;
+}
+#form-container .modal-title {
+  text-align: center;
+  border: none;
+  font-weight: normal;
+  font-size: 1.8em;
+  color: #505050;
+}
+#form-container .modal-title span {
+  font-weight: bold;
+}
+form {
+  padding-top: 10px;
 }
 input[type="text"],
 input[type="password"] {
-  min-width: 220px;
+  width: 75% !important;
+  display: table;
+  margin: 0 auto !important;
 }
 input[type="submit"] {
   margin-top: 10px;
+  width: 65%;
+  display: table;
+  margin: 15px auto 0 auto;
+  height: 35px;
 }
 .msg {
   font-size: 1.3em;
   margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #989898;
 }
 .msg.fail {
   color: #9e0000;
