@@ -20,8 +20,8 @@ var paths = {
     './lib/public/javascripts/helpers/*.js',
     './lib/public/javascripts/models/*.js',
     './lib/public/javascripts/collections/*.js',
-    './lib/public/javascripts/app/*.js',
     './lib/public/javascripts/views/*.js',
+    './lib/public/javascripts/app/*.js',
     './lib/public/javascripts/routing/*.js',
     './lib/public/javascripts/init.js'
   ]
