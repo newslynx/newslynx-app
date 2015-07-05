@@ -18,9 +18,10 @@ mixin articles
 		#add-article.modal-parent
 			button.add-article.modal-toggle + Add article
 		.section-title Select articles by...
-		.option-container(data-type="search")
+		.option-container(data-type="search")#article-title-searcher
 			.option-title Keywords
-			input(type="text", name="article-title-searcher", placeholder="Search for...")#article-title-searcher
+				span.clear X
+			input(type="text", name="article-title-searcher", placeholder="Search for...")
 		.option-container(data-type="date-range")#date-range-searcher
 			.option-title Date range 
 				span.clear X
