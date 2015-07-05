@@ -735,7 +735,7 @@ body[data-modal="true"] #content {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #000;
-  width: 525px;
+  width: 550px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
   -webkit-box-shadow: 0px 0px 14px #1a1a1a;
@@ -1115,6 +1115,24 @@ input[name="assignees"] {
   transform: translateX(0%);
   left: auto;
   right: -10px;
+}
+.tooltipped[data-tooltip-orientation="right"]:before {
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-right-color: rgba(0,0,0,0.8);
+  bottom: 3px;
+  right: -11px;
+  margin-right: 0;
+}
+.tooltipped[data-tooltip-orientation="right"]:after {
+  top: -3px;
+  margin-top: 0;
+  right: -10px;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
 }
 .tooltipped.question-mark {
   -webkit-box-sizing: content-box;

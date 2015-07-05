@@ -65,6 +65,20 @@ tooltip_y_offset_low = tooltip_y_offset + 10
 	left auto
 	right -10px
 	
+.tooltipped[data-tooltip-orientation="right"]
+	&:before
+		border-bottom-color transparent
+		border-top-color transparent
+		border-right-color rgba(0,0,0,0.8)
+		bottom 3px
+		right -11px
+		margin-right 0
+	&:after
+		top -3px
+		margin-top 0
+		right -10px
+		transform translateX(100%)
+	
 .tooltipped.question-mark
 	box-sizing content-box
 	display inline-block
