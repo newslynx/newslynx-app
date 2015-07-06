@@ -254,18 +254,27 @@ block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
-		if (typeof module === "object" && typeof module.exports === "object") {$ = jQuery = module.exports;}
+		if (typeof module === "object" && typeof module.exports !== 'undefined') {
+			$ = jQuery = module.exports;
+		}
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
+	//- For electron app bundling (https://github.com/atom/electron/issues/345)
+	script.
+		if (typeof module === "object" && typeof module.exports !== 'undefined') {
+			isotope = module.exports;
+		}
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")
 	script(src="javascripts/thirdparty/typeahead.min.js")
 	script(src="javascripts/thirdparty/moment.js")
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
-		if (typeof module === "object" && typeof module.exports === "object") {moment = module.exports;}
+		if (typeof module === "object" && typeof module.exports !== 'undefined') {
+			moment = module.exports;
+		}
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 	script(src="javascripts/thirdparty/pikaday.js")
 	script(src="javascripts/thirdparty/jquery.shiftclick.js")

@@ -218,7 +218,9 @@ block scripts
 	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
-		if (typeof module === "object" && typeof module.exports === "object") {$ = jQuery = module.exports;}
+		if (typeof module === "object" && typeof module.exports !== 'undefined') {
+			$ = jQuery = module.exports;
+		}
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/spectrum.js")
