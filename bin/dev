@@ -1,3 +1,4 @@
-redis-server &
+#!/bin/bash
+# redis-server &
 nodemon -e jade,json,js --ignore public/* ./bin/www run &
 gulp watch-files
