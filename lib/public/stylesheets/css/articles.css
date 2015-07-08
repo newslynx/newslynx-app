@@ -1426,7 +1426,7 @@ body[data-section="articles"] .division-switcher li.active {
   margin-top: 10px;
 }
 #events-container .tag-wrapper:hover .tag-container {
-  background-color: #f2f2f2;
+  background-color: #dfdfdf;
 }
 #events-container .section-options {
   width: 175px;

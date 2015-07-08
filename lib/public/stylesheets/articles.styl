@@ -91,8 +91,8 @@ body[data-section="articles"]
 .tag-list
 	.tag-wrapper
 		padding-bottom 4px
-	.tag-wrapper:hover
-		cursor pointer
+		&:hover
+			cursor pointer
 	.tag-container
 		position relative
 		top 1px
@@ -226,7 +226,7 @@ filter_opts_width = 175px
 #events-container
 	margin-top 10px
 	.tag-wrapper:hover .tag-container
-		background-color bck_gray
+		background-color darken(bck_gray, 8%)
 	.section-options
 		width filter_opts_width
 		user-select none

@@ -162,24 +162,27 @@ block templates
 					#events-container(data-loading="true")
 						#events-filters.section-options.sticky
 							.section-title Filter by...
-							.option-container(data-type="impact-tags")
+							.option-container(data-type="impact-tags", data-group="filters")
 								.option-title Tags —  
 									span.count 
 									span.show-hide(data-open="false") Show
+									span.clear X
 								ul.tag-list
 									li.placeholder
 										| None yet!
-							.option-container(data-type="categories")
+							.option-container(data-type="categories", data-group="filters")
 								.option-title Categories — 
 									span.count 
 									span.show-hide(data-open="false") Show
+									span.clear X
 								ul.tag-list
 									li.placeholder
 										| None yet!
-							.option-container(data-type="levels")
+							.option-container(data-type="levels", data-group="filters")
 								.option-title Levels — 
 									span.count 
 									span.show-hide(data-open="false") Show
+									span.clear X
 								ul.tag-list
 									li.placeholder
 										| None yet!
