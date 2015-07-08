@@ -31,40 +31,44 @@ mixin articles
 			.option-title Sort by
 			select
 			.sort-direction(data-dir="-") 
-		.option-container(data-type="subject-tags")
+		.option-container(data-type="subject-tags", data-group="filters")
 			.option-title Subject tags —
 				span.count  
 				span.show-hide(data-open="false") Show
+				span.clear X
 			ul.tag-list
 				li.placeholder
 					| None yet! <br/>
 					| Create them in   
 					a.out-link(href="/settings") settings
 					| .
-		.option-container(data-type="impact-tags")
+		.option-container(data-type="impact-tags", data-group="filters")
 			.option-title Impact tags —
 				span.count 
 				span.show-hide(data-open="false") Show
+				span.clear X
 			ul.tag-list
 				li.placeholder
 					| None yet! <br/>
 					| Create them in   
 					a.out-link(href="/settings") settings
 					| .
-		.option-container(data-type="categories")
-			.option-title Impact categories —
+		.option-container(data-type="categories", data-group="filters")
+			.option-title Impact cats. —
 				span.count 
 				span.show-hide(data-open="false") Show
+				span.clear X
 			ul.tag-list
 				li.placeholder
 					| None yet! <br/>
 					| Create impact tags in   
 					a.out-link(href="/settings") settings
 					| .
-		.option-container(data-type="levels")
+		.option-container(data-type="levels", data-group="filters")
 			.option-title Impact levels —
 				span.count 
 				span.show-hide(data-open="false") Show
+				span.clear X
 			ul.tag-list
 				li.placeholder
 					| None yet! <br/>

@@ -1218,6 +1218,7 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .section-options .option-title span.show-hide {
   border: 1px solid #fff;
+  margin-left: 3px;
 }
 .section-options .option-title span.show-hide[data-open="true"] {
   border-color: transparent;
@@ -1228,6 +1229,7 @@ body[data-section="articles"] .division-switcher li.active {
   visibility: hidden;
   background-color: #d50000;
   width: 20px;
+  margin-top: -2px;
 }
 .section-options .option-title span.clear:hover {
   text-decoration: none;
