@@ -1,4 +1,3 @@
 #!/bin/bash
-redis-server &
 gulp 
 forever ./bin/www run

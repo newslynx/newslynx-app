@@ -1169,6 +1169,56 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #3ec173;
   text-shadow: 0 0px 12px #535353;
 }
+#content[data-loading='true'],
+#content[data-loading='choose'] {
+  position: relative;
+}
+#content[data-loading='true']:after,
+#content[data-loading='choose']:after,
+#content[data-loading='true']:before,
+#content[data-loading='choose']:before {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#content[data-loading='true']:before,
+#content[data-loading='choose']:before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  width: 398px;
+  height: 335px;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 12px #e3e3e3;
+  box-shadow: 0 0 12px #e3e3e3;
+}
+#content[data-loading='true']:after,
+#content[data-loading='choose']:after {
+  content: ' ';
+  position: absolute;
+  font-size: 1.8em;
+  top: 65px;
+  text-shadow: 0 0 2px #dadada;
+}
+#content[data-loading='true']:before {
+  background-image: url("../../images/gifs/MerlynneMagicPotions.gif") !important;
+}
+#content[data-loading='true']:after {
+  content: 'Loading...';
+}
+#content[data-loading='choose']:before {
+  background-image: url("../../images/gifs/MerlynneMeasure.png") !important;
+}
+#content[data-loading='choose']:after {
+  content: 'Pick from the drawer on the left...';
+}
 #add-article > button {
   width: 100%;
   margin-bottom: 10px;
@@ -2024,6 +2074,7 @@ body[data-section="articles"] .division-switcher li.active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 #compare-grid .header,
 #compare-grid .rows {
@@ -2033,9 +2084,9 @@ body[data-section="articles"] .division-switcher li.active {
   padding-top: 25px;
   background-color: #eee;
   position: absolute;
-  top: 0;
+  top: -55px;
   right: -50px;
-  left: 535px;
+  left: 0;
   padding-top: 24px;
   z-index: 1;
   min-width: 630px;

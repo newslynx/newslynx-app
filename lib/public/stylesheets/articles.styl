@@ -14,8 +14,42 @@ body[data-section="articles"]
 		background-color articles
 		text-shadow 0 0px 12px #535353
 
-// #content[data-loading="true"]
-// 	overflow hidden
+#content[data-loading='true'],
+#content[data-loading='choose']
+	position relative
+	&:after,
+	&:before
+		left 50%
+		transform translateX(-50%)
+	&:before
+		content ''
+		position absolute
+		top 100px
+		width 398px
+		height 335px
+		background-repeat no-repeat !important
+		background-position center center !important
+		border 1px solid #CCC
+		border-radius 3px
+		box-shadow 0 0 12px #E3E3E3
+	&:after
+		content ' '
+		position absolute
+		font-size 1.8em
+		top 65px
+		text-shadow 0 0 2px #DADADA
+		
+#content[data-loading='true']
+	&:before
+		background-image url('../../images/gifs/MerlynneMagicPotions.gif') !important
+	&:after
+		content 'Loading...'
+		
+#content[data-loading='choose']
+	&:before
+		background-image url('../../images/gifs/MerlynneMeasure.png') !important
+	&:after
+		content 'Pick from the drawer on the left...'
 
 #add-article > button
 	width 100%
@@ -749,6 +783,7 @@ bullet_height = 11px
 #compare-grid
 	width 100%
 	user-select none
+	position relative
 	.header,
 	.rows
 		padding 0 compare_grid_padding
@@ -756,9 +791,10 @@ bullet_height = 11px
 		padding-top compare_grid_padding
 		background-color #eee
 		position absolute
-		top 0
+		top (header_height + compare_grid_padding + 5)*-1 
 		right -1*compare_grid_padding*2 // This is a little hack to keep the row the same size as the header. Essentially removing the left and right padding on the header so they both have the same total width
-		left drawer_width + leftrail_width
+		left 0
+		// left drawer_width + leftrail_width
 		padding-top 24px
 		z-index 1
 		min-width article_min_width - drawer_width - leftrail_width + compare_grid_padding*2
