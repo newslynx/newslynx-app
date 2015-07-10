@@ -60,3 +60,4 @@ node_modules
 # lib/public/javascripts/main.bundled.js.map
 # *.css
 lib/db
+config.yaml
