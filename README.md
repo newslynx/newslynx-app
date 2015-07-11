@@ -65,17 +65,19 @@ The NewsLynx app has two main components:
 1. An [ExpressJS server-side](http://expressjs.com/) JavaScript application, which is concerned with authentication, sessioning and requesting data from the api. We'll refer to this as the **"Express app"** or the **"Express side."**
 2. A combination of multiple JavaScript [Single-Page Applications](https://en.wikipedia.org/wiki/Single-page_application). Each "page" in NewsLynx — currently Settings, Approval River, Articles and the Submit event page — are their own front-end JavaScript apps written using the [Backbone framework](http://backbonejs.org). We'll refer to this as the **"front-end."**
 
-The front-end code communicates with the Express side through Express **routes** as defined in [`lib/routes/`](lib/routes/)
+The front-end code communicates with the Express side through Express **routes** as defined in [`lib/routes/`](lib/routes/). Probaby the most important route [is the one](lib/routes/organizations.js#L49-L52) that redirects any URL that starts with `/api/` to the api endpoint and returns a JSON response.
 
 ### Express App architecture 
 
-#### Authentication
 
-#### Sessioning with Redis
 
-#### Concatenating and Uglifying JavaScript
+##### Authentication
 
-#### Transforming data
+##### Sessioning with LevelDB
+
+##### Build process with Gulp
+
+##### Transforming data
 
 ### Front-end architecture
 
