@@ -60,6 +60,8 @@ This documentation will explain the architecture and design patterns in use in t
 
 ### Overall architecture
 
+---
+
 The NewsLynx app has two main components:
 
 1. An [ExpressJS server-side](http://expressjs.com/) JavaScript application, which is concerned with authentication, sessioning and requesting data from the api. We'll refer to this as the **"Express app"** or the **"Express side."**
@@ -68,6 +70,8 @@ The NewsLynx app has two main components:
 The front-end code communicates with the Express side through Express **routes** as defined in [`lib/routes/`](lib/routes/). Probaby the most important route [is the one](lib/routes/organizations.js#L49-L52) that redirects any URL that starts with `/api/` to the api endpoint and returns a JSON response.
 
 ### Express App architecture 
+
+---
 
 #### Running the app
 
@@ -126,11 +130,13 @@ So, with this main `layout.jade` file, we then have **page-specific** jade files
 
 ### Front-end architecture
 
+---
+
 #### Build process with Gulp
 
 The front-end JavaScript is written in separate files that are meant to be concatenated together and minified. We use [Gulp](http://gulpjs.com/) to do this and watch those files for changes. Gulp also transforms our Stylus files into normal CSS files. Checkout the [Gulpfile](gulpfile.js), which orchestrates all the events.
 
-The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`] and that file is loaded in every **page template**. Page-specific CSS files are put in the `css/` folder and are discussed more in detail below in [Stylesheets with Stylus](#stylesheets-with-stylus).
+The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`](lib/public/javascripts/main.bundled.js) and that file is loaded in every **page template**. Page-specific CSS files are put in the `css/` folder and are discussed more in detail below in [Stylesheets with Stylus](#stylesheets-with-stylus).
 
 #### How page-specific JavaScript is loaded
 
