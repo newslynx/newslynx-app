@@ -69,7 +69,7 @@ The front-end code communicates with the Express side through Express **routes**
 
 ### Express App architecture 
 
-##### Running the app
+#### Running the app
 
 The main Express app file is [`lib/app.js`]. This file glues all the Express middleware together such as sessioning, cookies, routes and determines some logic for which routes require authentication. 
 
@@ -87,7 +87,7 @@ It defaults to port `3000` but that can be changed with a second argument
 
 In production and development, however, we run the server with [Forever](package.json#L6) and [Nodemon](bin/dev.sh), respectively. These tools have better support for keeping a NodeJS server alive for long periods of time. Nodemon is used in development since it can restart the server whenever files are modified.
 
-##### Templates and loading CSS
+#### Templates and loading CSS
 
 Templates are written in [Jade](http://jade-lang.com/) and found in [`lib/views/`]. They generally extend from [`lib/views/layout.jade`](lib/views/layout.jade) which specifies "blocks" that subviews will insert themselves into. Here's what `layout.jade` looks like:
 
@@ -118,23 +118,23 @@ A **page** data attribute is also set on the body, which is used for loading **p
 
 So, with this main `layout.jade` file, we then have **page-specific** jade files which insert blocks. Take a look at [`lib/views/settings.jade`](lib/views/settings.jade) for an example.
 
-##### Authentication
+#### Authentication
 
-##### Sessioning with LevelDB
+#### Sessioning with LevelDB
 
-##### Bootstrapping and transforming data
+#### Bootstrapping and transforming data
 
 ### Front-end architecture
 
-##### Build process with Gulp
+#### Build process with Gulp
 
 The front-end JavaScript is written in separate files that are meant to be concatenated together and minified. We use [Gulp](http://gulpjs.com/) to do this and watch those files for changes. Gulp also transforms our Stylus files into normal CSS files. Checkout the [Gulpfile](gulpfile.js), which orchestrates all the events.
 
 The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`] and that file is loaded in every **page template**. Page-specific CSS files are put in the `css/` folder and are discussed more in detail below in [Stylesheets with Stylus](#stylesheets-with-stylus).
 
-##### How page-specific JavaScript is loaded
+#### How page-specific JavaScript is loaded
 
-##### Stylesheets with Stylus
+#### Stylesheets with Stylus
 
 The app uses a CSS preprocessor called [Stylus](https://learnboost.github.io/stylus/), which is a NodeJS package. These files are in [`lib/public/stylesheets/`](lib/public/stylesheets/). Each **page** has its own **top level file** such as `articles.styl`, `home.style`, `approval-river.styl` etc.
 
@@ -144,23 +144,23 @@ During the [build process](#build-process-with-gulp), the **top level files** fo
 
 ### Settings
 
-##### Change detection
+#### Change detection
 
-##### Modal windows
+#### Modal windows
 
 ### Approval River
 
-##### Form construction
+#### Form construction
 
-##### Form validation
+#### Form validation
 
 ### Articles
 
-##### Comparison view
+#### Comparison view
 
-##### Isotope
+#### Isotope
 
-##### Detail view
+#### Detail view
 
 
 ## License
