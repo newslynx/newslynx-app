@@ -3,10 +3,10 @@
   "description": "A platform for measuring the quantitative and qualitative impact of journalism.",
   "version": "0.0.1",
   "scripts": {
-    "start": "gulp && forever ./bin/www run",
-    "dev": "bash bin/dev",
+    "start": "gulp && forever ./bin/www.js run",
+    "dev": "bash bin/dev.sh",
     "watch-files": "gulp watch-files",
-    "watch-server": "nodemon -e jade,json,js --ignore public/* ./bin/www run"
+    "watch-server": "nodemon -e jade,json,js --ignore public/* ./bin/www.js run"
   },
   "dependencies": {
     "body-parser": "~1.0.0",

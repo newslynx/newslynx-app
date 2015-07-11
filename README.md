@@ -69,41 +69,98 @@ The front-end code communicates with the Express side through Express **routes**
 
 ### Express App architecture 
 
+##### Running the app
 
+The main Express app file is [`lib/app.js`]. This file glues all the Express middleware together such as sessioning, cookies, routes and determines some logic for which routes require authentication. 
+
+To run the app, you can start it from the command line through the file [`bin/www.js`](bin/www.js) by providing the `run` argument like so:
+
+````
+./bin/www.js run
+````
+
+It defaults to port `3000` but that can be changed with a second argument
+
+````
+./bin/www.js run 3001
+````
+
+In production and development, however, we run the server with [Forever](package.json#L6) and [Nodemon](bin/dev.sh), respectively. These tools have better support for keeping a NodeJS server alive for long periods of time. Nodemon is used in development since it can restart the server whenever files are modified.
+
+##### Templates and loading CSS
+
+Templates are written in [Jade](http://jade-lang.com/) and found in [`lib/views/`]. They generally extend from [`lib/views/layout.jade`](lib/views/layout.jade) which specifies "blocks" that subviews will insert themselves into. Here's what `layout.jade` looks like:
+
+````jade
+doctype html
+html
+  head
+    title NewsLynx | 
+      = info.title
+    block css
+    link(rel='stylesheet', href='/stylesheets/octicon/octicons.css')
+    link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
+  body(data-section="#{info.page}")
+    #main-wrapper
+      include page-divisions/left-rail/index.jade
+      #drawer(data-loading="true")
+        block drawer
+      #content(data-loading="true")
+        block content
+    block bootstrap-data
+    block templates
+    block scripts
+````
+
+You can see two variables here, `title` and `page`. These are important, since, as you can see, that variable name determines what CSS file is loaded, which we'll explain more in the [StyleSheets with Stylus](#stylesheets-with-Sstylus) section below. Generally, you can see that a **page-specifi** variable name will determine which CSS file we load. These variables match exactly the route name, for example, when you go to `/settings`, `info.title` is set to `Settings` in [`lib/routes/pages.js`](lib/routes/pages.js#L103) near line 103, which is then run through the `sanitize` function, which will put it in lowercase. We'll then fetch the file at `/stylesheets/css/settings.css`. 
+
+A **page** data attribute is also set on the body, which is used for loading **page-specific** JavaScript files and is discussed below in [How page-specific JavaScript is loaded](how-page-specific-javascript-is-loaded).
+
+So, with this main `layout.jade` file, we then have **page-specific** jade files which insert blocks. Take a look at [`lib/views/settings.jade`](lib/views/settings.jade) for an example.
 
 ##### Authentication
 
 ##### Sessioning with LevelDB
 
-##### Build process with Gulp
-
-##### Transforming data
+##### Bootstrapping and transforming data
 
 ### Front-end architecture
 
-#### How section-specific JavaScript is loaded
+##### Build process with Gulp
 
-#### How section-specific CSS is loaded
+The front-end JavaScript is written in separate files that are meant to be concatenated together and minified. We use [Gulp](http://gulpjs.com/) to do this and watch those files for changes. Gulp also transforms our Stylus files into normal CSS files. Checkout the [Gulpfile](gulpfile.js), which orchestrates all the events.
+
+The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`] and that file is loaded in every **page template**. Page-specific CSS files are put in the `css/` folder and are discussed more in detail below in [Stylesheets with Stylus](#stylesheets-with-stylus).
+
+##### How page-specific JavaScript is loaded
+
+##### Stylesheets with Stylus
+
+The app uses a CSS preprocessor called [Stylus](https://learnboost.github.io/stylus/), which is a NodeJS package. These files are in [`lib/public/stylesheets/`](lib/public/stylesheets/). Each **page** has its own **top level file** such as `articles.styl`, `home.style`, `approval-river.styl` etc.
+
+Styles are broken into smaller files so they can be more easily reused across views. These are all in [`lib/public/stylesheets/blueprint/`](lib/public/stylesheets/blueprint). Even smaller stylus files that are reused across "blueprint" files are in the the [`modules`](`lib/public/stylesheets/blueprint/`) subfolder. The nested folder structure helps show which files are meant to be used as shared assets.
+
+During the [build process](#build-process-with-gulp), the **top level files** for each **page** are written into the `css/` folder at [`lib/public/stylesheets/css/`](lib/public/stylesheets/css/). To bring it full circle, these files, `articles.css`, `home.css`, `approval-river.css` are what `layout.jade` calls basd on the `info.page` variable, [as explained above](#templates-and-loading-CSS).
 
 ### Settings
 
-#### Change detection
+##### Change detection
 
-#### Modal windows
+##### Modal windows
 
 ### Approval River
 
-#### Form construction
+##### Form construction
 
-#### Form validation
+##### Form validation
 
 ### Articles
 
-#### Comparison view
+##### Comparison view
 
 ##### Isotope
 
-#### Detail view
+##### Detail view
 
 
 ## License

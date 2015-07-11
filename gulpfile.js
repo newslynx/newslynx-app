@@ -5,7 +5,6 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
-// var nodemon = require('gulp-nodemon');
 
 var paths = {
   css: {
@@ -51,18 +50,5 @@ gulp.task('watch', function() {
   gulp.watch(paths.js, ['compile-js']);
 });
 
-// gulp.task('demon', function () {
-//   nodemon({
-//     script: './bin/www',
-//     ext: 'jade json'
-//   })
-//     .on('start', ['default', 'watch'])
-//     .on('change', ['watch'])
-//     .on('restart', function () {
-//       console.log('restarted!');
-//     });
-// });
-
 gulp.task('default', ['compile-stylus', 'compile-js']); // Simply compile
 gulp.task('watch-files',   ['watch', 'compile-stylus', 'compile-js']); // Watch files for changes
-// gulp.task('dev', ['demon']);
