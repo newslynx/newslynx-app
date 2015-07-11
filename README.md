@@ -29,7 +29,7 @@ When you see the following, it's done and you can visit <http://localhost:3000>
 Other start up commands 
 -----
 
-Alternate commands are in `package.json` under `scripts`. 
+Alternate commands are in [`package.json`](package.json) under [`scripts`](package.json#L5). 
 
 #### Developing locally
 
@@ -53,9 +53,19 @@ npm run watch-server
 
 These last two commands are best run in tandem in two separate shell windows. `npm run dev` does them both in one window for convenience.
 
-## Documentation
+Documentation
+-------------
 
 This documentation will explain the architecture and design patterns in use in the Express app and each section's Backbone app.
+
+### Overall architecture
+
+The NewsLynx app has two main components:
+
+1. An [ExpressJS server-side](http://expressjs.com/) JavaScript application, which is concerned with authentication, sessioning and requesting data from the api. We'll refer to this as the **"Express app"** or the **"Express side."**
+2. A combination of multiple JavaScript [Single-Page Applications](https://en.wikipedia.org/wiki/Single-page_application). Each "page" in NewsLynx — currently Settings, Approval River, Articles and the Submit event page — are their own front-end JavaScript apps written using the [Backbone framework](http://backbonejs.org). We'll refer to this as the **"front-end."**
+
+The front-end code communicates with the Express side through Express **routes** as defined in [`lib/routes/`](lib/routes/)
 
 ### Express App architecture 
 
