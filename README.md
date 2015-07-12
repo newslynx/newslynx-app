@@ -116,7 +116,7 @@ html
     block scripts
 ````
 
-You can see two variables here, `title` and `page`. These are important, since, as you can see, that variable name determines what CSS file is loaded, which we'll explain more in the [StyleSheets with Stylus](#stylesheets-with-Sstylus) section below. Generally, you can see that a **page-specifi** variable name will determine which CSS file we load. These variables match exactly the route name, for example, when you go to `/settings`, `info.title` is set to `Settings` in [`lib/routes/pages.js`](lib/routes/pages.js#L103) near line 103, which is then run through the `sanitize` function, which will put it in lowercase. We'll then fetch the file at `/stylesheets/css/settings.css`. 
+You can see two variables here, `title` and `page`. These are important, since, as you can see, that variable name determines what CSS file is loaded, which we'll explain more in the [StyleSheets with Stylus](#stylesheets-with-Sstylus) section below. Generally, you can see that a **page-specifi** variable name will determine which CSS file we load. These variables match exactly the route name, for example, when you go to `/settings`, `info.title` is set to `Settings` in [`lib/routes/pages.js`](lib/routes/pages.js#L103) near line 103, which is then run through the `sanitize` function, which will put it in lowercase and replace spaces with dashes. We'll then fetch the file at `/stylesheets/css/settings.css`. 
 
 A **page** data attribute is also set on the body, which is used for loading **page-specific** JavaScript files and is discussed below in [How page-specific JavaScript is loaded](how-page-specific-javascript-is-loaded).
 
