@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    title NewsLynx | 
+      = info.title
+    link(rel='stylesheet', href='/stylesheets/css/setup.css')
+  body(data-section="#{info.page}")
+    #main-wrapper
+      #form-container
+        .modal-outer
+          .modal-inner
+            .modal-title Setup 
+              span NewsLynx!
+            .msg Where does your API live?
+            form(action='/auth/_VERSION/setup-api', method='POST')#setup-api
+              .form-row
+                //- .form-row-label-container
+                //-   label Email: 
+                input(type='text', name='url' placeholder="https://newslynx-api-url.org:5000")
+              input(type='submit', value='Submit')

@@ -1,0 +1,66 @@
+@require 'blueprint'
+@require 'blueprint/modules/forms-modals.styl'
+
+body
+  background-color #C3D6E4
+
+  
+#form-container
+  .modal-outer
+    display block
+    padding 0
+    position absolute
+    top 50px
+  .modal-inner
+    width 450px
+    background-color #fff
+    border-radius 6px
+    border 1px solid darken(#ccc, 15%)
+    margin 0 auto
+    min-height 200px
+    box-shadow 0px 0px 6px #9EB7C8
+    // transform translateY(-100%)
+    &:hover
+      cursor default !important
+  .modal-title
+    text-align center
+    border none
+    font-weight normal
+    font-size 1.8em
+    color #505050
+    span
+      font-weight bold
+  .form-row
+    height auto
+      
+// form
+//   padding-top 10px
+
+// label
+//  display inline-block
+//  width 70px
+//  font-size 1.3em
+input[type="text"],
+input[type="password"],
+label
+  width 75% !important
+  display table
+  margin 0 auto !important
+label
+  font-size 1.3em
+  &:hover
+    cursor pointer
+input[type="submit"]
+  margin-top 10px
+  width 65%
+  display table
+  margin 15px auto 0 auto
+  height 35px
+.msg
+  font-size 1.3em
+  margin-top 10px
+  text-align center
+  font-style italic
+  color #989898
+.msg.fail
+  color disabled_red

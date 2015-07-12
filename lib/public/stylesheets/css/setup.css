@@ -723,24 +723,6 @@ body[data-loading="internal-link"] #global-loading:after {
   -webkit-box-shadow: 0 0 10px #fff;
   box-shadow: 0 0 10px #fff;
 }
-body {
-  padding-top: 35px;
-}
-#header-toolbar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 35px;
-  background-color: #000;
-  color: #fff;
-  z-index: 999999999;
-}
-#header-toolbar .content-wrapper {
-  width: 960px;
-  height: 100%;
-  margin: 0 auto;
-}
 .service-icon[data-service="google"] {
   background-image: url("/images/service-icons/logos-01.svg");
 }
@@ -1108,45 +1090,68 @@ input[name="assignees"] {
   padding: 0 5px;
 }
 body {
-  background-color: #f3f0df;
+  background-color: #c3d6e4;
 }
 #form-container .modal-outer {
   display: block;
+  padding: 0;
+  position: absolute;
+  top: 50px;
 }
 #form-container .modal-inner {
+  width: 450px;
   background-color: #fff;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 2px solid #ccc;
-  margin: 15px auto 0 auto;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: 1px solid #adadad;
+  margin: 0 auto;
   min-height: 200px;
-  -webkit-box-shadow: 0 0 12px #e6dfb9;
-  box-shadow: 0 0 12px #e6dfb9;
+  -webkit-box-shadow: 0px 0px 6px #9eb7c8;
+  box-shadow: 0px 0px 6px #9eb7c8;
 }
 #form-container .modal-inner:hover {
   cursor: default !important;
 }
-#logo {
-  color: #ccc;
+#form-container .modal-title {
+  text-align: center;
+  border: none;
+  font-weight: normal;
+  font-size: 1.8em;
+  color: #505050;
 }
-#logo img {
-  height: 100%;
+#form-container .modal-title span {
+  font-weight: bold;
 }
-#logo img,
-#logo h1.page-title {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 5px;
-  font-weight: 200;
+#form-container .form-row {
+  height: auto;
 }
-#logo h1.page-title {
-  -webkit-transform: translateY(2px);
-  -moz-transform: translateY(2px);
-  -o-transform: translateY(2px);
-  -ms-transform: translateY(2px);
-  transform: translateY(2px);
+input[type="text"],
+input[type="password"],
+label {
+  width: 75% !important;
+  display: table;
+  margin: 0 auto !important;
 }
-#logo h1.page-title:hover {
-  color: #fff;
+label {
+  font-size: 1.3em;
+}
+label:hover {
   cursor: pointer;
+}
+input[type="submit"] {
+  margin-top: 10px;
+  width: 65%;
+  display: table;
+  margin: 15px auto 0 auto;
+  height: 35px;
+}
+.msg {
+  font-size: 1.3em;
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+  color: #989898;
+}
+.msg.fail {
+  color: #9e0000;
 }
