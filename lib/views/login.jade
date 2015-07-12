@@ -23,6 +23,10 @@ html
 								//- .form-row-label-container
 								//- 	label Password: 
 								input(type='password', name='password' placeholder="password")
+							.form-row
+								label 
+									input(type='checkbox' name="remember_me") 
+									| Remember me
 								script.
 									var href = document.location.href
 									if (href.indexOf('logout') === -1){

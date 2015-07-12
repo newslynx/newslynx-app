@@ -1122,14 +1122,24 @@ body {
 #form-container .modal-title span {
   font-weight: bold;
 }
+#form-container .form-row {
+  height: auto;
+}
 form {
   padding-top: 10px;
 }
 input[type="text"],
-input[type="password"] {
+input[type="password"],
+label {
   width: 75% !important;
   display: table;
   margin: 0 auto !important;
+}
+label {
+  font-size: 1.3em;
+}
+label:hover {
+  cursor: pointer;
 }
 input[type="submit"] {
   margin-top: 10px;
