@@ -23,4 +23,9 @@ html
 								//- .form-row-label-container
 								//- 	label Password: 
 								input(type='password', name='password' placeholder="password")
+								script.
+									var href = document.location.href
+									if (href.indexOf('logout') === -1){
+										document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
+									}
 							input(type='submit', value='Log In')
