@@ -717,7 +717,11 @@ body[data-loading="internal-link"] #global-loading:after {
   position: absolute;
   font-size: 1.8em;
   top: 55px;
-  text-shadow: 0 0 2px #dadada;
+  text-shadow: 0 0 5px #fff;
+  padding: 0 11px;
+  background-color: rgba(255,255,255,0.55);
+  -webkit-box-shadow: 0 0 10px #fff;
+  box-shadow: 0 0 10px #fff;
 }
 .tooltipped {
   position: relative;
