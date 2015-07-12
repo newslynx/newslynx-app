@@ -41,7 +41,7 @@ mixin articles
 				li.placeholder
 					| None yet! <br/>
 					| Create them in   
-					a.out-link(href="/settings") settings
+					a.js-internal-link.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="impact-tags", data-group="filters")
 			.option-title Impact tags —
@@ -52,7 +52,7 @@ mixin articles
 				li.placeholder
 					| None yet! <br/>
 					| Create them in   
-					a.out-link(href="/settings") settings
+					a.js-internal-link.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="categories", data-group="filters")
 			.option-title Impact cats. —
@@ -63,7 +63,7 @@ mixin articles
 				li.placeholder
 					| None yet! <br/>
 					| Create impact tags in   
-					a.out-link(href="/settings") settings
+					a.js-internal-link.out-link(href="/settings") settings
 					| .
 		.option-container(data-type="levels", data-group="filters")
 			.option-title Impact levels —
@@ -74,7 +74,7 @@ mixin articles
 				li.placeholder
 					| None yet! <br/>
 					| Create impact tags in   
-					a.out-link(href="/settings") settings
+					a.js-internal-link.out-link(href="/settings") settings
 					| .
 
 			//- .edit
@@ -108,14 +108,14 @@ nav
 			mixin approval-river
 		else	
 			li.section(data-section="approval-river")
-				a(href="/approval-river") Approval river
+				a.js-internal-link(href="/approval-river") Approval river
 					//- .section-img
 					//- 	img(src="images/merlynne/potion.svg")
 		if (info.page == 'articles')
 			mixin articles
 		else	
 			li.section(data-section="articles")
-				a(href="/articles") Articles
+				a.js-internal-link(href="/articles") Articles
 					//- .section-img
 					//- 	img(src="images/merlynne/t-square.svg")
 		//- if (page == 'series')
