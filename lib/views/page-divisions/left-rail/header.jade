@@ -5,8 +5,8 @@ header#header-container
 	ul.settings
 		if info.authed
 			li.admin-item(aria-label="Settings")
-					a(href="/settings").util-btn
+					a.js-internal-link(href="/settings").util-btn
 						.octicon.octicon-tools
 			li.admin-item(aria-label="Sign out")
-					a(href="/logout").util-btn
+					a.js-internal-link(href="/logout").util-btn
 						.octicon.octicon-sign-out
