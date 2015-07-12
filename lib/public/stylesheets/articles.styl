@@ -103,6 +103,7 @@ body[data-section="articles"]
 				background-color kill_red
 				width 20px
 				margin-top -2px
+				color #fff
 				&:hover
 					text-decoration none
 					background-color darken(kill_red, 10%)
@@ -259,6 +260,7 @@ padding_horitz = 50px
 filter_opts_width = 175px
 #events-container
 	margin-top 10px
+	overflow auto
 	.tag-wrapper:hover .tag-container
 		background-color darken(bck_gray, 8%)
 	.section-options
@@ -278,7 +280,8 @@ filter_opts_width = 175px
 		top 5px
 		left drawer_width + leftrail_width + padding_horitz
 	&[data-loading="true"]
-		.load-more
+		.load-more,
+		.placeholder
 			display none
 		#events-filters:after
 			display block

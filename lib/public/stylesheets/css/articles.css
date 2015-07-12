@@ -1328,6 +1328,7 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #d50000;
   width: 20px;
   margin-top: -2px;
+  color: #fff;
 }
 .section-options .option-title span.clear:hover {
   text-decoration: none;
@@ -1522,6 +1523,7 @@ body[data-section="articles"] .division-switcher li.active {
 /* A R T I C L E  D E T A I L */
 #events-container {
   margin-top: 10px;
+  overflow: auto;
 }
 #events-container .tag-wrapper:hover .tag-container {
   background-color: #dfdfdf;
@@ -1549,7 +1551,8 @@ body[data-section="articles"] .division-switcher li.active {
   top: 5px;
   left: 585px;
 }
-#events-container[data-loading="true"] .load-more {
+#events-container[data-loading="true"] .load-more,
+#events-container[data-loading="true"] .placeholder {
   display: none;
 }
 #events-container[data-loading="true"] #events-filters:after {
