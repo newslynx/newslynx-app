@@ -16,7 +16,7 @@
 	"content_items": {
 		"input_type": "search",
 		"help": {
-			"hint": "Search by headline..."
+			"placeholder": "Search by headline..."
 		},
 		"required": true
 	},

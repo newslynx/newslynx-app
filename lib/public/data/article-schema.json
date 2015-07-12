@@ -18,6 +18,13 @@
 			"podcast"
 		]
 	},
+	"authors": {
+		"input_type": "string-to-list",
+		"help": {
+			"placeholder": "Merlynne Jones, Julia Child",
+			"description": "Comma-separate multiple authors"
+		}
+	},
 	"tag_ids": {
 		"input_type": "checkbox",
 		"options": [ ],
