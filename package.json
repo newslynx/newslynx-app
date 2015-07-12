@@ -6,7 +6,7 @@
     "start": "gulp && forever ./bin/www.js run",
     "dev": "bash bin/dev.sh",
     "watch-files": "gulp watch-files",
-    "watch-server": "nodemon -e jade,json,js --ignore public/* ./bin/www.js run"
+    "watch-server": "nodemon -e jade,json,js,styl --ignore public/* ./bin/www.js run"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
