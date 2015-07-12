@@ -27,7 +27,11 @@
 	},
 	"tag_ids": {
 		"input_type": "checkbox",
+		"type": "subject",
 		"options": [ ],
 		"required": true
+	},
+	"extract": {
+		"input_type": "hidden"
 	}
 }
