@@ -406,11 +406,13 @@ filter_opts_width = 175px
 
 /* V I Z S */
 
-.article-detail-viz-container
-	width 46%
-	display inline-block
-	vertical-align top
-	margin-bottom 25px
+.article-detail-container
+	section.article-detail-viz-container
+		width 46%
+		display inline-block
+		vertical-align top
+		margin-bottom 25px
+		overflow visible
 .article-detail-viz-container:nth-child(odd)
 	margin-right 4%
 .article-detail-viz-container[data-which="tweets"]
@@ -426,7 +428,7 @@ filter_opts_width = 175px
 		margin-bottom 5px
 	.bar-container
 		height 25px
-		background-color #eee
+		background-color #e5e5e5
 		position relative
 	.bar-text
 		overflow hidden

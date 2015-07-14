@@ -1693,11 +1693,12 @@ body[data-section="articles"] .division-switcher li.active {
 }
 /* end navigating articles */
 /* V I Z S */
-.article-detail-viz-container {
+.article-detail-container section.article-detail-viz-container {
   width: 46%;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 25px;
+  overflow: visible;
 }
 .article-detail-viz-container:nth-child(odd) {
   margin-right: 4%;
@@ -1717,7 +1718,7 @@ body[data-section="articles"] .division-switcher li.active {
 }
 .viz-container .bar-container {
   height: 25px;
-  background-color: #eee;
+  background-color: #e5e5e5;
   position: relative;
 }
 .viz-container .bar-text {
