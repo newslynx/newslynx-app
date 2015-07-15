@@ -8,16 +8,20 @@ var debug = require('tracer').console();
 var chalk = require('chalk');
 
 
-function launchServers(port){
+function launchServers(port, cb){
   port = port || process.env.NEWSLYNX_HTTP_PORT || 3000;
   app.set('http_port', port);
 
   // Launch a server
-  var http_server = http.createServer(app).listen( port );
+  var http_server = http.createServer( app ).listen( port );
 
   console.log(chalk.green('##################################'));
   console.log(chalk.green('# HTTP listening on port ' + port + '... #'));
   console.log(chalk.green('##################################'));
+
+  if (cb){
+    cb();
+  }
 
 }
 
