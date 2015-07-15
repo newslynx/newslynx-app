@@ -685,7 +685,7 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 }
 body[data-loading="internal-link"] #global-loading {
   display: block;
-  background-color: rgba(255,255,255,0.55);
+  background-color: rgba(255,255,255,0.9);
   z-index: 9;
 }
 body[data-loading="internal-link"] #global-loading:after,
@@ -719,7 +719,6 @@ body[data-loading="internal-link"] #global-loading:after {
   top: 55px;
   text-shadow: 0 0 5px #fff;
   padding: 0 11px;
-  background-color: rgba(255,255,255,0.75);
   -webkit-box-shadow: 0 0 10px #fff;
   box-shadow: 0 0 10px #fff;
 }
