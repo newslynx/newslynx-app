@@ -1,35 +1,30 @@
-doctype html
-html
-	head
-		title NewsLynx | 
-			= info.title
-		link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
-	body(data-section="#{info.page}")
-		#main-wrapper
-			#form-container
-				.modal-outer
-					.modal-inner
-						.modal-title Sign in to 
-							span NewsLynx!
-						if info.msg
-							.msg 
-								=info.msg
-						form(action='/auth/_VERSION/login', method='POST')#login
-							.form-row
-								//- .form-row-label-container
-								//- 	label Email: 
-								input(type='text', name='email' placeholder="you@domain.com")
-							.form-row
-								//- .form-row-label-container
-								//- 	label Password: 
-								input(type='password', name='password' placeholder="password")
-							.form-row
-								label 
-									input(type='checkbox' name="remember_me") 
-									| Remember me
-								script.
-									var href = document.location.href
-									if (href.indexOf('logout') === -1){
-										document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
-									}
-							input(type='submit', value='Log In')
+extends layout
+
+block main-wrapper-contents
+	#form-container
+		.modal-outer
+			.modal-inner
+				.modal-title Sign in to 
+					span NewsLynx!
+				if info.msg
+					.msg 
+						=info.msg
+				form(action='/auth/_VERSION/login', method='POST')#login
+					.form-row
+						//- .form-row-label-container
+						//- 	label Email: 
+						input(type='text', name='email' placeholder="you@domain.com")
+					.form-row
+						//- .form-row-label-container
+						//- 	label Password: 
+						input(type='password', name='password' placeholder="password")
+					.form-row
+						label 
+							input(type='checkbox' name="remember_me") 
+							| Remember me
+						script.
+							var href = document.location.href
+							if (href.indexOf('logout') === -1){
+								document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
+							}
+					input(type='submit', value='Log In')

@@ -1,0 +1,8 @@
+extends layout
+
+block main-wrapper-contents
+  include includes/left-rail/index.jade
+  #drawer(data-loading="true")
+    block drawer
+  #content(data-loading="true")
+    block content

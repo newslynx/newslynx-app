@@ -1,25 +1,21 @@
-doctype html
-html
-	head
-		title NewsLynx | 
-			= info.title
-		link(rel='stylesheet', href='/stylesheets/thirdparty/pikaday.css')
-		link(rel='stylesheet', href='/stylesheets/octicon/octicons.css')
-		link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
-	body(data-section="#{info.page}")
-		#main-wrapper
-			#header-toolbar
-				.content-wrapper
-					a.js-internal-link#logo(href="/")
-						img(src="/images/merlynne-white.png")
-						h1.page-title NewsLynx
-			#form-container
-				.modal-outer
-					.modal-inner
-						.modal-title Add an event for approval
-						form
-		#global-loading
+extends layout
 
+block css
+	link(rel='stylesheet', href='/stylesheets/thirdparty/pikaday.css')
+
+block main-wrapper-contents
+	#header-toolbar
+		.content-wrapper
+			a.js-internal-link#logo(href="/")
+				img(src="/images/merlynne-white.png")
+				h1.page-title NewsLynx
+	#form-container
+		.modal-outer
+			.modal-inner
+				.modal-title Add an event for approval
+				form
+
+block scripts
 	script(id="page-data").
 		var pageData 	=!{JSON.stringify(info)};
 
