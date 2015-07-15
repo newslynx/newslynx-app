@@ -33,7 +33,7 @@ html
 							{ label: 'Hide Others', accelerator: 'Command+Shift+H', selector: 'hideOtherApplications:'},
 							{ label: 'Show All', selector: 'unhideAllApplications:'},
 							{ type: 'separator'},
-							{ label: 'Quit', accelerator: 'Command+Q', selector: 'terminate:'},
+							{ label: 'Quit', accelerator: 'Command+Q', selector: 'terminate:'}
 						]
 					},
 					{
@@ -51,8 +51,8 @@ html
 					{
 						label: 'View',
 						submenu: [
-							{label: 'Reload',accelerator: 'Command+R',click: function() { remote.getCurrentWindow().reload(); }},
-							{label: 'Toggle DevTools',accelerator: 'Alt+Command+I',click: function() { remote.getCurrentWindow().toggleDevTools(); }},
+							{label: 'Reload',accelerator: 'Command+R',click: function() { remote.getCurrentWindow().reload(); } },
+							{label: 'Toggle DevTools',accelerator: 'Alt+Command+I',click: function() { remote.getCurrentWindow().toggleDevTools(); } }
 						]
 					},
 					{
