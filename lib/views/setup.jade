@@ -12,9 +12,7 @@ html
             .modal-title Setup 
               span NewsLynx!
             .msg Where does your API live?
-            form(action='/auth/_VERSION/setup-api', method='POST')#setup-api
+            form(action='/setup', method='POST')#setup-api
               .form-row
-                //- .form-row-label-container
-                //-   label Email: 
                 input(type='text', name='url' placeholder="https://newslynx-api-url.org:5000")
               input(type='submit', value='Submit')

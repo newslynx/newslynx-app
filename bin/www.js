@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var _ = require('underscore');
 var app = require('../lib/app');
-var fs = require('fs');
+var fs = require('fs-plus');
 var http = require('http');
 var https = require('https');
 var debug = require('tracer').console();

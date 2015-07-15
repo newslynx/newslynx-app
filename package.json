@@ -18,6 +18,7 @@
     "express": "~4.0.0",
     "express-session": "^1.11.3",
     "forever": "^0.14.2",
+    "fs-plus": "^2.8.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-plumber": "^1.0.1",
