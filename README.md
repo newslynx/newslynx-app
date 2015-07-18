@@ -145,7 +145,65 @@ block main-wrapper-contents
 
 Take a look at [`lib/views/settings.jade`](lib/views/settings.jade) for an example of a **"Page"** layout file, which inserts code into the `drawer` block, or the `content` block.
 
-#### Authentication
+#### Authentication & interacting with the Core API
+
+Every API call must include `org` and `apikey` query parameters. Read more in the [Newslynx Core](http://newslynx.readthedocs.org/en/latest/api.html#authentication) documentation for more specifics. As far as the App is concerned, all user login operations are handled by routes in [`lib/routes/organizations.js`](lib/routes/organizations.js).
+
+Logging in is done by sending a POST request to `/login` containing the following data:
+
+````json
+{
+  "email": "<string>",
+  "password": "<string>",
+  "remember_me": "<string>"
+}
+````
+
+The `remember_me` value is set via a checkbox, which will serialize to `on` if checked and falsey if not. That value will set the `maxAge` of the session cookie to the distant future so that a user does not need to enter their information until they logout.
+
+[You can see](lib/routes/organizations.js#L26) it's also doing a few things with this `redirect_url` business. The idea here is that if you have not authenticated, and you want to go to, says, `/articles`, you will be redirected to login. After you login, the expectation is that you will proceed to where you originally intended. To do that is both simple and complicated.
+
+**The simple part** is that you can stash the incoming url on the `req.session` object, which is what we do initially in [`app.js`](lib/app.js#L93) near line 93. That url won't include anything in the hash, however, because the server never receives that information — it considers it below its station, it is the domain of the client and must not rise to such peaks.
+
+For example, if we go to `/articles#detail`, Express only sees `/articles` as the page. This is better than nothing, though, so we save it as `req.session.redirect_page`. So how do we save the `#` stuff?
+
+**The complicated part** is that we can save the hash client-side once we get to the login page by putting in some javascript that writes the hash to a hidden input field. When we submit our login form, we also submit the page where we intended to go. The jade template inserts that markup below the `Remember me` button:
+
+````jade
+  .form-row
+    label 
+      input(type='checkbox' name="remember_me") 
+      | Remember me
+    //- Handle redirects by stashing the # portion of the url in a hidden field, which will then be picked up by our login POST endpoint
+    script.
+      var href = document.location.href
+      if (href.indexOf('logout') === -1){
+        document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
+      }
+````
+
+**Note** How we don't stash this if we are on the `logout` page since we would be redirected to logging out.
+
+So if we want to go to the `/articles#detail` page, the object we POST actually looks like this:
+
+````
+{
+  "email": "<string>",
+  "password": "<string>",
+  "remember_me": "<string>",
+  "redirect_url": "/login#detail"
+}
+````
+
+Notice how it thinks we want to go to the login page, plus our original hash, even though we requested `/articles#detail`. This is because the `document.location.href` is executing on the login page. So it preserves our hash but not the page!
+
+Putting two and two together, Express was able to store the page, but not the hash. The client can store the hash, but not the original page. The rest of the code in our login POST endpoint replaces the `/login` with our previously saved page. Phew!
+
+This request is then forwarded to the **almighty auth.relay** function, which handles communication with the **Core API**. It deserves a few words.
+
+##### Talking to the Core API
+
+All communication with the **Core API** is handled throgh [`lib/utils/auth.js`](lib/utils/auth.js). For logging in this, means setting data under `auth`. More generally, it adds our apikey and org id from the session to sign each request and adds the API url, as set in our `config.yaml` file, and **always** returns JSON. The file itself is heavily commented for what each part does specifically but as an overview, if the **Express App** wants to talk to the **Core API**, it goes through the relay.
 
 #### Sessioning with LevelDB
 

@@ -11,17 +11,14 @@ block main-wrapper-contents
 						=info.msg
 				form(action='/auth/_VERSION/login', method='POST')#login
 					.form-row
-						//- .form-row-label-container
-						//- 	label Email: 
 						input(type='text', name='email' placeholder="you@domain.com")
 					.form-row
-						//- .form-row-label-container
-						//- 	label Password: 
 						input(type='password', name='password' placeholder="password")
 					.form-row
 						label 
 							input(type='checkbox' name="remember_me") 
 							| Remember me
+						//- Handle redirects by stashing the # portion of the url in a hidden field, which will then be picked up by our login POST endpoint
 						script.
 							var href = document.location.href
 							if (href.indexOf('logout') === -1){
