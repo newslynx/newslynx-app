@@ -92,7 +92,7 @@ block templates
 				h2.headline 
 					a(href!="<%= url %>", target="_blank") <%= title %>
 				.article-info-wrapper
-					a#download-data(href="", download!="newslynx-article-<%= id %>.zip")
+					a#download-data(href="", download!="<%= helpers.common.toUserTimezone(new Date()).format('YYYY-MM-DDTHH-mm') %>-newslynx-article-<%= id %>.zip")
 						button(data-which="download-data") Download data
 					.article-info-container(data-which="author")
 						.article-info-title
