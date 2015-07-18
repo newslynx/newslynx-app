@@ -1,4 +1,6 @@
 language: node_js
+env:
+  - NEWSLYNX_ENV=travis
 node_js:
   - "node"
   - "iojs"
