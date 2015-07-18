@@ -1234,11 +1234,11 @@ body[data-section="articles"] .division-switcher li.active {
 #content[data-loading='none']:before,
 #content[data-loading='choose']:before {
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-55%);
+  -moz-transform: translateX(-55%);
+  -o-transform: translateX(-55%);
+  -ms-transform: translateX(-55%);
+  transform: translateX(-55%);
 }
 #content[data-loading='true']:before,
 #content[data-loading='none']:before,
@@ -1275,7 +1275,7 @@ body[data-section="articles"] .division-switcher li.active {
 #content[data-loading='none']:before {
   background-image: url("../../images/gifs/MerlynneMeasure.png") !important;
 }
-#content[data-loading='none']:after {
+#content[data-loading='choose']:after {
   content: 'Pick from the drawer on the left...';
 }
 #content[data-loading='none']:after {
