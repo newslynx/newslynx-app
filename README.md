@@ -18,9 +18,16 @@ To start the server, run
 npm start
 ````
 
-Thisc compiles your CSS and JS and runs the server with [Forever](https://github.com/foreverjs/forever).
+This compiles your CSS and JS and runs the server with [Forever](https://github.com/foreverjs/forever).
 
-When you see the following, it's done and you can visit <http://localhost:3000>
+When you see the following, it's done and you can visit <http://localhost:3000>.
+
+**Note**: If you are running this in production, you want to run it in behind https and tell the app you are doing so one of two ways:
+
+1. Run it with the environment variable `NEWSLYNX_ENV=https`
+2. Set `https: true` in your `config.yaml`
+
+This will make sure your cookies are set securely.
 
 ````
 ##################################
@@ -85,7 +92,6 @@ To run the app, you can start it from the command line through the file [`bin/ww
 ./bin/www.js run
 ````
 
-
 It defaults to port `3000` but that can be changed with a second argument
 
 ````
@@ -96,7 +102,7 @@ In production and development, however, we run the server with [Forever](package
 
 #### Templates and loading CSS
 
-Templates are written in [Jade](http://jade-lang.com/) and found in [`lib/views/`]. They generally extend from [`lib/views/layout.jade`](lib/views/layout.jade) which specifies "blocks" that subviews will insert themselves into. Here's what `layout.jade` looks like:
+Templates are written in [Jade](http://jade-lang.com/) and found in [`lib/views/`]. They extend from [`lib/views/layout.jade`](lib/views/layout.jade) which specifies "blocks" that subviews will insert themselves into. Here's what `layout.jade` looks like:
 
 ````jade
 doctype html
@@ -109,25 +115,65 @@ html
     link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
   body(data-section="#{info.page}")
     #main-wrapper
-      include page-divisions/left-rail/index.jade
-      #drawer(data-loading="true")
-        block drawer
-      #content(data-loading="true")
-        block content
+      block main-wrapper-contents
+    #global-loading
     block bootstrap-data
     block templates
     block scripts
 ````
 
+**Note:** If you open up [`layout.jade`](lib/views/layout.jade) you'll see it has all of this ugly JavaScript describing menu items like `Copy`, `Paste` and `Reload`. This is to construct menu items for the [Desktop application](http://github.com/newslynx/newslynx-electron) so we're skipping that here.
+
 You can see two variables here, `title` and `page`. These are important, since, as you can see, that variable name determines what CSS file is loaded, which we'll explain more in the [StyleSheets with Stylus](#stylesheets-with-Sstylus) section below. Generally, you can see that a **page-specifi** variable name will determine which CSS file we load. These variables match exactly the route name, for example, when you go to `/settings`, `info.title` is set to `Settings` in [`lib/routes/pages.js`](lib/routes/pages.js#L103) near line 103, which is then run through the `sanitize` function, which will put it in lowercase and replace spaces with dashes. We'll then fetch the file at `/stylesheets/css/settings.css`. 
 
 A **page** data attribute is also set on the body, which is used for loading **page-specific** JavaScript files and is discussed below in [How page-specific JavaScript is loaded](how-page-specific-javascript-is-loaded).
 
-So, with this main `layout.jade` file, we then have **page-specific** jade files which insert blocks. Take a look at [`lib/views/settings.jade`](lib/views/settings.jade) for an example.
+So, with this main `layout.jade` file, we then have **page-specific** jade files which insert blocks. Each of these inherit from [`lib/views/page.jade`](lib/views/page.jade)
+
+Here's what that file looks like:
+
+````jade
+extends layout
+
+block main-wrapper-contents
+  include includes/left-rail/index.jade
+  #drawer(data-loading="true")
+    block drawer
+  #content(data-loading="true")
+    block content
+````
+
+Take a look at [`lib/views/settings.jade`](lib/views/settings.jade) for an example of a **"Page"** layout file, which inserts code into the `drawer` block, or the `content` block.
 
 #### Authentication
 
 #### Sessioning with LevelDB
+
+The app keeps track of whether a user is logged in by setting a cookie on the person's browser with a **Session ID**.The **Session ID** stores the user's api key in a LevelDB database, which is written out to the [`lib/db/`](lib/db/) folder. 
+
+This whole process is largely abstracted thanks to the use of two libraries: 
+
+1. [express-session](https://www.npmjs.com/package/express-session) handles communicating with the browser's cookies
+2. [level-session-store](https://www.npmjs.com/package/level-session-store) handles putting our sessions in the database.
+
+This process is configured in [`lib/app.js`](lib/app.js). We include a flag for storing the session securely if we are in an https production environment, which is set as explained above in [Getting started](#Getting-started).
+
+````js
+var sessInfo = {
+  store: new LevelStore(path.join(__dirname, 'db')),
+  secret: NEWSLYNX_CONFIG.newslynx_app_secret_key,
+  resave: true,
+  saveUninitialized: true,
+  unset: 'destroy',
+  cookie: {secure: false}
+};
+
+// If we are running in a secure environment
+if (app.get('env') === 'https' || NEWSLYNX_CONFIG.https === true) {
+  app.set('trust proxy', 1) // Trust the first proxy
+  sessInfo.cookie.secure = true
+}
+````
 
 #### Bootstrapping and transforming data
 
