@@ -1,6 +1,8 @@
 NewsLynx App
 ============
 
+<a href="http://travis-ci.org/newslynx/newslynx-app"><img src="https://camo.githubusercontent.com/507081a96e700a6ff393e8263e71856a85cb2f1a/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f6d686b656c6c65722f696e6469616e2d6f6365616e2e706e673f6272616e63683d6d6173746572267374796c653d666c61742d737175617265" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/newslynx/newslynx-app.png?branch=v2&amp;style=flat-square" style="max-width:100%;"></a>
+
 V2 of NewsLynx's Web App.  This is still a WIP and we should be officially open-sourcing the codebase in late July 2015
 
 For now, please read [the report](http://towcenter.org/research/the-newslynx-impact-tracker-produced-these-key-ideas/) we published for the [TowCenter](http://towcenter.org) on our prototype.

@@ -13,15 +13,19 @@ function launchServers(port, cb){
   app.set('http_port', port);
 
   // Launch a server
-  var http_server = http.createServer( app ).listen( port );
-
-  console.log(chalk.green('##################################'));
-  console.log(chalk.green('# HTTP listening on port ' + port + '... #'));
-  console.log(chalk.green('##################################'));
-
-  if (cb){
-    cb();
-  }
+  var http_server = http.createServer(app).listen(port, function(err){
+    if (!err) {
+      console.log(chalk.green('##################################'));
+      console.log(chalk.green('# HTTP listening on port ' + port + '... #'));
+      console.log(chalk.green('##################################'));
+      
+      if (cb) { cb(); }
+    } else {
+      console.log(chalk.red('###############################'));
+      console.log(chalk.red('# HTTP failed on port ' + port + '... #'));
+      console.log(chalk.red('###############################'));
+    }
+  });
 
 }
 
