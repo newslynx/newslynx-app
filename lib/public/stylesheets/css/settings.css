@@ -879,6 +879,9 @@ input[name="assignees"] {
 .form-row-input-container[data-which="tag_ids"]:hover {
   cursor: default;
 }
+.form-row-input-container label {
+  font-size: 1.3em;
+}
 .form-row-input-container .placeholder {
   font-size: 1.2em !important;
   color: #000;
@@ -1243,6 +1246,9 @@ button.add {
   -ms-transform: translateY(-95%);
   transform: translateY(-95%);
 }
+#timezone {
+  height: 34px;
+}
 #promotion[data-required-fields-set="false"] {
   pointer-events: none;
 }
@@ -1250,6 +1256,9 @@ button.add {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
+}
+#promotion[data-required-fields-set="false"] .input-actions-container {
+  display: none;
 }
 #promotion[data-required-fields-set="false"] .settings-title:after {
   content: 'Please set your homepage and timezone before creating recipes';

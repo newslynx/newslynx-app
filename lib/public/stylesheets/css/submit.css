@@ -897,6 +897,9 @@ input[name="assignees"] {
 .form-row-input-container[data-which="tag_ids"]:hover {
   cursor: default;
 }
+.form-row-input-container label {
+  font-size: 1.3em;
+}
 .form-row-input-container .placeholder {
   font-size: 1.2em !important;
   color: #000;

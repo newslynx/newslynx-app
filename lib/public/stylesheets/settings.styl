@@ -159,10 +159,16 @@ button.add
 	.add
 		transform translateY(-95%)
 		
+// Set this one manually because the dropdown doesn't have the normal input height
+#timezone
+	height input_height
+		
 #promotion[data-required-fields-set="false"]
 	pointer-events none
 	.setting-group
 		opacity .5
+	.input-actions-container
+		display none
 	.settings-title:after
 		content 'Please set your homepage and timezone before creating recipes'
 		color disabled_red

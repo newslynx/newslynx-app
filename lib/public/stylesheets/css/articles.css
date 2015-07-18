@@ -993,6 +993,9 @@ input[name="assignees"] {
 .form-row-input-container[data-which="tag_ids"]:hover {
   cursor: default;
 }
+.form-row-input-container label {
+  font-size: 1.3em;
+}
 .form-row-input-container .placeholder {
   font-size: 1.2em !important;
   color: #000;
@@ -1216,13 +1219,19 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #3ec173;
   text-shadow: 0 0px 12px #535353;
 }
+#content[data-loading='none'] .header {
+  display: none;
+}
 #content[data-loading='true'],
+#content[data-loading='none'],
 #content[data-loading='choose'] {
   position: relative;
 }
 #content[data-loading='true']:after,
+#content[data-loading='none']:after,
 #content[data-loading='choose']:after,
 #content[data-loading='true']:before,
+#content[data-loading='none']:before,
 #content[data-loading='choose']:before {
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -1232,6 +1241,7 @@ body[data-section="articles"] .division-switcher li.active {
   transform: translateX(-50%);
 }
 #content[data-loading='true']:before,
+#content[data-loading='none']:before,
 #content[data-loading='choose']:before {
   content: '';
   position: absolute;
@@ -1247,6 +1257,7 @@ body[data-section="articles"] .division-switcher li.active {
   box-shadow: 0 0 12px #e3e3e3;
 }
 #content[data-loading='true']:after,
+#content[data-loading='none']:after,
 #content[data-loading='choose']:after {
   content: ' ';
   position: absolute;
@@ -1260,11 +1271,15 @@ body[data-section="articles"] .division-switcher li.active {
 #content[data-loading='true']:after {
   content: 'Loading...';
 }
-#content[data-loading='choose']:before {
+#content[data-loading='choose']:before,
+#content[data-loading='none']:before {
   background-image: url("../../images/gifs/MerlynneMeasure.png") !important;
 }
-#content[data-loading='choose']:after {
+#content[data-loading='none']:after {
   content: 'Pick from the drawer on the left...';
+}
+#content[data-loading='none']:after {
+  content: "You don't have any articles yet...";
 }
 #add-article > button {
   width: 100%;
@@ -2134,10 +2149,10 @@ body[data-section="articles"] .division-switcher li.active {
 #compare-grid .header {
   padding-top: 25px;
   background-color: #eee;
-  position: absolute;
-  top: -55px;
+  position: fixed;
+  top: 0;
   right: -50px;
-  left: 0;
+  left: 535px;
   padding-top: 24px;
   z-index: 1;
   min-width: 630px;
