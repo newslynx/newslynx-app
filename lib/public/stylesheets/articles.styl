@@ -569,6 +569,13 @@ filter_opts_width = 175px
 	section
 		overflow auto
 		background-color bck_gray
+		&[data-which="timeline"]
+			background-color #fff
+			border 1px solid #ccc
+			padding 10px 10px 0 10px // TODO, SORT OUT HOW THIS FIGURES OUT WITH SPOTTED TAIL MARGINS
+			border-radius 3px
+			box-shadow 0px 0px 2px #CCC
+			margin-bottom 25px
 	section.detail-section
 		padding (padding_verts+10) padding_horitz
 		border-top 1px solid #ccc
@@ -701,7 +708,7 @@ filter_opts_width = 175px
 	#ST-chart
 		max-width 960px
 		height 500px
-		margin-bottom 50px
+		margin-bottom 35px
 	.tag-container[data-which="subject"]
 		.tag:not(.empty):hover
 			cursor pointer
