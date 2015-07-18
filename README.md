@@ -177,6 +177,18 @@ if (app.get('env') === 'https' || NEWSLYNX_CONFIG.https === true) {
 
 #### Bootstrapping and transforming data
 
+Currently, on initial load for any of your main **Pages**, the Express app will make a bunch of calls to the API and package up this data as a global data object called `pageData`. You can see how all this plays out in the [`lib/routes/pages.js`](lib/routes/pages.js) file. 
+
+We currently [have an open issue](https://github.com/newslynx/opportunities/issues/25) to change this pattern so that Backbone collections fetch their own data on load. The advantage with this change is that the user will see the page change more quickly than with the current setup. For example, from the Home screen, if you click "Approval River," that data is all fetched asynchronously by the Express app but then your browser loads it all in one big object, which is why you hang on that Loading gif of Merlynne making potions a few seconds.
+
+We built it this way, essentially, because that's the way we first set it up. The **benefit** of doing it this way is we are also doing a number of transformations on the data and the fact that we serialize the JSON data (i.e. convert it to a string and then back out to JSON) lets us not worry about mutating data in unexpected ways (because objects are passed by reference, not duplicated in JavaScript, you can easily modify an object in one place and unexpectedly see those changes reflected in elsewhere as well).
+
+For example, our articles come back from the server with a list of **Subject tag ids**. We then [hydrate](lib/utils/transform.js#L68) these ids with the full subject tag info. If we weren't careful, we would really only have one copy of this object instead of multiple. The consequence of that is if we delete a subject tag off of one article, it would be removed from every article. 
+
+This problem is not insurmountable, but I explain it here to point out some of the advantages of the current system and things to keep in mind for shifting to another system.
+
+All of the transformations are stored in [`lib/utils/transform.js`](lib/utils/transform.js)
+
 ### Front-end architecture
 
 ---
