@@ -119,7 +119,7 @@
   cursor: pointer;
 }
 .ST-follow-line {
-  stroke: #000;
+  stroke: #666;
   stroke-width: 1px;
   pointer-events: none;
 }
