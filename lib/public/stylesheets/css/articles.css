@@ -1880,10 +1880,8 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px 10px 0 10px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 2px #ccc;
-  box-shadow: 0px 0px 2px #ccc;
+  -webkit-box-shadow: 0px 0px 6px #ccc;
+  box-shadow: 0px 0px 6px #ccc;
   margin-bottom: 25px;
 }
 .article-detail-container section.detail-section {

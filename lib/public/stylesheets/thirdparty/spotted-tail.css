@@ -138,6 +138,7 @@
   border-radius: 3px;
   pointer-events: none;
   z-index: 9999999;
+  left: -999999px;
 }
 .ST-hover-swatch,
 .ST-hover-section-label,
