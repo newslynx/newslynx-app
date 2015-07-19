@@ -145,7 +145,7 @@ block scripts
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
 		if (typeof require === "function") {
-			$ = jQuery = require('jquery');
+			window.$ = window.jQuery = require('jquery');
 		}
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
@@ -155,7 +155,7 @@ block scripts
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
 		if (typeof require === "function") {
-			moment = require('moment');
+			window.moment = require('moment');
 		}
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 	script(src="javascripts/thirdparty/pikaday.js")
