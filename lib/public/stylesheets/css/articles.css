@@ -1876,13 +1876,14 @@ body[data-section="articles"] .division-switcher li.active {
   overflow: auto;
   background-color: #f2f2f2;
 }
-.article-detail-container section[data-which="timeline"] {
+.article-detail-container section[data-which="timeseries"] {
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px 10px 0 10px;
   -webkit-box-shadow: 0px 0px 6px #ccc;
   box-shadow: 0px 0px 6px #ccc;
   margin-bottom: 25px;
+  overflow: visible;
 }
 .article-detail-container section.detail-section {
   padding: 30px 50px;

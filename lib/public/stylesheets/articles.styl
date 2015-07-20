@@ -569,13 +569,14 @@ filter_opts_width = 175px
 	section
 		overflow auto
 		background-color bck_gray
-		&[data-which="timeline"]
+		&[data-which="timeseries"]
 			background-color #fff
 			border 1px solid #ccc
 			padding 10px 10px 0 10px // TODO, SORT OUT HOW THIS FIGURES OUT WITH SPOTTED TAIL MARGINS
 			// border-radius 3px
 			box-shadow 0px 0px 6px #CCC
 			margin-bottom 25px
+			overflow visible
 	section.detail-section
 		padding (padding_verts+10) padding_horitz
 		border-top 1px solid #ccc
