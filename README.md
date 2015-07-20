@@ -30,9 +30,9 @@ When you see the following, it's done and you can visit <http://localhost:3000>.
 This will make sure your cookies are set securely.
 
 ````
-##################################
-# HTTP listening on port 3000... #
-##################################
+#####################################
+# HTTP listening on 0.0.0.0:3000... #
+#####################################
 ````
 
 Other start up commands 
