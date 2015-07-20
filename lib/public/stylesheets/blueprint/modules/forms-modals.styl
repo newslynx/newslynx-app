@@ -211,17 +211,8 @@ input[name="assignees"]
 			width 59%
 			display inline-block
 			position relative
-			// .title
-			// 	font-size 11px
 			input[type="checkbox"]
 				width auto
-		.help-row
-			position absolute
-			right 0
-			top -12px
-		.hint-row
-			color bg_gray
-			position absolute
 		input[type="text"],
 		input[type="number"],
 		input[type="password"],
@@ -230,8 +221,30 @@ input[name="assignees"]
 			margin 0
 		select
 			margin 0
-			
 
+.supertext
+	position relative
+	box-sizing content-box
+	display inline-block
+	vertical-align top
+	top -3px
+	padding 1px
+	margin-left 3px
+	background-color #E0E0E0
+	border-radius 50%
+	width 11px
+	height @width
+	font-size .6em
+	text-align center
+	color #696868
+	font-weight bold
+	&.help-text
+		color link_blue
+		border-radius 3px
+		width auto
+		padding 1px 5px
+		&:hover
+			text-decoration underline
 
 /* T Y P E A H E A D */
 .twitter-typeahead

@@ -1023,17 +1023,6 @@ input[name="assignees"] {
 .recipe-form-container form .form-row-input-container input[type="checkbox"] {
   width: auto;
 }
-.modal-outer form .help-row,
-.recipe-form-container form .help-row {
-  position: absolute;
-  right: 0;
-  top: -12px;
-}
-.modal-outer form .hint-row,
-.recipe-form-container form .hint-row {
-  color: #7c7c7c;
-  position: absolute;
-}
 .modal-outer form input[type="text"],
 .recipe-form-container form input[type="text"],
 .modal-outer form input[type="number"],
@@ -1048,6 +1037,36 @@ input[name="assignees"] {
 .modal-outer form select,
 .recipe-form-container form select {
   margin: 0;
+}
+.supertext {
+  position: relative;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  display: inline-block;
+  vertical-align: top;
+  top: -3px;
+  padding: 1px;
+  margin-left: 3px;
+  background-color: #e0e0e0;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  font-size: 0.6em;
+  text-align: center;
+  color: #696868;
+  font-weight: bold;
+}
+.supertext.help-text {
+  color: #0092ce;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  width: auto;
+  padding: 1px 5px;
+}
+.supertext.help-text:hover {
+  text-decoration: underline;
 }
 .twitter-typeahead {
   width: 100%;
