@@ -1064,6 +1064,7 @@ input[name="assignees"] {
   border-radius: 3px;
   width: auto;
   padding: 1px 5px;
+  font-size: 9px;
 }
 .supertext.help-text:hover {
   text-decoration: underline;
