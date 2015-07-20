@@ -426,6 +426,8 @@ filter_opts_width = 175px
 		vertical-align top
 		margin-bottom 25px
 		overflow visible
+.bolded
+	font-weight bold
 .article-detail-viz-container:nth-child(odd)
 	margin-right 4%
 .article-detail-viz-container[data-which="tweets"]
@@ -436,7 +438,8 @@ filter_opts_width = 175px
 	margin-top 10px
 	width 100%
 	height 100%
-	.bar-container,.bar-text
+	.bar-container,
+	.bar-text
 		width 100%
 		margin-bottom 5px
 	.bar-container
@@ -446,13 +449,14 @@ filter_opts_width = 175px
 	.bar-text
 		overflow hidden
 		font-size 1.2em
-		padding 5px 0
 		margin-bottom 0
 		a
 			position relative
-			top -3px
-			padding 7px 0
 			color #909090
+			overflow hidden
+			max-width 270px
+			display inline-block
+			vertical-align top
 			.highlight
 				font-weight bold
 				color #000

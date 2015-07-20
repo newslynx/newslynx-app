@@ -13,8 +13,6 @@ function launchServers(port, hostname, cb){
   hostname = hostname || process.env.NEWSLYNX_HTTP_HOST || '0.0.0.0';
   app.set('http_port', port);
 
-  console.log(hostname)
-
   // Launch a server
   var http_server = http.createServer(app).listen(port, hostname, function(err){
     if (!err) {
