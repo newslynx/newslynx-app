@@ -1709,11 +1709,16 @@ body[data-section="articles"] .division-switcher li.active {
 /* end navigating articles */
 /* V I Z S */
 .article-detail-container section.article-detail-viz-container {
-  width: 46%;
+  width: 48%;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 25px;
   overflow: visible;
+  background-color: rgba(255,255,255,0.9);
+  -webkit-box-shadow: 0px 0px 4px #ccc;
+  box-shadow: 0px 0px 4px #ccc;
+  padding: 15px;
+  border: 1px solid #ccc;
 }
 .bolded {
   font-weight: bold;
@@ -1882,7 +1887,7 @@ body[data-section="articles"] .division-switcher li.active {
   background-color: #f2f2f2;
 }
 .article-detail-container section[data-which="timeseries"] {
-  background-color: #fff;
+  background-color: rgba(255,255,255,0.9);
   border: 1px solid #ccc;
   padding: 10px 10px 0 10px;
   -webkit-box-shadow: 0px 0px 6px #ccc;
