@@ -21,7 +21,7 @@ If you haven't run `newslynx init` by following the [full install instructions](
 ````yaml
 api_version: v1
 newslynx_app_secret_key: chicken-burrito-grande
-https: false
+newslynx_app_https: false
 api_url: http://localhost:5000
 ````
 
