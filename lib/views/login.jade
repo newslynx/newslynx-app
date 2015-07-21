@@ -9,7 +9,7 @@ block main-wrapper-contents
 				if info.msg
 					.msg 
 						=info.msg
-				form(action='/auth/_VERSION/login', method='POST')#login
+				form(action='/auth/_VERSION/login', method='POST', onsubmit="$(this).find('input[type=\"submit\"]').addClass('disabled').val('Logging in...')")#login
 					.form-row
 						input(type='text', name='email' placeholder="you@domain.com")
 					.form-row
@@ -19,7 +19,12 @@ block main-wrapper-contents
 							input(type='checkbox' name="remember_me") 
 							| Remember me
 						//- Handle redirects by stashing the # portion of the url in a hidden field, which will then be picked up by our login POST endpoint
+						script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+						//- For electron app bundling (https://github.com/atom/electron/issues/345)
 						script.
+							if (typeof require === "function") {
+								window.$ = window.jQuery = module.exports
+							}
 							var href = document.location.href
 							if (href.indexOf('logout') === -1){
 								document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
