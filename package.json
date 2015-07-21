@@ -1,7 +1,7 @@
 {
   "name": "newslynx",
   "description": "A platform for measuring the quantitative and qualitative impact of journalism.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "test": "mocha",
     "start": "gulp && forever ./bin/www.js run",
