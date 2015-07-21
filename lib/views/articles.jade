@@ -258,17 +258,12 @@ block scripts
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
 		if (typeof require === "function") {
-			$ = jQuery = require('jquery');
+			window.$ = window.jQuery = module.exports
 		}
 	script(src="javascripts/thirdparty/underscore-min.js")
 	script(src="javascripts/thirdparty/backbone-min.js")
 	script(src="javascripts/thirdparty/d3.v3.min.js")
 	script(src="javascripts/thirdparty/isotope.pkgd.min.js")
-	//- For electron app bundling (https://github.com/atom/electron/issues/345)
-	script.
-		if (typeof require === "function") {
-			isotope = require('isotope-layout');
-		}
 	script(src="javascripts/thirdparty/jquery.easing.js")
 	script(src="javascripts/thirdparty/spotted-tail.js")
 	script(src="javascripts/thirdparty/typeahead.min.js")
@@ -276,7 +271,7 @@ block scripts
 	//- For electron app bundling (https://github.com/atom/electron/issues/345)
 	script.
 		if (typeof require === "function") {
-			moment = require('moment');
+			window.moment = module.exports
 		}
 	script(src="javascripts/thirdparty/moment-timezone-with-data.js")
 	script(src="javascripts/thirdparty/pikaday.js")
