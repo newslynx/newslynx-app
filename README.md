@@ -1,16 +1,32 @@
 NewsLynx App
 ============
 
+> The NewsLynx web interface
+
 <a href="http://travis-ci.org/newslynx/newslynx-app"><img src="https://camo.githubusercontent.com/507081a96e700a6ff393e8263e71856a85cb2f1a/68747470733a2f2f7365637572652e7472617669732d63692e6f72672f6d686b656c6c65722f696e6469616e2d6f6365616e2e706e673f6272616e63683d6d6173746572267374796c653d666c61742d737175617265" alt="Build Status" data-canonical-src="https://secure.travis-ci.org/newslynx/newslynx-app.png?branch=v2&amp;style=flat-square" style="max-width:100%;"></a>
 
-V2 of NewsLynx's Web App.  This is still a WIP and we should be officially open-sourcing the codebase in late July 2015
 
-For now, please read [the report](http://towcenter.org/research/the-newslynx-impact-tracker-produced-these-key-ideas/) we published for the [TowCenter](http://towcenter.org) on our prototype.
+This project is a part of [research project](http://towcenter.org/research/the-newslynx-impact-tracker-produced-these-key-ideas/) at the [Tow Center for Digital Journalism](http://towcenter.org) at Columbia University by Michael Keller & Brian Abelson.
+
+Read our [**full documentation**](http://newslynx.readthedocs.org) for installing your own instance. The instructions below cover installing and developing the app as well as architectural documentation on how it works.
 
 Getting started
 ---------------
 
 Install dependencies with `npm install`.
+
+If you haven't run `newslynx init` by following the [full install instructions](http://newslynx.readthedocs.org/en/latest/install.html), you can still test out the app by creating `.newslynx` folder in your home folder and creating a `config.yaml` file that looks like the following (change the secret key to something else):
+
+````yaml
+api_version: v1
+newslynx_app_secret_key: chicken-burrito-grande
+https: false
+api_url: http://localhost:5000
+````
+
+To recap, make a file that looks like the one above and put it in `~/.newslynx/config.yaml`. Without having a server running locally, you won't get passed the login page, but at least you can make sure you get that far.
+
+### Running the server
 
 To start the server, run
 
@@ -25,7 +41,7 @@ When you see the following, it's done and you can visit <http://localhost:3000>.
 **Note**: If you are running this in production, you want to run it in behind https and tell the app you are doing so one of two ways:
 
 1. Run it with the environment variable `NEWSLYNX_ENV=https`
-2. Set `https: true` in your `config.yaml`
+2. Set `https: true` in your `~/.newslynx/config.yaml` file
 
 This will make sure your cookies are set securely.
 
