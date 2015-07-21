@@ -18,15 +18,18 @@ block main-wrapper-contents
 						label 
 							input(type='checkbox' name="remember_me") 
 							| Remember me
-						//- Handle redirects by stashing the # portion of the url in a hidden field, which will then be picked up by our login POST endpoint
-						script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
 						//- For electron app bundling (https://github.com/atom/electron/issues/345)
 						script.
-							if (typeof require === "function") {
-								window.$ = window.jQuery = module.exports
-							}
 							var href = document.location.href
 							if (href.indexOf('logout') === -1){
 								document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
 							}
 					input(type='submit', value='Log In')
+
+block scripts
+	//- Handle redirects by stashing the # portion of the url in a hidden field, which will then be picked up by our login POST endpoint
+	script(src="javascripts/thirdparty/jquery-1.11.0.min.js")
+	script.
+		if (typeof require === "function") {
+			window.$ = window.jQuery = module.exports
+		}
