@@ -19,11 +19,12 @@ block main-wrapper-contents
 							input(type='checkbox' name="remember_me") 
 							| Remember me
 						//- For electron app bundling (https://github.com/atom/electron/issues/345)
-						script.
-							var href = document.location.href
-							if (href.indexOf('logout') === -1){
-								document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
-							}
+						if !info.msg
+							script.
+								var href = document.location.href
+								if (href.indexOf('logout') === -1){
+									document.write('<input type="hidden" name="redirect_url" value="'+href+'"/>');
+								}
 					input(type='submit', value='Log In')
 
 block scripts
