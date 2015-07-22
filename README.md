@@ -79,6 +79,8 @@ npm run watch-server
 
 These last two commands are best run in tandem in two separate shell windows. `npm run dev` does them both in one window for convenience.
 
+The final command listed is `npm test`, which will run a simple test to make sure the server can launch.
+
 *** 
 ***
 
