@@ -16,7 +16,7 @@ Getting started
 
 Install dependencies with `npm install`.
 
-If you haven't run `newslynx init` by following the [full install instructions](http://newslynx.readthedocs.org/en/latest/install.html), you can still test out the app by creating `.newslynx` folder in your home folder and creating a `config.yaml` file that looks like the following (change the secret key to something else):
+If you haven't run `newslynx init` by following the [full install instructions](http://newslynx.readthedocs.org/en/latest/config.html), you can still test out the app by creating `.newslynx` folder in your home folder and creating a `config.yaml` file that looks like the following (change the secret key to something else or not if you're simply testing):
 
 ````yaml
 api_version: v1
@@ -25,7 +25,7 @@ newslynx_app_https: false
 api_url: http://localhost:5000
 ````
 
-To recap, make a file that looks like the one above and put it in `~/.newslynx/config.yaml`. Without having a server running locally, you won't get passed the login page, but at least you can make sure you get that far.
+To recap, if you want to do a dry run to make sure the app runs locally but you haven't configured / ran the api yet, make a file that looks like the one above and put it in `~/.newslynx/config.yaml`. Without having a server running locally, you won't get passed the login page, but at least you can make sure you get that far.
 
 ### Running the server
 
@@ -78,6 +78,9 @@ npm run watch-server
 ````
 
 These last two commands are best run in tandem in two separate shell windows. `npm run dev` does them both in one window for convenience.
+
+*** 
+***
 
 Documentation
 -------------
@@ -272,9 +275,45 @@ All of the transformations are stored in [`lib/utils/transform.js`](lib/utils/tr
 
 The front-end JavaScript is written in separate files that are meant to be concatenated together and minified. We use [Gulp](http://gulpjs.com/) to do this and watch those files for changes. Gulp also transforms our Stylus files into normal CSS files. Checkout the [Gulpfile](gulpfile.js), which orchestrates all the events.
 
-The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`](lib/public/javascripts/main.bundled.js) and that file is loaded in every **page template**. Page-specific CSS files are put in the `css/` folder and are discussed more in detail below in [Stylesheets with Stylus](#stylesheets-with-stylus).
+The final concatenated JavaScript file is saved to [`lib/public/javascripts/main.bundled.js`](lib/public/javascripts/main.bundled.js) and that file is loaded in every **page template**. Let's look at the hierarchy of these javascript files, which are all in
 
-#### How page-specific JavaScript is loaded
+This is the order in which the gulpfile concatenates them:
+
+````js
+// ...
+  js: [
+    './lib/public/javascripts/namespace.js',
+    './lib/public/javascripts/helpers/*.js',
+    './lib/public/javascripts/models/*.js',
+    './lib/public/javascripts/collections/*.js',
+    './lib/public/javascripts/views/*.js',
+    './lib/public/javascripts/app/*.js',
+    './lib/public/javascripts/routing/*.js',
+    './lib/public/javascripts/init.js'
+  ]
+
+// ...
+````
+
+Because these files are concatenated in alphabetical order, views or other files that are meant to be extended are given the file name prefix `AA_` to make sure they are loaded first.
+
+Let's look at [`namespace.js`](lib/public/javascripts/namespace.js) in particular, since that's the first file and it will give us some sense of the structure the rest of the files are built around. This file creates our top-level objects we'll be using throughout the app:
+
+````js
+'use strict';
+var helpers = {};
+var templates = {};
+var models = {};
+var collections = {};
+var app = {};
+var views = {};
+var routing = {};
+````
+
+We'll look at these more in detail in the [How page-specific JavaScript is loaded](#How-page-specific-JavaScript-is-loaded) section. For now, just note how these main objects are what the rest of the files add functions and objects to.
+
+
+For styles, gulp puts page-specific CSS files in the `css/` folder. This is discussed more in detail in the next section, [Stylesheets with Stylus](#stylesheets-with-stylus).
 
 #### Stylesheets with Stylus
 
@@ -282,7 +321,50 @@ The app uses a CSS preprocessor called [Stylus](https://learnboost.github.io/sty
 
 Styles are broken into smaller files so they can be more easily reused across views. These are all in [`lib/public/stylesheets/blueprint/`](lib/public/stylesheets/blueprint). Even smaller stylus files that are reused across "blueprint" files are in the the [`modules`](`lib/public/stylesheets/blueprint/`) subfolder. The nested folder structure helps show which files are meant to be used as shared assets.
 
-During the [build process](#build-process-with-gulp), the **top level files** for each **page** are written into the `css/` folder at [`lib/public/stylesheets/css/`](lib/public/stylesheets/css/). To bring it full circle, these files, `articles.css`, `home.css`, `approval-river.css` are what `layout.jade` calls basd on the `info.page` variable, [as explained above](#templates-and-loading-CSS).
+During the [build process](#build-process-with-gulp), the **top level files** for each **page** are written into the `css/` folder at [`lib/public/stylesheets/css/`](lib/public/stylesheets/css/). To bring it full circle, these files, `articles.css`, `home.css`, `approval-river.css` are what `layout.jade` calls based on the `info.page` variable, [as explained above](#templates-and-loading-CSS).
+
+````jade
+link(rel='stylesheet', href='/stylesheets/css/#{info.page}.css')
+````
+
+#### How page-specific JavaScript is loaded
+
+As explained in the [Build process with Gulp](#Build-process-with-Gulp), the JavaScript is baked out into one file [`main.bundled.js`](lib/public/javascripts/main.bundled.js) unlike the CSS files, which are page-specific. Which JavaScript functions get executed, however, is determined through the same `info.page` variable.
+
+In the main [`layout.jade`](lib/views/page.jade) file, the HTML `<body>` element gets a page-specific data-attribute like so:
+
+````jade
+body(data-section="#{info.page}")
+````
+
+When the JavaScript file are loaded, they call corresponding functions and the page-specific code gets executed. In the [build process section](#Build-process-with-Gulp), we discussed the order in which these files were concatenated,the last element in that list is the first file we look to to run our app, [`init.js`](lib/public/javascripts/init.js).
+
+If you look at this file, you'll see that each of the objects in our [`namespace.js`](lib/public/javascripts/namespace.js) has an `init` object, that contain **page-specific** functions. When we load a page, we grab that data-attribute off of `<body>` and that dictates which function groups to execute off of these objects.
+
+In this way, the app's models, collections and views are instantiated by the main `init` object at the bottom of this file, which looks like this:
+
+````js
+var init = {
+  go: function(){
+    // Call the page specific functions
+    var section = $('body').attr('data-section');
+    // Their `this` should be the root object so you can still say `this.` even though you're nested in the object
+    templates.init[section].call(templates);
+    models.init[section].call(models);
+    collections.init[section].call(collections);
+    app.init[section].call(app);
+    routing.init.go.call(routing, section);
+  }
+}
+
+init.go();
+````
+
+The main view for each page is the `app.instance` object.
+
+### Form serialization
+
+The app uses the library [`jquery.serializeJSON`](https://github.com/marioizquierdo/jquery.serializeJSON) to turn all form elements into JSON objects. Check out the `getSettings` function in [`AA_BaseForm.js`](lib/public/javascripts/views/AA_BaseForm.js#L541) near line 541 for the details of that implementation.
 
 ### Settings
 
