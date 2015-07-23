@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "test": "mocha",
-    "start": "gulp && forever ./bin/www.js run",
-    "start-daemon": "gulp && forever start ./bin/www.js run",
+    "start": "gulp && forever start ./bin/www.js run",
     "start-https": "NEWSLYNX_ENV=https gulp && forever ./bin/www.js run",
     "dev": "bash bin/dev.sh",
     "watch-files": "gulp watch-files",
