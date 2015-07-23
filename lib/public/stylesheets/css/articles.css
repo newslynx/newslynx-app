@@ -1708,8 +1708,8 @@ body[data-section="articles"] .division-switcher li.active {
 }
 /* end navigating articles */
 /* V I Z S */
-.article-detail-container section.article-detail-viz-container {
-  width: 48%;
+.article-detail-container .detail-section[data-group="reading"] section.article-detail-viz-container {
+  width: 48.5%;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 25px;
@@ -1724,10 +1724,13 @@ body[data-section="articles"] .division-switcher li.active {
   font-weight: bold;
 }
 .article-detail-viz-container:nth-child(odd) {
-  margin-right: 4%;
+  margin-right: 2.5%;
 }
 .article-detail-viz-container[data-which="tweets"] {
   width: auto;
+}
+.detail-section[data-group="tweeting"] .viz-container {
+  margin-top: 20px;
 }
 .viz-container {
   margin-top: 10px;
