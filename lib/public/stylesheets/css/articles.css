@@ -1777,6 +1777,9 @@ body[data-section="articles"] .division-switcher li.active {
   color: #000;
   white-space: nowrap;
 }
+.tweet-container {
+  margin-bottom: 15px;
+}
 /* end vizs */
 /* end article detail */
 /*   D R A W E R   */
