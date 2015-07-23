@@ -60,3 +60,5 @@ node_modules
 # lib/public/javascripts/main.bundled.js.map
 # *.css
 config.yaml
+lib/public/javascripts/main.bundled.js
+lib/public/javascripts/main.bundled.js.map
