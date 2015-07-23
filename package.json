@@ -5,6 +5,7 @@
   "scripts": {
     "test": "mocha",
     "start": "gulp && forever start ./bin/www.js run",
+    "start-automation": "gulp && forever -l /opt/newslynx/logs/app.log start ./bin/www.js run",
     "start-https": "NEWSLYNX_ENV=https gulp && forever start ./bin/www.js run",
     "dev": "bash bin/dev.sh",
     "watch-files": "gulp watch-files",
