@@ -9,6 +9,8 @@ This project is a part of [research project](http://towcenter.org/research/the-n
 
 Read our [**full documentation**](http://newslynx.readthedocs.org) for installing your own instance. The instructions below cover installing and developing the app as well as architectural documentation on how it works.
 
+Since a lot of functionality is intertwined across different repositories, **please post all issues to our [project issue tracker](https://github.com/newslynx/opportunities/issues).**
+
 ![](assets/articles.png)
 
 Getting started
