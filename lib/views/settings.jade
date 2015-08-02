@@ -41,9 +41,14 @@ block content
 								|  | 
 								a(href="/auths/google-analytics/revoke") Revoke access
 								| )
-						ul.ga-properties
+						ul.auth-list
 							each propertyInfo in  info.org.google_analytics_auth.properties
-								li.ga-property — #{propertyInfo.property} (#{propertyInfo.profile})
+								li.auth-list-item #{propertyInfo.property} (#{propertyInfo.profile})
+						if (info['google-analytics_recipes'])
+							.auth-list-header.success Initialized recipes!
+							ul.auth-recipe-list
+								each googleRecipe in  info['google-analytics_recipes'].recipes
+									li.auth-list-item #{googleRecipe.slug}
 							
 					else
 						p.auth-result.fail Not authenticated.
@@ -58,6 +63,11 @@ block content
 							span (
 								a(href="/auths/twitter/revoke") Revoke access
 								| )
+						if (info['twitter_recipes'])
+							.auth-list-header.success Initialized recipes!
+							ul.auth-recipe-list
+								each twitterRecipe in  info['twitter_recipes'].recipes
+									li.auth-list-item #{twitterRecipe.slug}
 					else
 						p.auth-result.fail Not authenticated.
 						p
