@@ -2093,6 +2093,13 @@ body[data-section="articles"] .division-switcher li.active {
   top: 0;
   right: 0;
 }
+#download-data button {
+  width: 145px;
+}
+#download-data.loading-spinner {
+  background-position: 110px center;
+  padding-right: 0;
+}
 @media (max-width: 1250px) {
   .group-container[data-side="right"] {
     -webkit-transform: translateY(-100%);
