@@ -67,15 +67,16 @@ block content
 							span (
 								a(href="/auths/twitter/revoke") Revoke access
 								| )
-						if (info['twitter_recipes'].status != 500)
-							.auth-list-header.success Initialized recipes!
-							ul.auth-recipe-list
-								each twitterRecipe in  info['twitter_recipes'].recipes
-									li.auth-list-item #{twitterRecipe.slug}
-						else
-							.auth-list-header.fail Recipe initialization failed!
-							ul.auth-recipe-list
-								li.auth-list-item #{JSON.stringify(info['twitter_recipes'].err)}
+						if (info['twitter_recipes'])
+							if (info['twitter_recipes'].status != 500)
+								.auth-list-header.success Initialized recipes!
+								ul.auth-recipe-list
+									each twitterRecipe in  info['twitter_recipes'].recipes
+										li.auth-list-item #{twitterRecipe.slug}
+							else
+								.auth-list-header.fail Recipe initialization failed!
+								ul.auth-recipe-list
+									li.auth-list-item #{JSON.stringify(info['twitter_recipes'].err)}
 
 					else
 						p.auth-result.fail Not authenticated.
