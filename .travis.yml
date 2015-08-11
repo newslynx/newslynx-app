@@ -3,6 +3,8 @@ env:
   - NEWSLYNX_ENV=travis
 node_js:
   - "node"
-  - "iojs"
+  - "3.0"
+  - "2.4"
+  - "1.8"
   - "0.12"
   - "0.11"
