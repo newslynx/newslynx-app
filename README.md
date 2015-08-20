@@ -22,7 +22,7 @@ If you haven't run `newslynx init` by following the [full install instructions](
 
 ````yaml
 api_version: v1
-newslynx_app_secret_key: chicken-burrito-grande
+app_secret_key: chicken-burrito-grande
 https: false
 api_url: http://localhost:5000
 ````
@@ -44,7 +44,7 @@ When you see the following, it's done and you can visit <http://localhost:3000>.
 **Note**: If you are running this in production, you want to run it in behind https and tell the app you are doing so one of two ways:
 
 1. Run it with the environment variable `NEWSLYNX_ENV=https`
-2. Set `newslynx_app_https: true` in your `~/.newslynx/config.yaml` file
+2. Set `https: true` in your `~/.newslynx/config.yaml` file
 
 This will make sure your cookies are set securely.
 
@@ -243,7 +243,7 @@ This process is configured in [`lib/app.js`](lib/app.js). We include a flag for 
 ````js
 var sessInfo = {
   store: new LevelStore(path.join(__dirname, 'db')),
-  secret: NEWSLYNX_CONFIG.newslynx_app_secret_key,
+  secret: NEWSLYNX_CONFIG.app_secret_key,
   resave: true,
   saveUninitialized: true,
   unset: 'destroy',
