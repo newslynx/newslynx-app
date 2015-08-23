@@ -11,3 +11,7 @@ node_js:
   - "1.0"
   - "0.12"
   - "0.11"
+branches:
+  except:
+    - prototype
+    - prototype-local
