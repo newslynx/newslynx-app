@@ -1,0 +1,17 @@
+language: node_js
+env:
+  - NEWSLYNX_ENV=travis
+node_js:
+  - "node"
+  - "iojs"
+  - "3.1"
+  - "3.0"
+  - "2.4"
+  - "1.8"
+  - "1.0"
+  - "0.12"
+  - "0.11"
+branches:
+  except:
+    - prototype
+    - prototype-local
