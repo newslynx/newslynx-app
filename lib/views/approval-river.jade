@@ -39,7 +39,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= handleEventCounts(last_run, schedule_by, event_counts) %>
+				.count <%= handleEventCounts(last_run, schedule_by, event_counts, status, traceback) %>
 				.title <%= name %>
 				<% if (options.search_query) { %>
 				.description Query: `<%= options.search_query %>`
