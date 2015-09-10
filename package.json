@@ -5,6 +5,7 @@
   "scripts": {
     "test": "mocha",
     "start": "gulp && forever start ./bin/www.js run",
+    "compile": "gulp",
     "start-automation": "gulp && forever -a -l /opt/newslynx/logs/app.log start ./bin/www.js run",
     "forever-list": "forever list",
     "forever-stop": "forever stop bin/www.js",
