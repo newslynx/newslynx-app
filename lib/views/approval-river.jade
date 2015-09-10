@@ -70,7 +70,7 @@ block templates
 			.inputs-container
 				input(type="radio")
 			.drawer-list-inner
-				.count <%= addCommas(event_counts.pending) %> pending
+				.count <%= addCommas(zeroIfNull(event_counts.pending)) %> pending
 				.title <%= name %>
 
 
