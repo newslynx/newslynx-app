@@ -2331,6 +2331,9 @@ body[data-section="articles"] .division-switcher li.active {
 .marker {
   width: 2px;
   background-color: rgba(124,124,124,0.5);
+}
+.marker,
+.marker-container {
   -webkit-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
   -moz-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: left 450ms cubic-bezier(0.19, 1, 0.22, 1);
