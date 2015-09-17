@@ -1,6 +1,11 @@
 Changelog
 =========
 
+## 1.1.0
+
+* Add loading spinner to article detail chart
+  * https://github.com/newslynx/newslynx-app/commit/545a74bd8686ebfde6c0c60470be7b2c798ae0e9
+
 ## 1.0.5
 
 * Fix comparison views
