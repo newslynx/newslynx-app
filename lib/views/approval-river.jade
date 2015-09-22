@@ -120,9 +120,9 @@ block templates
 				<% var s = ''; %>
 				<% if (content_items.length > 1) { s = 's';} %>
 				<% list_markup += '<div class="alert-section-title">Article'+s+' mentioned:</div>'; %>
-				<% content_items.forEach(function(contentId){ %>
+				<% content_items.forEach(function(contentInfo){ %>
 				<% list_markup += '<li>' %>
-				<% list_markup += '<a href="https://towcenter.newslynx.org/articles#detail/'+contentId+'" target="_blank">'+getHeadlineFromArticleId(contentId)+'</a>'; %>
+				<% list_markup += '<a href="https://towcenter.newslynx.org/articles#detail/'+contentInfo.id+'" target="_blank">'+contentInfo.title+'</a>'; %>
 				<% list_markup += '</li>' %>
 				<% }); %>
 				<% list_markup += '</ul>' %>
