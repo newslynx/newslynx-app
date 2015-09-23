@@ -923,6 +923,7 @@ input[name="assignees"] {
   -o-transform: translateX(28px);
   -ms-transform: translateX(28px);
   transform: translateX(28px);
+  overflow: hidden;
 }
 .article-assignee input {
   width: 93%;
@@ -948,6 +949,7 @@ input[name="assignees"] {
 }
 .buttons-container {
   padding-top: 10px;
+  position: relative;
 }
 .buttons-container button,
 .buttons-container input[type="submit"] {
@@ -1086,6 +1088,25 @@ input[name="assignees"] {
 }
 .supertext.help-text:hover {
   text-decoration: underline;
+}
+form[data-processing="true"] .buttons-container * {
+  opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+  filter: alpha(opacity=40);
+  pointer-events: none;
+}
+form[data-processing="true"] .buttons-container:after {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  font-size: 1.6em;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  background-image: url("../../images/gifs/arrows-transparent.gif");
+  background-repeat: no-repeat;
+  background-position: 61% 34%;
+  content: 'Loading...';
 }
 .twitter-typeahead {
   width: 100%;

@@ -117,6 +117,7 @@ input[name="assignees"]
 	border-radius 2px
 	margin-bottom 2px
 	transform translateX(28px)
+	overflow hidden
 	
 	input
 		width 93%
@@ -137,6 +138,7 @@ input[name="assignees"]
 			font-weight normal
 .buttons-container
 	padding-top 10px
+	position relative
 	button,input[type="submit"]
 		margin 0 5px 0 -2px
 		width auto
@@ -246,6 +248,25 @@ input[name="assignees"]
 		font-size 9px
 		&:hover
 			text-decoration underline
+			
+/* P R O C E S S I N G */
+form[data-processing="true"]
+	.buttons-container
+		*
+			opacity .4
+			pointer-events none
+		&:after
+			position absolute
+			top 40%
+			left 0
+			font-size 1.6em
+			right 0
+			bottom 0
+			text-align center
+			background-image url("../../images/gifs/arrows-transparent.gif")
+			background-repeat no-repeat
+			background-position 61% 34%
+			content 'Loading...'
 
 /* T Y P E A H E A D */
 .twitter-typeahead
