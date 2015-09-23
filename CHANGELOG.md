@@ -1,6 +1,19 @@
 Changelog
 =========
 
+## 1.1.1
+
+* Change loading tweet text to more generic text, not prototype specific
+  * https://github.com/newslynx/newslynx-app/commit/a422c09d48eb4c7abddfbf1f7ebd957639fd3008
+* Fix boolean parsing on forms
+  * https://github.com/newslynx/newslynx-app/commit/32f44e038255be10fc0a31f2c491721c70599987
+* Display related article on alerts, fix from prototype convension
+  * https://github.com/newslynx/newslynx-app/commit/de44996addfe1c54d31d52033e13e91c220703f3
+* Better loading of service icons on recipes that aren't starting their name with service
+  * https://github.com/newslynx/newslynx-app/commit/4b2122ff46dbb65f5d8821c621d59669a00370cb
+* Add loading spinner to form submissions
+  * https://github.com/newslynx/newslynx-app/commit/3261e45a8a2730d8dc07c2ae2603f1a25bea9d79
+
 ## 1.1.0
 
 * Add loading spinner to article detail chart
