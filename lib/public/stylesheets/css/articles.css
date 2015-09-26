@@ -1630,6 +1630,9 @@ body[data-section="articles"] .division-switcher li.active {
   max-width: 530px;
   width: 100%;
 }
+.detail-section .placeholder {
+  margin-top: 7px;
+}
 /*    E V E N T S    */
 #events-gallery-container,
 .section-options {
