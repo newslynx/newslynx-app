@@ -1,6 +1,11 @@
 Changelog
 =========
 
+## 1.1.2
+
+* Exclude automatically added tweets to articles from the first tab of the article detailed view
+  * https://github.com/newslynx/newslynx-app/commit/11f0fdad414077b9726d929ae438a4efe54bb031
+
 ## 1.1.1
 
 * Change loading tweet text to more generic text, not prototype specific
