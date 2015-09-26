@@ -5,6 +5,8 @@ Changelog
 
 * Exclude automatically added tweets to articles from the first tab of the article detailed view
   * https://github.com/newslynx/newslynx-app/commit/11f0fdad414077b9726d929ae438a4efe54bb031
+* Bring back the "You haven't created any events text"
+  * https://github.com/newslynx/opportunities/issues/138
 
 ## 1.1.1
 
