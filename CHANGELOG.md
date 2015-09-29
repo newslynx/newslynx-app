@@ -1,6 +1,11 @@
 Changelog
 =========
 
+## 1.1.3
+
+* Update Merlynne body color
+  * https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652
+
 ## 1.1.2
 
 * Exclude automatically added tweets to articles from the first tab of the article detailed view
