@@ -7,6 +7,10 @@ Changelog
   * https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652
 * Fix escaping of quotes on article assigness
   * https://github.com/newslynx/newslynx-app/commit/8155a04ef5231f24df049afffdeb73168c57bace
+* Add more default tag colors
+  * https://github.com/newslynx/newslynx-app/commit/0d0699aba0e35cf6f3b3622c122e194edfeed807
+* Add custom hex colors for tags
+  * https://github.com/newslynx/newslynx-app/commit/7f1039bb86a88fc36e4494d2303d31020819bd69
 
 ## 1.1.2
 
