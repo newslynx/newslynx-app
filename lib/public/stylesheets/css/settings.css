@@ -108,6 +108,7 @@ input[type="search"] {
 }
 button,
 input[type="button"],
+.sp-container button,
 input.destroy {
   color: #333;
   background-color: #eee;
@@ -1363,6 +1364,19 @@ button.add {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #ccc;
+}
+.sp-cancel,
+.sp-container button {
+  font-family: Helvetica, sans-serif;
+}
+.sp-button-container {
+  margin-top: 5px;
+}
+.sp-container button {
+  font-size: 1em;
+  font-weight: bold;
+  height: 20px;
+  line-height: 7px;
 }
 .auth-container {
   display: inline-block;

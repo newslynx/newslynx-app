@@ -108,6 +108,7 @@ input[type="search"] {
 }
 button,
 input[type="button"],
+.sp-container button,
 input.destroy {
   color: #333;
   background-color: #eee;
