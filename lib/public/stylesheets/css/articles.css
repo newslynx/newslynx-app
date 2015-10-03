@@ -1858,8 +1858,8 @@ body[data-section="articles"] .division-switcher li.active {
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item .item-text {
   margin-bottom: 3px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item .add-to-comparison,
-#drawer[data-mode="detail"] .drawer-pointer .drawer-item .add-to-comparison,
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item .action-btn,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item .action-btn,
 #drawer[data-mode="compare"] .drawer-pointer .drawer-item .load-more,
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item .load-more {
   font-size: 11px;

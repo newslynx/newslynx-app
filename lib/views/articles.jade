@@ -26,21 +26,21 @@ block templates
 					button.mini#alter-comparison-marker Set
 			.drawer-item-group(data-which="columns-and-export")
 				.drawer-item(data-type="action-item")
-					button.add-to-comparison(data-action="change-columns")
+					button.action-btn(data-action="change-columns")
 						span.octicon-graph.octicon  
 						span  Metrics...
 				.drawer-item(data-type="action-item") 
-					a#download-multiple(href="#")
-						button.add-to-comparison(data-action="export")
+					a#download-multiple(href="#", download='')
+						button.action-btn(data-action="export")
 							span.octicon-cloud-download.octicon  
 							span  Export...
 			.drawer-item-group(data-which="comparison-additions")
 				.drawer-item(data-type="action-item")
-					button.add-to-comparison(data-action="replace")
+					button.action-btn.add-to-comparison(data-action="replace")
 						span.octicon-sync.octicon  
 						span  Replace with...
 				.drawer-item(data-type="action-item") 
-					button.add-to-comparison(data-action="add")
+					button.action-btn.add-to-comparison(data-action="add")
 						span.octicon-plus.octicon  
 						span  Add...
 			.drawer-item-group(data-which="article-counts")
