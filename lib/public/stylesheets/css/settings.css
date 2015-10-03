@@ -1350,6 +1350,7 @@ button.add {
 }
 .sp-palette .sp-thumb-el {
   border-color: #fff;
+  margin: 0;
 }
 .sp-palette .sp-thumb-el:hover,
 .sp-palette .sp-thumb-el.sp-thumb-active {
