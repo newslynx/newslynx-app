@@ -1840,13 +1840,13 @@ body[data-section="articles"] .division-switcher li.active {
 #drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-marker"] {
   margin-bottom: 5px;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"]:first-child,
-#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"]:first-child {
-  margin-right: 2%;
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="action-item"]:first-child,
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="action-item"]:first-child {
+  margin-right: 0%;
 }
-#drawer[data-mode="compare"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"],
-#drawer[data-mode="detail"] .drawer-pointer .drawer-item-group[data-which="comparison-additions"] .drawer-item[data-type="action-item"] {
-  width: 49%;
+#drawer[data-mode="compare"] .drawer-pointer .drawer-item[data-type="action-item"],
+#drawer[data-mode="detail"] .drawer-pointer .drawer-item[data-type="action-item"] {
+  width: 50%;
   display: inline-block;
   vertical-align: top;
 }
