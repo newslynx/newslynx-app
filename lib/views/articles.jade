@@ -30,9 +30,10 @@ block templates
 						span.octicon-graph.octicon  
 						span  Metrics...
 				.drawer-item(data-type="action-item") 
-					button.add-to-comparison(data-action="export")
-						span.octicon-cloud-download.octicon  
-						span  Export...
+					a#download-multiple(href="#")
+						button.add-to-comparison(data-action="export")
+							span.octicon-cloud-download.octicon  
+							span  Export...
 			.drawer-item-group(data-which="comparison-additions")
 				.drawer-item(data-type="action-item")
 					button.add-to-comparison(data-action="replace")
@@ -102,7 +103,7 @@ block templates
 				h2.headline 
 					a(href!="<%= url %>", target="_blank") <%= title %>
 				.article-info-wrapper
-					a#download-data(href="#", download!="<%= helpers.common.toUserTimezone(new Date()).format('YYYY-MM-DDTHH-mm') %>-newslynx-article-<%= id %>.zip")
+					a#download-data(href="#", download!="<%= toUserTimezone(new Date()).format('YYYY-MM-DDTHH-mm') %>-newslynx-export-<%= id %>.zip")
 						button(data-which="download-data") Download data
 					.article-info-container(data-which="author")
 						.article-info-title
