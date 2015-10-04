@@ -1,0 +1,86 @@
+{
+  "dimensions": [
+    {
+      "name": "title",
+      "kind": "text"
+    },
+    {
+      "name": "created",
+      "kind": "date"
+    },
+    {
+      "name": "ga_pageviews",
+      "kind": "metric"
+    },
+    {
+      "name": "twitter_shares",
+      "kind": "metric"
+    },
+    {
+      "name": "facebook_likes",
+      "kind": "metric"
+    },
+    {
+      "name": "facebook_shares",
+      "kind": "metric"
+    },
+    {
+      "name": "facebook_comments",
+      "kind": "metric"
+    },
+    {
+      "name": "subject_tags",
+      "kind": "bars"
+    },
+    {
+      "name": "impact_tags",
+      "kind": "bars"
+    }
+  ],
+  "sort_order": [
+    "divider-article info",
+    "created",
+    "title",
+    "updated",
+    "divider-social",
+    "twitter_followers",
+    "twitter_shares",
+    "facebook_comments",
+    "facebook_likes",
+    "facebook_shares",
+    "googleplus_shares",
+    "linkedin_shares",
+    "pinterest_shares",
+    "reddit_downvotes",
+    "reddit_upvotes",
+    "fb_page_likes",
+    "divider-google analytics",
+    "ga_avg_time_on_page",
+    "ga_entrances",
+    "ga_exits",
+    "ga_pageviews",
+    "ga_pageviews_by_domain",
+    "ga_pageviews_mobile",
+    "ga_pageviews_tablet",
+    "ga_per_external",
+    "ga_total_time_on_page",
+    "divider-impact levels",
+    "institution_level_events",
+    "community_level_events",
+    "individual_level_events",
+    "internal_level_events",
+    "media_level_events",
+    "divider-impact categories",
+    "change_category_events",
+    "citation_category_events",
+    "achievement_category_events",
+    "promotion_category_events",
+    "other_category_events",
+    "total_events"
+  ],
+  "timeseries": [
+    "ga_pageviews",
+    "twitter_shares",
+    "facebook_shares"
+  ]
+}
