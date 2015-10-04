@@ -5,7 +5,7 @@ Changelog
 
 > forthcoming
 
-* **[New feature]** exporting of multiple articles
+* **[New feature]** Enable exporting of multiple articles
   * [e9a82bc8e1e4304b5b8151691aec9c35721f500d](https://github.com/newslynx/newslynx-app/commit/e9a82bc8e1e4304b5b8151691aec9c35721f500d)
   * [9b48c7572ce399565acf5f2add4eecbfe08d4425](https://github.com/newslynx/newslynx-app/commit/9b48c7572ce399565acf5f2add4eecbfe08d4425)
   * [f9c951ef9c9d81fc8cdf6c6aee752f09208a9736](https://github.com/newslynx/newslynx-app/commit/f9c951ef9c9d81fc8cdf6c6aee752f09208a9736)
