@@ -1,13 +1,11 @@
 Changelog
 =========
 
-## 1.1.4
+## 1.2.0
 
-* Add more default tag colors
-  * [0d0699aba0e35cf6f3b3622c122e194edfeed807](https://github.com/newslynx/newslynx-app/commit/0d0699aba0e35cf6f3b3622c122e194edfeed807)
-* Add custom hex colors for tags
-  * [7f1039bb86a88fc36e4494d2303d31020819bd69](https://github.com/newslynx/newslynx-app/commit/7f1039bb86a88fc36e4494d2303d31020819bd69)
-* Allow for exporting of multiple articles
+> forthcoming
+
+* [New feature] exporting of multiple articles
   * [e9a82bc8e1e4304b5b8151691aec9c35721f500d](https://github.com/newslynx/newslynx-app/commit/e9a82bc8e1e4304b5b8151691aec9c35721f500d)
   * [9b48c7572ce399565acf5f2add4eecbfe08d4425](https://github.com/newslynx/newslynx-app/commit/9b48c7572ce399565acf5f2add4eecbfe08d4425)
   * [f9c951ef9c9d81fc8cdf6c6aee752f09208a9736](https://github.com/newslynx/newslynx-app/commit/f9c951ef9c9d81fc8cdf6c6aee752f09208a9736)
@@ -18,8 +16,14 @@ Changelog
   * [0cd5d48673acb9c4d670ae34e168cda17b3e3f77](https://github.com/newslynx/newslynx-app/commit/0cd5d48673acb9c4d670ae34e168cda17b3e3f77)
   * [0d7e90a1bead2bc969bd49f65fe5595db1791bbc](https://github.com/newslynx/newslynx-app/commit/0d7e90a1bead2bc969bd49f65fe5595db1791bbc)
   * [08554aa0e11cf9d591c9ae42060a87e18d238ae7](https://github.com/newslynx/newslynx-app/commit/08554aa0e11cf9d591c9ae42060a87e18d238ae7)
+* Add more default tag colors
+  * [0d0699aba0e35cf6f3b3622c122e194edfeed807](https://github.com/newslynx/newslynx-app/commit/0d0699aba0e35cf6f3b3622c122e194edfeed807)
+* Add custom hex colors for tags
+  * [7f1039bb86a88fc36e4494d2303d31020819bd69](https://github.com/newslynx/newslynx-app/commit/7f1039bb86a88fc36e4494d2303d31020819bd69)
 
 ## 1.1.3
+
+> 2015-09-29
 
 * Update Merlynne body color
   * [10d5f95d2ec28317927ea7befd11a96ddd8af652](https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652)
@@ -28,6 +32,8 @@ Changelog
 
 ## 1.1.2
 
+> 2015-09-26
+
 * Exclude automatically added tweets to articles from the first tab of the article detailed view
   * [11f0fdad414077b9726d929ae438a4efe54bb031](https://github.com/newslynx/newslynx-app/commit/11f0fdad414077b9726d929ae438a4efe54bb031)
 * Bring back the "You haven't created any events text"
@@ -35,11 +41,13 @@ Changelog
 
 ## 1.1.1
 
+> 2015-09-19
+
 * Change loading tweet text to more generic text, not prototype specific
   * [a422c09d48eb4c7abddfbf1f7ebd957639fd3008](https://github.com/newslynx/newslynx-app/commit/a422c09d48eb4c7abddfbf1f7ebd957639fd3008)
 * Fix boolean parsing on forms
   * [32f44e038255be10fc0a31f2c491721c70599987](https://github.com/newslynx/newslynx-app/commit/32f44e038255be10fc0a31f2c491721c70599987)
-* Display related article on alerts, fix from prototype convension
+* Display related article on alerts, fix from prototype convention
   * [de44996addfe1c54d31d52033e13e91c220703f3](https://github.com/newslynx/newslynx-app/commit/de44996addfe1c54d31d52033e13e91c220703f3)
 * Better loading of service icons on recipes that aren't starting their name with service
   * [4b2122ff46dbb65f5d8821c621d59669a00370cb](https://github.com/newslynx/newslynx-app/commit/4b2122ff46dbb65f5d8821c621d59669a00370cb)
@@ -48,10 +56,14 @@ Changelog
 
 ## 1.1.0
 
+> 2015-09-16
+
 * Add loading spinner to article detail chart
   * [545a74bd8686ebfde6c0c60470be7b2c798ae0e9](https://github.com/newslynx/newslynx-app/commit/545a74bd8686ebfde6c0c60470be7b2c798ae0e9)
 
 ## 1.0.5
+
+> 2015-09-16
 
 * Fix comparison views
   * [80c29617c5f86f5eebd0a489ae64b8f6d4334e67](https://github.com/newslynx/newslynx-app/commit/80c29617c5f86f5eebd0a489ae64b8f6d4334e67)
@@ -59,10 +71,14 @@ Changelog
 
 ## 1.0.4
 
+> 2015-09-15
+
 * Fix load more article button
-  * [80c29617c5f86f5eebd0a489ae64b8f6d4334e67](https://github.com/newslynx/newslynx-app/commit/80c29617c5f86f5eebd0a489ae64b8f6d4334e67)
+  * [354ca2cc5c703d90352c9f21bf79039a130c7df0](https://github.com/newslynx/newslynx-app/commit/354ca2cc5c703d90352c9f21bf79039a130c7df0)
 
 ## 1.0.3
+
+> 2015-09-10
 
 * Better approval river pending counts
   * [365e770c38d79c29e2c35f69aed1771f1e50ae22](https://github.com/newslynx/newslynx-app/commit/365e770c38d79c29e2c35f69aed1771f1e50ae22)
@@ -71,6 +87,8 @@ Changelog
 
 ## 1.0.2
 
+> 2015-08-27
+
 * Remove electron menus from newslynx-app
   * [e343775346f9263f3d779c5e0c66a2280b3872a6](https://github.com/newslynx/newslynx-app/commit/e343775346f9263f3d779c5e0c66a2280b3872a6)
 * Add setup callback
@@ -78,10 +96,15 @@ Changelog
 
 ## 1.0.1
 
+> 2015-08-20
+
 * Standardize names of config variables by removing `newslynx_` prefix
   * [1333914bb0a0613529c6f2b712677f8f943b2f33](https://github.com/newslynx/newslynx-app/commit/1333914bb0a0613529c6f2b712677f8f943b2f33)
 * Create changelog
+  * [5da2ba9327ae74525be398ba01cf11c2aeb32a36](https://github.com/newslynx/newslynx-app/commit/5da2ba9327ae74525be398ba01cf11c2aeb32a36)
 
 ## 1.0.0
+
+> 2015-08-19
 
 Initial release
