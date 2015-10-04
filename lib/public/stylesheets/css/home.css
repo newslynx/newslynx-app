@@ -676,6 +676,9 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-pointer.center {
   text-align: center;
 }
+.loading-spinner:hover {
+  cursor: default !important;
+}
 #global-loading {
   display: none;
   position: fixed;

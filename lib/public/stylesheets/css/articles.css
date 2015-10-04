@@ -676,6 +676,9 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-pointer.center {
   text-align: center;
 }
+.loading-spinner:hover {
+  cursor: default !important;
+}
 #global-loading {
   display: none;
   position: fixed;
@@ -2136,6 +2139,17 @@ body[data-section="articles"] .division-switcher li.active {
 #download-data.loading-spinner {
   background-position: 110px center;
   padding-right: 0;
+}
+#download-multiple:hover {
+  cursor: default !important;
+}
+#download-multiple button.loading-spinner {
+  background-position: 90px center;
+}
+.disabled #download-multiple button {
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
 }
 @media (max-width: 1250px) {
   .group-container[data-side="right"] {

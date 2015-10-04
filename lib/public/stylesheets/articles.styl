@@ -767,6 +767,14 @@ filter_opts_width = 175px
 	&.loading-spinner
 		background-position 110px center
 		padding-right 0
+		
+#download-multiple 
+	&:hover
+		cursor default !important
+	button.loading-spinner
+		background-position 90px center
+.disabled #download-multiple button
+		opacity 1
 
 @media (max-width: 1250px )
 	.group-container[data-side="right"]
