@@ -803,6 +803,9 @@ body[data-modal="true"] #content {
   margin-bottom: 5px;
   color: #000;
 }
+.modal-inner .modal-title span {
+  font-weight: normal;
+}
 .modal-inner .description:not(textarea) {
   margin-bottom: 15px;
   font-size: 1.3em;

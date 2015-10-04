@@ -253,8 +253,12 @@ block templates
 						<% }); %>
 					<% }); %>
 			<% } %>
-
 			<% }); %>
+
+	script(type="text/jst")#metric-picker-item
+		.metric-item
+			input(type='checkbox', name="dimensions[]:data-attributes-object", data-name!="<%= name %>", data-kind!="<%= kind %>", id!="NewsLynx-<%= name %>-<%= kind %>")
+			label(for!="NewsLynx-<%= name %>-<%= kind %>") <%= prettyMetricName(name) %>
 
 block css
 	link(rel='stylesheet', href='/stylesheets/thirdparty/spotted-tail.css')

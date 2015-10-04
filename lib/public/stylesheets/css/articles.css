@@ -898,6 +898,9 @@ body[data-modal="true"] #content {
   margin-bottom: 5px;
   color: #000;
 }
+.modal-inner .modal-title span {
+  font-weight: normal;
+}
 .modal-inner .description:not(textarea) {
   margin-bottom: 15px;
   font-size: 1.3em;
@@ -2406,6 +2409,17 @@ body[data-section="articles"] .division-switcher li.active {
 .viz-container .marker,
 .viz-container .marker-container {
   width: 3px;
+}
+.metric-item {
+  font-weight: normal;
+  display: inline-block;
+  font-size: 1.1em;
+  width: 100%;
+}
+#metrics-picker ul {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
 }
 .bar-column {
   display: inline-block;
