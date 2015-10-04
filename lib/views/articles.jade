@@ -25,10 +25,11 @@ block templates
 						option(value="all") all articles
 					button.mini#alter-comparison-marker Set
 			.drawer-item-group(data-which="columns-and-export")
-				.drawer-item(data-type="action-item")
-					button.action-btn(data-action="change-columns")
+				.drawer-item(data-type="action-item").modal-parent#metrics-picker
+					button.modal-toggle.action-btn(data-action="change-columns")
 						span.octicon-graph.octicon  
 						span  Metrics...
+					.modal-outer
 				.drawer-item(data-type="action-item") 
 					a#download-multiple(href="#", download='')
 						button.action-btn(data-action="export")
