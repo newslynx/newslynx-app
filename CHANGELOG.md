@@ -1,17 +1,13 @@
 Changelog
 =========
 
-## 1.1.3
+## 1.1.4
 
-* Update Merlynne body color
-  * [10d5f95d2ec28317927ea7befd11a96ddd8af652](https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652)
-* Fix escaping of quotes on article assigness
-  * [8155a04ef5231f24df049afffdeb73168c57bace](https://github.com/newslynx/newslynx-app/commit/8155a04ef5231f24df049afffdeb73168c57bace)
 * Add more default tag colors
   * [0d0699aba0e35cf6f3b3622c122e194edfeed807](https://github.com/newslynx/newslynx-app/commit/0d0699aba0e35cf6f3b3622c122e194edfeed807)
 * Add custom hex colors for tags
   * [7f1039bb86a88fc36e4494d2303d31020819bd69](https://github.com/newslynx/newslynx-app/commit/7f1039bb86a88fc36e4494d2303d31020819bd69)
-* Allow for multiple article exports
+* Allow for exporting of multiple articles
   * [e9a82bc8e1e4304b5b8151691aec9c35721f500d](https://github.com/newslynx/newslynx-app/commit/e9a82bc8e1e4304b5b8151691aec9c35721f500d)
   * [9b48c7572ce399565acf5f2add4eecbfe08d4425](https://github.com/newslynx/newslynx-app/commit/9b48c7572ce399565acf5f2add4eecbfe08d4425)
   * [f9c951ef9c9d81fc8cdf6c6aee752f09208a9736](https://github.com/newslynx/newslynx-app/commit/f9c951ef9c9d81fc8cdf6c6aee752f09208a9736)
@@ -22,6 +18,13 @@ Changelog
   * [0cd5d48673acb9c4d670ae34e168cda17b3e3f77](https://github.com/newslynx/newslynx-app/commit/0cd5d48673acb9c4d670ae34e168cda17b3e3f77)
   * [0d7e90a1bead2bc969bd49f65fe5595db1791bbc](https://github.com/newslynx/newslynx-app/commit/0d7e90a1bead2bc969bd49f65fe5595db1791bbc)
   * [08554aa0e11cf9d591c9ae42060a87e18d238ae7](https://github.com/newslynx/newslynx-app/commit/08554aa0e11cf9d591c9ae42060a87e18d238ae7)
+
+## 1.1.3
+
+* Update Merlynne body color
+  * [10d5f95d2ec28317927ea7befd11a96ddd8af652](https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652)
+* Fix escaping of quotes on article assigness
+  * [8155a04ef5231f24df049afffdeb73168c57bace](https://github.com/newslynx/newslynx-app/commit/8155a04ef5231f24df049afffdeb73168c57bace)
 
 ## 1.1.2
 
