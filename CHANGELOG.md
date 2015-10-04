@@ -4,7 +4,7 @@ Changelog
 ## 1.1.3
 
 * Update Merlynne body color
-  * https://github.com/newslynx/newslynx-app/commit/10d5f95d2ec28317927ea7befd11a96ddd8af652
+  * mhkeller@10d5f95d2ec28317927ea7befd11a96ddd8af652
 * Fix escaping of quotes on article assigness
   * https://github.com/newslynx/newslynx-app/commit/8155a04ef5231f24df049afffdeb73168c57bace
 * Add more default tag colors
