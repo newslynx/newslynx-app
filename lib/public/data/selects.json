@@ -37,7 +37,7 @@
       "kind": "bars"
     }
   ],
-  "sort-order": [
+  "sortable-dimensions": [
     "divider-article info",
     "created",
     "title",
