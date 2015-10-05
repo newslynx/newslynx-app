@@ -1,5 +1,5 @@
 {
-  "dimensions": [
+  "select-dimensions": [
     {
       "name": "title",
       "kind": "text"
@@ -37,7 +37,7 @@
       "kind": "bars"
     }
   ],
-  "sort_order": [
+  "sort-order": [
     "divider-article info",
     "created",
     "title",
@@ -78,7 +78,7 @@
     "other_category_events",
     "total_events"
   ],
-  "timeseries": [
+  "select-timeseries": [
     "ga_pageviews",
     "twitter_shares",
     "facebook_shares"
