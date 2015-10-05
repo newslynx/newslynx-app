@@ -257,7 +257,7 @@ block templates
 
 	script(type="text/jst")#metric-picker-item
 		.metric-item
-			input(type='checkbox', name="dimensions[]:data-attributes-object", data-name!="<%= name %>", data-kind!="<%= kind %>", id!="NewsLynx-<%= name %>-<%= kind %>")
+			input(type='checkbox', name="dimensions[]:object-single-quotes", value!="{'name': '<%= name %>', 'kind': '<%= kind %>'}", id!="NewsLynx-<%= name %>-<%= kind %>",  data-unchecked-value="false")
 			label(for!="NewsLynx-<%= name %>-<%= kind %>") <%= prettyMetricName(name) %>
 
 block css
