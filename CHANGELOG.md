@@ -20,6 +20,8 @@ Changelog
   * [0d0699aba0e35cf6f3b3622c122e194edfeed807](https://github.com/newslynx/newslynx-app/commit/0d0699aba0e35cf6f3b3622c122e194edfeed807)
 * Add custom hex colors for tags
   * [7f1039bb86a88fc36e4494d2303d31020819bd69](https://github.com/newslynx/newslynx-app/commit/7f1039bb86a88fc36e4494d2303d31020819bd69)
+* Remove extraneous filter on events call
+  * [c92255c1fa1153ac3670c4cea7433942003cda36](https://github.com/newslynx/newslynx-app/commit/c92255c1fa1153ac3670c4cea7433942003cda36)
 
 ## 1.1.3
 
