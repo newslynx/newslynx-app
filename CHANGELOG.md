@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## 1.1.4
+
+> 2015-10-05
+
+* Fix an error where facebook was listed as a service that had associated recipes on activation
+
 ## 1.1.3
 
 * Update Merlynne body color
