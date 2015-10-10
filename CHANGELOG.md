@@ -6,7 +6,22 @@ Changelog
 > 2015-10-10
 
 * **[New feature]** Change metrics in comparison grid
-  * 
+  * [82f94ce7965d81e64d6c8d46686196f0039e4178](https://github.com/newslynx/newslynx-app/commit/82f94ce7965d81e64d6c8d46686196f0039e4178)
+  * [740280847ca04d1ca501314e5cbd4722960ca898](https://github.com/newslynx/newslynx-app/commit/740280847ca04d1ca501314e5cbd4722960ca898)
+  * [ba82f29edf802867b33816f7158310db1c0ebbe1](https://github.com/newslynx/newslynx-app/commit/ba82f29edf802867b33816f7158310db1c0ebbe1)
+  * [c7cb2c940eded695067550e9d07e37f73dddcb63](https://github.com/newslynx/newslynx-app/commit/c7cb2c940eded695067550e9d07e37f73dddcb63)
+  * [770a59381cc562f61a7b35e458255b6ee864cea4](https://github.com/newslynx/newslynx-app/commit/770a59381cc562f61a7b35e458255b6ee864cea4)
+  * [1eba6c417f2ad0b17632618ecc3b4e6fb86de570](https://github.com/newslynx/newslynx-app/commit/1eba6c417f2ad0b17632618ecc3b4e6fb86de570)
+  * [aceab0da28643c7e85d94527278aaf91b56c8e62](https://github.com/newslynx/newslynx-app/commit/aceab0da28643c7e85d94527278aaf91b56c8e62)
+  * [21c3f9ceb09dca898545133cebdf639c18f2b66e](https://github.com/newslynx/newslynx-app/commit/21c3f9ceb09dca898545133cebdf639c18f2b66e)
+  * [74c13f4d2a2e8b10b4b1a1122e2143cc7a7e6625](https://github.com/newslynx/newslynx-app/commit/74c13f4d2a2e8b10b4b1a1122e2143cc7a7e6625)
+  * [d500ab14a6e4520e4e2995effe577d8229fe1d71](https://github.com/newslynx/newslynx-app/commit/d500ab14a6e4520e4e2995effe577d8229fe1d71)
+  * [5c95dbc6b5086dae844efcba34820c392dd738bf](https://github.com/newslynx/newslynx-app/commit/5c95dbc6b5086dae844efcba34820c392dd738bf)
+  * [da5730c4a3dfdd3a567ff1859ba9a45ee72c9eec](https://github.com/newslynx/newslynx-app/commit/da5730c4a3dfdd3a567ff1859ba9a45ee72c9eec)
+  * [c13849770c08b02715fda670c87f29d632af7b02](https://github.com/newslynx/newslynx-app/commit/c13849770c08b02715fda670c87f29d632af7b02)
+  * [f8d8b12bea21dbc9b280a3808d27a11e7991f15b](https://github.com/newslynx/newslynx-app/commit/f8d8b12bea21dbc9b280a3808d27a11e7991f15b)
+  * [d7f715c681943a61362f68f9c674d7bc99950f76](https://github.com/newslynx/newslynx-app/commit/d7f715c681943a61362f68f9c674d7bc99950f76)
+  * [186b26d2c788dc8c3d64fe824540f96c8b9dc9d6](https://github.com/newslynx/newslynx-app/commit/186b26d2c788dc8c3d64fe824540f96c8b9dc9d6)
 * **[New feature]** Enable exporting of multiple articles
   * [e9a82bc8e1e4304b5b8151691aec9c35721f500d](https://github.com/newslynx/newslynx-app/commit/e9a82bc8e1e4304b5b8151691aec9c35721f500d)
   * [9b48c7572ce399565acf5f2add4eecbfe08d4425](https://github.com/newslynx/newslynx-app/commit/9b48c7572ce399565acf5f2add4eecbfe08d4425)
