@@ -1092,10 +1092,12 @@ form[data-processing="true"] .buttons-container:after {
   right: 0;
   bottom: 0;
   text-align: center;
+  font-weight: normal;
   background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 61% 34%;
   content: 'Loading...';
+  color: #000;
 }
 .twitter-typeahead {
   width: 100%;

@@ -1187,10 +1187,12 @@ form[data-processing="true"] .buttons-container:after {
   right: 0;
   bottom: 0;
   text-align: center;
+  font-weight: normal;
   background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 61% 34%;
   content: 'Loading...';
+  color: #000;
 }
 .twitter-typeahead {
   width: 100%;
@@ -2420,6 +2422,9 @@ body[data-section="articles"] .division-switcher li.active {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
+}
+#metrics-picker .buttons-container:after {
+  font-size: 1.2em;
 }
 .bar-column {
   display: inline-block;
