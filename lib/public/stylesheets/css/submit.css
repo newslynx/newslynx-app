@@ -676,6 +676,9 @@ body[data-modal="true"] #drawer .modal-parent[data-modal-open="true"],
 .drawer-pointer.center {
   text-align: center;
 }
+.loading-spinner:hover {
+  cursor: default !important;
+}
 #global-loading {
   display: none;
   position: fixed;
@@ -817,6 +820,9 @@ body[data-modal="true"] #content {
   border-bottom: 1px solid #777676;
   margin-bottom: 5px;
   color: #000;
+}
+.modal-inner .modal-title span {
+  font-weight: normal;
 }
 .modal-inner .description:not(textarea) {
   margin-bottom: 15px;
@@ -1104,10 +1110,12 @@ form[data-processing="true"] .buttons-container:after {
   right: 0;
   bottom: 0;
   text-align: center;
+  font-weight: normal;
   background-image: url("../../images/gifs/arrows-transparent.gif");
   background-repeat: no-repeat;
   background-position: 61% 34%;
   content: 'Loading...';
+  color: #000;
 }
 .twitter-typeahead {
   width: 100%;
