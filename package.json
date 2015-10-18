@@ -1,7 +1,7 @@
 {
   "name": "newslynx",
   "description": "A platform for measuring the quantitative and qualitative impact of journalism.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "test": "mocha",
     "start": "gulp && forever start ./bin/www.js run",
@@ -62,7 +62,7 @@
     "columbia"
   ],
   "author": "Michael Keller",
-  "license": "CC-BY-SA-4.0",
+  "license": "CC-BY-NC-SA-4.0",
   "bugs": {
     "url": "https://github.com/newslynx/newslynx-app/issues"
   },
