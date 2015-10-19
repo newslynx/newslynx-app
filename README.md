@@ -210,7 +210,7 @@ For example, if we go to `/articles#detail`, Express only sees `/articles` as th
 
 So if we want to go to the `/articles#detail` page, the object we POST actually looks like this:
 
-````
+````json
 {
   "email": "<string>",
   "password": "<string>",
