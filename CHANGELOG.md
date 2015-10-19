@@ -1,6 +1,15 @@
 Changelog
 =========
 
+## 1.2.1
+
+> 2015-10-18
+
+* Bug fix: Update the name of the timeseries selects per our more semantic renaming in 1.2.0 
+  * [7b234a03361a44c4b0e6b8839efc6ca1f07edffb](https://github.com/newslynx/newslynx-app/commit/7b234a03361a44c4b0e6b8839efc6ca1f07edffb)
+* Better padding on article detail placeholder text
+  * [11b688923f105d71e3f0389f727c3cc2f0b9e5ce](https://github.com/newslynx/newslynx-app/commit/11b688923f105d71e3f0389f727c3cc2f0b9e5ce)
+
 ## 1.2.0
 
 > 2015-10-10
